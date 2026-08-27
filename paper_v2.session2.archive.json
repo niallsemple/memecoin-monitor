@@ -1,0 +1,47 @@
+{
+ "bank_start": 1000.0,
+ "cash": 989.4169130287695,
+ "positions": {},
+ "closed": [
+  {
+   "addr": "DMoRRhei",
+   "entry_mcap": 144841.0,
+   "entry_min": 6.2,
+   "size_gbp": 20.0,
+   "peak_mcap": 165958.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 9.716913028769477,
+   "opened": "2026-08-26T07:40:17.136320+00:00",
+   "closed_at": "2026-08-26T07:54:56.921854+00:00",
+   "exit_r": 0.493,
+   "pnl_gbp": -10.58
+  }
+ ],
+ "started": "2026-08-26T06:24:33.364127+00:00",
+ "seen_done": {
+  "solana:EVpszSRyQok4M6Fo5wTdC58WBJpx65y5VZGmmjm4pump": "pre_window",
+  "solana:FBCStPyNtdW5gnEmsmdFY1whJ7jxEuPggN6un416oJ77": "pre_window",
+  "solana:USCSiKDUVap6hj33JvRDYq6bEmiBwVm3BvE6o5fNgRf": "pre_window",
+  "solana:GShWswpuW27nadAacS1mMEhxvrYe9Db2QpfK7Hwrpump": "pre_window",
+  "solana:9dUSY1NRoCVPS6w54t5A2LtqudxHgiaaMRbvbpeepump": "pre_window",
+  "solana:F8aLgogeeS5psLaAMouz3RwdmRW5TT3gGEpyvswEpump": "pre_window",
+  "solana:2f2vJQzG1TXCDJ45r8ALGYXvBkQSsow1X4XPUL21pump": "pre_window",
+  "solana:7RCftn8rC3tXJ9W3hGyDYYkE2XznET9P7Je2549Jpump": "pre_window",
+  "solana:4mxp6WN2uAtDBd8BHNPSTYUEy6mD7R3gejzayWGBpump": "pre_window",
+  "solana:772iJKecjhdRHX9LXkgzXipnofsYxmDcMJKWS7c9pump": "pre_window",
+  "solana:HPra59G7cUUhE1k8PHDEPkxKD8m4KoJYgMGHJSrFpump": "pre_window",
+  "solana:FZqdw6oSDCbHtKYxmhnfbi97SnyVy8jaYpdCoMrrjKa2": "pre_window",
+  "solana:CH25cqJfKjZ8xhEdUgYmhTAGC5gULxXUqovTFc6epump": "pre_window",
+  "solana:5RhPVzDsj4K6WMyYJ71yEXAGfhuT25bbSesfKNFEpump": "pre_window",
+  "solana:HhSDQs8y8vQivndqj4e46LqQGasDVNmt9jaSvia9pump": "pre_window",
+  "solana:7h3jTPnEF7QT36YZ68eBRS1pg5pqBfj9XmFFbNfqpump": "pre_window",
+  "solana:ACtfUWtgvaXrQGNMiohTusi5jcx5RJf5zwu9aAxkpump": "pre_window",
+  "solana:2sLKA6PzFVjeTUaiKBCkDbDiS8MuoZAeXxZMgs9Apump": "pre_window",
+  "solana:EumP1q4oc1DVcZAJ4mRBeXpbTRtvkyr8xRrLL4qApump": "pre_window",
+  "solana:DNrdAqfcj4ZaiYCkPYZ5t7eEtxRZgqy41hQuGgpKpump": "failed_momentum_floor",
+  "solana:6hekwc4iXJTMZzzz8Zws9CkDeKey7xhqYYL6W1n7pump": "failed_momentum_floor",
+  "solana:DMoRRheiQrGVRm6Z76Hfg5XxqJF5kJ4vX9A2cDNKpump": "failed_momentum_floor",
+  "solana:BMMCV5jYei3XDRK4tNtuC3qQ8PxNR76ipVH6Uzdnpump": "failed_momentum_floor"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "bank_start": 1000.0,
+ "cash": 921.6967895368697,
+ "positions": {
+  "solana:FZqdw6oSDCbHtKYxmhnfbi97SnyVy8jaYpdCoMrrjKa2": {
+   "addr": "FZqdw6oS",
+   "entry_mcap": 1383520.0,
+   "entry_min": 42.8,
+   "size_gbp": 20.0,
+   "peak_mcap": 2722656.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-08-25T21:11:28.064089+00:00"
+  }
+ },
+ "closed": [
+  {
+   "addr": "5RhPVzDs",
+   "entry_mcap": 941224.0,
+   "entry_min": 41.4,
+   "size_gbp": 19.59,
+   "peak_mcap": 1124335.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.03860361662048567,
+   "opened": "2026-08-25T22:27:50.388904+00:00",
+   "closed_at": "2026-08-26T06:24:33.338980+00:00",
+   "exit_r": 0.002,
+   "pnl_gbp": -19.85
+  },
+  {
+   "addr": "HhSDQs8y",
+   "entry_mcap": 539891.0,
+   "entry_min": 41.4,
+   "size_gbp": 19.2,
+   "peak_mcap": 659945.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.07307110509343553,
+   "opened": "2026-08-25T22:27:50.388904+00:00",
+   "closed_at": "2026-08-26T06:24:33.338980+00:00",
+   "exit_r": 0.004,
+   "pnl_gbp": -19.41
+  },
+  {
+   "addr": "7h3jTPnE",
+   "entry_mcap": 124388.0,
+   "entry_min": 44.7,
+   "size_gbp": 18.81,
+   "peak_mcap": 159637.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.34586670498761934,
+   "opened": "2026-08-25T22:52:06.831100+00:00",
+   "closed_at": "2026-08-26T06:24:33.338980+00:00",
+   "exit_r": 0.019,
+   "pnl_gbp": -18.75
+  }
+ ],
+ "started": "2026-08-25T20:28:09.014935+00:00",
+ "seen_done": {
+  "solana:EVpszSRyQok4M6Fo5wTdC58WBJpx65y5VZGmmjm4pump": "pre_window",
+  "solana:FBCStPyNtdW5gnEmsmdFY1whJ7jxEuPggN6un416oJ77": "pre_window",
+  "solana:USCSiKDUVap6hj33JvRDYq6bEmiBwVm3BvE6o5fNgRf": "pre_window",
+  "solana:GShWswpuW27nadAacS1mMEhxvrYe9Db2QpfK7Hwrpump": "pre_window",
+  "solana:9dUSY1NRoCVPS6w54t5A2LtqudxHgiaaMRbvbpeepump": "pre_window",
+  "solana:F8aLgogeeS5psLaAMouz3RwdmRW5TT3gGEpyvswEpump": "pre_window",
+  "solana:2f2vJQzG1TXCDJ45r8ALGYXvBkQSsow1X4XPUL21pump": "pre_window",
+  "solana:7RCftn8rC3tXJ9W3hGyDYYkE2XznET9P7Je2549Jpump": "pre_window",
+  "solana:4mxp6WN2uAtDBd8BHNPSTYUEy6mD7R3gejzayWGBpump": "pre_window",
+  "solana:772iJKecjhdRHX9LXkgzXipnofsYxmDcMJKWS7c9pump": "pre_window",
+  "solana:HPra59G7cUUhE1k8PHDEPkxKD8m4KoJYgMGHJSrFpump": "pre_window",
+  "solana:CH25cqJfKjZ8xhEdUgYmhTAGC5gULxXUqovTFc6epump": "failed_floor",
+  "solana:ACtfUWtgvaXrQGNMiohTusi5jcx5RJf5zwu9aAxkpump": "failed_floor",
+  "solana:2sLKA6PzFVjeTUaiKBCkDbDiS8MuoZAeXxZMgs9Apump": "failed_floor"
+ }
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# live runtime state (regenerated each session)
+state.json
