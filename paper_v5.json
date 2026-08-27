@@ -1,0 +1,16 @@
+{
+ "bank_start": 1000.0,
+ "cash": 1000.0,
+ "positions": {},
+ "closed": [],
+ "started": "2026-08-27T16:29:41.973286+00:00",
+ "seen_done": {
+  "solana:8gaTjVPR5BWbMLniEMCG2Mi8MQsYK8Nb8PBm62UYpump": "failed_momentum_floor",
+  "solana:7nd3XqSSYS3bUmxbj3ykUuFwRAf8kRgM1oBZB6xjpump": "behaviour_risk",
+  "solana:FeRZxnBgAkk3XuJcarfsKmcrETBt8m2tnKyZJHkMpump": "failed_momentum_floor",
+  "solana:9uEeSZSdxMm1PaoqQ1VNDwcuDMM9RHqkp2p89Je5pump": "failed_momentum_floor",
+  "solana:An3aFtSMhjJzVdEYWjv8FT8auXDS3antAq4GsCrbpump": "behaviour_risk",
+  "solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump": "failed_momentum_floor",
+  "solana:2f6gSo4NuCNxyRW8sfQNgAJoyU4W76dCj5VdsVDTpump": "behaviour_risk"
+ }
+}

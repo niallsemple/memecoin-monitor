@@ -232,6 +232,15 @@ def run_cycle(state, max_audit=12):
             "detect": snap, "chain": chain, "addr": addr,
             "history": [{"t": now.isoformat(), "price": snap.get("price_usd"), "mcap": snap.get("mcap")}],
         })
+        # stage 3: behavioural audit (wallet layer) for Solana PASS candidates
+        if v == "PASS" and chain == "solana":
+            try:
+                import behaviour
+                b = behaviour.assess(addr)
+                state["seen"][key]["behaviour"] = b
+                notes.append(f"behaviour:{b.get('verdict')}({b.get('mode')})")
+            except Exception as e:
+                state["seen"][key]["behaviour"] = {"verdict": "SKIP", "mode": "error", "reason": str(e)[:80]}
         audited += 1
         desc = (t.get("description") or "").replace("\n", " ")[:80]
         lines.append(

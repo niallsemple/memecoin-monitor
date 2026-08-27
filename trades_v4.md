@@ -15,3 +15,6 @@
 | 14:59 | BUY | D56q2eSm | £18.67 | entry mc $293,324 | +13min @ 1.52x detect |
 | 15:19 | BUY | TmwHK5uX | £18.29 | entry mc $629,225 | +13min @ 1.56x detect |
 | 15:19 | STOP | D56q2eSm | £7.24 | trail-stop at 0.39x |
+| 15:49 | STOP | TmwHK5uX | £13.35 | trail-stop at 0.74x |
+| 16:33 | BUY | CGysUrvV | £18.33 | entry mc $422,161 | +18min @ 1.54x detect |
+| 16:49 | STOP | CGysUrvV | £7.64 | trail-stop at 0.42x |

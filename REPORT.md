@@ -221,3 +221,52 @@ Convergent settings across guides (Altrady pump.fun guide, memecoin terminal gui
 4. Expected trade frequency: ~1 per 4–6 hours of feed (rare by design)
 
 Caveat: 10-trade simulation sample — v4 is a hypothesis to test forward, not a proven edge.
+
+## 12. Countermeasures Research (2026-08-27) — how the ecosystem deals with instant rugs / fake momentum
+
+**Problem restated:** ~42% of our momentum entries (15/36 across v2/v3/v4) end as instant 0.00–0.02× rugs. Audit-PASS contract checks (GoPlus + RugCheck) do not catch them; the 1.5× momentum crossing is itself faked by coordinated pump flow; 10-min polling cannot exit a rug that completes in seconds.
+
+### What the ecosystem says (validated by live re-checks)
+
+The agreed answer is the **behavioural / wallet layer**, not contract checks:
+
+1. **Bundle detection at launch** — coordinated wallets buying at creation to fake organic demand (OnChainRisk, DeFade, Axiom Pulse all flag this).
+2. **Fresh-wallet / sybil clusters** — e.g. DeFade on a live rug: "fresh wallets (<24h old) hold 36.5% of supply, 29 critical-fresh wallets, coordinated entry".
+3. **Deployer history** — "serial rugger: 65 tokens, 0% survival rate" (DeFade). Pump devs recycle wallets; a dev with prior dead tokens is the strongest single tell.
+4. **Shared-funder tracing** — cluster top holders by who funded their wallets.
+5. **Tools that do this today:** DeFade (free scans, rug score, dev history, bundle %, insider networks), Bubblemaps (supply clustering), Axiom Pulse (filters: top-holder %, dev behaviour, bundle/sniper flags), OnChainRisk. Our GoPlus+RugCheck audit answers a *different* (contract) question — clean contracts are table stakes; these tools read the humans.
+
+### Validation against our own rug tokens
+
+Re-checked DYvfD7T9, 7kSxtYRB, 72xH2LMC, 33PngJ2J, wzjjr5TW on RugCheck now: top-10 wallets hold **99–100%** of supply in every case (the dump wallets, visible post-hoc). At detection they passed because bundled supply is deliberately **spread across many fresh wallets to evade top-holder concentration checks** — exactly the evasion the wallet-age/shared-funder layer is built to catch.
+
+### Feasibility for our pipeline
+
+- **Deployer-history check:** pump.fun frontend API (creator + prior coins) is Cloudflare-blocked (403) — tested. Would need a Solana RPC provider (Helius/QuickNode free tier) to derive creator + funding graph on-chain.
+- **Fresh-wallet % / shared-funder:** implementable with a Helius free API key (enhanced APIs expose wallet age + funding txs). Moderate engineering, slots into monitor.py as a third audit stage.
+- **Near-term, no new infra:** (a) cap stake at 1% on entries younger than 15 min; (b) take profit faster (v4's 100% @2x already helps); (c) treat 40% rug rate as the cost base — strategy must be profitable *after* it, which currently none is.
+- **Structural fix (only real one):** seconds-level on-chain execution (Chainstack bot route) so exits can fire inside the dump candle.
+
+### Bottom line
+
+Instant rugs are a solved-detection / unsolved-for-us problem: the detection tech exists (behavioural wallet forensics) but requires on-chain data infra we don't currently have; and even perfect detection only halves the problem — the other half is exit speed. Next decision point: (A) add a Helius-based behavioural audit stage, (B) move to real on-chain execution with a burner wallet, or (C) keep the paper race as-is and accept the ~40% rug tax as the measured cost of late entries.
+
+---
+
+## §13 — Path A build: behavioural (wallet-layer) audit stage (27 Aug, evening)
+
+User chose Path A (behavioural audit). What shipped:
+
+- **`behaviour.py`** — stage-3 module, `assess(mint)` → `{verdict: PASS|RISK|SKIP, mode, metrics, reason}`.
+  - **Helius mode** (active when `helius_key.txt` or `HELIUS_API_KEY` present): fresh-wallet supply % (top-20 holders, wallets <24h old), deployer age, top-20 concentration. RISK if fresh>25%, deployer<24h, or top20>80%.
+  - **Proxy mode (live now, keyless):** RugCheck danger scan — RISK if any risk flagged `danger`. Weaker: rugs were clean at detection time in our validation, so expect limited catch rate until a Helius key unlocks the real forensics.
+- **`monitor.py`** — every new Solana audit-PASS token now also gets a `behaviour` assessment attached to state.
+- **`papertrader_v5.py`** — v4 clone (floor 1.5, 100% TP@2x, 60% trail) plus behavioural gate: RISK tokens never bought, non-PASS tokens waited on. Fresh £1,000 book running alongside v2/v3/v4 as the treatment arm.
+- **`memecoin_loop.py`** — pipeline extended: monitor → v2 → v3 → v4 → v5, v5 line added to the automation artifact.
+- **Automation description updated** to mention v5 + behavioural stage.
+
+End-to-end automation run `run_1f3286f0` succeeded with all four books green; v5 bank £1,000.00, 0 trades (no eligible entries yet).
+
+**Known limitation:** public Solana RPC endpoints (mainnet-beta 429, publicnode/ankr 403) are blocked from this IP, so Helius is the only viable path to fresh-wallet/deployer-age forensics. Free tier suffices. Until then v5's gate is the weak RugCheck-proxy version.
+
+**§13 update (27 Aug, 18:25 BST):** Helius free-tier key installed (`helius_key.txt`). Live tests on 3 recent audit-PASS tokens: 1 PASS (deployer 28h old, top20 27%), 2 RISK correctly flagged (deployer ages 0.8h and 1.3h — would have been bought by v4, blocked by v5). Full forensics (fresh-wallet %, deployer age, top-20 concentration) now active in monitor.py + v5 gate. Verified end-to-end via automation run run_12622ee2 — all four books green.
