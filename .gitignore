@@ -5,3 +5,6 @@ __pycache__/
 
 # live runtime state (regenerated each session)
 state.json
+
+# secrets — never commit
+helius_key.txt
