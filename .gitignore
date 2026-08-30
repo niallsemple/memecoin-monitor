@@ -8,3 +8,13 @@ state.json
 
 # secrets — never commit
 helius_key.txt
+
+# large live data streams (regenerated 24/7 by the tracker)
+curves.jsonl
+mfg_trades.jsonl
+mfg_tokens.jsonl
+mfg_state.json
+
+# scratch
+_tmp_*
+_track.log

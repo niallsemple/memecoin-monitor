@@ -26,3 +26,66 @@
 | 16:29 | BUY | CGysUrvV | £17.27 | entry mc $388,716 | +13min |
 | 16:49 | STOP | CGysUrvV | £7.81 | trail-stop at 0.46x |
 | 18:10 | BUY | An3aFtSM | £17.07 | entry mc $867,102 | +14min |
+| 18:29 | STOP | An3aFtSM | £1.97 | trail-stop at 0.12x |
+| 19:41 | SELL 2x | CTPoyCwk | £9.49 | ladder stage 1 |
+| 19:41 | SELL 5x | CTPoyCwk | £23.71 | ladder stage 2 |
+| 19:49 | BUY | 66yZvYMA | £17.43 | entry mc $227,674 | +10min |
+| 20:03 | SELL 2x | 66yZvYMA | £8.58 | ladder stage 1 |
+| 20:41 | SELL 5x | 66yZvYMA | £21.46 | ladder stage 2 |
+| 21:30 | SELL 10x | CTPoyCwk | £47.43 | ladder stage 3 |
+| 23:01 | SELL 10x | 66yZvYMA | £42.92 | ladder stage 3 |
+| 00:01 | BUY | HG3sZ52N | £19.48 | entry mc $695,689 | +5min |
+| 00:12 | STOP | 66yZvYMA | £21.02 | trail-stop at 4.90x |
+| 00:18 | BUY | 66yZvYMA | £19.51 | entry mc $1,115,179 | +279min |
+| 00:29 | STOP | 66yZvYMA | £8.59 | trail-stop at 0.45x |
+| 00:30 | BUY | 66yZvYMA | £19.28 | entry mc $498,614 | +291min |
+| 00:49 | STOP | 66yZvYMA | £14.97 | trail-stop at 0.79x |
+| 00:51 | BUY | 66yZvYMA | £19.19 | entry mc $393,136 | +311min |
+| 00:59 | STOP | HG3sZ52N | £12.59 | trail-stop at 0.66x |
+| 01:00 | BUY | HG3sZ52N | £19.05 | entry mc $456,368 | +65min |
+| 01:00 | STOP | 66yZvYMA | £5.49 | trail-stop at 0.29x |
+| 01:28 | STOP | HG3sZ52N | £2.68 | trail-stop at 0.14x |
+| 06:27 | BUY | CRJDgvxz | £18.83 | entry mc $384,570 | +11min |
+| 06:58 | SELL 2x | CRJDgvxz | £9.27 | ladder stage 1 |
+| 08:37 | STOP | CRJDgvxz | £27.16 | trail-stop at 1.95x |
+| 08:38 | BUY | CRJDgvxz | £19.18 | entry mc $803,033 | +142min |
+| 10:18 | STOP | CRJDgvxz | £13.85 | trail-stop at 0.73x |
+| 10:19 | BUY | CRJDgvxz | £19.07 | entry mc $588,810 | +243min |
+| 10:58 | STOP | CRJDgvxz | £9.37 | trail-stop at 0.50x |
+| 10:59 | BUY | CRJDgvxz | £18.87 | entry mc $291,926 | +284min |
+| 12:01 | BUY | 7hyY1MeA | £18.48 | entry mc $507,819 | +6min |
+| 12:11 | BUY | 5QjANwhD | £18.11 | entry mc $106,163 | +5min |
+| 12:30 | STOP | 5QjANwhD | £0.39 | trail-stop at 0.02x |
+| 12:31 | STOP | CRJDgvxz | £9.60 | trail-stop at 0.52x |
+| 12:33 | STOP | 7hyY1MeA | £17.32 | trail-stop at 0.95x |
+| 12:37 | BUY | 7hyY1MeA | £18.29 | entry mc $693,099 | +42min |
+| 12:51 | STOP | 7hyY1MeA | £8.95 | trail-stop at 0.50x |
+| 19:01 | BUY | 2UMByb4b | £18.09 | entry mc $242,062 | +5min |
+| 19:09 | SELL 2x | 2UMByb4b | £8.91 | ladder stage 1 |
+| 19:20 | STOP | 2UMByb4b | £14.33 | trail-stop at 1.07x |
+| 19:28 | BUY | 3MXLA9wx | £18.19 | entry mc $871,826 | +12min |
+| 23:01 | STOP | 3MXLA9wx | £15.09 | trail-stop at 0.84x |
+| 23:10 | STOP | CTPoyCwk | £57.44 | trail-stop at 12.11x |
+| 23:11 | BUY | CTPoyCwk | £19.27 | entry mc $17,423,162 | +2823min |
+| 08:22 | BUY | 5mFZZzyU | £18.88 | entry mc $117,100 | +6min |
+| 08:52 | BUY | 6TgAzpPC | £18.50 | entry mc $219,817 | +6min |
+| 08:59 | SELL 2x | 6TgAzpPC | £9.11 | ladder stage 1 |
+| 09:07 | STOP | 6TgAzpPC | £4.43 | trail-stop at 0.32x |
+| 09:50 | SELL 2x | 5mFZZzyU | £9.30 | ladder stage 1 |
+| 14:18 | STOP | 5mFZZzyU | £2.67 | trail-stop at 0.19x |
+| 14:31 | BUY | FLHYf2U2 | £18.63 | entry mc $179,398 | +5min |
+| 14:39 | STOP | FLHYf2U2 | £8.09 | trail-stop at 0.44x |
+| 21:31 | BUY | TRUEq13u | £18.42 | entry mc $215,894 | +6min |
+| 22:18 | SELL 2x | TRUEq13u | £9.07 | ladder stage 1 |
+| 22:31 | STOP | TRUEq13u | £21.49 | trail-stop at 1.58x |
+| 22:36 | BUY | TRUEq13u | £18.65 | entry mc $450,977 | +71min |
+| 23:38 | SELL 2x | TRUEq13u | £9.19 | ladder stage 1 |
+| 00:17 | STOP | TRUEq13u | £20.84 | trail-stop at 1.51x |
+| 00:18 | BUY | TRUEq13u | £18.88 | entry mc $682,279 | +173min |
+| 00:27 | BUY | HGsR3hAw | £18.49 | entry mc $380,359 | +11min |
+| 00:58 | STOP | HGsR3hAw | £3.50 | trail-stop at 0.19x |
+| 02:51 | SELL 2x | TRUEq13u | £9.30 | ladder stage 1 |
+| 03:26 | BUY | 51aaE42Z | £18.37 | entry mc $386,943 | +10min |
+| 04:16 | STOP | 51aaE42Z | £1.77 | trail-stop at 0.10x |
+| 07:18 | STOP | TRUEq13u | £16.13 | trail-stop at 1.16x |
+| 07:19 | BUY | TRUEq13u | £18.36 | entry mc $796,579 | +593min |

@@ -241,6 +241,18 @@ def run_cycle(state, max_audit=12):
                 notes.append(f"behaviour:{b.get('verdict')}({b.get('mode')})")
             except Exception as e:
                 state["seen"][key]["behaviour"] = {"verdict": "SKIP", "mode": "error", "reason": str(e)[:80]}
+        # stage 4: cluster tag (H09/H10) for all Solana tokens — are known
+        # cluster wallets among the first buyers? Independent of audit verdict.
+        if chain == "solana":
+            try:
+                import cluster_tag
+                pc = (snap.get("pair_created") or 0) / 1000 or None
+                ct = cluster_tag.tag(addr, pc, max_pages=4)
+                state["seen"][key]["cluster"] = ct
+                if ct.get("hit"):
+                    notes.append(f"CLUSTER_HIT:{len(ct['hit'])}")
+            except Exception as e:
+                state["seen"][key]["cluster"] = {"error": str(e)[:80]}
         audited += 1
         desc = (t.get("description") or "").replace("\n", " ")[:80]
         lines.append(
@@ -297,15 +309,42 @@ def run_cycle(state, max_audit=12):
                         v["verdict"] = "CAUTION"
                     v.setdefault("flags", []).append(f"TOP10_CONCENTRATED:{t10:.0f}%(late)")
                 backfilled += 1
+    # cluster re-tag (§21 coverage fix): tokens tagged with thin/partial
+    # first-buyer data at detection get ONE re-tag once >=15 min old
+    retagged = 0
+    for k, v in state["seen"].items():
+        if retagged >= 1:
+            break
+        cl = v.get("cluster") or {}
+        if (v.get("chain") == "solana" and v.get("audited") and cl
+                and not cl.get("error") and not cl.get("retagged")
+                and (not cl.get("reached_birth") or (cl.get("first_buyers") or 0) < 5)
+                and not cl.get("hit")
+                and v.get("history")):
+            try:
+                age_min = (now - datetime.fromisoformat(v["history"][0]["t"])).total_seconds() / 60
+            except Exception:
+                continue
+            if age_min >= 15:
+                try:
+                    import cluster_tag
+                    pc = ((v.get("detect") or {}).get("pair_created") or 0) / 1000 or None
+                    ct = cluster_tag.tag(v["addr"], pc)
+                    ct["retagged"] = True
+                    v["cluster"] = ct
+                    retagged += 1
+                except Exception:
+                    pass
     return audited
 
 def main():
     cycles = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     interval = int(sys.argv[2]) if len(sys.argv) > 2 else 120
+    max_audit = int(sys.argv[3]) if len(sys.argv) > 3 else 12
     state = load_state()
     for c in range(cycles):
         state["runs"] += 1
-        n = run_cycle(state)
+        n = run_cycle(state, max_audit=max_audit)
         save_state(state)
         print(f"  cycle done, {n} audited, total tracked={len(state['seen'])}")
         if c < cycles - 1:

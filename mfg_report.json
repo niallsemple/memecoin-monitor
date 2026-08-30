@@ -1,0 +1,70 @@
+{
+  "tokens": 194,
+  "snapshots": 563,
+  "runners": 2,
+  "husks": 3,
+  "grad_pool_needed": 20,
+  "unlabelled": 169,
+  "features": {
+    "plus_300s": {
+      "seed": {
+        "runner": 85.01,
+        "husk": 6.12
+      },
+      "bs_ratio": {
+        "runner": 0.0,
+        "husk": 1.6
+      },
+      "flow_ratio": {
+        "runner": 0.0,
+        "husk": 0.7
+      },
+      "notifs": {
+        "runner": 2.0,
+        "husk": 72
+      },
+      "buy_sol": {
+        "runner": 0.0,
+        "husk": 74.09
+      },
+      "sell_sol": {
+        "runner": 115.01,
+        "husk": 105.88
+      },
+      "mcap_sol": {
+        "runner": 410.88,
+        "husk": 3.35
+      }
+    },
+    "plus_900s": {
+      "seed": {
+        "runner": 85.01,
+        "husk": 6.12
+      },
+      "bs_ratio": {
+        "runner": 0.0,
+        "husk": 1.6
+      },
+      "flow_ratio": {
+        "runner": 0.0,
+        "husk": 0.7
+      },
+      "notifs": {
+        "runner": 2.0,
+        "husk": 72
+      },
+      "buy_sol": {
+        "runner": 0.0,
+        "husk": 74.09
+      },
+      "sell_sol": {
+        "runner": 115.01,
+        "husk": 105.88
+      },
+      "mcap_sol": {
+        "runner": 410.88,
+        "husk": 3.35
+      }
+    }
+  }
+}
