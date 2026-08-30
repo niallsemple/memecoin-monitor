@@ -1,26 +1,26 @@
 {
  "bank_start": 1000.0,
- "cash": 814.6426432199884,
+ "cash": 814.0149051617653,
  "positions": {
-  "solana:EBLUKPgx5FvTUBU6bTJi3aR8XVELSBdC5FiodSWQpump": {
-   "addr": "EBLUKPgx",
-   "entry_mcap": 1608645.0,
-   "entry_min": 3462.8,
-   "size_gbp": 16.69,
-   "peak_mcap": 1706949.0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-08-30T05:59:11.589752+00:00"
-  },
   "solana:TRUEq13uwehY57S1Y62iTxas7ahpFgohc8kScbGNu1h": {
    "addr": "TRUEq13u",
    "entry_mcap": 789190.0,
    "entry_min": 592.1,
    "size_gbp": 16.63,
-   "peak_mcap": 833000.0,
+   "peak_mcap": 1123116.0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-08-30T07:18:19.508858+00:00"
+  },
+  "solana:EBLUKPgx5FvTUBU6bTJi3aR8XVELSBdC5FiodSWQpump": {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 1589027.0,
+   "entry_min": 3584.4,
+   "size_gbp": 16.62,
+   "peak_mcap": 1737435.0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-08-30T08:00:49.580137+00:00"
   }
  },
  "closed": [
@@ -1050,6 +1050,19 @@
    "closed_at": "2026-08-30T07:17:16.819560+00:00",
    "exit_r": 0.855,
    "pnl_gbp": -2.88
+  },
+  {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 1608645.0,
+   "entry_min": 3462.8,
+   "size_gbp": 16.69,
+   "peak_mcap": 1706949.0,
+   "remaining": 0,
+   "realized": 16.239162599921052,
+   "opened": "2026-08-30T05:59:11.589752+00:00",
+   "closed_at": "2026-08-30T07:59:47.201633+00:00",
+   "exit_r": 0.988,
+   "pnl_gbp": -0.7
   }
  ],
  "started": "2026-08-27T06:45:31.100112+00:00",
@@ -1217,6 +1230,7 @@
   "solana:51aaE42ZjxgoihtEKwqqvWt8RMS4YdRWqSFzM7Trpump": "failed_momentum_floor",
   "solana:2GUytGiL7F9S7AZHDBqFCGYxUDYmnPQzqeSss5j6pump": "failed_momentum_floor",
   "solana:BDSsk665JA6Bu9hRqWbdiEYTg7mXHJbWERTEwYTXpump": "failed_momentum_floor",
-  "solana:8Pez2sy1p5wJHmR7RpP1yNuP1C8k1iat5jZzKAwjpump": "failed_momentum_floor"
+  "solana:8Pez2sy1p5wJHmR7RpP1yNuP1C8k1iat5jZzKAwjpump": "failed_momentum_floor",
+  "solana:4z8MysfAe44rypE2aBcAytVvny3WVXyJCStfFJSvpump": "failed_momentum_floor"
  }
 }

@@ -2665,3 +2665,24 @@
 | 07:26 | robinhood | `0xe3f833…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
 | 07:26 | solana | `EEjxzstu…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$14,740 | name=The Heroic Teacher symbol=Rajendra; contract:clean; rugcheck_score=1 lpLocked=0%; top |  |
 | 07:26 | solana | `5dc7xmKW…` | CAUTION | RC_WARN:Copycat token | liq=$25,706 mc=$97,629 | goplus:unavailable; rugcheck_score=29 lpLocked=100%; top10_hold=17.5% | popcat is back to rule Solana with peak meme energy, viral vibes, and nonstop ca |
+| 07:56 | solana | `GtyKVPZ3…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$12,176 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=68.8% | This woodchuck is going GIGA viral 😭   Bro gets pressed by TWO dogs and doesn’t  |
+| 07:56 | solana | `4z8MysfA…` | PASS | — | liq=$28,719 mc=$122,530 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=18.5%; behaviour:SKIP(heliu | Stacy got horns. The market got bullish. 🐂💅 |
+| 07:56 | robinhood | `0x563d3f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6 mc=$3,641 | chain:robinhood no-audit-adapter | Ignite PAD: The First NFT Launchpad on Robinhood Chain  Describe it. We run the  |
+| 07:56 | solana | `77aeCWPf…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$17,407 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=53.7% | just goop being goop |
+| 07:56 | robinhood | `0xdef91c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$132,435 mc=$148,792 | chain:robinhood no-audit-adapter | FAFO |
+| 07:56 | solana | `BvFAJkd1…` | FAIL | TOP10_HEAVY:94% | liq=$0 mc=$4,648 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=93.6% |  |
+| 08:06 | bsc | `0x75192b…` | PASS | — | liq=$26,234 mc=$74,115 | holders=344; buy_tax=0.0099 sell_tax=0.0099; contract:clean | An Intern |
+| 08:06 | robinhood | `0x4D1002…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,320 mc=$43,605 | chain:robinhood no-audit-adapter | $NVDU is very smort tecnology coin. Name is almost NVIDIA but brain miss one upd |
+| 08:06 | robinhood | `0xCAEc97…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,751 mc=$23,233 | chain:robinhood no-audit-adapter | OG Pons Cat |
+| 08:06 | robinhood | `0xCFA60c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$54,526 mc=$90,784 | chain:robinhood no-audit-adapter | Copper Age is coming.   Hold the metal.  Become the myth. |
+| 08:06 | solana | `BBguCvdV…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$15,493 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=61.7% |  |
+| 08:06 | robinhood | `0x86685A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$80,078 mc=$110,771 | chain:robinhood no-audit-adapter | TickerPuff ($TICK) is an original meme token built around the theme of Stocks ×  |
+| 08:16 | robinhood | `0xE1E8B8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$126,621 mc=$132,263 | chain:robinhood no-audit-adapter | Zipper |
+| 08:16 | solana | `5cdntRJf…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$4,786 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=98.3% |  |
+| 08:16 | robinhood | `0x7a83dc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,506 mc=$54,893 | chain:robinhood no-audit-adapter | ⛏️ A browser-based mining game built on RH ETH.  Build your rig, upgrade your se |
+| 08:16 | robinhood | `0x034B1b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,740 mc=$16,363 | chain:robinhood no-audit-adapter | Ponser |
+| 08:16 | solana | `GPxodfsW…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$25,019 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=60.0% |  |
+| 08:16 | solana | `GGW7Rvqs…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$21,246 mc=$70,685 | goplus:unavailable; rugcheck_score=1 lpLocked=85.04636011841764%; top10_hold=39.8% |  |
+| 08:26 | robinhood | `0xD7fd19…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10 mc=$18,599 | chain:robinhood no-audit-adapter | Eight hundred years old, no job, no plan, no explanation  Welcome to the wizard  |
+| 08:26 | robinhood | `0x833153…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$88,731 mc=$253,995 | chain:robinhood no-audit-adapter | The incubator for hooked markets. |
+| 08:26 | solana | `BVqXfpZP…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$14,457 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=61.1% | Solana Summer is here & with it comes a Cat... All fees reserved for neko_mamire |

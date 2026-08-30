@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 503.9488357216018,
+ "cash": 510.27898685645334,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -18,10 +18,10 @@
    "entry_mcap": 451892.0,
    "entry_min": 10.3,
    "size_gbp": 13.45,
-   "peak_mcap": 2207503.0,
-   "stage": 1,
-   "remaining": 0.75,
-   "realized": 6.624124999999999,
+   "peak_mcap": 2264567.0,
+   "stage": 2,
+   "remaining": 0.5,
+   "realized": 23.184437499999998,
    "opened": "2026-08-27T15:39:24.640693+00:00"
   },
   "solana:B5YTUMqSnwzztWHWmzAzHApeRy6cuGEx49Bidt4kuH8w": {
@@ -62,11 +62,22 @@
    "entry_mcap": 796579.0,
    "entry_min": 593.2,
    "size_gbp": 10.29,
-   "peak_mcap": 833000.0,
+   "peak_mcap": 1123116.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-08-30T07:19:23.291247+00:00"
+  },
+  "solana:4z8MysfAe44rypE2aBcAytVvny3WVXyJCStfFJSvpump": {
+   "addr": "4z8MysfA",
+   "entry_mcap": 130886.0,
+   "entry_min": 5.4,
+   "size_gbp": 10.08,
+   "peak_mcap": 130886.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-08-30T08:01:52.224630+00:00"
   }
  },
  "closed": [

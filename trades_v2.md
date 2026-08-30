@@ -190,3 +190,5 @@
 | 04:16 | STOP | 51aaE42Z | £0.99 | trail-stop at 0.10x |
 | 07:18 | STOP | TRUEq13u | £9.49 | trail-stop at 1.16x |
 | 07:19 | BUY | TRUEq13u | £10.29 | entry mc $796,579 | +593min |
+| 08:01 | BUY | 4z8MysfA | £10.08 | entry mc $130,886 | +5min |
+| 08:08 | SELL 5x | DVxaAXi3 | £16.56 | ladder stage 2 |

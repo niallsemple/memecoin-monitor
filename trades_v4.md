@@ -162,3 +162,5 @@
 | 05:59 | BUY | EBLUKPgx | £16.69 | entry mc $1,608,645 | +3463min @ 4.66x detect |
 | 07:17 | TIME | TRUEq13u | £14.05 | time-stop at 0.86x after 139min |
 | 07:18 | BUY | TRUEq13u | £16.63 | entry mc $789,190 | +592min @ 9.40x detect |
+| 07:59 | TIME | EBLUKPgx | £16.24 | time-stop at 0.99x after 121min |
+| 08:00 | BUY | EBLUKPgx | £16.62 | entry mc $1,589,027 | +3584min @ 4.61x detect |
