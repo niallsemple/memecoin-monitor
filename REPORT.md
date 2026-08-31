@@ -2645,3 +2645,24 @@ Instead: rpc() now tries keyed endpoints FIRST from MON/rpc_keys.json
 URLs with keys), then Helius, then public RPCs; rotation modulo fixed
 for the longer list. File read fresh per call — owner drops keys in, no
 restart, holder snapshots resume next cycle. py_compile clean.
+
+## §79y — First live nm_abort fire: 2eQKEM +38.9% (2026-09-01 ~00:24)
+
+The near-miss abort (amendment s60nm5) fired live for the first time.
+
+- **2eQKEM**: entered on strict gate, ran to peak 1.384x, never touched
+  1.5x within the 5-minute near-miss clock, exited at next trade:
+  **ret +38.9%, exit_reason=nm_abort, age 38.8m**.
+- This is the exact pattern the amendment was written for (grind toward
+  1.30-1.40x without reaching the 1.5x freeroll, then fade). In the
+  pre-amendment ruleset this position would have ridden back toward the
+  trail; instead +38.9% banked. Matches the in-sample replay behavior
+  (§79s: E6gQ −100% -> +32.4% conversion).
+- Gate state after the close: 13/30 committed, exp −0.8% (recovered from
+  −29.4% trough over eight checks), bleeders 1/1 (GsM2Nq insider dump,
+  §79w — still the only uncatchable loss class, holder-gate defense
+  pending RPC keys).
+- Two runners remain open at the write: 4n22Si +25.6% (peak 1.256x) and
+  4wguFY +25.9% (peak 1.259x), both approaching the 1.30x near-miss zone.
+- Also notable: entry pace surged this hour (16 fresh entries total,
+  ~7 in the last 2h) — maturity estimate pulls earlier if sustained.

@@ -1,26 +1,16 @@
 {
  "bank_start": 1000.0,
- "cash": 739.1100955179055,
+ "cash": 747.4635455763158,
  "positions": {
   "solana:EBLUKPgx5FvTUBU6bTJi3aR8XVELSBdC5FiodSWQpump": {
    "addr": "EBLUKPgx",
-   "entry_mcap": 919321.0,
-   "entry_min": 5700.6,
-   "size_gbp": 15.4,
-   "peak_mcap": 919321.0,
+   "entry_mcap": 961395.0,
+   "entry_min": 5952.3,
+   "size_gbp": 15.26,
+   "peak_mcap": 961395.0,
    "remaining": 1.0,
    "realized": 0.0,
-   "opened": "2026-08-31T19:16:59.096886+00:00"
-  },
-  "solana:9TyMG9GkQncEqH3mvTwphkcTYSXtJYHGuCUrXsKcpump": {
-   "addr": "9TyMG9Gk",
-   "entry_mcap": 135747.0,
-   "entry_min": 10.7,
-   "size_gbp": 15.09,
-   "peak_mcap": 139878.0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-08-31T19:16:59.096886+00:00"
+   "opened": "2026-08-31T23:28:42.068459+00:00"
   }
  },
  "closed": [
@@ -1583,6 +1573,45 @@
    "closed_at": "2026-08-31T19:10:12.053582+00:00",
    "exit_r": 1.019,
    "pnl_gbp": -0.17
+  },
+  {
+   "addr": "9TyMG9Gk",
+   "entry_mcap": 135747.0,
+   "entry_min": 10.7,
+   "size_gbp": 15.09,
+   "peak_mcap": 139878.0,
+   "remaining": 0,
+   "realized": 8.441097351322682,
+   "opened": "2026-08-31T19:16:59.096886+00:00",
+   "closed_at": "2026-08-31T20:26:48.287800+00:00",
+   "exit_r": 0.568,
+   "pnl_gbp": -6.88
+  },
+  {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 919321.0,
+   "entry_min": 5700.6,
+   "size_gbp": 15.4,
+   "peak_mcap": 941443.0,
+   "remaining": 0,
+   "realized": 15.258810704857172,
+   "opened": "2026-08-31T19:16:59.096886+00:00",
+   "closed_at": "2026-08-31T21:26:28.339988+00:00",
+   "exit_r": 1.006,
+   "pnl_gbp": -0.37
+  },
+  {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 924764.0,
+   "entry_min": 5831.1,
+   "size_gbp": 15.26,
+   "peak_mcap": 961395.0,
+   "remaining": 0,
+   "realized": 15.626499717225153,
+   "opened": "2026-08-31T21:27:30.136150+00:00",
+   "closed_at": "2026-08-31T23:27:40.251865+00:00",
+   "exit_r": 1.04,
+   "pnl_gbp": 0.14
   }
  ],
  "started": "2026-08-27T06:45:31.100112+00:00",
@@ -1777,6 +1806,9 @@
   "solana:5WRzWBPKEstteDR7beaddtdJRThWVF9oCJyT7QN7pump": "failed_momentum_floor",
   "solana:TRUEq13uwehY57S1Y62iTxas7ahpFgohc8kScbGNu1h": "failed_momentum_floor",
   "solana:9CQ7J8R5Qf1v3LoV5bnYfcx4u5PG4WBRWNrJ9TVrpump": "failed_momentum_floor",
-  "solana:3C6nz382qU71aDiEvk5xsmJrzd5Ey6iNXdpTgrjVpump": "failed_momentum_floor"
+  "solana:3C6nz382qU71aDiEvk5xsmJrzd5Ey6iNXdpTgrjVpump": "failed_momentum_floor",
+  "solana:7R9jy4cWTt65qT6Qwzkg8bJoYfFZT29Kp88uF2Pppump": "failed_momentum_floor",
+  "solana:9TyMG9GkQncEqH3mvTwphkcTYSXtJYHGuCUrXsKcpump": "failed_momentum_floor",
+  "solana:BGfaJ2H2yi8wgmnmHpAyPMj7nGg8JkbSCvwHTeG6pump": "failed_momentum_floor"
  }
 }

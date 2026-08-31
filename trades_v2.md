@@ -240,3 +240,4 @@
 | 18:47 | STOP | TRUEq13u | £4.50 | trail-stop at 0.53x |
 | 19:16 | BUY | 3C6nz382 | £8.22 | entry mc $410,044 | +11min |
 | 19:16 | BUY | 9TyMG9Gk | £8.05 | entry mc $135,747 | +11min |
+| 20:56 | STOP | 9TyMG9Gk | £0.47 | trail-stop at 0.06x |

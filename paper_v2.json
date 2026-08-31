@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 394.25632909683657,
+ "cash": 394.7263702377089,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -73,18 +73,7 @@
    "entry_mcap": 410044.0,
    "entry_min": 10.7,
    "size_gbp": 8.22,
-   "peak_mcap": 415190.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-08-31T19:16:58.987457+00:00"
-  },
-  "solana:9TyMG9GkQncEqH3mvTwphkcTYSXtJYHGuCUrXsKcpump": {
-   "addr": "9TyMG9Gk",
-   "entry_mcap": 135747.0,
-   "entry_min": 10.7,
-   "size_gbp": 8.05,
-   "peak_mcap": 139878.0,
+   "peak_mcap": 708660.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
@@ -1533,6 +1522,20 @@
    "closed_at": "2026-08-31T18:47:43.822918+00:00",
    "exit_r": 0.532,
    "pnl_gbp": -4.21
+  },
+  {
+   "addr": "9TyMG9Gk",
+   "entry_mcap": 135747.0,
+   "entry_min": 10.7,
+   "size_gbp": 8.05,
+   "peak_mcap": 139878.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.4700411408723582,
+   "opened": "2026-08-31T19:16:58.987457+00:00",
+   "closed_at": "2026-08-31T20:56:55.378820+00:00",
+   "exit_r": 0.059,
+   "pnl_gbp": -7.7
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -1721,6 +1724,9 @@
   "solana:HgWZ9faEs7QMugQDCN6o8nxnWPnfimPFzHgvQMoWpump": "failed_momentum_floor",
   "solana:5WRzWBPKEstteDR7beaddtdJRThWVF9oCJyT7QN7pump": "failed_momentum_floor",
   "solana:9CQ7J8R5Qf1v3LoV5bnYfcx4u5PG4WBRWNrJ9TVrpump": "failed_momentum_floor",
-  "solana:TRUEq13uwehY57S1Y62iTxas7ahpFgohc8kScbGNu1h": "failed_momentum_floor"
+  "solana:TRUEq13uwehY57S1Y62iTxas7ahpFgohc8kScbGNu1h": "failed_momentum_floor",
+  "solana:7R9jy4cWTt65qT6Qwzkg8bJoYfFZT29Kp88uF2Pppump": "failed_momentum_floor",
+  "solana:9TyMG9GkQncEqH3mvTwphkcTYSXtJYHGuCUrXsKcpump": "failed_momentum_floor",
+  "solana:BGfaJ2H2yi8wgmnmHpAyPMj7nGg8JkbSCvwHTeG6pump": "failed_momentum_floor"
  }
 }

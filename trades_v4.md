@@ -244,3 +244,8 @@
 | 19:10 | TIME | EBLUKPgx | £15.46 | time-stop at 1.02x after 121min |
 | 19:16 | BUY | EBLUKPgx | £15.40 | entry mc $919,321 | +5701min @ 2.67x detect |
 | 19:16 | BUY | 9TyMG9Gk | £15.09 | entry mc $135,747 | +11min @ 1.67x detect |
+| 20:26 | STOP | 9TyMG9Gk | £8.44 | trail-stop at 0.57x |
+| 21:26 | TIME | EBLUKPgx | £15.26 | time-stop at 1.01x after 129min |
+| 21:27 | BUY | EBLUKPgx | £15.26 | entry mc $924,764 | +5831min @ 2.68x detect |
+| 23:27 | TIME | EBLUKPgx | £15.63 | time-stop at 1.04x after 120min |
+| 23:28 | BUY | EBLUKPgx | £15.26 | entry mc $961,395 | +5952min @ 2.79x detect |
