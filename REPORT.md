@@ -2494,3 +2494,6 @@ Remaining fix candidates for the Sep 1 kill-or-fix review: (1) holder-concentrat
 
 ## §79q — Time-of-day filter: NULL (2026-08-31 ~15:40 local)
 Bleeder entry hours: 10:12 and 14:59 local — 5 hours apart, no clustering. Entry-hour distribution of all 32 trades spans 01:00-23:00 with clean hours on both sides of both bleeders. n=2 bleeders can't support any time filter regardless. Time-of-day is DEAD as a fix. Sep 1 review narrows to: holder-concentration gate (needs RPC + forward data) vs KILL.
+
+## §79r — Drought breaks with a near-miss loser; exp ≈ 0 (2026-08-31 16:35 local)
+PFKsPtdJ entered ~16:06, peaked 1.387x (missed freeroll by 0.11x — same 1.39x near-miss ceiling as E6gQ), trailed out −31.4% in 9 min. Exit ladder WORKED (caught −31% instead of −100%), but the entry was a trap. s60: n=34, exp +0.08%, losses 3, bleeders 2. Intraday expectancy trajectory: +7.90% → +3.86% → +0.97% → +0.08% — the regime DECAYED through the US window. Note the pattern: afternoon entries are getting farmed — peak-then-dump under the freeroll line, or instant harvest. One more material loss flips expectancy negative. Sep 1 review leaning KILL unless holder-gate data (still RPC-dark) contradicts.

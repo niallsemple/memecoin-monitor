@@ -93,3 +93,5 @@
 | 10:28 | BUY | TRUEq13u | £19.81 | entry mc $248,208 | +2223min @ 2.96x detect |
 | 12:29 | TIME | TRUEq13u | £14.34 | time-stop at 0.74x after 120min |
 | 12:30 | BUY | TRUEq13u | £19.70 | entry mc $172,547 | +2344min @ 2.06x detect |
+| 15:06 | TIME | TRUEq13u | £15.46 | time-stop at 0.80x after 157min |
+| 15:07 | BUY | TRUEq13u | £19.60 | entry mc $153,201 | +2502min @ 1.83x detect |
