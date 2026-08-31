@@ -1,0 +1,345 @@
+{
+ "updated": "2026-08-31T06:44:22Z",
+ "cutoff": 1788060000,
+ "post_fix_entries": 26,
+ "open": 4,
+ "closed": 22,
+ "wins": 17,
+ "win_rate": 0.7727,
+ "expectancy": -0.10053,
+ "backtest_exp": 0.0575,
+ "exit_reasons": {
+  "abort15": 16,
+  "trail": 6
+ },
+ "gate_n": 30,
+ "gate_progress": "23/30",
+ "gate_pass": false,
+ "committed_n": 23,
+ "committed_exp": -0.09072,
+ "freerolled_open": 1,
+ "trades": [
+  {
+   "mint": "nmEbbehHkkUygKs3fMmmQgo2qpTXxWCnHQ8jiSMpump",
+   "entry_t": 1788127826.52636,
+   "ret": 0.0302,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6qBmNVeGMzPd9xee9fd4cWnzvTen4pGzYNBLXPcrpump",
+   "entry_t": 1788129064.797143,
+   "ret": 0.0763,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "c8bdKqmNcHx3DuQTuqqcDGEtMmy3pTDDAMg9Q4epump",
+   "entry_t": 1788128232.8059351,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "5qPPiqGdbVQ1iotAGVbmMtgPGT4TLa5ktK7vshFopump",
+   "entry_t": 1788128091.292681,
+   "ret": 0.0213,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6nrCD4L8GEqgXMa4fMHQjBnv9XWfyPwsHPuyRY8npump",
+   "entry_t": 1788127738.532324,
+   "ret": -0.0818,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "B2fTPiFwhL7JAiaYbbEfYyzvpeJz5JcmFTiSdjB7pump",
+   "entry_t": 1788134902.9477718,
+   "ret": 0.0531,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "jCPNKECQ9sM1GMsiNrR1dpEZACAmDSbAuWHaGQZpump",
+   "entry_t": 1788134902.9477718,
+   "ret": 0.1306,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "5JLCmdSdN3bpV5RYaUPCmbcgSUgJrFsa4CfdnMwHpump",
+   "entry_t": 1788137112.5441332,
+   "ret": -1.0,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "CHPsKyiHShUsuzqEhCX5kspEqwBmJg56eGk2SKCUpump",
+   "entry_t": 1788134902.9477718,
+   "ret": 0.1317,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "rVhpwsohwR3j6euMWmAiJLkhaqFJF163hoBcSWJpump",
+   "entry_t": 1788134963.1813,
+   "ret": 0.1288,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "cA1Jf89mL3eVp2HreeshS3KbLEkyCv8MxvEBw5vpump",
+   "entry_t": 1788134943.0644429,
+   "ret": 0.1683,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "2oFGsDGDEbFHcDWd6Qa78ptoTo6jqNxaKas5aYwgpump",
+   "entry_t": 1788134923.064576,
+   "ret": 0.9561,
+   "exit": null,
+   "status": "open"
+  },
+  {
+   "mint": "E1U1WVN8vimpTxJUw5hXaQEX5SUvq4sN9iZZndDpump",
+   "entry_t": 1788135083.306905,
+   "ret": -1.0,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "AP39ZQy4Smq5Tg65NW41ugvtirQFwSJBDvrmdTsQpump",
+   "entry_t": 1788137286.881589,
+   "ret": 0.0377,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "3yF1D2iXWtAXu1nPCFJzpwGm2evT9B33XYhr7CyUpump",
+   "entry_t": 1788142729.408816,
+   "ret": -0.8785,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "7HmZeXvupTP1bP8yayoDzWF6o1QrZGmWqPUKjJjpump",
+   "entry_t": 1788142181.0379899,
+   "ret": 0.0472,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "7KmwWYd7Xw6ZC3KCegr4d5YA3mQ9kvxWv9AvYuTTpump",
+   "entry_t": 1788144316.5386539,
+   "ret": 0.0416,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "BTJv2pWFnPWVefwJG4ixzPi1xK9zSjNZWcpvkrMdpump",
+   "entry_t": 1788143015.477055,
+   "ret": 0.1274,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "oFxvzBiThY4Gq45egbAHnyYgxWyNwsBNvwqx4ogpump",
+   "entry_t": 1788150841.239668,
+   "ret": 0.1326,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "2G1jq9KpK254ViiSuNiuPxM3X5LoV86xHpqiNHX2pump",
+   "entry_t": 1788149368.704884,
+   "ret": 0.3975,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "ZjnXLgvsDH6PcKJAqC9psShMvWv57gcLQCcBhgEpump",
+   "entry_t": 1788150823.6611788,
+   "ret": 0.0791,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "8WnaNq61xR2HJ77PtjQ5JxNaacFxBULADyprPLUppump",
+   "entry_t": 1788158058.332313,
+   "ret": 0.0592,
+   "exit": null,
+   "status": "open"
+  },
+  {
+   "mint": "4cy86hpKun5CQzR3864KDPzswUDWuQAX2c2kAiBvpump",
+   "entry_t": 1788158164.6591082,
+   "ret": 0.0348,
+   "exit": null,
+   "status": "open"
+  },
+  {
+   "mint": "FwEx5QdsZSmfbaNLoM4HFqAAQoBbQwgyo68ANznupump",
+   "entry_t": 1788156674.767875,
+   "ret": 0.0771,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "JzBaT6QSVcDo8oBpz6VucMPzxZo3b8rvFfJKdNKpump",
+   "entry_t": 1788157052.18373,
+   "ret": 0.0682,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "3JSy9UvhhbGsDibJdgaNyzBNtLKxnTHQk8xUzFB7pump",
+   "entry_t": 1788156941.93106,
+   "ret": 0.1611,
+   "exit": null,
+   "status": "open"
+  }
+ ],
+ "universe_triggerable": 28,
+ "universe_runners_1p5x": 6,
+ "gate_scorer": "mfg_paper_trades_h108.jsonl",
+ "shadows": {
+  "mfg_paper_trades_a15.jsonl": {
+   "closed": 24,
+   "exp": -0.03413
+  },
+  "mfg_paper_trades.jsonl": {
+   "closed": 20,
+   "exp": -0.28007
+  },
+  "mfg_paper_trades_s60.jsonl": {
+   "committed_n": 16,
+   "committed_exp": 0.08257,
+   "closed": 15
+  }
+ },
+ "universe": [
+  {
+   "mint": "2oFGsDGDEbFHcDWd6Qa78ptoTo6jqNxaKas5aYwgpump",
+   "n_trades": 592,
+   "entry_mcap": 1011006.9,
+   "post_trigger_peak": 3.313
+  },
+  {
+   "mint": "jCPNKECQ9sM1GMsiNrR1dpEZACAmDSbAuWHaGQZpump",
+   "n_trades": 657,
+   "entry_mcap": 713655.0,
+   "post_trigger_peak": 3.101
+  },
+  {
+   "mint": "2G1jq9KpK254ViiSuNiuPxM3X5LoV86xHpqiNHX2pump",
+   "n_trades": 170,
+   "entry_mcap": 2487.1,
+   "post_trigger_peak": 3.022
+  },
+  {
+   "mint": "BTJv2pWFnPWVefwJG4ixzPi1xK9zSjNZWcpvkrMdpump",
+   "n_trades": 350,
+   "entry_mcap": 68337.0,
+   "post_trigger_peak": 1.772
+  },
+  {
+   "mint": "oFxvzBiThY4Gq45egbAHnyYgxWyNwsBNvwqx4ogpump",
+   "n_trades": 353,
+   "entry_mcap": 6791.1,
+   "post_trigger_peak": 1.594
+  },
+  {
+   "mint": "CHPsKyiHShUsuzqEhCX5kspEqwBmJg56eGk2SKCUpump",
+   "n_trades": 96,
+   "entry_mcap": 903033.5,
+   "post_trigger_peak": 1.584
+  },
+  {
+   "mint": "B2fTPiFwhL7JAiaYbbEfYyzvpeJz5JcmFTiSdjB7pump",
+   "n_trades": 235,
+   "entry_mcap": 2162790.3,
+   "post_trigger_peak": 1.401
+  },
+  {
+   "mint": "5JLCmdSdN3bpV5RYaUPCmbcgSUgJrFsa4CfdnMwHpump",
+   "n_trades": 141,
+   "entry_mcap": 7198.2,
+   "post_trigger_peak": 1.319
+  },
+  {
+   "mint": "7HmZeXvupTP1bP8yayoDzWF6o1QrZGmWqPUKjJjpump",
+   "n_trades": 277,
+   "entry_mcap": 1680796.1,
+   "post_trigger_peak": 1.284
+  },
+  {
+   "mint": "6nrCD4L8GEqgXMa4fMHQjBnv9XWfyPwsHPuyRY8npump",
+   "n_trades": 219,
+   "entry_mcap": 3758.6,
+   "post_trigger_peak": 1.259
+  },
+  {
+   "mint": "rVhpwsohwR3j6euMWmAiJLkhaqFJF163hoBcSWJpump",
+   "n_trades": 144,
+   "entry_mcap": 1142452.6,
+   "post_trigger_peak": 1.256
+  },
+  {
+   "mint": "ZjnXLgvsDH6PcKJAqC9psShMvWv57gcLQCcBhgEpump",
+   "n_trades": 139,
+   "entry_mcap": 7496.9,
+   "post_trigger_peak": 1.254
+  },
+  {
+   "mint": "nmEbbehHkkUygKs3fMmmQgo2qpTXxWCnHQ8jiSMpump",
+   "n_trades": 256,
+   "entry_mcap": 113335.1,
+   "post_trigger_peak": 1.247
+  },
+  {
+   "mint": "cA1Jf89mL3eVp2HreeshS3KbLEkyCv8MxvEBw5vpump",
+   "n_trades": 102,
+   "entry_mcap": 1601534.6,
+   "post_trigger_peak": 1.235
+  },
+  {
+   "mint": "5qPPiqGdbVQ1iotAGVbmMtgPGT4TLa5ktK7vshFopump",
+   "n_trades": 253,
+   "entry_mcap": 258809.0,
+   "post_trigger_peak": 1.201
+  },
+  {
+   "mint": "FwEx5QdsZSmfbaNLoM4HFqAAQoBbQwgyo68ANznupump",
+   "n_trades": 108,
+   "entry_mcap": 678077.8,
+   "post_trigger_peak": 1.172
+  },
+  {
+   "mint": "3yF1D2iXWtAXu1nPCFJzpwGm2evT9B33XYhr7CyUpump",
+   "n_trades": 174,
+   "entry_mcap": 1116.6,
+   "post_trigger_peak": 1.169
+  },
+  {
+   "mint": "3JSy9UvhhbGsDibJdgaNyzBNtLKxnTHQk8xUzFB7pump",
+   "n_trades": 99,
+   "entry_mcap": 69026.2,
+   "post_trigger_peak": 1.165
+  },
+  {
+   "mint": "AP39ZQy4Smq5Tg65NW41ugvtirQFwSJBDvrmdTsQpump",
+   "n_trades": 169,
+   "entry_mcap": 224895.4,
+   "post_trigger_peak": 1.145
+  },
+  {
+   "mint": "JzBaT6QSVcDo8oBpz6VucMPzxZo3b8rvFfJKdNKpump",
+   "n_trades": 108,
+   "entry_mcap": 1187920.1,
+   "post_trigger_peak": 1.123
+  }
+ ]
+}

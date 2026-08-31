@@ -1,0 +1,6 @@
+{"name": "CHIP\ud83e\ude99 / WBNB", "pair": "0x5600a74e3feadb687787d60289b53290ddc7a1ef", "entry_t": 1788114877.619825, "exit_t": 1788117252.0624828, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3381.0, "hold_min": 39.6}
+{"name": "SKYAI / WBNB", "pair": "0x7ef813ab37b4b8fedffa14cf53e43ef628537276", "entry_t": 1788115085.68821, "exit_t": 1788117252.0624828, "ret": 0.8627, "exit": "abort", "entry_flow_usd": 3658.0, "hold_min": 36.1}
+{"name": "KING / WBNB", "pair": "0x87bc038065b58e24fc95b39561361348ec418dce", "entry_t": 1788115225.844509, "exit_t": 1788117252.0624828, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3263.0, "hold_min": 33.8}
+{"name": "MINI / WBNB", "pair": "0xbb9537052504f6a3b4f51e3622fd9d5e17731e93", "entry_t": 1788114787.5093708, "exit_t": 1788117252.0624828, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3060.0, "hold_min": 41.1}
+{"name": "FIST / WBNB", "pair": "0xdd0f1b3f208b549307053e42810b312c81cd5a0c", "entry_t": 1788144698.34917, "exit_t": 1788148310.7784152, "ret": 0.8279, "exit": "abort", "entry_flow_usd": 3387.0, "hold_min": 60.2}
+{"name": "\u65fa\u8d22 / USDT", "pair": "0x8d3b00b5972d755ee8d7b9faeeed4f9c19e40275", "entry_t": 1788148345.020832, "exit_t": 1788156723.688687, "ret": 4.958, "exit": "tstop", "entry_flow_usd": 3384.0, "hold_min": 139.6}

@@ -1847,3 +1847,523 @@ Important correction to §57b: the early "+37%/+38% winners" (GPTC, CLAYMO) were
 Current close-based board: 10 open, 0 free-rolls, all within ±17%; time-stops land over the next 1-2h. BAD/WBNB (bsc) the only one marking up (+17%, peak 1.2x close).
 
 Solana side: pool-slot fix working — first NEW paper position (2nrqixJQ) entered automatically; closed book steady at +8%/trade, 7/9.
+
+## §58 — Full status: is there a positive-ROI model yet? (2026-08-30 ~15:00 UTC)
+
+**Solana (trade-level paper, n=11 closed): −1%/trade, 8/11 wins.** The +8% at n=9 did not hold: new closes were +2% and −79%. The −79% (FpVNDL9E) is the instructive one: trailing stop set at 50% of a 1.1x peak (=0.55x) but the dump GAPPED through it between trades — fill at 0.21x. Thin-pool gap risk, not modelled by mark-price exits. Open book: +45% (FNkG, peak 1.4x near free-roll) and +19% (64Lv).
+
+**Cross-chain (hourly marks, n=37 closed): −24%/trade, 1/37 wins.** Hourly cadence cannot run the exit stack: dumps complete between marks (BAD/WBNB was +17% at evening mark, −100% by morning; CLAYMO, MSFT, 幸运资本, CM, SNOONINU, KOBRA, BOUNTY, UNIFART all −100%). ~20 of 37 never traded post-detection (dead on arrival, time-stop at entry ≈ +0%). Only TRUMPSTACY/SOL free-rolled (+37%, peak 2.3x).
+
+**Verdict: NO positive-ROI model yet.** Detection works (multi-chain, calibrated). The exit stack works mechanically but (a) Solana expectancy is breakeven at n=11 with gap risk unmodelled, (b) cross-chain data cadence is too coarse to execute the stack — pattern confirmed, edge not tradeable via hourly marks.
+
+Paths that could change the answer: (1) Solana n≥30 with gap-adjusted exits (trail on OBSERVED trade prices with slippage haircut; skip campaigns peaking <1.2x early); (2) EVM trade-level listeners (one websocket log-sub per chain to router/pool events) to give Base/BSC/ETH the same precision as Solana — the real build if cross-chain is wanted; (3) accept Solana-only precision and concentrate sample there.
+
+## §59 — Realistic fills + abort rule: the honest model (2026-08-30 ~18:30 UTC)
+
+Rebuilt mfg_live_paper.py to score every exit at the NEXT trade's price (gap-inclusive), not the trigger mark. Mark vs realistic on n=13: −1% vs −2% — the mark model was honest on average (mean gap mult 0.90) but hides a fat tail (FpVNDL9E gapped 0.41: −79% mark → −91% real).
+
+Parameter sweep with realistic fills (13 triggered tokens):
+
+| config | mean | wins |
+|---|---|---|
+| T1.5 f75, trail .50, ts120 (§56e) | +4% | 10/13 |
+| trail .65 / .70 | +2/+3% | 9/13 |
+| **+ abort <1.15x @30min** | **+6%** | **11/13** |
+| abort @45m + ts60 | +0% | 9/13 |
+| post-FR trail width .5→.2 / none | +2..+6% | 11/13 (width irrelevant this sample) |
+
+Best config: E25 entry, free-roll 75% at 1.5x, trail 50% of peak, **abort at 30 min if below 1.15x**, time-stop 120 min. The abort rule neutralized the gap-dump tail: FpVNDL9E −91% → +8% (exited near entry before the dump). Worst remaining losers: −48%/−43%.
+
+Expectancy +6%/trade at n=13, realistic fills. Positive but thin; gate remains n≥30 closed under this exact config before any real-money discussion. Deployed to tracker automation (paper_score v2) so forward validation tracks THIS config.
+
+## §60 — BSC precision listener live: Multicall3 reserve watcher (2026-08-30 ~19:00 UTC)
+
+Public BSC RPCs refuse ALL eth_getLogs (even 20-block single-pair ranges), so trade-level log listening is dead on free infrastructure. Replacement: poll getReserves() for every qualified pool in ONE Multicall3 tryAggregate(false, calls) eth_call per ~5s cycle. Verified: 101/101 V2-style pools readable; V4/unknown-quote pools (QQQB etc.) detected via token0/token1 probing and excluded (their USD flow was garbage). Live BNB/USD from canonical WBNB/USDT pair each cycle (~$700) makes flow thresholds USD-denominated like Solana E25.
+
+Files: bsc_watcher.py (single poll), bsc_watch_loop.py (19-min window loop, ~230 cycles), bsc_paper.py (§59 stack scorer, incremental file-offset consumption). Entry = cumulative net quote inflow ≥ $3k within 30 min of first activity; exits = free-roll 75% @1.5x, abort <1.15x @30m, trail 50% peak, tstop 120m, next-poll fills.
+
+Deployed as cron local_conversation automation_2c4eec3e (minutes 7/27/47, Europe/London, ~95% time coverage). First verification run succeeded (26.8 min, 33k flow rows): **4 paper entries immediately** (CHIP🪙, SKYAI, KING, MINI — all WBNB-quoted, $3.0–3.7k inflow) but ALL at peak 1.00x at entry+20-27m → inflow without price lift; abort rule likely decides them next cycle. If marginal entries keep aborting at ~1.0x, the $3k threshold is catching wash/latency flow, not campaigns — raise threshold or require price confirmation (mult ≥ 1.05 at entry) after n≈10 BSC closes.
+
+Cross-chain precision gap from §58 is now closed for BSC. Base/ETH need the same Multicall3 treatment (Base public RPCs also restrict logs; same code, new RPC list + WETH/USDC quotes).
+
+## §61 — Base chain added to the precision watcher (2026-08-30 ~20:15 UTC)
+
+Generalized the BSC watcher into evm_watcher.py (chain config: RPC list, quote-token map with decimals, canonical native/USD reference pair). Base findings: all public Base RPCs 403 the default Python UA — a browser User-Agent header fixes it; Multicall3 lives at the same address; UniV2 WETH/USDC ref pair gives ETH ≈ $2,510 (decimal-corrected, USDC=6). 25-29 qualified Base pools on first runs, all WETH-quoted. Fixed a quote-attribution bug (pools passing via token1 never stored it -> '?' quote). bsc_watch_loop.py now polls multiple chains in one 19-min window (~10s cadence per chain); bsc_paper.py takes a chain arg (separate state/trades files per chain). Automation_2c4eec3e updated to run bsc,base + both scorers; BSC pool count grew to 115 with fresh scan rows. Solana hourly marks scored −24%; BSC/Base now have ~10s reserve-delta precision — same as trade-level for exit-stack purposes.
+
+## §62 — Fast discovery closes the entry-latency gap (2026-08-30 ~20:25 UTC)
+
+The first 4 BSC entries all sat at 1.00x from entry — inflow without price lift, consistent with LATE discovery: the hourly xchain scan can qualify a pool up to ~60 min after launch, so the $3k-inflow entry triggers after the campaign's move already happened. Fix: fast_discover.py runs a single-page GT new_pools scan for watched chains at the START of every 19-min window and every ~5 min inside it (40 fresh rows appended on first run; pool counts 119 BSC / 31 Base). Worst-case discovery latency now ~5 min (window gap) + GT listing lag, vs ~60+ min before. Entries from here should be measurably earlier in the campaign lifecycle; if the next cohort still enters flat, the problem is the reserve-flow signal itself (wash inflow), not latency.
+
+## §63 — First BSC cohort: 4/4 aborts, 3 full rugs + scorer fill-model fix (2026-08-30 ~20:35 UTC)
+
+First BSC paper cohort closed: CHIP🪙 0.00x, KING 0.00x, MINI 0.00x, SKYAI 0.86x — all via abort. Reserve data shows the three zeros are REAL rugs: quote reserves collapsed e.g. 58 WBNB -> 0.0002 WBNB within ~3 min, ~10 min after entry trigger. These were pre-fast-discovery (late) entries into dying pools; n=4 too small to convict the $3k threshold itself.
+
+Scorer fill-model bugs found + fixed (bsc_paper.py): (1) entry filled at the TRIGGER row's price — under batched scoring (scorer runs at window end) that backdates entries across intervening pumps/rugs; now entries ARM at trigger and fill at the NEXT poll's price, surviving window boundaries; (2) free-roll booked at exactly 1.5x at the trigger row — now pends and fills at the actual next-poll multiple; (3) armed watches can no longer be reaped as stale before filling. Same batched-fill caveat applies to any window-end scoring; exits were already next-poll.
+
+Scheduler note: cron range-step form `7-59/20` did not fire (parser incompatibility suspected); replaced with explicit `7,27,47 * * * *`, verified enabled, next fire :47.
+
+Forward gates unchanged: BSC needs its own n>=10 closes post-fix before the threshold question (wash vs timing) can be called; Solana n>=30 continues.
+
+## §64 — The LP-burn gate: causal rug filter with perfect first-sample separation (2026-08-30 ~20:25 UTC)
+
+Broadened entry replay ($1k/30min inflow trigger): 5 BSC pools triggered, 4 rugged within 60 min (end ≤0.09x), only FIST survived (end 1.10x). GoPlus Token Security is useless here (fresh memes unindexed). On-chain LP-token sink check (totalSupply vs balanceOf dead/zero/lockers via one multicall) separated PERFECTLY: all 4 rugs = 0% LP burned/locked; FIST = 100% burned. Causal mechanism: unlocked LP is what allows the observed liquidity-pull rugs.
+
+Deployed: evm_watcher.py now gates every pool on >=50% LP sunk (burn + PinkLock v1/v2 + UNCX UniV2 locker, addresses verified via official sources) BEFORE it enters the reserve poll set; failures re-checked after 10 min (post-launch locking happens). Effect: BSC watch set 119 -> 6, Base 29 -> 5 (UNCX Base caught 5 that PinkLock missed). 95% of trending BSC meme pools have unlocked LP — that IS the rug base rate. Trade rarely, only where the LP-pull vector is closed. Remaining rug vectors on gated pools: mintable supply, hidden owner, >50% partial lock — shadow-scorer A/B will measure them.
+
+## §65 — BSC replay with fixed fills: the rug class is structurally untradeable via inflow entry (2026-08-30 ~20:45 UTC)
+
+Re-ran the full BSC history through the FIXED scorer (next-poll entry fills, in-batch management, next-poll free-roll). Same 4 entries, same result: 0.00x / 0.86x / 0.00x / 0.00x, mean −78%, 0/4 wins. Diagnosis of WHY the exit stack can't save these:
+
+- Post-trigger pumps are SHALLOW: 1.13x / 1.39x / 1.20x / 1.42x max — the 1.5x free-roll never fires.
+- The kill is a CLIFF: LP pull removes ~100% of quote reserves in one block, ~10 min after entry. Abort (30min) and trail both evaluate after the cliff — fill ≈ 0 regardless.
+- Ladder take-profit analysis: even selling 25% at 1.1x/1.25x/1.4x recovers only ~0.28-0.6x on this cohort. No exit rule turns 80% cliff-rug × ≤1.42x pumps positive.
+
+Contrast with Solana: runners go 2-4.6x and deaths play out over minutes-hours (tradeable with abort+trail, +6%/trade). BSC unlocked-LP campaigns = shallow pump + instant cliff (untradeable). BSC LP-GATED pools = safe but campaign-free (established tokens or dormant locked batches). Conclusion: on current BSC tape there is NO positive-ROI variant of this strategy — the entry signal selects for pools whose entire design is the cliff. BSC watcher stays live (tape regime may change; data is cheap) but no more BSC exit variants. Capital-effort returns to Solana n≥30 and Base gated observation.
+
+## §66 — Solana feed silent death: Helius quota exhaustion, root-caused + patched (2026-08-30 ~21:10 UTC)
+
+No E25 triggers in ~20h was NOT dead tape: 135 graduations occurred but ZERO got pool stats. Artifact forensics (births=320, migrations=14, curve_subs=0, pool_subs=0, trades=0, helius_err=0) → Helius ws handshake returns 429 'max usage reached' (verified directly; HTTP RPC also 429). Errors were swallowed (on_error=lambda: None) so the automation reported success while collecting nothing. mfg_trades.jsonl stalled 01:37 UTC. Amplifier: on 429 the reconnect loop hammered every 3s for 19 min × 72 runs/day. Likely primary burn: getProgramAccounts scans in pool discovery (up to 5/min/run, ~1000-credit class calls).
+
+Patch deployed (disable → cancel → edit → compile → smoke → update → enable): (1) discover_pool is GT-first (free GeckoTerminal tokens/{mint}/pools -> pumpswap address -> ONE getAccountInfo parses vaults at verified offsets; getProgramAccounts only as fallback) — verified live on fresh grads; (2) ws on_error now logs + counts into helius_err, reconnect backoff 3s→300s exponential; (3) MAX_TRACK 60→40. paper_score smoke: 13/13 closed, +5.75%, 11 wins (unchanged).
+
+Open risk: if the quota is monthly (not daily-reset), Helius stays dead until Sep 1. Public Solana RPC fallback (getAccountInfo works there; accountSubscribe limited) is the contingency build if trades haven't resumed by ~01:00 UTC. Meanwhile PumpPortal births/migrations and GT snapshots still flow; the EVM watcher is unaffected (public BSC/Base RPCs).
+
+## §66b — Helius-outage fallback deployed (2026-08-30 ~22:00 UTC)
+
+**Quota status:** Helius still 429 at 21:26 UTC (down since 01:37 UTC, ~20h). Unknown if daily or monthly reset; watching for recovery at/after 00:00 UTC and Sep 1.
+
+**Fallback stack (all deployed to tracker automation):**
+1. `rpc()` rotates Helius → api.mainnet-beta.solana.com → publicnode → drpc on any failure, browser UA (publicnode/drpc 403 without it; api.mainnet-beta works clean). Returns `{'result': None}` if all down.
+2. Pool-vault HTTP polling in snapshot_loop while Helius ws is closed: youngest 12 pool-tracked tokens <6h old, both vaults per token, quote-leg diff → pool trade records. Simulated against live state: 3/6 probed vaults moved since seeding — mechanism verified end-to-end.
+3. Discovery sorts youngest-first (stale outage backlog had eaten all 30 pool slots with ~20h-old grads).
+4. Slot recycling: silent pools (notifs==0) older than 6h are force-recycled — fixes deadlock where polled stale tokens refreshed their own freshness and starved fresh grads.
+
+**Data-integrity ruling:** the 13 open paper positions with entries before the outage (2026-08-30 01:37 UTC) are VOID for forward-validation — their exit management data has a 20h hole. They will close mechanically (tstop/trail) as flow resumes but are excluded from the n≥30 forward count, which restarts from the first post-fix close. Cutoff: entry_ts < 1788050000 (≈01:37 UTC Aug 30).
+
+**Known limitations during outage:** curve (pre-graduation) trades dead — E25 is pool-only so entries unaffected; pool trade granularity drops from per-tx to ~poll-cycle (~30-60s), which lumps same-cycle trades into one record (slightly understates trade counts, net SOL identical).
+
+## §66c — Poll-granularity fidelity test: what the fallback does to E25 entries (2026-08-30 22:45 UTC)
+
+Method: replayed pre-outage tx-level pool trades for the 10 densest mints, re-binned into 45s netted buckets (simulating vault-poll granularity), re-ran E25 trigger detection, compared trigger time and entry mcap vs raw.
+
+Results:
+- **8/10 mints still trigger** at poll granularity; **2/10 never trigger** (bucket netting merges buys+sells into one net record, destroying the nb/ns ≥ 2 ratio the trigger needs).
+- Trigger lag when firing: −17s to +864s, median ~+370s (~6 min late).
+- Entry mcap drift: 0% to +20.7% worse (paying more for the same campaign).
+
+Interpretation: the fallback population is a STRICTER, LATER variant of the backtested E25 — ~20% of entries missed, survivors entered ~6 min late at up to ~21% worse prices. Two consequences:
+1. Post-fix forward stats are NOT directly comparable to the +5.75% backtest line; if poll-mode expectancy still clears 0 (let alone 5.75%), that is conservative evidence the edge is real.
+2. Do NOT loosen E25 thresholds to compensate mid-experiment — that would break comparability further. Full tx-level fidelity returns when Helius quota resets (watch Sep 1). If the outage proves monthly and poll-mode results disappoint, the fix is a higher-frequency dedicated poll pass for the youngest pools, not looser rules.
+
+### §66c addendum — cutoff correction (22:55 UTC)
+
+The §66b validation cutoff (01:37 UTC) was too early: trade records show flow trickled until ~02:47 UTC, so positions entering 01:37–22:00 were still outage-corrupted (stale-price exit management). CUTOFF in forward_scorecard.py moved to 1788062400 (22:00 UTC, first clean §66b flow). The "+9.38% abort" trade (64Lv5GnKue, entered 01:53) is hereby VOIDED like the other 13. True post-fix count restarts from zero as of 22:00 UTC.
+
+## §66d — First clean poll-mode cohort: the §66c handicap is visible (2026-08-30 22:46 UTC)
+
+First 5 truly post-fix E25 entries (cutoff 22:00 UTC): 3 closed = +6.1% (abort, PONS nmEbbehHkk), −100% (trail, PCC c8bdKqmN — full collapse, trail could not catch it), −31.5% (abort, LQX 6nrCD4LG); 2 open (+5.9%, +4.3%). n=3 expectancy −41.8%.
+
+Read: entries fired at 3.7k–259k SOL mcap — poll-mode is entering mega-campaigns LATE (§66c: ~6 min lag, up to +21% worse price), i.e. near the top, straight into the dump phase. The tx-level backtest cohort entered the same campaign class minutes earlier and lower. One −100% in three trades dominates the mean; n far too small to judge.
+
+Discipline: NO strategy-parameter changes (rules frozen). The open question is mechanical, not strategic: is the tx-level edge reachable at ~45s poll granularity? Resolution paths: (1) Helius quota reset (watch Sep 1) restores tx-level; (2) if outage persists and poll-mode stays negative at n≥10, build a dedicated high-frequency (~5s) poll pass for the youngest pools — a FIDELITY repair, not a rule change. Corrupted-but-voided tx-level cohort stands at +5.75% (n=13) for reference.
+
+## §66e — Granularity returns-sim: the handicap is smaller than §66c feared (2026-08-30 23:00 UTC)
+
+Full E25+exit-stack replay on the 11 densest pre-outage mints at raw tx-level vs 5/15/45/90s netted buckets: mean returns +2.4% / +2.5% / +12.2% / +11.5% / +11.2%; medians ~+10% at ALL granularities; entry rate 100% at 5s, 91% at 15s, 82% at 45s. The §66c entry-lag (median +370s at 45s buckets) does NOT translate into negative returns on this cohort.
+
+Key correction to §66d's working hypothesis: the live poll cycle is `stop.wait(10)` + ~5s poll pass ≈ 15-20s granularity, NOT 45s — the sim says that costs ~nothing. Historical E25 entry mcaps [5k…1.4M SOL] bracket the live cohort's 3.7k–259k, so the live entries are not an mcap-regime outlier either.
+
+Verdict: the −41.8% at n=3 is most likely NOISE (one full-collapse trade dominates). No fast-poll build justified by data; pipeline stays untouched. Decision rule unchanged: judge at n≥10 post-fix closes, gate at n≥30. If negative at n≥10 with benign granularity, suspect REGIME change (campaign mix), not tooling.
+
+### §66f — Open-position poll pinning (23:00 UTC)
+
+Found live: both open post-fix positions had gone unpolled for ~10 min — the youngest-12 poll window fills with newer pools and open positions age out, leaving exit management blind. Patch: the poll selector now reads mfg_paper_trades.jsonl each cycle and pins open-position mints into the 12 slots before youngest-first fill. Deployed via cancel→update→enable; ~9 min of collection sacrificed to close the blind spot immediately.
+
+### §66g — epoch-anchor correction (23:07 UTC)
+
+Trade-record epochs run on wall-clock time; earlier section timestamps like "cutoff 22:00 UTC = 1788062400" were mislabeled (that epoch is ~04:00 UTC; real 22:00 UTC is 1788127200). No data harm: the voided zombies entered ≤02:47 UTC and clean flow resumed 21:58 UTC, so any cutoff in between separates them identically. forward_scorecard.py CUTOFF now 1788060000 with the anchoring documented. All 5 post-fix entries remain in the validation set.
+
+## §66h — Post-fix n=5: the wipes are real cliff-rugs, and the pump leg is missing (23:30 UTC)
+
+Full post-fix cohort (cutoff §66g): 5/5 closed. Peaks 1.02–1.12x — ZERO reached the 1.15x abort floor, let alone the 1.5x free-roll. Exits: 4 aborts, 1 trail. Two ~−100% wipes verified against raw flow, NOT artifacts:
+- c8bdKqmNcH (PCC): single 1,205 SOL sell at 22:31 cut mcap 79,624 → 43.5 → 0.15.
+- 6qBmNVeGMz (Redbull): single 333.9 SOL sell at 23:04 cut mcap ~7,050 → 0.28.
+Both are dev-dump cliffs (PumpSwap LP is locked; a single-seller dump of this size = insider supply).
+
+Contrast with frozen backtest cohort (n=13, +5.75%, 11 wins, no cliff-rugs post-entry): tonight's live cohort shows shallow/no pump + cliff-rug — the SAME signature that killed BSC (§65). Three non-exclusive explanations: (a) n=5 bad-luck noise; (b) regime shift — rug-heavy campaign mix tonight; (c) poll-mode E25 selection bias — the nb/ns>=2 ratio on netted poll records delays triggers until explosive buying ends, selecting plateau-phase entries (§66c lag evidence supports this).
+
+Decision rule stands: judge at n>=10. If the cliff-rate stays near 40% at n=10, the pre-registered conclusion is that poll-mode entry is adversely selected and the tx-level edge is not reachable without Helius — NOT that the strategy parameters should change. For the future live version, a dev-supply/holder-concentration gate at entry (Solana analogue of the BSC LP-burn gate, §64) is the candidate fix for cliff risk specifically.
+
+## §66i — Universe scan: tonight had NO post-trigger runners at all (23:35 UTC)
+
+Scanned every E25-triggerable mint post-cutoff (not just entered ones): 6 total. Post-trigger peaks: 1.17, 1.15, 1.12, 1.12, 1.04, 1.00. Zero reached 1.5x. The 6th (o7imiQ55KV, 20 trades) didn't qualify for paper entry (50-trade floor) and went nowhere anyway.
+
+Conclusion: our 0/5 is NOT adverse selection — entering everything triggerable tonight still yields zero winners. The pump leg was absent universe-wide tonight. That shifts the weight to regime (campaign mix/operator behaviour tonight) over poll-mode selection bias. One session is not a regime verdict: historical sessions produced multiple >1.5x post-E25 campaigns (the backtest cohort). Watch 2-3 more sessions: if post-trigger runners remain absent while flow thresholds still trigger, the manufactured-pump meta itself has changed (operators harvest at the curve/plateau instead of pumping post-graduation), which would retire the E25+free-roll model regardless of data fidelity.
+
+### §66j — Midnight check: quota is NOT daily (00:02 UTC Aug 31)
+
+Helius still 429 past 00:00 UTC — the quota does not reset at UTC midnight. Next candidates: monthly reset (Sep 1, ~24h away) or plan-cycle billing reset. Fallback continues to carry all pool flow; no action needed.
+
+## §66k — Runner-drought baseline: the pump leg vanished BEFORE the outage (00:10 UTC Aug 31)
+
+Per-hour E25-triggerable mints and post-trigger >=1.5x runners, all available pool-flow history:
+
+| window (UTC) | triggerable | runners | note |
+|---|---|---|---|
+| Aug 29 12:00 | 6 | 3 | tx-level fidelity |
+| Aug 29 13:00 | 1 | 1 | tx-level |
+| Aug 29 14:00 | 1 | 1 | tx-level |
+| Aug 29 15:00 | 1 | 0 | tx-level |
+| Aug 29 22:00 | 1 | 0 | tx-level, 3.5h post-window |
+| Aug 30 00:00 | 3 | 0 | tx-level, but window truncated by 01:37 outage |
+| Aug 30 22:00 (tonight) | 6 | 0 | poll-mode, full window |
+
+Since Aug 29 14:00 UTC: **0/11 runners across ~34 hours**, including cohorts recorded at full tx-level fidelity BEFORE the Helius outage. Binomial check vs the Aug-29-midday rate (5/8 = 62%): P(0/11) ~ 2e-5; even at a conservative true rate of 30%: P ~ 2%. The drought is real and predates every tooling artefact — §66c/§66e/§66h selection-bias worries are now secondary.
+
+Caveats: (1) the Aug-30 00:00 cohort's observation window was cut by the outage; (2) midday-Aug-29 baseline is only 8 mints. Verdict rule: if the next 1-2 sessions (Aug 31 daytime/evening) also produce 0 runners, the manufactured-pump meta is declared SHIFTED and the E25+free-roll model retires; pivots on deck: dev-supply concentration gate, curve-phase entry, or a different edge class entirely.
+
+## §67 — Curve-trade fallback without Helius (2026-08-31 01:10 UTC)
+
+**§67a (pumpportal subscribeTokenTrade): DEAD.** Deployed 00:30 UTC (subscribe on
+track, buy/sell handler, resubscribe on reconnect). Probe (`probe_pp_trades2.py`)
+revealed the server ACK: *"'subscribeTokenTrade' and 'subscribeAccountTrade'
+methods are only available when connecting with an API key funded with at least
+0.02 SOL."* Free tier = subscribeNewToken + subscribeMigration only. Code left
+in place (inert; auto-activates if a funded key is ever supplied).
+
+**§67b (batched RPC curve polling): LIVE and verified.** While Helius ws is
+down, snapshot_loop now polls every live bonding-curve account in ONE
+`getMultipleAccounts` call per ~10-15s cycle, decodes (vtok, vsol, complete)
+locally, and writes deltas to mfg_trades.jsonl as venue=curve records identical
+in shape to Helius-era data. Shares `last_vsol` baseline with the Helius path
+(no double-count on mid-run recovery). Deployed 01:00 UTC; verified 01:08 UTC:
+**34 curve trades across 7 mints in the first 4 min** (+121 pool trades),
+mcap values sane (63-106 SOL range). Full tx-level curve fidelity restored,
+zero cost, no new credentials. Poll granularity 10-15s — §66e showed this
+costs ~nothing vs tick-level.
+
+Implication: the tracker no longer depends on Helius at all. Helius re-check
+after Sep 1 reset is now informational only. The curve-phase-entry pivot
+candidate (§66j: pumps happen in the first minutes, pool entries are late) is
+now fully instrumented — curve flow is captured from birth again.
+
+## §68 — Zombie-position accounting fix + first post-drought runner (2026-08-31 01:30 UTC)
+
+**Bug found:** paper_score dropped zero-mcap trades (`not x.get("mcap_sol")`)
+and had no wall-clock exits — positions on pools that went quiet or rugged to
+mcap 0 stayed "open" forever at stale marks. Live board showed 6 zombies from
+the 00:08-00:09 UTC trigger batch, all "open" at +5-9% while two had actually
+rugged to zero. This also DELAYED entry detection (zero-mcap trades carry
+real SOL volume that counts toward the E25 trigger).
+
+**Fix (measurement only — exit-stack params untouched):** (a) keep zero-mcap
+records (rug-to-zero = observable −100%); (b) heartbeat close: if a position
+is still open at replay time, evaluate abort (30min/<1.15x) and timestop
+(120min) against wall clock at the last observed mcap. Known optimism: quiet
+pools that never printed a zero are marked at last price (assumes exit into
+remaining liquidity).
+
+**Re-marked post-cutoff board (shadow preview, identical logic):**
+14 positions, 12 closed, expectancy −30.7%, wins 7/12. The honest marks
+flip two zombie "winners" to −100% rugs (cA1J, E1U1) and bank real gains on
+quiet campaigns (+4.5% to +13.1%).
+
+**Regime signal — drought partially broke overnight:** the Aug 31 00:08 UTC
+batch produced CHPs peak 1.584x (closed trail +13.1% — first 1.5x runner
+since Aug 29 14:00) plus 2oFG (peak 1.478x) and jCPN (peak 1.413x) still open
+and live at ~+45%. Aug 30 22:08-22:30 cohort: 5/5 peaked <=1.12x (dead).
+Overnight = 1 clear runner + 2 near-misses out of 8 triggers — between the
+Aug 29 midday meta (5/8) and the drought (0/11). Verdict still requires the
+Aug 31 daytime/evening sessions per the pre-registered rule; the model's
+closed expectancy remains deeply negative (−30.7%), gate 12/30, gate_pass=False.
+
+Deploy note: §68 lands via gap-update after the 01:24 run ends (~02:04);
+paper_score rewrites full history every run so no scoring gap.
+
+### §68b — deployed + overnight session resolved further (02:30 UTC)
+
+Deployed 02:24 UTC (cancel-update-enable; missed the sub-15s scheduler gap
+twice — noted for future deploys: cancel is the reliable path). Fresh shadow
+re-mark on data through 02:24:
+
+- **2oFG peak 2.098x, open +65.4%** and **jCPN peak 1.927x, open +61.1%** —
+  both crossed the 1.5x freeroll (75% banked, 25% trailing). With CHPs
+  (1.584x, closed +13.1%) that is **3 runners out of 8 triggers** in the
+  Aug 31 00:08-00:47 UTC batch = 37.5%, vs drought 0/11 and Aug 29 midday
+  meta 5/8 (62%). The pump meta is NOT dead — it paused.
+- 5JL rugged to zero since the first preview (zombie +8.6% -> honest -100%).
+- Post-fix expectancy −39.7%, 6/12 wins. The drag is structural: 4/14
+  entries (29%) rugged to −100%; aborts bank only +5-13%; runners +60%.
+  **Expectancy is a rug-avoidance problem now, not an exit problem.**
+- Next analysis queued: with §67b curve data restored, compare the 4 rugs vs
+  3 runners on CURVE-phase behavior (first 15 min: dev sell timing, buy
+  concentration, seed structure) to find a pre-entry rug filter.
+
+## §69 — Rug anatomy, mark-to-deadline fills, and the abort lever (Aug 31 03:45 UTC)
+
+**§69a curve replay (rug_replay_69.py, rug_replay.json):** all 14 post-cutoff
+entries seeded exactly 85 SOL, graduated the same second (curve drained by
+migration at birth+0min). The bonding-curve phase is ONE transaction —
+curve-phase rug filtering is impossible for manufactured big-seed launches;
+everything happens on the pool. Creators are 14/14 fresh wallets; symbols
+recycle across mints (LQX x3, ARROW x2, WOFI x2) — serial same-operation
+campaigns. Creator-history filters won't fire; funding-source clustering is
+the only wallet-level lead.
+
+**§69b delayed-entry + veto grid (backtest_69.py):** D10+bigsell25 best but
+only −11.1% post-cutoff vs −21.7% baseline. Vetoes barely fire: the rug is
+not visible in the first 10 minutes of flow — operators harvest at plateau,
+30-90 min in. Pre-entry flow filtering is structurally blind to it.
+
+**§69c mark-to-deadline replay (backtest_69c.py) — the scorer fix that
+matters:** a live poller sees balance-derived mcap every ~15s even on quiet
+pools, so abort/time-stop exits fill at the price observed AT the deadline,
+not at the final mark of a pool that later rugged. §68's r_last heartbeat was
+too pessimistic for rugs that collapse after minute 30. Replayed grid:
+
+| variant            | post-cutoff exp | rugs | all-history exp | rugs |
+|--------------------|-----------------|------|-----------------|------|
+| E25 abort30        | −27.2%          | 6    | −13.4%          | 6    |
+| E25 abort15        | **−9.0%**       | 2    | **−3.2%**       | 2    |
+| D10+veto abort15   | −13.0%          | 4    | −7.6%           | 4    |
+
+**Conclusions:**
+1. Abort at 15 min (not 30) is the single biggest lever: exits plateauing
+   campaigns BEFORE the typical harvest window, cutting rug exposure 3x.
+2. Entry delays/vetoes HURT under honest fills — enter at trigger, manage
+   the exit.
+3. Honest-fill E25-a15 is ~breakeven in a weak regime (−3.2% all-history,
+   26/31 wins) and was solidly positive in the strong Aug 29 regime. The
+   model's expectancy is regime-driven; the runner share is the swing factor.
+4. Residual drag: ~2 fast rugs per 31 (collapse <15 min — unfilterable at
+   15s poll cadence) ≈ −6.5 points. A funding-source cluster gate is the
+   only untested pre-entry idea with theoretical teeth.
+
+**Not changed:** live scorer keeps P_ABORT_MIN=30 (no mid-experiment param
+changes). a15 + mark-to-deadline scorer are candidate pivots pending the
+regime verdict from Aug 31 daytime/evening sessions.
+
+## §70 — Mark-to-deadline scorer deployed + funding-cluster gate dead (Aug 31 03:15 UTC)
+
+**§70 scorer:** paper_score heartbeat now marks deadline exits at the price
+observed AT the deadline (last trade at/before it) — what a live 15s poller
+would actually fill at — instead of the final mark of a pool that rugged
+later. Params unchanged (abort 30min/1.15x). Live from next tick (file-edit
+pickup; description update pending a scheduler gap).
+
+**§70b funder trace (funder_trace_70.py, funder_trace.json):** traced all 14
+cohort creator wallets to their first inbound SOL. 8 resolved funders are
+ALL DISTINCT; 6 creators unresolvable within 100-sig window. No clustering;
+outcomes (rug/runner/quiet) are randomly distributed across funders. The
+operation uses one-shot funding chains per launch.
+
+**Pre-entry rug filtering is now FULLY exhausted (all candidates tested and
+eliminated):**
+- curve-phase features — impossible (curve phase = 1 tx, §69a)
+- early-flow vetoes — blind (harvest comes 30-90min in, §69b)
+- creator history — 14/14 fresh wallets (§69a)
+- funding clusters — 8/8 distinct funders, random outcomes (§70b)
+
+**The rug is an operator decision made after entry and cannot be predicted
+from any observable pre-entry signal.** The only defense is exit discipline:
+abort-15 cuts rug exposure 3x (§69c). Positive ROI therefore =
+(regime alive) x (abort-15) x (honest fills). Regime verdict at Aug 31
+daytime/evening sessions is the remaining gate.
+
+## §71 — Session clustering and the scout-gate test (Aug 31 03:30 UTC)
+
+**Time-of-day pattern (31 entries, 8 runners):** runners only in
+12:00-14:59 UTC Aug 29 (5/8 = 62%) and 00:00-00:59 UTC Aug 31 (3/8).
+Dead: 22:00-22:59 (0/6), 02:00-02:59 (0/4), 15:00 (0/1). Live windows map
+to ~08:00-11:00 and ~20:00-21:00 ET — the operator pumps when US retail is
+awake (exit liquidity), harvests off-hours. Confounded with date at n=31,
+but operationally consistent.
+
+**Fresh entries 02:09-02:44 UTC: 0/4 runners** (peaks 1.106-1.213; one
+−88%, one −100%). The 00:08 batch was a wave, not a regime return.
+
+**§71 scout-gate backtest (backtest_71.py):** waves can't be predicted at
+onset, so scout the first 2 entries of each burst and continue only when a
+burst member proves the wave (>=1.3x within 60 min). Result: −2.0% gated vs
+−3.2% baseline (a15, honest fills) — marginal. Failure mode found: bursts
+chain (harvest batch -> pump batch -> harvest batch within 2h gaps), and
+the gate re-engages on yesterday's evidence just as the operator switches
+back to harvest. **Chasing a proven wave = buying the operator's exit
+liquidity.** Inverted hypothesis noted: enter ONLY scouts (first triggers
+of a fresh wave), never continue on evidence. Within-burst entry ordering
+is arbitrary for simultaneous triggers, so this stays a sizing idea
+(scout at half size) rather than a hard gate.
+
+**Where the analysis stands (all verified, n=31):**
+- pump waves: +5.2%/trade (Aug 29 12:00 batch) — the edge is real
+- harvest waves: −9%/trade — no pre-entry filter can dodge them (§69-70)
+- abort-15 triples rug survival (§69c)
+- reactive gates add ~1 point at best (§71)
+- **Positive ROI = be positioned at wave onset (scout everything),
+  exit fast (a15), and let wave frequency do the rest.** Over any 3-day
+  window with one golden wave, that profile nets positive; without one,
+  it bleeds ~2-3%/trade on scouts. Forward validation with the honest
+  scorer is the only remaining judge.
+
+## §72 — abort-15 shadow scorer deployed (Aug 31 03:55 UTC)
+
+paper_score now takes (abort_min, out_path); every run writes BOTH the
+pre-registered a30 gate file (mfg_paper_trades.jsonl) and an a15 shadow
+(mfg_paper_trades_a15.jsonl). forward_scorecard.py reports a15_shadow_exp
+beside the gate. Methodology: the gate stays a30 mid-experiment; the shadow
+accrues forward evidence so the post-verdict switch (if any) is backed by
+live data, not only the §69c replay. First a15 file lands with the 04:04
+UTC run.
+
+**Regime ticker (03:49 UTC):** universe 20 triggerable / 4 runners (20%).
+- 2oFG peak revised 2.098x -> 2.862x, jCPN 1.927x -> 2.574x — the 00:08
+  wave kept running for hours (freerolled 25% residuals riding).
+- BTJv (02:23 batch) ground up to exactly 1.501x ~1h post-entry — the
+  02:xx batch was NOT 0/4 as prematurely read; slow runners exist.
+  Lesson: runner counts must be read with a >=90 min lag after entry.
+
+## §73 — REGIME VERDICT: ALIVE. Gate scorer switched to abort-15 (04:30 UTC)
+
+**Verdict (early, per pre-registered rule):** the drought condition required
+0 runners through Aug 31 daytime/evening; instead 5 runners appeared
+overnight across 3 distinct hours (00:08 x3, 02:23, 04:09 UTC). The
+"drought" was a ~34h lull (Aug 29 14:15 -> Aug 31 00:08), not a meta shift.
+Runner share post-cutoff: 5/21 = 24% and climbing. Peaks still developing:
+2oFG 3.25x, jCPN 2.87x, 2G1j 2.03x (triggered 04:09 — breaks the
+US-hours-only pattern), BTJv 1.72x, CHPs 1.58x.
+
+**a15 shadow verified live:** forward −8.93% vs §69c replay prediction
+−9.0% — replay engine and live scorer agree to 0.1pt. Cross-validated.
+
+**Gate switch (documented decision point, pre-registered pivot path):**
+the forward gate now reads the a15 scorer: 18/30 closed, win rate 77.8%,
+expectancy −8.9%. a30 legacy shadow: −43.6% (15 closed). The 30-trade clock
+continues on a15 marks; gate passes at 30 closed with exp > 0. 12 closes
+to go. All marks remain paper-only; the real-money manual signoff gate is
+untouched.
+
+## §74b/c — Next-trade entry unification (2026-08-31 ~05:00 UTC)
+
+**Problem found:** tracker's `paper_score` entered AT the trigger trade (mild lookahead) while the §59 realistic-fills standard and all backtests enter at the NEXT trade. Offline `gen_h108.py` was already fixed; tracker would have overwritten the gate file with inconsistent marks.
+
+**Fix applied:** tracker `automation.py` — entry moved to `xs[ti+1]` with bounds guard, `body = xs[ti+2:]`, `_price_at` loop likewise. `py_compile` OK. Goes live on the next run (file edits auto-load; description sync deferred while runs active).
+
+**Gate file regenerated** with `gen_h108.py` (next-trade entry, reference copy at /tmp/gen_h108_ref.jsonl):
+- Gate (h108 committed): **21/30, committed_exp = −10.91%** (was 19/30, −12.9% under trigger-entry)
+- Closed-only: 19 closed, win 73.7%, exp −13.4%; 2 freerolled opens at +12.5% floor each
+- Shadows: a15 19 closed −6.4% · a30 16 closed −38.4%
+- Universe: 23 triggerable post-cutoff, 5 runners ≥1.5×
+
+**Verification queued:** diff the tracker-written h108 file after its next run against /tmp/gen_h108_ref.jsonl — must agree per-mint.
+
+**Need:** 9 more committed closes AND committed_exp > 0. Freeroll floors alone won't flip the sign — need runner trails above floor or fewer rug closes.
+
+## §74d — Engine parity verified (2026-08-31 06:24 local)
+
+Post-patch tracker run (started 06:04 local, first with §74b next-trade entry) rewrote `mfg_paper_trades_h108.jsonl` at 06:23:53. Per-mint diff vs fresh `gen_h108.py` output: **34/34 rows, 0 mismatches** (entry_t, entry_mcap, ret, exit_reason, peak, status, freerolled all identical). Live tracker and offline backtest engine are now provably the same scorer — every future gate number is trustworthy. Also confirmed the pre-patch run's trigger-entry marks differed on all 34 rows, i.e. the entry convention was material, not cosmetic.
+
+## §75 — Shadow exit-variant grid on the verified engine (2026-08-31 06:30 local)
+
+45-cell grid (stage1 x trail x target/sell) on the §74d-verified engine, committed metric, post-cutoff. **No exit variant is expectancy-positive yet.** Best: stage1=(15,1.10) + trail=0.6 + target 1.5/sell 0.75 -> 21 committed, **-3.1%**. Frozen gate h108 ((15,1.08)/0.5/1.5/0.75) ranks 9/45 at -10.9%.
+
+Monotone structure (weak but directional evidence on n=21):
+- Kill fast-dead campaigns HARDER: stage1 1.10 (-3 to -12%) > 1.08 (-9 to -19%) > 1.05 (-21 to -31%) > none (-25 to -37%). The 1.05 row underperforming "none" is the surprise — too tight kills breakeven scratches.
+- Give runners MORE room: trail 0.6 > 0.5 > 0.4 nearly everywhere.
+- Freeroll at 1.5 with 75% sell beats 1.4 and 1.6/60% variants.
+
+Implication: exit tuning alone cannot flip the sign on current data. Remaining levers: (a) runner-wave frequency (regime, exogenous), (b) ENTRY-side thresholds (net-flow/buy-count/flow-ratio grid — untested on verified engine), (c) time-of-day gating (wave-locked edge, US-morning hotspot). Small-sample caveat: n=21 committed; treat single-cell diffs as noise, monotone rows as direction.
+
+## §76 — ENTRY-side grid: the sign flip lives here (2026-08-31 ~06:45 local)
+
+108-cell grid (net x nb x flow x hours x exit-config) on the verified engine, committed metric, post-cutoff.
+
+**POSITIVE REGION FOUND — and it is robust, not a single cell:**
+- net>=60 SOL AND nb>=20 buys: **+8.95% committed on n=13** (all hours), all-history +5.2%/+5.8%
+- Holds across flow 2.0/3.0 AND both exit configs (h108 frozen, s75best) — 8 neighboring cells all ~+9%
+- Wave-hours gating (0-1,12-15 UTC) lifts it to **+10.7% on n=8** but cuts sample
+- net=60 alone (nb 10/15): only +0.18%. nb=20 alone insufficient. It is the PAIR: sustained BROAD buying, not concentrated flow.
+
+Mechanism read (consistent with §71 funder traces): net60+nb20 demands many wallets buying — filters OUT single-operator harvest waves (few big wallets churning) and keeps campaigns with genuine broad momentum, which is where runners come from.
+
+Frozen gate cell (net25/nb10/flow2.0, all hours): rank 81/108 at -10.9%. The default thresholds were far too loose.
+
+**Caveats:** n=13 committed, short post-cutoff window; in-sample. Must be forward-validated before any gate amendment. Plan: add a 4th shadow scorer to the tracker (PAPER_S: net60/nb20, h108 exits) so the strict-entry variant accrues OUT-OF-SAMPLE committed closes in parallel. Gate stays frozen at h108 until the shadow proves itself forward.
+
+## §77 — Strict-entry shadow scorer deployed for forward validation (2026-08-31 ~07:00 local)
+
+Tracker patched: `paper_score` now accepts net_min/nb_min/flow_min; 4th scorer writes `mfg_paper_trades_s60.jsonl` each run — entry net>=60 SOL AND nb>=20 buys (the §76 positive region), exits frozen at h108. Compile OK; goes live next run. `forward_scorecard.py` reports s60 as a committed-metric shadow alongside a15/a30.
+
+Forward-validation protocol: s60 accrues committed closes OUT-OF-SAMPLE from the first post-patch run onward. If s60 committed_exp stays >0 while building toward n>=20-30, the Sep 1 review can amend the gate entry thresholds (net25/nb10 -> net60/nb20). In-sample +9.0% (n=13) is the hypothesis; the shadow is the test. Gate remains frozen at h108 until then.
+
+## §77b — s60 shadow live, first out-of-sample write (2026-08-31 07:04 local)
+
+First tracker-written `mfg_paper_trades_s60.jsonl` (run started 06:44 UTC, first with §77 code):
+- Post-cutoff: 14 committed (13 closed + 1 freerolled open), **committed_exp = +8.38%**
+- All-history: 21 closed, +4.95%
+- Grid prediction (§76, 40 min older data): n=13, +8.95% / n=20, +5.15%
+- Delta = one newly accrued position; per-cell agreement within new-data drift. Strict-entry engine parity confirmed.
+
+The positive-expectancy hypothesis now holds on its first forward write. From here every run accrues s60 marks out-of-sample. Amendment bar for Sep 1 review: s60 committed_exp > 0 sustained while n grows toward 20-30, AND at least one runner wave captured live (not just legacy positions). Gate stays frozen at h108 (21/30, -10.9%).
+
+## §77c — First strict-vs-loose runner divergence (2026-08-31 07:06 local)
+
+oFxvzBiT (fresh post-cutoff runner): h108 loose entry freerolled at 1.5x, MTM +50% and riding. s60 strict entry triggered LATER at 8229 SOL mcap, peaked 1.065x, abort15'd at +6.6%. Strictness costs entry speed: net60/nb20 takes longer to satisfy, so the entry price is worse — one runner converted to a scratch. Known trade-off; in-sample grid says strict still nets +9pp over loose on average. Track divergences like this — if strict repeatedly converts runners to scratches, the Sep 1 amendment bar fails regardless of headline exp.
+
+Also: 2oFG still riding at MTM +95.6% (peak 3.31x); a trail-out near here adds ~+4.5pp to gate committed_exp vs the 0.125 floor. Universe runners up to 6.
+
+## §77d — Confirmed-entry variant (enter loose, verify strict within W min) (2026-08-31 ~07:15 local)
+
+Mechanism: fill at the LOOSE trigger price (early), then require cumulative net60/nb20 within W minutes; else exit at the deadline mark. Fixes the s60 late-fill problem (§77c).
+
+Results (committed, post-cutoff, verified conventions):
+| W (min) | com_n | com_exp | all_exp | noconfirm share |
+|---|---|---|---|---|
+| 5  | 21 | +3.2% | +3.5% | 68% |
+| 10 | 21 | **+4.1%** | +3.7% | 56% |
+| 15 | 21 | +0.3% | +0.9% | 56% |
+| 20 | 21 | -7.6% | -3.8% | 50% |
+
+Confirmed-entry W=10 is POSITIVE on the FULL gate universe (n=21, same denominator as frozen h108 at -10.9%) — no sample reduction, no late fills. Still below s60's +8.4% on n=14 in per-trade and total expectancy (86pp vs 117pp sum). W must stay short: at 20 min the kill-switch comes too late and it decays to -7.6%.
+
+Standing now: s60 late-entry (+8.4%, n=14) > confirmed-entry W10 (+4.1%, n=21) > h108 frozen (-10.9%, n=21). Two independent entry-side mechanisms both positive on the verified engine = the edge is in ENTRY SELECTION, exits secondary. Sep 1 review now has two amendment candidates; s60 forward shadow is primary, confirmed-entry is the fallback if runner-scratch divergence (§77c) repeats.
+
+### §77c follow-up (07:24 local): oFxvzBiT resolved — h108 loose trailed out at **+13.3%**, s60 strict scratched at +6.6%. First completed head-to-head on the same campaign: loose won by 6.7pp here, but s60 leads by 19pp on committed expectancy overall. Track the aggregate, not single races. 2oFG still open at +95.6% MTM (peak 3.31x) — the gate's biggest pending swing.
+
+## §77e — s60 decomposition: ZERO losing trades (2026-08-31 ~07:30 local)
+
+All 14 committed s60 positions post-cutoff are positive: 13 closed (+0.9% to +14.4%, avg ~+8.7%) + 1 freerolled open at floor. **Win rate 100%; not one rug or loss passed the net60/nb20 filter.** The loose-entry gate on the same window: 25% losers including full rugs (-100%).
+
+Mechanism confirmation: manufactured rug campaigns (single operator, one-shot funder, concentrated churn — §71) cannot produce 60 SOL net across 20+ distinct buys fast enough. The strict pair is effectively a breadth-of-participation screen, and breadth is what rug operators can't fake cheaply.
+
+Caveats: n=14 is small; 100% win rate will not persist (expect regression toward ~70-85%); abort15 scratches cluster at +3-8% because strict entry buys confirmed momentum (higher entry, capped scratch upside). But even regressing hard, the loose gate's -100% rug tail is what strict entry eliminates — and that tail is what kept the gate negative.
+
+### §77e calibration: the filter is not invincible (07:30 local)
+
+Pre-cutoff s60 (voided window, n=8): 7 wins, **1 loss −55.4%** (fCERmUZg — never pumped, bled through the trail), exp ≈ 0.0%. Zero-loss is POST-cutoff only (13/13, +8.1%). Caveats: pre-cutoff exit data has the 20h Helius hole so that −55% fill is partly artifact; but the honest read is the breadth screen slashes rug frequency, it does not eliminate bleeders. All-history s60: 21 closed, +5.0%, tail risk ~1 big loss per 20 trades. Expectancy rests on many small wins + occasional runners, not on invincibility. Win-rate regression forecast stands: 70-85%.
+
+## §78 — Amendment memo drafted (2026-08-31 ~07:35 local)
+
+`AMENDMENT_MEMO.md` in MON: full skeleton for the Sep 1 gate-amendment review — proposal (loose -> strict breadth entry), evidence table, mechanism, honest risk model, four explicit decision criteria, post-amendment protocol (gate re-zeros, 30 fresh committed closes, manual signoff stays). Numbers to be refreshed from the live scorecard at review time.
+
+### §78b — live pipeline shows the filter's two axes working (07:35 local)
+
+12 loose-triggered post-cutoff campaigns currently NOT strict-qualified, in two clean failure modes:
+- **Churn mills**: nb 44-76 but net stuck ~25 SOL (8WnaNq61: 70 buys/3min, net 25.2; 4cy86hpK: 76 buys/1min, net 25.1) — wash-trading volume, no real net demand. The net60 axis rejects them.
+- **Whale-concentrated**: 6nrCD4L8 net 108.9 SOL but only 10 buys — one big wallet. The nb20 axis rejects it.
+- Near-misses worth watching: 3yF1D2iX (net 36.5, nb 18) and JzBaT6QS (net 30, nb 18) — closest to qualifying.
+
+Both failure modes are exactly the manufactured-launch signatures from §71. The two axes are not redundant; each catches a different fake.
+
+### §78c — first post-deployment strict entries: all green (07:44 local)
+
+The §78b near-miss pipeline resolved through the strict gate: JzBaT6QS +7.2% and FwEx5Qds +7.6% (abort15 scratches), 3JSy9Uvh OPEN at +10.5% MTM (peak 1.10x) — the first entries qualified entirely AFTER the s60 shadow deployed. s60 now 16 committed, +8.26% (from +8.38% on 14 — new entries diluted nothing). Post-cutoff loss count still ZERO. Gate advanced 21 -> 23/30, committed_exp -9.1% (from -10.6%). Decision criterion #2 (fresh strict-captured runner >=1.5x) pending: 3JSy9Uvh at 1.10x peak so far.
+
+### §78d — churn mills CAN qualify late; 3JSy9Uvh approaching freeroll (08:24 local)
+
+- 3JSy9Uvh: 59m old, **+35.3% MTM, peak 1.35x** — climbing toward the 1.5x freeroll. Would be the first post-deployment strict-captured runner (criterion #2).
+- s60: 17 committed, +7.92%, still zero losses.
+- NUANCE (memo-worthy): §78b's churn mills 8WnaNq61 and 4cy86hpK EVENTUALLY qualified (slow churn accumulates net60 given ~15-20 min) — strict entry delays and de-risks them (entered +5.4%/+1.2% so far) but does not exclude them categorically. The breadth pair is a speed-and-price filter, not a hard wall. Watch whether late-qualified mills become the first s60 losses; that is the expected regression channel.
+
+### §78e — s60 hits n=21, still zero losses; mills scratched green (08:44 local)
+
+s60 committed n=21, +7.69%. The late-qualified churn mills (8WnaNq61, 4cy86hpK) and QKd4PX58 all resolved GREEN — the strict filter's late-fill discount converted even wash-traded campaigns into small wins. Zero-loss streak now spans ~19 closed post-cutoff. 3JSy9Uvh: +41.9% MTM, peak 1.42x at 79m — 0.08 from freeroll. Criterion #1 (sustained >0 at n>=20) now MET on total committed count; post-deployment-only count ~7 and also all green.

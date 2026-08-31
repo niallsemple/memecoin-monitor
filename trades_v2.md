@@ -192,3 +192,37 @@
 | 07:19 | BUY | TRUEq13u | £10.29 | entry mc $796,579 | +593min |
 | 08:01 | BUY | 4z8MysfA | £10.08 | entry mc $130,886 | +5min |
 | 08:08 | SELL 5x | DVxaAXi3 | £16.56 | ladder stage 2 |
+| 09:07 | BUY | Fu2xkscV | £10.21 | entry mc $193,190 | +11min |
+| 10:07 | STOP | Fu2xkscV | £8.84 | trail-stop at 0.88x |
+| 10:08 | BUY | Fu2xkscV | £10.18 | entry mc $169,751 | +73min |
+| 10:26 | STOP | Fu2xkscV | £3.08 | trail-stop at 0.31x |
+| 11:27 | BUY | HBoNJ5v8 | £10.03 | entry mc $7,235,520 | +11min |
+| 11:46 | BUY | tbhtBAwZ | £9.83 | entry mc $219,528 | +21min |
+| 12:56 | SELL 2x | tbhtBAwZ | £4.84 | ladder stage 1 |
+| 13:16 | STOP | tbhtBAwZ | £7.93 | trail-stop at 1.09x |
+| 13:18 | BUY | tbhtBAwZ | £9.88 | entry mc $239,740 | +112min |
+| 13:19 | STOP | tbhtBAwZ | £4.02 | trail-stop at 0.41x |
+| 14:16 | BUY | 5LkqSEqW | £9.76 | entry mc $199,933 | +11min |
+| 14:16 | BUY | FRQHGWkk | £9.56 | entry mc $81,397 | +11min |
+| 17:19 | STOP | DVxaAXi3 | £14.67 | trail-stop at 2.22x |
+| 17:19 | STOP | 5LkqSEqW | £0.10 | trail-stop at 0.01x |
+| 17:19 | STOP | FRQHGWkk | £0.26 | trail-stop at 0.03x |
+| 17:26 | BUY | DVxaAXi3 | £9.67 | entry mc $1,001,031 | +4438min |
+| 17:57 | SELL 2x | TRUEq13u | £5.07 | ladder stage 1 |
+| 19:16 | BUY | Hs8Ge1zn | £9.58 | entry mc $271,146 | +10min |
+| 19:16 | BUY | 77hMzegL | £9.38 | entry mc $254,482 | +10min |
+| 19:26 | STOP | 77hMzegL | £0.08 | trail-stop at 0.01x |
+| 20:06 | BUY | G9FGtfqT | £9.19 | entry mc $196,019 | +31min |
+| 20:46 | STOP | Hs8Ge1zn | £4.33 | trail-stop at 0.46x |
+| 21:27 | SELL 2x | CTPoyCwk | £6.12 | ladder stage 1 |
+| 23:06 | STOP | G9FGtfqT | £0.10 | trail-stop at 0.01x |
+| 23:47 | STOP | TRUEq13u | £8.46 | trail-stop at 1.11x |
+| 23:48 | BUY | TRUEq13u | £9.39 | entry mc $886,792 | +1583min |
+| 00:57 | STOP | TRUEq13u | £3.57 | trail-stop at 0.39x |
+| 00:58 | BUY | TRUEq13u | £9.27 | entry mc $342,059 | +1653min |
+| 02:27 | BUY | 7WEw6bZw | £9.08 | entry mc $305,740 | +61min |
+| 03:26 | STOP | 7WEw6bZw | £0.06 | trail-stop at 0.01x |
+| 03:27 | STOP | TRUEq13u | £4.20 | trail-stop at 0.46x |
+| 03:28 | BUY | TRUEq13u | £8.98 | entry mc $157,522 | +1802min |
+| 04:36 | BUY | Wb4v89d7 | £8.80 | entry mc $134,781 | +11min |
+| 06:06 | STOP | Wb4v89d7 | £0.13 | trail-stop at 0.01x |
