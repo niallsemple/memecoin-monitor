@@ -2482,3 +2482,15 @@ Two resolutions this cycle:
 2. **B9tN5FAJ −99.9%** — second full-loss bleeder. Grinded ~52 min building breadth, passed s60 gate legitimately, then collapsed to dust within 5 min of entry (peak 1.004x — never went up). Same grind-then-harvest species as E6gQ, faster post-entry trigger. Holder snapshot unavailable (RPC starved) — the one diagnostic that might have caught it was dark.
 KILL CHECK: 2 bleeders (E6gQ −100%, B9tN −99.9%) within the last 30 committed entries → **STRATEGY_SPEC §6.2 triggered: HALT and re-review.** s60 exp now +0.97% (n=32) — still positive but one more bleeder flips it. Rug-through-gate rate 2/32 = 6.25% vs ~7% breakeven — margin nearly gone; the farm is harvesting more aggressively during US hours.
 Consequences: paper tracking CONTINUES (data is data), but the amendment path freezes — tomorrow's Sep 1 review is now a KILL-OR-FIX decision, not a rubber stamp. Fix candidates for evaluation on raw tape: (a) delayed/confirmed entry (B9tN rugged 5 min post-signal — a 10-min confirmation window skips it entirely; W10 confirmed-entry was +4.1% full-universe, §77d); (b) holder-concentration gate when RPC capacity returns; (c) time-of-day filter if harvests cluster in US hours.
+
+## §79p — Delayed-entry fix FALSIFIED on raw tape (2026-08-31 ~15:35 local)
+Tested D∈{0,5,10,15}min confirmation delay (enter only if price ≥ signal-level after D min; skip else), frozen h108 exits, post-cutoff tape (backtest_79p.py).
+- D=0 (baseline, corrupted by confirm filter — use tracker's +0.97%/+4.22% range as truth): 2 bleeders
+- D=5m: exp +0.86%, 2 bleeders
+- D=10m: exp **−5.82%**, 4 bleeders — B9tN skipped (good) BUT CHPs (+13.0% → −99.8%), 4cy86hpK, Hd1k converted to bleeders; E6gQ NOT dodged (−100% anyway)
+- D=15m: exp −6.31%, 4 bleeders
+Verdict: DEAD. Harvests land minutes-to-an-hour post-gate regardless of entry timing; delaying moves the fill price UP into the dump window, converting scratches into bleeders while dodging only the fastest rugs. The entry-timing dimension has no fix in it.
+Remaining fix candidates for the Sep 1 kill-or-fix review: (1) holder-concentration gate (instrumented §79k, untested — needs RPC + forward data); (2) time-of-day filter (both bleeders hit during US window — test on tape); (3) KILL the strategy, keep the infrastructure. Baseline to beat: s60 as-is, exp +0.97% at n=32 with 2 bleeders — marginally positive but kill-criterion-halted.
+
+## §79q — Time-of-day filter: NULL (2026-08-31 ~15:40 local)
+Bleeder entry hours: 10:12 and 14:59 local — 5 hours apart, no clustering. Entry-hour distribution of all 32 trades spans 01:00-23:00 with clean hours on both sides of both bleeders. n=2 bleeders can't support any time filter regardless. Time-of-day is DEAD as a fix. Sep 1 review narrows to: holder-concentration gate (needs RPC + forward data) vs KILL.
