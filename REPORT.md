@@ -2540,3 +2540,21 @@ gains nm_min; new s60nm5 shadow writes every cycle. gate_check_s60.py
 now reads the amended scorer file; re-zero confirmed (n=0, qualified=
 False). Sep 1 review shifts from KILL-OR-FIX to amend-validation:
 30 fresh committed closes, exp>0, <=1 bleeder, then owner signoff.
+
+## §79t — s60nm5 scorer verified; first fresh close committed (2026-08-31 ~17:15)
+
+One-shot gen_s60nm5.py mirrors the patched paper_score exactly and
+reproduces the §79s backtest on identical tape: n=35 (vs 34 — one open
+position hit its mark-to-deadline commit between runs, expected),
+exp +7.99% (vs +8.03%), losses=2, bleeders=1, and the SAME 7 nm_abort
+exits with identical returns (jCPN +33.4, CHPs +43.1, 2oFG +38.3,
+3JSy +33.5, gKNK +33.1, E6gQ +32.4, 36oTy +33.3). Live-logic parity
+confirmed; tracker overwrites the file each cycle from here.
+
+First FRESH post-amendment close already committed: Mv4DCCRX entered
+16:53:21 (6 min post-amendment), peaked 1.062x — never approached the
+1.30 nm zone — and abort15 exited at +6.5% after 15 min. Textbook
+dead-campaign early out; the nm rule neither helped nor hurt (never
+triggered). Gate now reads n=1, exp +6.5%, bleeders=0. 29 fresh closes
+to go. Note: legacy s60 file missed this entry (token had <50 trades at
+the 17:03 write; crossed 50 by 17:09) — tape-growth edge case, harmless.

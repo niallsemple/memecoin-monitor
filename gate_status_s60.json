@@ -1,13 +1,13 @@
 {
-  "computed_at": "2026-08-31T16:56:30+0100",
+  "computed_at": "2026-08-31T17:17:07+0100",
   "amendment_ts": 1788191605,
   "strategy": "s60 breadth-entry + h108 exits (mfg universe)",
   "measurable": {
-    "n_committed": 0,
-    "expectancy": null,
+    "n_committed": 1,
+    "expectancy": 0.065,
     "bleeders": 0,
     "sample_ok": false,
-    "exp_ok": false,
+    "exp_ok": true,
     "bleeders_ok": true
   },
   "measurable_ok": false,
