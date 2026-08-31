@@ -2558,3 +2558,35 @@ dead-campaign early out; the nm rule neither helped nor hurt (never
 triggered). Gate now reads n=1, exp +6.5%, bleeders=0. 29 fresh closes
 to go. Note: legacy s60 file missed this entry (token had <50 trades at
 the 17:03 write; crossed 50 by 17:09) — tape-growth edge case, harmless.
+
+## §79u — Dust-buy filter hypothesis: median buy size at entry (2026-08-31 ~17:45)
+
+RPC holder route fully blocked (publicnode/onfinality/mainnet-beta gate
+getTokenLargestAccounts; ankr 403; drpc free tier excludes Solana) — but
+the trade tape itself carries a concentration proxy: per-trade SOL sizes
+up to the s60 entry trigger.
+
+Pattern (post-cutoff s60nm5 sample): runners (nm_abort/freeroll, n=7)
+show LOW top1 concentration (7.1%), low CV (0.59), LARGE median buy
+(3.2 SOL) — uniform mid-size sybil pumping = follow-through. Quick-deads
+(n=27) show HIGH top1 (16.4%, extremes 45-70%) but exit +4-8% via
+abort15 anyway. The remaining bleeder B9tN (-100%): top1 6.1% like a
+runner BUT median buy 0.248 SOL — 10x smaller; grind-rugs fake breadth
+with hundreds of dust buys.
+
+Grid (median-buy floor applied at entry, rest of s60nm5 unchanged):
+
+| med_min | n  | exp     | losses | bleeders | note |
+|---------|----|---------|--------|----------|------|
+| none    | 35 | +7.99%  | 2      | 1        | baseline (amended s60nm5) |
+| 0.25    | 33 | +11.30% | 1      | 0        | removes ONLY B9tN + 4cy86 (+6%) |
+| 0.50    | 23 | +11.32% | 1      | 0        | also kills winners E6gQ/36oTy (+32/33%) |
+| 1.00    | 18 | +13.49% | 1      | 0        | higher mean but skips 2 big winners |
+| 2.00    | 15 | +13.17% | 1      | 0        | over-filtered |
+
+med_min=0.25 is the minimal cut: removes the dust-breadth rug pattern,
+keeps every winner. HONEST CAVEAT: fitted on n=1 bleeder — pure
+hypothesis. Pre-registered as SHADOW variant s60nm5mb (s60nm5 +
+median-buy >= 0.25 at entry), NOT an amendment. It accrues forward on
+identical live data; becomes amendment #2 only if it beats s60nm5 over
+the same fresh-close window. Gate strategy remains s60nm5 unchanged.

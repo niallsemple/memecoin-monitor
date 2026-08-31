@@ -3139,3 +3139,9 @@
 | 16:06 | robinhood | `0x68329D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,838 mc=$113,806 | chain:robinhood no-audit-adapter | 70% was sent to Pons owner wallet |
 | 16:06 | solana | `7Cozf19R…` | FAIL | TOP10_HEAVY:67% | liq=$0 mc=$15,061 | name=Copycat symbol=Copycat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67 | A literally copycat |
 | 16:06 | solana | `3EvQYswW…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:57% | liq=$0 mc=$17,112 | name=Ape in symbol=AI; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=57.4% |  |
+| 16:26 | robinhood | `0xd4ceab…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,460 mc=$35,657 | chain:robinhood no-audit-adapter | Index token on Robinhood. Tax buys tokenized stocks, agent picks weights, contra |
+| 16:26 | robinhood | `0x1e9A98…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$30,171 mc=$107,712 | chain:robinhood no-audit-adapter |  |
+| 16:26 | robinhood | `0x8620aa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,222 mc=$19,829 | chain:robinhood no-audit-adapter | $ARCH — The Genesis Test Token of Pons ᑎ  Born as an early test token within the |
+| 16:26 | solana | `Gm7URgHi…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$14,019 | name=Payfone symbol=Payfone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=60 | A lot of "calling" based coins have dropped but none of them have been able to s |
+| 16:26 | solana | `5WRzWBPK…` | PASS | — | liq=$26,163 mc=$97,514 | name=Jackson Johnson symbol=JJ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 16:26 | robinhood | `0x72EA73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,549 mc=$141,239 | chain:robinhood no-audit-adapter | $BERRY launched on @ponsdotfamily   | All fees to holders in $BB |   Powered by  |
