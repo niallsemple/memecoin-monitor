@@ -2590,3 +2590,14 @@ hypothesis. Pre-registered as SHADOW variant s60nm5mb (s60nm5 +
 median-buy >= 0.25 at entry), NOT an amendment. It accrues forward on
 identical live data; becomes amendment #2 only if it beats s60nm5 over
 the same fresh-close window. Gate strategy remains s60nm5 unchanged.
+
+## §79u2 — s60nm5mb shadow deployed (2026-08-31 ~17:55)
+
+Tracker patched: paper_score gains med_min; new shadow file
+mfg_paper_trades_s60nm5mb.jsonl writes every cycle (s60nm5 + median buy
+>= 0.25 SOL at trigger). One-shot gen_s60nm5mb.py reproduces the §79u
+grid EXACTLY: n=33, exp +11.30%, 1 loss, 0 bleeders. Fresh entry Mv4D
+passes the dust filter (median buy >= 0.25) so gate and shadow track
+identically for now — divergence appears when the next dust-breadth
+entry shows up. Gate strategy remains s60nm5; shadow needs the same
+30-fresh-close proof before any amendment #2. py_compile clean.
