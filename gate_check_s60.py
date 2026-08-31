@@ -35,7 +35,8 @@ def main():
     signoff = load("manual_signoff.json", {}) or {}
 
     rows = []
-    p = os.path.join(HERE, "mfg_paper_trades_s60.jsonl")
+    p = os.path.join(HERE, amend.get("scorer_file",
+                                     "mfg_paper_trades_s60.jsonl"))
     if amend_ts and os.path.exists(p):
         with open(p) as f:
             for line in f:

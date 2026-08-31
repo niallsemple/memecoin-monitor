@@ -2497,3 +2497,46 @@ Bleeder entry hours: 10:12 and 14:59 local — 5 hours apart, no clustering. Ent
 
 ## §79r — Drought breaks with a near-miss loser; exp ≈ 0 (2026-08-31 16:35 local)
 PFKsPtdJ entered ~16:06, peaked 1.387x (missed freeroll by 0.11x — same 1.39x near-miss ceiling as E6gQ), trailed out −31.4% in 9 min. Exit ladder WORKED (caught −31% instead of −100%), but the entry was a trap. s60: n=34, exp +0.08%, losses 3, bleeders 2. Intraday expectancy trajectory: +7.90% → +3.86% → +0.97% → +0.08% — the regime DECAYED through the US window. Note the pattern: afternoon entries are getting farmed — peak-then-dump under the freeroll line, or instant harvest. One more material loss flips expectancy negative. Sep 1 review leaning KILL unless holder-gate data (still RPC-dark) contradicts.
+
+## §79s — Near-miss abort: FIRST NON-FALSIFIED FIX (2026-08-31 ~16:55)
+
+**Setup.** §79r showed the s60 peak distribution is bimodal with an empty
+middle: 22 trades <1.08x, ZERO in 1.15-1.29, exactly TWO in 1.30-1.49
+(E6gQ 1.386 -> -100%, PFKs 1.387 -> -31.4%), six >=1.5 all survived.
+Hypothesis: touching 1.30x but failing to cross 1.5x quickly is a
+dump-in-progress signature (the farm harvests into the approach).
+
+**Rule.** Once mcap >= 1.30x entry (pre-freeroll), start a clock; if 1.5x
+is not reached within NM_MIN minutes, exit full position at next trade.
+Implementable live; no look-ahead beyond the declared window.
+
+**Backtest (backtest_79s.py, post-cutoff tape, s60 gate, committed
+accounting).** Baseline nm=None reproduced EXACTLY: n=34, exp +0.08%,
+3 losses, 2 bleeders — same as live tracker.
+
+| NM_MIN | exp     | losses | bleeders | nm exits |
+|--------|---------|--------|----------|----------|
+| none   | +0.08%  | 3      | 2        | 0        |
+| 3      | +7.77%  | 2      | 1        | 7        |
+| 5      | +8.03%  | 2      | 1        | 7        |
+| 10     | +8.78%  | 2      | 1        | 7        |
+
+nm_abort exits (nm=5): jCPN +33.4%, CHPs +43.1%, 2oFG +38.3%,
+3JSy +33.5%, gKNK +33.1%, E6gQ +32.4% (was -100%), 36oTy +33.3%.
+Notably the 6 freerollers stall >3-5 min in the 1.30-1.49 zone before
+crossing 1.5x, so nm_abort dumps 100% at ~1.33-1.48x — beating the
++12.5% floor realization of the freeroll path on this tape.
+
+**Limitations (honest).** (1) Thresholds chosen AFTER seeing the bimodal
+gap — in-sample selection, n=7 trigger events; must re-prove forward.
+(2) Does NOT catch PFKs-style instant wick rugs (trail fires before the
+nm clock) nor B9tN-style sub-1.30 grinds (1 bleeder remains).
+(3) Next-trade fills, no slippage model.
+
+**AMENDMENT EXECUTED (paper-only).** amendment.json written
+(amendment_ts=1788191605, strategy=s60nm5, scorer_file=
+mfg_paper_trades_s60nm5.jsonl). Tracker automation patched: paper_score
+gains nm_min; new s60nm5 shadow writes every cycle. gate_check_s60.py
+now reads the amended scorer file; re-zero confirmed (n=0, qualified=
+False). Sep 1 review shifts from KILL-OR-FIX to amend-validation:
+30 fresh committed closes, exp>0, <=1 bleeder, then owner signoff.

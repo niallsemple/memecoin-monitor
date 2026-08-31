@@ -1,6 +1,6 @@
 {
-  "computed_at": "2026-08-31T13:30:47+0100",
-  "amendment_ts": null,
+  "computed_at": "2026-08-31T16:56:30+0100",
+  "amendment_ts": 1788191605,
   "strategy": "s60 breadth-entry + h108 exits (mfg universe)",
   "measurable": {
     "n_committed": 0,

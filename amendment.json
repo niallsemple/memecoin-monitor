@@ -1,0 +1,10 @@
+{
+  "amendment_ts": 1788191605,
+  "amended_at": "2026-08-31T16:53:25+0100",
+  "strategy": "s60nm5: strict-entry (net>=60 SOL, >=20 buys, flow>=2.0) + h108 exits + near-miss abort",
+  "scorer_file": "mfg_paper_trades_s60nm5.jsonl",
+  "change": "near-miss abort: once mcap touches 1.30x entry without having freerolled, start a 5-minute clock; if 1.5x is not reached within 5 minutes, exit full position at next trade (market)",
+  "evidence": "REPORT.md section 79s: in-sample replay on identical tape, baseline reproduced exactly (n=34, exp +0.08%, 3 losses, 2 bleeders); nm_min=5 -> exp +8.03%, 2 losses, 1 bleeder, 7 nm_abort exits; converts grind-then-harvest bleeder E6gQ (-100% -> +32.4%)",
+  "caveats": "in-sample selected thresholds (bimodal peak gap observed before rule written); 7 trigger events; does not address instant-wick rugs (PFKs, trail fires first) or sub-1.30 grind rugs (B9tN); no slippage model beyond next-trade fills",
+  "status": "paper-only amendment; re-zeroes committed sample; 30 fresh committed closes + owner manual_signoff.json required before any real-money qualification"
+}
