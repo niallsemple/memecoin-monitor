@@ -3151,3 +3151,33 @@
 | 16:46 | solana | `25VfAUTu…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:56% | liq=$0 mc=$19,822 | name=Pepe symbol=Pepe; contract:clean; rugcheck_score=79 lpLocked=100%; top10_hold=55.8% |  |
 | 16:46 | solana | `6B97oZNn…` | FAIL | TOP10_HEAVY:88% | liq=$0 mc=$6,280 | name=Curbdesks symbol=CURB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=88. | $CURB the curb market, after the bell.  Until 1921, stock the NYSE would not lis |
 | 16:46 | solana | `3G61UBFm…` | FAIL | TOP10_HEAVY:95% | liq=$0 mc=$3,859 | name=Have Fun Being Poor symbol=Poor; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 17:06 | solana | `C5iX8ifc…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:54% | liq=$0 mc=$19,697 | name=attention coin symbol=attention; contract:clean; rugcheck_score=80 lpLocked=100%; top |  |
+| 17:06 | solana | `9CQ7J8R5…` | PASS | — | liq=$17,471 mc=$50,249 | name=LOCK IN TWIN symbol=$TWIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 17:06 | base | `0xAd4630…` | CAUTION | PROXY | liq=$83,608 mc=$162,187 | holders=423; buy_tax=0 sell_tax=0 | Make your AI defi native: a true expert on onchain finance and capital markets. |
+| 17:06 | robinhood | `0x9e5591…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | One token, the whole basket. Every trade pays a fee, the fee buys the basket, an |
+| 17:06 | robinhood | `0x4119ae…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,834 mc=$7,857 | chain:robinhood no-audit-adapter |  |
+| 17:06 | solana | `FUYDMHSV…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,125 mc=$1,980 | name=Syndicate symbol=Syndicate; contract:clean; rugcheck_score=33 lpLocked=100%; top10_ho | The first-ever autonomous cat agent on Solana. Turns its token's creator fees in |
+| 17:26 | solana | `BHgVoKos…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:95% | liq=$0 mc=$4,631 | name=SCAREDDOG symbol=SCAREDDOG; contract:clean; rugcheck_score=53 lpLocked=100%; top10_ho |  |
+| 17:26 | solana | `7oAmDHFo…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$11,977 mc=$26,192 | name=Pepe For Purpose symbol=PFP; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold | Is this not GENNY? 🤯  Everyone’s running Pepe narras right now..  We just had th |
+| 17:26 | solana | `Fxj3425N…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$21,491 mc=$70,929 | name=The Mission symbol=MISSION; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 17:26 | robinhood | `0x4bae69…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Your custom EVM address client-side generated in seconds. |
+| 17:26 | robinhood | `0x464947…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,224 mc=$296,227 | chain:robinhood no-audit-adapter | Trade tokens from cashtags and contract addresses on x. you sign every swap. 1%  |
+| 17:26 | robinhood | `0xB1F947…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,511 mc=$15,631 | chain:robinhood no-audit-adapter | HEIST rewards holders in STOCKS every 30 mins You're either crew, or you're what |
+| 17:46 | arbitrum | `0x768d4b…` | UNKNOWN | AUDIT_UNAVAILABLE | liq=$32,627 mc=$84,503 | goplus:unavailable | The only cat behind Arbitrum |
+| 17:46 | robinhood | `0x4C8F52…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$2,294,952,214,108 | chain:robinhood no-audit-adapter | Financial tools to power the service worker economy. |
+| 17:46 | robinhood | `0x11884e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,217 mc=$75,430 | chain:robinhood no-audit-adapter | $MICROLOAN / GME on Pons. Ozzy talked about solving decentralized, non-KYC micro |
+| 17:46 | solana | `C7ju1YMa…` | FAIL | TOP10_HEAVY:53% | liq=$0 mc=$29,784 | name=Survival Swarm  symbol=SWARM ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 17:46 | robinhood | `0xAF08B3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Prehistoric chaos on modern concrete. A T-Rex with his skate. $SKATEDUG 🛹 |
+| 17:46 | robinhood | `0xBba3F8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,048 mc=$41,773 | chain:robinhood no-audit-adapter | NUGGET/GLD: a golden nugget literally means a naturally occurring piece of raw,  |
+| 18:06 | robinhood | `0x42627d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,414 mc=$69,442 | chain:robinhood no-audit-adapter | CLOUD is market-funded compute. $RUN gives users access to CLOUD — a new way to  |
+| 18:06 | robinhood | `0xaA0b48…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$169,329 mc=$387,146 | chain:robinhood no-audit-adapter |  |
+| 18:06 | solana | `2hkp8owK…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$21,117 mc=$71,154 | name=SMOLAPE symbol=SMOLAPE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=36 |  |
+| 18:06 | bsc | `0x64DF0c…` | PASS | — | liq=$85,935 mc=$714,568 | holders=199; buy_tax=0.01 sell_tax=0.01; contract:clean | cz cz cz cz cz |
+| 18:06 | robinhood | `0x96f088…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,685 mc=$246,315 | chain:robinhood no-audit-adapter | The first On-Chain Options Protocol for Social Trading.   Buy Stock Options on Y |
+| 18:06 | solana | `C9XKmtdB…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$31,953 | name=cat symbol=cat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.4% | this is a cat |
+| 18:46 | solana | `DjoZ4fzB…` | FAIL | TOP10_HEAVY:50% | liq=$0 mc=$19,111 | name=Uptember symbol=UPTEMBER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 18:46 | hyperevm | `0x308BaA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:hyperevm no-audit-adapter | From USDC - native Hyperliquid L1 infrastructure to $HYPE - native EVM. |
+| 18:46 | robinhood | `0x6b819e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The internet's first infinite entertainment tv |
+| 18:46 | solana | `ReposTA7…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$0 mc=$14,846 | name=repost symbol=repost; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=47.9 | creator fees return to token holders through finalized three-minute launch round |
+| 18:46 | solana | `7opgFCUb…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; RC_DANGER:Low Liquidity; TOP10_HEAVY:85%; RC_WARN:Low amount of LP Providers | liq=$10,458 mc=$12,305 | name=grimacecoin symbol=GRIMACE; contract:clean; rugcheck_score=55 lpLocked=0%; top10_hold | grimacecoin now paired with McDonalds with rewards. |
+| 18:46 | robinhood | `0xf7aF8D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$55,479 mc=$365,490 | chain:robinhood no-audit-adapter | $WENMARS - you're early. the moon is behind us. Paired to $SPCX. |

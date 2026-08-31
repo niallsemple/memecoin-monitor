@@ -8,3 +8,5 @@
 {"name": "UNIFART / WBNB", "pair": "0x2e0ac07402003615fc822bd26f0eee7580b2f0d6", "entry_t": 1788183284.205813, "exit_t": 1788185517.60974, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3787.0, "hold_min": 37.2}
 {"name": "\u725b\u726a\u7287 / WBNB", "pair": "0x1cf3dfd15dc9151bd63fc6c2da3fc410fee1a54c", "entry_t": 1788184425.3448231, "exit_t": 1788189323.6189382, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3639.0, "hold_min": 81.6}
 {"name": "\u4f5b\u54de / USDT", "pair": "0xfc58e665997431a0d8dfef4e07b8e3af46711332", "entry_t": 1788182402.917738, "exit_t": 1788191532.691831, "ret": 1.6455, "exit": "tstop", "entry_flow_usd": 3280.0, "hold_min": 152.2}
+{"name": "FMC / WBNB", "pair": "0x7b41510b295adbd3036fe2ecee2f07313882db96", "entry_t": 1788195203.622998, "exit_t": 1788198707.085691, "ret": 0.8549, "exit": "abort", "entry_flow_usd": 3535.0, "hold_min": 58.4}
+{"name": "\u5e01\u5b89\u8bc1\u5238 / WBNB", "pair": "0xe6af46bec0506290c21c826bdd778288890560c0", "entry_t": 1788195104.117617, "exit_t": 1788198707.085691, "ret": 1.0927, "exit": "abort", "entry_flow_usd": 6691.0, "hold_min": 60.0}

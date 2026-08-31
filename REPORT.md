@@ -2610,3 +2610,27 @@ exactly; 1 fresh post-amendment close each (Mv4D +6.5% abort15). No
 manual generation remains in the loop: discovery -> trade tape -> 6
 scorer variants -> gate status, all on the ~20-min cycle. Accrual phase
 begins: 29 fresh closes to the go/no-go readout.
+
+## §79w — First fresh bleeder: instant mega-dump style (2026-08-31 ~20:05)
+
+GsM2Nqmd: entered 19:46:15 (fresh, post-amendment), 74 buys / 1 sell,
+net 60.7 SOL, top1 7.4%, med buy 0.695 SOL, cv 0.82 — a textbook
+RUNNER profile by every entry feature we have. At +3.6 min a single
+1,697.5 SOL sell hit the pool (then 31.7 SOL mop-up): insider
+pre-positioned mega-dump, rug style #3 (§79i). Trail triggered but the
+fill landed at ~0: -100% in under 4 minutes. No exit rule fires fast
+enough (abort15 is 11 min too late; nm_abort never armed — peak 1.01x).
+
+Implications:
+1. Gate: 3/30 fresh closes, exp -29.4%, bleeders=1 (max allowed: 1).
+   ONE more bleeder in the next 27 closes fails the amended gate.
+2. Entry-window tape features do NOT separate this style from runners
+   — it passes the s60 gate AND the dust filter legitimately. The only
+   pre-entry defense would be holder concentration at birth (insider
+   holds the dump stack pre-graduation) — RPC-gated, still blocked.
+3. Style-3 was ABSENT from the 35-trade post-cutoff history (bleeders
+   there were grind styles E6gQ/B9tN). Its arrival today means the
+   farm rotates styles; base rate unknown, treat as live risk.
+4. Position sizing is the structural answer for style-3: with ~1-in-3
+   historical rug styles, sizing each entry at <=25-33% of bankroll
+   keeps a single instant-rug survivable even if the gate passes it.
