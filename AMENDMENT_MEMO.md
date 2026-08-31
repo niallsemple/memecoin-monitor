@@ -29,11 +29,12 @@ Breadth of participation is what rug operators cannot fake cheaply. Manufactured
 
 Known weakness: strict entry fills LATE (§77c — oFxvzBiT runner became a +6.6% scratch vs +13.3% loose). Aggregate expectancy still favors strict; single-race losses are the price.
 
-## 4. Risk model (honest calibration, §77e)
+## 4. Risk model (honest calibration, §77e + §79b)
 
 - Expect win-rate regression from 100% → 70–85%.
 - Tail: ~1 bleeder per ~20 trades at −50% class (fCERmUZg precedent, voided-window caveat).
-- Expectancy rests on asymmetry: many +3–14% scratches + occasional 2–3× runners − rare bleeders. NOT on never losing.
+- **Runner realization (§79b): freerolled runners resolve at the +12.5% FLOOR, not MTM — post-peak collapses are rug-speed and the trailing remainder sells near zero.** Model runner value as +12.5%, never as peak/MTM. 3JSy9Uvh: peak 1.76×, MTM +56%, realized +12.6%.
+- Expectancy rests on asymmetry: many +3–8% scratches + +12.5% runner floors − rare bleeders. NOT on never losing, NOT on runner MTM.
 - Wave-locked regime risk (§62/§73): edge concentrates in pump waves; droughts of 24–36h occur. Position sizing must assume strings of scratches.
 
 ## 5. Decision criteria at review

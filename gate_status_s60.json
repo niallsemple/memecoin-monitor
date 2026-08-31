@@ -1,0 +1,16 @@
+{
+  "computed_at": "2026-08-31T13:30:47+0100",
+  "amendment_ts": null,
+  "strategy": "s60 breadth-entry + h108 exits (mfg universe)",
+  "measurable": {
+    "n_committed": 0,
+    "expectancy": null,
+    "bleeders": 0,
+    "sample_ok": false,
+    "exp_ok": false,
+    "bleeders_ok": true
+  },
+  "measurable_ok": false,
+  "manual_signoff": false,
+  "qualified": false
+}

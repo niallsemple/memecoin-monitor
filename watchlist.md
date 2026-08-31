@@ -3036,3 +3036,70 @@
 | 07:26 | solana | `8L472CyY…` | FAIL | TOP10_HEAVY:78% | liq=$0 mc=$9,135 | name=Grok Swarm symbol=SWARM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=7 |  |
 | 07:26 | robinhood | `0x95C187…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,187 mc=$22,141 | chain:robinhood no-audit-adapter | One Key to Rule Them All. RAW uncensored intelligence. Private inference. Infini |
 | 07:26 | robinhood | `0x2D9990…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,949 mc=$11,857 | chain:robinhood no-audit-adapter | 👶 Meet Baby Pons — the littlest light in the Pons family. 💚 Born on Robinhood Ch |
+| 08:06 | robinhood | `0x904c90…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$3,968 | chain:robinhood no-audit-adapter |  |
+| 08:06 | solana | `Au3suMLm…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$34,412 mc=$168,580 | name=The Lone Rabbit symbol=Rabbit; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 08:06 | robinhood | `0xd43943…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$51,291 mc=$314,816 | chain:robinhood no-audit-adapter | an inscription that becomes a broker. it calls eth up or down every six hours an |
+| 08:06 | solana | `cis8w8dJ…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$22,465 mc=$79,499 | name=TELETOMOON symbol=TELETOMOON; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Teletomoon is a cozy place for quiet nights, open meadows, and close friends. |
+| 08:06 | solana | `21kAN4BW…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$10,795 | name=TikTok symbol=TikTok; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=64.1 |  |
+| 08:06 | solana | `EMWpA23o…` | FAIL | TOP10_HEAVY:87% | liq=$0 mc=$7,506 | name=The Lone Rabbit symbol=Hoppie; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 08:26 | robinhood | `0x79d415…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,825 mc=$129,935 | chain:robinhood no-audit-adapter | Deploy a nation on Neighbourhoods. |
+| 08:26 | robinhood | `0x335d36…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | So I found a GitHub repository that was contributed to by 5 Robinhood employees, |
+| 08:26 | solana | `Duz5NLo5…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$22,789 mc=$83,149 | name=beanly symbol=beanly; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=33.6 | Beanly started with a simple question: how little can a character be while still |
+| 08:26 | solana | `Fi3tgE1U…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:100% | liq=$0 mc=$3,268 | name=Bart Simpson symbol=Bart; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold |  |
+| 09:06 | solana | `4FWdrtrP…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$14,440 mc=$36,373 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=44.1% |  |
+| 09:06 | robinhood | `0x68c948…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$3 mc=$2,513 | chain:robinhood no-audit-adapter |  |
+| 09:06 | solana | `HTzYumBo…` | FAIL | TOP10_HEAVY:78% | liq=$0 mc=$8,967 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=78.1% |  |
+| 09:06 | solana | `CiN8f69K…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$28,424 mc=$121,313 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=33.4% | So POKEMON the biggest TCG game ever is making a MOVIE and the main pokemon is M |
+| 09:06 | solana | `AM1VmeJg…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:93% | liq=$3,436 mc=$3,775 | goplus:unavailable; rugcheck_score=31 lpLocked=99.97002575991904%; top10_hold=92.6% | “It screams, chatters and whistles”. It might look like a dog but it definitely  |
+| 09:06 | solana | `3v3MymJv…` | FAIL | TOP10_HEAVY:58% | liq=$7,801 mc=$12,699 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=58.2% |  |
+| 09:26 | solana | `2eGdYopu…` | FAIL | TOP10_HEAVY:53% | liq=$0 mc=$23,128 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=53.1% |  |
+| 09:26 | robinhood | `0xF2c982…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,735 mc=$14,348 | chain:robinhood no-audit-adapter | Original name domain of Robinhood .com |
+| 09:26 | solana | `9EmtjLFX…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$21,016 mc=$69,259 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=33.0% |  |
+| 09:26 | robinhood | `0x9fa60C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$67,244 mc=$189,208 | chain:robinhood no-audit-adapter |  |
+| 09:26 | robinhood | `0xD48314…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,354 mc=$34,171 | chain:robinhood no-audit-adapter | In 2016 Robinhood already tweeted what turns into reality for many traders today |
+| 09:26 | solana | `2Zp3puJe…` | PASS | — | liq=$39,579 mc=$226,535 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=13.4%; behaviour:SKIP(heliu | Born in the red. Built for the green. 🦍🪖 The battle-tested ape of the Solana tre |
+| 09:46 | robinhood | `0x27E79E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,676 mc=$24,760 | chain:robinhood no-audit-adapter | Only FTR, Flying Tesla Roadster with fees distributed to holders. |
+| 09:46 | solana | `7Xjgd1Bh…` | FAIL | TOP10_HEAVY:63%; RC_WARN:Low Liquidity | liq=$5,680 mc=$7,693 | goplus:unavailable; rugcheck_score=12 lpLocked=100%; top10_hold=63.1% | Doomguy |
+| 09:46 | bsc | `0x7797Ad…` | PASS | — | liq=$13,317 mc=$15,607 | holders=930; buy_tax=0 sell_tax=0.0099; contract:clean | HK-born, boba-obsessed, chubby purple horse. @orangie sold early for snacks. Cha |
+| 09:46 | solana | `8ex9zVQf…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$24,079 mc=$91,525 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=31.8% | last cycle proved the best memes can be stupidly simple - dogwifhat. a dog. with |
+| 09:46 | solana | `CD6fhrnu…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$9,239 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=81.4% |  |
+| 09:46 | solana | `2TS4qJVx…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:100% | liq=$0 mc=$3,794 | goplus:unavailable; rugcheck_score=49 lpLocked=100%; top10_hold=99.7% |  |
+| 10:26 | solana | `BNwbL17P…` | PASS | — | liq=$29,748 mc=$130,477 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=28.6%; behaviour:SKIP(heliu |  |
+| 10:26 | robinhood | `0xa03E16…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40 mc=$158,952 | chain:robinhood no-audit-adapter | USA made for @NBHOODStech game  Let me few hour to updagte everything fees |
+| 10:26 | solana | `GDPurkh9…` | FAIL | TOP10_HEAVY:59% | liq=$7,260 mc=$11,331 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=58.6% | Guru |
+| 10:26 | robinhood | `0x535829…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Only mascot space x ever tweeted officially |
+| 10:26 | solana | `Cw1Uf1xE…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$12,043 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=70.3% | 3 Agents started the AI revolution |
+| 10:26 | robinhood | `0x04A2dF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$87,650 mc=$914,910 | chain:robinhood no-audit-adapter |  |
+| 11:26 | robinhood | `0x88952E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,350 mc=$43,506 | chain:robinhood no-audit-adapter | The Jobscoin memefi is built around Steve Jobs and Apple stock, bringing the wor |
+| 11:26 | robinhood | `0x3f322F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,580 mc=$27,782 | chain:robinhood no-audit-adapter | Since 2019, the name has been HOODIECOIN and the ticker has been $HOC.  Shilled  |
+| 11:26 | solana | `58ruyWCw…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$8,332 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=79.2% |  |
+| 11:26 | solana | `9tXCax4A…` | FAIL | TOP10_HEAVY:71% | liq=$0 mc=$12,269 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=70.6% | Infinite interdimensional stream  All fees to Anis Ayari |
+| 11:26 | robinhood | `0xC3B82a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$75,671 mc=$42,863 | chain:robinhood no-audit-adapter | Quantums |
+| 11:26 | solana | `Ax3U1fBe…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,171 mc=$2,048 | goplus:unavailable; rugcheck_score=33 lpLocked=100%; top10_hold=99.7% | Bringing fortune, vibes & good boy energy to the degen pack. |
+| 11:46 | solana | `AETsvL3H…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$10,502 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=73.0% |  |
+| 11:46 | solana | `7X8FBWTy…` | FAIL | TOP10_HEAVY:67% | liq=$0 mc=$13,668 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=67.2% | Shitcoin |
+| 11:46 | robinhood | `0x7eC9f8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,674 mc=$57,646 | chain:robinhood no-audit-adapter | Big Chungus became part of GameStop internet history after fake PS4 box art went |
+| 11:46 | robinhood | `0x10ba39…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,747 mc=$33,295 | chain:robinhood no-audit-adapter | The bot from the post below: one Grok Bot, six agents, one wallet, one rule -- p |
+| 11:46 | hyperevm | `0x135575…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,948 mc=$32,053 | chain:hyperevm no-audit-adapter |  |
+| 11:46 | solana | `C7Npryj7…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:94% | liq=$3,326 mc=$3,627 | goplus:unavailable; rugcheck_score=30 lpLocked=100%; top10_hold=94.2% |  |
+| 11:56 | robinhood | `0x14B60E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,027 mc=$35,681 | chain:robinhood no-audit-adapter | the postive bull is one of the support/info charcaters that robinhood made for t |
+| 11:56 | solana | `3NGdMNQ7…` | PASS | — | liq=$31,640 mc=$143,924 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=28.4%; behaviour:SKIP(heliu |  |
+| 11:56 | solana | `Fpqy7zCA…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$15,081 mc=$39,239 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=43.8% |  |
+| 12:26 | bsc | `0x6Cbb38…` | PASS | — | liq=$42,394 mc=$180,012 | holders=1146; buy_tax=0.01 sell_tax=0.0099; contract:clean |  |
+| 12:26 | solana | `E9zzrjyU…` | PASS | — | liq=$24,978 mc=$91,374 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=28.3%; behaviour:SKIP(heliu | A golden coin chooses between strange odds and the lucky number seven. |
+| 12:26 | robinhood | `0x286923…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,581 mc=$22,971 | chain:robinhood no-audit-adapter | Hoodiecoin, shilled by Robinhood. |
+| 12:26 | solana | `AB8RJUcL…` | FAIL | TOP10_HEAVY:72% | liq=$0 mc=$8,251 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=72.2% |  |
+| 12:26 | robinhood | `0x3c2D8f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,838 mc=$178,918 | chain:robinhood no-audit-adapter | The spirit of WallStreetBets, reborn onchain. 💎🙌 All-in or go home. 🦍🚀 |
+| 12:26 | solana | `79Z56ijK…` | FAIL | TOP10_HEAVY:66%; RC_WARN:Copycat token | liq=$0 mc=$12,306 | goplus:unavailable; rugcheck_score=29 lpLocked=100%; top10_hold=66.0% |  |
+| 12:46 | solana | `8ptYxNrB…` | PASS | — | liq=$33,651 mc=$168,666 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=13.2%; behaviour:SKIP(heliu | Official Solana meme token for Trump President. To the moon. |
+| 12:46 | solana | `D6ka9GpW…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$23,365 mc=$84,455 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=38.0% |  |
+| 12:46 | solana | `BPMgEry5…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:98% | liq=$2,374 mc=$2,294 | goplus:unavailable; rugcheck_score=32 lpLocked=100%; top10_hold=98.5% |  |
+| 12:46 | solana | `Awzaq2s7…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$36,067 mc=$194,440 | goplus:unavailable; rugcheck_score=1 lpLocked=100%; top10_hold=46.8% | The trenches had a face before they had a name. $CUPSEY — The First Trencher. 🪖⚔ |
+| 12:46 | solana | `9gaCDFUN…` | FAIL | MINTABLE; RC_DANGER:Mint Authority still enabled; RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:100%; METADATA_MUTABLE; RC_WARN:Missing file metadata; RC_WARN:Low amount of LP Providers; RC_WARN:Mutable metadata | liq=$270,977 mc=$15,565 | name=Tree (Wormhole) symbol=TREE; rugcheck_score=74 lpLocked=9.862564303370373e-10%; top10 | Powering Tree Capital Discord & Telegram chart bot, Tree News, and all trading t |
+| 12:46 | robinhood | `0x14A68B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,570 mc=$40,587 | chain:robinhood no-audit-adapter | Nala is one of the biggest cats on the internet — adopted from a shelter in 2010 |
+| 13:06 | solana | `ANFefEgo…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$21,079 mc=$68,620 | name=Tung Tung Tung Copur symbol=COPUR; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 13:06 | robinhood | `0x4f8324…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,061 mc=$23,853 | chain:robinhood no-audit-adapter | The trader minted vault on Robinhood. First trade mint NFT, NFT Earns Dividend |
+| 13:06 | robinhood | `0xFe6D21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,452 mc=$256,804 | chain:robinhood no-audit-adapter | Everyone wants a piece of the bull. 🥩  $WAGYU is your cut. Grab your steak, clai |
+| 13:06 | robinhood | `0x5f61a7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,066 mc=$16,205 | chain:robinhood no-audit-adapter |  |
+| 13:06 | robinhood | `0x223b9b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The hood is being watched |
+| 13:06 | robinhood | `0x804fBd…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$59,253 mc=$76,403 | chain:robinhood no-audit-adapter | Just a hot dog. |

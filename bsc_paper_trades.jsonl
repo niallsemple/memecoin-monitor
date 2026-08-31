@@ -4,3 +4,4 @@
 {"name": "MINI / WBNB", "pair": "0xbb9537052504f6a3b4f51e3622fd9d5e17731e93", "entry_t": 1788114787.5093708, "exit_t": 1788117252.0624828, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3060.0, "hold_min": 41.1}
 {"name": "FIST / WBNB", "pair": "0xdd0f1b3f208b549307053e42810b312c81cd5a0c", "entry_t": 1788144698.34917, "exit_t": 1788148310.7784152, "ret": 0.8279, "exit": "abort", "entry_flow_usd": 3387.0, "hold_min": 60.2}
 {"name": "\u65fa\u8d22 / USDT", "pair": "0x8d3b00b5972d755ee8d7b9faeeed4f9c19e40275", "entry_t": 1788148345.020832, "exit_t": 1788156723.688687, "ret": 4.958, "exit": "tstop", "entry_flow_usd": 3384.0, "hold_min": 139.6}
+{"name": "\u6076\u517d / WBNB", "pair": "0xf1ea68c8639a459a81884970ca0e4b575aaf4d28", "entry_t": 1788168089.0443819, "exit_t": 1788169923.198587, "ret": 1.0088, "exit": "abort", "entry_flow_usd": 3177.0, "hold_min": 30.6}

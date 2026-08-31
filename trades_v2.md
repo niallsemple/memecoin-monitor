@@ -226,3 +226,6 @@
 | 03:28 | BUY | TRUEq13u | £8.98 | entry mc $157,522 | +1802min |
 | 04:36 | BUY | Wb4v89d7 | £8.80 | entry mc $134,781 | +11min |
 | 06:06 | STOP | Wb4v89d7 | £0.13 | trail-stop at 0.01x |
+| 09:48 | BUY | 2Zp3puJe | £8.62 | entry mc $266,705 | +22min |
+| 11:26 | STOP | 2Zp3puJe | £0.07 | trail-stop at 0.01x |
+| 13:06 | BUY | 8ptYxNrB | £8.45 | entry mc $220,089 | +20min |

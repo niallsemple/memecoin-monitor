@@ -69,3 +69,19 @@ Do not size v6 up until the 48h runner/husk differentiator finishes its labellin
 3. Exits: 50% off by 2x, trail remainder, hard 24h time-stop. The data's whole point: holding to the end is near-total loss (`BNPi6iiB` +1334% → −90%).
 4. One token = one position across all strategies; aggregate exposure counts against the £100 cap.
 5. Every real trade journaled to `mfg_trades.jsonl` with paper-vs-live slippage recorded — slippage > 5% on 3 trades = halt and review.
+
+---
+
+## 7. AMENDMENT (2026-09-01 review) — s60 breadth-entry strategy
+
+Supersedes v3 STRICT as the go-live candidate. v3/paper_v3.json is LEGACY (pre-manufactured-launch research); the legacy alerter path cannot qualify without manual_signoff.json, which remains owner-only.
+
+The amended strategy (spec: STRATEGY_SPEC.md; evidence: REPORT.md §59–§79l):
+entry = net≥60 SOL AND ≥20 buys AND flow≥2.0, next-trade fill; exits = abort15 1.08× / abort30 1.15× / freeroll 75% @1.5× / trail 50% of peak / timestop 120m.
+
+Amended measurable gates (scored by gate_check_s60.py against mfg_paper_trades_s60.jsonl, entries ≥ amendment_ts — the re-zero):
+1. ≥30 fresh committed closes post-amendment (freerolled opens count at +12.5% floor, §79b)
+2. expectancy strictly > 0
+3. ≤1 full-loss (≤−50%) bleeder in the window
+
+Manual gate: manual_signoff.json {"owner_approved": true} — created ONLY by explicit owner decision. qualified = measurable_ok AND owner_approved.

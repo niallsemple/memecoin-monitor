@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 431.05432438668123,
+ "cash": 413.79961247808893,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -84,11 +84,22 @@
    "entry_mcap": 157522.0,
    "entry_min": 1802.2,
    "size_gbp": 8.98,
-   "peak_mcap": 195125.0,
+   "peak_mcap": 277426.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-08-31T03:28:24.158081+00:00"
+  },
+  "solana:8ptYxNrBXTv7qgCVgCYTHpmHH2HA6Ecmk26sUnBppump": {
+   "addr": "8ptYxNrB",
+   "entry_mcap": 220089.0,
+   "entry_min": 20.3,
+   "size_gbp": 8.45,
+   "peak_mcap": 279399.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-08-31T13:06:24.321578+00:00"
   }
  },
  "closed": [
@@ -1435,6 +1446,20 @@
    "closed_at": "2026-08-31T06:06:51.714455+00:00",
    "exit_r": 0.014,
    "pnl_gbp": -8.81
+  },
+  {
+   "addr": "2Zp3puJe",
+   "entry_mcap": 266705.0,
+   "entry_min": 21.9,
+   "size_gbp": 8.62,
+   "peak_mcap": 284540.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.0698790292645432,
+   "opened": "2026-08-31T09:48:06.599556+00:00",
+   "closed_at": "2026-08-31T11:26:51.744460+00:00",
+   "exit_r": 0.008,
+   "pnl_gbp": -8.68
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -1612,6 +1637,10 @@
   "solana:FoFWaJ4ktA6vGyap3jNAwrhtq9U8dxMio5KQcQUopump": "failed_momentum_floor",
   "solana:7WEw6bZwE5vJsEcZpqtPsEzPs6fFS3Y2JEd1YHmgpump": "failed_momentum_floor",
   "solana:CXBSSbR5p8B9QVfmPwiQrbTu8hbHiEWpUMTJo5uTpump": "failed_momentum_floor",
-  "solana:Wb4v89d7SQn73wZUH13FHa9QsZLHDhhHuYaGDMYpump": "failed_momentum_floor"
+  "solana:Wb4v89d7SQn73wZUH13FHa9QsZLHDhhHuYaGDMYpump": "failed_momentum_floor",
+  "solana:BNwbL17PtPivvQNC4nq6c59WnYzjANqZqb5FrHYjpump": "failed_momentum_floor",
+  "solana:2Zp3puJe5JWFEJ6NviPqLbroszfXgavgfNPLc21cpump": "failed_momentum_floor",
+  "solana:3NGdMNQ7Hq2gmkt2KLgDiX7poYN5tVfy6jrkfEMLpump": "failed_momentum_floor",
+  "solana:E9zzrjyUZq4ZVoRVLsngApaKy1wJDTb9E2htxypSpump": "failed_momentum_floor"
  }
 }
