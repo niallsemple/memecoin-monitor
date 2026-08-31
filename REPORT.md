@@ -2666,3 +2666,21 @@ The near-miss abort (amendment s60nm5) fired live for the first time.
   4wguFY +25.9% (peak 1.259x), both approaching the 1.30x near-miss zone.
 - Also notable: entry pace surged this hour (16 fresh entries total,
   ~7 in the last 2h) — maturity estimate pulls earlier if sustained.
+
+## §79z — Gate flips positive: 16/30, exp +3.8%; nm_abort goes 3-for-3 (2026-09-01 ~00:44)
+
+The amended strategy's forward gate crossed into positive territory.
+
+- **Two more live nm_abort closes**: 4wguFY **+34.4%** (peak 1.342x) and
+  4n22Si **+32.6%** (peak 1.324x). Plus 3r8JB3 +4.6% on abort15.
+- Live nm_abort is now **3-for-3**: 2eQKEM +38.9%, 4wguFY +34.4%,
+  4n22Si +32.6% — every position that entered the 1.30-1.40x near-miss
+  zone without reaching 1.5x was harvested at +32-39% instead of riding
+  the fade. The amendment is behaving exactly as the §79s replay
+  predicted, out of sample.
+- **Gate: 16/30 committed, exp +3.8%, bleeders 1/1** (GsM2Nq insider
+  dump remains the only bleeder). Expectation path: −29.4 → −21.0 →
+  −16.6 → −12.7 → −10.7 → −7.3 → −4.2 → −0.8 → **+3.8%**.
+- No freeroll yet (no position has touched 1.5x); no second bleeder.
+- Remaining qualifiers for the go decision: 14 more committed closes,
+  exp > 0, <=1 bleeder total, then owner manual_signoff.json.
