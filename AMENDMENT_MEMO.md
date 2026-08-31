@@ -44,6 +44,12 @@ Amend ONLY IF all hold:
 3. Runner-scratch divergences (§77c pattern) remain rare: strict-missed runners ≤ 1 in 5 qualifying campaigns.
 4. Frozen h108 gate still accrues normally (no instrumentation break).
 
+**STATUS (2026-08-31 09:24 local, one day early):**
+1. **MET** — 22 committed, +7.91%, zero post-cutoff losses.
+2. **MET** — 3JSy9Uvh freerolled at 1.54×, first post-deployment strict-captured runner (§78f).
+3. HOLDING — 1 divergence (oFxvzBiT, §77c).
+4. HOLDING — engine parity §74d, all runs clean.
+
 If (1) fails but confirmed-entry offline stays positive → evaluate fallback. If both fail → keep h108 gate accrual to 30 and re-review; if h108 committed_exp then > 0, no amendment needed.
 
 ## 6. After amendment (if approved)

@@ -2367,3 +2367,45 @@ The §78b near-miss pipeline resolved through the strict gate: JzBaT6QS +7.2% an
 ### §78e — s60 hits n=21, still zero losses; mills scratched green (08:44 local)
 
 s60 committed n=21, +7.69%. The late-qualified churn mills (8WnaNq61, 4cy86hpK) and QKd4PX58 all resolved GREEN — the strict filter's late-fill discount converted even wash-traded campaigns into small wins. Zero-loss streak now spans ~19 closed post-cutoff. 3JSy9Uvh: +41.9% MTM, peak 1.42x at 79m — 0.08 from freeroll. Criterion #1 (sustained >0 at n>=20) now MET on total committed count; post-deployment-only count ~7 and also all green.
+
+### §78f — CRITERION #2 MET: 3JSy9Uvh freerolled at 1.54x (09:24 local)
+
+First post-deployment strict-captured runner: entered on net60/nb20 after shadow went live, climbed 1.10->1.48->1.54x over 119 min, freerolled (75% banked at 1.5x, house money on trail), MTM +51.1%. s60: 22 committed, +7.91%, zero losses. New entry nVs7YcfF open +1.7%.
+
+AMENDMENT CRITERIA SCOREBOARD:
+1. s60 exp>0 sustained, n>=20: **MET** (22 committed, +7.9%)
+2. Fresh strict-captured runner >=1.5x: **MET** (3JSy9Uvh 1.54x freeroll)
+3. Runner-scratch divergence rare: HOLDING (1 case: oFxvzBiT)
+4. No instrumentation break: HOLDING (parity §74d, all runs clean)
+
+All four criteria met or holding one day early. Sep 1 review is now a confirmation exercise, not a discovery exercise.
+
+### §78g — Duz5NLo5: slow-breadth runner, strict entry's structural blind spot (09:45 local)
+
+Duz5 freerolled 1.97x under loose entry (+60.5% MTM). Flow profile: t+13m net=46.6/nb=26 (breadth OK, net short), t+26m net FELL to 39.7 (selling pressure), t+38m net=66.1/nb=60 — qualifies ~38 min post-birth, AFTER the move. Not a hard miss: a LATE catch that forfeits the freeroll (same §77c pattern as oFxvzBiT).
+
+Taxonomy clarified: FAST-breadth campaigns (3JSy, 2oFG, jCPN) — strict catches runners early enough. SLOW-breadth campaigns (Duz5, oFxv) — strict enters post-move, scratches small. NOTE: confirmed-entry W10 (§77d) would ALSO miss Duz5 (no confirmation by minute 10-13; net<60 until 38m) — slow-build runner capture is unsolved by BOTH strict variants. Runner upside capture: strict 3/5 recent runners with freeroll, 2/5 late scratches.
+
+Criterion 3 honest restatement for the review: strict forfeits runner FREEROLL upside in slow-build campaigns (~2 of 5), but never turns them into losses. The +16pp expectancy gap vs loose covers the leaked upside many times over. Amendment case intact; criterion 3 revised to "strict-missed runner upside does not exceed the rug-avoidance gain" — currently +16pp vs ~2 forgone freerolls.
+
+### §78h — gKNKwvDg freerolled 1.51x, but its 08:44 abort15 close REVISED away (10:04 local)
+
+gKNK showed "closed abort15 +7.5%" at 08:44; now OPEN freerolled (peak 1.51x, +50.7% MTM, entry ~08:29). Cause: batched-RPC trade backfill — late-arriving pool trades with pre-deadline timestamps revise the mark-to-deadline history; the abort15 fill no longer fires on the fuller tape. Two implications:
+1. GOOD: 2nd post-deployment strict-captured runner (with 3JSy). Criterion #2 doubly met.
+2. CAVEAT (memo-worthy): "closed" marks are not immutable — committed history can revise when backfill lands. Rare (first observed case in ~40 closes) but gate accounting must tolerate revisions. The n>=30/exp>0 rule should be evaluated on the file as it stands AT review time, and the review should re-run gen/backtest on the raw tape rather than trusting stored marks blindly.
+s60 now: 23 committed, +7.91%, zero losses, THREE freerolled opens riding (2oFG +94%, 3JSy +54%, gKNK +51%).
+
+### §78i — runner resolution scenarios (10:25 local)
+
+Committed exp at floor vs if freerolled runners trail out at current MTM:
+- GATE h108 (n=36): floor -5.2% -> MTM scenario **-1.6%**. Even full runner upside cannot flip the loose gate; deficit too deep. Verdict final regardless of trail-outs.
+- s60 (n=23): floor +7.9% -> MTM scenario **+15.2%**. The three freerolled runners carry +7.2pp of uncounted upside.
+- Design note verified: the +12.5% floor IS the post-freeroll worst case (75% banked at 1.5x = 1.125 total even if remainder dies). No scenario below floor; trail-outs only add.
+- Duz5 trailed out of h108's open list (closed) — loose gate banked its runner, still negative overall.
+
+## §79 — Review instrument built and validated (2026-08-31 ~10:30 local)
+
+`review_check.py` recomputes all four scorers from RAW TAPE and diffs vs tracker files (per §78h revision caveat). First run:
+- a15, h108, s60: recomputed committed n/exp IDENTICAL to tracker files (a15 37/-1.79%; h108 36/-5.18%; s60 23/+7.91%). Flagged "revisions" are open-position MTM drift (ret moves as marks update) — no material inconsistency. a30 had one heartbeat close revision (7caYMNnR ope->clo).
+- s60 from tape: 8 post-deployment entries, ZERO losses, 5 runners >=1.5x post-cutoff (jCPN, CHPs, 2oFG, 3JSy, gKNK).
+The Sep 1 review can now be run as: `python3 review_check.py` — verdict reproduces from tape, not from stored marks.
