@@ -114,3 +114,4 @@
 | 15:06 | BUY | TRUEq13u | £17.06 | entry mc $137,499 | +2501min |
 | 15:06 | BUY | HgWZ9faE | £16.71 | entry mc $228,567 | +41min |
 | 15:36 | STOP | HgWZ9faE | £0.15 | trail-stop at 0.01x |
+| 16:47 | BUY | 5WRzWBPK | £16.37 | entry mc $155,232 | +21min |

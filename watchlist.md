@@ -3145,3 +3145,9 @@
 | 16:26 | solana | `Gm7URgHi…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$14,019 | name=Payfone symbol=Payfone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=60 | A lot of "calling" based coins have dropped but none of them have been able to s |
 | 16:26 | solana | `5WRzWBPK…` | PASS | — | liq=$26,163 mc=$97,514 | name=Jackson Johnson symbol=JJ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
 | 16:26 | robinhood | `0x72EA73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,549 mc=$141,239 | chain:robinhood no-audit-adapter | $BERRY launched on @ponsdotfamily   | All fees to holders in $BB |   Powered by  |
+| 16:46 | robinhood | `0x2AE556…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$51,762 mc=$63,069 | chain:robinhood no-audit-adapter | Let’s rally together and show our strength: FIGHTING for what matters most!  All |
+| 16:46 | robinhood | `0xfea09e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 16:46 | solana | `jTpDtR77…` | FAIL | TOP10_HEAVY:75% | liq=$7,595 mc=$11,647 | name=SOLBULL symbol=SOLBULL; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=74 |  |
+| 16:46 | solana | `25VfAUTu…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:56% | liq=$0 mc=$19,822 | name=Pepe symbol=Pepe; contract:clean; rugcheck_score=79 lpLocked=100%; top10_hold=55.8% |  |
+| 16:46 | solana | `6B97oZNn…` | FAIL | TOP10_HEAVY:88% | liq=$0 mc=$6,280 | name=Curbdesks symbol=CURB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=88. | $CURB the curb market, after the bell.  Until 1921, stock the NYSE would not lis |
+| 16:46 | solana | `3G61UBFm…` | FAIL | TOP10_HEAVY:95% | liq=$0 mc=$3,859 | name=Have Fun Being Poor symbol=Poor; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |

@@ -2601,3 +2601,12 @@ passes the dust filter (median buy >= 0.25) so gate and shadow track
 identically for now — divergence appears when the next dust-breadth
 entry shows up. Gate strategy remains s60nm5; shadow needs the same
 30-fresh-close proof before any amendment #2. py_compile clean.
+
+## §79v — Full automation chain closed (2026-08-31 18:04)
+
+18:04 tracker run self-wrote BOTH amended-scorer files (s60nm5: 43 rows;
+s60nm5mb shadow: 33 rows), contents matching the verified one-shots
+exactly; 1 fresh post-amendment close each (Mv4D +6.5% abort15). No
+manual generation remains in the loop: discovery -> trade tape -> 6
+scorer variants -> gate status, all on the ~20-min cycle. Accrual phase
+begins: 29 fresh closes to the go/no-go readout.
