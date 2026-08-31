@@ -2475,3 +2475,10 @@ Discovered: the existing go-live alerter (automation_17fc6c1a) is wired to gate_
 
 ## §79n — Backfill reversal: 36oTy abort-close became a freeroll (2026-08-31 14:03 local)
 36oTyUNQ was closed abort +8.8% at the 13:24 write; the 14:03 write shows it OPEN, freerolled, peak 1.57x (+52% MTM) — RPC backfill delivered the trades that carried it through 1.5x, reversing the close. Committed value moves +8.8% → +12.5% floor; s60 n=30, exp +4.18%. Third live demonstration of §78h mark revision (after E6gQ/gKNK), first FAVORABLE one. Reinforces: Sep 1 review must trust raw-tape recomputation (review_check.py), never stored files.
+
+## §79o — KILL CRITERION #2 MET: second bleeder B9tN5FAJ (2026-08-31 15:23 local)
+Two resolutions this cycle:
+1. **36oTyUNQ trail-close +12.78%** — THIRD floor realization (3JSy +12.6%, gKNK +12.9%, 36oTy +12.8%). §79b floor model now triple-confirmed.
+2. **B9tN5FAJ −99.9%** — second full-loss bleeder. Grinded ~52 min building breadth, passed s60 gate legitimately, then collapsed to dust within 5 min of entry (peak 1.004x — never went up). Same grind-then-harvest species as E6gQ, faster post-entry trigger. Holder snapshot unavailable (RPC starved) — the one diagnostic that might have caught it was dark.
+KILL CHECK: 2 bleeders (E6gQ −100%, B9tN −99.9%) within the last 30 committed entries → **STRATEGY_SPEC §6.2 triggered: HALT and re-review.** s60 exp now +0.97% (n=32) — still positive but one more bleeder flips it. Rug-through-gate rate 2/32 = 6.25% vs ~7% breakeven — margin nearly gone; the farm is harvesting more aggressively during US hours.
+Consequences: paper tracking CONTINUES (data is data), but the amendment path freezes — tomorrow's Sep 1 review is now a KILL-OR-FIX decision, not a rubber stamp. Fix candidates for evaluation on raw tape: (a) delayed/confirmed entry (B9tN rugged 5 min post-signal — a 10-min confirmation window skips it entirely; W10 confirmed-entry was +4.1% full-universe, §77d); (b) holder-concentration gate when RPC capacity returns; (c) time-of-day filter if harvests cluster in US hours.

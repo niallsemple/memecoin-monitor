@@ -229,3 +229,5 @@
 | 09:48 | BUY | 2Zp3puJe | £8.62 | entry mc $266,705 | +22min |
 | 11:26 | STOP | 2Zp3puJe | £0.07 | trail-stop at 0.01x |
 | 13:06 | BUY | 8ptYxNrB | £8.45 | entry mc $220,089 | +20min |
+| 14:06 | STOP | 8ptYxNrB | £0.08 | trail-stop at 0.01x |
+| 14:27 | STOP | B5YTUMqS | £7.44 | trail-stop at 0.63x |

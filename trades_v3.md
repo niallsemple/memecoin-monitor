@@ -109,3 +109,4 @@
 | 03:27 | STOP | TRUEq13u | £8.01 | trail-stop at 0.46x |
 | 03:28 | BUY | TRUEq13u | £17.45 | entry mc $157,522 | +1802min |
 | 13:06 | BUY | 8ptYxNrB | £17.10 | entry mc $220,089 | +20min |
+| 14:06 | STOP | 8ptYxNrB | £0.16 | trail-stop at 0.01x |

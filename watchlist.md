@@ -3103,3 +3103,15 @@
 | 13:06 | robinhood | `0x5f61a7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,066 mc=$16,205 | chain:robinhood no-audit-adapter |  |
 | 13:06 | robinhood | `0x223b9b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The hood is being watched |
 | 13:06 | robinhood | `0x804fBd…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$59,253 mc=$76,403 | chain:robinhood no-audit-adapter | Just a hot dog. |
+| 14:06 | solana | `AkDSLcYT…` | FAIL | TOP10_HEAVY:78% | liq=$0 mc=$11,362 | name=moo-ve.site symbol=moo-ve; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | A chrome extension that lets u buy X Tickers |
+| 14:06 | robinhood | `0x2De20b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$3,261 | chain:robinhood no-audit-adapter | An onchain index of Fomo’s best traders. One vault, automatically tracking what  |
+| 14:06 | solana | `qE2UiWcx…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:86% | liq=$4,663 mc=$5,791 | name=All it takes is One symbol=One; contract:clean; rugcheck_score=27 lpLocked=100%; top1 |  |
+| 14:06 | robinhood | `0x1842eb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Every pons launch, priced in dollars. Buy the curve with USDG, no ETH. Live inde |
+| 14:06 | robinhood | `0x54105e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | One tock is 50.00 USDC. Every 480 seconds it buys TOCK on the open market and bu |
+| 14:06 | robinhood | `0x5173D4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$250,293 mc=$1,360,571 | chain:robinhood no-audit-adapter | Native token of Ramses with an x(3,3) model, dynamic fees, and MEV capture to ma |
+| 14:26 | solana | `HgWZ9faE…` | PASS | — | liq=$34,359 mc=$175,198 | name=Happy Cat symbol=Happy; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=12 | Happy Cat brings pure joy, playful memes, and unstoppable purr energy to the Sol |
+| 14:26 | solana | `3NMjdraQ…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_CONCENTRATED:48% | liq=$0 mc=$27,349 | name=1 meme can change your life symbol=meme; contract:clean; rugcheck_score=80 lpLocked=1 | 1 meme can change your life |
+| 14:26 | solana | `476ZVaBm…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$4,815 | name=Coinbase Solana Agent symbol=CBSOL; contract:clean; rugcheck_score=1 lpLocked=100%; t | The Coinbase Solana agent is a hireable agent inside Agent Heights. He can trade |
+| 14:26 | robinhood | `0xb8b806…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,749 mc=$34,271 | chain:robinhood no-audit-adapter | oh fk you're gonna make me org/asml |
+| 14:26 | robinhood | `0x899FbE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,288 mc=$5,986 | chain:robinhood no-audit-adapter | An open-city crime arcade experience being built for Robinhood Chain. Build your |
+| 14:26 | robinhood | `0xA4FBBC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$4,531 | chain:robinhood no-audit-adapter | Robinhood first AI agents onchain. How long before Ernie is interacting with the |
