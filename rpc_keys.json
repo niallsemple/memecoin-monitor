@@ -1,0 +1,4 @@
+{
+  "note": "Drop extra keyed Solana RPC endpoints here (Helius/QuickNode/Alchemy free tiers). They are tried FIRST on every RPC call — keyed tiers serve getTokenLargestAccounts, which public RPCs gate. Read fresh each call; no restart needed.",
+  "endpoints": []
+}

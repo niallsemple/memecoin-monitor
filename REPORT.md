@@ -2634,3 +2634,14 @@ Implications:
 4. Position sizing is the structural answer for style-3: with ~1-in-3
    historical rug styles, sizing each entry at <=25-33% of bankroll
    keeps a single instant-rug survivable even if the gate passes it.
+
+## §79x — RPC key-rotation scaffold (2026-08-31 ~20:55)
+
+holder_snapshots has been RPC-starved all day: every free endpoint
+gates getTokenLargestAccounts (indexed method). Decision (owner
+consult): do NOT self-host a node ($6-12k/yr + ops for ~300 calls/day).
+Instead: rpc() now tries keyed endpoints FIRST from MON/rpc_keys.json
+({"endpoints": [url, ...]} — Helius/QuickNode/Alchemy free tiers, full
+URLs with keys), then Helius, then public RPCs; rotation modulo fixed
+for the longer list. File read fresh per call — owner drops keys in, no
+restart, holder snapshots resume next cycle. py_compile clean.

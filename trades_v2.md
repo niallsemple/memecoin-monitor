@@ -238,3 +238,5 @@
 | 16:47 | BUY | 5WRzWBPK | £8.24 | entry mc $155,232 | +21min |
 | 17:07 | STOP | 5WRzWBPK | £2.76 | trail-stop at 0.34x |
 | 18:47 | STOP | TRUEq13u | £4.50 | trail-stop at 0.53x |
+| 19:16 | BUY | 3C6nz382 | £8.22 | entry mc $410,044 | +11min |
+| 19:16 | BUY | 9TyMG9Gk | £8.05 | entry mc $135,747 | +11min |
