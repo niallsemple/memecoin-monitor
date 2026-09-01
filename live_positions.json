@@ -30,5 +30,31 @@
   "closed_reason": "abort15",
   "pnl_sol": 0.00446,
   "actual_fill_note": "sig 3RD4fV49Cmig8BfHP5Er3XZZLeMsvWDZKTKhQUyb8dD2pw6nvMo6AQDJv6gYce5wciM3siEeGnLMpDnyvoyuyCBr on-chain verified"
+ },
+ "LUTNZsftGW64Zch1mqWp6hoGSHLkHQQ7rsuFy3ppump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788302655.8829792,
+  "entry_px": 7.219572154509883e-12,
+  "tokens": 18643764079,
+  "tokens_left": 18643764079,
+  "size_sol": 0.1346,
+  "peak_mult": 1.0,
+  "freerolled": false,
+  "sol_recovered": 0.0
+ },
+ "J3a25GSe6pkjWfHutcCviKQG56jqax6hp3JD7VbCpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788302668.774268,
+  "entry_px": 1.8865936382704405e-09,
+  "tokens": 67741138,
+  "tokens_left": 67741138,
+  "size_sol": 0.1278,
+  "peak_mult": 1.0008237636932709,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
