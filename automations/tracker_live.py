@@ -216,6 +216,17 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
         reason = None
         nm_touch_t = None
         body = xs[ti + 2:]
+
+        def _price_at(deadline_s):
+            # §99: honest clock-based fill — last trade at/before the
+            # deadline (a live poller marks every ~15s even on quiet pools)
+            p = emc
+            for y in body:
+                if y["t"] - t0 > deadline_s:
+                    break
+                p = y["mcap_sol"]
+            return p / emc
+
         for j, x in enumerate(body):
             r = x["mcap_sol"] / emc
             peak = max(peak, r)
@@ -256,7 +267,10 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                 reason = "trail"
                 break
             if not fr and mins >= tsm:
-                proceeds += pos * fill(r)
+                # §99: fill at the price AT the deadline, not the next
+                # print — on quiet pools the next print can be a
+                # post-collapse zero (9orw5y bled 30 min after going quiet)
+                proceeds += pos * _price_at(tsm * 60)
                 pos = 0
                 reason = "timestop"
                 break
@@ -266,14 +280,6 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
             # at the price observed AT the deadline (last trade at/before
             # it), not at the final mark of a pool that rugged later.
             mins_now = (time.time() - t0) / 60
-
-            def _price_at(deadline_s):
-                p = emc
-                for x in xs[ti + 2:]:
-                    if x["t"] - t0 > deadline_s:
-                        break
-                    p = x["mcap_sol"]
-                return p / emc
 
             if stage1 and not fr and mins_now >= stage1[0]:
                 r1 = _price_at(stage1[0] * 60)
@@ -287,8 +293,8 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                     proceeds += pos * r_a
                     pos = 0
                     reason = "abort"
-            if pos > 0 and not fr and mins_now >= P_TS_MIN:
-                r_t = _price_at(P_TS_MIN * 60)
+            if pos > 0 and not fr and mins_now >= tsm:
+                r_t = _price_at(tsm * 60)
                 proceeds += pos * r_t
                 pos = 0
                 reason = "timestop"

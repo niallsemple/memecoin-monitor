@@ -3275,3 +3275,32 @@ funded set = {g9XbLp} and it has no launches, so the shadow matches
 s60nm5 until the armed wallet fires. Honesty note: the skip uses
 current funding data, so historical backfill rows carry lookahead —
 only forward closes after this deployment count for the variant call.
+
+## §99 — Quiet-pool time-stop fix: honest deadline fills (2026-08-31 ~20:55 local)
+
+**Bug found.** ts180 (3-min time-stop shadow) printed −100% on bleeder
+9orw5y — identical to baseline. Cause: stops only evaluate ON TRADE
+PRINTS. 9orw5y's pool went quiet after +53s (last print r=1.007); the
+next print landed past +15min post-collapse, so stage1's abort15 fired
+first with a next-trade fill at the zeroed price. Worse, the deadline
+remainder path (the §70 honest clock-based fill, `_price_at` = last
+print at/before the deadline) checked `mins_now >= P_TS_MIN` — the
+120-min CONSTANT — not the variant's `tsm`, so ts180's 3-min stop never
+got the honest deadline fill at all.
+
+**Fix (automation.py, scorer `paper_score`).**
+1. Hoisted `_price_at(deadline_s)` above the trade loop (was defined
+   only inside the post-loop remainder block).
+2. In-loop timestop now fills at `_price_at(tsm * 60)` — the price AT
+   the deadline — instead of the next-trade price, which on a quiet
+   pool can be a post-collapse zero.
+3. Remainder-path timestop check and fill now use `tsm`, not
+   `P_TS_MIN`.
+py_compile OK; live from next tracker run; snapshot in
+automations/tracker_live.py.
+
+**Expected row revisions (backfill).** 9orw5y ts180: −100% → ~+0.7%
+(last pre-deadline print r=1.007). 9awYaD stays ≈−86% — its dump
+PRINTED at entry+92s, before the 180s deadline; honestly inescapable
+(Solana has no mempool; you cannot see the dump tx before it lands).
+Fast dumps remain defensible ONLY via the funded-reject gate (§98a).
