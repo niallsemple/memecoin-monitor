@@ -3649,3 +3649,20 @@ window is now seconds, not tens of minutes.
 
 Lesson folded into design: the fr/identity gates can only reject what
 the birth detector sees; stream liveness IS gate coverage.
+
+## §115 — Self-blacklist first live catch + regime note (2026-09-01 ~18:40 local)
+
+CGphgNh6 (entry 18:03) rugged to −100% via trail — peak only 1.13,
+then zero inside ~20 min. Creator 8L7GcUxU… is in NO watched tree and
+had no funding alert: a genuinely new operator. The fr gate took the
+hit (both variants −100% on this one) — but the §105 self-blacklist
+captured the creator at close (entry #27+), so this operator's NEXT
+launch is auto-rejected. First live proof of the blacklist layer
+working as designed: one loss per new operator, never two.
+
+Tally check (entry_t ≥ DEP): baseline n=28 at −2.74% gross; fr n=26
+at +2.15% gross (≈ +0.95% net after §94 fees — still positive but
+thin in this hostile regime; 9orw5y now +0.7% live confirming §106
+fills). New-operator bleeders are landing ~1 per 13 entries; each one
+retires an operator from the repeatable pool. Amendment #4 decision
+still pending ~30+ fr closes.
