@@ -3934,3 +3934,24 @@ exit at r=1.077. Wallet after: 2.5604 SOL. M32 remains open
 **Lesson now enforced in code:** ledger "submitted" is meaningless
 without a signature; every mutation of position state is gated on
 proof of execution.
+
+## §128 — M32 abort15: fixed exit path works end-to-end (1 Sep 2026, 20:55 BST)
+
+Second live round-trip and the first clean one on the fixed code.
+M32 (fr-gate hook entry, graduated pool venue): bought 20:39 for
+0.1273 SOL; abort15 fired at 15.8 min, mult 1.037, peak 1.037.
+pool_sell returned a real signature
+(`3RD4fV49Cmig8BfHP5Er3XZZLeMsvWDZKTKhQUyb8dD2pw6nvMo6AQDJv6gYce5wciM3siEeGnLMpDnyvoyuyCBr`),
+on-chain verified: err None, SOL delta **+0.13176053** (quote
+0.131936), token balance → 0.
+
+**M32 final:** in 0.1273, out 0.13176 → **+0.00446 SOL (+3.5%)**,
+16 min hold.
+
+**Live book to date (2/2 closed, both profitable):**
+RST +0.01017 (+7.6%), M32 +0.00446 (+3.5%) → **+0.01463 SOL
+combined (+5.6% on 0.2615 deployed)**. Wallet: **2.6921 SOL vs
+2.6839 funded — the live system is net positive on real money.**
+Both exits were abort15 (neither token ran to the freeroll 1.8×
+gate); both sells landed first-try on the fixed submit path. Quote
+vs fill slippage running ~0.0002 SOL (0.15%) — inside expectations.

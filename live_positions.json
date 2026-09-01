@@ -16,16 +16,19 @@
   "actual_fill_note": "sig 22U7UUmhn7XS5ESwdNQ3CcFw5nSEBDbrxvUTs9zeNAYeaffonPjxYmrqvFoAo5oRV6ycC4iZphGSGQLg9p782J7x on-chain verified"
  },
  "bL3cZqaiUyq7PPtWdyTQVKPrNKNeLv3qJFv65FWpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788291560.572453,
   "entry_px": 7.686679509194005e-11,
   "tokens": 1655770523,
-  "tokens_left": 1655770523,
+  "tokens_left": 0,
   "size_sol": 0.1273,
-  "peak_mult": 1.019841310740048,
+  "peak_mult": 1.0366301348713614,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.13176053,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00446,
+  "actual_fill_note": "sig 3RD4fV49Cmig8BfHP5Er3XZZLeMsvWDZKTKhQUyb8dD2pw6nvMo6AQDJv6gYce5wciM3siEeGnLMpDnyvoyuyCBr on-chain verified"
  }
 }
