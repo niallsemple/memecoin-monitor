@@ -1305,12 +1305,22 @@ def run(ctx):
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
 
-    ws = websocket.WebSocketApp(PUMP_WSS, on_open=pump_on_open,
-                                on_message=pump_on_message,
-                                on_error=lambda w, e: None,
-                                on_close=lambda w, *a: None)
-    pump_ref["ws"] = ws
-    ws.run_forever(ping_interval=20, ping_timeout=10)
+    # §114: reconnect loop — a dropped PumpPortal ws previously ended
+    # births for the rest of the run (20-min blind window 17:04-17:24
+    # hid the F5a7aN manufactured launch). Reconnect every 2s until the
+    # window deadline; subscriptions re-arm in pump_on_open.
+    while time.time() < deadline and not stop.is_set():
+        ws = websocket.WebSocketApp(PUMP_WSS, on_open=pump_on_open,
+                                    on_message=pump_on_message,
+                                    on_error=lambda w, e: None,
+                                    on_close=lambda w, *a: None)
+        pump_ref["ws"] = ws
+        try:
+            ws.run_forever(ping_interval=20, ping_timeout=10)
+        except Exception:
+            pass
+        if time.time() < deadline and not stop.is_set():
+            time.sleep(2)
     stop.set()
 
     tokens = _save_state(tokens)

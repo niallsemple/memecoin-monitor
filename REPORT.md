@@ -3629,3 +3629,23 @@ entry; a dedicated sub-minute loop is future work once live proves
 out. The full loop (signal → gated entry → managed exit → ledger) is
 now wired end-to-end in dry-run; only the owner's signoff + funding
 separate it from live.
+
+## §114 — F5a7aN coverage gap ROOT-CAUSED and fixed (2026-09-01 ~18:50 local)
+
+F5a7aN never reached curves.jsonl — the raw create-event log — so the
+miss was upstream of the seed filter. Birth density check: steady
+~25/min, but ZERO births recorded 17:04–17:23, exactly covering the
+F5a7aN creation window. Root cause: the main PumpPortal birth websocket
+called run_forever ONCE per run with no reconnect — a dropped
+connection ended all birth capture for the rest of that ~19-min run
+(the Helius loop had reconnect-with-backoff; the birth stream didn't).
+
+Fix: reconnect loop with 2s pause until the run deadline;
+subscriptions re-arm in pump_on_open (verified: Helius on_open already
+re-warms curve/pool account subscriptions on reconnect — the birth
+stream was the only unguarded feed). Missed events during a gap are
+unrecoverable from PumpPortal; with 2s reconnect the worst-case blind
+window is now seconds, not tens of minutes.
+
+Lesson folded into design: the fr/identity gates can only reject what
+the birth detector sees; stream liveness IS gate coverage.
