@@ -2684,3 +2684,50 @@ The amended strategy's forward gate crossed into positive territory.
 - No freeroll yet (no position has touched 1.5x); no second bleeder.
 - Remaining qualifiers for the go decision: 14 more committed closes,
   exp > 0, <=1 bleeder total, then owner manual_signoff.json.
+
+## §80 — GATE FAIL: second bleeder 4xBDmh −100% (2026-09-01 ~04:04)
+
+The forward gate is unrecoverable: bleeders 2 > MAX_BLEEDERS 1, with 7
+closes still outstanding. Official gate_check_s60.py verdict:
+qualified=false (n=23, exp −0.5%, bleeders 2, sample/exp/bleeders all
+fail; manual_signoff never present).
+
+### The bleeder
+- **4xBDmh**: strict-gate entry, peaked 1.04x, then a single insider
+  sell of **1,033.6 SOL at +43.0 min** zeroed the curve (exit trail,
+  ret −100%). Tape: 127 trades, 110 buys / 17 sells, sell side was
+  1,041 SOL of which 1,033.6 was one wallet, one transaction.
+- Same loss class as GsM2Nq (§79w: 1,697.5 SOL single sell at +3.6m).
+  Two occurrences in 23 committed closes — ~8.7% incidence, each −100%.
+
+### Why the exits could not catch it
+Instant single-tx dump: price goes from ~1.0x to zero in one trade.
+abort15/abort30/nm_abort/trail all evaluate on the NEXT trade — there
+is no next trade above zero. Uncatchable by any price-based exit.
+
+### Why the defense is known but undeployed
+Holder-concentration gate (reject entries where an insider cluster
+pre-holds a dump-sized position) is designed and scaffolded (§79x RPC
+rotation), but getTokenLargestAccounts is gated on every free endpoint
+tested; awaiting owner-dropped RPC keys (rpc_keys.json, still empty).
+
+### Shadow scorer
+s60nm5mb (dust filter) also held both bleeders: n=21, exp −0.6%,
+bleeders 2. Amendment #2 would NOT have saved the gate.
+
+### What the sample proved anyway
+- nm_abort live 3-for-3: +38.9%, +34.4%, +32.6% (converts the
+  near-miss grind class exactly as backtested, §79s/§79y/§79z).
+- Exit ladder harvested 18 of 23 closes profitably; exp ex-bleeders
+  is strongly positive (+4.3%/trade on the 21 non-bleeders).
+- The strategy's entire negative expectancy comes from ONE loss class:
+  insider pre-positioned instant mega-dumps.
+
+### Disposition
+Paper-trading infrastructure keeps running as passive research (data
+keeps accruing; if RPC keys arrive, the holder gate can be tested
+against the live stream). No real-money path is open; none was ever
+armed. This variant fails qualification. Next candidate edge, if the
+owner wants to continue: entry-side insider detection (holder gate via
+keyed RPC, or a proxy: first-hour sell-side wallet concentration from
+the trade tape we already capture).

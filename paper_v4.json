@@ -1,16 +1,16 @@
 {
  "bank_start": 1000.0,
- "cash": 747.4635455763158,
+ "cash": 744.5587582151798,
  "positions": {
   "solana:EBLUKPgx5FvTUBU6bTJi3aR8XVELSBdC5FiodSWQpump": {
    "addr": "EBLUKPgx",
-   "entry_mcap": 961395.0,
-   "entry_min": 5952.3,
-   "size_gbp": 15.26,
-   "peak_mcap": 961395.0,
+   "entry_mcap": 800972.0,
+   "entry_min": 6073.7,
+   "size_gbp": 15.2,
+   "peak_mcap": 800972.0,
    "remaining": 1.0,
    "realized": 0.0,
-   "opened": "2026-08-31T23:28:42.068459+00:00"
+   "opened": "2026-09-01T01:30:04.495448+00:00"
   }
  },
  "closed": [
@@ -1612,6 +1612,19 @@
    "closed_at": "2026-08-31T23:27:40.251865+00:00",
    "exit_r": 1.04,
    "pnl_gbp": 0.14
+  },
+  {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 961395.0,
+   "entry_min": 5952.3,
+   "size_gbp": 15.26,
+   "peak_mcap": 961395.0,
+   "remaining": 0,
+   "realized": 12.522938260756506,
+   "opened": "2026-08-31T23:28:42.068459+00:00",
+   "closed_at": "2026-09-01T01:29:02.691913+00:00",
+   "exit_r": 0.833,
+   "pnl_gbp": -2.97
   }
  ],
  "started": "2026-08-27T06:45:31.100112+00:00",

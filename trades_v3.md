@@ -120,3 +120,7 @@
 | 19:16 | BUY | 3C6nz382 | £16.33 | entry mc $410,044 | +11min |
 | 19:16 | BUY | 9TyMG9Gk | £16.00 | entry mc $135,747 | +11min |
 | 20:56 | STOP | 9TyMG9Gk | £0.93 | trail-stop at 0.06x |
+| 00:06 | SELL 2x | 3C6nz382 | £8.04 | ladder stage 1 |
+| 00:09 | STOP | CTPoyCwk | £15.82 | trail-stop at 1.11x |
+| 00:26 | BUY | CTPoyCwk | £16.17 | entry mc $19,361,356 | +7218min |
+| 01:46 | STOP | 3C6nz382 | £1.90 | trail-stop at 0.16x |
