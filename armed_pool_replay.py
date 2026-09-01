@@ -30,15 +30,15 @@ RPCS = ("https://solana-rpc.publicnode.com",
         "https://api.mainnet-beta.solana.com")
 
 CASES = {
-    "GPRO":    {"mint": "GcSgbzMvYhz8RXffYZDjUgLafVtYVv9QG2FUoerNpump",
-                "pool": "6cV33vBNaCTsQLLyt7GmGSLj1YZrguipA6LwdTurtToQ",
-                "mig_ts": 1788283980.0},
-    "Erin":    {"mint": "GeR3KJHTc1wRp5v5jMv7DcoSM8A5zAGNgknTGbjnpump",
-                "pool": "5WGFJqgQb6kjieJALEJV1nXEGiBn88bJFxEaxEtzU1t8",
-                "mig_ts": 1788282385.0},
     "GROKCAT": {"mint": "2a1hX8xnXMPGt2f6FBvEUQEefk8N7LijnyeLCwehpump",
                 "pool": "DKxUUeWw4ad2MCYmXCDvhx4xUTjbTDhhVSUPTcZTbJwq",
                 "mig_ts": 1788280371.0},
+    "Erin":    {"mint": "GeR3KJHTc1wRp5v5jMv7DcoSM8A5zAGNgknTGbjnpump",
+                "pool": "5WGFJqgQb6kjieJALEJV1nXEGiBn88bJFxEaxEtzU1t8",
+                "mig_ts": 1788282385.0},
+    "GPRO":    {"mint": "GcSgbzMvYhz8RXffYZDjUgLafVtYVv9QG2FUoerNpump",
+                "pool": "6cV33vBNaCTsQLLyt7GmGSLj1YZrguipA6LwdTurtToQ",
+                "mig_ts": 1788283980.0},
 }
 MIG_PX = 67.405853768 / 206900000  # SOL per token at pool seeding
 
@@ -46,19 +46,20 @@ _rc = {"i": 0}
 
 
 def rpc(method, params):
-    for k in range(len(RPCS)):
-        url = RPCS[(_rc["i"] + k) % len(RPCS)]
-        try:
-            body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method,
-                               "params": params}).encode()
-            req = urllib.request.Request(
-                url, data=body, headers={"Content-Type": "application/json"})
-            r = json.loads(urllib.request.urlopen(req, timeout=12).read())
-            time.sleep(1.0)
-            if r.get("result") is not None:
-                return r["result"]
-        except Exception:
-            continue
+    for attempt in range(2):
+        for k in range(len(RPCS)):
+            url = RPCS[(_rc["i"] + k) % len(RPCS)]
+            try:
+                body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method,
+                                   "params": params}).encode()
+                req = urllib.request.Request(
+                    url, data=body, headers={"Content-Type": "application/json"})
+                r = json.loads(urllib.request.urlopen(req, timeout=12).read())
+                time.sleep(0.5)
+                if r.get("result") is not None:
+                    return r["result"]
+            except Exception:
+                continue
     return None
 
 

@@ -1,4 +1,26 @@
 {
+ "GROKCAT": {
+  "entry_px": 4.623563617641704e-06,
+  "entry_t": 1788280374,
+  "mins_from_migration": 0.1,
+  "peak_x": 1.08,
+  "exit": "open",
+  "ret": -0.4701,
+  "n_ticks": 189,
+  "last_t": 1788280602,
+  "age_min": 3.8
+ },
+ "Erin": {
+  "entry_px": 4.519420175475079e-06,
+  "entry_t": 1788282387,
+  "mins_from_migration": 0.0,
+  "peak_x": 1.81,
+  "exit": "open",
+  "ret": 0.5751,
+  "n_ticks": 479,
+  "last_t": 1788282713,
+  "age_min": 5.4
+ },
  "GPRO": {
   "entry_px": 3.079702043004423e-05,
   "entry_t": 1788283980,
@@ -9,16 +31,5 @@
   "n_ticks": 1865,
   "last_t": 1788287747,
   "age_min": 62.8
- },
- "Erin": {
-  "entry_px": 4.519420175475079e-06,
-  "entry_t": 1788282387,
-  "mins_from_migration": 0.0,
-  "peak_x": 1.56,
-  "exit": "open",
-  "ret": 0.5103,
-  "n_ticks": 370,
-  "last_t": 1788282629,
-  "age_min": 4.0
  }
 }

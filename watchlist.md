@@ -3575,3 +3575,15 @@
 | 20:16 | solana | `WbzHjGur…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$12,982 mc=$29,476 | name=UEFNDucky symbol=Ducky; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=40 | 🦆Your first and only UEFN Ducky 🦆 |
 | 20:16 | solana | `9KdsXLcX…` | FAIL | TOP10_HEAVY:58% | liq=$12,984 mc=$30,903 | name=pumpons symbol=PUMPONS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57 |  |
 | 20:16 | robinhood | `0xb9E75A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,368 mc=$259,077 | chain:robinhood no-audit-adapter | The mine never stops | The first idle mining game on PONS |
+| 21:06 | solana | `FueCpNFv…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$18,580 | name=Save Adnan's Mom symbol=SAVEMOM; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 21:06 | robinhood | `0x183536…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$99,579 mc=$485,807 | chain:robinhood no-audit-adapter | My dad is sad. I just want to retire him. 100% Creator fees go towards building  |
+| 21:06 | robinhood | `0x518ABf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$93,429 mc=$553,538 | chain:robinhood no-audit-adapter |  |
+| 21:06 | robinhood | `0xA27c6B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$96,449 mc=$125,944 | chain:robinhood no-audit-adapter | I am opposite of artificial intelliegence I am genuine stupidity |
+| 21:06 | solana | `22Q1NdF8…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$0 mc=$34,144 | name=Memestock symbol=Memestock; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 21:06 | solana | `GDkKSiVs…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$5,556 | name=Liquid Kitty symbol=Liquikitty; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 21:16 | solana | `E5HacnPr…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$21,581 | name=Inucoin symbol=INU; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59.7% |  |
+| 21:16 | robinhood | `0xd6682e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Let your waifu work for you. Mint. Stake. Earn stocks. |
+| 21:16 | solana | `CYsTn9eJ…` | PASS | — | liq=$24,619 mc=$96,872 | name=Dancedog symbol=DANCEDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | 🐕🕺 The dog that never stops dancing. Pixel-powered and moving on Solana. Keep ca |
+| 21:16 | solana | `A8k2WACn…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; RC_DANGER:Low Liquidity; TOP10_HEAVY:100%; RC_WARN:Low amount of LP Providers | liq=$6,331 mc=$6,610 | name=Roaring Kitty symbol=RKITTY; contract:clean; rugcheck_score=55 lpLocked=0%; top10_hol | Roaring Kitty Paired with $GME and stock rewards.  The second chapter. |
+| 21:16 | robinhood | `0xD4C91C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,111 mc=$15,759 | chain:robinhood no-audit-adapter | Dolo Finance ($DOLOF) is a community token on Robinhood Chain. Hold $DOLOF in yo |
+| 21:16 | solana | `3DV5zVYW…` | PASS | — | liq=$59,923 mc=$498,593 | name=Sock And Pussy 500 symbol=SNP500; contract:clean; rugcheck_score=1 lpLocked=85.198674 |  |

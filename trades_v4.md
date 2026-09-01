@@ -267,3 +267,5 @@
 | 17:09 | BUY | EBLUKPgx | £15.21 | entry mc $1,012,471 | +7014min @ 2.94x detect |
 | 19:16 | TIME | EBLUKPgx | £15.76 | time-stop at 1.05x after 127min |
 | 19:17 | BUY | EBLUKPgx | £15.22 | entry mc $1,064,813 | +7141min @ 3.09x detect |
+| 21:18 | TIME | EBLUKPgx | £22.11 | time-stop at 1.47x after 120min |
+| 21:19 | BUY | EBLUKPgx | £15.35 | entry mc $1,570,399 | +7263min @ 4.55x detect |
