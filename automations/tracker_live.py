@@ -499,13 +499,13 @@ def treasury_watch(rpc_fn):
         for w in CHAIN_WATCH:
             last = seen.get(w)
             res = rpc_fn("getSignaturesForAddress",
-                         [w, {"limit": 12}]).get("result") or []
+                         [w, {"limit": 8}]).get("result") or []
             new = []
             for s in res:
                 if s.get("signature") and s["signature"] == last:
                     break
                 new.append(s)
-            for s in list(reversed(new))[:4]:  # oldest first, parse-capped
+            for s in list(reversed(new))[:2]:  # oldest first, parse-capped
                 sig = s.get("signature")
                 if not sig:
                     continue
@@ -513,7 +513,7 @@ def treasury_watch(rpc_fn):
                             [sig, {"encoding": "jsonParsed",
                                    "maxSupportedTransactionVersion": 0}]
                             ).get("result")
-                time.sleep(0.8)  # §84a: free-tier rate limit
+                time.sleep(0.5)  # §84a/§118: free-tier rate limit; runs were sleep-bound
                 if not tx:
                     continue
                 meta = tx.get("meta") or {}

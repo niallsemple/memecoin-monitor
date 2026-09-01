@@ -3698,3 +3698,11 @@ Full prospective chain now on record: tripwire funding alert (16:42)
 would have skipped was indeed a bleeder. (Caveat: our birth detector
 missed it — §114 gap, now fixed — so this is chain-forensic
 confirmation, not a scored paper row.)
+
+## §118 — Run-duration trim (2026-09-01 ~18:45 local)
+
+Runs are sleep-bound (16+ min elapsed, ~8s CPU — public-RPC 429
+backoff dominates). Trimmed treasury_watch: 12→8 sigs/wallet,
+4→2 tx parses/wallet/run, 0.8s→0.5s spacing. Alert sensitivity
+preserved: these chain wallets move a handful of times per day and
+the seen-cursor keeps continuity across runs. Effect lands next run.
