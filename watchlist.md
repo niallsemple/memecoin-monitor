@@ -3358,3 +3358,17 @@
 | 06:26 | solana | `FSwc3NbQ…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$12,485 mc=$27,860 | name=Official Elon Coin symbol=ELON; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
 | 06:26 | solana | `53ibjF5i…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:67% | liq=$0 mc=$10,064 | name=xBank symbol=xBank; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=66.8% | xBanking |
 | 06:26 | robinhood | `0x038e09…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,203 mc=$87,137 | chain:robinhood no-audit-adapter | 1,111 Thrills on the RobinHood blockchain  1 Thrill NFT = 1,000 $Thrill coins |
+| 06:46 | robinhood | `0x39a959…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,283 mc=$88,124 | chain:robinhood no-audit-adapter | Microsoft's Unsung Hero.  Their DOGE! |
+| 06:46 | solana | `6AHSPmNr…` | FAIL | TOP10_HEAVY:78%; RC_WARN:Copycat token | liq=$0 mc=$6,672 | name=Gorilla Pig Raccoon Owl symbol=GPRO; contract:clean; rugcheck_score=29 lpLocked=100%; |  |
+| 06:46 | robinhood | `0x5f43c7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$88,569 mc=$58,913 | chain:robinhood no-audit-adapter | Quantum White Fiber Rabbit |
+| 06:46 | robinhood | `0x0423bE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,573 mc=$68,555 | chain:robinhood no-audit-adapter | Ur mom looks good here |
+| 06:46 | solana | `7S9M7nzy…` | FAIL | TOP10_HEAVY:76%; RC_WARN:Copycat token | liq=$0 mc=$10,610 | name=Doge-1 symbol=Doge-1; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=76. | History is being made as SpaceX prepares to launch DOGE-1—the first-ever space m |
+| 06:46 | bsc | `0x8f6dce…` | PASS | — | liq=$15,997 mc=$27,686 | holders=330; buy_tax=0 sell_tax=0.0099; contract:clean | Giggle Academy posted about learning tricks with buddy.** The background is an e |
+| 06:56 | robinhood | `0x4b3012…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Commotitty Coin |
+| 06:56 | robinhood | `0x890CfA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,325 mc=$18,270 | chain:robinhood no-audit-adapter | One $CLICK on Robinhood. Hold and earn $HOOD. |
+| 07:26 | robinhood | `0x58bb6c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 07:26 | robinhood | `0x8628ec…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Enabling compute for everyone. Unmetered AI inference, funded by real-world asse |
+| 07:26 | robinhood | `0xc90F38…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$3 mc=$6,713 | chain:robinhood no-audit-adapter |  |
+| 07:26 | solana | `HYYLdNLg…` | PASS | — | liq=$27,433 mc=$107,708 | name=ROBINGUY symbol=ROBINGUY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 07:26 | robinhood | `0x88dD48…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$98,447 mc=$179,308 | chain:robinhood no-audit-adapter | Mods in Control  Anchored to $RDDT  L ( ) N G |
+| 07:26 | solana | `DeDnb8cB…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:59% | liq=$0 mc=$13,697 | name=out of funds symbol=oof; contract:clean; rugcheck_score=45 lpLocked=100%; top10_hold= |  |

@@ -3016,3 +3016,39 @@ net. If bleeders vanish (regime shift — they may be one operator's
 campaign), ts180 just bleeds 5%/trade vs baseline. The forward sample
 now measures BOTH: bleeder frequency AND the premium. Decision point
 stays ~30 forward closes.
+
+## §89 — The money trail: seeder -> treasury -> layering chain (2026-09-01 ~08:40)
+
+Followed the 4xBDmh seeder/creator wallet (AHPXv7KpzSpZ...) on-chain.
+Its history is spam-free and short — the surgical alternative to
+pool-side spam walls.
+
+**Findings:**
+1. The seeder did NOT sign the dump. Its txs around the bleeder window
+   are absent at 03:59:15; a 14-tx burst at 04:03:18 (4 min post-dump)
+   is cleanup (rent reclaim / account closes). The insider structure
+   separates roles: creator+seeder wallet != dump wallet. The dumper
+   is a second wallet seeded with tokens at birth — invisible to any
+   creator-history or signer-concentration filter. This permanently
+   closes the entry-time wallet-identity gate hypothesis.
+2. CASH-OUT CONFIRMED: at 06:34:52 the seeder swept **3,012.5 SOL**
+   to treasury wallet CmdxEBCubitREoJTwZxB6jsPR6mawJPcva9aYfFpAEMk.
+3. The treasury layers immediately: -3,040 SOL to AdiJ1C5PHNYo
+   (06:55:51), +3,040 back (06:56:16), -3,040 out to 9GQvBGZqM7Du
+   (06:56:25), plus dust-level probes (06:56:55, 07:00:59). Classic
+   layering chain, ACTIVE as of this morning. Treasury history
+   (00:48, 00:53, 03:11 sweeps) brackets earlier campaign windows —
+   this operator ran multiple campaigns overnight.
+
+**The forward-looking edge this unlocks:** campaigns are FUNDED from
+this chain. If the layering wallets periodically send ~86-90 SOL to
+fresh wallets (the instant-fill seed amount, §85), those recipients'
+next launches are bleeder-class BEFORE they appear on any gate. A
+watcher on the treasury chain's outbound flows = pre-launch bleeder
+warning. Queued as the next build: poll CmdxEBCu/AdiJ1C5/9GQvBGZq
+outbound for 80-95 SOL transfers to fresh wallets; cross-reference
+recipients against new births in mfg_tokens.jsonl.
+
+Also closes §84's open question: pool-side dump attribution via WSOL
+token-balance parsing is no longer needed — the wallet-side path is
+cheaper, spam-free, and now proven.
