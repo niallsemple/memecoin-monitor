@@ -3587,3 +3587,9 @@
 | 21:16 | solana | `A8k2WACn…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; RC_DANGER:Low Liquidity; TOP10_HEAVY:100%; RC_WARN:Low amount of LP Providers | liq=$6,331 mc=$6,610 | name=Roaring Kitty symbol=RKITTY; contract:clean; rugcheck_score=55 lpLocked=0%; top10_hol | Roaring Kitty Paired with $GME and stock rewards.  The second chapter. |
 | 21:16 | robinhood | `0xD4C91C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,111 mc=$15,759 | chain:robinhood no-audit-adapter | Dolo Finance ($DOLOF) is a community token on Robinhood Chain. Hold $DOLOF in yo |
 | 21:16 | solana | `3DV5zVYW…` | PASS | — | liq=$59,923 mc=$498,593 | name=Sock And Pussy 500 symbol=SNP500; contract:clean; rugcheck_score=1 lpLocked=85.198674 |  |
+| 21:46 | solana | `7gKjGy23…` | FAIL | TOP10_HEAVY:75%; RC_WARN:Low Liquidity | liq=$9,724 mc=$18,436 | name=this ones gonna moon symbol=MOON; contract:clean; rugcheck_score=22 lpLocked=100%; to |  |
+| 21:46 | solana | `2pBF4oCi…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$12,857 | name=OKXCat symbol=OKXCat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=66.3 |  |
+| 21:46 | solana | `CkKhCog3…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$15,371 mc=$41,788 | name=Artificial Inu symbol=AI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 21:46 | solana | `6egyzrBa…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$12,408 | name=minideng symbol=minideng; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | minideng |
+| 21:46 | robinhood | `0xbD6638…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$80,523 mc=$777,982 | chain:robinhood no-audit-adapter | onchain PvP memecoin trading on Robinhood Chain. |
+| 21:46 | solana | `4WQwzSfe…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,203 | name=Jorge the cleaner symbol=Jorge; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |

@@ -128,3 +128,5 @@
 | 15:27 | STOP | CTPoyCwk | £9.23 | trail-stop at 0.58x |
 | 15:28 | BUY | CTPoyCwk | £15.74 | entry mc $11,214,965 | +8120min |
 | 16:06 | STOP | HzmASEo8 | £0.37 | trail-stop at 0.02x |
+| 21:47 | BUY | CYsTn9eJ | £15.43 | entry mc $153,142 | +31min |
+| 21:47 | BUY | 3DV5zVYW | £15.12 | entry mc $896,549 | +31min |

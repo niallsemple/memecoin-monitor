@@ -253,3 +253,5 @@
 | 15:28 | BUY | CTPoyCwk | £7.90 | entry mc $11,214,965 | +8120min |
 | 16:06 | STOP | HzmASEo8 | £0.19 | trail-stop at 0.02x |
 | 19:07 | SELL 2x | DVxaAXi3 | £4.01 | ladder stage 1 |
+| 21:47 | BUY | CYsTn9eJ | £7.82 | entry mc $153,142 | +31min |
+| 21:47 | BUY | 3DV5zVYW | £7.67 | entry mc $896,549 | +31min |
