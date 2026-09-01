@@ -3118,3 +3118,25 @@ the clean forward regime is NOT yet statistically surprising. At ~25
 consecutive clean closes P drops below 5% and a genuine regime shift
 (operator behavior change) becomes the better explanation. Conveniently
 that is also the amendment #4 sample threshold (~30 closes).
+
+## §93 — Pre-dump tape tells: exhaustive negative; tripwire is the only early warning (2026-09-01 ~10:55 local)
+
+Fine-grained forensics on the 3 gated historical bleeders (AgLSnY,
+GsM2Nq, 4xBDmh): the 30 min before each dump show perfectly healthy
+tape — steady 8–19 SOL of buying per 5-min bucket, ~15 buys/bucket,
+mcap drifting up +7–9%, essentially zero sells — then one 5-min block
+with 2–3 sell txs totalling 1,034–2,161 SOL and mcap → 0. No decay,
+no distribution, no divergence. The dump is a single scheduled block,
+not a reaction to tape.
+
+Flow-uniformity test (CV of 5-min buy volume, minutes 5–30): bleeders
+0.04–0.35 (mean 0.19), clean tokens 0.04–1.90 (mean 0.32) — full
+overlap, NO separation. All manufactured launches share the same
+botted-flow signature; the bleeder subset is indistinguishable from
+the tape at every timescale tested.
+
+Conclusion: entry-time separation (§85), tape momentum (§89), and flow
+uniformity (§93) are all negative. The ONLY viable pre-dump signal is
+the funding chain — the treasury tripwire (§89a) is not optional
+instrumentation, it is the sole early-warning channel. Its first live
+test remains pending (zero outbound funding txs observed).
