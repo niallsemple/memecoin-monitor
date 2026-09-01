@@ -1472,6 +1472,44 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §112: live hook — fr-gated entries go to live_trader in
+        # dry-run (nothing submits until the owner's manual_signoff.json
+        # exists; STOP_LIVE_TRADING halts instantly). Entries whose
+        # entry_t is fresh (this run's window) and not yet signaled
+        # trigger a curve_buy; the ledger shows exactly what live WOULD
+        # do. Exits need the tighter loop (§113) — not wired here.
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location(
+            "live_trader", str(MON / "live_trader.py"))
+        _lt = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(_lt)
+        _st_f = MON / "live_signal_state.json"
+        _sent = json.loads(_st_f.read_text()) if _st_f.exists() else {}
+        _now = time.time()
+        if PAPER_SFR.exists():
+            for line in PAPER_SFR.open():
+                try:
+                    r = json.loads(line)
+                except Exception:
+                    continue
+                if (r.get("status") == "open"
+                        and r.get("mint") not in _sent
+                        and _now - r.get("entry_t", 0) < 1200):
+                    _ok, _why = _lt.live_enabled()
+                    _size = 0.01
+                    if _ok:
+                        _size, _bal = _lt.position_size_sol(
+                            json.loads(_lt.WALLET_F.read_text())["address"])
+                    _row = _lt.curve_buy(r["mint"], _size,
+                                         reason="s60nm5fr signal (hook)")
+                    _sent[r["mint"]] = {"t": _now,
+                                        "result": _row.get("result")}
+        _st_f.write_text(json.dumps(_sent))
+        paper["live_hook"] = sum(1 for v in _sent.values()
+                                 if _now - v.get("t", 0) < 1200)
+    except Exception:
+        pass
+    try:
         # §86a: 3-min time-stop SHADOW — dump unpumped campaigns early;
         # §99: honest deadline fill. Insurance against slow bleeds on
         # positions that never freeroll. Honest backtest +1.0%/trade

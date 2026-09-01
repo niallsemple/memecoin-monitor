@@ -3593,3 +3593,21 @@ live_trader.py extended with the full pump.fun bonding-curve path:
   at s60nm5+fr-gated entries → exit stack calls curve_sell with
   floor → every decision in mfg_live_trades.jsonl. Kill-switch:
   drop STOP_LIVE_TRADING file, checked before every trade.
+
+## §112 — Live hook wired + all scorer fixes confirmed live (2026-09-01 ~18:35 local)
+
+Tracker now calls live_trader.curve_buy for every fresh fr-gated
+entry (entry_t < 20 min, not previously signaled; state in
+live_signal_state.json). Dry-run sizing probes at 0.01 SOL; when the
+owner's signoff enables live mode it switches to real position sizing
+(5% of balance, 0.2 SOL cap). Every hook decision lands in
+mfg_live_trades.jsonl — watch that file to see exactly what live WOULD
+buy. Exits are NOT yet wired (need a tighter per-position loop, §113).
+
+Confirmed live this cycle (18:03-18:23 writes):
+- ts180 file now matches the §106 dry-run exactly: n=27, −2.98%;
+  9orw5y +0.7% (was −100%), 84X4w5 −4.6% (was −46.4%), 7FFGDY −12.6%.
+  §99/§104/§106 all live-verified.
+- mfg_creator_blacklist.jsonl exists and is accruing (§105 live).
+- fr shadow steady at n=25, +3.32% gross (will revise to ≈+6.2% as
+  9orw5y's row is rewritten by the §106 honest fills).
