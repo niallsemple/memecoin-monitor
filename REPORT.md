@@ -3222,3 +3222,24 @@ staging wallets) next. Note: this tree arms with 70/210/334 SOL splits,
 not the 80–95 SOL band the watcher filters on — filter needs widening
 or staging-layer watching (staging -> 86 SOL -> launcher is the actual
 arming edge).
+
+## §97 — Regime turned: 3 losers in one write; insurance proves itself on the slow one (2026-09-01 ~15:45 local)
+
+The 15:24 write added 3 closes and the first slow-bleed pair test:
+- 84X4w5: baseline -46.4% (trail) vs ts180 +1.8% (timestop) — the dump
+  landed AFTER the 180s stop, and the insurance worked exactly as
+  designed. First live proof on forward data.
+- 7FFGDY: baseline -43.9% vs ts180 -5.6% — early slide, stop cut the
+  loss ~8x.
+- 9awYaD remains the fast-dump counterexample (-86.2% both).
+
+Forward tally: baseline n=24 at +1.51% gross (~+0.3% net); ts180 n=24
+at -2.69% gross (~-3.5% net). Loser rates: baseline 3/24 = 12.5%,
+ts180 2/24 = 8.3%. The premium gap collapsed from ~11pts to ~4pts;
+baseline still marginally ahead net, but the variance is all on its
+side now. Both patterns coexist in this regime: fast dumps (beat
+everything) and slow dumps (ts180 beats baseline ~48pts).
+
+The §96 tree expansion + widened 60-700 SOL band go live next run.
+If 84X4w5 or 7FFGDY were armed through either watched tree, backdated
+funding alerts will validate the tripwire retroactively.
