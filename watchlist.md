@@ -3569,3 +3569,9 @@
 | 20:06 | solana | `5WMBW227…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,188 | name=nyan cat symbol=nyan; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100. | all fees will be donated to child's play |
 | 20:06 | solana | `78MTwK2x…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:54% | liq=$0 mc=$26,825 | name=1 callout can change ur life symbol=callout; contract:clean; rugcheck_score=73 lpLock |  |
 | 20:06 | robinhood | `0xbe98b7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,689 mc=$106,304 | chain:robinhood no-audit-adapter | Send Nudes paired with $SNAP |
+| 20:16 | solana | `C8BtrmhK…` | FAIL | TOP10_HEAVY:68% | liq=$8,403 mc=$14,643 | name=🟢 symbol=🟢; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67.6% |  |
+| 20:16 | solana | `G4rdqS1u…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:59% | liq=$0 mc=$23,587 | name=Optimus Prime Awakening symbol=OPTIMUS; contract:clean; rugcheck_score=80 lpLocked=10 | Transformers is making a comeback, with The Transformers: The Movie returning to |
+| 20:16 | robinhood | `0x4500eD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,979 mc=$110,297 | chain:robinhood no-audit-adapter | 8% locked away by pons migration  Direct correlation to cashcat  Vlad has tweete |
+| 20:16 | solana | `WbzHjGur…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$12,982 mc=$29,476 | name=UEFNDucky symbol=Ducky; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=40 | 🦆Your first and only UEFN Ducky 🦆 |
+| 20:16 | solana | `9KdsXLcX…` | FAIL | TOP10_HEAVY:58% | liq=$12,984 mc=$30,903 | name=pumpons symbol=PUMPONS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57 |  |
+| 20:16 | robinhood | `0xb9E75A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,368 mc=$259,077 | chain:robinhood no-audit-adapter | The mine never stops | The first idle mining game on PONS |
