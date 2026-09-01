@@ -3497,3 +3497,9 @@
 | 16:26 | robinhood | `0x5896e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Wallet-native payments, global eSIM & encrypted messaging. Pay. Connect. Reach.  |
 | 16:26 | solana | `4rSRTTJW…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$18,126 mc=$55,509 | name=John Termus symbol=Termus; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | let the memes begin |
 | 16:26 | solana | `B9XxJT93…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$4,651 | name=hello symbol=hello; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=92.4% |  |
+| 16:56 | robinhood | `0xD98e46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,656 mc=$90,500 | chain:robinhood no-audit-adapter |  |
+| 16:56 | robinhood | `0x91A6cb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,930 mc=$33,778 | chain:robinhood no-audit-adapter | Zero-knowledge ownership for onchain assets. |
+| 16:56 | solana | `87jMwGkp…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$0 mc=$26,371 | name=Warden Desk symbol=Warden ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 16:56 | robinhood | `0x1BE301…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,401 mc=$32,223 | chain:robinhood no-audit-adapter | Pledge Finance is an overcollateralized lending protocol built on Robinhood Chai |
+| 16:56 | robinhood | `0xAE1230…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$326,127 mc=$1,429,707 | chain:robinhood no-audit-adapter |  |
+| 16:56 | robinhood | `0xf08bc7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,480 mc=$39,001 | chain:robinhood no-audit-adapter | i🐶u |

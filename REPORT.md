@@ -3510,3 +3510,31 @@ live_trader.py created (MON, gitignored wallet untouched):
   pre-graduation bonding-curve entries need the pump.fun program path
   (§109). Early entries on the curve are where the s60 gate fires —
   so §109 is required before live can follow the actual signals.
+
+## §109 — pump.fun bonding-curve path: empirical layout extraction (2026-09-01 ~18:00 local)
+
+Jupiter only covers graduated tokens, so live entries need the
+pump.fun program path. Sampled a real on-chain tx touching program
+6EF8rr… on fresh mint 5V1SBZvA…pump:
+
+- The sampled ix was a SELL: discriminator 33e685a4017f83ad, 24-byte
+  payload = disc(8) + amount u64 LE (5,807,028,916,160 tokens) +
+  min_sol_out u64 LE (0 — bundle bots use zero slippage protection).
+- Modern 16-account layout observed: [0] global 4wTV1Ymi…xnjf,
+  [1] fee recipient G5UZAVbA…q69dP, [2] mint, [3] bonding curve,
+  [4] assoc bonding curve, [5] assoc user, [6] user/signer,
+  [7] 11111111 system, [8] creator-vault-like 5q9evK5W…NuEA8,
+  [9] **TokenzQd… = Token-2022** (this mint is Token-2022, not classic
+  SPL — ATA derivation must use the Token-2022 program id),
+  [10] event authority Ce6TQqeH…Xp9F1, [11] program itself,
+  [12] 8Wf5TiAh…VwTt, [13] fee PROGRAM pfeeUxB6…ojVZ,
+  [14] HFE9p7yc…rhRg, [15] GXPFM2ca…mtDL.
+- Open items before writing the builder: (a) sample a BUY ix
+  (66063d1201daebea) the same way — buys carry extra volume-accumulator
+  accounts; (b) confirm which of [12]-[15] are program constants vs
+  per-user/per-mint PDAs by diffing two buys from different wallets;
+  (c) confirm whether ALL post-migration mints are Token-2022 or mixed;
+  (d) ATA-create wrapper ix for the buyer's token account.
+- Note: bundle bots pass min_sol_out=0 on sells. We will NOT — our
+  honest-fill model assumes deadline-price exits, so live sells carry a
+  floor (e.g. 10% under the observed mark) to bound slippage honestly.
