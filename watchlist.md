@@ -3372,3 +3372,9 @@
 | 07:26 | solana | `HYYLdNLg…` | PASS | — | liq=$27,433 mc=$107,708 | name=ROBINGUY symbol=ROBINGUY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
 | 07:26 | robinhood | `0x88dD48…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$98,447 mc=$179,308 | chain:robinhood no-audit-adapter | Mods in Control  Anchored to $RDDT  L ( ) N G |
 | 07:26 | solana | `DeDnb8cB…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:59% | liq=$0 mc=$13,697 | name=out of funds symbol=oof; contract:clean; rugcheck_score=45 lpLocked=100%; top10_hold= |  |
+| 07:46 | solana | `HqH3z6ct…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$17,162 | name=The Pakistani Driver symbol=MUHAMMAD; contract:clean; rugcheck_score=1 lpLocked=100%; |  |
+| 07:46 | solana | `PrqsV8SU…` | CAUTION | TOP10_CONCENTRATED:43% | liq=$0 mc=$39,912 | name=Rusty symbol=Rusty; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=42.9% | Wtf?  We just got an image  of PEPE'S DOG & and it's starting to go VIRAL on Red |
+| 07:46 | robinhood | `0x8f4bE8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$99,050 mc=$60,397 | chain:robinhood no-audit-adapter | Orbio. so |
+| 07:46 | robinhood | `0xdcda4e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2 mc=$2,310 | chain:robinhood no-audit-adapter | Returning to Where It All Began   Vlad Tenev’s very first stock purchase was 3Co |
+| 07:46 | solana | `F56pXpCR…` | PASS | — | liq=$30,448 mc=$142,904 | name=PolyMarket Poly symbol=POLY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Will Poly become the official mascot of Polymarket? |
+| 07:46 | solana | `GabXLWNF…` | PASS | — | liq=$24,174 mc=$85,137 | name=SecondAttempt symbol=IIATTEMPT; contract:clean; rugcheck_score=1 lpLocked=100%; top10 | Every attempt teaches you something. Keep going, the next one might change every |

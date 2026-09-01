@@ -3052,3 +3052,21 @@ recipients against new births in mfg_tokens.jsonl.
 Also closes §84's open question: pool-side dump attribution via WSOL
 token-balance parsing is no longer needed — the wallet-side path is
 cheaper, spam-free, and now proven.
+
+### §89a — Treasury-chain funding watcher DEPLOYED (2026-09-01 ~08:55)
+
+automation.py: treasury_watch() polls the three known layering wallets
+(CmdxEBCu treasury, AdiJ1C5P layer-1, 9GQvBGZq layer-2) each cycle for
+outbound 80-95 SOL transfers to fresh wallets (the §85 instant-fill
+seed amount). Hits append to mfg_funding.jsonl {t, chain, fresh_wallet,
+sol, sig}; per-wallet last-seen cursors in mfg_funding_seen.json.
+Parse-capped at 4 txs/wallet/run with 0.8s spacing (§84a rate limits).
+Fail-safe try block; py_compile clean; live from the next run.
+
+A hit = a wallet freshly funded with exactly bleeder-seed money. When
+that wallet's mint next appears in mfg_tokens.jsonl (creator match),
+the launch is bleeder-class BEFORE the gate evaluates it — the first
+pre-launch signal in the system. Cross-reference runs at read time.
+
+Meanwhile: write 08:44:21 — ts180 fwd n=7 (+1.28%), base fwd n=5
+(+6.23%), still zero forward bleeders.
