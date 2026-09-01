@@ -2785,3 +2785,57 @@ gate) with zero RPC-key dependency. First rows expected within 1-2
 cycles (~20-40 min) if any new qualifier enters; entry pace ~1-2/h.
 
 Patch applied in two parts (function + call site), py_compile clean.
+
+## §83 — Two fresh qualifiers entered; signer gate fires on them next cycle (2026-09-01 ~04:50)
+
+Write 04:43:47: two new s60nm5 entries, both open and both already at
+2x peaks within minutes of entry:
+
+- **AgLSnYvV** — entry 04:31:00, entry_mcap 256.5k SOL-mcap units,
+  peak +104.2%, 90 trades. NOT yet freerolled (larger-cap entry).
+- **AYEzsFNC** — entry 04:35:40, entry_mcap 58.1k, peak +103.0%,
+  104 trades. NOT yet freerolled.
+
+Both entered AFTER the §82 signer-snapshot deploy, and the next run
+(first to load the patched code) starts at this write — so these are
+the first two mints that will get entry-time signer snapshots
+(top1_share / top5_share / unique_signers) at ~05:03. This is the
+exact prospective test the gate was built for: two live 2x runners,
+signer concentration captured at entry, bleeder-vs-winner readout
+when they close.
+
+Committed sample unchanged: n=23, exp -0.49%, 0 new closes.
+
+## §84 — First signer row captured + two structural findings (2026-09-01 ~05:10)
+
+The patched run's signer pass produced nothing (silent fail), so the
+snapshot logic was replicated standalone. Results:
+
+**1. AYEzsF row captured — and it is EXTREME.** The bonding curve has
+only 2 lifetime transactions, BOTH from a single signer
+(En4ZBKdKnQ8CqaiPmtZkWGctkAgNN2y1QmMJQJkZ5rtK), moving 86.083 SOL:
+top1_share = 1.0. Yet the scorer recorded 104 trades and a +103% peak.
+Resolution: AYEzsF GRADUATED — the 104 trades are PumpSwap POOL trades
+(venue "pool" seen in the tape at mcap 59.6k); the curve saw only the
+pre-graduation insider load. So for fast graduators the curve snapshot
+measures THE PRE-LOAD ITSELF — one wallet loaded 86 SOL, graduated the
+token, then public pool flow took it to 2x. This is the manufactured
+pattern in its purest form yet captured. Crucially it means high
+top1_share does NOT automatically mean bleeder: this runner is +103%
+with maximal concentration. The hypothesis test is now genuinely armed:
+if AYEzsF mega-dumps from here, concentration predicted it; if it runs,
+the gate needs a second dimension (e.g. load SIZE or signer history).
+
+**2. Free-tier getTransaction is the bottleneck.** AgLSnY: 40 sigs
+paged fine, then EVERY getTransaction 429'd on all 3 public endpoints
+(api.mainnet-beta, publicnode, drpc) — 120 consecutive failures despite
+150ms spacing. This is why the in-automation pass wrote nothing: silent
+starvation, exactly as designed (retry next run, mints unmarked).
+AgLSnY remains pending; entry 04:31 is inside the 7200s window until
+~06:31. Mitigations queued: (a) cut the per-mint tx parse from 40 to 20
+with 1s spacing, (b) Helius-first rotation already in rpc() means the
+moment quota resets or a key lands in rpc_keys.json, snapshots become
+reliable, (c) worst case, standalone catch-up runs like this one in
+quiet moments.
+
+Row + seen-file written for AYEzsF so the automation won't duplicate.
