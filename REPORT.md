@@ -3356,3 +3356,27 @@ reused, high-activity creator wallets. Implications:
 Public-RPC budget note: the 16:44 tracker run was still alive at +14
 min (12.6s CPU — RPC 429 backoff, not a hang); 10 chain wallets ×
 small pages is stretching the interval. May need pagination trim.
+
+## §102 — ELON tree re-arming burst: three armed wallets, ~970 SOL staged (2026-09-01 17:05 local)
+
+New tripwire alerts (detected 17:05 run):
+
+| time | chain wallet | fresh wallet | SOL |
+|---|---|---|---|
+| 14:56 | 4Lr8de (staging) | g9XbLp | 203.96 |
+| 16:38 | 5ARipQ (hub) | DaBchS9P | 462.54 |
+| 16:40 | 5ARipQ (hub) | DaBchS9P | +100.00 |
+| 16:42 | 4Lr8de (staging) | AR35wRzb | 203.96 |
+
+Notes:
+- AR35wRzb got EXACTLY 203.962 SOL — identical to g9XbLp's arming.
+  Same playbook (≈2 launches at the 86 SOL instant-fill + fees).
+- DaBchS9P holds 562.5 SOL ≈ 5-6 launches — biggest single staging yet.
+- g9XbLp has been armed 2h+ WITHOUT launching (9awYaD launched 2.5 min
+  after arming). Either a longer cycle or the wallet is held in reserve.
+- All three are auto-added to the §100 extended reject set at scoring
+  time; their first launches will be skipped by the fr shadow and are
+  the clean prospective bleeder tests.
+- 4Lr8de has now dispensed 2× 203.96 despite earlier outflow — the tree
+  is being refilled from upstream (likely 6fy6iH, 626.6 SOL at 14:50).
+  Net observed deployable capital across the tree ≈ 1,800+ SOL today.

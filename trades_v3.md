@@ -127,3 +127,4 @@
 | 15:26 | BUY | HzmASEo8 | £15.88 | entry mc $91,259 | +10min |
 | 15:27 | STOP | CTPoyCwk | £9.23 | trail-stop at 0.58x |
 | 15:28 | BUY | CTPoyCwk | £15.74 | entry mc $11,214,965 | +8120min |
+| 16:06 | STOP | HzmASEo8 | £0.37 | trail-stop at 0.02x |

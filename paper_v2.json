@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 387.0547377178498,
+ "cash": 387.24003307830736,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -40,29 +40,18 @@
    "entry_mcap": 522409.0,
    "entry_min": 7079.9,
    "size_gbp": 8.14,
-   "peak_mcap": 559656.0,
+   "peak_mcap": 666715.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-01T13:29:04.317705+00:00"
-  },
-  "solana:HzmASEo87R43BvUac3yaE7EStxWtA5z7LUGba6eGpump": {
-   "addr": "HzmASEo8",
-   "entry_mcap": 91259.0,
-   "entry_min": 10.4,
-   "size_gbp": 7.97,
-   "peak_mcap": 96911.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-09-01T15:26:31.092780+00:00"
   },
   "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
    "addr": "CTPoyCwk",
    "entry_mcap": 11214965.0,
    "entry_min": 8120.0,
    "size_gbp": 7.9,
-   "peak_mcap": 11214965.0,
+   "peak_mcap": 12596957.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
@@ -1595,6 +1584,20 @@
    "closed_at": "2026-09-01T15:27:32.982476+00:00",
    "exit_r": 0.579,
    "pnl_gbp": -3.64
+  },
+  {
+   "addr": "HzmASEo8",
+   "entry_mcap": 91259.0,
+   "entry_min": 10.4,
+   "size_gbp": 7.97,
+   "peak_mcap": 96911.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.1852953604575987,
+   "opened": "2026-09-01T15:26:31.092780+00:00",
+   "closed_at": "2026-09-01T16:06:24.988303+00:00",
+   "exit_r": 0.024,
+   "pnl_gbp": -7.9
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -1795,6 +1798,7 @@
   "solana:GabXLWNFc8EzSrxo8JMzxD3Tph5MXsRudcu4p3xnpump": "failed_momentum_floor",
   "solana:8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L": "failed_momentum_floor",
   "solana:Hwu79kGTYxfznfkkq6mnwhybhGGkhZpuTjVEexo5pump": "failed_momentum_floor",
-  "solana:9WXFTNCAqNAHV916RwHJcacxMCJJq4Bqb35wScgypump": "failed_momentum_floor"
+  "solana:9WXFTNCAqNAHV916RwHJcacxMCJJq4Bqb35wScgypump": "failed_momentum_floor",
+  "solana:HzmASEo87R43BvUac3yaE7EStxWtA5z7LUGba6eGpump": "failed_momentum_floor"
  }
 }

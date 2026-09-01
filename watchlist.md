@@ -3483,3 +3483,9 @@
 | 15:26 | robinhood | `0x5C11E1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,776 mc=$51,546 | chain:robinhood no-audit-adapter | Praxis Finance is the financial layer for markets, trading, yield and intelligen |
 | 15:26 | solana | `6rawCt4S…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$14,616 | name=Cat Executive Officer symbol=CEO; contract:clean; rugcheck_score=1 lpLocked=100%; top | CEO - Cat Executive Officer |
 | 15:26 | robinhood | `0x6d685f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$107,143 mc=$646,060 | chain:robinhood no-audit-adapter | FATCOIN |
+| 16:06 | robinhood | `0xc5dd49…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | dink donk |
+| 16:06 | robinhood | `0xc9ae09…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,034 mc=$91,232 | chain:robinhood no-audit-adapter | BANK OF AMERICA VP FATALLY STABBED IN TIMES SQUARE ATTACK; SUSPECT SHOT DEAD BY  |
+| 16:06 | robinhood | `0x812486…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$160,590 mc=$3,108,199 | chain:robinhood no-audit-adapter |  |
+| 16:06 | robinhood | `0x4eBc15…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,774 mc=$135,547 | chain:robinhood no-audit-adapter | Every model. Your way. Compare leading AI models for free, then route them throu |
+| 16:06 | robinhood | `0x1cA54B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$63,586 mc=$3,149,039 | chain:robinhood no-audit-adapter | AAArtificial Inu |
+| 16:06 | robinhood | `0x8Fde7C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,908 mc=$38,260 | chain:robinhood no-audit-adapter | First $PONS Then $GPONS  gPons! The new @ponsdotfamily slogan is GPONS |
