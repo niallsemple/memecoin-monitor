@@ -3538,3 +3538,31 @@ pump.fun program path. Sampled a real on-chain tx touching program
 - Note: bundle bots pass min_sol_out=0 on sells. We will NOT — our
   honest-fill model assumes deadline-price exits, so live sells carry a
   floor (e.g. 10% under the observed mark) to bound slippage honestly.
+
+## §110 — pump.fun curve path FULLY SPECIFIED from on-chain IDL (2026-09-01 ~18:15 local)
+
+Fetched the pump program's Anchor IDL from chain (pump_idl.json
+saved). Canonical layouts:
+
+**BUY (16 accounts)**: global ["global"], fee_recipient (Global.acct
+offset 41; rotation explains per-tx [1] variation), mint,
+bonding_curve ["bonding-curve",mint], assoc_bonding_curve (ATA),
+associated_user ATA (Token-2022 for new mints — per-mint program from
+mint-account owner), user, system, token_program, creator_vault
+["creator-vault",creator], event_authority ["__event_authority"]
+(verified = Ce6TQqe…), program, global_volume_accumulator (verified),
+user_volume_accumulator ["user_volume_accumulator",user] (verified),
+fee_config ["fee_config",const32] under pfeeUxB6 (verified =
+8Wf5TiAh…), fee_program. Data: disc 66063d1201daebea + token_amount
+u64 + max_sol_cost u64 (buy is TOKEN-amount in, SOL cap).
+**SELL (14)**: same minus both volume accumulators; disc
+33e685a4017f83ad + token_amount + min_sol_out (we set a floor, bots
+pass 0).
+The extra [16]/[17] seen in bundle-bot txs are optional fee-sharing
+accounts — not needed for the canonical path.
+Global account parsed from IDL: fee_recipient @41, fee_recipients[7]
+@162, cashback/buyback fields @740+. Expected-token math uses bonding
+curve virtual reserves (vTok/vSol) minus fee_basis_points @105.
+All PDA derivations verified against live addresses. Next: write
+curve_buy/curve_sell + legacy-tx builder (ComputeBudget + ATA-create
+idempotent + buy ix) into live_trader.py.

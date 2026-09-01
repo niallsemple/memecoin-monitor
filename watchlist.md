@@ -3503,3 +3503,9 @@
 | 16:56 | robinhood | `0x1BE301…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,401 mc=$32,223 | chain:robinhood no-audit-adapter | Pledge Finance is an overcollateralized lending protocol built on Robinhood Chai |
 | 16:56 | robinhood | `0xAE1230…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$326,127 mc=$1,429,707 | chain:robinhood no-audit-adapter |  |
 | 16:56 | robinhood | `0xf08bc7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,480 mc=$39,001 | chain:robinhood no-audit-adapter | i🐶u |
+| 17:06 | solana | `k1uExrcd…` | FAIL | TOP10_HEAVY:71% | liq=$0 mc=$8,190 | name=Lend Meme Loans symbol=LML; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold= | Put your memecoin to work. |
+| 17:06 | robinhood | `0x508aab…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,144 mc=$55,092 | chain:robinhood no-audit-adapter | The gaming world's original scarce collectible, now on-chain and paired to gold. |
+| 17:06 | robinhood | `0x914ce0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Any tokenized stocks, one token. Trade 24/7, earn fees on every index you launch |
+| 17:06 | robinhood | `0x777693…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$94,887 mc=$4,744,731 | chain:robinhood no-audit-adapter | FATCOIN |
+| 17:06 | solana | `U29rFVTg…` | PASS | — | liq=$40,572 mc=$246,677 | name=Uptember symbol=Uptember; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 17:06 | solana | `L8BXunnf…` | CAUTION | RC_WARN:High holder correlation; TOP10_CONCENTRATED:45% | liq=$15,753 mc=$43,071 | name=Stoner Coin symbol=STONER; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hol | Light one up, hold the bag. |
