@@ -3448,3 +3448,15 @@
 | 13:26 | solana | `PLewDJoe…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$0 mc=$27,303 | name=Maxq symbol=Мaxq; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=32.2% | $Maxq runs a cozy Solana spaceport: station chibi shuttles, fly contracts, colle |
 | 13:26 | solana | `67zbVRJ8…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$18,107 | name=BAWSAQ symbol=BAWSAQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57.3 |  |
 | 13:26 | robinhood | `0x08f8f8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Publishing infrastructure for the onchain world. Built for Robinhood Chain. |
+| 14:06 | solana | `Gqw1Xe32…` | FAIL | TOP10_HEAVY:62%; RC_WARN:Low Liquidity | liq=$6,131 mc=$8,746 | name=Phalano symbol=Phalano; contract:clean; rugcheck_score=15 lpLocked=100%; top10_hold=6 | I MAY HAVE JUST FOUND SOMETHING CRAZY,  Solana is currently raising funds for Ne |
+| 14:06 | solana | `4j5nQBLX…` | FAIL | TOP10_HEAVY:59%; RC_WARN:Low Liquidity | liq=$7,094 mc=$10,936 | name=Solbull symbol=SOLBULL; contract:clean; rugcheck_score=13 lpLocked=100%; top10_hold=5 | 100% $SOLBULL fees will be going to bid for the Solana ad space. |
+| 14:06 | robinhood | `0xa90428…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Reward campaigns for token holders, entirely on X. Built for PONS Ecosystem |
+| 14:06 | robinhood | `0xe04f55…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Apple's new CEO |
+| 14:06 | solana | `5bNqSYwW…` | FAIL | TOP10_HEAVY:62% | liq=$8,926 mc=$14,911 | name=Soldog symbol=SOLDOG; contract:clean; rugcheck_score=1 lpLocked=99.99889992962177%; t |  |
+| 14:06 | solana | `8ZedKy5N…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$13,955 | name=SOLDOG symbol=SOLDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=62.4 | Just a soldog! |
+| 14:26 | robinhood | `0xDCcc81…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$3,081 | chain:robinhood no-audit-adapter | new employee of pons. announced jus now |
+| 14:26 | robinhood | `0xae4c7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 14:26 | solana | `FGMG3sAd…` | FAIL | TOP10_HEAVY:70%; RC_WARN:Low Liquidity | liq=$7,649 mc=$12,381 | name=GoPro, Inc. symbol=GPRO; contract:clean; rugcheck_score=5 lpLocked=99.90905345690686% |  |
+| 14:26 | robinhood | `0x7FD696…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$55,354 mc=$299,261 | chain:robinhood no-audit-adapter | $BAWSAQ — GTA6’s BAWSAQ exchange, on Robinhood Chain. |
+| 14:26 | robinhood | `0x1c874d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,537 mc=$71,721 | chain:robinhood no-audit-adapter | FFL powers Fantasy Football League on Robinhood Chain—a competitive on-chain gam |
+| 14:26 | solana | `52ohP3fn…` | FAIL | TOP10_HEAVY:71% | liq=$0 mc=$13,087 | name=smoldeng symbol=smol; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=70.5 | smoldeng was born in these conditions |

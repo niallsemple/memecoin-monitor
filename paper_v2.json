@@ -51,7 +51,7 @@
    "entry_mcap": 522409.0,
    "entry_min": 7079.9,
    "size_gbp": 8.14,
-   "peak_mcap": 522584.0,
+   "peak_mcap": 524426.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
@@ -1768,6 +1768,7 @@
   "solana:HYYLdNLgNiDdLR8zs6mSvfttRLLqtZXD7kwuF2tupump": "failed_momentum_floor",
   "solana:F56pXpCRNwRxekbuKkAauNqn3DyXw4HWc4nDMosfpump": "failed_momentum_floor",
   "solana:GabXLWNFc8EzSrxo8JMzxD3Tph5MXsRudcu4p3xnpump": "failed_momentum_floor",
-  "solana:8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L": "failed_momentum_floor"
+  "solana:8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L": "failed_momentum_floor",
+  "solana:Hwu79kGTYxfznfkkq6mnwhybhGGkhZpuTjVEexo5pump": "failed_momentum_floor"
  }
 }

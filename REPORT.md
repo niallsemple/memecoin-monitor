@@ -3194,3 +3194,31 @@ funded through a new branch. Next action: trace FLPen3's funder and
 expand the watch list. (Scorer note: trail check precedes timestop in
 the exit loop — moot here since the dump predated the deadline, but
 worth fixing for post-deadline collapse fills.)
+
+## §96 — 9awYaD money trail mapped; second funding tree found (2026-09-01 ~15:20 local)
+
+Full lifecycle of the ELON bleeder campaign:
+- 14:00:22 — seeder FLPen3FKHgjW9UHB7ERxPe5FQYAud49oVTwFviWLoa2F arms
+  hundreds of bundle wallets (0.030 SOL each, same-block burst). Its own
+  arming transfer not visible in indexed history (first txs are the
+  arming burst itself — funding likely embedded in account creation or
+  an indexing gap; inconclusive).
+- 14:02:51 launch / 86.082 SOL self-seed; 14:14:20 dump (229 SOL,
+  +92s after our entry); 14:25:32 synchronized sweep of ~1,300 small
+  transfers from the bundle army back into FLPen3 (same block).
+- 14:26:28 — FLPen3 forwards 292.8 SOL to hop
+  5ARipQXUFP13QzHau8moMxpvLzXwMLgLgpzjpbsrUzTa, empties to 0.
+- Hop is a LIVE distribution hub: 14:28:15–44 splits outbound 70 /
+  210 / 334 SOL to three staging wallets; 626–627 SOL then ping-pongs
+  F7FK -> 5ARip -> 2CBK -> 5ARip -> 6fy6 (14:31–14:50). Current
+  staging holder: 6fy6iHxyPuB4... (626.6 SOL at 14:50:16).
+
+KEY: this tree shares NO wallet with the §89 chain (treasury CmdxEB /
+AdiJ1 / 9GQv). Two independent funding trees running the byte-identical
+86.082 SOL playbook — either one operator rotating trees or two
+operators sharing the recipe. The §89a tripwire watched the wrong tree
+for this campaign. Expanding CHAIN_WATCH to the new tree (hop +
+staging wallets) next. Note: this tree arms with 70/210/334 SOL splits,
+not the 80–95 SOL band the watcher filters on — filter needs widening
+or staging-layer watching (staging -> 86 SOL -> launcher is the actual
+arming edge).
