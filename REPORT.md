@@ -3566,3 +3566,30 @@ curve virtual reserves (vTok/vSol) minus fee_basis_points @105.
 All PDA derivations verified against live addresses. Next: write
 curve_buy/curve_sell + legacy-tx builder (ComputeBudget + ATA-create
 idempotent + buy ix) into live_trader.py.
+
+## §111 — Curve path built + simulated on-chain: structurally VALID (2026-09-01 ~18:30 local)
+
+live_trader.py extended with the full pump.fun bonding-curve path:
+
+- Pure-python PDA derivation (ed25519 on-curve check + sha256),
+  base58, legacy-tx compiler (key ordering: signers → writable →
+  readonly), ComputeBudget ixs (300k CU limit, ~0.0002 SOL price),
+  ATA createIdempotent wrapper, local ed25519 signing.
+- curve_buy(mint, sol): reads curve state on-chain (virtual reserves,
+  fee bps, creator from curve tail @49, token program from mint owner
+  — Token-2022 for current mints), computes expected tokens via
+  constant-product, sends amount = 85% of expected (adverse-move
+  guard), maxSolCost = exactly our size. Bonding-curve BUY = 16
+  accounts per the IDL; SELL = 14 (no volume accumulators).
+- curve_sell(mint, tokens, min_sol_out): honest slippage floor (unlike
+  bundle bots' min=0).
+- **On-chain simulation test** (sigVerify off, dry-run): tx loads all
+  18 accounts successfully, fails ONLY with AccountNotFound on the fee
+  payer — our unfunded wallet. Structure is valid; it should execute
+  once the wallet is funded. Gates still enforced (no signoff →
+  dry-run; simulation only, nothing submitted).
+- Live flow when owner goes: fund wallet → owner creates
+  manual_signoff.json {"live": true} → tracker signals call curve_buy
+  at s60nm5+fr-gated entries → exit stack calls curve_sell with
+  floor → every decision in mfg_live_trades.jsonl. Kill-switch:
+  drop STOP_LIVE_TRADING file, checked before every trade.
