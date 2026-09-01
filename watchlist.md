@@ -3491,3 +3491,9 @@
 | 16:06 | robinhood | `0x8Fde7C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,908 mc=$38,260 | chain:robinhood no-audit-adapter | First $PONS Then $GPONS  gPons! The new @ponsdotfamily slogan is GPONS |
 | 16:16 | solana | `Ef5aanrj…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$12,484 mc=$28,445 | name=The Deflated Dog symbol=Borzoi; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
 | 16:16 | solana | `posWsbD8…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$0 mc=$29,654 | name=POS symbol=POS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41.9% | Pump out stocks  Desks earn tokenised stock every round. |
+| 16:26 | solana | `81E3q9cd…` | FAIL | TOP10_HEAVY:52% | liq=$0 mc=$23,287 | name=オラゴン symbol=Oragon; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=51.8% |  |
+| 16:26 | robinhood | `0xe5F99b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,319 mc=$17,956 | chain:robinhood no-audit-adapter | Meet Cassowary, the bird Robinhood left behind on GitHub. This means the bird is |
+| 16:26 | solana | `9SMY8ywg…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$20,925 | name=Deadcoin symbol=Deadcoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | WAIT, THIS NARRATIVE IS SO GOOD,  A new trending page has just came out on Solan |
+| 16:26 | robinhood | `0x5896e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Wallet-native payments, global eSIM & encrypted messaging. Pay. Connect. Reach.  |
+| 16:26 | solana | `4rSRTTJW…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$18,126 mc=$55,509 | name=John Termus symbol=Termus; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | let the memes begin |
+| 16:26 | solana | `B9XxJT93…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$4,651 | name=hello symbol=hello; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=92.4% |  |

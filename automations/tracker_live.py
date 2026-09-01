@@ -1410,7 +1410,10 @@ def run(ctx):
             paper["paper_s60nm5fr_wins"] = pf.get("paper_wins")
     except Exception:
         pass
-        # on positions that never freeroll. Honest backtest +1.0%/trade
+    try:
+        # §86a: 3-min time-stop SHADOW — dump unpumped campaigns early;
+        # §99: honest deadline fill. Insurance against slow bleeds on
+        # positions that never freeroll. Honest backtest +1.0%/trade
         # (n=27, fragile 36s margin on GsM2Nq). Forward validation only;
         # gate unchanged. Amendment #4 only if forward exp >= +1.5%.
         pt = paper_score(out_path=PAPER_STS, stage1=(15, 1.08),

@@ -3409,3 +3409,17 @@ Operational takeaways:
    no RPC paging needed.
 3. Whether F5a7aN bleeds over the coming hours is the observable test;
    if the fr shadow scored it, compare variants.
+
+## §104 — Latent bug: ts180 scorer was dead since §98a deploy (2026-09-01 ~17:30 local)
+
+The §98a insert accidentally left the ts180 paper_score block INSIDE
+the preceding `except Exception: pass` handler — it only ran when the
+fr scorer raised. Evidence: mfg_paper_trades_s60nm5ts180.jsonl last
+written 16:35 while all other variants updated 17:03. Consequence: the
+§99 honest-deadline timestop fix never executed live. Fixed by giving
+ts180 its own try block; compile-checked. The next run is the first to
+score ts180 with BOTH the §99 deadline fill and correct execution —
+expect 9orw5y's ts180 row to revise −100% → ~+0.7% then. Forward ts180
+closes between 16:35 and now are missing from the file; they re-enter
+on the next write since scoring replays the full trade log each run
+(no data lost, just delayed).
