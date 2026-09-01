@@ -3563,3 +3563,9 @@
 | 19:46 | robinhood | `0x7cd2d3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,477 mc=$18,502 | chain:robinhood no-audit-adapter | Fund a bot with USDC on Polygon. It buys graded cards below comps and relists th |
 | 19:46 | robinhood | `0x0BAB65…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,494 mc=$33,452 | chain:robinhood no-audit-adapter | rururemon |
 | 19:46 | robinhood | `0x280413…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,870 mc=$57,719 | chain:robinhood no-audit-adapter | Robin Nakamoto From Robinhood |
+| 20:06 | solana | `3hVyBgJM…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$118 mc=$18,194 | name=Compute symbol=Compute; contract:clean; rugcheck_score=1 lpLocked=98.09270025767233%; |  |
+| 20:06 | solana | `EcQavvi2…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$10,797 | name=shiken symbol=shiken; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67.7 | shiken stays on |
+| 20:06 | robinhood | `0x82DBc4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,010 mc=$139,636 | chain:robinhood no-audit-adapter | The liquidity layer for tokenized assets. Dynamic markets built for stocks and R |
+| 20:06 | solana | `5WMBW227…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,188 | name=nyan cat symbol=nyan; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100. | all fees will be donated to child's play |
+| 20:06 | solana | `78MTwK2x…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:54% | liq=$0 mc=$26,825 | name=1 callout can change ur life symbol=callout; contract:clean; rugcheck_score=73 lpLock |  |
+| 20:06 | robinhood | `0xbe98b7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,689 mc=$106,304 | chain:robinhood no-audit-adapter | Send Nudes paired with $SNAP |
