@@ -549,6 +549,8 @@ P_TRAIL_F = 0.5       # trail at 50% of peak
 P_ABORT15 = (15, 1.08)
 P_ABORT30 = (30, 1.15)
 P_TIMESTOP_MIN = 120
+P_NM_TOUCH = 1.30   # §131: momentum-touch level that arms nm_abort
+P_NM_MIN = 5        # minutes below freeroll target after touch -> exit
 
 
 def _load_positions():
@@ -617,12 +619,23 @@ def exit_watch():
             r = px / p["entry_px"] if p["entry_px"] else 0.0
             p["peak_mult"] = max(p["peak_mult"], r)
             mins = (time.time() - p["entry_t"]) / 60
+            # §131: nm_abort — momentum-stall exit. Forward paper tally:
+            # the cohort that touched 1.30x but failed to reach the 1.5x
+            # freeroll within 5 min exited at +34.5% avg (n=14); riding
+            # those to timestop risks the drain. Track first 1.30x touch.
+            if not p["freerolled"] and r >= P_NM_TOUCH \
+                    and p.get("nm_touch_t") is None:
+                p["nm_touch_t"] = time.time()
             act = None
             sell_tokens = 0
             if not p["freerolled"] and r >= P_FR_TARGET:
                 act, sell_tokens = "freeroll", int(p["tokens_left"] * P_FR_SELL)
             elif p["freerolled"] and r <= P_TRAIL_F * p["peak_mult"]:
                 act, sell_tokens = "trail", p["tokens_left"]
+            elif not p["freerolled"] and p.get("nm_touch_t") \
+                    and (time.time() - p["nm_touch_t"]) >= P_NM_MIN * 60 \
+                    and r < P_FR_TARGET:
+                act, sell_tokens = "nm_abort", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_ABORT15[0] and r < P_ABORT15[1]:
                 act, sell_tokens = "abort15", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_ABORT30[0] and r < P_ABORT30[1]:

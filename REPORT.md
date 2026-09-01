@@ -4024,3 +4024,33 @@ Remaining ROI questions are now refinement, not direction:
 (a) n=30 forward tally for the formal amendment #4 call;
 (b) drift-phase exit tuning (do abort15 exits leave money on the
     table vs the trail? — answerable from the forward tally itself).
+
+## §131 — Forward tally anatomy + nm_abort added to the live stack (1 Sep 2026, ~21:45 BST)
+
+Full forward paper tally (mfg_paper_trades_s60nm5fr.jsonl, still
+accumulating): **103 closed, +2.57% avg, 91% win rate; last-30:
++3.01% avg, 90% win**. Per-exit anatomy:
+
+| exit     | n  | avg ret  | read                                    |
+|----------|----|----------|-----------------------------------------|
+| nm_abort | 14 | +34.46%  | touched 1.30x, stalled <1.5x 5 min      |
+| abort    | 13 | + 8.34%  | 30-min momentum abort                   |
+| abort15  | 68 | + 4.47%  | drift grind — the bread and butter      |
+| trail    |  8 | −78.82%  | drain ran over the trail (paper-only    |
+|          |    |          | artifact: paper trail lacks the live    |
+|          |    |          | freerolled-only guard)                  |
+
+**Deployed change (live_trader.py):** added the nm_abort rule to the
+live exit stack — first touch of 1.30x arms a 5-minute timer; if the
+1.5x freeroll hasn't triggered by then, exit all (P_NM_TOUCH=1.30,
+P_NM_MIN=5, params identical to the paper sim that produced the +34.5%
+cohort). Precedence matches the sim: freeroll > trail > nm_abort >
+abort15 > abort30 > timestop. Compiled, smoke-tested (exit_watch runs
+clean). Live positions already opened without nm_touch_t are handled
+via .get() default.
+
+The live stack was already protected against the trail catastrophe
+(trail requires freerolled, and freeroll banks 75% at 1.5x first —
+worst case ≈ +12.5% locked). nm_abort closes the one gap the tally
+exposed: momentum-stall trades previously rode to abort30/timestop
+through the drain window.
