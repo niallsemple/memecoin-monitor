@@ -3085,3 +3085,15 @@ baseline is having a strong run in the clean regime (premium gap now
 statistically due within the next several closes; that event is the
 joint test of the ts180 stop AND the treasury tripwire (if the bleeder
 was chain-funded, we should see the funding alert FIRST).
+
+## §91 — Blind-window cost measured: zero (2026-09-01 ~10:30 local)
+
+Replayed all 462 manufactured launches detected in the forward window
+(t ≥ DEP=1788238800) against the s60nm5 entry gate (net ≥ 60 SOL, ≥ 20
+buys, median buy ≥ 5 SOL in first 60s). Of the 400 not scored, 192 had
+full trade-tape data for reconstruction — **zero** would have qualified
+for entry. The ~40-min write cadence with ~20-min overlap-skip gaps
+misses plenty of launches, but none that the strategy would have traded.
+The gate's selectivity (62 entries of 462 detected = 13%) means blind
+windows cost nothing under current rules. Open item #5 (missed
+short-lived launches) closed: accepted, quantified, immaterial.

@@ -12,3 +12,7 @@
 {"name": "\u5e01\u5b89\u8bc1\u5238 / WBNB", "pair": "0xe6af46bec0506290c21c826bdd778288890560c0", "entry_t": 1788195104.117617, "exit_t": 1788198707.085691, "ret": 1.0927, "exit": "abort", "entry_flow_usd": 6691.0, "hold_min": 60.0}
 {"name": "CZ / WBNB", "pair": "0x855efca0918ad569787487f0427a03d05d9c59ef", "entry_t": 1788196311.4787478, "exit_t": 1788203528.051264, "ret": 1.8093, "exit": "tstop", "entry_flow_usd": 4879.0, "hold_min": 120.3}
 {"name": "\u5c41\u5e01 / WBNB", "pair": "0x2fad171ad014efc513cf771d5fab426043ae0fd3", "entry_t": 1788228790.600641, "exit_t": 1788232343.882675, "ret": 1.1999, "exit": "trail", "entry_flow_usd": 3678.0, "hold_min": 59.2}
+{"name": "FINORA 2.0 / WBNB", "pair": "0x1df94fc777fa0d02c7a3f2a76fe45806344ef408", "entry_t": 1788249642.458465, "exit_t": 1788251531.536027, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3624.0, "hold_min": 31.5}
+{"name": "SHIBUKI / WBNB", "pair": "0xdc303eaf17565226197d135cf5dc2afb3c7d68b4", "entry_t": 1788249240.038344, "exit_t": 1788251531.536027, "ret": 1.0999, "exit": "abort", "entry_flow_usd": 3413.0, "hold_min": 38.2}
+{"name": "\u5f69\u793c\u5e01 / USDT", "pair": "0x3515b144ed23a45e92fb8b82623eb02bbc5cbd24", "entry_t": 1788251531.536027, "exit_t": 1788253945.2074392, "ret": 0.4581, "exit": "abort", "entry_flow_usd": 17416.0, "hold_min": 40.2}
+{"name": "BRXGHFRGHGWKLVJP / WBNB", "pair": "0xe204baa3fefd9e8d9c5def74683a86ea29d04789", "entry_t": 1788250421.3964758, "exit_t": 1788253945.2074392, "ret": 0.1043, "exit": "abort", "entry_flow_usd": 3487.0, "hold_min": 58.7}
