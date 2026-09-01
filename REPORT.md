@@ -4159,3 +4159,29 @@ Consequences:
   positions. Erin's +13% final reflects exactly that bound working.
 - If trail-quality data is wanted, it must come from LIVE freerolled
   exits at 45s cadence — not from stride-sampled replays.
+
+## §136 — 100%-balance sells fail in Jupiter (Custom 6024): 99.9% cap (2 Sep 2026, 00:15 BST)
+
+J3a25GSe's abort15 fired at 00:00 but the Jupiter submit failed FOUR
+consecutive times (00:00-00:03). The §127 success gate did its job —
+position stayed open, exit_failed logged, no phantom close. Manual
+diagnosis (simulateTransaction): 100%-of-balance sells fail with
+Jupiter Route Custom 6024 while 50%/10% succeed at identical market
+state; boundary testing showed 99.9% simulates clean. (RST/M32 100%
+sells worked earlier — the edge case is token/state-specific, so the
+cap is applied universally.)
+
+**Fix:** pool_sell caps every sell at int(amount * 0.999). Dust cost
+~0.1% of position (~0.0001 SOL); benefit: exits can no longer be
+permanently blocked by the full-balance edge case.
+
+**Immediate result:** post-fix exit_watch sold J3a25GSe on the first
+retry — sig 3fCdetgZ..., on-chain verified: +0.136916 SOL vs 0.1278
+in → **+0.00912 SOL (+7.1%)**. Live book: **3/3 winners**
+(RST +7.6%, M32 +3.5%, J3a2 +7.1%). Wallet 2.5621 + LUTN open
+(0.1346 in, r=1.125 at last mark, held correctly past abort15 since
+r >= 1.08; abort30 at ~00:14 if r < 1.15).
+
+Incident chain note: §127's exit_failed retry path + §136's sell cap
+together turned a potential stranded bag into a +7.1% close. The
+retry loop worked 4x without human input and without state corruption.

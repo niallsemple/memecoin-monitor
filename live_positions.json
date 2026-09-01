@@ -40,21 +40,24 @@
   "tokens": 18643764079,
   "tokens_left": 18643764079,
   "size_sol": 0.1346,
-  "peak_mult": 1.0028605052005946,
+  "peak_mult": 1.1246116270430908,
   "freerolled": false,
   "sol_recovered": 0.0
  },
  "J3a25GSe6pkjWfHutcCviKQG56jqax6hp3JD7VbCpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788302668.774268,
   "entry_px": 1.8865936382704405e-09,
   "tokens": 67741138,
-  "tokens_left": 67741138,
+  "tokens_left": 0,
   "size_sol": 0.1278,
-  "peak_mult": 1.0039278560250393,
+  "peak_mult": 1.0738256651017217,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.136915834,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00912,
+  "actual_fill_note": "sig 3fCdetgZxMf6fXs9pi1fFoh2hkiWmdTFvKQKta21UqRcdzyUTypzvAbpa4bnQdy5UCn7Khv5quMHtANJ1zJttUvq on-chain verified; \u00a7136 99.9% cap"
  }
 }

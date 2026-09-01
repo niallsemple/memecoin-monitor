@@ -3611,3 +3611,9 @@
 | 22:26 | solana | `2Pd8jx9v…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$14,480 | name=Bandly Pet symbol=BANDLY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Just onboarded one of the biggest AI dog meme creator on IG and Tiktok. |
 | 22:26 | robinhood | `0x15b07c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$77,710 mc=$111,778 | chain:robinhood no-audit-adapter | Memory supercycle on Robinhood chain |
 | 22:26 | robinhood | `0xd78650…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,829 mc=$57,716 | chain:robinhood no-audit-adapter | the dog takes a gigabyte of AMD |
+| 23:06 | solana | `BToR5AKv…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$24,311 mc=$87,293 | name=froge symbol=froge; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=34.8% | FROGE that pays OpenAI stocks. |
+| 23:06 | robinhood | `0xce5Afd…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$77,575 mc=$103,486 | chain:robinhood no-audit-adapter | RING RING RING. HELLO? |
+| 23:06 | robinhood | `0x6fc029…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The Robin Hood fwog |
+| 23:06 | solana | `JCA2BtkE…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$13,988 | name=The Gang symbol=GANG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=61.3 |  |
+| 23:06 | robinhood | `0x7a6a3B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$140,472 mc=$284,381 | chain:robinhood no-audit-adapter | Cummingtonite was named after the town of Cummington, Massachusetts. |
+| 23:06 | robinhood | `0x06e52E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,796 mc=$43,448 | chain:robinhood no-audit-adapter | Welcome back to the orchard 🍎🐶  $AAPLDOG is officially LIVE on @RobinhoodApp Pai |

@@ -150,6 +150,10 @@ def _jupiter_submit(q):
 def pool_sell(mint, token_amount_raw, reason="exit"):
     """§123: Jupiter sell for graduated (pool-venue) positions."""
     ok, why = live_enabled()
+    # §136: 100%-of-balance sells fail in Jupiter with Custom 6024
+    # (observed live on J3a25GSe — 4 failed submits; 99.9% simulates
+    # clean). Cap every sell at 99.9%; the dust remainder is negligible.
+    token_amount_raw = int(token_amount_raw * 0.999)
     row = {"action": "pool_sell", "mint": mint,
            "tokens_raw": int(token_amount_raw), "reason": reason,
            "mode": "live" if ok else "dry-run", "gate": why}
