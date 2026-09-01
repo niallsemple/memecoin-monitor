@@ -1626,26 +1626,37 @@ def run(ctx):
                                          reason="s60nm5fr signal (hook)")
                     if str(_row.get("result", "")).startswith(
                             "refused: curve complete"):
-                        # §122: token graduated before the hook fired —
-                        # fall back to a Jupiter quote so the ledger
-                        # records what a pool-side entry would pay.
-                        # (Exit-watch can't price pool positions yet —
-                        #  logged for data, position NOT opened.)
+                        # §123: token graduated before the hook fired —
+                        # Jupiter pool path. LIVE mode submits a real
+                        # swap and opens a pool-venue position
+                        # (exit_watch §123 prices/sells it via Jupiter);
+                        # dry-run mode quotes only, for the record.
                         try:
-                            _q = _lt.jupiter_quote(r["mint"], _size, "buy")
-                            _row = {"action": "buy", "mint": r["mint"],
-                                    "reason": "s60nm5fr hook (graduated)",
-                                    "size_sol": _size,
-                                    "mode": "live" if _ok else "dry-run",
-                                    "gate": _why,
-                                    "quote_out": _q.get("outAmount"),
-                                    "quote_price_impact":
-                                        _q.get("priceImpactPct"),
-                                    "result": (f"dry-run ok ({_why})"
-                                               if not _ok else
-                                               "quote only (pool exit "
-                                               "watch pending)")}
-                            _lt._log(_row)
+                            if _ok:
+                                _row = _lt.buy(
+                                    r["mint"],
+                                    reason="s60nm5fr hook (graduated)")
+                                if _row.get("result") == "submitted" \
+                                        and _row.get("tokens_raw"):
+                                    _tk = int(_row["tokens_raw"])
+                                    if _tk > 0:
+                                        _lt.open_position(
+                                            r["mint"], _row["size_sol"],
+                                            "live", venue="pool",
+                                            entry_px=_row["size_sol"] / _tk,
+                                            tokens=_tk)
+                            else:
+                                _q = _lt.jupiter_quote(r["mint"], _size,
+                                                       "buy")
+                                _row = {"action": "buy", "mint": r["mint"],
+                                        "reason": "s60nm5fr hook (graduated)",
+                                        "size_sol": _size,
+                                        "mode": "dry-run", "gate": _why,
+                                        "quote_out": _q.get("outAmount"),
+                                        "quote_price_impact":
+                                            _q.get("priceImpactPct"),
+                                        "result": f"dry-run ok ({_why})"}
+                                _lt._log(_row)
                         except Exception as _e:
                             _row = {"result": f"jupiter fallback: {_e}"}
                     if str(_row.get("result", "")).startswith(

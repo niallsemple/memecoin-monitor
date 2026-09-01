@@ -3799,3 +3799,38 @@ GPRO watch: burst still active at 19:10 — pool holding 822 SOL,
 +120x vs migration (~39k SOL mcap). GROKCAT and Erin both drained
 to ~0.001-0.002x. Current manufactured scoreboard: 2 dead, 1 at
 +120x — freeroll asymmetry confirmed in the wild.
+
+## §123 — Full live path wired: Jupiter entries + pool-venue exits (2026-09-01 ~19:45 local)
+
+Regime discovery from the hook's first four real signals (7SKW1cEF,
+FLE8Cc2A, 6d2Xsj3f, 5dGGJ78o — 19:04-19:24): EVERY fr-gated signal
+graduated before the hook fired. The bonding-curve entry path is
+structurally dead in this meta; the pool IS the venue.
+
+Shipped:
+- live_trader: jupiter_quote_sell + _jupiter_submit + pool_sell;
+  buy() now records tokens_raw; open_position takes venue="pool"
+  (entry_px/tokens from the buy quote — the curve is gone by then);
+  exit_watch branches by venue — pool positions priced by Jupiter
+  sell-quote on the remaining stack, exits via pool_sell.
+- Hook: graduated signal + live gates open -> real Jupiter buy
+  (0.134 SOL at current balance) + pool-venue position opened;
+  dry-run stays quote-only. All rows ledgered as before.
+- Read-only validation: GPRO quotes route via the CORRECT Pump.fun
+  Amm pool (6cV33v...). No fake positions created — with live gates
+  open, exit_watch would really sell them.
+
+GPRO FINAL: born 18:33 -> quiet 25 min at ~1x -> burst 18:58 ->
++123x peak 19:15 (831 SOL pool) -> DRAINED to 0.2 SOL by ~19:40.
+Full lifecycle 67 minutes. Manufactured scoreboard final: GROKCAT
+-100%, Erin -100%, GPRO +123x peak then -100% if held. The freeroll
+stack (bank 75% at 1.5x, trail the rest) monetizes exactly this
+shape; hold-to-death loses everything. This IS the edge, confirmed
+on three prospective cases.
+
+Replay note: GROKCAT alone has 19,427 pool transactions; full
+per-tx reconstruction runs checkpointed across slices (211 done).
+ETA hours; scoring is per-case resumable.
+
+LIVE STATUS: gates open (owner sign-off 19:27). Next tracker run
+enters for real on the next fr signal. Kill switch: STOP_LIVE_TRADING.

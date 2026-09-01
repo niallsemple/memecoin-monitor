@@ -3527,3 +3527,9 @@
 | 18:06 | robinhood | `0x73535d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,769 mc=$22,196 | chain:robinhood no-audit-adapter | Private USDG payments via X username on Robinhood Chain. |
 | 18:06 | robinhood | `0xecEAe5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,426 mc=$58,976 | chain:robinhood no-audit-adapter | infinite money glitch |
 | 18:06 | solana | `J9h4caQD…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,051 | name=Lumio symbol=LUMIO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.8% |  |
+| 18:26 | solana | `7GdutgHz…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$12,071 | name=Better Than Crack symbol=BTC; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hol | The Pill is better than crack |
+| 18:26 | solana | `72gvREea…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$10,528 | name=shrimpcoin symbol=shrimp; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | time for the little guys to win |
+| 18:26 | solana | `FsEGXnUj…` | FAIL | TOP10_HEAVY:67% | liq=$0 mc=$12,959 | name=chudmaxer symbol=chudmaxer; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | This is so fucking good. and artist is selling a painting called "chudmaxxer"  a |
+| 18:26 | robinhood | `0x040D96…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,264 mc=$33,113 | chain:robinhood no-audit-adapter | JOHN APPLE aka John Ternus  the new CEO of Apple Inc. |
+| 18:26 | robinhood | `0x745715…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,893 mc=$28,024 | chain:robinhood no-audit-adapter | V4 Hook trust protocol disguised as a corrupted OS. Hold longer, build trust, in |
+| 18:26 | solana | `Biq6zwK4…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:93% | liq=$3,787 mc=$4,243 | name=test your motion symbol=MOTION; contract:clean; rugcheck_score=30 lpLocked=100%; top1 |  |

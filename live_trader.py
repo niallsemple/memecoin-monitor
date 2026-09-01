@@ -121,6 +121,53 @@ def jupiter_quote(mint, amount_sol, side="buy"):
         return json.loads(r.read())
 
 
+def jupiter_quote_sell(mint, token_amount_raw):
+    """mint->SOL quote for a raw token amount (pool-venue exits)."""
+    params = (f"inputMint={mint}&outputMint={SOL}"
+              f"&amount={int(token_amount_raw)}"
+              f"&slippageBps={SLIPPAGE_BPS}")
+    with urllib.request.urlopen(f"{JUP_Q}?{params}", timeout=20) as r:
+        return json.loads(r.read())
+
+
+def _jupiter_submit(q):
+    """Sign a Jupiter quote locally and submit. Returns tx signature."""
+    key, address = _load_key()
+    req = urllib.request.Request(
+        JUP_S,
+        data=json.dumps({
+            "quoteResponse": q, "userPublicKey": address,
+            "wrapAndUnwrapSol": True,
+            "prioritizationFeeLamports": PRIOR_FEE_MICROLAMPORTS,
+        }).encode(),
+        headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        swap = json.loads(r.read())
+    signed = _sign_versioned_tx(swap["swapTransaction"], key)
+    return _rpc("sendTransaction", [signed, {"encoding": "base64"}])
+
+
+def pool_sell(mint, token_amount_raw, reason="exit"):
+    """§123: Jupiter sell for graduated (pool-venue) positions."""
+    ok, why = live_enabled()
+    row = {"action": "pool_sell", "mint": mint,
+           "tokens_raw": int(token_amount_raw), "reason": reason,
+           "mode": "live" if ok else "dry-run", "gate": why}
+    try:
+        q = jupiter_quote_sell(mint, token_amount_raw)
+        row["quote_out_sol"] = int(q.get("outAmount", 0)) / 1e9
+        row["quote_price_impact"] = q.get("priceImpactPct")
+        if not ok:
+            row["result"] = f"dry-run ok ({why})"
+        else:
+            row["sig"] = _jupiter_submit(q)
+            row["result"] = "submitted"
+    except Exception as e:
+        row["result"] = f"error: {e}"
+    _log(row)
+    return row
+
+
 def _sign_versioned_tx(tx_b64, key):
     """Sign a Jupiter v0 transaction locally. Jupiter txs need exactly one
     signature (the fee payer = us) at signatures[0]."""
@@ -161,6 +208,7 @@ def buy(mint, reason="signal"):
     try:
         q = jupiter_quote(mint, size, "buy")
         row["quote_out"] = q.get("outAmount")
+        row["tokens_raw"] = q.get("outAmount")
         row["quote_price_impact"] = q.get("priceImpactPct")
     except Exception as e:
         row["result"] = f"quote failed: {e}"
@@ -171,21 +219,8 @@ def buy(mint, reason="signal"):
         _log(row)
         return row
     try:
-        key, address = _load_key()
-        req = urllib.request.Request(
-            JUP_S,
-            data=json.dumps({
-                "quoteResponse": q, "userPublicKey": address,
-                "wrapAndUnwrapSol": True,
-                "prioritizationFeeLamports": PRIOR_FEE_MICROLAMPORTS,
-            }).encode(),
-            headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=25) as r:
-            swap = json.loads(r.read())
-        signed = _sign_versioned_tx(swap["swapTransaction"], key)
-        sig = _rpc("sendTransaction", [signed, {"encoding": "base64"}])
+        row["sig"] = _jupiter_submit(q)
         row["result"] = "submitted"
-        row["sig"] = sig
     except Exception as e:
         row["result"] = f"submit failed: {e}"
     _log(row)
@@ -527,22 +562,27 @@ def _price_sol_per_token(st):
     return st["v_sol"] / st["v_tok"] if st["v_tok"] else 0.0
 
 
-def open_position(mint, size_sol, mode):
-    """Record a position after a (dry-run or live) entry fill."""
+def open_position(mint, size_sol, mode, venue="curve", entry_px=None,
+                  tokens=None):
+    """Record a position after a (dry-run or live) entry fill.
+    venue="pool" = graduated token bought via Jupiter; entry_px and
+    tokens (raw) come from the buy quote — the curve no longer exists."""
     pos = _load_positions()
     if mint in pos and pos[mint].get("open"):
         return pos[mint]
-    st = curve_state(mint)
-    entry_px = _price_sol_per_token(st)
-    tokens = tokens_for_sol(st, int(size_sol * 1e9))
-    pos[mint] = {"open": True, "mode": mode, "entry_t": time.time(),
+    if venue == "curve":
+        st = curve_state(mint)
+        entry_px = _price_sol_per_token(st)
+        tokens = tokens_for_sol(st, int(size_sol * 1e9))
+    pos[mint] = {"open": True, "mode": mode, "venue": venue,
+                 "entry_t": time.time(),
                  "entry_px": entry_px, "tokens": tokens,
                  "tokens_left": tokens, "size_sol": size_sol,
                  "peak_mult": 1.0, "freerolled": False,
                  "sol_recovered": 0.0}
     _save_positions(pos)
     _log({"action": "open_position", "mint": mint, "mode": mode,
-          "size_sol": size_sol, "tokens": tokens,
+          "venue": venue, "size_sol": size_sol, "tokens": tokens,
           "entry_px": entry_px})
     return pos[mint]
 
@@ -555,8 +595,19 @@ def exit_watch():
         if not p.get("open"):
             continue
         try:
-            st = curve_state(mint)
-            px = _price_sol_per_token(st)
+            venue = p.get("venue", "curve")
+            if venue == "pool":
+                # §123: graduated position — per-token price from a
+                # Jupiter sell quote on the remaining stack (quote is
+                # size-aware; at our size impact is within slippage).
+                q = jupiter_quote_sell(mint, p["tokens_left"])
+                est_left_sol = int(q.get("outAmount", 0)) / 1e9
+                px = (est_left_sol / p["tokens_left"]
+                      if p["tokens_left"] else 0.0)
+                st = None
+            else:
+                st = curve_state(mint)
+                px = _price_sol_per_token(st)
             r = px / p["entry_px"] if p["entry_px"] else 0.0
             p["peak_mult"] = max(p["peak_mult"], r)
             mins = (time.time() - p["entry_t"]) / 60
@@ -573,10 +624,14 @@ def exit_watch():
             elif not p["freerolled"] and mins >= P_TIMESTOP_MIN:
                 act, sell_tokens = "timestop", p["tokens_left"]
             if act:
-                est_sol = sol_for_tokens(st, sell_tokens) / 1e9
-                res = curve_sell(mint, sell_tokens,
-                                 min_sol_out=int(est_sol * 0.85 * 1e9),
-                                 reason=act)
+                if venue == "pool":
+                    est_sol = px * sell_tokens
+                    res = pool_sell(mint, sell_tokens, reason=act)
+                else:
+                    est_sol = sol_for_tokens(st, sell_tokens) / 1e9
+                    res = curve_sell(mint, sell_tokens,
+                                     min_sol_out=int(est_sol * 0.85 * 1e9),
+                                     reason=act)
                 p["sol_recovered"] += est_sol
                 p["tokens_left"] -= sell_tokens
                 if act == "freeroll":
