@@ -3097,3 +3097,24 @@ misses plenty of launches, but none that the strategy would have traded.
 The gate's selectivity (62 entries of 462 detected = 13%) means blind
 windows cost nothing under current rules. Open item #5 (missed
 short-lived launches) closed: accepted, quantified, immaterial.
+
+## §92 — Decision frame at parity; clean streak not yet surprising (2026-09-01 ~10:50 local)
+
+Recomputed the baseline-vs-ts180 choice with current forward returns:
+baseline clean-regime return +13.20%/trade vs ts180 +1.29%/trade puts
+the parity bleeder rate at **10.5%** — the gated historical rate is
+**11.1%** (3/27: GsM2Nq, 4xBDmh, AgLSnY). On historical evidence the
+insurance is worth its premium, but by less than 1pt — the two
+strategies sit almost exactly at parity, so the forward bleeder rate
+is the deciding variable, not a refinement.
+
+Structural confirmation: all 6 committed-sample bleeder dumps landed
+19–80 min after entry — far beyond the 180s ts180 stop. The insurance
+is mechanically immune to the observed dump pattern, not merely
+statistically lucky.
+
+Streak check: P(0 bleeders in 11 gated entries | 11.1% rate) = 27% —
+the clean forward regime is NOT yet statistically surprising. At ~25
+consecutive clean closes P drops below 5% and a genuine regime shift
+(operator behavior change) becomes the better explanation. Conveniently
+that is also the amendment #4 sample threshold (~30 closes).
