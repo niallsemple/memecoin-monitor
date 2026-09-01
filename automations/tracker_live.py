@@ -50,6 +50,9 @@ SEED_MIN = 5.0
 MAX_TRACK = 40                          # concurrent curve subscriptions (§66: quota)
 MAX_POOL_TRACK = 30                     # graduated tokens pool-tracked (2 subs each)
 POOL_QUIET_S = 2 * 3600                 # §56g: recycle pool slots after 2h silence
+ARMED = MON / "mfg_armed_births.jsonl"  # §120: armed/instant-grad birth ledger
+ARMED_SEED = 80.0                       # §120: instant-grad fingerprint seed (SOL)
+ARMED_IB_MIN = 700e6                    # §120: >=70% of 1e9 supply in create tx
 SNAP_AGES = (300, 900, 3600)            # +5m, +15m, +60m
 GRAD_SNAP_AGES = (14400, 43200, 86400)  # +4h, +12h, +24h (graduated only)
 TRACK_MAX_AGE = 3600                    # unsubscribe curve after 1h
@@ -703,7 +706,22 @@ def run(ctx):
     stats = {"births": 0, "big_seeds": 0, "new_tracks": 0, "trades": 0,
              "migrations": 0, "complete_flags": 0, "snaps": 0,
              "curve_subs": 0, "helius_err": 0, "unsubs": 0,
-             "pools_found": 0, "pool_subs": 0, "pool_trades": 0, "alerts": 0}
+             "pools_found": 0, "pool_subs": 0, "pool_trades": 0,
+             "alerts": 0, "armed_births": 0}
+    # §120: funded-recipient set — creators in here are armed even when
+    # the launch fingerprint changes. Loaded once per run; the
+    # fingerprint test (below) covers same-minute fund->launch cases.
+    funded_set = set()
+    try:
+        for _ln in FUNDING.open():
+            try:
+                _fw = json.loads(_ln).get("fresh_wallet")
+                if _fw:
+                    funded_set.add(_fw)
+            except Exception:
+                continue
+    except Exception:
+        pass
     alerted = set()
     if ALERTS.exists():
         for line in ALERTS.read_text().splitlines():
@@ -972,6 +990,37 @@ def run(ctx):
                                                 "keys": [mint]}))
                         except Exception:
                             pass
+            # §120: armed-birth / instant-grad override. The manufactured
+            # meta is now: 80+ SOL seed buying >=70% of supply in the
+            # create tx, born-terminal curve, same-slot migrate (§119).
+            # These bypass MAX_TRACK (rare: ~14/h) and skip curve
+            # semantics entirely — the pool IS the market from t=0.
+            try:
+                ib = float(d.get("initialBuy") or 0)
+            except Exception:
+                ib = 0.0
+            cr = d.get("traderPublicKey")
+            funded = bool(cr and cr in funded_set)
+            if mint and (funded or (seed >= ARMED_SEED and ib >= ARMED_IB_MIN)):
+                with LK:
+                    if mint not in tokens:
+                        new_token(mint, d)
+                        stats["new_tracks"] += 1
+                    t120 = tokens[mint]
+                    already = t120.get("armed")
+                    t120["armed"] = True
+                    if (d.get("vSolInBondingCurve") or 0) >= 110 \
+                            and not t120["grad_ts"]:
+                        # born-terminal curve — don't wait for migrate
+                        t120["grad_ts"] = d["_ts"]
+                if not already:
+                    stats["armed_births"] += 1
+                    with ARMED.open("a") as f:
+                        f.write(json.dumps({
+                            "t": d["_ts"], "mint": mint, "creator": cr,
+                            "seed": seed, "initialBuy": ib,
+                            "funded": funded, "symbol": d.get("symbol"),
+                            "mcap_birth_sol": d.get("marketCapSol")}) + "\n")
         elif tt == "migrate":
             stats["migrations"] += 1
             with CURVES.open("a") as f:
@@ -979,6 +1028,69 @@ def run(ctx):
             with LK:
                 if mint in tokens and not tokens[mint]["grad_ts"]:
                     tokens[mint]["grad_ts"] = d["_ts"]
+                t_mig = tokens.get(mint)
+                want_pool = bool(t_mig and t_mig.get("armed")
+                                 and not t_mig.get("pool"))
+            # §120: armed births get the pool parsed out of the migrate tx
+            # immediately — GT indexing lags minutes and the quiet entry
+            # window is only ~18-25 min (§119). Pool = owner holding both
+            # the mint TA and the WSOL TA in postTokenBalances.
+            if want_pool:
+                try:
+                    rtx = rpc("getTransaction",
+                              [d.get("signature"),
+                               {"encoding": "jsonParsed",
+                                "maxSupportedTransactionVersion": 0}])
+                    txr = (rtx or {}).get("result") or {}
+                    meta = txr.get("meta") or {}
+                    msgk = ((txr.get("transaction") or {})
+                            .get("message") or {}).get("accountKeys") or []
+                    keys = [(k.get("pubkey") if isinstance(k, dict) else k)
+                            for k in msgk]
+                    la = meta.get("loadedAddresses") or {}
+                    keys += (la.get("writable") or []) \
+                        + (la.get("readonly") or [])
+                    pool = pbt = pqt = None
+                    for tb in meta.get("postTokenBalances") or []:
+                        own = tb.get("owner")
+                        tm = tb.get("mint")
+                        ai = tb.get("accountIndex")
+                        addr = (keys[ai] if isinstance(ai, int)
+                                and ai < len(keys) else None)
+                        if tm == mint and own:
+                            pool = own
+                            pbt = addr or pbt
+                        elif tm == WSOL and own and (pool is None
+                                                     or own == pool):
+                            pool = own
+                            pqt = addr or pqt
+                    if pool and pbt and pqt:
+                        for k2, addr2 in (("pool_last_b", pbt),
+                                          ("pool_last_q", pqt)):
+                            try:
+                                r5 = rpc("getAccountInfo",
+                                         [addr2, {"encoding": "base64"}])
+                                v5 = (r5.get("result") or {}).get("value")
+                                if v5:
+                                    with LK:
+                                        t_mig[k2] = _decode_spl_amount(
+                                            v5["data"][0])
+                            except Exception:
+                                pass
+                        with LK:
+                            t_mig["pool"] = {"pool": pool, "pbt": pbt,
+                                             "pqt": pqt}
+                            t_mig["pool_last_ts"] = time.time()
+                            if t_mig.get("pool_last_b") \
+                                    and t_mig.get("pool_last_q") is not None:
+                                t_mig["pool_mcap"] = round(
+                                    t_mig["pool_last_q"] * 1e6
+                                    / t_mig["pool_last_b"], 4)
+                            _liq_update(t_mig)
+                        subscribe_pool(mint, t_mig)
+                        stats["pools_found"] += 1
+                except Exception:
+                    pass
         elif tt in ("buy", "sell") and mint and not hws_ref["open"]:
             # §67: Helius down — pumpportal trade feed replaces curve deltas
             try:
@@ -1513,7 +1625,32 @@ def run(ctx):
                     _row = _lt.curve_buy(r["mint"], _size,
                                          reason="s60nm5fr signal (hook)")
                     if str(_row.get("result", "")).startswith(
-                            ("dry-run", "submitted")):
+                            "refused: curve complete"):
+                        # §122: token graduated before the hook fired —
+                        # fall back to a Jupiter quote so the ledger
+                        # records what a pool-side entry would pay.
+                        # (Exit-watch can't price pool positions yet —
+                        #  logged for data, position NOT opened.)
+                        try:
+                            _q = _lt.jupiter_quote(r["mint"], _size, "buy")
+                            _row = {"action": "buy", "mint": r["mint"],
+                                    "reason": "s60nm5fr hook (graduated)",
+                                    "size_sol": _size,
+                                    "mode": "live" if _ok else "dry-run",
+                                    "gate": _why,
+                                    "quote_out": _q.get("outAmount"),
+                                    "quote_price_impact":
+                                        _q.get("priceImpactPct"),
+                                    "result": (f"dry-run ok ({_why})"
+                                               if not _ok else
+                                               "quote only (pool exit "
+                                               "watch pending)")}
+                            _lt._log(_row)
+                        except Exception as _e:
+                            _row = {"result": f"jupiter fallback: {_e}"}
+                    if str(_row.get("result", "")).startswith(
+                            ("dry-run", "submitted")) \
+                            and _row.get("action") == "curve_buy":
                         _lt.open_position(r["mint"], _size,
                                           _row.get("mode", "dry-run"))
                     _sent[r["mint"]] = {"t": _now,
@@ -1567,6 +1704,7 @@ def run(ctx):
         pass
     return {"artifact": {
         "summary": (f"births={stats['births']} big_seeds={stats['big_seeds']} "
+                    f"armed={stats['armed_births']} "
                     f"tracked={tracked} trades={stats['trades']} "
                     f"pool_trades={stats['pool_trades']} pools={stats['pools_found']} "
                     f"snaps={stats['snaps']} alerts={stats['alerts']} "

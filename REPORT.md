@@ -3749,3 +3749,53 @@ Next build: armed-birth pool watcher — on any birth whose creator is
 in the funded set (or seed >= 80 SOL with >= 75% supply initialBuy),
 derive/locate the pool immediately and watch vault deltas at seconds
 cadence, bypassing curve semantics entirely.
+
+## §120 — Armed-birth pool watcher shipped (2026-09-01 ~19:15 local)
+
+Root cause of the §119 blind spot: MAX_TRACK=40 curve slots vs
+~155 seed>=5 births/hour — the cap saturates ~15 min into every run,
+so mid-run big-seed births (incl. all three armed launches) were
+dropped before ever getting a curve subscription. Zero flow rows,
+zero snapshots, gate blind.
+
+Fix shipped in the tracker:
+1. Armed-birth override in the create handler — creator in the
+   funded set (mfg_funding.jsonl) OR fingerprint (seed >= 80 SOL AND
+   initialBuy >= 700M of 1e9 supply) → force-tracked, bypasses
+   MAX_TRACK, ledgered to mfg_armed_births.jsonl, and when
+   vSol >= 110 the token is marked born-terminal immediately
+   (no waiting for the migrate event).
+2. Instant pool parse on migrate — for armed tokens the migrate tx
+   is fetched and the pool + both vaults extracted from
+   postTokenBalances (owner holding mint TA + WSOL TA = pool).
+   Validated 3/3 against GROKCAT / Erin / GPRO known pools. GT's
+   multi-minute indexing lag no longer matters for armed births;
+   the ~18-25 min quiet entry window is now fully observable via
+   the existing §66b vault-polling path.
+3. Run summary now reports armed=N.
+
+Effect lands next run (runs load the file at start). Every future
+instant-grad launch gets pool flow from minute zero.
+
+## §121 — First live-hook fire + graduation gap found (2026-09-01 ~19:10 local)
+
+The §112 hook fired on its first real signal: 7SKW1cEF (fr-gated,
+fresh) at ~19:04. curve_buy correctly REFUSED — "curve complete
+(use Jupiter path)": the token had already graduated inside the same
+run window. Plumbing works end-to-end (signal -> hook -> ledger ->
+dedupe state); the gap is that graduated entries need the pool path.
+
+## §122 — Jupiter fallback wired into the hook (2026-09-01 ~19:15 local)
+
+On "refused: curve complete" the hook now takes a Jupiter quote and
+ledgers exactly what a pool-side entry would pay (outAmount +
+priceImpactPct), so model-vs-live slippage on fast graduators is
+measured, not guessed. Position is NOT opened for these — exit_watch
+prices via the curve; pool-priced exits are the next build (they
+belong with the §120 watcher anyway, since armed births are
+pool-native from t=0).
+
+GPRO watch: burst still active at 19:10 — pool holding 822 SOL,
++120x vs migration (~39k SOL mcap). GROKCAT and Erin both drained
+to ~0.001-0.002x. Current manufactured scoreboard: 2 dead, 1 at
++120x — freeroll asymmetry confirmed in the wild.

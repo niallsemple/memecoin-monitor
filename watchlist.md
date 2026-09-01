@@ -3521,3 +3521,9 @@
 | 17:56 | solana | `5JFomncE…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$15,124 mc=$40,118 | name=memeployed symbol=memeployed; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
 | 17:56 | solana | `BbLB3ikT…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$27,018 mc=$114,287 | name=Pumpacia symbol=PUMPACIA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Meet Pumpacia — pretty in pink and built to pump. The cutest runner on Solana. K |
 | 17:56 | ethereum | `0x143150…` | PASS | — | liq=$20,493 mc=$83,380 | holders=0; buy_tax=None sell_tax=None; contract:clean |  |
+| 18:06 | robinhood | `0x1521b3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$92,055 mc=$1,534,250 | chain:robinhood no-audit-adapter | LUCIA |
+| 18:06 | robinhood | `0xEb671A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,978 mc=$57,164 | chain:robinhood no-audit-adapter | HESOYAM — the code for infinite wellness.  Health restored. Armor restored. $250 |
+| 18:06 | robinhood | `0xEfE267…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,728 mc=$11,419 | chain:robinhood no-audit-adapter |  |
+| 18:06 | robinhood | `0x73535d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,769 mc=$22,196 | chain:robinhood no-audit-adapter | Private USDG payments via X username on Robinhood Chain. |
+| 18:06 | robinhood | `0xecEAe5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,426 mc=$58,976 | chain:robinhood no-audit-adapter | infinite money glitch |
+| 18:06 | solana | `J9h4caQD…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,051 | name=Lumio symbol=LUMIO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.8% |  |
