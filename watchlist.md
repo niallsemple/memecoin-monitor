@@ -3515,3 +3515,9 @@
 | 17:26 | robinhood | `0xbbd8b6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Tokenized Real-estate. |
 | 17:26 | robinhood | `0x61aadb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,515 mc=$3,642 | chain:robinhood no-audit-adapter | Zeta is the protocol for owning your AI self. Mint a sovereign AI replica of a r |
 | 17:26 | robinhood | `0x2633D6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,862 mc=$17,723 | chain:robinhood no-audit-adapter | Robinhood Social, the new FOMO-style app in the works, could make Social Cat its |
+| 17:56 | solana | `DTEBnHqp…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$15,119 | name=Astra symbol=ASTRA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100.0% |  |
+| 17:56 | robinhood | `0xd7e61f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Call the stock. Win the stock. Every 60 seconds. |
+| 17:56 | solana | `BbPkXwMm…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$3,809 | name=Caine symbol=Caine; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=97.0% |  |
+| 17:56 | solana | `5JFomncE…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$15,124 mc=$40,118 | name=memeployed symbol=memeployed; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 17:56 | solana | `BbLB3ikT…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$27,018 mc=$114,287 | name=Pumpacia symbol=PUMPACIA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Meet Pumpacia — pretty in pink and built to pump. The cutest runner on Solana. K |
+| 17:56 | ethereum | `0x143150…` | PASS | — | liq=$20,493 mc=$83,380 | holders=0; buy_tax=None sell_tax=None; contract:clean |  |

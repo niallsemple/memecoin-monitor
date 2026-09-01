@@ -3706,3 +3706,46 @@ backoff dominates). Trimmed treasury_watch: 12→8 sigs/wallet,
 4→2 tx parses/wallet/run, 0.8s→0.5s spacing. Alert sensitivity
 preserved: these chain wallets move a handful of times per day and
 the seen-cursor keeps continuity across runs. Effect lands next run.
+
+## §119 — Armed-wallet launches caught x3; structural blind spot found; GPRO pumping live (2026-09-01 ~19:00 local)
+
+Tripwire escalated: three funded wallets launched within ~1h —
+GROKCAT (4PRXBB, armed 563 SOL, born+graduated 17:32:51 same slot),
+Erin (6Tx7VtE5, armed 633 SOL, born 18:06:24, graduated 18:13),
+GPRO (JA151CZ, funded 300 SOL 18:33:11, born 18:32:59 — funding and
+launch in the same minute; tripwire lead time has shrunk to ~0).
+
+Identical fingerprint on all three: 85.005 SOL seed buying 793.1M
+tokens (79.31% of supply) inside the create tx, vSol 115.005,
+birth mcap 410.9 SOL, atomic same-slot MigrateV2, pool seeded with
+206.9M tokens + 67.4059 WSOL. The ENTIRE curve phase is one slot.
+
+Chain outcomes (public RPC forensics):
+- GROKCAT: pool burst 17:50-17:57 (200+ sigs), then drained —
+  0.001x vs migration. Dead ~25 min after birth.
+- Erin: pool burst 18:51-18:58, drained — 0.002x. Dead.
+- GPRO: quiet 18:33→~18:58 at ~1x pool price, then burst began
+  18:58:10 (100 pool sigs in 59 s — the F5a7aN signature). At check:
+  pool holding 804 SOL, price 115x migration, mcap ~37.5k SOL. LIVE.
+
+Structural findings:
+1. ZERO mfg_trades rows for all three — the tracker saw the births
+   (curves.jsonl) but derived no trades. With Helius quota dead, the
+   curve-polling fallback sees the curve born-complete and gone in
+   one slot; pool polling never engaged. The instant-graduation style
+   is invisible to our trade-flow layer.
+2. s60nm5 could NEVER fire on these even with perfect data: nb>=20
+   curve buys cannot exist when the curve phase is a single slot.
+3. The tradeable pattern instead: quiet pool window at ~1x migration
+   price lasting 18-25 min after birth (all three), THEN the violent
+   bundle burst. Entry = pool at ~1x during the quiet window (armed
+   wallet birth is the signal — tripwire now gives 0-40 min warning);
+   exit = sell into the burst; the burst IS the exit liquidity.
+   Scoreboard if entered at migration ~1x: GROKCAT/Erin die (−100%
+   if held through, freeroll into the burst saves them), GPRO +115x
+   and counting. This is the freeroll asymmetry in its purest form.
+
+Next build: armed-birth pool watcher — on any birth whose creator is
+in the funded set (or seed >= 80 SOL with >= 75% supply initialBuy),
+derive/locate the pool immediately and watch vault deltas at seconds
+cadence, bypassing curve semantics entirely.
