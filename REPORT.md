@@ -2731,3 +2731,31 @@ armed. This variant fails qualification. Next candidate edge, if the
 owner wants to continue: entry-side insider detection (holder gate via
 keyed RPC, or a proxy: first-hour sell-side wallet concentration from
 the trade tape we already capture).
+
+## §81 — Tape-proxy search for bleeder signature: negative (2026-09-01 ~04:20)
+
+Tested whether the two mega-dump bleeders (GsM2Nq, 4xBDmh) could have
+been filtered at entry using only data already captured (no RPC holder
+data). Compared all 23 committed closes on:
+
+- **Symbol recurrence**: both bleeders are "10KK" launches; 5 tokens in
+  the sample share that symbol, 2 bled (40% vs 0% for all others).
+  Weak signal, n=5 — watchlist-worthy, not gate-worthy.
+- **Insider-dominance ratio** (pool_liq_sol / pool_buy_sol at 300s):
+  bleeders at 160x and 69x sit mid-pack (winners range 19x-634x).
+  No separation.
+- **Creator history**: bleeder creators are one-shot in our data; the
+  prolific serial launchers (up to 603 launches) produced no bleeders
+  in the sample. No signal.
+- **Seed field**: constant across all rows (pipeline artifact, not a
+  feature).
+- mfg_trades.jsonl lacks trader wallet identity; curves.jsonl has
+  traderPublicKey but captures mfg-universe mints too sparsely (2 rows
+  for GsM2Nq) to reconstruct concentration.
+
+Conclusion: no entry-time proxy from existing capture cleanly separates
+the insider mega-dump class. The holder-concentration gate (keyed RPC,
+§79x) remains the correct defense; alternatively the trade ingestor
+could be extended to record traderPublicKey per mfg trade, enabling a
+tape-native concentration metric going forward (retroactive-free —
+would accrue from deployment).
