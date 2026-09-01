@@ -1,0 +1,22 @@
+{
+ "GPRO": {
+  "entry_px": 2.3625103782467495e-07,
+  "entry_t": 1788283979,
+  "curve_secs": 0,
+  "peak_x": 1.0,
+  "exit": "open",
+  "exit_min": 0.0,
+  "ret": -0.5463,
+  "n_ticks": 2
+ },
+ "GROKCAT": {
+  "entry_px": 2.3625103782467495e-07,
+  "entry_t": 1788280371,
+  "curve_secs": 0,
+  "peak_x": 1.0,
+  "exit": "open",
+  "exit_min": 0.0,
+  "ret": -0.5463,
+  "n_ticks": 2
+ }
+}

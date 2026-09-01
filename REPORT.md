@@ -3990,3 +3990,37 @@ dead-cat after.
 cases) — entry at armed-birth detection pre-migration, exit rules
 into/through the migration slot — to size the curve-phase EV and
 its drain risk before considering any live curve-venue entries.
+
+## §130 — Curve-phase replay: the 123x is structurally uncapturable (1 Sep 2026, ~21:25 BST)
+
+armed_curve_replay.py reconstructs exact curve prices from on-chain
+balance deltas (px = (r_sol+30)/(r_tok+279.9M)). Result for BOTH
+armed-birth cases: the bonding curve has exactly **3 signatures
+spanning 0 seconds**:
+
+1. **create + seed buy** — ONE transaction: +85.0054 SOL completes the
+   curve, leaving exactly 206,900,000 tokens (the pool-seed amount).
+   Avg fill 2.36e-07 SOL/token.
+2. **MigrateV2** — next tx, same slot; curve reserves drained to pool.
+3. (pool seeding, same slot)
+
+Then, per §129, sister wallets pump the POOL 94.5x within the first
+slot(s) post-migration (GROKCAT's 14x-in-1s sister burst was the same
+pattern). Full manufactured lifecycle: same-slot birth->curve-complete
+->migrate->pool-pump (all entity-internal), then 25-60m distribution
+drift, then drain to -90%.
+
+**VERDICT: the 123x leg is structurally uncapturable.** Detection-
+then-transact cannot beat same-slot execution; every big leg is
+entity-internal. This CLOSES the armed-birth immediate-entry research
+line (pool venue rejected §129, curve venue impossible §130).
+
+**What IS capturable is what we are already harvesting:** the
+post-pump distribution drift (25-60 min window) with strict aborts —
+live book: RST +7.6%, M32 +3.5%, both abort15 exits before any
+drain. The fr-gate hook config is the correct ceiling for this meta.
+
+Remaining ROI questions are now refinement, not direction:
+(a) n=30 forward tally for the formal amendment #4 call;
+(b) drift-phase exit tuning (do abort15 exits leave money on the
+    table vs the trail? — answerable from the forward tally itself).
