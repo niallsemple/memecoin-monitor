@@ -2759,3 +2759,29 @@ the insider mega-dump class. The holder-concentration gate (keyed RPC,
 could be extended to record traderPublicKey per mfg trade, enabling a
 tape-native concentration metric going forward (retroactive-free —
 would accrue from deployment).
+
+## §82 — Signer-snapshot build DEPLOYED: tape-native insider metric (2026-09-01 ~04:45)
+
+Built and wired the entry-time signer snapshot into the live tracker
+(automation_3840d0e4, compile-verified before deploy). For each fresh
+s60nm5 qualifier it pages getSignaturesForAddress back toward birth
+(max 2x80 sigs), parses the oldest 40 transactions, and aggregates
+feePayer SOL balance deltas — recovering wallet-level flow identity
+that mfg_trades.jsonl lacks — WITHOUT keyed RPC (getSignaturesForAddress
++ getTransaction work on public endpoints; getTokenLargestAccounts
+does not, which is what killed holder snapshots).
+
+Appends to mfg_signers.jsonl: {t, mint, entry_t, n_tx, parsed,
+unique_signers, top1_sol, top1_share, top1, top5_share, moved_sol}.
+Capped at 2 mints per cycle; failures retry next cycle; own try block
+so it cannot disturb the live scorer.
+
+**Forward test now armed:** if a third bleeder appears, compare its
+entry-time top1_share/top5_share against winners — hypothesis is the
+mega-dump class shows one signer dominating early flow (insider
+loading the curve before the gate fires). If separation holds over a
+few more closes, this becomes amendment #3 (insider-concentration
+gate) with zero RPC-key dependency. First rows expected within 1-2
+cycles (~20-40 min) if any new qualifier enters; entry pace ~1-2/h.
+
+Patch applied in two parts (function + call site), py_compile clean.

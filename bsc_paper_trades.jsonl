@@ -11,3 +11,4 @@
 {"name": "FMC / WBNB", "pair": "0x7b41510b295adbd3036fe2ecee2f07313882db96", "entry_t": 1788195203.622998, "exit_t": 1788198707.085691, "ret": 0.8549, "exit": "abort", "entry_flow_usd": 3535.0, "hold_min": 58.4}
 {"name": "\u5e01\u5b89\u8bc1\u5238 / WBNB", "pair": "0xe6af46bec0506290c21c826bdd778288890560c0", "entry_t": 1788195104.117617, "exit_t": 1788198707.085691, "ret": 1.0927, "exit": "abort", "entry_flow_usd": 6691.0, "hold_min": 60.0}
 {"name": "CZ / WBNB", "pair": "0x855efca0918ad569787487f0427a03d05d9c59ef", "entry_t": 1788196311.4787478, "exit_t": 1788203528.051264, "ret": 1.8093, "exit": "tstop", "entry_flow_usd": 4879.0, "hold_min": 120.3}
+{"name": "\u5c41\u5e01 / WBNB", "pair": "0x2fad171ad014efc513cf771d5fab426043ae0fd3", "entry_t": 1788228790.600641, "exit_t": 1788232343.882675, "ret": 1.1999, "exit": "trail", "entry_flow_usd": 3678.0, "hold_min": 59.2}

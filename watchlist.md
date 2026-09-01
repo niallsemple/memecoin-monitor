@@ -3316,3 +3316,9 @@
 | 03:06 | robinhood | `0x58A63F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,391 mc=$124,007 | chain:robinhood no-audit-adapter |  |
 | 03:06 | solana | `78iEniPN…` | FAIL | TOP10_HEAVY:86% | liq=$0 mc=$6,437 | name=MEMEPLOYED symbol=MEMEPLOYED; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
 | 03:06 | robinhood | `0x656a7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$69,326 mc=$126,617 | chain:robinhood no-audit-adapter | make fomo great again |
+| 03:26 | solana | `A3MhQv12…` | FAIL | TOP10_HEAVY:51% | liq=$14,345 mc=$35,786 | name=Source Code of the Universe symbol=CODED; contract:clean; rugcheck_score=1 lpLocked=1 | CODED entropy 001 |
+| 03:26 | solana | `B3K4qx7p…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$18,841 mc=$57,158 | name=MONK symbol=MONK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=31.9% |  |
+| 03:26 | robinhood | `0x013BaB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,570 mc=$89,896 | chain:robinhood no-audit-adapter | Launched by Ponsdotfamily through their docs |
+| 03:26 | solana | `ZXNVeNPz…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,915 | name=Beat The Cancer symbol=BTС; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Every candle feeds $BTC’s cancer-funding mission, routing pump.fun creator rewar |
+| 03:26 | solana | `ARBzMHaU…` | FAIL | TOP10_HEAVY:61% | liq=$8,122 mc=$13,519 | name=CRIME IS LEGAL symbol=CRIME; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 03:26 | solana | `ALjmEBqt…` | FAIL | TOP10_HEAVY:52% | liq=$13,167 mc=$30,615 | name=The Baton Corporation Experiment symbol=BATON; contract:clean; rugcheck_score=1 lpLoc | a hedge against the housing market. the first memecoin paired with USDY using yi |
