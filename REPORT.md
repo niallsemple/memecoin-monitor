@@ -4253,3 +4253,18 @@ Sells were already covered by the §137 gate in exit_watch. Compiles clean.
 First entry under the new code verified healthy: Rhm9Rv…pump bought 00:44,
 tx finalized err=None, on-chain fill 2,414,245,404 raw (quote −0.018%),
 0.1281 SOL, wallet 2.431490 after. Book corrected to exact fill.
+
+## §139 — Watcher coverage gap: run-window fix (2 Sep 2026, 00:56 BST)
+
+**Found.** The 00:44 trigger was SKIPPED (already_running): the 00:24 run's 19-min
+collection window plus ~3 min post-processing overran the 22-min timeout (killed
+00:46:45), so the next trigger found a live run and skipped — leaving NO exit watcher
+from 00:46 to ~01:04 while Rhm9 approached its 15-min abort gate. Manual exit_watch
+covered the gap (Rhm9 r=1.026, hold).
+
+**Fix (automation.py).** WINDOW_S 19m → 14m. Runs now finish ~17m < 20m interval, so
+triggers stop skipping and coverage becomes seamless. Compiles clean; snapshot
+automations/tracker_live.py updated. Effective from the ~01:04 run.
+
+**Lesson.** Any run whose duration can exceed its schedule interval creates silent
+coverage holes exactly when positions need watching. Run time must fit the interval.
