@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 401.7834128010479,
+ "cash": 398.49709710366676,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -35,17 +35,6 @@
    "realized": 0.0,
    "opened": "2026-08-30T11:27:01.906752+00:00"
   },
-  "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
-   "addr": "DVxaAXi3",
-   "entry_mcap": 1001031.0,
-   "entry_min": 4437.7,
-   "size_gbp": 9.67,
-   "peak_mcap": 1120090.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-08-30T17:26:49.406870+00:00"
-  },
   "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
    "addr": "CTPoyCwk",
    "entry_mcap": 19361356.0,
@@ -56,6 +45,17 @@
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-01T00:26:45.594849+00:00"
+  },
+  "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
+   "addr": "DVxaAXi3",
+   "entry_mcap": 522409.0,
+   "entry_min": 7079.9,
+   "size_gbp": 8.14,
+   "peak_mcap": 522584.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-01T13:29:04.317705+00:00"
   }
  },
  "closed": [
@@ -1556,6 +1556,20 @@
    "closed_at": "2026-09-01T06:09:03.995135+00:00",
    "exit_r": 0.015,
    "pnl_gbp": -10.08
+  },
+  {
+   "addr": "DVxaAXi3",
+   "entry_mcap": 1001031.0,
+   "entry_min": 4437.7,
+   "size_gbp": 9.67,
+   "peak_mcap": 1120090.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 4.970794715198631,
+   "opened": "2026-08-30T17:26:49.406870+00:00",
+   "closed_at": "2026-09-01T13:28:02.511898+00:00",
+   "exit_r": 0.522,
+   "pnl_gbp": -4.84
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -1753,6 +1767,7 @@
   "solana:4z8MysfAe44rypE2aBcAytVvny3WVXyJCStfFJSvpump": "failed_momentum_floor",
   "solana:HYYLdNLgNiDdLR8zs6mSvfttRLLqtZXD7kwuF2tupump": "failed_momentum_floor",
   "solana:F56pXpCRNwRxekbuKkAauNqn3DyXw4HWc4nDMosfpump": "failed_momentum_floor",
-  "solana:GabXLWNFc8EzSrxo8JMzxD3Tph5MXsRudcu4p3xnpump": "failed_momentum_floor"
+  "solana:GabXLWNFc8EzSrxo8JMzxD3Tph5MXsRudcu4p3xnpump": "failed_momentum_floor",
+  "solana:8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L": "failed_momentum_floor"
  }
 }

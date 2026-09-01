@@ -3162,3 +3162,35 @@ bleeder rate. At ~30 closes, if forward bleeder rate < 9%, baseline
 is the net winner; if >= 9%, ts180; the gap between them is now
 narrow enough that execution quality (fees/slippage) may matter more
 than the choice itself.
+
+## §95 — FIRST FORWARD BLEEDER: 9awYaD (ELON), fast dump, ts180 breached honestly (2026-09-01 ~14:50 local)
+
+The forward clean streak ended at 19. 9awYaD (ELON) was gate-entered
+at mcap 7,874 SOL; the insider dumped 229.0 SOL at **entry+92s**
+(r 1.000 -> 0.122), then a second 171.3 SOL sell at +258s zeroed the
+pool. Both variants closed -86.2% (exit=trail).
+
+CRITICAL REVISION to §92: ts180's loss is HONEST, not a scorer
+artifact — the dump printed 92 seconds after entry, INSIDE the 180s
+stop window. No live escape was possible: Solana has no public
+mempool, the first post-dump print IS the executable price, and a
+clock-based stop would have filled at r~0.12-0.21 regardless. The
+"mechanical immunity" finding holds only for dumps landing >180s
+after entry (all 6 historical gated bleeders dumped at 19-80 min).
+Fast dumps hit every variant equally. Insurance protects against the
+historical pattern, not this one.
+
+Forward tally after the event: baseline n=20 at +5.81%/trade gross
+(~+4.6% net), ts180 n=21 at -2.95% gross (~-3.75% net). Forward
+bleeder rates: 1/20 = 5.0% baseline, 1/21 = 4.8% ts180 — still below
+the 9.3% net parity rate, so baseline remains the net winner, but
+ts180 is now NEGATIVE forward: its premium bought nothing on the one
+trade where insurance mattered.
+
+Tripwire MISSED: seeder/creator FLPen3FKHgjW9UHB7ERxPe5FQYAud49oVTwFviWLoa2F
+is NOT in CHAIN_WATCH. Manufacturing signature is byte-identical
+(86.082 SOL single-signer instant-fill), so this is the same playbook
+funded through a new branch. Next action: trace FLPen3's funder and
+expand the watch list. (Scorer note: trail check precedes timestop in
+the exit loop — moot here since the dump predated the deadline, but
+worth fixing for post-deadline collapse fills.)
