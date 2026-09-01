@@ -3687,3 +3687,14 @@ bleeder rate is now second-order handled by the self-blacklist
 (operators retire after their first rug — §115 proof). Pre-registered
 formal call still waits for n≥30 fr closes, but the data direction is
 set: promote the fr gate to the main strategy; retire ts180.
+
+## §117 — F5a7aN bled out: prospective tripwire chain CONFIRMED (2026-09-01 ~18:40 local)
+
+The token at the center of the AR35wRzb arming (§103) has had ZERO
+transactions for 58+ minutes: bundle burst ~17:15, dead by ~17:40.
+Full prospective chain now on record: tripwire funding alert (16:42)
+→ armed wallet inside the launch's bundle ecosystem (~30 min later)
+→ token dead within ~25 min of the burst. The launch our fr gate
+would have skipped was indeed a bleeder. (Caveat: our birth detector
+missed it — §114 gap, now fixed — so this is chain-forensic
+confirmation, not a scored paper row.)
