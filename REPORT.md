@@ -3304,3 +3304,31 @@ automations/tracker_live.py.
 PRINTED at entry+92s, before the 180s deadline; honestly inescapable
 (Solana has no mempool; you cannot see the dump tx before it lands).
 Fast dumps remain defensible ONLY via the funded-reject gate (§98a).
+
+## §100 — Retro-validation: 2 of 4 forward bleeders are tree-member launches (2026-08-31 ~21:00 local)
+
+Creator check of all four forward losers against both watched trees:
+
+| mint | creator | in tree? |
+|---|---|---|
+| 9awYaD (−86.2%) | FLPen3…WLoa2F (ELON seeder) | YES |
+| 84X4w5 (−46.4%) | 6fy6iH…Euj7R (ELON capital holder) | YES |
+| 7FFGDY (−43.9%) | jmeuPE…y5Xqpg | no — third funding source |
+| 9orw5y (−100%) | DuACsk…cnozz | no — fourth funding source |
+
+The bleeder operators don't only arm FRESH wallets — they launch
+directly from chain-member wallets too. The §98a fr gate rejected only
+funding RECIPIENTS; it would have missed both of these.
+
+**Patch:** the funded-reject set is now CHAIN_WATCH ∪ funding
+recipients (one-line change in paper_score; compile-checked; live next
+run; snapshot in automations/tracker_live.py).
+
+**Counterfactual forward tally** (lookahead-tainted retro, honesty
+caveat applies — forward closes from this deployment are the clean
+test): baseline s60nm5 n=26 at −2.08% gross → extended-fr n=24 at
+**+3.27% gross** (rejects 9awYaD −86.2% and 84X4w5 −46.4%). Against
+the §94 fee model (~1.2%/trade) that is ≈ +2.1% net/trade — the first
+net-positive configuration seen forward. Remaining uncovered risk:
+7FFGDY and 9orw5y came from UNWATCHED trees — coverage, not concept,
+is now the binding constraint.

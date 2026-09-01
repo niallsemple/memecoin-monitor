@@ -147,7 +147,11 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
         # forward sample stays honest because alerts accrue before the
         # funded wallet's first launch reaches the gate.
         try:
-            funded = set()
+            # §100: reject set = funding recipients UNION the chain
+            # wallets themselves — 9awYaD's creator IS the ELON seeder
+            # (FLPen3) and 84X4w5's creator IS the capital holder
+            # (6fy6iH). 2 of 4 forward bleeders were tree-member launches.
+            funded = set(CHAIN_WATCH)
             if FUNDING.exists():
                 for line in FUNDING.open():
                     try:
