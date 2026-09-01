@@ -62,5 +62,19 @@
         "closed_reason": "abort15",
         "pnl_sol": 0.00912,
         "actual_fill_note": "sig 3fCdetgZxMf6fXs9pi1fFoh2hkiWmdTFvKQKta21UqRcdzyUTypzvAbpa4bnQdy5UCn7Khv5quMHtANJ1zJttUvq on-chain verified; \u00a7136 99.9% cap"
+    },
+    "Rhm9RvRQozJFiDzE688a21QbsrQsjhvUBmMDNKypump": {
+        "open": true,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788306244.655381,
+        "entry_px": 5.3050660859039784e-11,
+        "tokens": 2414245404,
+        "tokens_left": 2414245404,
+        "size_sol": 0.1281,
+        "peak_mult": 1.0,
+        "freerolled": false,
+        "sol_recovered": 0.0,
+        "actual_fill_note": "buy sig 3Jr1pZ4Gx3jeNoujjnWvia7LZFgL4UHA6DYPV2RqrZGEa8wysKDPGxXsrKnG8Pmk3Wo2rKnDoEwoQEnpW8r85qwY finalized err=None; on-chain fill 2414245404 raw (quote 2414673030, -0.018%); wallet 2.431490 SOL after"
     }
 }

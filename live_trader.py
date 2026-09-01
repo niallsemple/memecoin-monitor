@@ -253,6 +253,11 @@ def buy(mint, reason="signal"):
         # never report it as submitted.
         row["result"] = "submitted" if row["sig"] else \
             "submit failed: no signature (RPC)"
+        # §137b: a signature is not a fill — verify on-chain success.
+        # Prefix "error:" so the automation leaves the signal
+        # unconsumed and retries instead of opening a ghost position.
+        if row["sig"] and not _tx_success(row["sig"]):
+            row["result"] = "error: buy tx failed on-chain (sig present)"
     except Exception as e:
         row["result"] = f"submit failed: {e}"
     _log(row)
@@ -512,6 +517,10 @@ def curve_buy(mint, sol_amount, reason="signal"):
         else:
             sig = _rpc("sendTransaction", [tx_b64, {"encoding": "base64"}])
             row["result"] = "submitted"; row["sig"] = sig
+            # §137b: verify on-chain success; "error:" keeps the signal
+            # unconsumed so the next run retries instead of ghosting.
+            if sig and not _tx_success(sig):
+                row["result"] = "error: buy tx failed on-chain (sig present)"
     except Exception as e:
         row["result"] = f"error: {e}"
     _log(row)

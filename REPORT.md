@@ -4238,3 +4238,18 @@ next tracker run. LUTN under this rule: exits ~1.15× ≈ +3.8% instead of −99
 give (LUTN's sell failed on slippage). Rule is cheap insurance against the exact
 observed failure mode; worst case is scratching a +3.5% exit on a dip that recovers.
 Paper scorer unchanged (measurement stays comparable).
+
+## §137b — Entry-side fill verification (2 Sep 2026, 00:55 BST)
+
+The §137 on-chain verification gate covered exits; entries had the same
+sig-is-not-a-fill hole (a failed buy tx would open a ghost position booked at
+quote size). Patched `buy()` (Jupiter path) and `curve_buy()` (bonding-curve
+path): after a sig is returned, `_tx_success` must confirm err==null +
+confirmed/finalized, else result becomes "error: buy tx failed on-chain (sig
+present)" — the §133 convention that leaves the signal unconsumed so the next
+run retries within the 1200s freshness window instead of opening a ghost.
+Sells were already covered by the §137 gate in exit_watch. Compiles clean.
+
+First entry under the new code verified healthy: Rhm9Rv…pump bought 00:44,
+tx finalized err=None, on-chain fill 2,414,245,404 raw (quote −0.018%),
+0.1281 SOL, wallet 2.431490 after. Book corrected to exact fill.

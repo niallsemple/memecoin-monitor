@@ -3627,3 +3627,9 @@
 | 23:26 | robinhood | `0x7ccc7e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$236,623 mc=$709,925 | chain:robinhood no-audit-adapter |  |
 | 23:26 | solana | `DXw8ayKG…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$9,545 | name=Isabella Cognita symbol=Isabella; contract:clean; rugcheck_score=1 lpLocked=100%; top | hows nobody talking about this lmao  the entire of ai twitter is debating  wheth |
 | 23:26 | solana | `E9AUyE89…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,266 | name=Grok Terminal symbol=TERMINAL; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 23:46 | robinhood | `0x5614d5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,746 mc=$56,234 | chain:robinhood no-audit-adapter | Agent-run LP vaults for tokenized stocks. Flat before every open, so the Monday  |
+| 23:46 | robinhood | `0x3e4f33…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,400 mc=$55,183 | chain:robinhood no-audit-adapter | HOLD YOUR FARTS. GAS IS COMING. |
+| 23:46 | robinhood | `0x1731b8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,292 mc=$140,566 | chain:robinhood no-audit-adapter |  |
+| 23:46 | robinhood | `0x9B057B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$44,016 mc=$52,378 | chain:robinhood no-audit-adapter | Meatbags unite against clankers |
+| 23:46 | solana | `6VXJqZWE…` | PASS | — | liq=$36,742 mc=$201,238 | name=Quantum Dog symbol=QDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=1 | the dog was always in the quantum |
+| 23:46 | robinhood | `0x0187d6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | A private settlement layer for tokenized real-world assets. |
