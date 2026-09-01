@@ -2967,3 +2967,27 @@ defense; anything stronger needs insider HOLDINGS data (keyed RPC) or
 WSOL-flow parsing. Forward bar for amendment #4: exp >= +1.5%/trade
 over the next ~30 closes (~1-2 days at current entry pace).
 py_compile clean; live next cycle (~06:43).
+
+## §87 — ts180 shadow LIVE and matches backtest (2026-09-01 ~06:25)
+
+First shadow-carrying write (06:23:59 local): the s60nm5ts180 scorer
+replayed all committed closes through the 3-min hard stop:
+
+- **28 closes, +1.23%/trade, total +34.5%** — matches the honest
+  offline backtest (+1.00% on n=27, §86a) within fill-semantics noise.
+- **Zero bleeders remaining.** All three -100% insider dumps became
+  small timestop exits (exit_reason = timestop for all 28).
+- Winners clipped as designed (2eQKEM +38.9 -> +4.6). The variant
+  trades tail upside for tail insurance — net positive because
+  bleeders cost 3x what the clipped winners gave up.
+- Baseline s60nm5 unchanged (gate untouched): this is a paper shadow.
+
+Forward-only accounting starts at deploy (~06:20 local, epoch
+1788238800): closes with entry_t >= that are pure out-of-sample.
+Amendment #4 bar: forward exp >= +1.5%/trade over ~30 fresh closes
+(~1-2 days at the current ~1-2 entries/h pace). Retrospective +1.23%
+sits just under the bar — the forward sample decides.
+
+AgLSnY signer row still missing (RPC-starved again); its 7200s retry
+window expires ~06:31 — one more cycle may catch it. mfg_signers at
+3 rows, all top1_share=1.0 (2-tx instant-fill curves — §85 pattern).
