@@ -3617,3 +3617,13 @@
 | 23:06 | solana | `JCA2BtkE…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$13,988 | name=The Gang symbol=GANG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=61.3 |  |
 | 23:06 | robinhood | `0x7a6a3B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$140,472 mc=$284,381 | chain:robinhood no-audit-adapter | Cummingtonite was named after the town of Cummington, Massachusetts. |
 | 23:06 | robinhood | `0x06e52E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,796 mc=$43,448 | chain:robinhood no-audit-adapter | Welcome back to the orchard 🍎🐶  $AAPLDOG is officially LIVE on @RobinhoodApp Pai |
+| 23:16 | solana | `8PRXpFjk…` | FAIL | TOP10_HEAVY:89% | liq=$0 mc=$5,651 | name=Large Language Monkey symbol=LLM; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 23:16 | solana | `BwpwLTyt…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$19,740 mc=$62,358 | name=Passive Income Generator symbol=PIG; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
+| 23:16 | robinhood | `0x391A23…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,610 mc=$14,454 | chain:robinhood no-audit-adapter | The human intelligence behind artificial intelligence. Paired with $RDDT. |
+| 23:16 | robinhood | `0xf2A84c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,668 mc=$102,035 | chain:robinhood no-audit-adapter | Virtual pets backed by real world assets Feed your pet with stock tokens, stake  |
+| 23:16 | robinhood | `0xcd1879…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Revenue-backed assets on Robinhood Chain. Trading fees → transparent reserves →  |
+| 23:16 | solana | `DpAa6BC1…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,953 | name=Prostate symbol=Prostate; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=99 |  |
+| 23:26 | solana | `9F9tiNxh…` | FAIL | TOP10_HEAVY:58% | liq=$7,750 mc=$12,843 | name=DATACENTER symbol=DATACENTER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 23:26 | robinhood | `0x7ccc7e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$236,623 mc=$709,925 | chain:robinhood no-audit-adapter |  |
+| 23:26 | solana | `DXw8ayKG…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$9,545 | name=Isabella Cognita symbol=Isabella; contract:clean; rugcheck_score=1 lpLocked=100%; top | hows nobody talking about this lmao  the entire of ai twitter is debating  wheth |
+| 23:26 | solana | `E9AUyE89…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,266 | name=Grok Terminal symbol=TERMINAL; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |

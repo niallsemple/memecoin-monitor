@@ -76,6 +76,28 @@ def _rpc(method, params):
     return None
 
 
+def _tx_success(sig, tries=6, gap=2.5):
+    """§137: a signature is not a fill. Confirm the tx landed AND
+    succeeded on-chain before position state may be mutated.
+    LUTN 2026-09-02: pool_sell returned a sig whose tx failed with
+    Custom 6001 (slippage) — tokens never sold, but the book closed
+    the position and booked est_sol as recovered."""
+    for _ in range(tries):
+        st = _rpc("getSignatureStatuses",
+                  [[sig], {"searchTransactionHistory": True}])
+        v = None
+        if st:
+            vals = st.get("value") or []
+            v = vals[0] if vals else None
+        if v:
+            if v.get("err"):
+                return False
+            if v.get("confirmationStatus") in ("confirmed", "finalized"):
+                return True
+        time.sleep(gap)
+    return False
+
+
 def _load_key():
     d = json.loads(WALLET_F.read_text())
     sec = bytes(d["keypair_bytes"])
@@ -670,6 +692,14 @@ def exit_watch():
                 _ok_res = (str(res.get("result", "")).startswith("dry-run")
                            or (res.get("result") == "submitted"
                                and res.get("sig")))
+                # §137: verify the submitted tx actually succeeded
+                # on-chain; a failed tx leaves the position open so
+                # the next pass retries the exit.
+                if _ok_res and res.get("sig") and not str(
+                        res.get("result", "")).startswith("dry-run"):
+                    if not _tx_success(res["sig"]):
+                        res["result"] = "tx failed on-chain (sig present)"
+                        _ok_res = False
                 if not _ok_res:
                     actions.append({"mint": mint, "act": "exit_failed",
                                     "r": round(r, 3),

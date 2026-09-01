@@ -4185,3 +4185,36 @@ r >= 1.08; abort30 at ~00:14 if r < 1.15).
 Incident chain note: §127's exit_failed retry path + §136's sell cap
 together turned a potential stranded bag into a +7.1% close. The
 retry loop worked 4x without human input and without state corruption.
+
+## §137 — First live loser: LUTN drain; sig-is-not-a-fill bug fixed (2 Sep 2026, 00:45 BST)
+
+**Event.** LUTN (LUTNZsft…pump, entered 23:44 for 0.1346 SOL, pool venue) peaked at
+1.2814× then suffered a full drain: the 00:33:53 watch pass quoted r=1.2702 (hold); the
+next decision pass at 00:36:39 saw r=0.006. The abort floor fired and pool_sell submitted
+sig 2F8H5pzY…M29v1 — but the tx FAILED on-chain (Jupiter Custom 6001, slippage) because
+the pool kept draining between quote and land. Tokens were never sold; wallet paid only
+the 0.000205 fee. All 18,643,764,079 raw tokens confirmed still in wallet (dust, ~$0.15).
+
+**Bug found.** The §127 success gate treated "submitted + signature" as a fill. A
+signature only proves submission. The book briefly recorded sol_recovered=0.00078 from
+the pre-trade estimate before on-chain verification exposed the failure.
+
+**Fix (live_trader.py).** New `_tx_success(sig)` helper (getSignatureStatuses,
+err==null + confirmed/finalized, 6 tries × 2.5 s). The §127 gate now requires on-chain
+success before mutating position state; a failed tx leaves the position open and the
+next pass retries the exit. Compiles clean; effective from the next tracker run.
+
+**Book corrected to actuals.** LUTN: sol_recovered=0.0, pnl_sol=−0.13481 (stake 0.1346
++ 0.000205 fee), closed_reason=abort15_drain_tx_failed, tokens_left restored to held
+amount with fill note.
+
+**Live book after 4 closes.** RST +0.01017, M32 +0.00446, J3a2 +0.00912, LUTN −0.13481
+→ net −0.11106 SOL. Wallet 2.561869 SOL (on-chain). Wins are small (+3–8% via abort
+gates); the loser was ~−100%. This matches the paper profile where expectancy comes
+from freeroll/runner outsized gains, which no live trade has reached yet (LUTN peaked
+1.28×, 0.02 below the nm_touch arm, then drained inside one watch interval).
+
+**Open risk note.** At 45–75 s watch cadence on public RPC, a sub-3-minute drain is
+only observable after the fact; sells into an active drain will keep failing slippage.
+Mitigations to evaluate: tighter early abort bands, faster watch cadence, or treating
+near-1.30×-but-fading as an exit signal (the nm_abort already covers post-1.30× stalls).
