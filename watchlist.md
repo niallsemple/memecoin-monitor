@@ -3328,3 +3328,9 @@
 | 04:06 | robinhood | `0x6587d2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2 mc=$8,526 | chain:robinhood no-audit-adapter |  |
 | 04:06 | robinhood | `0x5C40BA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,820 mc=$37,467 | chain:robinhood no-audit-adapter | Solana on Robinhood paired to ETH giving BSC BNB rewards to all holders every 10 |
 | 04:06 | robinhood | `0xf21565…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,232 mc=$33,019 | chain:robinhood no-audit-adapter | SnapCoin created by SpaceX |
+| 04:26 | solana | `HNC9Fqh4…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$0 mc=$19,189 | name=Shit Piss Battle Bucket symbol=SPBB; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
+| 04:26 | robinhood | `0xe925C1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$61,216 mc=$311,058 | chain:robinhood no-audit-adapter | Apex Finance makes the blockchain world borderless: one bridge, eight chains, an |
+| 04:26 | solana | `kxrrpb4r…` | FAIL | RC_DANGER:Top 10 holders high ownership; RC_DANGER:Single holder ownership; TOP10_HEAVY:84%; RC_WARN:High holder correlation | liq=$33,424 mc=$167,368 | name=remilio symbol=remilio; contract:clean; rugcheck_score=57 lpLocked=100%; top10_hold=8 | remilio |
+| 04:26 | solana | `A88DATWN…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,168 | name=Lean symbol=LEAN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.5% |  |
+| 04:26 | robinhood | `0xb9066e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | THE FINAL INDEX. MONEY, LAND, NATURAL RESOURCES. |
+| 04:26 | solana | `FuJj8w53…` | PASS | — | liq=$38,550 mc=$195,304 | name=foms symbol=foms; contract:clean; rugcheck_score=1 lpLocked=98.40907417135143%; top10 |  |

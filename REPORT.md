@@ -2846,3 +2846,42 @@ automation.py signer pass: parse window cut 40 -> 24 txs, 0.8s spacing
 added between getTransaction calls (was none). py_compile clean; live
 from the next run (~05:23). AgLSnY still pending and unmarked — inside
 its retry window until ~06:31.
+
+## §85 — On-chain forensics: the launch pattern confirmed; the dump window corrected (2026-09-01 ~05:45)
+
+Pulled the actual transactions for all three in-sample mints
+(8Tz7sV +4.4%, 4xBDmh -100%, AYEzsF runner +103%):
+
+**1. The manufactured launch, confirmed on-chain.** Every curve has
+exactly 2 lifetime transactions by the SAME wallet (= the creator):
+tx1 create (-0.002 SOL), tx2 a single 86.080-86.083 SOL self-buy that
+instantly fills the bonding curve past the ~85 SOL graduation
+threshold. Instant graduation -> all real trading happens on the
+PumpSwap pool. Winner, flat and bleeder are BYTE-IDENTICAL in launch
+mechanics: seed size, single-signer dominance (top1_share=1.0), 2-tx
+curves. There is NO entry-time separation in curve data — the signer
+metric confirms the manufacturing but cannot rank outcomes.
+
+**2. Bleeder dump window corrected.** Tape-verified: 4xBDmh's
+1,033.6 SOL sell hit the POOL at 03:59:15 = entry+13.4min (not +43m
+as logged at §80), mcap -> 1. The bleeder playbook in full: seed 86
+SOL at birth -> public pool flow lifts price ~13 min -> single dump
+extracts ~12x the seed.
+
+**3. Structural discovery: pools are WSOL-blind to native-SOL
+metrics.** PumpSwap pools hold WSOL (a token), so native-SOL balance
+deltas on pool txs show ~zero (fees only). The signer metric as built
+only sees the native-SOL curve phase. Pool-phase forensics require
+pre/postTokenBalances parsing (WSOL legs) — queued as the next build.
+
+**4. Microstructure note.** The dump triggered a ~100 tx/second bot
+spam burst within ~1s (588 no-op txs in 7s, err=null, fees only).
+The dump was instantly visible to every arbitrage bot watching the
+pool — and the spam wall makes retrospective tx forensics on hot
+pools expensive on free RPC (thousands of spam sigs to page through).
+
+Gate implication: entry-time filtering on launch mechanics is dead
+(all identical). The separating information is WHEN the insider dumps
+relative to our entry (13min for 4xBDmh; 3.6m for GsM2Nq). If dump
+timing clusters early, the defense is temporal: tighten the abort
+window / take profit faster rather than filter entries.
