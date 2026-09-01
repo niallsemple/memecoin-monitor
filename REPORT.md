@@ -2839,3 +2839,10 @@ reliable, (c) worst case, standalone catch-up runs like this one in
 quiet moments.
 
 Row + seen-file written for AYEzsF so the automation won't duplicate.
+
+### §84a — Rate-limit fix deployed (2026-09-01 ~05:15)
+
+automation.py signer pass: parse window cut 40 -> 24 txs, 0.8s spacing
+added between getTransaction calls (was none). py_compile clean; live
+from the next run (~05:23). AgLSnY still pending and unmarked — inside
+its retry window until ~06:31.
