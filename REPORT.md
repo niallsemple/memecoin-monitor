@@ -3666,3 +3666,24 @@ thin in this hostile regime; 9orw5y now +0.7% live confirming §106
 fills). New-operator bleeders are landing ~1 per 13 entries; each one
 retires an operator from the repeatable pool. Amendment #4 decision
 still pending ~30+ fr closes.
+
+## §116 — Amendment #4 decision frame computed (2026-09-01 ~18:45 local)
+
+Forward tallies (entry_t ≥ DEP, honest fills live):
+
+| variant | n | gross | net* | bleeder rate |
+|---|---|---|---|---|
+| baseline s60nm5 | 28 | −2.74% | −3.9% | 14.3% |
+| fr gate | 26 | +2.15% | **+0.95%** | 7.7% |
+| ts180 | 28 | −2.84% | −3.6% | 3.6% |
+| fr+ts180 combo (dry-run) | 26 | +0.44% | −0.6% | 0% |
+
+*net of §94 fees (~1.2% baseline/fr, ~0.8-1.0% ts180).
+
+Read: the time-stop is NEGATIVE-EV insurance — it cuts grinders more
+than it saves on bleeders, in both gated and ungated contexts. The fr
+identity gate is the only net-positive config; its residual 7.7%
+bleeder rate is now second-order handled by the self-blacklist
+(operators retire after their first rug — §115 proof). Pre-registered
+formal call still waits for n≥30 fr closes, but the data direction is
+set: promote the fr gate to the main strategy; retire ts180.
