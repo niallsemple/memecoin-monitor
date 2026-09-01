@@ -3599,3 +3599,15 @@
 | 22:06 | solana | `J6XnsXMn…` | FAIL | RC_DANGER:Top 10 holders high ownership; RC_DANGER:Single holder ownership; RC_DANGER:High ownership; TOP10_HEAVY:100% | liq=$32,373 mc=$165,726 | name=cabalyst symbol=cabalyst; contract:clean; rugcheck_score=59 lpLocked=100%; top10_hold | cabalyst |
 | 22:06 | robinhood | `https://…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
 | 22:06 | robinhood | `0x38C8f6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$106,046 mc=$192,820 | chain:robinhood no-audit-adapter |  |
+| 22:16 | robinhood | `0x80992f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Juan. |
+| 22:16 | solana | `57Mym7YG…` | FAIL | TOP10_HEAVY:89% | liq=$0 mc=$5,677 | name=GoblinCoin symbol=Goblin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 22:16 | solana | `4LmiHuqz…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:79% | liq=$5,109 mc=$6,652 | name=memecat symbol=memecat; contract:clean; rugcheck_score=26 lpLocked=0%; top10_hold=79. | just a memecat |
+| 22:16 | robinhood | `0xEF455B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,570 mc=$116,160 | chain:robinhood no-audit-adapter | Retardatide, lose weight and some IQ too. |
+| 22:16 | robinhood | `0x003d41…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | As Vlad once said, BTC is the original memecoin |
+| 22:16 | solana | `hY4ArHCV…` | FAIL | TOP10_HEAVY:51% | liq=$0 mc=$12,141 | name=Hold to Stop Poverty symbol=HOLD; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 22:26 | solana | `5BL7FMfm…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$16,243 mc=$45,972 | name=Charleston AI symbol=CharlestonAI; contract:clean; rugcheck_score=1 lpLocked=100%; to | AI isnt coming to Charleston.  It's already here. |
+| 22:26 | solana | `2KoBZFTc…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$23,002 mc=$86,624 | name=Autistic Genius Intelligence symbol=AGI; contract:clean; rugcheck_score=1 lpLocked=10 |  |
+| 22:26 | solana | `3M6cMH5v…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$12,314 | name=Pear symbol=Pear; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=66.0% |  |
+| 22:26 | solana | `2Pd8jx9v…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$14,480 | name=Bandly Pet symbol=BANDLY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Just onboarded one of the biggest AI dog meme creator on IG and Tiktok. |
+| 22:26 | robinhood | `0x15b07c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$77,710 mc=$111,778 | chain:robinhood no-audit-adapter | Memory supercycle on Robinhood chain |
+| 22:26 | robinhood | `0xd78650…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,829 mc=$57,716 | chain:robinhood no-audit-adapter | the dog takes a gigabyte of AMD |

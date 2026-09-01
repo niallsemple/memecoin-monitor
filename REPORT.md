@@ -4137,3 +4137,25 @@ Per memo §6 the next step after gate pass was the readiness review —
 already completed (owner signoff, kill-switch, sizing caps, live
 trading active). The formal amendment chain is COMPLETE: amend ->
 re-zero -> 30+ committed closes at positive expectancy -> live.
+
+## §135 — Trail-latency investigation: resolution-limited, NO change warranted (1 Sep 2026, ~23:35 BST)
+
+Follow-up to §132(c): did Erin's trail fill near-zero because the
+0.5x-peak trigger is too loose? Reconstruction says the question is
+unanswerable at replay resolution: the 25-minute "gap" between the
+last above-floor tick (1.61x) and the first drained tick (0.021x)
+contains **22,515 raw pool signatures** — the pool was hyperactive;
+the gap is a stride-10 sampling artifact, not a tradeable freeze.
+The drain timing inside the window is invisible at this density.
+
+Consequences:
+- A tighter trail (0.7x peak) is NOT supported by evidence — drain
+  speed at 45s live cadence is unknown from this data (replay
+  sampling was ~20-30x coarser than live exit checks).
+- The hypothesized "staleness exit" (sell on N minutes of no trades)
+  is REJECTED as artifact-based: there was no freeze.
+- Live protection stands as designed: freeroll banks 75% at 1.5x,
+  trail at 0.5x peak, worst case bounded at ~+12.5% for freerolled
+  positions. Erin's +13% final reflects exactly that bound working.
+- If trail-quality data is wanted, it must come from LIVE freerolled
+  exits at 45s cadence — not from stride-sampled replays.
