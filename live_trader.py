@@ -585,6 +585,12 @@ P_ABORT30 = (30, 1.15)
 P_TIMESTOP_MIN = 120
 P_NM_TOUCH = 1.30   # §131: momentum-touch level that arms nm_abort
 P_NM_MIN = 5        # minutes below freeroll target after touch -> exit
+# §138: pre-nm fade exit. LUTN drained from peak 1.2814x without ever
+# arming nm_touch; paper band [1.15,1.30) finished -43.9% (n=1) while
+# exiting at 0.90x peak would have booked ~+3.8%. Only applies BEFORE
+# the 1.30x touch (nm cohort keeps the working nm_abort path).
+P_FADE_PEAK = 1.15  # minimum peak that arms the fade exit
+P_FADE_K = 0.90     # exit when r falls to this fraction of peak
 
 
 def _load_positions():
@@ -670,6 +676,10 @@ def exit_watch():
                     and (time.time() - p["nm_touch_t"]) >= P_NM_MIN * 60 \
                     and r < P_FR_TARGET:
                 act, sell_tokens = "nm_abort", p["tokens_left"]
+            elif not p["freerolled"] and p.get("nm_touch_t") is None \
+                    and p["peak_mult"] >= P_FADE_PEAK \
+                    and r <= P_FADE_K * p["peak_mult"]:
+                act, sell_tokens = "fade", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_ABORT15[0] and r < P_ABORT15[1]:
                 act, sell_tokens = "abort15", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_ABORT30[0] and r < P_ABORT30[1]:

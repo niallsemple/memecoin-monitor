@@ -4218,3 +4218,23 @@ from freeroll/runner outsized gains, which no live trade has reached yet (LUTN p
 only observable after the fact; sells into an active drain will keep failing slippage.
 Mitigations to evaluate: tighter early abort bands, faster watch cadence, or treating
 near-1.30×-but-fading as an exit signal (the nm_abort already covers post-1.30× stalls).
+
+## §138 — Drain mitigation: pre-nm "fade" exit deployed (2 Sep 2026, 00:42 BST)
+
+**Analysis (110-close paper book, s60nm5fr).** Never-freerolled cohorts by peak band:
+[1.00,1.15) n=94 avg −2.34%; [1.15,1.30) n=1 avg −43.88%; [1.30,1.50) n=15 avg +30.07%
+(the nm_abort cohort — working as designed). Counterfactual fade-exit at k×peak
+(upper bound, assumes fills): whole book +7.0 pts at k=0.95; peak≥1.15 cohort
++25.45% → +31.94% at k=0.90. BUT applying fade to the nm cohort would cut its +30%
+avg to ~+22% by firing before nm_abort's 5-min stall completes — so the rule must
+only cover the PRE-1.30× band.
+
+**Rule deployed (live_trader.py).** P_FADE_PEAK=1.15, P_FADE_K=0.90: if not
+freerolled, nm_touch never armed, peak ≥1.15×, and r ≤ 0.90×peak → sell all
+(reason "fade"). Fires ahead of abort15/abort30. Compiles + loads clean; effective
+next tracker run. LUTN under this rule: exits ~1.15× ≈ +3.8% instead of −99.4%.
+
+**Caveats.** Paper band n=1 — thin; counterfactual assumes fills that drains may not
+give (LUTN's sell failed on slippage). Rule is cheap insurance against the exact
+observed failure mode; worst case is scratching a +3.5% exit on a dip that recovers.
+Paper scorer unchanged (measurement stays comparable).
