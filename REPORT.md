@@ -3461,3 +3461,28 @@ Net-of-fees read (§94 model ~1.2%/trade): fr extended ≈ **+5.0%
 net/trade** on n=25 forward closes. Two of the four forward bleeders
 remain reachable only by the self-blacklist (7FFGDY) or are now
 survivable (+0.7% instead of −100%: 9orw5y).
+
+## §107 — Live wallet created + arming wave continues + extended gate confirmed live (2026-09-01 17:45 local)
+
+**Owner direction:** move toward live-money testing. Created Solana
+keypair CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K — secret stored
+in live_wallet.json (chmod 600, gitignored; NEVER commit). Execution
+wiring (Jupiter/pumpportal swap builder, position sizing, kill-switch)
+is the next build; live trades still require the owner's explicit go.
+
+**Arming wave:** 5 fresh wallets now staged from the ELON tree,
+~1,740 SOL total: g9XbLp 204 (14:56), DaBchS9P 562.5 (16:38-40),
+AR35wRzb 204 (16:42, already tied to the F5a7aN bundle burst §103),
+4PRXBB 563 (17:25-27), 47bRU5 209 (17:32). A multi-launch wave is
+being prepared; all five are auto-rejected by the fr gate.
+
+**Live confirmation:** the 17:43 fr write matches the §100 dry-run
+exactly (n=25, +3.32% gross; 9awYaD/84X4w5 excluded). 9orw5y still
+shows −100% there because that run predated the §106 honest-fill
+patch; next run lifts it to +0.7% and the tally to ≈ +6.2% gross /
++5.0% net. ts180 file still stale (§104 fix lands next run).
+
+**Coverage gap watch:** F5a7aN (launched ~17:14, bundle ecosystem
+confirmed on-chain) is STILL absent from mfg_tokens.jsonl 30 min
+later — the birth detector's big-seed filter may have missed it.
+Investigate before relying on the fr gate's creator check for it.
