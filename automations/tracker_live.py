@@ -169,8 +169,25 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                             creators.setdefault(s["mint"], s["creator"])
                     except Exception:
                         continue
+            # §105: self-blacklist — creators of past closed bleeders
+            # (ret <= -30%) join the reject set. Timestamped: a creator
+            # only rejects mints whose FIRST trade is after the
+            # blacklist entry, so historical rows stay lookahead-free.
+            bl = {}
+            if BLACKLIST.exists():
+                for line in BLACKLIST.open():
+                    try:
+                        b = json.loads(line)
+                        c, t = b.get("creator"), b.get("t")
+                        if c and t:
+                            bl[c] = min(t, bl.get(c, t))
+                    except Exception:
+                        continue
             for m in list(tr.keys()):
-                if creators.get(m) in funded:
+                c = creators.get(m)
+                if c in funded:
+                    del tr[m]
+                elif c in bl and tr[m] and bl[c] < min(x["t"] for x in tr[m]):
                     del tr[m]
         except Exception:
             pass
@@ -365,6 +382,7 @@ SIGNERS = MON / "mfg_signers.jsonl"      # §81b: entry-window signer concentrat
 SIGNERS_SEEN = MON / "mfg_signers_seen.json"
 FUNDING = MON / "mfg_funding.jsonl"      # §89: treasury-chain seed funding alerts
 FUNDING_SEEN = MON / "mfg_funding_seen.json"
+BLACKLIST = MON / "mfg_creator_blacklist.jsonl"  # §105: bleeder creators
 CHAIN_WATCH = (  # §89 layering chain — campaigns are funded from here
     "CmdxEBCubitREoJTwZxB6jsPR6mawJPcva9aYfFpAEMk",   # treasury
     "AdiJ1C5PHNYoZc8JZ8GvEXFbWRrQvzsUc6niUWRTYXcB",   # layer-1 hop
@@ -1336,6 +1354,48 @@ def run(ctx):
         paper = paper_score()
     except Exception:
         paper = {}
+    try:
+        # §105: accrue the self-blacklist — creators of positions that
+        # CLOSED at <= -30% in the baseline replay are recorded with
+        # their close time. Repeat operators get rejected on their next
+        # launch (costs one loss per operator, caps repeat exposure).
+        if BLACKLIST.exists():
+            bl_seen = set()
+            for line in BLACKLIST.open():
+                try:
+                    bl_seen.add(json.loads(line).get("mint"))
+                except Exception:
+                    continue
+        else:
+            bl_seen = set()
+        cre = {}
+        if SNAPS.exists():
+            for line in SNAPS.open():
+                try:
+                    s = json.loads(line)
+                    if s.get("mint") and s.get("creator"):
+                        cre.setdefault(s["mint"], s["creator"])
+                except Exception:
+                    continue
+        if PAPER.exists():
+            with BLACKLIST.open("a") as f:
+                for line in PAPER.open():
+                    try:
+                        r = json.loads(line)
+                        if (r.get("status") == "closed"
+                                and r.get("ret", 0) <= -0.30
+                                and r.get("mint") not in bl_seen
+                                and cre.get(r.get("mint"))):
+                            f.write(json.dumps({
+                                "t": r.get("last_t"),
+                                "creator": cre[r["mint"]],
+                                "mint": r["mint"],
+                                "ret": r.get("ret")}) + "\n")
+                            bl_seen.add(r["mint"])
+                    except Exception:
+                        continue
+    except Exception:
+        pass
     try:
         # §72: abort-15 shadow — pre-registered a30 gate untouched; the
         # a15 variant accrues forward evidence on identical live data.

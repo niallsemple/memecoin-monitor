@@ -3423,3 +3423,18 @@ expect 9orw5y's ts180 row to revise −100% → ~+0.7% then. Forward ts180
 closes between 16:35 and now are missing from the file; they re-enter
 on the next write since scoring replays the full trade log each run
 (no data lost, just delayed).
+
+## §105 — Self-blacklist layer deployed (2026-09-01 ~17:40 local)
+
+Third defense line built (proposed in §101): creators of positions
+that close at ≤ −30% in the baseline replay are appended to
+mfg_creator_blacklist.jsonl with their close time. The funded-reject
+scorer now rejects a mint when its creator is (a) a CHAIN_WATCH member,
+(b) a tripwire funding recipient, or (c) on the self-blacklist with a
+blacklist time EARLIER than the mint's first trade — the timestamp
+guard keeps historical rows lookahead-free. Accrual runs before the fr
+scorer within the same run, so a bleeder closing now protects against
+its operator's next launch immediately. Cost model: one loss per NEW
+operator, then repeats are free to dodge. Applies to the §101 finding
+(jmeuPE / DuACsk 1,000+-tx reused wallets whose funding trees can't be
+traced on public RPC). Compile-checked; live next run.
