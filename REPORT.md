@@ -3243,3 +3243,23 @@ everything) and slow dumps (ts180 beats baseline ~48pts).
 The §96 tree expansion + widened 60-700 SOL band go live next run.
 If 84X4w5 or 7FFGDY were armed through either watched tree, backdated
 funding alerts will validate the tripwire retroactively.
+
+## §98 — TRIPWIRE LIVE-FIRED: funded wallet g9XbLp armed, pre-launch (2026-09-01 ~16:10 local)
+
+First patched run of the expanded watcher produced the project's first
+funding alert: staging wallet 4Lr8de (ELON tree, §96) sent **203.96 SOL
+to fresh wallet g9XbLpuBZuPqmWvdv39QYzUzcLJXyNa3Nys527hhSnM** at
+14:56:45 local. The retroactive sweep also proves the widened 60-700
+SOL band catches staging-layer distribution.
+
+g9XbLp has launched NOTHING yet (zero tokens as creator in the
+detection feed). 204 SOL arms ~2 manufactured launches at the standard
+86 SOL pattern. This is the first time we hold a **prospective**
+bleeder-class suspect: funded from a known bleeder tree, watched,
+pre-launch. When its first token appears, the prediction is:
+manufactured launch (86 SOL instant-fill) followed by an insider dump
+— and the funded-wallet identity gives an entry-time REJECT signal
+that no tape metric could provide (§85/§89/§93 all negative).
+
+Open positions in flight: 9orw5y, QTw25p (both ~1.01x). Tally:
+baseline n=24 +1.51%, ts180 n=25 -2.57%.

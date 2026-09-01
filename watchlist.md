@@ -3460,3 +3460,15 @@
 | 14:26 | robinhood | `0x7FD696…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$55,354 mc=$299,261 | chain:robinhood no-audit-adapter | $BAWSAQ — GTA6’s BAWSAQ exchange, on Robinhood Chain. |
 | 14:26 | robinhood | `0x1c874d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,537 mc=$71,721 | chain:robinhood no-audit-adapter | FFL powers Fantasy Football League on Robinhood Chain—a competitive on-chain gam |
 | 14:26 | solana | `52ohP3fn…` | FAIL | TOP10_HEAVY:71% | liq=$0 mc=$13,087 | name=smoldeng symbol=smol; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=70.5 | smoldeng was born in these conditions |
+| 14:56 | robinhood | `0x70330d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,580 mc=$54,142 | chain:robinhood no-audit-adapter | A hundred Floors on Robinhood Chain. Every buy raises the tower. Stake to take a |
+| 14:56 | robinhood | `0x248502…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,926 mc=$16,847 | chain:robinhood no-audit-adapter | Rounds lets you predict if stocks will move UP or DOWN in 5-minute markets. |
+| 14:56 | robinhood | `0x28ffc1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | (7645) Pons is a real asteroid, with the provisional designation 1989 AC2. Your  |
+| 14:56 | solana | `96VQnimd…` | FAIL | TOP10_HEAVY:51% | liq=$0 mc=$29,555 | name=The Hackooor symbol=Hackooor; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | the hackooor  everyone has been getting hacked. May it be social medias may it b |
+| 14:56 | solana | `eqzw55fA…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$11,661 | name=Taking a break  symbol=BREAK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 14:56 | ethereum | `0xFf45fD…` | CAUTION | BLACKLIST_FUNC; WHITELIST_FUNC | liq=$7,232 mc=$12,610 | holders=1; buy_tax= sell_tax= | When you search “With Kabosu” on Google Maps, it brings up the official location |
+| 15:06 | robinhood | `0x46b804…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,512 mc=$44,011 | chain:robinhood no-audit-adapter | Decentralized energy protocol for AI compute.   MicaVirtualMachine routes your 2 |
+| 15:06 | robinhood | `0x9d79e7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$6,780 | chain:robinhood no-audit-adapter | 0x9d79e7f34167e955910d298e141cc220584db7f7 |
+| 15:06 | solana | `82HxvW1K…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$32,079 | name=paired symbol=PAIRED; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.1 | Pair memes with memes. |
+| 15:06 | robinhood | `0xCecAb1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,255 mc=$41,160 | chain:robinhood no-audit-adapter |  |
+| 15:06 | solana | `9WXFTNCA…` | PASS | — | liq=$26,427 mc=$102,048 | name=Copper Shit symbol=SHITCOPPER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 15:06 | solana | `EMyRs7px…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$85,588 mc=$381,749 | name=GPRO symbol=GPRO; contract:clean; rugcheck_score=1 lpLocked=54.65306821772157%; top10 | There's currently a youtuber takeover of $GPRO stock.  Markiplier has a 8.5% sta |
