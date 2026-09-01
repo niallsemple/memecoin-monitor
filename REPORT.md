@@ -3332,3 +3332,27 @@ the §94 fee model (~1.2%/trade) that is ≈ +2.1% net/trade — the first
 net-positive configuration seen forward. Remaining uncovered risk:
 7FFGDY and 9orw5y came from UNWATCHED trees — coverage, not concept,
 is now the binding constraint.
+
+## §101 — Uncovered bleeders are reused high-activity wallets (2026-08-31 ~21:10 local)
+
+Backward trace of the two uncovered bleeder creators (7FFGDY/jmeuPE,
+9orw5y/DuACsk): both wallets have **1,000+ chain transactions** — my
+20-page × 50-tx scan never reached their first inbound funding. These
+are NOT the fresh-armed-wallet pattern (FLPen3 → g9XbLp); they're
+reused, high-activity creator wallets. Implications:
+
+1. The tree tripwire (§98a/§100) cannot see them unless their funding
+   source is found — deep-history paging on public RPC is impractical
+   (1000+ txs × 1.7s spacing ≈ 30+ min/wallet, 429-prone).
+2. Each has exactly ONE launch in our tracked data, so a
+   "serial-bleeder blacklist from our own history" would only catch
+   their NEXT rug — still useful as a cheap third layer (creators of
+   closed −30%+ positions go on a reject list; costs one loss per
+   operator, caps repeat exposure).
+3. Honest coverage accounting forward: tree gate catches ELON-tree
+   campaigns (2/4 bleeders); self-blacklist catches repeats; genuinely
+   new operators remain the residual risk (~2 per 26 entries so far).
+
+Public-RPC budget note: the 16:44 tracker run was still alive at +14
+min (12.6s CPU — RPC 429 backoff, not a hang); 10 chain wallets ×
+small pages is stretching the interval. May need pagination trim.
