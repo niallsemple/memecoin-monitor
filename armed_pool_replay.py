@@ -30,15 +30,15 @@ RPCS = ("https://solana-rpc.publicnode.com",
         "https://api.mainnet-beta.solana.com")
 
 CASES = {
-    "GROKCAT": {"mint": "2a1hX8xnXMPGt2f6FBvEUQEefk8N7LijnyeLCwehpump",
-                "pool": "DKxUUeWw4ad2MCYmXCDvhx4xUTjbTDhhVSUPTcZTbJwq",
-                "mig_ts": 1788280371.0},
-    "Erin":    {"mint": "GeR3KJHTc1wRp5v5jMv7DcoSM8A5zAGNgknTGbjnpump",
-                "pool": "5WGFJqgQb6kjieJALEJV1nXEGiBn88bJFxEaxEtzU1t8",
-                "mig_ts": 1788282385.0},
     "GPRO":    {"mint": "GcSgbzMvYhz8RXffYZDjUgLafVtYVv9QG2FUoerNpump",
                 "pool": "6cV33vBNaCTsQLLyt7GmGSLj1YZrguipA6LwdTurtToQ",
                 "mig_ts": 1788283980.0},
+    "Erin":    {"mint": "GeR3KJHTc1wRp5v5jMv7DcoSM8A5zAGNgknTGbjnpump",
+                "pool": "5WGFJqgQb6kjieJALEJV1nXEGiBn88bJFxEaxEtzU1t8",
+                "mig_ts": 1788282385.0},
+    "GROKCAT": {"mint": "2a1hX8xnXMPGt2f6FBvEUQEefk8N7LijnyeLCwehpump",
+                "pool": "DKxUUeWw4ad2MCYmXCDvhx4xUTjbTDhhVSUPTcZTbJwq",
+                "mig_ts": 1788280371.0},
 }
 MIG_PX = 67.405853768 / 206900000  # SOL per token at pool seeding
 
@@ -53,8 +53,8 @@ def rpc(method, params):
                                "params": params}).encode()
             req = urllib.request.Request(
                 url, data=body, headers={"Content-Type": "application/json"})
-            r = json.loads(urllib.request.urlopen(req, timeout=25).read())
-            time.sleep(1.6)
+            r = json.loads(urllib.request.urlopen(req, timeout=12).read())
+            time.sleep(1.0)
             if r.get("result") is not None:
                 return r["result"]
         except Exception:
@@ -165,21 +165,37 @@ def main():
 
     st = load_state()
     for name, c in CASES.items():
+        if time.time() > t_end:
+            break
         cs = st.setdefault(name, {"sigs": [], "parsed": 0, "done_sigs": False})
         path_f = MON / f"armed_pool_path_{name}.jsonl"
+        if cs["done_sigs"] and "work" not in cs:
+            if cs["sigs"] and isinstance(cs["sigs"][0], str):
+                cs["done_sigs"] = False  # legacy: recollect with times
         if not cs["done_sigs"]:
             sigs = collect_sigs(c["pool"])
             if sigs:
-                cs["sigs"] = [s["signature"] for s in sigs]
+                cs["sigs"] = [{"s": s["signature"], "t": s["blockTime"]}
+                              for s in sigs]
                 cs["done_sigs"] = True
                 save_state(st)
                 print(f"{name}: {len(sigs)} sigs collected")
+        if cs["done_sigs"] and "work" not in cs:
+            # decision-relevant window only: birth-2m .. birth+90m;
+            # stride caps ~4000 ticks (exit levels survive thinning)
+            win = [s["s"] for s in cs["sigs"]
+                   if c["mig_ts"] - 120 <= s["t"] <= c["mig_ts"] + 90 * 60]
+            stride = max(1, len(win) // 4000)
+            cs["work"] = win[::stride]
+            cs["parsed"] = 0
+            save_state(st)
+            print(f"{name}: work {len(cs['work'])} ticks (stride {stride})")
         n_new = 0
         with path_f.open("a") as pf:
-            while cs["parsed"] < len(cs["sigs"]):
+            while cs["parsed"] < len(cs.get("work") or []):
                 if time.time() > t_end:
                     break
-                sig = cs["sigs"][cs["parsed"]]
+                sig = cs["work"][cs["parsed"]]
                 txr = rpc("getTransaction",
                           [sig, {"encoding": "jsonParsed",
                                  "maxSupportedTransactionVersion": 0}])
@@ -189,6 +205,11 @@ def main():
                 vd = vault_deltas(txr, c["pool"], c["mint"])
                 if vd:
                     t, aq, ab, dq = vd
+                    # skip the pool-seeding state itself — within-slot sig
+                    # order is not causal, and the seed row poisons entry_px
+                    if abs(aq - 67.405853768) < 0.01 and ab == 206900000.0:
+                        cs["parsed"] += 1
+                        continue
                     px = aq / ab
                     side = "buy" if dq > 0 else ("sell" if dq < 0 else "flat")
                     pf.write(json.dumps({
@@ -202,7 +223,7 @@ def main():
                     save_state(st)
                     pf.flush()
         save_state(st)
-        print(f"{name}: parsed {cs['parsed']}/{len(cs['sigs'])}"
+        print(f"{name}: parsed {cs['parsed']}/{len(cs.get('work') or [])}"
               f" (+{n_new} ticks this run)")
 
     # score whatever paths exist

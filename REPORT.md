@@ -3834,3 +3834,30 @@ ETA hours; scoring is per-case resumable.
 
 LIVE STATUS: gates open (owner sign-off 19:27). Next tracker run
 enters for real on the next fr signal. Kill switch: STOP_LIVE_TRADING.
+
+## §124 — The meta converged; late-entry guard on live entries (2026-09-01 ~20:05 local)
+
+§120 live and catching: mfg_armed_births.jsonl accrued 6 launches in
+12 minutes (19:46-19:58: RST, USMS, LEGO, PONS, FROG, M32) — all the
+identical 85.005 SOL / 793.1M (79.31%) / 410.88 SOL fingerprint, all
+from fresh creators not yet in the funding file (funded=false — the
+tree rotates one creator per launch; fingerprint >> funding list now).
+
+Convergence proof: the fr gate's own signals ARE the manufactured
+launches. FLE8Cc2A/6d2Xsj3f/5dGGJ78o (the hook's 19:24 refusals) are
+fingerprint births at 18:53/18:55/19:05. The identity gate and the
+instant-grad fingerprint are two sensors on the same population.
+
+Replay truth (GROKCAT, first ticks): the "quiet ~1x window" was an
+artifact — 47bRU5 was funded 208.913 SOL in the SAME SECOND as the
+birth and instantly market-bought it; pool was at 14.16x within one
+second. GPRO differed: genuinely quiet at ~1x for ~3-25 min. Two
+sub-patterns: instant-burst vs slow-brew.
+
+Consequence: the forward tally's +0.95% net was validated at MODEL
+entry prices (gate-crossing time). Live hook entries fire 15-40 min
+later at pool prices that can be 3-100x higher. Guard shipped: the
+hook now quotes first and SKIPS (ledgered) any entry whose hook-time
+price is >3x the paper entry_mcap — better to miss a runner's tail
+than buy a manufactured top. Skips and entries both ledger; the
+skip/enter ratio is itself data on the botnet wave.

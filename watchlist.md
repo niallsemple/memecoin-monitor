@@ -3533,3 +3533,9 @@
 | 18:26 | robinhood | `0x040D96…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,264 mc=$33,113 | chain:robinhood no-audit-adapter | JOHN APPLE aka John Ternus  the new CEO of Apple Inc. |
 | 18:26 | robinhood | `0x745715…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,893 mc=$28,024 | chain:robinhood no-audit-adapter | V4 Hook trust protocol disguised as a corrupted OS. Hold longer, build trust, in |
 | 18:26 | solana | `Biq6zwK4…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:93% | liq=$3,787 mc=$4,243 | name=test your motion symbol=MOTION; contract:clean; rugcheck_score=30 lpLocked=100%; top1 |  |
+| 18:46 | robinhood | `0x75BE30…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,295 mc=$12,124 | chain:robinhood no-audit-adapter | One Growing Treasury. Built to accumulate. Built to HOARD. |
+| 18:46 | solana | `8XtAiS6h…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$20,546 mc=$69,656 | name=size doesn't matter symbol=size; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 18:46 | solana | `631gzHJi…` | FAIL | TOP10_HEAVY:97%; RC_WARN:Copycat token | liq=$0 mc=$6,858 | name=Coin symbol=COIN; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=96.8% |  |
+| 18:46 | robinhood | `0xd64058…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,066 mc=$70,460 | chain:robinhood no-audit-adapter | A company that IPO'd itself and answers to nobody. |
+| 18:46 | solana | `FyM68Czu…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$15,050 mc=$37,665 | name=The Little Guy symbol=Little; contract:clean; rugcheck_score=1 lpLocked=99.9261068919 |  |
+| 18:46 | solana | `9cS5Ctdf…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$13,073 mc=$31,157 | name=Walmart Rotisserie Chicken Purse symbol=Rotisserie; contract:clean; rugcheck_score=1  |  |

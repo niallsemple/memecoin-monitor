@@ -17,3 +17,4 @@
 {"name": "\u5f69\u793c\u5e01 / USDT", "pair": "0x3515b144ed23a45e92fb8b82623eb02bbc5cbd24", "entry_t": 1788251531.536027, "exit_t": 1788253945.2074392, "ret": 0.4581, "exit": "abort", "entry_flow_usd": 17416.0, "hold_min": 40.2}
 {"name": "BRXGHFRGHGWKLVJP / WBNB", "pair": "0xe204baa3fefd9e8d9c5def74683a86ea29d04789", "entry_t": 1788250421.3964758, "exit_t": 1788253945.2074392, "ret": 0.1043, "exit": "abort", "entry_flow_usd": 3487.0, "hold_min": 58.7}
 {"name": "wSNDKx / WBNB", "pair": "0xd65771d374745baf3320751cb1cdd01bcda50957", "entry_t": 1788273334.942857, "exit_t": 1788275594.570115, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3251.0, "hold_min": 37.7}
+{"name": "TSTB / WBNB", "pair": "0x3b913a58a325f2bb0959cb6d6ee87b5b1d712d95", "entry_t": 1788286344.569545, "exit_t": 1788288713.814098, "ret": 0.9178, "exit": "abort", "entry_flow_usd": 3943.0, "hold_min": 39.5}

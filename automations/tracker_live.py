@@ -1626,25 +1626,41 @@ def run(ctx):
                                          reason="s60nm5fr signal (hook)")
                     if str(_row.get("result", "")).startswith(
                             "refused: curve complete"):
-                        # §123: token graduated before the hook fired —
-                        # Jupiter pool path. LIVE mode submits a real
-                        # swap and opens a pool-venue position
-                        # (exit_watch §123 prices/sells it via Jupiter);
-                        # dry-run mode quotes only, for the record.
+                        # §123/§124: graduated — Jupiter pool path WITH a
+                        # late-entry guard. The forward tally was validated
+                        # at model entry price; if the hook-time price is
+                        # >3x the paper entry_mcap, this is a different,
+                        # worse trade (GROKCAT instant-burst pattern) —
+                        # skip it and ledger the skip.
                         try:
-                            if _ok:
+                            _q = _lt.jupiter_quote(r["mint"], _size, "buy")
+                            _tk = int(_q.get("outAmount") or 0)
+                            _emc = r.get("entry_mcap") or 0
+                            _mult = (_size * 1e15 / (_tk * _emc)
+                                     if _tk > 0 and _emc > 0 else 0.0)
+                            if _mult > 3.0:
+                                _row = {"action": "buy", "mint": r["mint"],
+                                        "reason": "s60nm5fr hook (graduated)",
+                                        "size_sol": _size,
+                                        "mode": "live" if _ok else "dry-run",
+                                        "gate": _why,
+                                        "late_mult": round(_mult, 2),
+                                        "result": f"skipped: late entry "
+                                                  f"{_mult:.1f}x model"}
+                                _lt._log(_row)
+                            elif _ok:
                                 _row = _lt.buy(
                                     r["mint"],
                                     reason="s60nm5fr hook (graduated)")
                                 if _row.get("result") == "submitted" \
                                         and _row.get("tokens_raw"):
-                                    _tk = int(_row["tokens_raw"])
-                                    if _tk > 0:
+                                    _tk2 = int(_row["tokens_raw"])
+                                    if _tk2 > 0:
                                         _lt.open_position(
                                             r["mint"], _row["size_sol"],
                                             "live", venue="pool",
-                                            entry_px=_row["size_sol"] / _tk,
-                                            tokens=_tk)
+                                            entry_px=_row["size_sol"] / _tk2,
+                                            tokens=_tk2)
                             else:
                                 _q = _lt.jupiter_quote(r["mint"], _size,
                                                        "buy")
