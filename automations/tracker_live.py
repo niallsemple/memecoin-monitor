@@ -1143,6 +1143,8 @@ def run(ctx):
                     pass
 
     # ---- snapshot / pool-discovery / unsubscriber thread ----
+    exit_ck = {"t": 0.0, "lt": None}  # §126: fast-exit cadence state
+
     def snapshot_loop():
         while not stop.is_set():
             now = time.time()
@@ -1401,6 +1403,30 @@ def run(ctx):
                             capture_output=True, timeout=10)
                     except Exception:
                         pass
+            # 5) §126: fast exit management — freeroll windows on these
+            # tokens are SECONDS; with the loop's 10s cadence, price open
+            # live positions every ~45s instead of once per run. No-ops
+            # (no RPC, no Jupiter) when nothing is open.
+            if now - exit_ck["t"] > 45:
+                exit_ck["t"] = now
+                try:
+                    _pf = MON / "live_positions.json"
+                    _pos = (json.loads(_pf.read_text())
+                            if _pf.exists() else {})
+                    if any(p.get("open") for p in _pos.values()):
+                        if exit_ck["lt"] is None:
+                            import importlib.util as _ilu2
+                            _sp = _ilu2.spec_from_file_location(
+                                "live_trader", str(MON / "live_trader.py"))
+                            exit_ck["lt"] = _ilu2.module_from_spec(_sp)
+                            _sp.loader.exec_module(exit_ck["lt"])
+                        _acts = exit_ck["lt"].exit_watch()
+                        for _a in _acts:
+                            if _a.get("act") not in ("hold",):
+                                stats["live_exits"] = \
+                                    stats.get("live_exits", 0) + 1
+                except Exception:
+                    pass
             stop.wait(10)
 
     def killer():

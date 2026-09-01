@@ -3881,3 +3881,17 @@ The full loop is proven live: birth fingerprint -> fr gate -> guard
 -> real fill -> on-chain verified -> priced exits. What remains is
 the only thing that ever mattered: enough live closes to see if the
 edge survives real execution.
+
+## §126 — Fast exit loop wired into the tracker (2026-09-01 ~20:12 local)
+
+The freeroll window on manufactured tokens is seconds; exit_watch ran
+once per ~15-19 min run. Fixed without any new Automation or quota:
+the snapshot thread already loops every 10s, so it now prices open
+live positions every ~45s (no-op — zero RPC/Jupiter calls — when
+nothing is open). Effective exit cadence: ~45s during runs, gap only
+between runs (~1-2 min). live_exits counter added to run stats.
+
+RST position state (first live trade, §125): opened 20:04 at
+0.1383 SOL all-in; mark 20:10 = 0.1349 SOL (r=1.005). abort15 fires
+at 20:19 if r<1.08 — the first real exit execution is imminent and
+will test the pool_sell path live (freeroll not in play at r~1.0).
