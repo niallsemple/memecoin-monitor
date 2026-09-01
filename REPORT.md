@@ -2923,3 +2923,33 @@ clipped (24/27 rows stopped early, mostly at small positive).
 non-freerollers) accruing forward alongside s60nm5mb. If the forward
 sample confirms >= +1.5%/trade over the next ~30 closes, this becomes
 amendment #3 and the first candidate for the positive-ROI model.
+
+### §86a — CORRECTION: honest time-stop numbers (lookahead removed) (2026-09-01 ~06:20)
+
+§86's +4.62%/trade was contaminated by lookahead: it classified
+positions by LIFETIME peak, but a live 180s stop cannot know the peak
+in advance. Re-ran with the real rule (exit at market at T unless
+1.5x freeroll already hit):
+
+  T=+120s:  +0.68%/trade
+  T=+180s:  +1.00%/trade  (GsM2Nq margin only 36s)
+  T=+240s:  -2.43%/trade  (eats GsM2Nq whole)
+  T=+300s:  -2.05%/trade
+  T=+480s:  -0.96%/trade
+
+Additional honest findings:
+- kept=0 at every window: NO position in the 27-close sample ever hit
+  the 1.5x freeroll target within 8 minutes — freeroll effectively
+  never fires; the +32-38% anomalies came from nm_abort exits at
+  ~1.32-1.38x AFTER the 3-minute mark, so any early hard stop clips
+  them (2eQKEM +38.9 -> +3.8 at 180s).
+- P&L decomposition of the sample: nm_abort trio +106%, other 21
+  closes ~+90%, three bleeders -300%. The bleeders ARE the entire
+  problem; any fix that also sacrifices the winners nets ~zero.
+- Verdict: the pure time-stop is a fragile +1%/trade at best, carried
+  by a 36-second margin. NOT amendment material as-is.
+
+The correct target remains a bleeder-ONLY filter (keep the exit stack
+intact for winners). Entry-time separation is dead (§85: identical
+launch mechanics). Remaining untested axis: pre-dump tape pressure in
+the final minutes before the insider sell.
