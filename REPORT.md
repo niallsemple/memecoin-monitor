@@ -2991,3 +2991,28 @@ sits just under the bar — the forward sample decides.
 AgLSnY signer row still missing (RPC-starved again); its 7200s retry
 window expires ~06:31 — one more cycle may catch it. mfg_signers at
 3 rows, all top1_share=1.0 (2-tx instant-fill curves — §85 pattern).
+
+## §88 — Amendment economics: the insurance-premium frame (2026-09-01 ~07:45)
+
+Forward n=5, zero bleeders so far. Paired closes:
+  8jMMZ5  base +4.9  ts180 +1.1
+  9jE7V1  base +6.7  ts180 +1.4
+  A5DaPp  base +8.8  ts180 +0.8
+  N7S3it  base +0.4  ts180 +0.4
+  XzSzp3  base +10.3 ts180 +1.1
+  => base fwd +6.23%/trade, ts180 fwd +0.95%/trade
+
+With no bleeder in the forward window, ts180 pays the premium without
+a claim — expected. The decision rule is therefore NOT "ts180 beats
++1.5%" but whether the bleeder rate justifies the premium:
+
+  premium  = base_fwd - ts180_fwd      ~= 5.3%/trade (n=5, noisy)
+  claim    = ~100% loss avoided per bleeder (ts180 exits ~0%)
+  breakeven bleeder rate ~= 5.3 / 99   ~= 5.4%
+  historical bleeder rate = 3/28       ~= 10.7%
+
+If the bleeder regime persists at ~11%, insurance is worth ~+5%/trade
+net. If bleeders vanish (regime shift — they may be one operator's
+campaign), ts180 just bleeds 5%/trade vs baseline. The forward sample
+now measures BOTH: bleeder frequency AND the premium. Decision point
+stays ~30 forward closes.

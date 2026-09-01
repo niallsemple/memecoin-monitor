@@ -3340,3 +3340,21 @@
 | 04:56 | robinhood | `0x4E9d3b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,156 mc=$34,502 | chain:robinhood no-audit-adapter | Tux is an iconic figure linked to IBM through linux.  A recognizable face with a |
 | 04:56 | robinhood | `0x3BaBAa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,947 mc=$78,355 | chain:robinhood no-audit-adapter | Soyjaks are often portrayed as enjoying Reddit and as frequent users of the site |
 | 04:56 | robinhood | `0xea99e5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Laser Barnacle |
+| 05:26 | solana | `9EYy9WcT…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$16,238 | name=Blue Balls symbol=BLUEBALLS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | BLUE BALLS |
+| 05:26 | solana | `AQ9pKadi…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$12,913 mc=$29,589 | name=Blue Coin symbol=Blue; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=46. |  |
+| 05:26 | solana | `2P1rqi5K…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:98% | liq=$0 mc=$3,654 | name=Bunk symbol=BUNK; contract:clean; rugcheck_score=68 lpLocked=100%; top10_hold=98.0% | bunk is the new bonk |
+| 05:26 | robinhood | `0xF5E41B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,943 mc=$79,358 | chain:robinhood no-audit-adapter | HOW DID NO ONE NOTICE? The new Apple CEO's nametag says "BELIEVE." He believed i |
+| 05:26 | robinhood | `0x3d609E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,510 mc=$32,942 | chain:robinhood no-audit-adapter | Everyone is launching an AI agent.  They put GPT behind a landing page, give it  |
+| 05:26 | robinhood | `0xE8C503…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$82,189 mc=$127,530 | chain:robinhood no-audit-adapter | A community token designed to accumulate exposure to Take-Two, the parent compan |
+| 06:06 | solana | `9GHJ5Q14…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$11,939 mc=$25,845 | name=The 2 Legged Runner symbol=DUNCAN; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 06:06 | robinhood | `0x751d20…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,571 mc=$48,120 | chain:robinhood no-audit-adapter | Cobie named that the Pandacoin will be the Asian doge. Now you can earn coinbase |
+| 06:06 | solana | `BarnrxXb…` | FAIL | TOP10_HEAVY:100%; RC_WARN:Copycat token | liq=$0 mc=$3,137 | name=Green Profit Risk On symbol=GPRO; contract:clean; rugcheck_score=29 lpLocked=100%; to |  |
+| 06:06 | robinhood | `0xfCA1e3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,270 mc=$10,090 | chain:robinhood no-audit-adapter | Node API services for Capital Layer of Robinhood. Powered by SinjohDeFi |
+| 06:06 | robinhood | `0xE1cBfF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$96,355 mc=$132,897 | chain:robinhood no-audit-adapter | TickerMint ($TMNT) is a market-inspired token built for Robinhood Chain, combini |
+| 06:06 | solana | `EeZ67jpg…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$23,982 mc=$89,026 | name=Microsoft symbol=MICRO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=34 | Hold $MICRO and Earn $MSFTx |
+| 06:26 | robinhood | `0xbb516d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$2,152 | chain:robinhood no-audit-adapter | PonsBall is a game of chance. Prizes are paid in ETH by a smart contract. |
+| 06:26 | solana | `38ZRRuFV…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$32,809 | name=motion symbol=motion; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59.3 | motion |
+| 06:26 | robinhood | `0xd70B5c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$1,764 | chain:robinhood no-audit-adapter | Borrow ETH against your tokens — without selling your conviction.  Creator tax k |
+| 06:26 | solana | `FSwc3NbQ…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$12,485 mc=$27,860 | name=Official Elon Coin symbol=ELON; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 06:26 | solana | `53ibjF5i…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:67% | liq=$0 mc=$10,064 | name=xBank symbol=xBank; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=66.8% | xBanking |
+| 06:26 | robinhood | `0x038e09…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,203 mc=$87,137 | chain:robinhood no-audit-adapter | 1,111 Thrills on the RobinHood blockchain  1 Thrill NFT = 1,000 $Thrill coins |
