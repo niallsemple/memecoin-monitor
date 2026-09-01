@@ -3070,3 +3070,18 @@ pre-launch signal in the system. Cross-reference runs at read time.
 
 Meanwhile: write 08:44:21 — ts180 fwd n=7 (+1.28%), base fwd n=5
 (+6.23%), still zero forward bleeders.
+
+## §90 — Treasury tripwire ARMED; forward tally n=11 (2026-09-01 ~09:30)
+
+Write 09:23:52: treasury_watch completed its first live pass — cursors
+set for all three chain wallets (mfg_funding_seen.json), no seed-sized
+outbound transfers yet. From here, any 80-95 SOL transfer to a fresh
+wallet prints a pre-launch bleeder alert within one cycle (~40 min).
+
+Forward tally update: base n=10 at +10.0%/trade, ts180 n=11 at
++1.29%/trade. The forward window has been bleeder-free for ~3h —
+baseline is having a strong run in the clean regime (premium gap now
+~8.7 pts/trade). Historical bleeder rate 10.7% says a dump is
+statistically due within the next several closes; that event is the
+joint test of the ts180 stop AND the treasury tripwire (if the bleeder
+was chain-funded, we should see the funding alert FIRST).
