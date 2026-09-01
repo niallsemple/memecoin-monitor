@@ -3438,3 +3438,26 @@ its operator's next launch immediately. Cost model: one loss per NEW
 operator, then repeats are free to dodge. Applies to the §101 finding
 (jmeuPE / DuACsk 1,000+-tx reused wallets whose funding trees can't be
 traced on public RPC). Compile-checked; live next run.
+
+## §106 — Honest clock fills for ALL deadline exits; dry-run verification (2026-09-01 ~17:45 local)
+
+Offline dry-run of the patched scorer against the live trade log
+(forward closes, entry_t ≥ DEP):
+
+| variant | n | avg gross | notes |
+|---|---|---|---|
+| baseline s60nm5 | 27 | +0.86% | 9orw5y now +0.7% (abort15 at honest 15-min price) |
+| ts180 | 27 | −2.98% | 84X4w5 −4.6%, 7FFGDY −12.6% via honest timestop |
+| **fr extended** | **25** | **+6.23%** | excludes both tree-member bleeders; 9orw5y +0.7% |
+
+§99 follow-up bug found by the dry-run: the quiet-pool next-trade fill
+bug afflicted ALL clock exits (nm_abort, abort15, abort), not just
+timestop — abort15 checked earlier in the loop, so 9orw5y still filled
+at the post-collapse zero. Patched all three to `_price_at(deadline)`.
+The freeroll and TRAIL exits keep next-trade fills (price-triggered,
+not clock-triggered — trail on a live tape is honest).
+
+Net-of-fees read (§94 model ~1.2%/trade): fr extended ≈ **+5.0%
+net/trade** on n=25 forward closes. Two of the four forward bleeders
+remain reachable only by the self-blacklist (7FFGDY) or are now
+survivable (+0.7% instead of −100%: 9orw5y).

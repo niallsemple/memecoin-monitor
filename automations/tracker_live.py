@@ -267,18 +267,19 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                 if (nm_touch_t is not None and r < P_TARGET
                         and (x["t"] - nm_touch_t) >= nm_min * 60
                         and pos > 0):
-                    proceeds += pos * fill(r)
+                    # §106: clock exits fill at the price AT the deadline
+                    proceeds += pos * _price_at(nm_touch_t - t0 + nm_min * 60)
                     pos = 0
                     reason = "nm_abort"
                     break
             if (stage1 and not fr and mins >= stage1[0]
                     and r < stage1[1] and pos > 0):
-                proceeds += pos * fill(r)
+                proceeds += pos * _price_at(stage1[0] * 60)
                 pos = 0
                 reason = "abort15"
                 break
             if not fr and mins >= am and r < P_ABORT_R and pos > 0:
-                proceeds += pos * fill(r)
+                proceeds += pos * _price_at(am * 60)
                 pos = 0
                 reason = "abort"
                 break
