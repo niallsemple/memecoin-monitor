@@ -3861,3 +3861,23 @@ hook now quotes first and SKIPS (ledgered) any entry whose hook-time
 price is >3x the paper entry_mcap — better to miss a runner's tail
 than buy a manufactured top. Skips and entries both ledger; the
 skip/enter ratio is itself data on the botnet wave.
+
+## §125 — FIRST LIVE FILL: verified on-chain (2026-09-01 20:04 local)
+
+Signal: HK6Na6tphM ("RST") — §120 armed birth 19:46:28 (fingerprint
+catch, creator Ff2SR8GgqD), fr-gated, hook fired 20:04. Curve already
+complete -> late-entry guard PASSED (hook price <=3x model) ->
+Jupiter buy submitted live:
+  sig 3SDCT6tjCMe3w4zRk3sDVHZ4eX1E3LGSpnKYsKpiZ7K8ndd1sVNw1ayqZYv5YxtG7jW8QwhKnZSdvv15NsBeVJfV
+  spent 0.138323 SOL all-in (0.1342 swap + 0.000205 fee + ATA rent)
+  received 89.071544 RST (quote 89.079181 — fill/quote diff 0.009%)
+  wallet after: 2.545562 SOL
+Mark-to-market minutes later: sell quote 0.134217 SOL = -2.97% vs
+all-in cost (fees + drift). No instant rug; exit stack (freeroll
+75%@1.5x / trail / abort15/30 / timestop120) now managing a real
+pool-venue position via Jupiter sell-quotes each tracker pass.
+
+The full loop is proven live: birth fingerprint -> fr gate -> guard
+-> real fill -> on-chain verified -> priced exits. What remains is
+the only thing that ever mattered: enough live closes to see if the
+edge survives real execution.

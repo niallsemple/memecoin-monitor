@@ -3539,3 +3539,9 @@
 | 18:46 | robinhood | `0xd64058…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,066 mc=$70,460 | chain:robinhood no-audit-adapter | A company that IPO'd itself and answers to nobody. |
 | 18:46 | solana | `FyM68Czu…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$15,050 mc=$37,665 | name=The Little Guy symbol=Little; contract:clean; rugcheck_score=1 lpLocked=99.9261068919 |  |
 | 18:46 | solana | `9cS5Ctdf…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$13,073 mc=$31,157 | name=Walmart Rotisserie Chicken Purse symbol=Rotisserie; contract:clean; rugcheck_score=1  |  |
+| 19:06 | robinhood | `0x22ea94…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$137,042 mc=$290,253 | chain:robinhood no-audit-adapter | Clarus originated in 1984 as a simple, poorly drawn glyph in Susan Kare’s Cairo  |
+| 19:06 | solana | `3U2U7Kv4…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$14,133 mc=$35,952 | name=The Fandom Truce Of 2026 symbol=TRUCE; contract:clean; rugcheck_score=1 lpLocked=100% |  |
+| 19:06 | solana | `8TfonUQx…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:74%; RC_WARN:Low Liquidity | liq=$5,237 mc=$6,931 | name=it symbol=it; contract:clean; rugcheck_score=79 lpLocked=100%; top10_hold=74.0% | Call it. |
+| 19:06 | robinhood | `0xb8fc84…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | One flow in, three fixed bands out: 50 depth, 30 burn, 20 reserve. The angles ar |
+| 19:06 | solana | `YgdRhef7…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$15,331 | name=Serial Butt Sniffer  symbol=SNIFFER; contract:clean; rugcheck_score=1 lpLocked=100%;  | A guy has been arrested again for sniffing butts. |
+| 19:06 | robinhood | `0xfa182a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | CONS is a rebase protocol on Robinhood Chain, an EVM Layer 2 built on the Arbitr |
