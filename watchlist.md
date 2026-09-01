@@ -3334,3 +3334,9 @@
 | 04:26 | solana | `A88DATWN…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,168 | name=Lean symbol=LEAN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.5% |  |
 | 04:26 | robinhood | `0xb9066e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | THE FINAL INDEX. MONEY, LAND, NATURAL RESOURCES. |
 | 04:26 | solana | `FuJj8w53…` | PASS | — | liq=$38,550 mc=$195,304 | name=foms symbol=foms; contract:clean; rugcheck_score=1 lpLocked=98.40907417135143%; top10 |  |
+| 04:56 | robinhood | `0xa9CfDE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,272 mc=$26,391 | chain:robinhood no-audit-adapter | they're selling your data might as well buy it back. |
+| 04:56 | solana | `BH3WrGte…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$14,532 mc=$36,568 | name=oomf symbol=oomf; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=47.2% |  |
+| 04:56 | robinhood | `0x3981b3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Autonomous trading agent learning Robinhood for agentic trading. |
+| 04:56 | robinhood | `0x4E9d3b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,156 mc=$34,502 | chain:robinhood no-audit-adapter | Tux is an iconic figure linked to IBM through linux.  A recognizable face with a |
+| 04:56 | robinhood | `0x3BaBAa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,947 mc=$78,355 | chain:robinhood no-audit-adapter | Soyjaks are often portrayed as enjoying Reddit and as frequent users of the site |
+| 04:56 | robinhood | `0xea99e5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Laser Barnacle |

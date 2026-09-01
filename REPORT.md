@@ -2953,3 +2953,17 @@ The correct target remains a bleeder-ONLY filter (keep the exit stack
 intact for winners). Entry-time separation is dead (§85: identical
 launch mechanics). Remaining untested axis: pre-dump tape pressure in
 the final minutes before the insider sell.
+
+### §86b — s60nm5ts180 shadow DEPLOYED (2026-09-01 ~06:30)
+
+paper_score gained a ts_min param (default P_TS_MIN=120 unchanged);
+new shadow variant writes mfg_paper_trades_s60nm5ts180.jsonl each
+cycle: same s60nm5 entries, same exit stack, hard stop at +3min for
+non-freerollers. Also logged: pre-dump tape analysis came back
+NEGATIVE — no silence gap, no sell-pressure buildup before any of the
+3 dumps (a maxgap=2 winner exists; two bleeders had zero gaps). The
+tape gives no warning. The 180s shadow is therefore the last cheap
+defense; anything stronger needs insider HOLDINGS data (keyed RPC) or
+WSOL-flow parsing. Forward bar for amendment #4: exp >= +1.5%/trade
+over the next ~30 closes (~1-2 days at current entry pace).
+py_compile clean; live next cycle (~06:43).
