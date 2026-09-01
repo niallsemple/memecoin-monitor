@@ -3140,3 +3140,25 @@ uniformity (§93) are all negative. The ONLY viable pre-dump signal is
 the funding chain — the treasury tripwire (§89a) is not optional
 instrumentation, it is the sole early-warning channel. Its first live
 test remains pending (zero outbound funding txs observed).
+
+## §94 — Net-of-cost returns: insurance margin is razor-thin (2026-09-01 ~11:15 local)
+
+First honest cost pass on the forward sample (PumpSwap 0.30%/swap,
+priority ~0.2%/round-trip; baseline pays 3 swaps for the freeroll,
+ts180 pays 2):
+- baseline s60nm5: gross +11.94% -> NET +10.74%/trade (1/13 slightly
+  negative after fees, worst -0.8%)
+- ts180: gross +1.21% -> NET +0.41%/trade (3/15 negative after fees,
+  worst -0.4%); after a realistic 0.3% exit slippage the margin falls
+  to +0.11%/trade — break-even at best.
+
+Net-of-cost parity bleeder rate: 9.3% (gross parity was 10.5%).
+Historical gated rate 11.1% still favors the insured variant, but the
+economics are tight in BOTH directions: baseline wins big only while
+the regime stays clean, ts180 survives everything but earns almost
+nothing after costs. The honest summary: the gross edge is real, the
+net edge is small, and the decision still hinges on the forward
+bleeder rate. At ~30 closes, if forward bleeder rate < 9%, baseline
+is the net winner; if >= 9%, ts180; the gap between them is now
+narrow enough that execution quality (fees/slippage) may matter more
+than the choice itself.

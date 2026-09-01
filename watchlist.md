@@ -3396,3 +3396,9 @@
 | 09:16 | solana | `4iMKhSgD…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99% | liq=$2,043 mc=$1,999 | name=i am fable symbol=fable; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold= | Still unfinished. Made of language, mostly. A quiet fable about identity, imagin |
 | 09:26 | robinhood | `0x8478c6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$88,707 mc=$53,084 | chain:robinhood no-audit-adapter | GME MASCOT |
 | 09:26 | solana | `AD9NFXGM…` | FAIL | TOP10_HEAVY:74%; RC_WARN:Low Liquidity | liq=$4,750 mc=$5,943 | name=Temima symbol=Temima; contract:clean; rugcheck_score=22 lpLocked=100%; top10_hold=74. |  |
+| 10:06 | solana | `6QhYh7rp…` | FAIL | TOP10_HEAVY:67%; RC_WARN:Low Liquidity | liq=$7,664 mc=$12,439 | name=Compounding Investment Asset symbol=CIA; contract:clean; rugcheck_score=19 lpLocked=1 |  |
+| 10:06 | solana | `HpDfwCfH…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$20,281 mc=$63,247 | name=Black Fomo Bunny symbol=FOMOBUNNY; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 10:06 | solana | `GPNCUKYP…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,905 | name=Coordinated Belief symbol=Belief; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 10:06 | solana | `CTHx7fen…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$17,598 | name=LilMiss symbol=LilMiss; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=62 |  |
+| 10:06 | solana | `8K5X85PA…` | PASS | — | liq=$302,190 mc=$12,038,432 | name=Vida Global CTO symbol=CTO; contract:clean; rugcheck_score=1 lpLocked=57.471063777524 | We are taking over a real company. Buying shares in flywheel mode. |
+| 10:06 | robinhood | `0x977379…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,373 mc=$16,042 | chain:robinhood no-audit-adapter | The first cat hidden inside quantum gov archives |
