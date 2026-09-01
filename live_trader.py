@@ -492,3 +492,112 @@ def curve_sell(mint, token_amount, min_sol_out=0, reason="exit"):
         row["result"] = f"error: {e}"
     _log(row)
     return row
+
+
+# ======================= §113: exit watcher =======================
+# Manages open positions (dry-run or live) with the §56e exit stack:
+# freeroll 75% at 1.5x, trail at 50% of peak, abort15 (<1.08x at 15m),
+# abort30 (<1.15x at 30m), timestop at 120m. Runs inside the tracker
+# pass (~10-15 min cadence) — fine for aborts/timestop, but the
+# freeroll window can be SECONDS after entry; a dedicated faster loop
+# is future work. Every decision (hold/freeroll/exit) is ledgered.
+POSITIONS = MON / "live_positions.json"
+P_FR_TARGET = 1.5     # freeroll trigger
+P_FR_SELL = 0.75      # sell 75%
+P_TRAIL_F = 0.5       # trail at 50% of peak
+P_ABORT15 = (15, 1.08)
+P_ABORT30 = (30, 1.15)
+P_TIMESTOP_MIN = 120
+
+
+def _load_positions():
+    if POSITIONS.exists():
+        try:
+            return json.loads(POSITIONS.read_text())
+        except Exception:
+            pass
+    return {}
+
+
+def _save_positions(p):
+    POSITIONS.write_text(json.dumps(p, indent=1))
+
+
+def _price_sol_per_token(st):
+    return st["v_sol"] / st["v_tok"] if st["v_tok"] else 0.0
+
+
+def open_position(mint, size_sol, mode):
+    """Record a position after a (dry-run or live) entry fill."""
+    pos = _load_positions()
+    if mint in pos and pos[mint].get("open"):
+        return pos[mint]
+    st = curve_state(mint)
+    entry_px = _price_sol_per_token(st)
+    tokens = tokens_for_sol(st, int(size_sol * 1e9))
+    pos[mint] = {"open": True, "mode": mode, "entry_t": time.time(),
+                 "entry_px": entry_px, "tokens": tokens,
+                 "tokens_left": tokens, "size_sol": size_sol,
+                 "peak_mult": 1.0, "freerolled": False,
+                 "sol_recovered": 0.0}
+    _save_positions(pos)
+    _log({"action": "open_position", "mint": mint, "mode": mode,
+          "size_sol": size_sol, "tokens": tokens,
+          "entry_px": entry_px})
+    return pos[mint]
+
+
+def exit_watch():
+    """One pass over open positions. Returns list of actions taken."""
+    pos = _load_positions()
+    actions = []
+    for mint, p in list(pos.items()):
+        if not p.get("open"):
+            continue
+        try:
+            st = curve_state(mint)
+            px = _price_sol_per_token(st)
+            r = px / p["entry_px"] if p["entry_px"] else 0.0
+            p["peak_mult"] = max(p["peak_mult"], r)
+            mins = (time.time() - p["entry_t"]) / 60
+            act = None
+            sell_tokens = 0
+            if not p["freerolled"] and r >= P_FR_TARGET:
+                act, sell_tokens = "freeroll", int(p["tokens_left"] * P_FR_SELL)
+            elif p["freerolled"] and r <= P_TRAIL_F * p["peak_mult"]:
+                act, sell_tokens = "trail", p["tokens_left"]
+            elif not p["freerolled"] and mins >= P_ABORT15[0] and r < P_ABORT15[1]:
+                act, sell_tokens = "abort15", p["tokens_left"]
+            elif not p["freerolled"] and mins >= P_ABORT30[0] and r < P_ABORT30[1]:
+                act, sell_tokens = "abort30", p["tokens_left"]
+            elif not p["freerolled"] and mins >= P_TIMESTOP_MIN:
+                act, sell_tokens = "timestop", p["tokens_left"]
+            if act:
+                est_sol = sol_for_tokens(st, sell_tokens) / 1e9
+                res = curve_sell(mint, sell_tokens,
+                                 min_sol_out=int(est_sol * 0.85 * 1e9),
+                                 reason=act)
+                p["sol_recovered"] += est_sol
+                p["tokens_left"] -= sell_tokens
+                if act == "freeroll":
+                    p["freerolled"] = True
+                else:
+                    p["open"] = False
+                    p["closed_reason"] = act
+                    p["pnl_sol"] = round(
+                        p["sol_recovered"] - p["size_sol"], 5)
+                actions.append({"mint": mint, "act": act, "r": round(r, 3),
+                                "est_sol": round(est_sol, 5),
+                                "result": res.get("result")})
+                _log({"action": "exit_decision", "mint": mint, "exit": act,
+                      "mult": round(r, 3), "mins_open": round(mins, 1),
+                      "est_sol": round(est_sol, 5),
+                      "result": res.get("result")})
+            else:
+                actions.append({"mint": mint, "act": "hold",
+                                "r": round(r, 3)})
+        except Exception as e:
+            actions.append({"mint": mint, "act": "error",
+                            "err": str(e)[:100]})
+    _save_positions(pos)
+    return actions

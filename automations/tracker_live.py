@@ -1502,11 +1502,21 @@ def run(ctx):
                             json.loads(_lt.WALLET_F.read_text())["address"])
                     _row = _lt.curve_buy(r["mint"], _size,
                                          reason="s60nm5fr signal (hook)")
+                    if str(_row.get("result", "")).startswith(
+                            ("dry-run", "submitted")):
+                        _lt.open_position(r["mint"], _size,
+                                          _row.get("mode", "dry-run"))
                     _sent[r["mint"]] = {"t": _now,
                                         "result": _row.get("result")}
         _st_f.write_text(json.dumps(_sent))
         paper["live_hook"] = sum(1 for v in _sent.values()
                                  if _now - v.get("t", 0) < 1200)
+        # §113: manage open positions (freeroll/trail/abort/timestop)
+        _acts = _lt.exit_watch()
+        paper["live_positions_open"] = sum(
+            1 for a in _acts if a.get("act") in ("hold",))
+        paper["live_exits"] = [a for a in _acts
+                               if a.get("act") not in ("hold",)]
     except Exception:
         pass
     try:

@@ -3611,3 +3611,21 @@ Confirmed live this cycle (18:03-18:23 writes):
 - mfg_creator_blacklist.jsonl exists and is accruing (§105 live).
 - fr shadow steady at n=25, +3.32% gross (will revise to ≈+6.2% as
   9orw5y's row is rewritten by the §106 honest fills).
+
+## §113 — Exit watcher built, wired, smoke-tested (2026-09-01 ~18:45 local)
+
+live_trader.py gains the §56e exit stack for real positions:
+open_position() records entry at the live curve price (tokens via
+constant-product), exit_watch() applies freeroll 75%@1.5x, trail at
+50% of peak, abort15/abort30, 120-min timestop — exits call
+curve_sell with an 85% min-SOL floor; everything ledgered including
+"hold" decisions. The tracker hook now records a position after every
+(dry-run or live) entry and runs exit_watch() each pass. Smoke test:
+opened a synthetic 0.01 SOL position on a live curve, priced it
+(2.84e-5 SOL/token), correctly held at r=1.0, cleaned up.
+Honest limitation: exits run at tracker cadence (~10-15 min) — fine
+for aborts/timestop, but the freeroll window can be seconds after
+entry; a dedicated sub-minute loop is future work once live proves
+out. The full loop (signal → gated entry → managed exit → ledger) is
+now wired end-to-end in dry-run; only the owner's signoff + funding
+separate it from live.

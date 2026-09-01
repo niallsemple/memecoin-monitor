@@ -3509,3 +3509,9 @@
 | 17:06 | robinhood | `0x777693…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$94,887 mc=$4,744,731 | chain:robinhood no-audit-adapter | FATCOIN |
 | 17:06 | solana | `U29rFVTg…` | PASS | — | liq=$40,572 mc=$246,677 | name=Uptember symbol=Uptember; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
 | 17:06 | solana | `L8BXunnf…` | CAUTION | RC_WARN:High holder correlation; TOP10_CONCENTRATED:45% | liq=$15,753 mc=$43,071 | name=Stoner Coin symbol=STONER; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hol | Light one up, hold the bag. |
+| 17:26 | ethereum | `0xA4789A…` | PASS | — | liq=$37,503 mc=$-455,673 | holders=0; buy_tax=None sell_tax=None; contract:clean | Every trade buys real assets for every holder: tokenized stocks and gold, every  |
+| 17:26 | solana | `8Xhk5Y1e…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:95%; RC_WARN:Low amount of LP Providers | liq=$5,372 mc=$5,850 | name=Plan B symbol=BRGRS; contract:clean; rugcheck_score=52 lpLocked=0%; top10_hold=95.3% | Crypto didn't work out. Time for Plan B. 🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔 Flip $BRGRS. Earn tokeni |
+| 17:26 | robinhood | `0x3C398a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Luna 🐶  Jeff Bezos & Lauren Sánchez Bezos’ four-legged boss. |
+| 17:26 | robinhood | `0xbbd8b6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Tokenized Real-estate. |
+| 17:26 | robinhood | `0x61aadb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,515 mc=$3,642 | chain:robinhood no-audit-adapter | Zeta is the protocol for owning your AI self. Mint a sovereign AI replica of a r |
+| 17:26 | robinhood | `0x2633D6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,862 mc=$17,723 | chain:robinhood no-audit-adapter | Robinhood Social, the new FOMO-style app in the works, could make Social Cat its |
