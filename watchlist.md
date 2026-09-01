@@ -3545,3 +3545,21 @@
 | 19:06 | robinhood | `0xb8fc84…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | One flow in, three fixed bands out: 50 depth, 30 burn, 20 reserve. The angles ar |
 | 19:06 | solana | `YgdRhef7…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$15,331 | name=Serial Butt Sniffer  symbol=SNIFFER; contract:clean; rugcheck_score=1 lpLocked=100%;  | A guy has been arrested again for sniffing butts. |
 | 19:06 | robinhood | `0xfa182a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | CONS is a rebase protocol on Robinhood Chain, an EVM Layer 2 built on the Arbitr |
+| 19:16 | robinhood | `0x9D7C8F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$43,418 mc=$218,979 | chain:robinhood no-audit-adapter | Krill - this will attract whales |
+| 19:16 | robinhood | `0x949e8a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | its just a toothbrush |
+| 19:16 | solana | `2iqanyr6…` | FAIL | TOP10_HEAVY:59% | liq=$16,775 mc=$48,746 | name=man symbol=man; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59.4% |  |
+| 19:16 | solana | `4uTBMX55…` | FAIL | TOP10_HEAVY:80% | liq=$0 mc=$6,348 | name=one click is all it takes symbol=click; contract:clean; rugcheck_score=1 lpLocked=100 |  |
+| 19:16 | robinhood | `0x40ae94…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,284 mc=$51,154 | chain:robinhood no-audit-adapter | CredLoom is where fintech culture meets the onchain finance narrative of Robinho |
+| 19:16 | solana | `FRPV7Df9…` | FAIL | TOP10_HEAVY:71% | liq=$0 mc=$10,499 | name=Grok Reaper-1  symbol=REAPER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 19:26 | robinhood | `0x0C9757…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Liquidity layer for private markets on Robinhood. |
+| 19:26 | solana | `ERRhiDGr…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$4,551 | name=random cat symbol=cat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=96. |  |
+| 19:26 | solana | `7QFNr9GR…` | FAIL | TOP10_HEAVY:100% | liq=$16,208 mc=$45,563 | name=Grok Build symbol=BUILD; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=9 | Build With Grok |
+| 19:26 | solana | `BSXNSwrZ…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:94% | liq=$3,185 mc=$3,464 | name=The Sisyphean Musk symbol=MUSK; contract:clean; rugcheck_score=30 lpLocked=100%; top1 |  |
+| 19:26 | solana | `25cfkNn8…` | FAIL | TOP10_HEAVY:56% | liq=$0 mc=$18,636 | name=smolguy symbol=smolguy; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=56 |  |
+| 19:26 | robinhood | `0x87342e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 19:46 | robinhood | `0xA13476…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,823 mc=$6,068 | chain:robinhood no-audit-adapter | GTA VI MASCOT PAIRED WITH ROCKSTAR OWNER STOCK |
+| 19:46 | robinhood | `0x937737…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Super Bird - Jensen Huang's favorite sandwich. Straight from Denny's, the place  |
+| 19:46 | solana | `3J86qDm4…` | FAIL | TOP10_HEAVY:72% | liq=$0 mc=$9,885 | name=Most addictive pill symbol=ADDICTIVE ; contract:clean; rugcheck_score=1 lpLocked=100% | Most addictive pill |
+| 19:46 | robinhood | `0x7cd2d3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,477 mc=$18,502 | chain:robinhood no-audit-adapter | Fund a bot with USDC on Polygon. It buys graded cards below comps and relists th |
+| 19:46 | robinhood | `0x0BAB65…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,494 mc=$33,452 | chain:robinhood no-audit-adapter | rururemon |
+| 19:46 | robinhood | `0x280413…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,870 mc=$57,719 | chain:robinhood no-audit-adapter | Robin Nakamoto From Robinhood |

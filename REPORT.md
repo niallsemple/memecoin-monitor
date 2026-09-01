@@ -3895,3 +3895,42 @@ RST position state (first live trade, §125): opened 20:04 at
 0.1383 SOL all-in; mark 20:10 = 0.1349 SOL (r=1.005). abort15 fires
 at 20:19 if r<1.08 — the first real exit execution is imminent and
 will test the pool_sell path live (freeroll not in play at r~1.0).
+
+## §127 — Silent-submit bug: phantom exit, then first REAL live exit (1 Sep 2026, ~20:55 BST)
+
+**Incident.** abort15 fired on RST at 20:20:18. `pool_sell()` logged
+`result:"submitted"` with `sig:null` — the Jupiter submit failed
+silently through RPC retries and returned no signature — yet
+exit_watch mutated the position to closed anyway. Reality vs ledger:
+we still HELD all 89,071,544 RST raw (~0.14 SOL of exposure) while
+`live_positions.json` claimed open:false, tokens_left:0. The system
+had lost track of a live bag. Caught by on-chain reconciliation.
+
+**Fix (live_trader.py, three changes):**
+1. `buy()` and 2. `pool_sell()` now report
+   `"submit failed: no signature (RPC)"` when `_jupiter_submit()`
+   returns no signature — a signature-less submit is never again
+   logged as "submitted".
+3. `exit_watch()` success gate: position state (tokens_left,
+   sol_recovered, open/closed) mutates ONLY on dry-run or a submitted
+   result carrying a real signature. Otherwise the pass logs
+   `exit_failed` and `continue`s — position stays open, next pass
+   retries. A failed exit can no longer strand exposure invisibly.
+
+**Reconciliation.** RST position restored (open:true,
+tokens_left:89,071,544 = actual on-chain, phantom sol_recovered
+zeroed; M32 tokens_left corrected to actual 1,655,770,523 raw).
+The tracker's next exit pass re-decided abort15 at 20:26:37 and
+really sold: sig
+`22U7UUmhn7XS5ESwdNQ3CcFw5nSEBDbrxvUTs9zeNAYeaffonPjxYmrqvFoAo5oRV6ycC4iZphGSGQLg9p782J7x`,
+on-chain verified: tx err None, SOL delta **+0.144373246** (quote
+0.144575; fee 205k lamports incl. priority), RST balance → 0.
+
+**RST final (first complete live round-trip):** in 0.1342 SOL,
+out 0.144373 SOL → **+0.01017 SOL (+7.6%)**, 42 min hold, abort15
+exit at r=1.077. Wallet after: 2.5604 SOL. M32 remains open
+(in 0.1273, mark r≈1.01, abort15 due ~20:54).
+
+**Lesson now enforced in code:** ledger "submitted" is meaningless
+without a signature; every mutation of position state is gated on
+proof of execution.

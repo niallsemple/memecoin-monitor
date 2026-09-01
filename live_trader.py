@@ -161,7 +161,10 @@ def pool_sell(mint, token_amount_raw, reason="exit"):
             row["result"] = f"dry-run ok ({why})"
         else:
             row["sig"] = _jupiter_submit(q)
-            row["result"] = "submitted"
+            # §127: a submit that returns no signature did NOT land —
+            # never report it as submitted.
+            row["result"] = "submitted" if row["sig"] else \
+                "submit failed: no signature (RPC)"
     except Exception as e:
         row["result"] = f"error: {e}"
     _log(row)
@@ -220,7 +223,10 @@ def buy(mint, reason="signal"):
         return row
     try:
         row["sig"] = _jupiter_submit(q)
-        row["result"] = "submitted"
+        # §127: a submit that returns no signature did NOT land —
+        # never report it as submitted.
+        row["result"] = "submitted" if row["sig"] else \
+            "submit failed: no signature (RPC)"
     except Exception as e:
         row["result"] = f"submit failed: {e}"
     _log(row)
@@ -632,6 +638,21 @@ def exit_watch():
                     res = curve_sell(mint, sell_tokens,
                                      min_sol_out=int(est_sol * 0.85 * 1e9),
                                      reason=act)
+                # §127: only mutate position state when the exit REALLY
+                # happened — dry-run, or a live submit that returned a
+                # signature. A signature-less "submitted" never landed;
+                # keep the position open so the next pass retries.
+                _ok_res = (str(res.get("result", "")).startswith("dry-run")
+                           or (res.get("result") == "submitted"
+                               and res.get("sig")))
+                if not _ok_res:
+                    actions.append({"mint": mint, "act": "exit_failed",
+                                    "r": round(r, 3),
+                                    "result": res.get("result")})
+                    _log({"action": "exit_failed", "mint": mint, "exit": act,
+                          "mult": round(r, 3), "mins_open": round(mins, 1),
+                          "result": res.get("result")})
+                    continue
                 p["sol_recovered"] += est_sol
                 p["tokens_left"] -= sell_tokens
                 if act == "freeroll":
