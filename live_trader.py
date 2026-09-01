@@ -299,9 +299,17 @@ G_GVA = pda([b"global_volume_accumulator"], PUMP_PROG)
 G_FEE_CFG = pda([b"fee_config", FEE_CFG_C], FEE_PROG)
 
 
-def _get_account(address):
+def _get_account(address, _null_retries=3):
     import base64 as _b64
-    r = _rpc("getAccountInfo", [address, {"encoding": "base64"}])
+    # §133: brand-new mints can return a SUCCESSFUL null value while RPC
+    # nodes lag propagation — treat null as retryable, not terminal.
+    r = None
+    for _attempt in range(_null_retries + 1):
+        r = _rpc("getAccountInfo", [address, {"encoding": "base64"}])
+        if r and r.get("value"):
+            break
+        if _attempt < _null_retries:
+            time.sleep(2.0)
     if not r or not r.get("value"):
         return None
     v = r["value"]

@@ -271,3 +271,5 @@
 | 21:19 | BUY | EBLUKPgx | £15.35 | entry mc $1,570,399 | +7263min @ 4.55x detect |
 | 21:47 | BUY | CYsTn9eJ | £15.04 | entry mc $153,142 | +31min @ 1.58x detect |
 | 21:47 | BUY | 3DV5zVYW | £14.74 | entry mc $896,549 | +31min @ 1.80x detect |
+| 22:06 | STOP | CYsTn9eJ | £0.18 | trail-stop at 0.01x |
+| 22:06 | STOP | 3DV5zVYW | £4.50 | trail-stop at 0.31x |

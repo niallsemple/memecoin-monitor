@@ -1706,8 +1706,17 @@ def run(ctx):
                             and _row.get("action") == "curve_buy":
                         _lt.open_position(r["mint"], _size,
                                           _row.get("mode", "dry-run"))
-                    _sent[r["mint"]] = {"t": _now,
-                                        "result": _row.get("result")}
+                    # §133: only consume the signal on a REAL outcome.
+                    # An "error:" result (e.g. RPC lag on a fresh mint)
+                    # leaves the signal unconsumed so the next run
+                    # retries inside the 1200s freshness window.
+                    if not str(_row.get("result", "")).startswith("error:"):
+                        _sent[r["mint"]] = {"t": _now,
+                                            "result": _row.get("result")}
+                    else:
+                        _lt._log({"action": "entry_retry_pending",
+                                  "mint": r["mint"],
+                                  "result": _row.get("result")})
         _st_f.write_text(json.dumps(_sent))
         paper["live_hook"] = sum(1 for v in _sent.values()
                                  if _now - v.get("t", 0) < 1200)

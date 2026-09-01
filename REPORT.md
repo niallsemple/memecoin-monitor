@@ -4085,3 +4085,28 @@ The entry-venue question is CLOSED. Open ROI work is only:
 (a) n=30 live tally for amendment #4; (b) validating nm_abort live;
 (c) trail-trigger latency in drains (Erin's trail filled near-zero —
 a faster exit cadence or a hard floor would have kept ~+40%).
+
+## §133 — Fresh-mint RPC lag: two live entries lost, retry path fixed (1 Sep 2026, ~23:15 BST)
+
+At 23:04 two fr-gate hook signals (wc2CKbQi, i5GY2ZK8) attempted live
+curve buys and BOTH failed with "mint not found": the brand-new mints
+returned a successful NULL from getAccountInfo while RPC nodes were
+still propagating the accounts. Worse, the automation marked both
+signals as sent UNCONDITIONALLY — the error consumed them, so no
+retry ever happened. Both tokens have since graduated (complete=True)
+— the entries were genuinely missable-only-because-of-lag.
+
+**Fixes deployed (both compile clean):**
+1. live_trader._get_account: a null value is now retried 3x with 2s
+   spacing across rotating RPCs before returning None — fresh-mint
+   propagation lag no longer fails the entry outright.
+2. automation.py signal hook: signals are only consumed on a real
+   outcome (submitted / dry-run / refused / skipped). "error:"
+   results log entry_retry_pending and leave the signal unconsumed,
+   so the next run retries inside the 1200s freshness window.
+
+Cost of the bug: 2 entries lost (both later graduated — exactly the
+fast-runner profile we want). The paper tally still tracks both, so
+forward stats remain honest. Live signal flow has otherwise been
+clean: 108 paper closes (+2.57% avg), wallet 2.6921 SOL idle and
+ready.

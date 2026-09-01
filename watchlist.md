@@ -3593,3 +3593,9 @@
 | 21:46 | solana | `6egyzrBa…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$12,408 | name=minideng symbol=minideng; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | minideng |
 | 21:46 | robinhood | `0xbD6638…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$80,523 mc=$777,982 | chain:robinhood no-audit-adapter | onchain PvP memecoin trading on Robinhood Chain. |
 | 21:46 | solana | `4WQwzSfe…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,203 | name=Jorge the cleaner symbol=Jorge; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 22:06 | robinhood | `0x6560A8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,699 mc=$16,848 | chain:robinhood no-audit-adapter | Dinner wif Candles, the first meme posted by the Robinhood Crypto X acc |
+| 22:06 | solana | `66e5nhwX…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:79% | liq=$0 mc=$8,025 | name=Brand Comments symbol=Brand; contract:clean; rugcheck_score=80 lpLocked=100%; top10_h |  |
+| 22:06 | solana | `Cj3upTXz…` | FAIL | TOP10_HEAVY:52% | liq=$0 mc=$15,260 | name=Quantum Cat symbol=QCAT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=5 |  |
+| 22:06 | solana | `J6XnsXMn…` | FAIL | RC_DANGER:Top 10 holders high ownership; RC_DANGER:Single holder ownership; RC_DANGER:High ownership; TOP10_HEAVY:100% | liq=$32,373 mc=$165,726 | name=cabalyst symbol=cabalyst; contract:clean; rugcheck_score=59 lpLocked=100%; top10_hold | cabalyst |
+| 22:06 | robinhood | `https://…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 22:06 | robinhood | `0x38C8f6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$106,046 mc=$192,820 | chain:robinhood no-audit-adapter |  |

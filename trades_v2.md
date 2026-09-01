@@ -255,3 +255,5 @@
 | 19:07 | SELL 2x | DVxaAXi3 | £4.01 | ladder stage 1 |
 | 21:47 | BUY | CYsTn9eJ | £7.82 | entry mc $153,142 | +31min |
 | 21:47 | BUY | 3DV5zVYW | £7.67 | entry mc $896,549 | +31min |
+| 22:06 | STOP | CYsTn9eJ | £0.10 | trail-stop at 0.01x |
+| 22:06 | STOP | 3DV5zVYW | £2.34 | trail-stop at 0.31x |
