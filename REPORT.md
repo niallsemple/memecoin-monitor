@@ -3486,3 +3486,27 @@ patch; next run lifts it to +0.7% and the tally to ≈ +6.2% gross /
 confirmed on-chain) is STILL absent from mfg_tokens.jsonl 30 min
 later — the birth detector's big-seed filter may have missed it.
 Investigate before relying on the fr gate's creator check for it.
+
+## §108 — Live execution path built and dry-run verified (2026-09-01 ~17:55 local)
+
+live_trader.py created (MON, gitignored wallet untouched):
+
+- **Two hard gates, both required**: (1) owner-created
+  manual_signoff.json with {"live": true} — the agent NEVER creates
+  it; (2) absence of STOP_LIVE_TRADING — drop that file in MON to halt
+  everything instantly. Checked before every trade.
+- **Key never leaves the machine**: Jupiter lite-api (no key needed;
+  quote-api.jup.ag is dead) returns an unsigned v0 transaction; local
+  ed25519 signing via cryptography; submit via public RPC.
+- **Sizing**: 5% of balance, hard cap 0.2 SOL/entry, always keeps
+  0.05 SOL for fees. Slippage 1500 bps, priority fee ~0.0002 SOL.
+- **Ledger**: mfg_live_trades.jsonl records every decision including
+  dry-runs and refusals — paper and live records stay comparable.
+- Verified: compile OK; self-test prints address/balance/mode;
+  dry-run buy against JUP mint fetched a real quote (0.01 SOL →
+  4,635,010 JUP atoms, impact 0.0018%) and correctly refused to submit
+  (no signoff). Mode prints DRY-RUN until the owner signs off.
+- Coverage limit: Jupiter routes PumpSwap (graduated) tokens only;
+  pre-graduation bonding-curve entries need the pump.fun program path
+  (§109). Early entries on the curve are where the s60 gate fires —
+  so §109 is required before live can follow the actual signals.
