@@ -3,11 +3,11 @@
   "entry_px": 3.079702043004423e-05,
   "entry_t": 1788283980,
   "mins_from_migration": 0.0,
-  "peak_x": 1.34,
-  "exit": "open",
-  "ret": 0.3361,
-  "n_ticks": 1526,
-  "last_t": 1788286877,
-  "age_min": 48.3
+  "peak_x": 1.38,
+  "exit": "stop",
+  "ret": -0.895,
+  "n_ticks": 1852,
+  "last_t": 1788287747,
+  "age_min": 62.8
  }
 }

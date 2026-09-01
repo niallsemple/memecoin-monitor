@@ -3955,3 +3955,38 @@ combined (+5.6% on 0.2615 deployed)**. Wallet: **2.6921 SOL vs
 Both exits were abort15 (neither token ran to the freeroll 1.8×
 gate); both sells landed first-try on the fixed submit path. Quote
 vs fill slippage running ~0.0002 SOL (0.15%) — inside expectations.
+
+## §129 — GPRO replay VERDICT: pool-birth entry is dead; the edge is on the curve (1 Sep 2026, ~21:10 BST)
+
+GPRO armed-birth pool replay completed the decisive window
+(3,614/4,316 ticks parsed, 1,852 work ticks, 62.8 min of path).
+Result for buy-at-pool-birth: entry 0.0m post-migration, peak 1.38×,
+exit=**stop at −89.5%**.
+
+**Why pool-birth entry cannot work on this meta:** MIG_PX (pump-amm
+seed ratio) = 3.26e-07 SOL/token. GPRO's FIRST post-migration tick
+already shows pool_sol 727.8 / pool_tok 23.6M → px 3.08e-05 =
+**94.5× the seed price**. The seed wallet's 85.005 SOL same-slot
+campaign bought the entire curve (79.31% of supply) BEFORE the pool
+opened; external buyers at pool birth fill at ~94×. The +123× move
+was a **curve-phase** phenomenon — by graduation it was done. The
+pool phase added ≤1.38×, then drained −89.5% (62.8m mark, matching
+the live-observed 19:40 drain), with only a weak 0.17×-of-entry
+dead-cat after.
+
+**Strategic consequences:**
+1. Armed-birth POOL entry (the candidate upgrade from §126) is
+   REJECTED by replay evidence: −89.5% on the flagship case.
+2. The EV lives pre-migration: curve-venue entry at armed-birth
+   detection would have seen ~94× into the migration slot, with the
+   drain risk arriving only post-pool-open. Our curve_buy path
+   (§111) already exists and currently refuses only graduated mints.
+3. Validates the CURRENT live config: fr-gate hook entries (15-40m
+   post-birth, pool venue) are NOT buying the manufactured top —
+   RST +7.6% and M32 +3.5% rode the post-migration second-leg drift
+   and exited via abort15 before any drain. The guard rails work.
+
+**Next:** replay the CURVE phase of GPRO (and the other armed
+cases) — entry at armed-birth detection pre-migration, exit rules
+into/through the migration slot — to size the curve-phase EV and
+its drain risk before considering any live curve-venue entries.
