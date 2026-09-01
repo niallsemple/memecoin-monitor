@@ -15,11 +15,11 @@
   "entry_t": 1788282387,
   "mins_from_migration": 0.0,
   "peak_x": 2.3,
-  "exit": "open",
-  "ret": 0.5983,
-  "n_ticks": 1223,
-  "last_t": 1788283168,
-  "age_min": 13.0
+  "exit": "trail",
+  "ret": 0.1303,
+  "n_ticks": 1243,
+  "last_t": 1788285033,
+  "age_min": 44.1
  },
  "GPRO": {
   "entry_px": 3.079702043004423e-05,

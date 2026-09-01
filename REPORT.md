@@ -4054,3 +4054,34 @@ The live stack was already protected against the trail catastrophe
 worst case ≈ +12.5% locked). nm_abort closes the one gap the tally
 exposed: momentum-stall trades previously rode to abort30/timestop
 through the drain window.
+
+## §132 — Entry-venue verdict FINAL: three-case armed-birth table (1 Sep 2026, ~22:40 BST)
+
+All three manufactured-meta armed-birth pool replays complete
+(full decision windows parsed from on-chain txs: GPRO 1,865 ticks,
+GROKCAT 309, Erin 1,243):
+
+| case    | pool-birth entry result | peak  | exit  | path                    |
+|---------|------------------------|-------|-------|-------------------------|
+| GPRO    | −68.8%                 | 1.38x | stop  | slow brew, drain @62.8m |
+| GROKCAT | −61.3%                 | 1.08x | stop  | dead in 7.5m            |
+| Erin    | +13.0%                 | 2.30x | trail | ran 18m, drained @44m   |
+
+Average: **−39.0%**. Even Erin — the one genuine runner — only
+survived because the freeroll banked 75% at 1.5x; its trail fill was
+near-zero (the drain outran the 0.5x-peak trigger between ticks), so
+the runner case netted just +13% of stake.
+
+**VERDICT, final:** pool-birth entry on this meta is a negative-
+expectancy lottery (−39% avg across the only three observed armed
+cases) — the entity's same-slot pump leaves external early buyers as
+exit liquidity. Combined with §130 (curve phase = 0 seconds,
+uncapturable), the capturable edge is exactly what the live system
+harvests: fr-gate hook entries 15-40m post-birth, drift-phase exits
+(abort15/abort30/nm_abort/freeroll+trail), +2.57% avg across 103
+forward paper closes, 2/2 live winners (+5.6% on deployed capital).
+
+The entry-venue question is CLOSED. Open ROI work is only:
+(a) n=30 live tally for amendment #4; (b) validating nm_abort live;
+(c) trail-trigger latency in drains (Erin's trail filled near-zero —
+a faster exit cadence or a hard floor would have kept ~+40%).
