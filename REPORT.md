@@ -2885,3 +2885,41 @@ Gate implication: entry-time filtering on launch mechanics is dead
 relative to our entry (13min for 4xBDmh; 3.6m for GsM2Nq). If dump
 timing clusters early, the defense is temporal: tighten the abort
 window / take profit faster rather than filter entries.
+
+## §86 — TIME-STOP BACKTEST: first rigorously positive variant (2026-09-01 ~06:05)
+
+**Correction to §83:** peak field is a MULTIPLE — the two "2x peaks"
+were +4.2% (AgLSnY) and +5.5% (AYEzsF). Nothing in the s60nm5 sample
+has run 2x except the three nm_abort anomalies (peaks +32-38%).
+
+**Bleeder lifecycle (n=3, all identical):** freerolled=False, peaks
++1.1% / +4.0% / +4.2% — never remotely near the +12.5% freeroll floor.
+Price drifts +1-4% after our entry, then a single insider dump zeros
+it: GsM2Nq at +3.6m, 4xBDmh at +13.4m, AgLSnY at +13.8m. (AgLSnY
+became bleeder #3 — closed -100% while its signer row was still
+RPC-starved. AYEzsF closed +5.8% — the max-concentration runner did
+NOT bleed, formally killing the pure concentration gate.)
+
+**Backtest — hard time-stop, exit at market if peak < +12.5% by T:**
+  T=+180s:  +4.62%/trade  (total +124.8% vs -96.1%)
+  T=+300s:  +1.37%/trade  (eats GsM2Nq whole, STILL positive)
+  T=+480s:  +2.17%/trade
+  T=+600s:  +2.65%/trade
+  T=+900s:  -3.99%/trade  (too late — all dumps land inside)
+n=27 committed closes, zero no-tape rows, no lookahead (exit price =
+last tape trade before T). Old expectancy -3.56%/trade.
+
+**Robustness:** the +300s variant stays positive even while taking
+GsM2Nq's full -100% — the edge does not depend on shaving seconds
+ahead of one dump. At +180s the GsM2Nq margin is 36s (exit +1.0%,
+dump +3:36) — real but thin; 4xBDmh/AgLSnY had 10+ minutes of margin.
+
+**Caveats (paper rules apply):** n=27, 3 bleeders; thin-tape exit
+fills ignored (last-trade price); the rule converts the strategy into
+a ~3-minute momentum scalp — positions that would freeroll late are
+clipped (24/27 rows stopped early, mostly at small positive).
+
+**Next build:** shadow scorer variant s60nm5ts180 (hard 180s stop on
+non-freerollers) accruing forward alongside s60nm5mb. If the forward
+sample confirms >= +1.5%/trade over the next ~30 closes, this becomes
+amendment #3 and the first candidate for the positive-ROI model.
