@@ -45,7 +45,10 @@ SNAPS = MON / "mfg_tokens.jsonl"
 STATE = MON / "mfg_state.json"
 KEYFILE = MON / "helius_key.txt"
 PUMP_WSS = "wss://pumpportal.fun/data-api/real-time"
-WINDOW_S = 19 * 60
+WINDOW_S = 14 * 60  # §139: was 19m — runs overran the 22m timeout, the next
+                    # 20m trigger was skipped (already_running), leaving ~18m
+                    # with NO exit watcher. 14m window + ~3m post-processing
+                    # finishes inside the interval; coverage becomes seamless.
 SEED_MIN = 5.0
 MAX_TRACK = 40                          # concurrent curve subscriptions (§66: quota)
 MAX_POOL_TRACK = 30                     # graduated tokens pool-tracked (2 subs each)
