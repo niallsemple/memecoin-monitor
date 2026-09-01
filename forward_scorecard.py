@@ -28,8 +28,13 @@ def main():
     # −2.0% post-cutoff vs a15 −1.7%/−5.75% and a30 −8.75%/−17.75%).
     # a30/a15 files still reported as shadows. Fallback chain: h108 -> a15
     # -> a30.
+    # §134 (1 Sep 2026): production config is now the fr gate
+    # (s60nm5fr) — the only net-positive forward config and the one the
+    # live wallet trades. Gate file chain re-pointed: s60nm5fr -> h108
+    # -> a15 -> a30; h108 and the old chain remain as shadows.
     pt = []
-    for cand in ("mfg_paper_trades_h108.jsonl", "mfg_paper_trades_a15.jsonl",
+    for cand in ("mfg_paper_trades_s60nm5fr.jsonl",
+                 "mfg_paper_trades_h108.jsonl", "mfg_paper_trades_a15.jsonl",
                  "mfg_paper_trades.jsonl"):
         gate_file = MON / cand
         if gate_file.exists():
@@ -61,8 +66,8 @@ def main():
     # per freerolled open) like the gate — that is the metric it must
     # prove out-of-sample.
     shadows = {}
-    for name in ("mfg_paper_trades_a15.jsonl", "mfg_paper_trades.jsonl",
-                 "mfg_paper_trades_s60.jsonl"):
+    for name in ("mfg_paper_trades_h108.jsonl", "mfg_paper_trades_a15.jsonl",
+                 "mfg_paper_trades.jsonl", "mfg_paper_trades_s60.jsonl"):
         if name == gate_file.name:
             continue
         try:

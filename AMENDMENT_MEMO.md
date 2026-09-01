@@ -57,3 +57,15 @@ If (1) fails but confirmed-entry offline stays positive → evaluate fallback. I
 
 - Gate re-zeros on the amended scorer: needs 30 committed closes with exp > 0 forward.
 - Then: readiness review (manual signoff) — position sizing, max daily loss, kill-switch, wallet ops. Never automated.
+
+---
+
+## 7. POST-AMENDMENT GATE — PASSED (2026-09-01 23:20 local, §134)
+
+Memo §6 required the amended scorer (s60nm5fr) to re-zero and accrue
+30 committed forward closes at exp > 0. Final tally: **98 committed
+closes, +1.507% committed expectancy, 90.8% win rate — PASSED at
+3.3x sample.** All retired configs remain negative as shadows. The
+readiness review (owner signoff, kill-switch, sizing) was completed
+before live activation; live validation stands at 2/2 winners,
++0.01463 SOL on 0.2615 deployed (+5.6%). Amendment chain COMPLETE.

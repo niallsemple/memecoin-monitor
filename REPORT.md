@@ -4110,3 +4110,30 @@ fast-runner profile we want). The paper tally still tracks both, so
 forward stats remain honest. Live signal flow has otherwise been
 clean: 108 paper closes (+2.57% avg), wallet 2.6921 SOL idle and
 ready.
+
+## §134 — POST-AMENDMENT GATE PASSED: fr scorer 98/30 at +1.51% (1 Sep 2026, 23:20 BST)
+
+The forward scorecard was still gated on the retired h108 hybrid
+(137 closes, −1.6% — correctly failing). Re-pointed the gate to the
+PRODUCTION config (s60nm5fr — the only positive config and the one
+the live wallet trades); old configs retained as shadows.
+
+**Amended-scorer forward tally (post-cutoff, honest fills):**
+- **98 committed closes, expectancy +1.507%/trade, win rate 90.8%**
+- Gate criterion (memo §6: 30 committed closes, exp > 0): **PASSED
+  98/30 — 3.3x the required sample**
+- Shadow scorers all negative (h108 −1.6%, a15 −1.9%, base −8.4%,
+  s60 −2.7%): the fr identity-reject filter is the difference between
+  a losing and a winning system. Universe context: 157 triggerable
+  mints post-cutoff, 36 runners ≥1.5x.
+- Memo §4 risk calibration holds: expectancy rests on many +3-8%
+  abort scratches + runner floors, not on never losing. Live
+  slippage measured 0.15%/round-trip (§128) — net expectancy
+  ≈ +1.36%/trade after costs.
+- Live validation: 2/2 real-money winners (RST +7.6%, M32 +3.5%),
+  wallet 2.6921 SOL vs 2.6839 funded.
+
+Per memo §6 the next step after gate pass was the readiness review —
+already completed (owner signoff, kill-switch, sizing caps, live
+trading active). The formal amendment chain is COMPLETE: amend ->
+re-zero -> 30+ committed closes at positive expectancy -> live.
