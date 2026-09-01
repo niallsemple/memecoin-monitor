@@ -4,22 +4,22 @@
   "entry_t": 1788280374,
   "mins_from_migration": 0.1,
   "peak_x": 1.08,
-  "exit": "open",
-  "ret": -0.4701,
-  "n_ticks": 189,
-  "last_t": 1788280602,
-  "age_min": 3.8
+  "exit": "stop",
+  "ret": -0.6134,
+  "n_ticks": 309,
+  "last_t": 1788280826,
+  "age_min": 7.5
  },
  "Erin": {
   "entry_px": 4.519420175475079e-06,
   "entry_t": 1788282387,
   "mins_from_migration": 0.0,
-  "peak_x": 1.81,
+  "peak_x": 1.93,
   "exit": "open",
-  "ret": 0.5751,
-  "n_ticks": 479,
-  "last_t": 1788282713,
-  "age_min": 5.4
+  "ret": 0.5656,
+  "n_ticks": 561,
+  "last_t": 1788282773,
+  "age_min": 6.4
  },
  "GPRO": {
   "entry_px": 3.079702043004423e-05,
