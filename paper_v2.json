@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 398.49709710366676,
+ "cash": 387.0547377178498,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -35,17 +35,6 @@
    "realized": 0.0,
    "opened": "2026-08-30T11:27:01.906752+00:00"
   },
-  "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
-   "addr": "CTPoyCwk",
-   "entry_mcap": 19361356.0,
-   "entry_min": 7218.2,
-   "size_gbp": 8.18,
-   "peak_mcap": 22887465.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-09-01T00:26:45.594849+00:00"
-  },
   "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
    "addr": "DVxaAXi3",
    "entry_mcap": 522409.0,
@@ -56,6 +45,28 @@
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-01T13:29:04.317705+00:00"
+  },
+  "solana:HzmASEo87R43BvUac3yaE7EStxWtA5z7LUGba6eGpump": {
+   "addr": "HzmASEo8",
+   "entry_mcap": 91259.0,
+   "entry_min": 10.4,
+   "size_gbp": 7.97,
+   "peak_mcap": 96911.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-01T15:26:31.092780+00:00"
+  },
+  "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
+   "addr": "CTPoyCwk",
+   "entry_mcap": 11214965.0,
+   "entry_min": 8120.0,
+   "size_gbp": 7.9,
+   "peak_mcap": 11214965.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-01T15:28:34.845992+00:00"
   }
  },
  "closed": [
@@ -1570,6 +1581,20 @@
    "closed_at": "2026-09-01T13:28:02.511898+00:00",
    "exit_r": 0.522,
    "pnl_gbp": -4.84
+  },
+  {
+   "addr": "CTPoyCwk",
+   "entry_mcap": 19361356.0,
+   "entry_min": 7218.2,
+   "size_gbp": 8.18,
+   "peak_mcap": 22887465.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 4.667149216950507,
+   "opened": "2026-09-01T00:26:45.594849+00:00",
+   "closed_at": "2026-09-01T15:27:32.982476+00:00",
+   "exit_r": 0.579,
+   "pnl_gbp": -3.64
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -1769,6 +1794,7 @@
   "solana:F56pXpCRNwRxekbuKkAauNqn3DyXw4HWc4nDMosfpump": "failed_momentum_floor",
   "solana:GabXLWNFc8EzSrxo8JMzxD3Tph5MXsRudcu4p3xnpump": "failed_momentum_floor",
   "solana:8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L": "failed_momentum_floor",
-  "solana:Hwu79kGTYxfznfkkq6mnwhybhGGkhZpuTjVEexo5pump": "failed_momentum_floor"
+  "solana:Hwu79kGTYxfznfkkq6mnwhybhGGkhZpuTjVEexo5pump": "failed_momentum_floor",
+  "solana:9WXFTNCAqNAHV916RwHJcacxMCJJq4Bqb35wScgypump": "failed_momentum_floor"
  }
 }

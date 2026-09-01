@@ -3263,3 +3263,15 @@ that no tape metric could provide (§85/§89/§93 all negative).
 
 Open positions in flight: 9orw5y, QTw25p (both ~1.01x). Tally:
 baseline n=24 +1.51%, ts180 n=25 -2.57%.
+
+## §98a — Funded-reject shadow deployed (2026-09-01 ~16:35 local)
+
+New scorer variant mfg_paper_trades_s60nm5fr.jsonl: identical s60nm5
+gate, but skips any entry whose creator is a tripwire-flagged funded
+wallet (mfg_funding.jsonl fresh_wallet set). Live in the tracker from
+the next run (paper_score gained funded_reject param; compile-clean;
+live code snapshotted to automations/tracker_live.py). Currently the
+funded set = {g9XbLp} and it has no launches, so the shadow matches
+s60nm5 until the armed wallet fires. Honesty note: the skip uses
+current funding data, so historical backfill rows carry lookahead —
+only forward closes after this deployment count for the variant call.

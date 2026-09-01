@@ -248,3 +248,6 @@
 | 06:09 | STOP | 4z8MysfA | £0.15 | trail-stop at 0.01x |
 | 13:28 | STOP | DVxaAXi3 | £4.97 | trail-stop at 0.52x |
 | 13:29 | BUY | DVxaAXi3 | £8.14 | entry mc $522,409 | +7080min |
+| 15:26 | BUY | HzmASEo8 | £7.97 | entry mc $91,259 | +10min |
+| 15:27 | STOP | CTPoyCwk | £4.67 | trail-stop at 0.58x |
+| 15:28 | BUY | CTPoyCwk | £7.90 | entry mc $11,214,965 | +8120min |

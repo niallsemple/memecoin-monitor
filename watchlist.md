@@ -3472,3 +3472,14 @@
 | 15:06 | robinhood | `0xCecAb1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,255 mc=$41,160 | chain:robinhood no-audit-adapter |  |
 | 15:06 | solana | `9WXFTNCA…` | PASS | — | liq=$26,427 mc=$102,048 | name=Copper Shit symbol=SHITCOPPER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
 | 15:06 | solana | `EMyRs7px…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$85,588 mc=$381,749 | name=GPRO symbol=GPRO; contract:clean; rugcheck_score=1 lpLocked=54.65306821772157%; top10 | There's currently a youtuber takeover of $GPRO stock.  Markiplier has a 8.5% sta |
+| 15:16 | solana | `BuY3MHza…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$30,694 mc=$145,621 | name=Soldog symbol=SOLDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48.6 | The dog that belongs on the Solana logo. 🐕⚡ Dogs built the culture. $SOLDOG clai |
+| 15:16 | robinhood | `0x686989…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 15:16 | solana | `3uLUj3sS…` | FAIL | TOP10_HEAVY:73%; RC_WARN:Copycat token | liq=$10,586 mc=$20,827 | name=RelayedArc symbol=ARC; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=72 | $ARC powers Relayed Arc, connecting everyday Web3 users to real micro gigs, from |
+| 15:16 | solana | `HzmASEo8…` | PASS | — | liq=$20,740 mc=$69,089 | name=Old Doge Memes symbol=$OLDOGE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 15:16 | solana | `YqcuATZx…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:98%; RC_WARN:Low amount of LP Providers | liq=$234,534 mc=$275,284 | name=Solami symbol=SOLAMI; contract:clean; rugcheck_score=50 lpLocked=15.535539713981517%; | We will turn the Solana logo into Solami. |
+| 15:16 | solana | `C76ZrSZ3…` | FAIL | TOP10_HEAVY:55% | liq=$0 mc=$30,171 | name=The loong dog symbol=LOONG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 15:26 | solana | `72WB4C8c…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$13,105 mc=$29,151 | name=Murk Curney symbol=MURK; contract:clean; rugcheck_score=1 lpLocked=99.97643235629906% |  |
+| 15:26 | robinhood | `0x58af76…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Fomo Yield. A transparent USDG vault on Robinhood Chain. Real yield, no fees, no |
+| 15:26 | robinhood | `0x5C11E1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,776 mc=$51,546 | chain:robinhood no-audit-adapter | Praxis Finance is the financial layer for markets, trading, yield and intelligen |
+| 15:26 | solana | `6rawCt4S…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$14,616 | name=Cat Executive Officer symbol=CEO; contract:clean; rugcheck_score=1 lpLocked=100%; top | CEO - Cat Executive Officer |
+| 15:26 | robinhood | `0x6d685f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$107,143 mc=$646,060 | chain:robinhood no-audit-adapter | FATCOIN |
