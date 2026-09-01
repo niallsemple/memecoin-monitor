@@ -3380,3 +3380,32 @@ Notes:
 - 4Lr8de has now dispensed 2× 203.96 despite earlier outflow — the tree
   is being refilled from upstream (likely 6fy6iH, 626.6 SOL at 14:50).
   Net observed deployable capital across the tree ≈ 1,800+ SOL today.
+
+## §103 — TRIPWIRE PREDICTED A LAUNCH: AR35wRzb in live bundle ecosystem ~30 min after arming (2026-09-01 17:15-17:30 local)
+
+Timeline: 4Lr8de armed AR35wRzb with 203.962 SOL at 16:42:38 (tripwire
+alert). At 17:15:47 a coordinated burst of 14+ single-signer PumpSwap
+(pAMMBay6) buys touched AR35wRzb in the same second — the universal
+manufactured-launch signature. The token involved: F5a7aNca…W1Vpump
+(extremely hot: 2,500+ txs within minutes; couldn't page to creation
+on public RPC — 25 pages × 100 only reached 17:18:46, still above the
+17:15:47 buys, so creation is earlier and the fee-payer at that depth,
+FaLcLtKY, is NOT proven creator; FaLcLtKY itself has 300+ txs back past
+16:40, not fresh).
+
+Also odd: between 16:44–17:11, AR35wRzb sent ~347 SOL back OUT to
+4Lr8de in 7 chunks (40-90 SOL each, multi-signed) — more than the
+203.96 it received, so AR35wRzb has other inbound. The tree moves
+capital in BOTH directions between staging wallets; "arming" is not
+one-way.
+
+Operational takeaways:
+1. Tripwire predictive value CONFIRMED circumstantially: funding alert
+   → same wallet inside a manufactured bundle ecosystem ~30 min later.
+2. Creator-keyed gating may MISS launches where the operator inserts a
+   hop (armed wallet funds a separate creator). Cheap resolution: when
+   the tracker's own birth indexer records F5a7aN (if it matches the
+   big-seed filter), its creator field gives definitive membership —
+   no RPC paging needed.
+3. Whether F5a7aN bleeds over the coming hours is the observable test;
+   if the fr shadow scored it, compare variants.

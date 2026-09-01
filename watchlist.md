@@ -3489,3 +3489,5 @@
 | 16:06 | robinhood | `0x4eBc15…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,774 mc=$135,547 | chain:robinhood no-audit-adapter | Every model. Your way. Compare leading AI models for free, then route them throu |
 | 16:06 | robinhood | `0x1cA54B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$63,586 mc=$3,149,039 | chain:robinhood no-audit-adapter | AAArtificial Inu |
 | 16:06 | robinhood | `0x8Fde7C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,908 mc=$38,260 | chain:robinhood no-audit-adapter | First $PONS Then $GPONS  gPons! The new @ponsdotfamily slogan is GPONS |
+| 16:16 | solana | `Ef5aanrj…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$12,484 mc=$28,445 | name=The Deflated Dog symbol=Borzoi; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 16:16 | solana | `posWsbD8…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$0 mc=$29,654 | name=POS symbol=POS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41.9% | Pump out stocks  Desks earn tokenised stock every round. |
