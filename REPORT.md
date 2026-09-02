@@ -4461,3 +4461,7 @@ another new high.
 - Helius quota still helps where freshness is non-critical: the **tracker's Helius WS birth feed** (429 errors should drop from ~8/run to ~0 on the new plan — watching next runs' helius_err).
 - No trades were at risk: zero open positions during the episode; all sell verifications used getTransaction (unaffected).
 - Wallet ground truth: **2.576654791 SOL** (mainnet-beta, slot 443679255). No missing funds — the discrepancy was purely Helius-side caching.
+
+## §165 — ewa6 close (2026-09-02 ~12:20 BST)
+- ewa6j3p5 abort15, peak 1.034; on-chain verified → **+0.0036 SOL** (exact in book). Book: 30 closes, 28 green (93.3%).
+- Post-panic-stop cohort: **13/13 green**. 10 closes to the 40-trade verdict.
