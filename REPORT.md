@@ -4307,3 +4307,17 @@ toward the abort30 gate (~02:49, needs r≥1.15).
 
 Live book (8 closes): net −0.09277 SOL, 7/8 winners. Since hardening (post-LUTN):
 5/5 green, +0.02031 SOL. Wallet 2.440466 SOL plus the open X6PH position.
+
+## §143 — X6PH +31.2%: first live nm_abort; the edge's right tail arrives (2 Sep 2026, 03:00 BST)
+
+X6PHP8op…pump (entered 02:19, 0.1283 SOL) ran the full intended path: survived
+abort15 (r≥1.08) and abort30 (peak 1.257), armed nm_touch at 1.30× (02:51:25),
+stalled below the 1.50× freeroll for 5 min, and nm_abort fired at r=1.316
+(02:57). Sell sig 27rAT6mW…T1ajha verified on-chain: err=None, wallet delta
++0.168370548 → pnl +0.04007 SOL (+31.2%). This is the exit profile the whole
+system was designed around — the §131 nm cohort (+30% avg in paper) now
+replicated live.
+
+Live book (9 closes): net −0.05270 SOL, 8/9 winners. Post-hardening (6 trades):
+6/6 green, +0.06038 SOL. Wallet 2.476158 SOL with one new position (x8P4Em9x,
+0.1304 SOL — sizing compounded with the balance) open.

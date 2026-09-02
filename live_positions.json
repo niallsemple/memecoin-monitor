@@ -96,18 +96,21 @@
         "pnl_sol": 0.00332
     },
     "X6PHP8opeuuWQgk6GmjJt4yPi6GB5swH1HqQdjLpump": {
-        "open": true,
+        "open": false,
         "mode": "live",
         "venue": "pool",
         "entry_t": 1788311947.823297,
         "entry_px": 8.117159509570155e-11,
         "tokens": 1580622313,
-        "tokens_left": 1580622313,
+        "tokens_left": 0,
         "size_sol": 0.1283,
-        "peak_mult": 1.1465855887131922,
+        "peak_mult": 1.3212798870871123,
         "freerolled": false,
-        "sol_recovered": 0.0,
-        "actual_fill_note": "buy sig UNp4qYkgGnJNJh5XwUZRKH2U1RCaHAJhnmf3QWFuwQRDfBBgVBqRNooYtnG8m7WYbVcoDtyJXaTUNRf6UnVLyTg verified; on-chain fill 1580622313 raw"
+        "sol_recovered": 0.168370548,
+        "actual_fill_note": "sig 27rAT6mW4DpSoHUpkVtCKtda2AAZsLRP2DH2E7FsaZzoudTJDS4aPdCZk1cqEbnVB9wyqutiHVJHQVrRjoT1ajha on-chain verified; wallet delta 0.168370548",
+        "nm_touch_t": 1788313885.961078,
+        "closed_reason": "nm_abort",
+        "pnl_sol": 0.04007
     },
     "HpyjpSM5bwe257ab1TLVj6dgDtvhy3cboYXAogdupump": {
         "open": false,
@@ -140,5 +143,18 @@
         "actual_fill_note": "sig 5FkeJBcM6WRr4RURh1gNbw6otwGiLJeRpT9dQ9RFW9hnn25Q2ecmYiqVUS4phBdcZdq8dz2j3pqnqtV8AgGau5Rv on-chain verified; wallet delta 0.116904872",
         "closed_reason": "abort15",
         "pnl_sol": 0.0013
+    },
+    "x8P4Em9xUeS4yNCotms5FVrf7FzhL56ybPUQFbSpump": {
+        "open": true,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788314353.8013299,
+        "entry_px": 8.761635814265952e-12,
+        "tokens": 14883065533,
+        "tokens_left": 14883065533,
+        "size_sol": 0.1304,
+        "peak_mult": 1.0,
+        "freerolled": false,
+        "sol_recovered": 0.0
     }
 }
