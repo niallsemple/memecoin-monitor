@@ -4454,3 +4454,10 @@ another new high.
 ## §163 — 7W9d close (2026-09-02 ~10:39 BST)
 - 7W9dZP9L abort15 at ~15.5m, peak 1.031; on-chain verified → **+0.0037 SOL** (exact figure in book). Book: 29 closes, 27 green.
 - Post-panic-stop cohort: **12/12 green**. Streak intact.
+
+## §164 — Helius upgrade: partial adoption after staleness discovery (2026-09-02 ~11:55 BST)
+- Owner upgraded Helius to 10M credits/month. Adopted Helius as trader RPC primary — then caught it serving a **stale wallet balance** (pre-sell 2.4442 at slot 443679182 while mainnet-beta showed the true 2.5767 at newer slot 443679255). Held for 5+ min after the sell landed; commitment levels made no difference.
+- **Action: reverted trader RPC order to public-first** (publicnode → mainnet-beta → Helius last fallback). Sizing and sell-verification reads stay on fresh public RPC.
+- Helius quota still helps where freshness is non-critical: the **tracker's Helius WS birth feed** (429 errors should drop from ~8/run to ~0 on the new plan — watching next runs' helius_err).
+- No trades were at risk: zero open positions during the episode; all sell verifications used getTransaction (unaffected).
+- Wallet ground truth: **2.576654791 SOL** (mainnet-beta, slot 443679255). No missing funds — the discrepancy was purely Helius-side caching.

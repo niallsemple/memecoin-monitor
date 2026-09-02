@@ -34,13 +34,16 @@ KILL_F = MON / "STOP_LIVE_TRADING"          # drop this file = instant halt
 LEDGER = MON / "mfg_live_trades.jsonl"
 
 SOL = "So11111111111111111111111111111111111111112"
-# §164: Helius (10M credits/mo) is now the primary RPC — faster, no 429s.
-# Public endpoints remain as fallbacks.
+# §164: Helius upgraded (10M credits/mo) BUT its balance/account reads served
+# a stale pre-sell snapshot for ~5+ min after a sell landed (verified vs
+# mainnet-beta at a NEWER slot). Unsafe for sizing/verification reads.
+# Order: public RPCs primary for account state; Helius kept as last fallback
+# (its WS birth feed in the tracker is unaffected and benefits from the plan).
 _HK_F = MON / "helius_key.txt"
 _HK = _HK_F.read_text().strip() if _HK_F.exists() else ""
-RPCS = ([f"https://mainnet.helius-rpc.com/?api-key={_HK}"] if _HK else []) + [
-        "https://solana-rpc.publicnode.com",
-        "https://api.mainnet-beta.solana.com"]
+RPCS = ["https://solana-rpc.publicnode.com",
+        "https://api.mainnet-beta.solana.com"] + \
+       ([f"https://mainnet.helius-rpc.com/?api-key={_HK}"] if _HK else [])
 JUP_Q = "https://lite-api.jup.ag/swap/v1/quote"
 JUP_S = "https://lite-api.jup.ag/swap/v1/swap"
 
@@ -125,7 +128,9 @@ def live_enabled():
 
 
 def balance_sol(address):
-    r = _rpc("getBalance", [address])
+    # §164b: Helius can serve stale finalized balances (~3 min observed);
+    # "confirmed" tracks the tip much closer for sizing decisions.
+    r = _rpc("getBalance", [address, {"commitment": "confirmed"}])
     return (r or {}).get("value", 0) / 1e9
 
 
