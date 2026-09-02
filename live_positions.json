@@ -272,5 +272,18 @@
   "actual_fill_note": "buy sig 5VpD67tX...pfoWe verified on-chain; actual fill 756330874 raw; SOL delta -0.12707908; sell sig V24zLk8G...ZMZE err None but pool drained pre-exit (mult 0.0 at trigger) \u2014 dust out, full stake loss + fee",
   "closed_reason": "abort15",
   "pnl_sol": -0.12499169
+ },
+ "ro8Btws2BfLJNGD6BCNdPmwtxtZL2R6LMYGKERdpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788326348.126722,
+  "entry_px": 7.515436532477947e-10,
+  "tokens": 169384705,
+  "tokens_left": 169384705,
+  "size_sol": 0.1273,
+  "peak_mult": 1.0,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }

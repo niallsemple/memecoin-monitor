@@ -4378,3 +4378,8 @@ another new high.
 - **Fix deployed**: §148 panic stop — any tick with r < 0.80 sells immediately regardless of age (placed above nm_abort in the stack). Mid-drain ticks now recover a fraction instead of zero. Trade-off: ~20% giveback on wicked dips that recover.
 - **Ground truth**: wallet 2.54611 SOL liquid, zero deployed, vs 2.0 funded → **+27.3% overall**. Book: 16 closes, 14 green; two drains (LUTN, 29H7) are the only losses and both predate the panic stop.
 - Per-trade book sum vs wallet has a residual gap from fee/dust rounding on corrected actuals; wallet balance is the source of truth.
+
+## §149 — Panic stop retro-validation (2026-09-02 ~06:40 BST)
+- Paper book (128 closed): drain cohort = 9 trades (7.0%), avg ret ≈ −95%. Panic stop at 0.80x converts those to −20% → ~+0.75 stake-equivalents saved per drain, ~6.75 return-units across the archive. Winners avg +9.4%, so drain salvage dominates.
+- Tick-path check (only 3 tokens with stored intra-trade paths: Erin, GPRO, GROKCAT): first sub-0.80 crossing NEVER recovered (later max ≤ crossing level in all 3). Dips below 0.80 were terminal in 100% of observable cases.
+- Caveat: full 130-trade intra-trade history isn't stored; verdict rests on 9 drains + 3 tick paths + 2 live drains (LUTN, 29H7) — all point the same way. Panic stop stays at 0.80.
