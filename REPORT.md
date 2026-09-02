@@ -4532,3 +4532,7 @@ another new high.
 ## §176b — escalation extended to nm_abort + fade (2026-09-02 ~14:40 BST)
 - All three momentum exits (panic, nm_abort, fade) now escalate 15%→30%→50% slip on verified-failed sells, same pass. Clock exits (abort15/30, timestop) deliberately single-shot: flat positions, next-pass retry is safe.
 - Note: escalated closes record closed_reason like "nm_abort_slip3000" — review_40.py and the book parser should treat the _slip suffix as the base reason (handled at verdict time).
+
+## §177 — routine dust sweep (2026-09-02 ~14:41 BST)
+- Gap sweep closed h1xM's dust ATA: sig 5qQzB9fd… landed, **+0.002069 SOL**. Wallet: **2.519852 SOL** (−6.11% vs funding baseline — best since live trading began).
+- Wallet arithmetic ties out: 2.511777 + h1xM net 0.008285 − new-ATA rent 0.00207 − fees ≈ 2.517783 pre-sweep; sweep refunds the rent.
