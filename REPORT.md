@@ -4911,3 +4911,21 @@ Auxiliary: 4/28 drain creators are themselves blocklist-known (vs 4/191 normals 
 1. **The edge is the EXIT stack, not the entry gate.** The live record's real defenses: panic/tripwire-fast exits (18/18 market-action green since panic stop), slippage escalation into dying pools, small size. Gate layers (crew tripwire, treasury watcher) stay ON as zero-cost shadow/log channels — their forward value comes only from §207 pre-launch worker mapping, which no crew mint has tested yet.
 2. **Sizing must NOT scale on gate confidence.** Any cap raise at the verdict rests solely on the exit stack's live stats.
 3. Overhang screens (§210A) remain inactive indefinitely — all three metric flavors failed validation.
+
+## §217 — Cascade fill forensics: our size class escaped BOTH drains near breakeven — execution config, not detection, was the failure (2026-09-03 ~00:10 UTC)
+
+Reconstructed the drain windows from the wallet ledger (who actually got filled, at what size, when):
+
+**LUTN (cascade, pool emptied over ~4 min):** 1,434 sells landed in the dump minute alone — **1,327 of them in our size class (<0.5 SOL), filling at 0.11–0.13 SOL ≈ our stake**. Liquidity existed for minutes. Our abort15 sell failed Custom 6001 (15% slippage too tight mid-collapse). The §176 escalation stack (15→30→50%) targets exactly this — evidence says it converts LUTN to a ~breakeven escape.
+
+**29H7 (single-tx instant drain, 1,394 SOL):** price went 1.05 → ~0 in one transaction at +12m. In the following minute, 152 sells still landed (100 in our size class, 0.11–0.30 SOL — scraps from residual liquidity). Our exit pass ran after the pool was already empty — a pure LATENCY failure: no price tick below 0.80× ever existed for the panic gate to see.
+
+**Escape-window math across the three crew events:**
+- JwQb: drained +16m — our 15-min abort had ALREADY exited (+0.008). abort15 saved us.
+- 29H7: drained +12m — 3 min inside our 15m abort. A 12m hard cap would have escaped; but LUTN held >1.08× until its +52m dump, so no clock catches it.
+- LUTN: only slippage-escalated sells save a cascade exit.
+
+**Verdict inputs (locked):**
+1. Escalation depth confirmed adequate for cascade drains — liquidity at our size is proven mid-collapse.
+2. Instant drains are irreducible tail risk: no gate or clock detects them pre-tx. **Stake size is the only control** — at 0.128 SOL a 29H7 costs 0.125; at 2× it costs 0.25. This, not gates, frames the sizing decision.
+3. Exposure time IS bounded: non-freerolled positions carry instant-drain risk only until their clock exit; JwQb proves the current 15m abort already catches the modal dump window (+16m).
