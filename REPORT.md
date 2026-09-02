@@ -4726,3 +4726,7 @@ MASTER-A outbound trace (1,455 txs): it forwards UP to two larger masters — 2,
 **Blocklist v3: 91 wallets** (4 masters, 2 killers, 46 workers, 39 funded-next-gen). Live gate now reads all four sections. The blocklist is officially predictive: it contains wallets that have never touched a token we trade but are funded by the drain network — if any appears on a mint at entry, DRAINER_NETWORK_ALERT fires.
 
 Hierarchy so far: MASTER-A2/A3 (top, observed) ← MASTER-A (mid-tier, 4,760 SOL/0.7h) ← 46 workers + 39 next-gen ← per-drain aggregators. MASTER-B (LUTN's 312 SOL) still staging.
+
+## §199 — Drain-clock falsification: no single timer (2026-09-02 22:10 UTC)
+
+Tested whether dumps key to token age (a predictable clock we could front-run with tighter aborts): 29H7 dumped at token-age **22.8m** (MASTER-A network); LUTN at **≥38.8m** (ledger backfill didn't reach its pool birth — lower bound). Different operations, different timers; no tradeable clock. Conclusion: timing-based defense is a coin flip (JwQb escaped by 60s). The feeder-presence gate (§195-196) remains the only evidence-backed defense — identity, not timing.
