@@ -11,7 +11,7 @@ import json, time, urllib.request
 WALLET = "CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K"
 RPC = "https://api.mainnet-beta.solana.com"
 FUNDING_BASELINE = 2.68389          # first wallet tx 2026-09-01 18:23 UTC
-PANIC_COHORT_FIRST = "Rhm9RvRQozJFiDzE688a21QbsrQsjhvUBmMDNKypump"  # first close after panic stop live
+PANIC_COHORT_FIRST = "ro8Btws2BfLJNGD6BCNdPmwtxtZL2R6LMYGKERdpump"  # first close after panic stop live (29H7 was last pre-panic drain)
 
 
 def rpc_balance():
