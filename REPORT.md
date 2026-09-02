@@ -4998,3 +4998,28 @@ population / tripwire feed — NOT an entry gate (§212-216 stand).
 
 **Next:** quiet→successor sweep — score early sellers on fresh mints against
 cluster centroids to catch rotations the funding graph misses.
+
+## §222 — Fingerprint matcher fails separation: rotation idea closed (2026-09-02)
+
+**Test:** `fp_match.py` scores any wallet against the §221 cluster centroids
+(one Helius page → feature vector → blended similarity). Validation:
+15 known killers vs 15 organic early-sellers from green live-close mints.
+
+**Result: NO separation.**
+- killers: median 0.987 (0.77–1.00)
+- organic controls: median 0.869, **max 0.983** — deep overlap.
+
+**Why:** only **7 distinct programs** exist across all 294 blocklist
+wallets (System, ComputeBudget, SPL Token, Token-2022, ATA, PumpSwap pAMM,
+pump.fun curve 6EF8…). Everyone touching pump.fun at this data resolution
+executes identically. The one "rare" program (6EF8 curve, 10/294) is just
+pre-graduation buying — organic buyers do it too. The UNKNOWN-source
+cluster was Helius failing to label bonding-curve txs, not exotic tooling.
+
+**Verdict:** the ChatGPT rotation-fingerprint idea is **dead at coarse
+resolution** — a detector that scores organic wallets 0.98 cannot feed a
+tripwire. Consistent with §212-216: identity signals do not gate forward.
+§221's descriptive finds stand (59-killer shared binary; MASTER-A/C/D
+execution merge) but have no forward-detection use. The treasury watcher
+(§207) remains the only rotation feed. Exit stack remains the edge.
+No further spend on this branch.
