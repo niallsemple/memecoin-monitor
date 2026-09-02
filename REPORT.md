@@ -4858,3 +4858,12 @@ The verdict activation is now a one-word file flip, not a code change under pres
 - One partial exception: AgLS showed LOO crew=11 — its C/D treasury wallets were already known from a prior drain. **Known-wallet reuse is the only channel through which the tripwire can ever fire forward.**
 - **Consequence for the verdict:** §210A (overhang screen) becomes the PRIMARY gate — per §189 BOTH live drains (29H7 swarm AND LUTN lone-insider) had killers that never bought via the pool, i.e. both were overhang-detectable at entry. The §209 replay's G2 economics hold only if overhang catches the 29H7 shape; the crew tripwire degrades to a bonus layer.
 - **This elevates two systems:** (1) the §211 forward overhang sampler is now THE critical evidence stream for the verdict; (2) the §207 treasury watcher is the tripwire's only forward feed — it pre-maps next-gen workers before their mint exists (capital recycling proven in §206), which is exactly the gap this audit exposed.
+
+## §213 — Overhang historical backfill: NEGATIVE result — proxy impossible with data held; forward sampler is the only path (2026-09-02 ~22:55 UTC)
+
+Attempted to validate the overhang screen historically via a ledger proxy (insider share = SOL sold by never-pool-bought wallets / total sell SOL, 219 paper mints):
+
+- **FP rate 76–87% at every threshold** — the proxy cannot separate true insiders from bonding-curve buyers: normal buyers purchase pre-graduation on the CURVE, then sell on the pool, appearing as "never bought". The two live drains themselves read as false positives (29H7 paper twin +0.15 with 99.4% "insider" share).
+- **Coverage gap found:** the wallet ledger only follows pools we entered or screened (~46 mints). 20/25 paper drains have ZERO ledger rows — pool-level intelligence has been entry-triggered, not systematic.
+- Root cause: `mfg_trades.jsonl` (996k curve trades) has no wallet field; pool ledger has wallets but no curve legs; no historical top-holder snapshots exist. A true historical overhang reconstruction requires parsing each mint's creation-era transactions for initial token distribution (forensic v2, Helius parsed history — feasible but per-mint expensive).
+- **Verdict consequence (locked):** the overhang screen's accuracy can ONLY be measured forward via §211. If forward samples are too thin at 40 closes, the verdict flips the crew tripwire + cap raise but holds §210A (overhang gate) in shadow until n≥20 fresh-age samples. Evidence gates activation, not the calendar.
