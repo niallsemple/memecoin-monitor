@@ -4781,3 +4781,11 @@ Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
 - **LUTN (−0.135): 0 early, 1 total** — MASTER-B's unmapped crew; feeder gate blind to it. Coverage = the §191 insider-overhang screen (its killer held pre-pool tokens → overhang flags at entry).
 
 **Calibrated gate (for 40-close verdict):** block/skip if crew_wallets(≤2m post-entry, or in pool history at entry) ≥ 30 → catches 29H7+JwQb, zero false positives, zero green sacrifice. PLUS insider-overhang ≥ threshold for the lone-insider case (LUTN). Two screens, two attack shapes, full historical coverage of all three drain events.
+
+## §205 — Entries #35/#36 (EoBTrx, 5mAgt): drought breaks, both green; screen-timing clarified (2026-09-02 ~21:20 UTC)
+
+- The entry drought ended at **15:41 UTC** with a pair of graduated-pool entries opened 15s apart: **EoBTrx** (0.1261 SOL) and **5mAgt** (0.1196 SOL). Both rode to ~1.04×, hit the 15-min abort, and closed **green**: +0.00485 and +0.00468. Sells on-chain verified (err=None, slots 443736441/443736459, wallet deltas match book to the lamport).
+- **Book: 36 closes, 33 green (91.7%), net −0.13594 SOL all-time** (was −0.14547 before this pair). Market-action streak since the panic stop: **20/20 green**. Wallet ≈ 2.5358 SOL (−5.5% vs 2.68389 funding).
+- **Screen-timing clarification:** zero `insider_screen` rows in the ledger despite §191 wiring — investigated. Cause is deployment order, not a bug: entries fired 15:41 UTC, `_shadow_insider_screen` landed on disk 17:46 UTC. Manual invocation post-close works and logs correctly.
+- First ever reading on a real entry mint (EoBTrx, taken 3.9h post-close — retrospective, not entry-time): **overhang 44.3%, 20 non-buyer whales, 0 blocklist feeders — and the mint still closed green.** Reinforces §204's design: overhang alone is not a veto; it must combine with the crew-count gate. Forward (entry-time) readings begin with entry #37+.
+- Countdown: **4 closes to the 40-close verdict** (promote crew≥30 + overhang screens to blocking, sizing scale-up decision, fr-vs-mbfr amendment).

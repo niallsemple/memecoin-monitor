@@ -559,7 +559,10 @@
   "sol_recovered": 0.130954507,
   "closed_reason": "abort15",
   "pnl_sol": 0.00485451,
-  "actual_fill_note": "sell sig Wns9h2U7...1nbci on-chain verified err=None slot 443736441; wallet delta 0.130954507"
+  "actual_fill_note": "sell sig Wns9h2U7...1nbci on-chain verified err=None slot 443736441; wallet delta 0.130954507",
+  "insider_overhang_pct": 44.29,
+  "insider_n": 20,
+  "blocklist_feeders": 0
  },
  "5mAgtK1TwJWLurfCN3T3GUqyFR1C9kpTZBhvR9Upump": {
   "open": false,
