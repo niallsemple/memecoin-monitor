@@ -94,5 +94,51 @@
         "actual_fill_note": "sig c9p1pn2noYPLfogfkcfmFiXr4Pzox4fm9KSXc1BMpaxYg4sr8gqQ1GMbPMKE8gjhbPYyD9kgDrckeAFFBwyXy8i on-chain verified; wallet delta 0.131518379",
         "closed_reason": "abort15",
         "pnl_sol": 0.00332
+    },
+    "X6PHP8opeuuWQgk6GmjJt4yPi6GB5swH1HqQdjLpump": {
+        "open": true,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788311947.823297,
+        "entry_px": 8.117159509570155e-11,
+        "tokens": 1580622313,
+        "tokens_left": 1580622313,
+        "size_sol": 0.1283,
+        "peak_mult": 1.1465855887131922,
+        "freerolled": false,
+        "sol_recovered": 0.0,
+        "actual_fill_note": "buy sig UNp4qYkgGnJNJh5XwUZRKH2U1RCaHAJhnmf3QWFuwQRDfBBgVBqRNooYtnG8m7WYbVcoDtyJXaTUNRf6UnVLyTg verified; on-chain fill 1580622313 raw"
+    },
+    "HpyjpSM5bwe257ab1TLVj6dgDtvhy3cboYXAogdupump": {
+        "open": false,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788311962.795576,
+        "entry_px": 2.075442463033422e-10,
+        "tokens": 586730018,
+        "tokens_left": 0,
+        "size_sol": 0.1218,
+        "peak_mult": 1.0719066455101915,
+        "freerolled": false,
+        "sol_recovered": 0.130225387,
+        "actual_fill_note": "sig 5Sw76oFmTN2ybzozWrDbTx8PbL2B1Xbn1jJi1SW4Zs7x6BNteGkndWP8dk9UHBJHncadoiFwtiNhATXTLh3XgJTD on-chain verified; wallet delta 0.130225387",
+        "closed_reason": "abort15",
+        "pnl_sol": 0.00843
+    },
+    "Fvzk3o4MgosWPQE5XLDsXgEFKEhyLJsgdRaVSA8pump": {
+        "open": false,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788311977.740303,
+        "entry_px": 3.942483127297664e-09,
+        "tokens": 29321613,
+        "tokens_left": 0,
+        "size_sol": 0.1156,
+        "peak_mult": 1.0140459427398893,
+        "freerolled": false,
+        "sol_recovered": 0.116904872,
+        "actual_fill_note": "sig 5FkeJBcM6WRr4RURh1gNbw6otwGiLJeRpT9dQ9RFW9hnn25Q2ecmYiqVUS4phBdcZdq8dz2j3pqnqtV8AgGau5Rv on-chain verified; wallet delta 0.116904872",
+        "closed_reason": "abort15",
+        "pnl_sol": 0.0013
     }
 }

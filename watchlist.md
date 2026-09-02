@@ -3653,3 +3653,9 @@
 | 01:06 | solana | `72NtVkCk…` | FAIL | TOP10_HEAVY:62%; RC_WARN:Copycat token; RC_WARN:Low Liquidity | liq=$10,490 mc=$20,531 | name=ALON symbol=alon; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=61.7% | Alon |
 | 01:06 | robinhood | `0x5a3544…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,618 mc=$12,376 | chain:robinhood no-audit-adapter | Kekfun is the most powerful launchpad on Robinhood.  Seize the Memes of Producti |
 | 01:06 | solana | `8WthYHc7…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$11,132 | name=Anthropic symbol=Butthole; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 01:26 | robinhood | `0xC97eDC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,336 mc=$99,154 | chain:robinhood no-audit-adapter | Quaddle: The Open-Source, Do-It-All Robot Dog  An open-source robotics kit for m |
+| 01:26 | solana | `AckB4GuV…` | FAIL | TOP10_HEAVY:55% | liq=$9,405 mc=$17,523 | name=Cupsey symbol=Cupsey; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=54.7 |  |
+| 01:26 | robinhood | `0x2210c8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | much stocks. very AI. such NFT. RH wow. 8 agents trade tokenized stocks from pub |
+| 01:26 | robinhood | `0xb8D9F9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$65,109 mc=$86,677 | chain:robinhood no-audit-adapter | The First Personified AI Cloning Platform in Web3, On-Chain Value × 24/7 Presenc |
+| 01:26 | robinhood | `0x4D3f37…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$388,265 mc=$2,775,068 | chain:robinhood no-audit-adapter | Don't sell your stocks. Borrow against them.  Ripe is an onchain credit protocol |
+| 01:26 | solana | `2R3MTHtR…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$13,679 | name=Not wrong, Early symbol=Sperm; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |

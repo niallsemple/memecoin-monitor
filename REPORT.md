@@ -4296,3 +4296,14 @@ verified the entry fill before opening; §137 verified the exit before closing.
 Live book (6 closes): RST +0.01017, M32 +0.00446, J3a2 +0.00912, LUTN −0.13481,
 Rhm9 +0.00524, kXgk +0.00332 → net −0.10250 SOL, 5/6 winners. Wallet 2.565873 SOL
 (new high). All five post-protection trades green; LUTN remains the only loser.
+
+## §142 — Batch of three: Hpyj +6.9%, Fvzk +1.1% verified; X6PH survives (2 Sep 2026, 02:36 BST)
+
+The 02:19 three-entry batch resolved its first two at the abort15 gate, both
+on-chain verified: HpyjpSM5 abort15 r=1.072 → wallet delta +0.130225387, pnl
++0.00843 (+6.9%); Fvzk3o4M abort15 r=1.014 → delta +0.116904872, pnl +0.00130
+(+1.1%). X6PHP8op survived the gate (peak 1.133, r≥1.08 at 15m) and trades on
+toward the abort30 gate (~02:49, needs r≥1.15).
+
+Live book (8 closes): net −0.09277 SOL, 7/8 winners. Since hardening (post-LUTN):
+5/5 green, +0.02031 SOL. Wallet 2.440466 SOL plus the open X6PH position.
