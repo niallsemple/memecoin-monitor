@@ -4392,3 +4392,11 @@ another new high.
 - BF13ezea abort15 at 17.6m: verified wallet delta 0.134964177 vs 0.1275 → **+0.00746 SOL**.
 - JwQb7erb abort15 at 17.3m: verified wallet delta 0.129387598 vs 0.1210 → **+0.00839 SOL**.
 - **Book: 20 closes, 17 green (85%).** Wallet 2.56157 SOL, fully liquid, zero open. 20-trade review due next.
+
+## §152 — 20-close review: on-chain reconciliation + honest verdict (2026-09-02 ~07:05 BST)
+- Pulled the wallet's FULL on-chain history (41 sigs, complete since creation). Every recorded balance checkpoint ties out exactly (2.6271, 2.3645, 2.4957, 2.5461, 2.5503, 2.4205, 2.5616 — all match to dust).
+- **CORRECTION**: funding was +2.68389 SOL (first and only inbound transfer, 09-01 18:23), not 2.0 as previously assumed. Earlier "+27% overall" claims used the wrong baseline.
+- **Ground truth at 20 closes: equity ≈ 2.5616 SOL (2.4312 liquid + 0.1281 deployed in L1PE) vs 2.68389 funded → net −0.1223 SOL (−4.6%).**
+- Attribution: 18 green closes +0.1647 total; two drains (LUTN −0.1348, 29H7 −0.1250) −0.2598; fees/dust ≈ −0.027. **Drains are 100% of the problem.** Book win rate 85% but the tail eats the edge.
+- Both drains predate the §148 panic stop. Post-panic-stop cohort (ro8B, BF13, JwQb): 3/3 green, +0.0223. Sample tiny but the fix targets exactly the loss mechanism.
+- Verdict: edge exists in the win rate and nm_abort spikes, but net ROI is NOT yet positive live. The path to positive: panic stop caps drains at ~−20% instead of −100%; at paper's 7% drain rate that flips expectancy clearly positive. Need ~20 more closes under the panic stop to confirm.
