@@ -3707,3 +3707,9 @@
 | 04:56 | robinhood | `0xE0B2d9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$55,855 mc=$63,762 | chain:robinhood no-audit-adapter | RobinPanda ($RPANDA) | Robinhood Chain  RobinPanda is a new meme-native asset bu |
 | 04:56 | solana | `3oWYhx11…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$9,458 | name=THAT COIN symbol=SHUSH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=70 | 1. We don’t talk about THAT COIN. 2. We don’t shill THAT COIN. 3. Any shilling w |
 | 04:56 | robinhood | `0xbac730…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11 mc=$13,698 | chain:robinhood no-audit-adapter | AI trading & fair token launchpad on Robinhood Chain. |
+| 05:36 | robinhood | `0x5513ec…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,558 mc=$34,440 | chain:robinhood no-audit-adapter | Applecoin |
+| 05:36 | solana | `HbyGKSGM…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$18,853 | name=PIZZACOIN symbol=PIZZA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=60 |  |
+| 05:36 | robinhood | `0x79eb7d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$14,107 | chain:robinhood no-audit-adapter | Hold $TGC. Earn $GLD |
+| 05:36 | solana | `BP6vw9JJ…` | FAIL | TOP10_HEAVY:91% | liq=$0 mc=$4,738 | name=His Greed Will Consume Him symbol=CHUFFY; contract:clean; rugcheck_score=1 lpLocked=1 |  |
+| 05:36 | robinhood | `0x2e794A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$955,983,701,630 | chain:robinhood no-audit-adapter |  |
+| 05:36 | solana | `7KEPvuY6…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,093 mc=$2,026 | name=artificialpepe symbol=AIPEPE; contract:clean; rugcheck_score=33 lpLocked=100%; top10_ |  |

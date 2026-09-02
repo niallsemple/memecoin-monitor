@@ -4383,3 +4383,7 @@ another new high.
 - Paper book (128 closed): drain cohort = 9 trades (7.0%), avg ret ≈ −95%. Panic stop at 0.80x converts those to −20% → ~+0.75 stake-equivalents saved per drain, ~6.75 return-units across the archive. Winners avg +9.4%, so drain salvage dominates.
 - Tick-path check (only 3 tokens with stored intra-trade paths: Erin, GPRO, GROKCAT): first sub-0.80 crossing NEVER recovered (later max ≤ crossing level in all 3). Dips below 0.80 were terminal in 100% of observable cases.
 - Caveat: full 130-trade intra-trade history isn't stored; verdict rests on 9 drains + 3 tick paths + 2 live drains (LUTN, 29H7) — all point the same way. Panic stop stays at 0.80.
+
+## §150 — ro8B close (2026-09-02 ~06:37 BST)
+- ro8Btws2 exited via abort15 at 15.8m, mult 1.053; sell on-chain verified (err None), wallet delta 0.133737541 vs 0.1273 stake → **+0.00644 SOL (+5.1%)**.
+- First trade born under the §148 panic stop — never needed it, never dipped toward 0.80. Book: 17 closes, 15 green. 3 closes to the 20-trade review.
