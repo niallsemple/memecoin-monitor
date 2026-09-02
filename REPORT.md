@@ -4666,3 +4666,13 @@ Full-address history trace of both drain killers (Helius parsed API):
 3. **Consolidation** — proceeds flow to durable master wallets within minutes. Masters are the network identifiers: B9M7… and 6iQ9… can be mapped across every drain they touch.
 
 Next: trace the two masters' histories, count drains feeding them, and check whether their fresh-wallet children appear in any of our other 34 mints' ledgers — turning one fingerprint into a full network map (and a blocklist).
+
+## §193 — Master-wallet network map (first pass) (2026-09-02 20:10 UTC)
+
+Cross-referenced both masters against the full 29,326-wallet ledger:
+
+**MASTER-A (B9M7zn49…rdxB, from 29H7):** ~3,938 SOL consolidated within ~70 minutes of the 29H7 drain — the killer's 2,496 SOL PLUS three more large feeds (711, 92.5, 637.9 SOL). The 711 SOL feed from 4mFawJABfM9B implies **a second concurrent drain** the same evening. One feeder (2PaBQVnymR2F, 637.9 SOL) is IN our ledger — it was a 29H7 accomplice seller (28.39 SOL). Network confirmed inside our own dataset.
+
+**MASTER-B (ByFDrU4k…EB7Y, from LUTN):** single 312.4 SOL feed from the LUTN killer in the observed window — smaller or newer operation.
+
+**`drainer_blocklist.json` created** (2 masters, 2 killers, 5 feeders — two feeders pending full-address resolution). Deeper paging of MASTER-A's history (300-tx window only covered ~1 hour) is the next slice: enumerate all children, then the blocklist becomes a live-gate input (fresh wallet funded by known master = auto-reject).

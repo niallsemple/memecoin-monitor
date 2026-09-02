@@ -1,0 +1,49 @@
+{
+ "masters": {
+  "B9M7zn49Ywoabc7B5FN1N8cTkMTroBETS9FdhNY5rdxB": {
+   "tag": "MASTER-A",
+   "seen": "29H7 drain 2026-08-31",
+   "consolidated_sol_observed": 3937.9
+  },
+  "ByFDrU4kPLupw7dDYXFDxc1hxPuVDZeax5r2mLg6EB7Y": {
+   "tag": "MASTER-B",
+   "seen": "LUTN drain 2026-08-31",
+   "consolidated_sol_observed": 312.4
+  }
+ },
+ "killers": {
+  "7Ljg1CrYNFkAvPjQuiGxQJamxgT6K94jp2bAUxi6byuW": {
+   "mint": "29H7GkA9LzMdB1buRScFPUPywjbyFYxBibtpQMFVpump",
+   "dumped_sol": 1394.0
+  },
+  "5Lyboj8PgBQbCjP2rp8V9MRC6Xsd1hwbs2NJgAbqkYgD": {
+   "mint": "LUTNZsftGW64Zch1mqWp6hoGSHLkHQQ7rsuFy3ppump",
+   "dumped_sol": 306.54
+  }
+ },
+ "feeders": {
+  "2PaBQVnymR2FPGUbJmiwhYVaswoXfPCNuP5RWXqArCSE": {
+   "feeds": "MASTER-A",
+   "sol": 637.93,
+   "also": "29H7 accomplice seller 28.39 SOL"
+  },
+  "6FVY9w7vB6fUVeZCKaGs75iqEUWBTsNTX2KWfposCmdH": {
+   "mint": "29H7",
+   "dumped_sol": 36.69
+  },
+  "2ATZiZiRCj7r3oM5rF32yYiUyCBwms6Daw4r1Prpz3ZG": {
+   "mint": "LUTN",
+   "dumped_sol": 8.9
+  },
+  "4mFawJABfM9B": {
+   "feeds": "MASTER-A",
+   "sol": 711.04,
+   "note": "TRUNCATED - resolve full addr"
+  },
+  "9vLMX7oBugai": {
+   "feeds": "MASTER-A",
+   "sol": 92.5,
+   "note": "TRUNCATED - resolve full addr"
+  }
+ }
+}
