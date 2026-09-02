@@ -245,6 +245,15 @@ def buy(mint, reason="signal"):
         row["result"] = "refused: zero size (balance too low)"
         _log(row)
         return row
+    # §210A: G2 pre-entry overhang gate (INACTIVE until g2_gate.json).
+    if ok and _g2_active():
+        _block, _ev = _g2_preentry_gate(mint)
+        row["g2"] = _ev
+        if _block:
+            row["result"] = ("blocked: G2 overhang "
+                             f"{_ev.get('overhang_pct')}%")
+            _log(row)
+            return row
     try:
         q = jupiter_quote(mint, size, "buy")
         row["quote_out"] = q.get("outAmount")
@@ -715,6 +724,81 @@ def _feeder_count(mint):
     return len(hits), sorted(hits)[:8]
 
 
+# §210: G2 blocking gate — PRE-STAGED, INACTIVE until the 40-close
+# verdict flips g2_gate.json {"active": true}. Two halves covering the
+# two observed drain shapes (§209 sim: gated book +0.115/+0.200 SOL at
+# 1x/2x vs -0.136/-0.306 ungated):
+#   A) pre-entry overhang gate in buy() — lone-insider shape (LUTN):
+#      skip entry if insider overhang >= G2_OVERHANG_MIN percent.
+#   B) post-entry crew tripwire in exit_watch() — swarm shape (29H7):
+#      market-sell immediately if >= G2_CREW_MIN blocklist wallets
+#      trade the mint within 120s of our entry. Crew arrives AFTER
+#      graduation, so no pre-entry gate can see them; the tripwire is
+#      the live implementation of the calibrated "crew>=30 <=2m" rule.
+G2_GATE_F = MON / "g2_gate.json"
+G2_CREW_MIN = 30
+G2_OVERHANG_MIN = 30.0
+G2_TRIP_WINDOW_S = 120
+G2_TRIP_MAX_AGE_MIN = 3.0
+
+
+def _g2_active():
+    try:
+        return bool(json.loads(G2_GATE_F.read_text()).get("active"))
+    except Exception:
+        return False
+
+
+def _crew_count(mint, entry_t, window=G2_TRIP_WINDOW_S):
+    """Distinct blocklist wallets trading mint in [entry_t, entry_t+w]."""
+    bl = _blocklist_wallets()
+    if not bl:
+        return 0
+    import wallet_ledger
+    hits = set()
+    if wallet_ledger.LEDGER.exists():
+        for line in wallet_ledger.LEDGER.open():
+            if not line.strip():
+                continue
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            if r.get("mint") == mint and r.get("wallet") in bl \
+                    and entry_t <= r.get("t", 0) <= entry_t + window:
+                hits.add(r["wallet"])
+    return len(hits)
+
+
+def _g2_preentry_gate(mint):
+    """Screen a mint BEFORE entry. Returns (block, evidence).
+    Fail-open on any error (screen outage must not halt trading) but
+    logs g2_gate_error loudly so a silently-dead gate is visible."""
+    ev = {"overhang_pct": None, "insider_n": None}
+    try:
+        import insider_screen
+        pool = insider_screen.POOLS.get(mint) or _discover_pool(mint)
+        if not pool:
+            ev["error"] = "no pool found"
+            _log({"action": "g2_gate_error", "mint": mint, **ev})
+            return False, ev
+        import wallet_ledger
+        wallet_ledger.update(mint, pool)
+        if mint not in insider_screen.POOLS:
+            insider_screen.POOLS[mint] = pool
+        s = insider_screen.screen(mint)
+        ev["overhang_pct"] = s.get("overhang_pct")
+        ev["insider_n"] = len(s.get("insiders", []))
+        block = (ev["overhang_pct"] is not None
+                 and ev["overhang_pct"] >= G2_OVERHANG_MIN)
+        _log({"action": "g2_gate", "mint": mint, "block": block, **ev})
+        return block, ev
+    except Exception as e:
+        ev["error"] = str(e)[:150]
+        _log({"action": "g2_gate_error", "mint": mint, **ev})
+        return False, ev
+
+
 def _shadow_insider_screen(mint, pos):
     try:
         import wallet_ledger
@@ -781,7 +865,18 @@ def exit_watch():
                 p["nm_touch_t"] = time.time()
             act = None
             sell_tokens = 0
-            if not p["freerolled"] and r >= P_FR_TARGET:
+            # §210B: G2 crew tripwire (INACTIVE until g2_gate.json) —
+            # swarm-shaped drains arrive within 120s of entry; an
+            # immediate market sell near breakeven beats the drain.
+            if not p["freerolled"] and _g2_active() \
+                    and mins <= G2_TRIP_MAX_AGE_MIN \
+                    and not p.get("crew_checked"):
+                p["crew_checked"] = True
+                if _crew_count(mint, p["entry_t"]) >= G2_CREW_MIN:
+                    act, sell_tokens = "crew_trip", p["tokens_left"]
+            if act:
+                pass
+            elif not p["freerolled"] and r >= P_FR_TARGET:
                 act, sell_tokens = "freeroll", int(p["tokens_left"] * P_FR_SELL)
             elif p["freerolled"] and r <= P_TRAIL_F * p["peak_mult"]:
                 act, sell_tokens = "trail", p["tokens_left"]
@@ -815,7 +910,8 @@ def exit_watch():
                     # rejected tx risks riding to zero. Clock exits
                     # (abort15/30, timestop) stay single-shot: flat
                     # positions, safe to retry next pass.
-                    if act in ("panic", "nm_abort", "fade") \
+                    if act in ("panic", "nm_abort", "fade",
+                               "crew_trip") \
                             and res.get("sig") \
                             and not _tx_success(res["sig"]):
                         _log({"action": "slip_escalate", "mint": mint,

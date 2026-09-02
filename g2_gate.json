@@ -1,0 +1,1 @@
+{"active": false, "note": "G2 blocking gate. Flip to true ONLY at the 40-close verdict (REPORT.md sec.209). crew>=30/120s tripwire + overhang>=30% pre-entry skip.", "crew_min": 30, "overhang_min": 30.0, "staged": "2026-09-02"}

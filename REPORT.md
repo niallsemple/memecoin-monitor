@@ -4832,3 +4832,13 @@ Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
 2. G1 alone is not enough: misses the lone-insider attack shape (LUTN), stays red.
 3. **G2 flips the all-time book positive at both sizes** — the two screens cover both observed attack shapes, zero green sacrifice beyond JwQb (+0.008, which genuinely drained 60s after our exit — a correct skip).
 4. The LUTN-miss row is the honest downside: if the overhang screen fails on a future unmapped crew, economics degrade to G1 (≈ breakeven), not to G0. Downside of promotion is bounded; downside of NOT promoting is unbounded (next drain at 2× = −0.25).
+
+## §210 — G2 gate pre-staged in live_trader.py, INACTIVE behind g2_gate.json (2026-09-02 ~22:25 UTC)
+
+The verdict activation is now a one-word file flip, not a code change under pressure:
+
+- **§210A pre-entry overhang gate** in `buy()`: screens the mint before the quote (pool discovery + ledger update + top-holder overhang); skips entry if overhang ≥ 30%. Fail-open on screen errors, but logs `g2_gate_error` so a silently-dead gate is visible. Covers the lone-insider shape (LUTN).
+- **§210B post-entry crew tripwire** in `exit_watch()`: for positions ≤3 min old, one `_crew_count(mint, entry_t, 120s)` scan; ≥30 blocklist wallets → immediate `crew_trip` market sell with full §176 slippage escalation (15→30→50%). Covers the swarm shape (29H7) — crew arrives *after* graduation, so no pre-entry gate can see them; the tripwire is the live form of the calibrated rule.
+- **`_crew_count` unit-tested against all four known mints: 29H7=36 ✓, JwQb=36 ✓, 5GJf=11 ✓ (spared), LUTN=0 ✓** — byte-identical reproduction of the §204 calibration from raw ledger data.
+- Flag file `g2_gate.json` = `{"active": false}`. Thresholds in code: crew 30/120s, overhang 30%. Syntax-checked; `exit_watch()` clean pass on empty book.
+- Activation sequence at 40 closes: (1) flip g2_gate.json → true, (2) raise size cap 0.20 → 0.30, (3) first gated entries still get the §191 shadow stamp for audit. Rollback = flip back to false.
