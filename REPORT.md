@@ -4842,3 +4842,10 @@ The verdict activation is now a one-word file flip, not a code change under pres
 - **`_crew_count` unit-tested against all four known mints: 29H7=36 ✓, JwQb=36 ✓, 5GJf=11 ✓ (spared), LUTN=0 ✓** — byte-identical reproduction of the §204 calibration from raw ledger data.
 - Flag file `g2_gate.json` = `{"active": false}`. Thresholds in code: crew 30/120s, overhang 30%. Syntax-checked; `exit_watch()` clean pass on empty book.
 - Activation sequence at 40 closes: (1) flip g2_gate.json → true, (2) raise size cap 0.20 → 0.30, (3) first gated entries still get the §191 shadow stamp for audit. Rollback = flip back to false.
+
+## §211 — Forward overhang sampler live: building the FP base rate before the gate goes blocking (2026-09-02 ~22:35 UTC)
+
+- Built `overhang_obs.py`: each tracker run screens up to 4 fresh paper-book mints (2–25 min post-entry — inside the window where overhang still resembles entry-time truth; stale reads bias low as insiders sell) that we did NOT enter live. Logs overhang%/insider_n/feeders + paper outcome to `overhang_obs.jsonl`.
+- First batch (older mints, calibration-biased): overhang 0–15.3%, none ≥30%, paper rets −0.40 to +0.21 — no false positives at the 30% threshold even on this small stale set, but the forward fresh-age series is the real evidence.
+- Wired into the tracker after the treasury watcher (exception-guarded, 4 screens/run cap). Pair byte-identical.
+- By 40 closes the verdict will have dozens of forward entry-time overhang readings on mints with known outcomes — the overhang gate's false-positive rate stops being an assumption.

@@ -1851,6 +1851,21 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §211: forward overhang observational sampler — screens fresh
+        # paper-book mints (2-25 min old) we did NOT enter live, logging
+        # overhang vs paper outcome to overhang_obs.jsonl. Builds the
+        # forward false-positive base rate the 40-close verdict needs
+        # before the §210A overhang gate goes blocking. Capped at 4
+        # screens/run to stay inside the run budget.
+        import importlib.util as _ilu4
+        _s5 = _ilu4.spec_from_file_location(
+            "overhang_obs", str(MON / "overhang_obs.py"))
+        _oo = _ilu4.module_from_spec(_s5)
+        _s5.loader.exec_module(_oo)
+        _oo.main(4)
+    except Exception:
+        pass
+    try:
         # §178: post-run rent sweep — close dust/empty ATAs in-process
         # after all exits are done. reclaim_ata.scan hard-skips open
         # positions and unbooked mints (§169 guards). Threshold >=2
