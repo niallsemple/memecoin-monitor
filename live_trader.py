@@ -690,7 +690,7 @@ def _blocklist_wallets():
     try:
         bl = json.loads(BLOCKLIST_F.read_text())
         out = set()
-        for section in ("masters", "killers", "feeders"):
+        for section in ("masters", "killers", "feeders", "funded_next_gen"):
             out.update(bl.get(section, {}))
         return out
     except Exception:

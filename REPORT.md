@@ -4718,3 +4718,11 @@ MASTER-B (LUTN's collector) is a STAGING wallet still holding the 312 SOL — ha
 LUTN killer funding: no inbound native SOL in its setup txs — its allocation was pure token-side (deployer transfer), reinforcing the "never bought, only dumped" fingerprint.
 
 **Consequence for the gate:** worker-fleet presence (the §196 counter) IS the drain signal, and the blocklist self-extends — any wallet funded by, or forwarding to, a known master/worker joins the list. Next: verify the loop by checking MASTER-A outbound → workers (funding side).
+
+## §198 — Loop closed: MASTER-A is mid-tier; funding side found — blocklist v3 is predictive (2026-09-02 21:45 UTC)
+
+MASTER-A outbound trace (1,455 txs): it forwards UP to two larger masters — 2,493 SOL to BZqGE4sRcUNR (MASTER-A2) and 1,500 SOL to 59xiZW4jTYDm (MASTER-A3) — and distributes DOWN via **uniform 24.00 SOL stakes to fresh wallets**: the worker-funding pattern. None of the current 46 workers received funding inside the 0.7h window (they were funded earlier); the 24 SOL recipients are the NEXT generation — pre-marked drainers before they've played a single token.
+
+**Blocklist v3: 91 wallets** (4 masters, 2 killers, 46 workers, 39 funded-next-gen). Live gate now reads all four sections. The blocklist is officially predictive: it contains wallets that have never touched a token we trade but are funded by the drain network — if any appears on a mint at entry, DRAINER_NETWORK_ALERT fires.
+
+Hierarchy so far: MASTER-A2/A3 (top, observed) ← MASTER-A (mid-tier, 4,760 SOL/0.7h) ← 46 workers + 39 next-gen ← per-drain aggregators. MASTER-B (LUTN's 312 SOL) still staging.

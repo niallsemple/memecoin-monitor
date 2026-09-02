@@ -9,6 +9,14 @@
    "tag": "MASTER-B",
    "seen": "LUTN drain 2026-08-31",
    "consolidated_sol_observed": 312.4
+  },
+  "BZqGE4sRcUNRFzeBeVXVTqmghqCSEK964vFi9VTwhnA5": {
+   "tag": "MASTER-A2 (upstream of A)",
+   "received_sol": 2493.06
+  },
+  "59xiZW4jTYDm4t8dEFemUBFYApPBx6PhtERZRKBwgVPL": {
+   "tag": "MASTER-A3 (upstream of A)",
+   "received_sol": 1500.0
   }
  },
  "killers": {
@@ -205,6 +213,164 @@
   "7Ljg1CrYNFkAvPjQuiGxQJamxgT6K94jp2bAUxi6byuW": {
    "feeds": "MASTER-A",
    "sol": 2496.46
+  }
+ },
+ "funded_next_gen": {
+  "BZqGE4sRcUNRFzeBeVXVTqmghqCSEK964vFi9VTwhnA5": {
+   "funded_by": "MASTER-A",
+   "sol": 2493.06
+  },
+  "ASBHxYP7meaPgbzb5jmX2EdXaCNaUdcWYzHzV1k2ZaKU": {
+   "funded_by": "MASTER-A",
+   "sol": 85.01
+  },
+  "59xiZW4jTYDm4t8dEFemUBFYApPBx6PhtERZRKBwgVPL": {
+   "funded_by": "MASTER-A",
+   "sol": 1500.0
+  },
+  "DU2ewJougzAtrRZxfFADjtvoCxUzafDdaAV3aNoXHtQu": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "6kNvvoh35uGmJhgxqTRKac5YkSDgfq7BGUDPs78E8kCt": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "Gmrg9JADc2RKpAyjb1fMqTywLt9LUr7NykSE9xe8yXDA": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "6uVASp2dX8nxHmcby3hbyUbTshbXGYh3CoKXBBAk4Uon": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "H2QdnoUT1iMqv7WnDmmKtyWjBVZ8g2jyg4wu5RtFERfm": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "7X5B6QaPK6ct9E3ETgxtTZHx1j6DPWSNvWPYGFaF2gyz": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "4DaRs5AK8AiroD4LsquyuBq2yrUomHZ67UjPiLJRWBr3": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "FU9X8i7WmXwQfdSAXCyXrZK2gWsg5m4QZ1zXy3HvboEb": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "55rqZS8KZFym4DNYuucfrjEEoT2PyPL95hV8zdECu9G7": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "73ppRZxjTn8hV3r3QceF6MYxpToQo8fFAQuh417pSLVa": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "4jeWbgC2pFBVCTT1Jy9vjjaTLtiSAWz6qpdswrEw5sBq": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "7QXh5P65y5AByTZUxRHPCJohhZF585mDsact69a3s77Z": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "9txCeX3vGnk6RCojj8R42QSCewsPgnzso5FjpG43Cgmz": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "EWrDBbLYHzpaWveUZuE3aM3JnvR8MzAPG7JDGxvRBNur": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "AqNMdU4E57Ft11rAhnmpW5TNva8kedxeFUktPYp4o6fT": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "ChjEuW5hUzXAGJmos86P6sX89Ezna2haa5vRHoKe6uen": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "Lippgt4GemNLNxnH8p1wTCYFCES8Rg8iUzabqFwPQ56": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "CHo3dKrtBQuW4dcZevjhzQcCTDEqngQvqEexHYdHNJrR": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "Cf6dJBjzH4jnxeC6Y1oZDUrQ9i4njeutpDRghb3AMn5S": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "4MUnDJrSJohkBsRjv1Hy5A3VxqqfP7bERyXUJZdng2ba": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "5VtnTRVW4uESPX8wpV74xwDkUeBxwG4RtC2gQRGNpeSV": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "4tH9Ff7uyMW3j1ciX1hhrAAyqze35Y4JD8AHNtd8zC8U": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "Afj19CySNLACpu4eF4UqN8kLXpYqaS8gx6PEML5vznpJ": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "9NSAibxakCsmUer2XB8yCEJPN5SbXEHkSVwS3UkgBoRY": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "EvYSyfg1HUDkBr5koPaN3ULW2taMSvxpRTx3jbCTa6fN": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "3YsBvuFEjGLkCUtB9GNgLxe8BBotqbufb9aeHojx5DwY": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "HznuLsUWUc5q3T3D7XxNSD5tTqP6yfzdQ9Wk8eT9MhtX": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "54qaGf6TQ2BkR8derVwoMrXqQ4WVQBZe6rmf923HNxd9": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "GM8o1BKLiLSzq1FN7Rwt8PwEgmSdMJnusyTHXXEzZ9bL": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "8EXKCG8hJqJWbnjgdnK5dhkod67PEfYZvr6Gy6UDZ5yv": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "8oJ2UmtDMcANY1ZTeDxs7FvgD9vXsip29hfUGamD44Ze": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "AGFRoq4zUBQEiP98szSzjQ6Q7wksRNJWTgm3CL5poNux": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "CUt2jdifJpy75tHX5CbWjFeAMpWBcdoT1Yer2stDUEH9": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "De71mE8awTPL4LaJp6iVSsAJRKdFKzXkrbCVDxhVpj8o": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "FXGgVzeDcFmSC1srefsvd5dR7DXBQZ6xNPdSyRWDQQxu": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
+  },
+  "CuPsgSkb5SKHJ8iE9oxn813kApr8P82bcxTrKRdTPZTz": {
+   "funded_by": "MASTER-A",
+   "sol": 24.0
   }
  }
 }
