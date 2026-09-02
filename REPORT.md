@@ -4730,3 +4730,13 @@ Hierarchy so far: MASTER-A2/A3 (top, observed) ← MASTER-A (mid-tier, 4,760 SOL
 ## §199 — Drain-clock falsification: no single timer (2026-09-02 22:10 UTC)
 
 Tested whether dumps key to token age (a predictable clock we could front-run with tighter aborts): 29H7 dumped at token-age **22.8m** (MASTER-A network); LUTN at **≥38.8m** (ledger backfill didn't reach its pool birth — lower bound). Different operations, different timers; no tradeable clock. Conclusion: timing-based defense is a coin flip (JwQb escaped by 60s). The feeder-presence gate (§195-196) remains the only evidence-backed defense — identity, not timing.
+
+## §200 — Paper-drain sweep: insider fingerprint generalizes 9/9; blocklist v4=272 (2026-09-02 22:45 UTC)
+
+Swept the s60nm5fr paper book's 9 deep drains (ret ≤ −0.85) with full wallet-history backfill:
+- **0 blocklist hits** — MASTER-A's fleet isn't on them. Other crews / lone insiders.
+- **8/9 show the §189 insider fingerprint**: top sellers NEVER bought via pool (AgLS: 1,406 SOL single wallet; 6Bob: 4,058.6 SOL single wallet (!); 7Q1S: 562 SOL; xj5M: 221 SOL; 4xBD: 77+66+58; CGph: 128+96+74). The 9th (GsM2) died of buy-starvation, not a dump.
+
+**Verdict: the general defense is the insider-overhang screen (whales who never bought); the feeder gate catches the specific MASTER-A network.** Both are needed; both are armed.
+
+Blocklist v4: 272 entries (4 masters, 183 killers, 46 workers, 39 next-gen). Caveat: the ≥5-SOL never-bought harvest over-captures legit bonding-curve profit-takers (fresh wallets rarely recur), so the killers section is an intelligence list, not a gate input — gate still keys on masters/workers/funded. Real predictive value: tracing these killers' consolidation hops → more masters → more fleets. Top trace targets: 734xTmPzAt (4,058 SOL), DFQm2YknGveH (1,406), BxH2ZTZ5Wd (562).
