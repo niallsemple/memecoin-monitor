@@ -22,28 +22,189 @@
   }
  },
  "feeders": {
-  "2PaBQVnymR2FPGUbJmiwhYVaswoXfPCNuP5RWXqArCSE": {
+  "4mFawJABfM9BE9NNHgqov8DWGTAxc1zh9GnKkZ7hGQWb": {
    "feeds": "MASTER-A",
-   "sol": 637.93,
-   "also": "29H7 accomplice seller 28.39 SOL"
+   "sol": 729.67
+  },
+  "D2wjvuijxwinnvCdGcRNqVfsiia6B63dghwELC571KXQ": {
+   "feeds": "MASTER-A",
+   "sol": 13.0
+  },
+  "Av5rZt3Tg6tBVNuwPYsSCSEiEg11Jk16pW2CEaRXdiYX": {
+   "feeds": "MASTER-A",
+   "sol": 19.45
+  },
+  "57mKgFN5LJPzy8CJCoMg7ANZjAFzZ6fH24wirnawrG6d": {
+   "feeds": "MASTER-A",
+   "sol": 18.8
+  },
+  "5fVTHcvWyrcfxBJhjYL3J9csN6VkCXqdMtoJnDtWGn1X": {
+   "feeds": "MASTER-A",
+   "sol": 19.54
+  },
+  "ArWz5TFoXT7q7PfZzKTsnA7wP6gC9o9mdXAdDcgu7Jjp": {
+   "feeds": "MASTER-A",
+   "sol": 18.51
+  },
+  "6wcRFKbJ6X6u4nvEG7QR934dqDkCt8xgxhiVKJMHicFS": {
+   "feeds": "MASTER-A",
+   "sol": 18.86
+  },
+  "dhrGy1PQGSVE2jLGi7yzafZF1Xv5VRFsZ2i8seSy7xx": {
+   "feeds": "MASTER-A",
+   "sol": 19.78
+  },
+  "DBNtnR8giGyRTxdTbv95GcmzjyWHJicrUgbpaPLjwFj7": {
+   "feeds": "MASTER-A",
+   "sol": 19.1
+  },
+  "FCAnmm6y4sH6pfDteBHZxQ9UWS44rhA1jZstmUkDwvgr": {
+   "feeds": "MASTER-A",
+   "sol": 19.15
+  },
+  "BsaqkZbNgxYrDU9CqYvNMF9fBhNEzYMErFrygBa8Yt1e": {
+   "feeds": "MASTER-A",
+   "sol": 18.89
+  },
+  "4j9C4QuZK57RhnVTsR7AEnRjHoEnnFpNsmyBGCFJaEs6": {
+   "feeds": "MASTER-A",
+   "sol": 19.79
+  },
+  "GfTFspcZeZzZBrqM2xn4y8PUACG7g23bPppDt6DFYCqw": {
+   "feeds": "MASTER-A",
+   "sol": 19.3
+  },
+  "47bhdJ2ND47CVp2czLFcCpK3YJYy6Y2Y83USCfXAcwub": {
+   "feeds": "MASTER-A",
+   "sol": 19.78
   },
   "6FVY9w7vB6fUVeZCKaGs75iqEUWBTsNTX2KWfposCmdH": {
-   "mint": "29H7",
-   "dumped_sol": 36.69
-  },
-  "2ATZiZiRCj7r3oM5rF32yYiUyCBwms6Daw4r1Prpz3ZG": {
-   "mint": "LUTN",
-   "dumped_sol": 8.9
-  },
-  "4mFawJABfM9B": {
    "feeds": "MASTER-A",
-   "sol": 711.04,
-   "note": "TRUNCATED - resolve full addr"
+   "sol": 28.44
   },
-  "9vLMX7oBugai": {
+  "7oVFeejt9Sgb55HB42BkZLtYgnurDo2q3XqEDQCaefeW": {
    "feeds": "MASTER-A",
-   "sol": 92.5,
-   "note": "TRUNCATED - resolve full addr"
+   "sol": 19.5
+  },
+  "GZZQtdjQk7QYGHtJRoQNyQ8jv9EUm4WayLNfKKmxXoz3": {
+   "feeds": "MASTER-A",
+   "sol": 19.32
+  },
+  "Fe8hEmUy7mVKnVvKSdP4itbh1mh6QgJ9e9rPGSL4GiZ6": {
+   "feeds": "MASTER-A",
+   "sol": 19.17
+  },
+  "EJsshmXuURmMb35iNydHcMG94GHpqLodLWbbnJfLQ4ND": {
+   "feeds": "MASTER-A",
+   "sol": 20.21
+  },
+  "F1WvL7XjtTkeY7yqBXHuNkmXN3ze7gLfE67NUa8DUnko": {
+   "feeds": "MASTER-A",
+   "sol": 19.41
+  },
+  "62u12qqoa1aiGxJ8mVzk7Lk2UcwCGt8cX2WSRZYMyvup": {
+   "feeds": "MASTER-A",
+   "sol": 22.67
+  },
+  "D92tDh1ddgfBqQhouEnfM8FHndPhXPkG769vxRE7UHwn": {
+   "feeds": "MASTER-A",
+   "sol": 19.16
+  },
+  "HoYn3MjkG1J9aZhJkKQXVUpNh81vccf5qRjKkHPFSGMD": {
+   "feeds": "MASTER-A",
+   "sol": 19.64
+  },
+  "EaeQzQreyFWNy9Nyi9beoX2od4nKoHZx5UWGm2jXsFRu": {
+   "feeds": "MASTER-A",
+   "sol": 19.49
+  },
+  "HEHnqRXBbKTUuSMEqP2dSPXrHfxBK5V8Bhy2gt6TGB4n": {
+   "feeds": "MASTER-A",
+   "sol": 18.21
+  },
+  "2PaBQVnymR2FPGUbJmiwhYVaswoXfPCNuP5RWXqArCSE": {
+   "feeds": "MASTER-A",
+   "sol": 637.93
+  },
+  "4nCUck3JV3Rva6yDZoYqiEAMARbNFXUawJ31WHqofcre": {
+   "feeds": "MASTER-A",
+   "sol": 19.58
+  },
+  "GkpNiXa35E4veE87ieyjvJBpreExL71E2dYMRT17zL76": {
+   "feeds": "MASTER-A",
+   "sol": 18.65
+  },
+  "2TKPWif2yoouqXiD9fmuR8qiZCbC4a7PNYnoLQ2WG6bG": {
+   "feeds": "MASTER-A",
+   "sol": 19.09
+  },
+  "7qgdf9ZNNySeKHhVbt5TDmNpiZSwySQCjvfZTJmnAf79": {
+   "feeds": "MASTER-A",
+   "sol": 18.73
+  },
+  "CUEsTV9kmKQ2xqqmLjsjhv2DdezumUp2BzFsWuneZW9T": {
+   "feeds": "MASTER-A",
+   "sol": 19.48
+  },
+  "4kX7FXgkbHQyQqwveDBXWVcVQRNrj7axHzdfVJzjYZkK": {
+   "feeds": "MASTER-A",
+   "sol": 19.55
+  },
+  "ELRVp9okaYiUdADpsJy8UnYW2ShHUr3eqcn3GJaPnUmy": {
+   "feeds": "MASTER-A",
+   "sol": 19.68
+  },
+  "FX3UD76xMPWYmnKyQst4NBisdEqsD2qiPy48sKxzie6D": {
+   "feeds": "MASTER-A",
+   "sol": 11.14
+  },
+  "9vLMX7oBugaiHS4Gp2BaKyBHwXN9ZJRGdZateWSfkeCb": {
+   "feeds": "MASTER-A",
+   "sol": 92.5
+  },
+  "2uEudGSEC5kfH6SFZqruycc9UncevEXcNB4YhPSpiL6t": {
+   "feeds": "MASTER-A",
+   "sol": 18.98
+  },
+  "EMeapxB9vVQ52byALyt54jDFb23JWcz4J8rvPidqiD4R": {
+   "feeds": "MASTER-A",
+   "sol": 15.39
+  },
+  "BeXhrVuDXMtwv7Zp7mfFNzBMkBodQmN2sFZSZPToaHvU": {
+   "feeds": "MASTER-A",
+   "sol": 19.26
+  },
+  "6YhNK5a9WVwZAdxQibzn1vjEbaD2L3hyWKeUN4mJnHq7": {
+   "feeds": "MASTER-A",
+   "sol": 19.06
+  },
+  "FvehxMnojehRY2SjXW8hvkCzW3pQTk3BUwCxesb54VMt": {
+   "feeds": "MASTER-A",
+   "sol": 19.72
+  },
+  "6tUgvZc3aSVcX8xR8UGgyDNp9ztkWdtQ9nrU7GmCSjpx": {
+   "feeds": "MASTER-A",
+   "sol": 20.08
+  },
+  "D2AFEw79WdmJhx6D6CfgY2B9RTH1NkqEpc5QGRVRqwtx": {
+   "feeds": "MASTER-A",
+   "sol": 18.91
+  },
+  "Dr1nntvHnhts4ShyuEEhe9BxM975W4aYVo8srnCu5gGb": {
+   "feeds": "MASTER-A",
+   "sol": 18.94
+  },
+  "9onbnnBvyPudT63KzaMtrAVUFrEwzuprNWSzV82LnRCt": {
+   "feeds": "MASTER-A",
+   "sol": 19.43
+  },
+  "E6BGVe4j9s75NqoHjtbx3dA3Vh9xtLs13u1Z5moSyWXH": {
+   "feeds": "MASTER-A",
+   "sol": 18.77
+  },
+  "7Ljg1CrYNFkAvPjQuiGxQJamxgT6K94jp2bAUxi6byuW": {
+   "feeds": "MASTER-A",
+   "sol": 2496.46
   }
  }
 }

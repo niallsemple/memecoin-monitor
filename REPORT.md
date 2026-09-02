@@ -4676,3 +4676,15 @@ Cross-referenced both masters against the full 29,326-wallet ledger:
 **MASTER-B (ByFDrU4k…EB7Y, from LUTN):** single 312.4 SOL feed from the LUTN killer in the observed window — smaller or newer operation.
 
 **`drainer_blocklist.json` created** (2 masters, 2 killers, 5 feeders — two feeders pending full-address resolution). Deeper paging of MASTER-A's history (300-tx window only covered ~1 hour) is the next slice: enumerate all children, then the blocklist becomes a live-gate input (fresh wallet funded by known master = auto-reject).
+
+## §194 — Network unification test: drainer ≠ bundler, and the drainer hit us TWICE (2026-09-02 20:30 UTC)
+
+MASTER-A deep trace: **4,760.2 SOL consolidated in 0.7 hours** across 1,457 txs from 46 feeders — a uniform tail of ~19.5 SOL forwards (programmatic profit distribution) beneath the big dumps.
+
+Cross-map against our 190k ledger:
+- MASTER-A's feeder network was active on **2 of our 36 mints**: 29H7 (44 feeders, 1,478 SOL sold — the fatal drain) and **JwQb7erb (43 feeders, 753 SOL sold — we still closed +0.00839)**. Network presence alone didn't kill JwQb; dump size vs pool depth did.
+- **Cluster bots (§186, EoBT/5mAg) share ZERO wallets with MASTER-A's feeders.** Bundlers and drainers are DIFFERENT operations. Wash-volume networks and insider-dump networks are separate species — separate defenses apply.
+
+**`drainer_blocklist.json` v2:** 2 masters, 2 killers, 46 feeders (full addresses). Gate design inputs: (1) entry-time funding-source check — was a top holder's wallet funded by a blocklisted master/feeder? (2) feeder-presence density on a mint as a risk score (44 feeders preceded our loss; 43 preceded a win — so density alone insufficient; need dump-size/liquidity ratio).
+
+Next: measure feeder-sell SOL vs pool SOL depth at kill time on 29H7 vs JwQb to find the survivability threshold — that ratio is the actual gate metric.
