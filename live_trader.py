@@ -723,13 +723,19 @@ def exit_watch():
                     # failing Custom 6001 mid-collapse. On a verified
                     # failed panic, immediately re-quote wider: 30%,
                     # then 50%. A deep-discount fill beats zero.
-                    if act == "panic" and res.get("sig") \
+                    # §176b: escalation extended to nm_abort/fade —
+                    # all three sell into weakening momentum where a
+                    # rejected tx risks riding to zero. Clock exits
+                    # (abort15/30, timestop) stay single-shot: flat
+                    # positions, safe to retry next pass.
+                    if act in ("panic", "nm_abort", "fade") \
+                            and res.get("sig") \
                             and not _tx_success(res["sig"]):
-                        _log({"action": "panic_escalate", "mint": mint,
-                              "first_sig": res["sig"]})
+                        _log({"action": "slip_escalate", "mint": mint,
+                              "exit": act, "first_sig": res["sig"]})
                         for _wide in (3000, 5000):
                             res = pool_sell(mint, sell_tokens,
-                                            reason=f"panic_slip{_wide}",
+                                            reason=f"{act}_slip{_wide}",
                                             slippage_bps=_wide)
                             if res.get("sig") and _tx_success(res["sig"]):
                                 break

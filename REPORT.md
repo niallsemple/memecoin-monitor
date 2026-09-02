@@ -4528,3 +4528,7 @@ another new high.
 - Root cause of both historical drains: sells at 15% slip REJECTED (Custom 6001) while the pool collapsed >15% between quote and execution.
 - Fix: on a verified-failed panic sell (pool venue), exit_watch immediately re-quotes at 30% then 50% slip in the same pass. Deep-discount fill beats zero. Logged as panic_escalate rows.
 - live_trader.py edited + syntax-checked; loads fresh each run so it's live immediately. No other exits changed.
+
+## §176b — escalation extended to nm_abort + fade (2026-09-02 ~14:40 BST)
+- All three momentum exits (panic, nm_abort, fade) now escalate 15%→30%→50% slip on verified-failed sells, same pass. Clock exits (abort15/30, timestop) deliberately single-shot: flat positions, next-pass retry is safe.
+- Note: escalated closes record closed_reason like "nm_abort_slip3000" — review_40.py and the book parser should treat the _slip suffix as the base reason (handled at verdict time).
