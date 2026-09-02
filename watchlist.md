@@ -3748,3 +3748,9 @@
 | 08:46 | solana | `GyaBdGkr…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$14,116 mc=$36,006 | name=titcoin symbol=☉; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48.9% | Has this ever ran before?  I was looking for narratives and i was searching thro |
 | 08:46 | solana | `5aCLaJSK…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$12,274 | name=Booby the panda symbol=Booby; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Booby |
 | 08:46 | solana | `FPEtiYRV…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,068 mc=$1,995 | name=30 IS A PERSON symbol=30; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold |  |
+| 09:06 | robinhood | `0xE2d8c5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,303 mc=$36,458 | chain:robinhood no-audit-adapter | we go up or we blow up |
+| 09:06 | robinhood | `0xe29AC3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$44,874 mc=$50,169 | chain:robinhood no-audit-adapter | Doge paired with GE stock (General Electric) to spell out DO/GE. |
+| 09:06 | robinhood | `0xB2a3F8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14 mc=$22,343 | chain:robinhood no-audit-adapter | 5% cashback on every Fomo top-up · Prepaid Visa & Mastercard · Fund with USDG or |
+| 09:06 | robinhood | `0xE766b5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$53,469 mc=$347,872 | chain:robinhood no-audit-adapter | Every wallet that ever traded on Robinhood Chain gets $RETAIL airdropped. Poweri |
+| 09:06 | solana | `6YeoGNZU…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$9,948 | name=GROK BOT THE CORE symbol=GBTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 09:06 | robinhood | `0x7d8d0d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,495 mc=$34,247 | chain:robinhood no-audit-adapter | dinner wif candles |

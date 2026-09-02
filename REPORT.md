@@ -4446,3 +4446,7 @@ another new high.
 ## §161 — 5GJf close (2026-09-02 ~09:58 BST)
 - 5GJf1Zzx abort15 at ~15.5m, peak 1.033; verified wallet delta 0.132221996 vs 0.1283 → **+0.00392 SOL**. Book: 26 closes, 24 green (92.3%).
 - Post-panic-stop cohort: **9/9 green, +0.0421**. Wallet 2.56761 — 0.116 from breakeven on the 2.68389 baseline.
+
+## §162 — 63Ty + HATB closes (2026-09-02 ~10:20 BST)
+- 63TyWbh4 abort15: verified → **+0.00448 SOL**. HATB635n abort15: verified → **+0.00775 SOL** (strongest grind of the cohort, peak 1.066).
+- **Book: 28 closes, 26 green (92.9%).** Post-panic-stop cohort: **11/11 green, +0.0543**. 

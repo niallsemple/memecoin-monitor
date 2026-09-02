@@ -416,5 +416,50 @@
   "actual_fill_note": "buy sig 65X5qRCh... verified; actual fill 463207182 raw; sell sig 22bGJig3... verified; wallet delta 0.132221996",
   "closed_reason": "abort15",
   "pnl_sol": 0.003922
+ },
+ "63TyWbh4Asptxa1wsgTc7VLwsmSxnhjQZ7BnvKZpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788339669.333932,
+  "entry_px": 8.941728879685481e-11,
+  "tokens": 1435773275,
+  "tokens_left": 0,
+  "size_sol": 0.1284,
+  "peak_mult": 1.0375488122697663,
+  "freerolled": false,
+  "sol_recovered": 0.132883338,
+  "actual_fill_note": "buy sig 3U19Ahj3... verified; actual fill 1435773275 raw; sell sig 4CBiNV1p... verified; wallet delta 0.132883338",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00448334
+ },
+ "HATB635nEWrLCwwrmXWr1YWfzhqqnDjQwDGDJ1xcpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788339687.9271302,
+  "entry_px": 3.507816513905626e-11,
+  "tokens": 3471349056,
+  "tokens_left": 0,
+  "size_sol": 0.1218,
+  "peak_mult": 1.066379900204996,
+  "freerolled": false,
+  "sol_recovered": 0.129550682,
+  "actual_fill_note": "buy sig 2gRke828... verified; actual fill 3471349056 raw; sell sig 31adHBDq... verified; wallet delta 0.129550682",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00775068
+ },
+ "7W9dZP9LUqWKVyBQB7k28vdR5qVLF1dvhQ9LuCyfpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788340864.465219,
+  "entry_px": 1.2851481863908522e-11,
+  "tokens": 10022190543,
+  "tokens_left": 10022190543,
+  "size_sol": 0.1288,
+  "peak_mult": 1.0,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
