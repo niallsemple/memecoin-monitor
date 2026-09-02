@@ -4465,3 +4465,7 @@ another new high.
 ## §165 — ewa6 close (2026-09-02 ~12:20 BST)
 - ewa6j3p5 abort15, peak 1.034; on-chain verified → **+0.0036 SOL** (exact in book). Book: 30 closes, 28 green (93.3%).
 - Post-panic-stop cohort: **13/13 green**. 10 closes to the 40-trade verdict.
+
+## §166 — a4gF close (2026-09-02 ~12:38 BST)
+- a4gFrsnA abort15, peak 1.025; on-chain verified → **+0.00289 SOL** (exact in book). Book: 31 closes, 29 green (93.5%).
+- Post-panic-stop cohort: **14/14 green**. 9 closes to the 40-trade verdict.
