@@ -4867,3 +4867,19 @@ Attempted to validate the overhang screen historically via a ledger proxy (insid
 - **Coverage gap found:** the wallet ledger only follows pools we entered or screened (~46 mints). 20/25 paper drains have ZERO ledger rows — pool-level intelligence has been entry-triggered, not systematic.
 - Root cause: `mfg_trades.jsonl` (996k curve trades) has no wallet field; pool ledger has wallets but no curve legs; no historical top-holder snapshots exist. A true historical overhang reconstruction requires parsing each mint's creation-era transactions for initial token distribution (forensic v2, Helius parsed history — feasible but per-mint expensive).
 - **Verdict consequence (locked):** the overhang screen's accuracy can ONLY be measured forward via §211. If forward samples are too thin at 40 closes, the verdict flips the crew tripwire + cap raise but holds §210A (overhang gate) in shadow until n≥20 fresh-age samples. Evidence gates activation, not the calendar.
+
+## §214 — Forensic ground truth: overhang metric as built DOES NOT separate drains (2026-09-02 ~23:10 UTC)
+
+Direct chain forensics on the two live drains (preTokenBalances of the killer dump txs — exact, no proxy):
+
+| mint | killer | pre-dump holding | outcome |
+|---|---|---|---|
+| LUTN (−0.135) | 5Lyboj | **13.75% of supply**, sold to zero in one tx | drain |
+| 29H7 (−0.125) | 7Ljg1CrY | **3.97% of supply** (one wallet of the swarm; dumped 1,394 SOL through a deep pool) | drain |
+| EoBTrx (+0.005, green) | — | §205 reading: **44.3% top-20 non-buyer share** | fine |
+
+**The naive overhang metric inverts reality**: the greenest recent mint carried 44% "insider" share while the drains showed 4–14%. Cause identified — the screen cross-references POOL buyers only (insider_screen.py), so bonding-curve buyers who never touch the pool read as insiders. Same flaw as the failed §213 proxy, now proven live in the screen itself. §210A as currently wired would sacrifice mints like EoBTrx and still miss 29H7.
+
+**The fix (§215, next):** classify each top holder by its FIRST inbound token transfer — received from mint authority/deployer/creation = true insider allocation; received via a swap (pool or curve program) = economic buyer, exclude. This works LIVE at entry time (all ATAs exist then) even though it fails retrospectively (5Lyboj's ATA is closed — zero inbound history recoverable). Entry-time is the only moment that matters for the gate.
+
+Threshold calibration from truth: LUTN's 13.75% lone-insider is the bar to beat; swarm shape stays with the §210B tripwire + §207 watcher. A creation-transfer-classified overhang ≥10% has a real chance of separating LUTN without touching EoBTrx — to be measured by §211 sampler upgraded to v2 classification.
