@@ -28,6 +28,13 @@ from pathlib import Path
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
 MON = Path(__file__).resolve().parent
+# §225b: live_trader is loaded by the tracker via importlib from a
+# different cwd/sys.path — plain `import wallet_ledger` inside functions
+# failed ("No module named") on every entry's shadow screen. Anchor the
+# module dir on sys.path so sibling imports always resolve.
+import sys as _sys
+if str(MON) not in _sys.path:
+    _sys.path.insert(0, str(MON))
 WALLET_F = MON / "live_wallet.json"
 SIGNOFF_F = MON / "manual_signoff.json"     # owner-created; agent never touches
 KILL_F = MON / "STOP_LIVE_TRADING"          # drop this file = instant halt
