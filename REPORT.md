@@ -4929,3 +4929,10 @@ Reconstructed the drain windows from the wallet ledger (who actually got filled,
 1. Escalation depth confirmed adequate for cascade drains — liquidity at our size is proven mid-collapse.
 2. Instant drains are irreducible tail risk: no gate or clock detects them pre-tx. **Stake size is the only control** — at 0.128 SOL a 29H7 costs 0.125; at 2× it costs 0.25. This, not gates, frames the sizing decision.
 3. Exposure time IS bounded: non-freerolled positions carry instant-drain risk only until their clock exit; JwQb proves the current 15m abort already catches the modal dump window (+16m).
+
+## §218 — Exit latency audit: median detection lag 0.6 min; the tail is explained, not broken (2026-09-03 ~00:15 UTC)
+
+- **Clock exits (abort15/30, n=34): median 0.6 min past trigger.** The loop cadence (tracker runs + manual cover) is healthy.
+- **nm_abort stall exits: +0.3 / +0.6 min** past the 5-min stall timer — sub-minute detection on the momentum condition.
+- The 3/34 overshoot tail: **LUTN 37.3m** (r stayed ≥1.08 until the +52m dump — condition wasn't met earlier; a timestamp artifact, not lag), **HK6N 27.3m** (first sell tx failed → retried and landed +0.0102 green; the retry path worked), J3a2 7.1m (same retry pattern).
+- **Conclusion: detection latency is NOT a gap.** The two live losses were slippage-tolerance (LUTN — fixed via §176 escalation) and single-tx instant drain (29H7 — irreducible). No loop tightening needed before the sizing decision; the existing cadence catches price conditions within ~1 minute.
