@@ -4420,3 +4420,9 @@ another new high.
 - Post-panic-stop cohort: **6/6 green, +0.0345**.
 - Process note: the 06:43 tracker run didn't fire/ended early; the manual gap-coverage watcher (live_trader.exit_watch) detected the abort15 condition and executed the live sell itself — the manual fallback path is proven end-to-end, including on-chain sell + verification.
 - Watch: one tracker trigger appears to have been skipped this cycle; monitor next runs.
+
+## §157 — Scheduler gap investigated; manual run restored coverage (2026-09-02 ~08:22 BST)
+- Tracker scheduler stopped firing after the 06:24Z run (no 06:44/07:04 triggers). Automation config healthy (enabled, interval 20m, last status succeeded) — cause unknown, likely a runtime scheduler hiccup. Manual `Automation.run` at 07:03Z executed fully (16.3 min) and delivered to the dashboard widget; cadence should resume from there.
+- Helius birth-feed WS shows intermittent 429 rate-limits (8 err lines/run) but births keep flowing (162 in the recovery run) — degraded but functional. Watch item.
+- Paper expectancy update from the same run: s60nm5fr gate now +1.58% avg (135 closed, 122 wins) — improving as sample grows.
+- Two new live entries opened by the recovery run: 5gNrnaff (0.1283) and nPYPLZK5/USWS (0.1218) — both fills verified on-chain, books corrected to actuals.
