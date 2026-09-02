@@ -581,16 +581,20 @@
   "pnl_sol": 0.00467562
  },
  "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788382890.8817248,
   "entry_px": 8.241444714170616e-12,
   "tokens": 15324982983,
-  "tokens_left": 15324982983,
+  "tokens_left": 15205840,
   "size_sol": 0.1263,
-  "peak_mult": 1.1434850514647663,
+  "peak_mult": 1.3976124228028506,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.000109,
+  "nm_touch_t": 1788385920.69838,
+  "closed_reason": "nm_abort_drain_6024_blocked",
+  "pnl_sol": -0.12619,
+  "close_note": "sig 4nAPdA4BVaoYGe59tifvH5DVjJtpSszbC4cmx1z42mviAv87mdfYVKkQiLxWzrXdfuHoNTM1Vopk7cMpHCJha7UF; recorded tokens overstated actual by 0.77% -> 6024 blocked two nm_abort submits at 1.384x; drain completed during blocked window; manual skipPreflight salvage recovered dust"
  }
 }

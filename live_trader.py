@@ -183,6 +183,22 @@ def _jupiter_submit(q):
 def pool_sell(mint, token_amount_raw, reason="exit", slippage_bps=None):
     """§123: Jupiter sell for graduated (pool-venue) positions."""
     ok, why = live_enabled()
+    # §223: the recorded token count can overstate the ON-CHAIN balance
+    # (buy-quote outAmount vs actual fill drift). On MBCBuuPC the 0.77%
+    # overstatement made Jupiter's preflight fail Custom 6024 twice —
+    # blocking the nm_abort through the entire drain window (1.384x ->
+    # dust). Always size the sell against the ACTUAL ATA balance.
+    try:
+        _addr = json.loads(WALLET_F.read_text())["address"]
+        _accs = (_rpc("getTokenAccountsByOwner",
+                      [_addr, {"mint": mint},
+                       {"encoding": "jsonParsed"}]) or {}).get("value", [])
+        _actual = sum(int(a["account"]["data"]["parsed"]["info"]
+                          ["tokenAmount"]["amount"]) for a in _accs)
+        if _actual and _actual < token_amount_raw:
+            token_amount_raw = _actual
+    except Exception:
+        pass
     # §136: 100%-of-balance sells fail in Jupiter with Custom 6024
     # (observed live on J3a25GSe — 4 failed submits; 99.9% simulates
     # clean). Cap every sell at 99.9%; the dust remainder is negligible.

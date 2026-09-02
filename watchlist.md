@@ -3762,3 +3762,9 @@
 | 09:56 | robinhood | `0xd0B030…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14 mc=$26,820 | chain:robinhood no-audit-adapter |  |
 | 10:06 | robinhood | `0x967E0a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,218 mc=$8,224 | chain:robinhood no-audit-adapter | Agentix - Agent-to-agent payments on Robinhood.  From programmable wallets to fi |
 | 10:06 | robinhood | `0xC91176…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,530 mc=$22,119 | chain:robinhood no-audit-adapter | ZKhood is a programmable privacy protocol for onchain finance. Hold balances, pa |
+| 22:06 | robinhood | `0x874187…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$68,374 mc=$86,205 | chain:robinhood no-audit-adapter | The official meme of the trenches, paired with $HII. |
+| 22:06 | robinhood | `0x1ec70d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Robin Hood is a legendary heroic outlaw originally depicted in English folklore  |
+| 22:06 | robinhood | `0x618c8B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,994 mc=$17,670 | chain:robinhood no-audit-adapter | Zoom it out |
+| 22:06 | solana | `9ykE4HYh…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$0 mc=$34,605 | name=solsem symbol=solsem; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41.4 | 10% of supply will be sent to ANSEM!  100% of fees will be redirected to support |
+| 22:06 | solana | `Cd2b8guD…` | PASS | — | liq=$22,078 mc=$80,687 | name=Ham The Astrochimp symbol=HAM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | Ham The Astrochimp |
+| 22:06 | robinhood | `0x8815cb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$89,588 mc=$977,824 | chain:robinhood no-audit-adapter |  |

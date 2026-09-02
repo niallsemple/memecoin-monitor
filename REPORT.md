@@ -5023,3 +5023,42 @@ tripwire. Consistent with §212-216: identity signals do not gate forward.
 execution merge) but have no forward-detection use. The treasury watcher
 (§207) remains the only rotation feed. Exit stack remains the edge.
 No further spend on this branch.
+
+## §223 — MBCBuuPC drain: the 6024 bookkeeping bug that cost 0.175 SOL (2026-09-02)
+
+**Event:** MBCBuuPC…pump opened 0.1263 SOL, ground up to peak 1.386x over
+~55 min, touched 1.30x (armed nm_touch), failed to reach 1.5x within 5 min
+→ nm_abort correctly triggered at r=1.384x (~+38% pending). Then the token
+was drained to ~0.001x within ~3 minutes.
+
+**Failure chain (verified on-chain):**
+1. Position recorded tokens from the buy QUOTE outAmount: 15,324,982,983.
+   Actual ATA balance was 15,205,839,978 — 0.77% less (quote-vs-fill drift).
+2. pool_sell applied the §136 99.9% cap to the RECORDED count → sell amount
+   still exceeded the real balance → Jupiter preflight Custom 6024
+   (insufficient funds) on BOTH endpoints → "no signature (RPC)".
+3. exit_failed kept the position open (§127 correct), but the drain
+   completed during the blocked window. Quote collapsed 0.1759 → 0.0121 →
+   0.00031 SOL across ~4 minutes.
+4. Manual salvage: actual-balance sell at 30% slip with skipPreflight
+   landed (sig 4nAPdA4B…, meta.err None) — recovered +0.000109 SOL.
+
+**PnL: −0.12619 SOL** (4th loss ever; 37 closes, 33 green, net −0.26213).
+
+**Root cause vs LUTN/29H7:** those were exit-latency/slippage failures.
+This one was a BOOKKEEPING failure — the exit decision was right, the
+price was right, the submit was blocked by our own stale token count.
+Estimated swing: +0.049 (nm_abort at 1.384x) vs −0.126 actual = 0.175 SOL.
+
+**Fix deployed (§223 patch, live_trader.py pool_sell):** every sell now
+refreshes the actual ATA balance via getTokenAccountsByOwner and clamps to
+it before the 99.9% cap. Tracker imports live_trader at runtime — fix is
+live on the next pass, no redeploy. Cost: one extra RPC read per sell.
+
+**Lesson absorbed into the stack:** exit decisions must be priced AND
+sized from chain state, never from entry-time records. §136 capped the
+count; §223 now grounds it in reality.
+
+**Standing:** market-action cohort 19 closes 18/19 green (+3.79%/trade ex
+infra bugs). 3 closes to the 40-close verdict. Crew treasury feed silent
+throughout — the drain gave no funding-graph warning (§212 consistent).
