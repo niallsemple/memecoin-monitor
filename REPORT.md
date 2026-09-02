@@ -4706,3 +4706,15 @@ Next: (1) same feeder-presence sweep for MASTER-B's network, (2) wire blocklist 
 `_feeder_count()` + `_blocklist_wallets()` added to live_trader.py; the §191 shadow screen now stamps `blocklist_feeders` on every new position and emits a `DRAINER_NETWORK_ALERT` log row whenever ≥1 known drainer wallet is active on the mint at entry. Tested against the retrospective ground truth: 29H7→44, JwQb→44, X6PH (organic winner)→0. Signal is armed.
 
 Still shadow-mode (logging, not blocking) until the 40-close verdict; but the retrospective case for promotion is now: 2/2 drains flagged, 0/34 false positives, +0.26 SOL book impact.
+
+## §197 — Network anatomy: worker fleet → aggregator → master (2026-09-02 21:20 UTC)
+
+The 29H7 killer's inbound transfers resolve the topology: ~130s after the dump, **70+ wallets sent it their proceeds in one second** — and the big senders (CUEsTV9k 19.32, ELRVp9oka 18.98, EaeQzQreyF 19.29, 4kX7FXgkbH 18.78, 2TKPWif2 19.56) are all known MASTER-A feeders. The killer was an AGGREGATION NODE: the worker fleet dumped/accomplice-sold, sent profits to the aggregator, which forwarded 2,496 SOL to MASTER-A.
+
+**Topology: MASTER-A ↔ ~46 worker wallets (the blocklist feeders) → per-drain aggregator → back to MASTER-A.** The workers are the wallets we see ON the mints (44 of them on both 29H7 and JwQb) — wash-trading, then dumping, then consolidating.
+
+MASTER-B (LUTN's collector) is a STAGING wallet still holding the 312 SOL — hasn't forwarded yet. Watch-listed: when it moves, the next hop reveals LUTN's true master.
+
+LUTN killer funding: no inbound native SOL in its setup txs — its allocation was pure token-side (deployer transfer), reinforcing the "never bought, only dumped" fingerprint.
+
+**Consequence for the gate:** worker-fleet presence (the §196 counter) IS the drain signal, and the blocklist self-extends — any wallet funded by, or forwarding to, a known master/worker joins the list. Next: verify the loop by checking MASTER-A outbound → workers (funding side).
