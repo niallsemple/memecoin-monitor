@@ -4517,3 +4517,14 @@ another new high.
 - h1xMxzYzLE abort15, peak 1.069; sell sig tj8wpjma… err=None; wallet delta 0.133885 → **+0.00829 SOL** (corrected from quote-based 0.13422).
 - Book: **33 closes, 30 green (90.9%)**, net −0.14924 all-time (incl. the three drains/tooling losses). Panic cohort (excl. §169 tooling loss): 15/15 green by market action.
 - 7 closes to the 40-trade verdict. Dust ATA from this close is closable by the fixed reclaimer next sweep.
+
+## §175 — live-stack paper mirror decomposition (2026-09-02 ~14:30 BST)
+- mbfr with full live-stack exits: **−1.36%** (131 closed, 115 wins) vs legacy-stack mb +1.41% / fr +0.84% on the same population. The entire delta is the panic stop.
+- Panic in paper replay: 14 exits, avg **−89.5%** — sparse trade prints mean the "0.80 trigger" fills at the NEXT print, deep in the collapse. Of those 14 mints under legacy rules: 6 went −100% anyway, 4 big losses, **5 recovered to +0.7…+6.7%**. Legacy netted −754pp vs panic's −1253pp on the same mints.
+- Honest read: paper OVERSTATES panic's cost (live polls every ~15s, fills near trigger) but the recovery-kill is real, and **panic has never fired live** — zero empirical fill data. The two true drains (LUTN, 29H7) died on Custom 6001 slippage REJECTS, not on trigger timing.
+- §149's "sub-0.80 dips never recover" was n=3; this larger sample says 5/14 recover (small). Keeping live panic for now (drain insurance) but flagging for the 40-close verdict with this evidence.
+
+## §176 — panic slippage escalation shipped (2026-09-02 ~14:35 BST)
+- Root cause of both historical drains: sells at 15% slip REJECTED (Custom 6001) while the pool collapsed >15% between quote and execution.
+- Fix: on a verified-failed panic sell (pool venue), exit_watch immediately re-quotes at 30% then 50% slip in the same pass. Deep-discount fill beats zero. Logged as panic_escalate rows.
+- live_trader.py edited + syntax-checked; loads fresh each run so it's live immediately. No other exits changed.

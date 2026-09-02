@@ -154,11 +154,11 @@ def jupiter_quote(mint, amount_sol, side="buy"):
         return json.loads(r.read())
 
 
-def jupiter_quote_sell(mint, token_amount_raw):
+def jupiter_quote_sell(mint, token_amount_raw, slippage_bps=None):
     """mint->SOL quote for a raw token amount (pool-venue exits)."""
     params = (f"inputMint={mint}&outputMint={SOL}"
               f"&amount={int(token_amount_raw)}"
-              f"&slippageBps={SLIPPAGE_BPS}")
+              f"&slippageBps={slippage_bps or SLIPPAGE_BPS}")
     with urllib.request.urlopen(f"{JUP_Q}?{params}", timeout=20) as r:
         return json.loads(r.read())
 
@@ -180,7 +180,7 @@ def _jupiter_submit(q):
     return _rpc("sendTransaction", [signed, {"encoding": "base64"}])
 
 
-def pool_sell(mint, token_amount_raw, reason="exit"):
+def pool_sell(mint, token_amount_raw, reason="exit", slippage_bps=None):
     """§123: Jupiter sell for graduated (pool-venue) positions."""
     ok, why = live_enabled()
     # §136: 100%-of-balance sells fail in Jupiter with Custom 6024
@@ -191,7 +191,7 @@ def pool_sell(mint, token_amount_raw, reason="exit"):
            "tokens_raw": int(token_amount_raw), "reason": reason,
            "mode": "live" if ok else "dry-run", "gate": why}
     try:
-        q = jupiter_quote_sell(mint, token_amount_raw)
+        q = jupiter_quote_sell(mint, token_amount_raw, slippage_bps)
         row["quote_out_sol"] = int(q.get("outAmount", 0)) / 1e9
         row["quote_price_impact"] = q.get("priceImpactPct")
         if not ok:
@@ -718,6 +718,21 @@ def exit_watch():
                 if venue == "pool":
                     est_sol = px * sell_tokens
                     res = pool_sell(mint, sell_tokens, reason=act)
+                    # §176: panic slippage escalation — LUTN and 29H7
+                    # drained to zero while their 15%-slip sells kept
+                    # failing Custom 6001 mid-collapse. On a verified
+                    # failed panic, immediately re-quote wider: 30%,
+                    # then 50%. A deep-discount fill beats zero.
+                    if act == "panic" and res.get("sig") \
+                            and not _tx_success(res["sig"]):
+                        _log({"action": "panic_escalate", "mint": mint,
+                              "first_sig": res["sig"]})
+                        for _wide in (3000, 5000):
+                            res = pool_sell(mint, sell_tokens,
+                                            reason=f"panic_slip{_wide}",
+                                            slippage_bps=_wide)
+                            if res.get("sig") and _tx_success(res["sig"]):
+                                break
                 else:
                     est_sol = sol_for_tokens(st, sell_tokens) / 1e9
                     res = curve_sell(mint, sell_tokens,
