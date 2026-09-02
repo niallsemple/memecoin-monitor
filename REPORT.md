@@ -4883,3 +4883,12 @@ Direct chain forensics on the two live drains (preTokenBalances of the killer du
 **The fix (§215, next):** classify each top holder by its FIRST inbound token transfer — received from mint authority/deployer/creation = true insider allocation; received via a swap (pool or curve program) = economic buyer, exclude. This works LIVE at entry time (all ATAs exist then) even though it fails retrospectively (5Lyboj's ATA is closed — zero inbound history recoverable). Entry-time is the only moment that matters for the gate.
 
 Threshold calibration from truth: LUTN's 13.75% lone-insider is the bar to beat; swarm shape stays with the §210B tripwire + §207 watcher. A creation-transfer-classified overhang ≥10% has a real chance of separating LUTN without touching EoBTrx — to be measured by §211 sampler upgraded to v2 classification.
+
+## §215 — Overhang v2 (creation-transfer classification) tested on EoBTrx: still fooled by bundles (2026-09-02 ~23:20 UTC)
+
+Built `insider_screen_v2.py`: classifies each top holder by the program origin of its FIRST token credit (swap program → buyer; plain transfer → insider). Result on known-green EoBTrx: **overhang_v2 = 15.5%** — seven wallets at a uniform 2.21% each. Uniform-share clusters receiving tokens via transfer are **bundle distributions** (one bundler snipes on the curve, spreads to fresh wallets). v2 correctly excludes curve buyers but cannot separate bundle recipients from deployer insiders — and EoBTrx carried that 44%/15.5% bundle overhang WITHOUT draining.
+
+**Conclusion: overhang in every flavor tested (v1 pool-buyer xref, §213 SOL-share proxy, v2 transfer classification) fails to separate drains from safe mints.** Drains are about WHO holds and their funding lineage, not position size. This redirects the load-bearing gate to identity:
+- The deployer/creator funding chain survives wallet freshness — capital must come from somewhere (§198 funding loop was predictive). Creator infrastructure already exists (creator_scan.json 41 mints, mfg_creator_blacklist.jsonl §105, §120 funded-recipient arming, §98a funded-reject paper gate).
+- **Next audit (§216): leave-one-out deployer-funding test across the 25 paper drains + live book — what fraction of drain deployers were funded by blocklist-known wallets vs normals?** If that separates, THE gate is creator-funding identity; overhang and crew counts become secondary confirmations.
+- §210A stays inactive regardless until this resolves; g2_gate.json remains false.
