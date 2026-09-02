@@ -3730,3 +3730,9 @@
 | 06:26 | solana | `ED8vUTmM…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:80% | liq=$0 mc=$5,976 | name=Coinworker symbol=Coinworker; contract:clean; rugcheck_score=80 lpLocked=100%; top10_ | Coinworkers work for the coin, not just their bags. Create, raid, mod, submit pr |
 | 06:26 | solana | `7VwjRc8i…` | PASS | — | liq=$69,435 mc=$630,874 | name=Bros symbol=Bros; contract:clean; rugcheck_score=1 lpLocked=84.99784219283572%; top10 |  |
 | 06:26 | robinhood | `0x21d26f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,077 mc=$18,421 | chain:robinhood no-audit-adapter |  |
+| 07:26 | solana | `CEowyQGp…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$13,808 | name=The Immortal Man symbol=Thomas; contract:clean; rugcheck_score=1 lpLocked=0%; top10_h | The Immortal Man |
+| 07:26 | robinhood | `0xa3e2f1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4,598 mc=$3,198 | chain:robinhood no-audit-adapter | Infinite Money Glitch |
+| 07:26 | solana | `E85HyNsD…` | FAIL | TOP10_HEAVY:86% | liq=$0 mc=$7,690 | name=David the Brick symbol=David; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | David the brick . |
+| 07:26 | robinhood | `0x99c3e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$15,645 | chain:robinhood no-audit-adapter | Robinhood's Vlad |
+| 07:26 | solana | `7mG3FCoW…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$11,857 | name=Rufus The Spooked Dog symbol=RUFUS; contract:clean; rugcheck_score=1 lpLocked=100%; t |  |
+| 07:26 | solana | `4r5sdjr6…` | PASS | — | liq=$31,660 mc=$148,801 | name=apebutt symbol=apebutt; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=15 | the cheekiest ape on-chain, scrolling toward the moon. |

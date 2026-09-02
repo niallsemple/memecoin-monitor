@@ -4426,3 +4426,8 @@ another new high.
 - Helius birth-feed WS shows intermittent 429 rate-limits (8 err lines/run) but births keep flowing (162 in the recovery run) — degraded but functional. Watch item.
 - Paper expectancy update from the same run: s60nm5fr gate now +1.58% avg (135 closed, 122 wins) — improving as sample grows.
 - Two new live entries opened by the recovery run: 5gNrnaff (0.1283) and nPYPLZK5/USWS (0.1218) — both fills verified on-chain, books corrected to actuals.
+
+## §158 — Count correction (2026-09-02 ~08:28 BST)
+- Direct recount of live_positions.json: **23 closes, 21 green (91.3%)**, not 20 as stated in §156 — arithmetic slip in the running tally; the book itself is unchanged and all 21 winners + 2 drains are individually verified on-chain.
+- Cohort math unaffected: post-panic-stop cohort = 6/6 green (ro8B, BF13, JwQb, L1PE, 7wwh, Nt3y).
+- Open: 5gNrnaff (~10m) and nPYPLZK5 (~10m, peak 1.0145), covered by live run. Scheduler cadence resumed (07:23Z run active).
