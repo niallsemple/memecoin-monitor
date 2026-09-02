@@ -4565,3 +4565,9 @@ another new high.
 ## §182 — wallet ledger auto-accrual verified (2026-09-02 ~16:44 BST)
 - The 15:24 run (first carrying §181b code) updated 2 qualified mints (EoBTrxSZ, 5mAgtK1T): ledger 1270 → **5270 rows**, **749 new unique wallets**, buys 3748 / sells 252 (pump-phase skew as expected).
 - Pipeline confirmed end-to-end: qualification → pool lookup → watermarked parsed-tx fetch → wallet attribution. Next: leaderboard scorer once per-token depth matures.
+
+## §183 — wallet_board.py v1 + first findings (2026-09-02 ~16:55 BST)
+- Leaderboard scorer live: per-wallet trades/mints/buy-sell flow/net/coverage/span/median. SOL-leg only (PnL approximate) — documented.
+- **Finding 1 — our own wallet captured** (CQcKkSee, 2 mints, 0.24 SOL buys): ledger attribution confirmed end-to-end including backfill windows.
+- **Finding 2 — coordinated cluster visible already:** ~10 wallets (D8MQQJ, Ag8F7y, Ar7cf9, D5Q5Ta, 9c1H3u, DBhEqC…) each made 57–74 buys of ~0.02 SOL median on ONE mint within the SAME ~14.5-min span, ~1.2–1.65 SOL each, almost zero sells. Independently impossible — this is a volume-bot/bundle pattern and a direct feed for EDGE #7/#10 (cluster consensus + bundled-launch rejection).
+- Depth caveat: most wallets have 1 trade; rankings mature as the ledger accrues.
