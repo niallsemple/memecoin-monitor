@@ -290,31 +290,35 @@
   "pnl_sol": 0.00643754
  },
  "BF13ezeaDz54LLYeWFokHRjdTDFbieckH73Bt19upump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788327548.722639,
   "entry_px": 6.35904890449652e-11,
   "tokens": 2004820171,
-  "tokens_left": 2004820171,
+  "tokens_left": 0,
   "size_sol": 0.1275,
-  "peak_mult": 1.0,
+  "peak_mult": 1.0610829938379607,
   "freerolled": false,
-  "sol_recovered": 0.0,
-  "actual_fill_note": "buy sig ajy1nYuH... verified; actual fill 2004820171 raw"
+  "sol_recovered": 0.134964177,
+  "actual_fill_note": "buy sig ajy1nYuH... verified; actual fill 2004820171 raw; sell sig 5E2oeapy... verified; wallet delta 0.134964177",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00746418
  },
  "JwQb7erbgVY6acmVPHBP2NHeafZZZqmzjwer96Mpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788327563.726465,
   "entry_px": 1.6193102484830104e-10,
   "tokens": 747125008,
-  "tokens_left": 747125008,
+  "tokens_left": 0,
   "size_sol": 0.121,
-  "peak_mult": 1.0,
+  "peak_mult": 1.0720636789447313,
   "freerolled": false,
-  "sol_recovered": 0.0,
-  "actual_fill_note": "buy sig FkXGUA8r... verified; actual fill 747125008 raw"
+  "sol_recovered": 0.129387598,
+  "actual_fill_note": "buy sig FkXGUA8r... verified; actual fill 747125008 raw; sell sig 3XguR8Pk... verified; wallet delta 0.129387598",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.0083876
  }
 }

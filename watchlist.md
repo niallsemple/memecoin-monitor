@@ -3713,3 +3713,8 @@
 | 05:36 | solana | `BP6vw9JJ…` | FAIL | TOP10_HEAVY:91% | liq=$0 mc=$4,738 | name=His Greed Will Consume Him symbol=CHUFFY; contract:clean; rugcheck_score=1 lpLocked=1 |  |
 | 05:36 | robinhood | `0x2e794A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$955,983,701,630 | chain:robinhood no-audit-adapter |  |
 | 05:36 | solana | `7KEPvuY6…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,093 mc=$2,026 | name=artificialpepe symbol=AIPEPE; contract:clean; rugcheck_score=33 lpLocked=100%; top10_ |  |
+| 05:46 | solana | `BrzE6Pbd…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99% | liq=$2,227 mc=$2,204 | name=MOPEY symbol=MOPEY; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=99.5% |  |
+| 05:46 | solana | `C2k7d3WL…` | PASS | — | liq=$37,343 mc=$207,145 | name=Official Trump Coin symbol=OTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 05:46 | robinhood | `0x170EF4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,525 mc=$41,347 | chain:robinhood no-audit-adapter | FWA is a pull-based acquisition protocol for on-chain financial positions. VRF-s |
+| 05:46 | robinhood | `0x0F4B24…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,290 mc=$102,370 | chain:robinhood no-audit-adapter | A TikTok account with 400k followers promoting a crypto joke coin to market thei |
+| 05:46 | bsc | `0xA3C497…` | PASS | — | liq=$24,773 mc=$63,476 | holders=442; buy_tax=0.02 sell_tax=0.02; contract:clean | 蝴蝶平台首个税收机制代币Mini  APP，小额股票代币一键兑换 |

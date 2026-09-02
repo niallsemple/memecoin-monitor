@@ -4387,3 +4387,8 @@ another new high.
 ## §150 — ro8B close (2026-09-02 ~06:37 BST)
 - ro8Btws2 exited via abort15 at 15.8m, mult 1.053; sell on-chain verified (err None), wallet delta 0.133737541 vs 0.1273 stake → **+0.00644 SOL (+5.1%)**.
 - First trade born under the §148 panic stop — never needed it, never dipped toward 0.80. Book: 17 closes, 15 green. 3 closes to the 20-trade review.
+
+## §151 — BF13 + JwQb close; 20-close milestone (2026-09-02 ~06:57 BST)
+- BF13ezea abort15 at 17.6m: verified wallet delta 0.134964177 vs 0.1275 → **+0.00746 SOL**.
+- JwQb7erb abort15 at 17.3m: verified wallet delta 0.129387598 vs 0.1210 → **+0.00839 SOL**.
+- **Book: 20 closes, 17 green (85%).** Wallet 2.56157 SOL, fully liquid, zero open. 20-trade review due next.
