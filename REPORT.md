@@ -4604,3 +4604,20 @@ First pass over the 3 ledger-covered mints (our 3 most recent closes, all green)
 **Early read (n=3, hypothesis only):** bundled mints did NOT hurt us — both bundled entries closed green via abort15. Plausible mechanism: bundle volume attracts organic momentum flow that our entry gate reads as qualification, while abort15/panic exits before the bundle network unwinds. Needs the full 36-close backtest: backfill pool discovery + wallet history for all traded mints, then compare pnl/peak_mult/drain-rate for cluster vs clean.
 
 Next: backfill the remaining 33 mints (pool discovery via getProgramAccounts memcmp + wallet_ledger.update), then run the cluster-vs-clean backtest on the live book.
+
+## §188 — Cluster-vs-clean backtest on the full 36-close book (2026-09-02 18:20 UTC)
+
+Backfill complete: **36/36 mints, 190,184 wallet-attributed trades**. Full backtest (cluster = ≥6 bot-like wallets):
+
+| group | n | green | med pnl | avg peak | worst |
+|---|---|---|---|---|---|
+| CLUSTER | 12 | 11/12 | **+0.00695** | 1.055 | −0.12499 (29H7 drain) |
+| CLEAN | 24 | 22/24 | +0.00422 | 1.074 | −0.13481 (LUTN drain) |
+
+**Findings:**
+1. **Clusters are not the enemy — they beat organic on median** (+0.00695 vs +0.00422, 92% green). Bundle volume = steady wash bid that our abort15 harvests. Do NOT filter them out.
+2. **But the home runs are organic.** The two biggest wins ever — X6PHP +0.040 (peak 1.32) and XyUKC +0.046 (peak 1.35), both nm_abort — were clean tokens. Cluster tokens capped at peak ≤1.08: bot nets stabilize price, they don't create runners.
+3. **Drains are cluster-agnostic.** Both full-stake losses (29H7 cluster, LUTN clean) were pool drains, not unwind patterns. Cluster detection does not predict the killer event → drain prediction (liquidity pull / deployer sell precursors) is the highest-value next edge on the board.
+4. Detector threshold note: 3 mints at 5 bots / ≥0.99 share (5mAg, 63Ty, rKdL) sit just under the ≥6 flag — borderline; classification robust to moving the cut.
+
+**EDGE_BOARD update:** EDGE #7/#10 (bundle detection) → REFRAMED: keep cluster score as a *sizing/upside* signal (expect capped peak, harvest abort15), not an avoidance filter. New top research target: drain precursors.
