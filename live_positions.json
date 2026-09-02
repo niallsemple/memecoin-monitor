@@ -450,16 +450,19 @@
   "pnl_sol": 0.00775068
  },
  "7W9dZP9LUqWKVyBQB7k28vdR5qVLF1dvhQ9LuCyfpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788340864.465219,
   "entry_px": 1.2851481863908522e-11,
-  "tokens": 10022190543,
-  "tokens_left": 10022190543,
+  "tokens": 10022179853,
+  "tokens_left": 0,
   "size_sol": 0.1288,
-  "peak_mult": 1.0,
+  "peak_mult": 1.0309799195530667,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.132452489,
+  "actual_fill_note": "buy sig 5WZf7PiA... verified; actual fill 10022179853 raw; sell sig 26oQC4Px... verified; wallet delta 0.132452489",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00365249
  }
 }

@@ -4450,3 +4450,7 @@ another new high.
 ## §162 — 63Ty + HATB closes (2026-09-02 ~10:20 BST)
 - 63TyWbh4 abort15: verified → **+0.00448 SOL**. HATB635n abort15: verified → **+0.00775 SOL** (strongest grind of the cohort, peak 1.066).
 - **Book: 28 closes, 26 green (92.9%).** Post-panic-stop cohort: **11/11 green, +0.0543**. 
+
+## §163 — 7W9d close (2026-09-02 ~10:39 BST)
+- 7W9dZP9L abort15 at ~15.5m, peak 1.031; on-chain verified → **+0.0037 SOL** (exact figure in book). Book: 29 closes, 27 green.
+- Post-panic-stop cohort: **12/12 green**. Streak intact.
