@@ -3642,3 +3642,14 @@
 | 00:16 | robinhood | `0xC11023…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,272 mc=$44,273 | chain:robinhood no-audit-adapter | a program written by an ape, running on a dog, made of Nvidia |
 | 00:16 | robinhood | `0x1E5dDd…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,909 mc=$46,952 | chain:robinhood no-audit-adapter | Unpopular stocks. |
 | 00:16 | solana | `8hm3UDc5…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:94% | liq=$3,142 mc=$3,330 | name=stockless symbol=stockless; contract:clean; rugcheck_score=30 lpLocked=100%; top10_ho |  |
+| 00:26 | robinhood | `0x00E222…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | RobinDog is the loyal guardian of Robinhood Chain—always sniffing out opportunit |
+| 00:26 | solana | `5BDz2cde…` | FAIL | TOP10_HEAVY:52% | liq=$8,634 mc=$15,336 | name=Get A Job Nigger symbol=GAJN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | get a job nigger. |
+| 00:26 | robinhood | `0x07bc7f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | High earner, Not rich yet |
+| 00:26 | arbitrum | `0x88b342…` | UNKNOWN | AUDIT_UNAVAILABLE | liq=$16,039 mc=$33,116 | goplus:unavailable | V3 launches on ARB. No bonding curve. Straight to liquidity. |
+| 00:26 | solana | `BA4iCAoJ…` | PASS | — | liq=$24,898 mc=$100,361 | name=Artificial Indian symbol=AI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Artificial Indian |
+| 01:06 | solana | `8PG6kq3t…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:93%; RC_WARN:Low amount of LP Providers | liq=$7,450 mc=$7,787 | name=Spacecat symbol=SPACECAT; contract:clean; rugcheck_score=52 lpLocked=0%; top10_hold=9 | NVIDIA’s recent article has an image of a SPACECAT, a cat on the Moon with Earth |
+| 01:06 | solana | `2vW5v5Kv…` | FAIL | TOP10_HEAVY:96% | liq=$0 mc=$4,452 | name=Fantasy Index 6900 symbol=FIX6900; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 01:06 | solana | `B6k8gY7f…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$22,083 | name=Cat in a box symbol=xcat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 01:06 | solana | `72NtVkCk…` | FAIL | TOP10_HEAVY:62%; RC_WARN:Copycat token; RC_WARN:Low Liquidity | liq=$10,490 mc=$20,531 | name=ALON symbol=alon; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=61.7% | Alon |
+| 01:06 | robinhood | `0x5a3544…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,618 mc=$12,376 | chain:robinhood no-audit-adapter | Kekfun is the most powerful launchpad on Robinhood.  Seize the Memes of Producti |
+| 01:06 | solana | `8WthYHc7…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$11,132 | name=Anthropic symbol=Butthole; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |

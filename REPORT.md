@@ -4285,3 +4285,14 @@ protected trade has closed green.
 **§139 verified (01:25 BST).** First fixed-window run completed in 15m06s
 (01:04:39→01:19:45, succeeded); the 01:24 trigger fired unskipped at 01:24:51.
 Watcher coverage is now seamless — no more already_running skips.
+
+## §141 — kXgk closes +2.6%: 5/6 live winners, wallet at new high (2 Sep 2026, 02:16 BST)
+
+kXgkdJ6f…pump (entered 01:59, 0.1282 SOL) aborted at 15m on r=1.029 (below the
+1.08 gate). Sell sig c9p1pn2n…yXy8i verified on-chain: err=None, wallet delta
++0.131518379 → pnl +0.00332 SOL (+2.6%). Both protection layers worked: §137b
+verified the entry fill before opening; §137 verified the exit before closing.
+
+Live book (6 closes): RST +0.01017, M32 +0.00446, J3a2 +0.00912, LUTN −0.13481,
+Rhm9 +0.00524, kXgk +0.00332 → net −0.10250 SOL, 5/6 winners. Wallet 2.565873 SOL
+(new high). All five post-protection trades green; LUTN remains the only loser.
