@@ -4366,3 +4366,7 @@ delta +0.137337963 → +0.00634 (+4.8%); rKdL63RN (0.1244 in) delta +0.128985952
 +0.00459 (+3.7%). Live book (13 closes): net −0.02565 SOL, 12/13 winners;
 post-LUTN era 10/10, +0.08775 SOL. Wallet 2.627100 SOL (+31.4% on funding) —
 another new high.
+
+## §147 — FFQk close (2026-09-02 ~05:54 BST)
+- FFQkDDFD exited via abort15 at 15.3m, mult 1.042 at trigger; sell on-chain verified (err None), wallet delta 0.129648663 vs 0.1247 stake → **+0.00495 SOL (+4.0%)**.
+- Live book: 15 closes, 14/15 green; post-LUTN era 12/12 green, +0.0967 SOL. XyUK still open (peak 1.213, fade armed).

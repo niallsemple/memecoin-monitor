@@ -3695,3 +3695,9 @@
 | 04:06 | robinhood | `0x553ed9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
 | 04:06 | solana | `5KHYLdDx…` | FAIL | TOP10_HEAVY:58% | liq=$0 mc=$16,848 | name=Loom symbol=Loom; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57.8% | OG mascot of Solana—a community-driven character that represents the early spiri |
 | 04:06 | solana | `7ei9hA14…` | FAIL | TOP10_HEAVY:73%; RC_WARN:Low Liquidity | liq=$6,128 mc=$8,812 | name=Capybara Apple symbol=CAPPLE; contract:clean; rugcheck_score=19 lpLocked=100%; top10_ |  |
+| 04:26 | solana | `JBAQkWMb…` | FAIL | TOP10_HEAVY:62%; RC_WARN:Copycat token | liq=$0 mc=$22,653 | name=Nubcat symbol=NUB; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=62.1% | https://x.com/thedevrrrrrrr/status/2095003850122125679 |
+| 04:26 | solana | `WWWWgyBC…` | FAIL | TOP10_HEAVY:95%; RC_WARN:Copycat token | liq=$0 mc=$5,961 | name=W Coin symbol=W; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=94.9% |  |
+| 04:26 | robinhood | `0x1a50Dc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,493 mc=$25,911 | chain:robinhood no-audit-adapter | Chip Wilson named Lululemon so that asian people would have a hard time pronounc |
+| 04:26 | solana | `8enwAk7E…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$18,078 | name=Smiski symbol=Smiski; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59.1 |  |
+| 04:26 | robinhood | `0x51d3bB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$324,167 mc=$1,353,309 | chain:robinhood no-audit-adapter | Much wow. Paired with $TSLA. |
+| 04:26 | robinhood | `0x5df105…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,694 mc=$20,715 | chain:robinhood no-audit-adapter | Merrrrrrr. The official Goob token on Robinhood. |
