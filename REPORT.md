@@ -4621,3 +4621,17 @@ Backfill complete: **36/36 mints, 190,184 wallet-attributed trades**. Full backt
 4. Detector threshold note: 3 mints at 5 bots / ≥0.99 share (5mAg, 63Ty, rKdL) sit just under the ≥6 flag — borderline; classification robust to moving the cut.
 
 **EDGE_BOARD update:** EDGE #7/#10 (bundle detection) → REFRAMED: keep cluster score as a *sizing/upside* signal (expect capped peak, harvest abort15), not an avoidance filter. New top research target: drain precursors.
+
+## §189 — Drain autopsy: insider allocation dumps, fingerprinted (2026-09-02 18:40 UTC)
+
+Full order-flow autopsy of both total-loss drains using the 190k-row wallet ledger:
+
+**29H7 (−0.125 SOL):** Perfectly normal flow — ~4.4 SOL/min buys, sells ≤0.7 — for 12 minutes. At minute 12, wallet **7Ljg1CrYNF sold 1,394 SOL in ONE transaction**, with 4 accomplice wallets dumping 18–37 SOL each in the same minute. All five: **zero buys ever, first activity = the dump minute**. Buy volume went to 0.00 permanently. Dump hit at 12m — *before* our 15m abort could even fire.
+
+**LUTN (−0.135 SOL):** Wash flow for 52 minutes, then wallet **5Lyboj8PgB sold 306.5 SOL in one shot** — zero buys, zero prior activity. Same fingerprint.
+
+**The killer fingerprint (both drains):** (a) wallet never bought through the pool, (b) appears exactly once, (c) sells a colossal amount. These are **insider allocations** (pre-pool tokens from deployer) being market-dumped — not LP pulls, not bundle unwinds. Cluster presence, wash volume, entry timing: all irrelevant. The book's two losses came from the same attack.
+
+**Actionable edge — insider-overhang screen:** insider wallets are detectable BEFORE they dump: big token holders who never appear as pool buyers. Prototype: getTokenLargestAccounts (cheap standard RPC) at entry → cross-ref against ledger buyer set → holders with large balance + no pool buy = overhang risk → skip or tighten exits. Caveat for backtest: post-drain holder state is useless (insider balance is gone), so validate the screen on live forward entries + use ledger seller-without-buy history as the retrospective proxy.
+
+**EDGE_BOARD:** drain precursors → CONFIRMED as insider dumps; new top candidate = insider-overhang entry screen.
