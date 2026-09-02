@@ -4751,3 +4751,11 @@ Top-3 killer consolidation hops:
 Neither new master appears in our 29k-wallet ledger (they're pure treasuries, never trade). Blocklist v5: **274 entries** (6 masters, 183 killers, 46 workers, 39 next-gen).
 
 Pattern confirmed across crews: dump → aggregate → treasury. Every treasury is a durable identity; every treasury's funding transactions pre-mark the next worker generation.
+
+## §202 — Correction + escalation: MASTER-D traded OUR book (2026-09-02 23:15 UTC)
+
+Correction to §201: 5qrZfD2Li (MASTER-D) IS in our ledger — not a pure treasury. It sold **402.52 SOL on 5GJf1Zzx** (our close #28, +0.00392 green via abort15), never bought there — insider shape, and it later received 1,498 SOL consolidation from the AgLS killer. So MASTER-D is a player-collector hybrid: dumps on mints AND treasuries proceeds.
+
+Survival note: 5GJf took a 402 SOL insider sell and our abort15 still exited green — dump size vs our exit speed again. Three insider-dump events on our live book now confirmed: LUTN (−0.135, too big/too slow), 29H7 (−0.125, dump at +12m beat abort15), 5GJf (+0.004, we won the race).
+
+Blocklist v5 stands at 274; gate reads masters/killers/feeders/next-gen — MASTER-D's on-mint presence would now trigger DRAINER_NETWORK_ALERT at entry.
