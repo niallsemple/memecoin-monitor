@@ -33,6 +33,94 @@ def _watermarks():
     return {}
 
 
+RPC_URL = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
+
+
+def _rpc(method, params):
+    body = json.dumps({"jsonrpc": "2.0", "id": 1,
+                       "method": method, "params": params}).encode()
+    req = urllib.request.Request(RPC_URL, data=body,
+                                 headers={"Content-Type": "application/json"})
+    return json.loads(urllib.request.urlopen(req, timeout=30).read()) \
+        .get("result")
+
+
+def _parse_rpc_tx(tx, mint):
+    """jsonParsed getTransaction → ledger row (§225 RPC fallback).
+
+    Helius parsed API went 403 mid-shift 2026-09-02; RPC jsonParsed has no
+    tokenTransfers convenience view, so derive: side from the fee payer's
+    token-delta sign on `mint`; size from their native SOL delta + fee
+    (Jupiter unwraps WSOL to native on sells; buys wrap native in)."""
+    meta = tx.get("meta") or {}
+    if meta.get("err"):
+        return None
+    msg = tx["transaction"]["message"]
+    keys = [k["pubkey"] if isinstance(k, dict) else k
+            for k in msg["accountKeys"]]
+    wallet = keys[0]
+    pre = post = 0
+    for b in meta.get("preTokenBalances") or []:
+        if b.get("mint") == mint and b.get("owner") == wallet:
+            pre += int(b["uiTokenAmount"]["amount"])
+    for b in meta.get("postTokenBalances") or []:
+        if b.get("mint") == mint and b.get("owner") == wallet:
+            post += int(b["uiTokenAmount"]["amount"])
+    d_tok = post - pre
+    if d_tok == 0:
+        return None
+    i = keys.index(wallet)
+    d_sol = (meta["postBalances"][i] - meta["preBalances"][i]
+             + meta.get("fee", 0)) / 1e9
+    if d_tok > 0:
+        side, sol = "buy", -d_sol       # spent SOL
+    else:
+        side, sol = "sell", d_sol       # received SOL
+    if sol <= 1e-6:
+        return None
+    return {"t": tx.get("blockTime"), "mint": mint, "wallet": wallet,
+            "side": side, "sol": round(sol, 9),
+            "sig": tx["transaction"]["signatures"][0]}
+
+
+def fetch_new_rpc(pool_addr, mint, max_sigs=400):
+    """RPC fallback for fetch_new: sigs until watermark, parse each."""
+    wm = _watermarks()
+    seen_before = wm.get(pool_addr)
+    params = [pool_addr, {"limit": 100}]
+    if seen_before:
+        params[1]["until"] = seen_before
+    sigs, newest = [], None
+    while len(sigs) < max_sigs:
+        try:
+            r = _rpc("getSignaturesForAddress", params)
+        except Exception:
+            break
+        if not r:
+            break
+        if newest is None:
+            newest = r[0]["signature"]
+        sigs += [s["signature"] for s in r]
+        if len(r) < 100:
+            break
+        params[1]["before"] = r[-1]["signature"]
+        time.sleep(0.4)
+    rows = []
+    for sig in sigs[:max_sigs]:
+        try:
+            tx = _rpc("getTransaction",
+                      [sig, {"encoding": "jsonParsed",
+                             "maxSupportedTransactionVersion": 0}])
+        except Exception:
+            continue
+        if tx:
+            row = _parse_rpc_tx(tx, mint)
+            if row:
+                rows.append(row)
+        time.sleep(0.15)
+    return rows, newest
+
+
 def fetch_new(pool_addr, mint, max_pages=20):
     """Fetch parsed txs newer than the watermark. Returns (rows, newest_sig)."""
     wm = _watermarks()
@@ -45,6 +133,10 @@ def fetch_new(pool_addr, mint, max_pages=20):
             req = urllib.request.Request(url, headers={"User-Agent": "mfg/1.0"})
             txs = json.loads(urllib.request.urlopen(req, timeout=20).read())
         except Exception:
+            # §225: parsed API 403s since 2026-09-02 — fall back to the
+            # RPC path (sigs until watermark + jsonParsed owner deltas).
+            if before is None:
+                return fetch_new_rpc(pool_addr, mint)
             break
         if not txs:
             break

@@ -5085,3 +5085,22 @@ now polls both, so their NEXT funding burst is caught forward); 6 feeders,
 fresh per op) — this strengthens the watcher's forward coverage but does
 not revive pre-entry gating (§212-216 stand). The parsed-API 403 needs
 watching; RPC fallback path proved sufficient.
+
+## §225 — Wallet ledger RPC fallback (Helius parsed API outage) (2026-09-02)
+
+**Event:** Helius enhanced parsed-transaction API
+(`/v0/addresses/{addr}/transactions`) began returning 403 mid-shift
+(worked for §221 fingerprinting, dead ~1h later). Plain RPC on the same
+key unaffected.
+
+**Blast radius:** live loop unaffected — tracker intake (websockets),
+exit stack, treasury watcher all RPC-based. Casualty: the tracker's
+wallet-ledger step (§187 per-wallet attribution) logged
+`wallet_ledger_mints: 0` on the 22:04 UTC run, plus batch research tools
+(fingerprint/backfill/cluster — all jobs complete).
+
+**Fix:** `wallet_ledger.py` now falls back to RPC when the parsed API
+fails on a first page: `getSignaturesForAddress(until=watermark)` +
+jsonParsed `getTransaction`; side from fee payer's token-delta sign, size
+from native SOL delta + fee (Jupiter unwraps WSOL→native on sells).
+Verified: 14/15 sigs parsed on a live pool. Watermark semantics unchanged.

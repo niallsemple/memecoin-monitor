@@ -3768,3 +3768,15 @@
 | 22:06 | solana | `9ykE4HYh…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$0 mc=$34,605 | name=solsem symbol=solsem; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41.4 | 10% of supply will be sent to ANSEM!  100% of fees will be redirected to support |
 | 22:06 | solana | `Cd2b8guD…` | PASS | — | liq=$22,078 mc=$80,687 | name=Ham The Astrochimp symbol=HAM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | Ham The Astrochimp |
 | 22:06 | robinhood | `0x8815cb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$89,588 mc=$977,824 | chain:robinhood no-audit-adapter |  |
+| 22:16 | solana | `CSRRgTwf…` | FAIL | RC_DANGER:Single holder ownership; TOP10_HEAVY:64%; RC_WARN:High holder concentration | liq=$46,484 mc=$298,662 | name=RETARDIO symbol=RETARDIO; contract:clean; rugcheck_score=42 lpLocked=99.8864994471384 | retardio is sex on the solana blockchain  no casino no candy labs no ourbit rave |
+| 22:16 | robinhood | `0x192Baf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,509 mc=$57,774 | chain:robinhood no-audit-adapter |  |
+| 22:16 | robinhood | `0xC4C05f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,898 mc=$197,993 | chain:robinhood no-audit-adapter | $BOOMER is the first BOOMER / META pair on Robinhood Chain, pairing a memecoin w |
+| 22:16 | robinhood | `0x871a79…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | COMPUTE//CAPITAL Onchain compute infrastructure on Robinhood Chain. Pay in USDG. |
+| 22:16 | robinhood | `0xfbf37f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Decentralized compute on Robinhood · proof of stake · powered by pons v2 |
+| 22:16 | robinhood | `0x7AdE1E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | You're not grinding for money. You're grinding for the time money buys. |
+| 22:26 | robinhood | `0x1ad24f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Optimizing bridging routes for the Robinhood chain. On each bridge, users receiv |
+| 22:26 | robinhood | `0xc96679…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,999 mc=$172,431 | chain:robinhood no-audit-adapter | Not a security. Not a stock. Not returning the SEC's calls. |
+| 22:26 | robinhood | `0x77A719…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,695 mc=$47,510 | chain:robinhood no-audit-adapter | The First Memecoin Pack Layer on Robinhood Chain. |
+| 22:26 | robinhood | `0x5a722f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 22:26 | robinhood | `0x9E2C4B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,327 mc=$15,368 | chain:robinhood no-audit-adapter |  |
+| 22:26 | robinhood | `0x817516…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,001 mc=$93,721 | chain:robinhood no-audit-adapter | The "Rururemon" meme is an internet joke based on a stereotypical mispronunciati |
