@@ -3754,3 +3754,11 @@
 | 09:06 | robinhood | `0xE766b5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$53,469 mc=$347,872 | chain:robinhood no-audit-adapter | Every wallet that ever traded on Robinhood Chain gets $RETAIL airdropped. Poweri |
 | 09:06 | solana | `6YeoGNZU…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$9,948 | name=GROK BOT THE CORE symbol=GBTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
 | 09:06 | robinhood | `0x7d8d0d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,495 mc=$34,247 | chain:robinhood no-audit-adapter | dinner wif candles |
+| 09:56 | bsc | `0xC25D8E…` | PASS | — | liq=$22,073 mc=$26,232 | holders=75; buy_tax= sell_tax=; contract:clean | The BNB Community is fundraising to help all those affected by the devastating N |
+| 09:56 | robinhood | `0x14dF97…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Chrome Dino on Robinhood Chain. |
+| 09:56 | robinhood | `0x7235Cf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,325 mc=$40,342 | chain:robinhood no-audit-adapter | amd now stands for artificial meow domination. |
+| 09:56 | solana | `6cAqqdMg…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$4,285 | name=green candle symbol=green; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 09:56 | solana | `6jSqSD4P…` | FAIL | TOP10_HEAVY:87% | liq=$0 mc=$14,379 | name=the meme is funny symbol=funny; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 09:56 | robinhood | `0xd0B030…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14 mc=$26,820 | chain:robinhood no-audit-adapter |  |
+| 10:06 | robinhood | `0x967E0a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,218 mc=$8,224 | chain:robinhood no-audit-adapter | Agentix - Agent-to-agent payments on Robinhood.  From programmable wallets to fi |
+| 10:06 | robinhood | `0xC91176…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,530 mc=$22,119 | chain:robinhood no-audit-adapter | ZKhood is a programmable privacy protocol for onchain finance. Hold balances, pa |

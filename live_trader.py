@@ -34,7 +34,12 @@ KILL_F = MON / "STOP_LIVE_TRADING"          # drop this file = instant halt
 LEDGER = MON / "mfg_live_trades.jsonl"
 
 SOL = "So11111111111111111111111111111111111111112"
-RPCS = ["https://solana-rpc.publicnode.com",
+# §164: Helius (10M credits/mo) is now the primary RPC — faster, no 429s.
+# Public endpoints remain as fallbacks.
+_HK_F = MON / "helius_key.txt"
+_HK = _HK_F.read_text().strip() if _HK_F.exists() else ""
+RPCS = ([f"https://mainnet.helius-rpc.com/?api-key={_HK}"] if _HK else []) + [
+        "https://solana-rpc.publicnode.com",
         "https://api.mainnet-beta.solana.com"]
 JUP_Q = "https://lite-api.jup.ag/swap/v1/quote"
 JUP_S = "https://lite-api.jup.ag/swap/v1/swap"
@@ -56,9 +61,10 @@ def _log(row):
 
 
 def _rpc(method, params):
-    for _ in range(4):
-        url = RPCS[_state["rpc"] % len(RPCS)]
-        _state["rpc"] += 1
+    for attempt in range(4):
+        # §164: ordered fallback — Helius first on every call, public only
+        # on failure (was round-robin rotation to spare the free endpoints).
+        url = RPCS[attempt % len(RPCS)]
         try:
             req = urllib.request.Request(
                 url,
