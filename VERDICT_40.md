@@ -33,7 +33,7 @@ Fill the `[_]` fields from `python3 review_40.py` + `python3 drain_sim.py` at 40
 
 1. `python3 review_40.py` → paste into REPORT.md §219.
 2. `python3 drain_sim.py` → confirm gated replay still positive.
-3. Edit `live_trader.py`: `MAX_POS_SOL`/`cap` 0.20 → 0.30. (Sizing stays 5% of balance; cap raise is the only change.)
+3. Edit `live_trader.py` line 52: `MAX_SOL = 0.20` → `0.30`. (Sizing stays 5% of balance; cap raise is the only change.)
 4. `g2_gate.json` stays `false`. Shadow screens keep stamping entries.
 5. Commit "§219 verdict: [decision]", push, announce to owner.
 
