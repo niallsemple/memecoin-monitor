@@ -4414,3 +4414,9 @@ another new high.
 - **Expectancy if panic caps drains at −20% of stake: +0.00665 SOL/trade = +5.2% of stake per trade.** At ~15 trades/day that compounds fast.
 - **Max tolerable drain rate at the 0.80 floor: 27.9%** — observed live drain rate is 9.1% (2/22), paper 7.0%. Margin of safety ~3x.
 - Conclusion: if the panic stop performs as designed on the next drain, the system is net positive at observed frequencies. The only remaining empirical unknown is the panic stop's live fill quality mid-drain.
+
+## §156 — Nt3y close; manual watcher executed the exit (2026-09-02 ~07:56 BST)
+- Nt3ytvyn abort15 at 15.6m, mult 1.018; verified wallet delta 0.130334739 vs 0.1284 → **+0.00193 SOL**. Book: 23 closes, 20 green.
+- Post-panic-stop cohort: **6/6 green, +0.0345**.
+- Process note: the 06:43 tracker run didn't fire/ended early; the manual gap-coverage watcher (live_trader.exit_watch) detected the abort15 condition and executed the live sell itself — the manual fallback path is proven end-to-end, including on-chain sell + verification.
+- Watch: one tracker trigger appears to have been skipped this cycle; monitor next runs.
