@@ -4651,3 +4651,18 @@ Also confirmed by the 0% readings: our ledger buyer-attribution is solid — eve
 `live_trader.open_position()` now calls `_shadow_insider_screen(mint, pos)` after every entry: discovers the pool (getProgramAccounts memcmp if unmapped), refreshes the wallet ledger for the mint, runs insider_screen, and stamps `insider_overhang_pct` / `insider_n` onto the position record + a full `insider_screen` row into mfg_live_trades.jsonl. Fully exception-guarded — a screen failure can never block or break a trade. Tested in-process with writes neutralized: correct fields and log row produced.
 
 From the next entry onward, every position carries its entry-time insider-overhang snapshot. Validation path: correlate overhang vs outcome across the next ~10-20 entries; if high overhang predicts drains, promote to a blocking gate (§190: would have saved both total losses, −0.26 SOL).
+
+## §192 — Killer wallets traced: fresh one-shot wallets feeding master collectors (2026-09-02 19:55 UTC)
+
+Full-address history trace of both drain killers (Helius parsed API):
+
+**29H7 killer 7Ljg1CrYNF…byuW:** minutes after its 1,394 SOL dump it received 12 consolidation transfers (~435 SOL) from accomplice accounts, then WITHDRAW + CLOSE_ACCOUNT, then forwarded **2,496.46 SOL to master wallet B9M7zn49Ywoabc7B5FN1N…**. A single-drain node closing out and feeding a collector holding thousands of SOL — an industrial repeat operation, not a one-off rugger.
+
+**LUTN killer 5Lyboj8PgB…kYgD:** wallet created ~40 min before our entry (burst of UNKNOWN setup txs), exactly one SWAP (the 306.5 SOL dump at minute 52), then **312.39 SOL consolidated to 6iQ9zzNSsAeRHLkEhjDgxBUfhNZXQ5RtoDAzTRJzL** minutes later. Same lifecycle.
+
+**Refined fingerprint (3 layers):**
+1. **Freshness** — killer wallets are created minutes before the token's pool phase, used once, closed. Detectable at entry: top holder with wallet age < token age.
+2. **No pool buy** — allocation arrives pre-pool (deployer-side), visible as big holder absent from pool-buyer set (= the §190/191 screen, now armed).
+3. **Consolidation** — proceeds flow to durable master wallets within minutes. Masters are the network identifiers: B9M7… and 6iQ9… can be mapped across every drain they touch.
+
+Next: trace the two masters' histories, count drains feeding them, and check whether their fresh-wallet children appear in any of our other 34 mints' ledgers — turning one fingerprint into a full network map (and a blocklist).
