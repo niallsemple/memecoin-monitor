@@ -4936,3 +4936,11 @@ Reconstructed the drain windows from the wallet ledger (who actually got filled,
 - **nm_abort stall exits: +0.3 / +0.6 min** past the 5-min stall timer — sub-minute detection on the momentum condition.
 - The 3/34 overshoot tail: **LUTN 37.3m** (r stayed ≥1.08 until the +52m dump — condition wasn't met earlier; a timestamp artifact, not lag), **HK6N 27.3m** (first sell tx failed → retried and landed +0.0102 green; the retry path worked), J3a2 7.1m (same retry pattern).
 - **Conclusion: detection latency is NOT a gap.** The two live losses were slippage-tolerance (LUTN — fixed via §176 escalation) and single-tx instant drain (29H7 — irreducible). No loop tightening needed before the sizing decision; the existing cadence catches price conditions within ~1 minute.
+
+## §219 — Cross-chain check: BSC paper book is lossless (n=22) but the pipeline is dead; Base never produced (2026-09-03 ~00:20 UTC)
+
+- **BSC paper book: 22 closes, 64% green, ZERO losses (min +0.000), mean +82%, median +84%, max +496%.** A completely different distribution from Solana — BSC meme flow shows no pump.fun-style insider drains in this sample; the exit stack's winners run free (the +496% home run is the kind Solana's 15m abort never sees).
+- Shadow/replay variants: n=4 each, +2%/+22% mean — too thin to read.
+- **Base book: zero rows.** The Base watcher never produced a trade; treat as unproven.
+- **Pipeline status: DEAD.** bsc_flow.jsonl last row 09-02 10:40 UTC (~10h stale), no listener process running. The BSC book stats are frozen at n=22.
+- **Decision framing:** BSC is the most promising second market on evidence (lossless record, asymmetric winners), but n=22 with different rug mechanics is not tradable proof. Revival cost is low: bsc_listener.py exists and worked; it needs a persistent home (own cron slot or folded into the tracker run). 5 cron slots remain. Until it runs again, the book can't accumulate the n≥60 needed to judge.
