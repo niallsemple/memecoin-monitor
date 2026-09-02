@@ -4740,3 +4740,14 @@ Swept the s60nm5fr paper book's 9 deep drains (ret ≤ −0.85) with full wallet
 **Verdict: the general defense is the insider-overhang screen (whales who never bought); the feeder gate catches the specific MASTER-A network.** Both are needed; both are armed.
 
 Blocklist v4: 272 entries (4 masters, 183 killers, 46 workers, 39 next-gen). Caveat: the ≥5-SOL never-bought harvest over-captures legit bonding-curve profit-takers (fresh wallets rarely recur), so the killers section is an intelligence list, not a gate input — gate still keys on masters/workers/funded. Real predictive value: tracing these killers' consolidation hops → more masters → more fleets. Top trace targets: 734xTmPzAt (4,058 SOL), DFQm2YknGveH (1,406), BxH2ZTZ5Wd (562).
+
+## §201 — Killer trace: two more masters, one whale still holding (2026-09-02 23:05 UTC)
+
+Top-3 killer consolidation hops:
+- **DFQm2YknGveH (1,406 SOL, AgLS drain)** forwarded to TWO fresh treasuries: **A8hvpZi5… (1,873.75 SOL — more than the AgLS dump, so it consolidates multiple drains)** and **5qrZfD2Li… (1,498.28 SOL)** → added as MASTER-C / MASTER-D.
+- **7Ljg1CrYNF (1,394 SOL, 29H7)** re-confirms MASTER-A path.
+- **734xTmPzAt (4,058 SOL, 6Bob drain) — no outbound movement: still holding.** Watch-listed; when it moves, its master reveals itself.
+
+Neither new master appears in our 29k-wallet ledger (they're pure treasuries, never trade). Blocklist v5: **274 entries** (6 masters, 183 killers, 46 workers, 39 next-gen).
+
+Pattern confirmed across crews: dump → aggregate → treasury. Every treasury is a durable identity; every treasury's funding transactions pre-mark the next worker generation.
