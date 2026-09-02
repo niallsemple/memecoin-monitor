@@ -4431,3 +4431,8 @@ another new high.
 - Direct recount of live_positions.json: **23 closes, 21 green (91.3%)**, not 20 as stated in §156 — arithmetic slip in the running tally; the book itself is unchanged and all 21 winners + 2 drains are individually verified on-chain.
 - Cohort math unaffected: post-panic-stop cohort = 6/6 green (ro8B, BF13, JwQb, L1PE, 7wwh, Nt3y).
 - Open: 5gNrnaff (~10m) and nPYPLZK5 (~10m, peak 1.0145), covered by live run. Scheduler cadence resumed (07:23Z run active).
+
+## §159 — 5gNr + nPYPL closes (2026-09-02 ~08:38 BST)
+- 5gNrnaff abort15: verified delta 0.128436215 vs 0.1283 → **+0.00014 SOL** (scratch).
+- nPYPLZK5/USWS abort15: verified delta 0.125337163 vs 0.1218 → **+0.00354 SOL**.
+- **Book: 25 closes, 23 green (92%).** Post-panic-stop cohort: **8/8 green, +0.0382**. Wallet 2.56596, all liquid — 0.118 from breakeven on the 2.68389 baseline.
