@@ -4408,3 +4408,9 @@ another new high.
 ## §154 — 7wwh close (2026-09-02 ~07:37 BST)
 - 7wwht8j3 abort15 at 15.6m, mult 1.046; verified wallet delta 0.133803696 vs 0.1282 stake → **+0.00560 SOL**. Book: 22 closes, 19 green.
 - Post-panic-stop cohort: **5/5 green, +0.0325**. Wallet ~2.5694, all liquid.
+
+## §155 — Break-even math under the panic-stop regime (2026-09-02 ~07:45 BST)
+- Live mix over 22 closes: 18 grind winners (avg +0.00616), 2 nm_abort spikes (avg +0.04316), 2 drains.
+- **Expectancy if panic caps drains at −20% of stake: +0.00665 SOL/trade = +5.2% of stake per trade.** At ~15 trades/day that compounds fast.
+- **Max tolerable drain rate at the 0.80 floor: 27.9%** — observed live drain rate is 9.1% (2/22), paper 7.0%. Margin of safety ~3x.
+- Conclusion: if the panic stop performs as designed on the next drain, the system is net positive at observed frequencies. The only remaining empirical unknown is the panic stop's live fill quality mid-drain.
