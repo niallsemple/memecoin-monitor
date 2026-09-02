@@ -4404,3 +4404,7 @@ another new high.
 ## §153 — L1PE close (2026-09-02 ~07:17 BST)
 - L1PE8uhc abort15 at 15.7m, mult 1.038; verified wallet delta 0.132680294 vs 0.1281 → **+0.00458 SOL**. Book: 21 closes, 18 green.
 - Post-panic-stop cohort: 4/4 green, +0.0269. Wallet 2.56387, all liquid.
+
+## §154 — 7wwh close (2026-09-02 ~07:37 BST)
+- 7wwht8j3 abort15 at 15.6m, mult 1.046; verified wallet delta 0.133803696 vs 0.1282 stake → **+0.00560 SOL**. Book: 22 closes, 19 green.
+- Post-panic-stop cohort: **5/5 green, +0.0325**. Wallet ~2.5694, all liquid.

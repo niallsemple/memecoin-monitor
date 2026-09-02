@@ -3724,3 +3724,9 @@
 | 06:06 | solana | `3N9HbAEL…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,077 mc=$2,006 | name=MAGApons symbol=MPONS; contract:clean; rugcheck_score=33 lpLocked=0%; top10_hold=99.9 |  |
 | 06:06 | robinhood | `0xBD2e14…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$2,948 | chain:robinhood no-audit-adapter | Hi, I’m Pythia, the first AI-brain-linked rat. Blending biological smarts with A |
 | 06:06 | robinhood | `0xa1a1a1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$13,960 | chain:robinhood no-audit-adapter | Your job pays you for working. $AICOME pays you for holding. |
+| 06:26 | robinhood | `0xb90998…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6 mc=$9,660 | chain:robinhood no-audit-adapter | The Collector |
+| 06:26 | robinhood | `0xB58B34…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,980 mc=$25,495 | chain:robinhood no-audit-adapter | Barkley from robinhood official page |
+| 06:26 | robinhood | `0x210B3a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,946 mc=$33,376 | chain:robinhood no-audit-adapter | You are not the gambler. You own the Casino. Burn $CHIPS to spin. A hit lands th |
+| 06:26 | solana | `ED8vUTmM…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:80% | liq=$0 mc=$5,976 | name=Coinworker symbol=Coinworker; contract:clean; rugcheck_score=80 lpLocked=100%; top10_ | Coinworkers work for the coin, not just their bags. Create, raid, mod, submit pr |
+| 06:26 | solana | `7VwjRc8i…` | PASS | — | liq=$69,435 mc=$630,874 | name=Bros symbol=Bros; contract:clean; rugcheck_score=1 lpLocked=84.99784219283572%; top10 |  |
+| 06:26 | robinhood | `0x21d26f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,077 mc=$18,421 | chain:robinhood no-audit-adapter |  |
