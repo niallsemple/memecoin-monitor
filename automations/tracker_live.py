@@ -1837,6 +1837,20 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §207: treasury watcher — poll drain-crew master wallets for
+        # new outflows; worker-funding bursts auto-append recipients
+        # to the blocklist funded_next_gen section. ~10-30s on quiet
+        # runs (watermark-only), longer only when a crew actually
+        # moves money. Non-blocking, exception-guarded.
+        import importlib.util as _ilu3
+        _s4 = _ilu3.spec_from_file_location(
+            "treasury_watch", str(MON / "treasury_watch.py"))
+        _tw = _ilu3.module_from_spec(_s4)
+        _s4.loader.exec_module(_tw)
+        _tw.main()
+    except Exception:
+        pass
+    try:
         # §178: post-run rent sweep — close dust/empty ATAs in-process
         # after all exits are done. reclaim_ata.scan hard-skips open
         # positions and unbooked mints (§169 guards). Threshold >=2

@@ -4796,3 +4796,10 @@ Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
 - **Conclusion: the drain crews are not independent operators.** 29H7's crew (MASTER-A chain, 3,938 SOL observed), LUTN's crew (B chain), and AgLS's crew (C/D treasuries, 3,372 SOL) all show the same shape — killer → staging → relay hops → consolidation into multi-thousand-SOL treasuries. The B-chain merge proves at least two "separate" crews pool capital upstream.
 - **Blocklist v7 = 294 wallets**: added MASTER-B2/B3/B4 with full hop metadata. Feeder/crew gates now read all three.
 - Operational note: capital recycles drain→treasury within ~4–19h. A treasury this size (1,833 SOL ≈ 14× our entire book history) can fund dozens of next-gen mints. The feeder-count alert on entry is now the earliest warning channel; treasury-level prediction would need watching B4's outflows (worker funding bursts), which is a candidate for a small watcher script if the entry data keeps validating the gate.
+
+## §207 — Treasury watcher live: crews' funding bursts now trip the wire before the mint (2026-09-02 ~21:55 UTC)
+
+- Built `treasury_watch.py`: polls all 9 blocklist masters each tracker run, watermarked (treasury_watch_state.json), classifies outbound flows — **WORKER_STAKE** (≥3 similar-amount transfers within 10 min = funding burst; recipients auto-added to `funded_next_gen`), **TREASURY_HOP** (≥100 SOL consolidation; logged for review), or plain OUTFLOW. Log: `treasury_watch.jsonl`.
+- Wired into the tracker run ahead of the §178 rent sweep (exception-guarded, ~10–30s quiet cost). Asset + `automations/tracker_live.py` pair byte-identical.
+- Watermarks initialized at current chain head (history skipped; B4's 1,833 SOL inflow already covered in §206). First live poll: clean, no new outflows.
+- This closes the last reactive gap: previously we learned a crew's worker wallets only *after* their mint drained someone. Now a funding burst appends the workers to the blocklist **before** their mint exists — the §204 feeder gate on the next entry can fire on wallets that have never traded.
