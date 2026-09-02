@@ -4487,3 +4487,9 @@ another new high.
 - **Fix shipped:** dust is now RELATIVE (raw ≤ 0.5% of booked tokens); hard skip for any mint with an OPEN book position; hard skip for any mint not in the book. Dry-run verified: 23 true-dust accounts closable (+0.0477 SOL pending), LUTN + open positions correctly skipped.
 - **Process lesson logged:** any script that signs wallet txs must cross-check live_positions.json (open positions) before touching token accounts. The live gate was checked and passed — the failure was purely the absolute dust cutoff plus no open-position guard.
 - Wallet ground truth after all events: **2.464088 SOL** (−8.19% vs 2.68389 funding baseline).
+
+## §170 — rent reclaim completed (2026-09-02 ~13:42 BST)
+- Fixed reclaimer ran in the run gap: **23 accounts closed in 3 batches, all landed** (sigs 448DNnco…, 2mQb8sY3…, 4kSxpTVV…). **+0.047689 SOL** refunded.
+- Total rent reclaimed across both runs: ~0.0643 SOL. Remaining token accounts: 0 (LUTN skipped by rule — owner decision pending).
+- Wallet ground truth: **2.511777 SOL** → **−6.41%** vs 2.68389 funding baseline (was −8.19% before reclaim).
+- Book: 32 closes, 29 green (90.6%). 8 closes to the 40-trade verdict.
