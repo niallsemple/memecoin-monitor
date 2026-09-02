@@ -4479,3 +4479,11 @@ another new high.
 - Batch 0 (8 accounts) landed: sig 2wA2mYVe… err=None, wallet 2.447500 → 2.464088 (**+0.0166 SOL reclaimed**, ~8 rents − fees). Crash on `_confirm` (wrong name) after send — fixed to `_tx_success`.
 - **23 accounts remain, ~0.0477 SOL reclaimable.** LUTN dust worth ~0 — recommend burn+close (rent 0.0021 SOL) but flagged for owner.
 - Concurrent event: tracker opened **BXiwvsMt** (0.1289 SOL) at 12:01 UTC during the run; manual exit_watch covered 4 passes (r 0.998→1.004, hold). Next run ~12:24 UTC takes over.
+
+## §169 — reclaim bug burns open position (2026-09-02 ~13:30 BST) — SELF-INFLICTED LOSS
+- **What happened:** `reclaim_ata.py` v1 defined "dust" as an ABSOLUTE cutoff (5B raw units). BXiwvsMt's OPEN position held 1.716B raw — under the cutoff. Batch 0 (sig 2wA2mYVe…, 12:03 UTC) burned the full live position and closed its ATA. All later abort15 sells failed: mainnet-beta BlockhashNotFound, Helius Custom 6025 (insufficient funds — source account gone).
+- **Root cause:** docstring said "≤0.2% of original buy" but the code used an absolute constant. Raw token counts vary 600× across mints; absolute thresholds are meaningless. Compound failure: no open-position guard.
+- **Loss booked: −0.12686 SOL** (stake 0.1289 − ATA rent 0.00204 recovered). Third loss ever; first caused by my tooling, not the market. Book: 32 closes, 29 green (90.6%). Panic cohort: 14/15.
+- **Fix shipped:** dust is now RELATIVE (raw ≤ 0.5% of booked tokens); hard skip for any mint with an OPEN book position; hard skip for any mint not in the book. Dry-run verified: 23 true-dust accounts closable (+0.0477 SOL pending), LUTN + open positions correctly skipped.
+- **Process lesson logged:** any script that signs wallet txs must cross-check live_positions.json before touching token accounts. The kill switch gates live_enabled() but did NOT block the burn path in v1's dry-then-live flow — it does now.
+- Wallet ground truth after all events: **2.464088 SOL** (−8.19% vs 2.68389 funding baseline).
