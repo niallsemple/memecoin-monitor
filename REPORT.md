@@ -4551,3 +4551,9 @@ another new high.
 - Created **EDGE_BOARD.md**: 20 hypotheses ranked, each mapped to existing repo assets. Surprising amount already covered: #1 LIVE (34 closes), #3 LIVE as filter, #2/#4 forward-testing, #5/#6/#7/#8/#12/#13/#18 have collectors/scanners already built.
 - Brief's first-five experiments adopted: (1) smart-wallet+cluster lead/lag, (2) survival/graduation model, (3) pump exhaustion, (4) atomic cross-DEX arb + Jito, (5) liquidation cascades.
 - Live book unchanged: 34 closes, 31 green, 6 to verdict.
+
+## §181 — wallet-attributed trade ledger (EDGE #6 foundation) (2026-09-02 ~15:50 BST)
+- Problem: main tape is balance-delta derived — no wallets. Built `wallet_ledger.py`: Helius parsed-tx API per pool address, watermark-incremental, extracts {t, wallet, side, sol, sig}.
+- Parser v2 lessons: PumpSwap WSOL leg rides as tokenTransfers (not nativeTransfers); protocol/creator fee splits share the tx (count only feePayer↔pool legs); retail dust trades go down to 3e-8 SOL (threshold now 1e-6); aggregator routes fall back to token-leg counterparty.
+- Test on h1xM pool: **1,270 trades, 1,227 unique wallets** parsed clean. Coverage note: hot tokens exceed the 20-page fetch cap (h1xM ~50k trades/20min) — watermark-forward updates keep pace for typical qualified tokens; mega-hot tokens get newest-biased samples. Known limitation, documented.
+- Next: wire into tracker for s60-qualified mints at qualification time → accrues the leaderboard's raw material forward.
