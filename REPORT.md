@@ -4581,3 +4581,13 @@ Both positions entered ~15:41 UTC closed cleanly on the 15:44 automation run:
 **Book: 36 closes, 33 green (91.7%), net −0.13594 SOL all-time (−5.06% vs 2.68389 funding — best since start).** Post-panic-stop cohort: 18/19 green; the single red is BXiwv (reclaim-bug burn, my tooling error, not a market loss). Pure market-action streak since the panic stop went in: **18/18 green**.
 
 4 closes to the 40-close verdict (review_40.py: sizing scale-up gate + fr-vs-mbfr live-gate decision).
+
+## §185 — Wallet-ledger depth check: coordinated cluster found on OUR OWN mint (2026-09-02 16:55 UTC)
+
+Ledger now 7,270 rows / 2,694 wallets across 3 mints (auto-accrual firing each run). Leaderboard depth check (wallet_board.py):
+
+**Major finding — the biggest ledger mint is 5mAgtK1TwJWL (our close #36, +0.00468 SOL):** 17 wallets ran 1,851 buys totalling **46.5 SOL in 23.1 minutes** with only 2.2 SOL sold (149 sells). Median buy ~0.02 SOL, uniform sizing, overlapping 23–34 min spans per wallet, each wallet doing 123–407 trades. This is a textbook bundler/volume-bot network — EDGE #7/#10 evidence in the wild, on a token we held and exited green on via abort15. The cluster was still holding when we left.
+
+**Depth verdict for EDGE #1 (smart-wallet lead/lag):** only 5 wallets appear on >1 mint (one is ours). Coverage is too narrow for repeat-actor tracking — but this also matches the known bundler practice of fresh wallets per play. Reframe: on Solana memecoins the exploitable signal is likely **cluster detection** (many wallets, uniform tiny buys, one mint, short span) not wallet-following. New signal candidate for EDGE_BOARD: cluster_presence — did a mint we enter have an active bundle network? Did cluster-driven mints behave differently under our exit stack?
+
+**Next:** widen ledger coverage beyond s60nm5fr-open mints (more mints/run), then build the cluster detector.
