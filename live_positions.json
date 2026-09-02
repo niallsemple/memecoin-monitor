@@ -514,17 +514,19 @@
   "actual_fill_note": "buy sig 5rDMWybc\u2026 12:01 UTC. \u00a7169: reclaim_ata.py v1 used ABSOLUTE dust cutoff (5B raw); this position's 1.72B raw fell under it and batch 0 burned the full OPEN position + closed the ATA at 12:03 UTC (sig 2wA2mYVe\u2026 err=None). All subsequent abort15 sells failed: mainnet-beta BlockhashNotFound / helius Custom 6025 insufficient funds. Unrecoverable. sol_recovered = ATA rent only. Booked as loss of stake minus rent."
  },
  "h1xMxzYzLErHkHGNGKrfEt6RU8BvvpVP5TNPvR6pump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788354058.698381,
   "entry_px": 6.164251507036797e-10,
   "tokens": 203755476,
-  "tokens_left": 203755476,
+  "tokens_left": 0,
   "size_sol": 0.1256,
-  "peak_mult": 1.0434103184713377,
+  "peak_mult": 1.0686635111464968,
   "freerolled": false,
-  "sol_recovered": 0.0,
-  "actual_fill_note": "buy sig 5GQAjHpa\u2026 on-chain verified; actual fill 203755476 raw (99.99993% of quote)"
+  "sol_recovered": 0.133885,
+  "actual_fill_note": "buy sig 5GQAjHpa\u2026 on-chain verified; actual fill 203755476 raw (99.99993% of quote); sell sig tj8wpjma\u2026 verified err=None; wallet delta 0.133885",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.008285
  }
 }

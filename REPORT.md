@@ -4512,3 +4512,8 @@ another new high.
 - Added `panic=` + `trail_fr_only=` params (default off — all legacy shadows unchanged for continuity) and a fade check; engaged ONLY on the mbfr shadow, which is now an exact mirror of live: gate (med≥0.25 + funded-reject) + full exit stack.
 - Effect: mbfr's forward expectancy is now directly comparable to the live book. Backfilled drain rows will re-score from −100% to ~−20% on the next run — expect mbfr paper exp to jump; that jump is measurement, not edge.
 - Live asset edited, repo mirror synced byte-identical, syntax checked.
+
+## §174 — h1xM close #33 (2026-09-02 ~14:18 BST)
+- h1xMxzYzLE abort15, peak 1.069; sell sig tj8wpjma… err=None; wallet delta 0.133885 → **+0.00829 SOL** (corrected from quote-based 0.13422).
+- Book: **33 closes, 30 green (90.9%)**, net −0.14924 all-time (incl. the three drains/tooling losses). Panic cohort (excl. §169 tooling loss): 15/15 green by market action.
+- 7 closes to the 40-trade verdict. Dust ATA from this close is closable by the fixed reclaimer next sweep.
