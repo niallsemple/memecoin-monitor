@@ -4700,3 +4700,9 @@ Timing pattern: dumps hit at +12m and +16m after our entry — bracketing the ab
 **Gate design (now evidence-backed):** at entry (or within first minutes), count drainer-blocklist wallets active on the mint. >0 = do not enter / exit immediately. Retrospective: would have skipped both −0.13 SOL losses and kept all 34 green trades. Net book impact: −0.136 → **+0.124 SOL** all-time.
 
 Next: (1) same feeder-presence sweep for MASTER-B's network, (2) wire blocklist feeder-count into the §191 shadow screen at entry, (3) keep growing the blocklist as new drains consolidate.
+
+## §196 — Blocklist feeder count wired into entry screen (2026-09-02 21:05 UTC)
+
+`_feeder_count()` + `_blocklist_wallets()` added to live_trader.py; the §191 shadow screen now stamps `blocklist_feeders` on every new position and emits a `DRAINER_NETWORK_ALERT` log row whenever ≥1 known drainer wallet is active on the mint at entry. Tested against the retrospective ground truth: 29H7→44, JwQb→44, X6PH (organic winner)→0. Signal is armed.
+
+Still shadow-mode (logging, not blocking) until the 40-close verdict; but the retrospective case for promotion is now: 2/2 drains flagged, 0/34 false positives, +0.26 SOL book impact.

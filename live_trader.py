@@ -682,6 +682,39 @@ def _discover_pool(mint):
         return None
 
 
+BLOCKLIST_F = MON / "drainer_blocklist.json"
+
+
+def _blocklist_wallets():
+    """All known drainer-network wallets (masters, killers, feeders)."""
+    try:
+        bl = json.loads(BLOCKLIST_F.read_text())
+        out = set()
+        for section in ("masters", "killers", "feeders"):
+            out.update(bl.get(section, {}))
+        return out
+    except Exception:
+        return set()
+
+
+def _feeder_count(mint):
+    """§195: blocklist wallets active on this mint in the ledger.
+    Retrospective: feeders present on 2/36 mints, BOTH drained."""
+    bl = _blocklist_wallets()
+    if not bl:
+        return 0, []
+    import wallet_ledger
+    hits = {}
+    if wallet_ledger.LEDGER.exists():
+        for line in wallet_ledger.LEDGER.open():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if r["mint"] == mint and r["wallet"] in bl:
+                hits[r["wallet"]] = hits.get(r["wallet"], 0) + 1
+    return len(hits), sorted(hits)[:8]
+
+
 def _shadow_insider_screen(mint, pos):
     try:
         import wallet_ledger
@@ -696,13 +729,20 @@ def _shadow_insider_screen(mint, pos):
         if mint not in insider_screen.POOLS:
             insider_screen.POOLS[mint] = pool
         s = insider_screen.screen(mint)
+        f_n, f_wallets = _feeder_count(mint)
         pos[mint]["insider_overhang_pct"] = s.get("overhang_pct")
         pos[mint]["insider_n"] = len(s.get("insiders", []))
+        pos[mint]["blocklist_feeders"] = f_n
         _save_positions(pos)
         _log({"action": "insider_screen", "mint": mint,
               "overhang_pct": s.get("overhang_pct"),
               "insider_n": len(s.get("insiders", [])),
+              "blocklist_feeders": f_n,
+              "feeder_wallets": f_wallets,
               "insiders": [i["owner"] for i in s.get("insiders", [])][:8]})
+        if f_n:
+            _log({"action": "DRAINER_NETWORK_ALERT", "mint": mint,
+                  "blocklist_feeders": f_n, "wallets": f_wallets})
     except Exception as e:
         _log({"action": "insider_screen", "mint": mint,
               "error": str(e)[:150]})
