@@ -4499,3 +4499,10 @@ another new high.
 - Deployed **s60nm5mbfr** = BOTH filters combined (one paper_score call, med_min=0.25 + funded_reject=True) as a pure shadow — live gate unchanged, no entry behavior affected.
 - Decision rule pre-registered: at the 40-close verdict, if mbfr's forward expectancy beats fr's over the same fresh window, it becomes the live-gate amendment candidate.
 - Edit applied to live automation asset + repo mirror (diff-verified identical before/after, syntax OK).
+
+## §172 — edge-source analysis: mb vs fr (2026-09-02 ~14:05 BST)
+- **mb's edge is pure loss-avoidance:** med≥0.25 removed 20 s60nm5 entries at exp −10.01% (16 small wins, 4 catastrophes incl. B9tN −99.9%, 6Bob3ZBh −95.8%). Winners unchanged (avgW 9.12% vs 8.86%). Cost: one +37.7% winner (boAUPPme) also filtered.
+- **fr's edge is also loss-avoidance, different population:** it removed 2 entries mb kept, BOTH near-total losses (exp −66.3%). Dust-breadth and funded-wallet rugs are disjoint rug families — each filter catches what the other misses.
+- **Backfilled mbfr (intersection, n=131): +2.44%/trade, 91.6% wins, drain rate 5.3%** vs s60nm5 base −0.08%. Strongest variant on the board; beats either filter alone.
+- Caveats: mb was fitted on B9tN (in-sample for that one); the honest test is the forward-accruing mbfr shadow deployed §171. Paper scoring also lacks the live panic stop, which should further cap the −100% tail in live trading.
+- 40-close verdict agenda item: if forward mbfr ≥ forward fr, amend live gate to med_min=0.25 + funded_reject.
