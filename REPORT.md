@@ -4281,3 +4281,7 @@ Live book (5 closes): RST +0.01017, M32 +0.00446, J3a2 +0.00912, LUTN −0.13481
 Rhm9 +0.00524 → net −0.10582 SOL, 4/5 winners. Wallet 2.564834 SOL — above the
 pre-LUTN level. The book's lone loser remains the unprotected drain; every
 protected trade has closed green.
+
+**§139 verified (01:25 BST).** First fixed-window run completed in 15m06s
+(01:04:39→01:19:45, succeeded); the 01:24 trigger fired unskipped at 01:24:51.
+Watcher coverage is now seamless — no more already_running skips.
