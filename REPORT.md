@@ -4358,3 +4358,11 @@ case live (peak ≥1.15, fade at 0.90×peak), a protection paper doesn't model.
 3aR2no8i…Ee8Ed9 verified on-chain: err=None, wallet delta +0.138279789 → pnl
 +0.00748 SOL (+5.7%). Live book (11 closes): net −0.03624 SOL, 10/11 winners;
 post-LUTN era 8/8, +0.07682 SOL. Wallet 2.620735 SOL (+31.0% on funding).
+
+## §146 — DXes +4.8%, rKdL +3.7%: 12/13 winners, wallet 2.6271 (2 Sep 2026, 05:17 BST)
+
+The 04:59 pair both resolved at abort15, on-chain verified: DXes1cmW (0.1310 in)
+delta +0.137337963 → +0.00634 (+4.8%); rKdL63RN (0.1244 in) delta +0.128985952 →
++0.00459 (+3.7%). Live book (13 closes): net −0.02565 SOL, 12/13 winners;
+post-LUTN era 10/10, +0.08775 SOL. Wallet 2.627100 SOL (+31.4% on funding) —
+another new high.

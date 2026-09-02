@@ -132,3 +132,4 @@
 | 21:47 | BUY | 3DV5zVYW | £15.12 | entry mc $896,549 | +31min |
 | 22:06 | STOP | CYsTn9eJ | £0.19 | trail-stop at 0.01x |
 | 22:06 | STOP | 3DV5zVYW | £4.61 | trail-stop at 0.31x |
+| 03:06 | BUY | 5uLawxSb | £14.91 | entry mc $230,834 | +40min |

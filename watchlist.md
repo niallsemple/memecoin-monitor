@@ -3671,3 +3671,27 @@
 | 02:26 | solana | `2VQiBPJQ…` | FAIL | TOP10_HEAVY:57%; RC_WARN:Copycat token | liq=$0 mc=$21,851 | name=Fartcoin symbol=Fartcoin; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold |  |
 | 02:26 | solana | `w99NLAV1…` | FAIL | TOP10_HEAVY:81%; RC_WARN:Copycat token | liq=$0 mc=$9,467 | name=NubCat symbol=Nub; contract:clean; rugcheck_score=29 lpLocked=0%; top10_hold=80.6% |  |
 | 02:26 | solana | `5uLawxSb…` | PASS | — | liq=$31,555 mc=$154,104 | name=Pump Dog symbol=Pumpdog; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=1 | Perfect time to finally send this dog which appears on the Pump mobile app, pair |
+| 03:06 | robinhood | `0x16CB7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,248 mc=$89,674 | chain:robinhood no-audit-adapter | AI17Z is an open-source, MIT-licensed platform for running autonomous AI agents  |
+| 03:06 | robinhood | `0xa6ef6B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,958 mc=$58,496 | chain:robinhood no-audit-adapter | John Ternus was nicknamed "Crash" during his senior year in college after he nea |
+| 03:06 | robinhood | `0xCDAdB6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,721 mc=$92,987 | chain:robinhood no-audit-adapter | People are getting tokenized now—welcome to the future where humans become trada |
+| 03:06 | solana | `2A7eZTWC…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:88% | liq=$0 mc=$4,494 | name=Pump House symbol=PUMPHOUSE; contract:clean; rugcheck_score=80 lpLocked=100%; top10_h | Pump House $ PUMPHOUSE  IS THIS NOT GENNY!! THE PUMP META IS GOING VIRAL   ALL P |
+| 03:06 | robinhood | `0x0123d8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,666 mc=$114,386 | chain:robinhood no-audit-adapter | Fees in, buybacks out. A sealed model picks one of four moves per cycle, committ |
+| 03:06 | robinhood | `0x8b7ee4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Elon Musk coded a simple sci-fi arcade video game called Blastar in 1984 when he |
+| 03:36 | solana | `6o1BnDcH…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$19,201 | name=FUN symbol=FUN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57.3% | Pump ---> Fun.  OTC Desks pair which pays out $PUMP to holders. |
+| 03:36 | robinhood | `0xc32B91…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,403 mc=$154,389 | chain:robinhood no-audit-adapter | Cameltoe |
+| 03:36 | solana | `2gMuEXhr…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$14,564 | name=DEBTDOG symbol=DEBTDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=64 |  |
+| 03:36 | solana | `CtjPQSDX…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$20,017 mc=$63,231 | name=Caviar Dealer symbol=Caviar; contract:clean; rugcheck_score=1 lpLocked=99.96617954277 |  |
+| 03:36 | solana | `CFJ1gukg…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,249 mc=$2,132 | name=Maga Fomo symbol=MAGAFOMO; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hol |  |
+| 03:36 | robinhood | `0xD10CeB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,652 mc=$59,202 | chain:robinhood no-audit-adapter |  |
+| 03:46 | robinhood | `0xC3eef4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,597 mc=$37,386 | chain:robinhood no-audit-adapter | An experiment in whether a memecoin can touch the world. |
+| 03:46 | solana | `7fUyg3WJ…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$20,420 mc=$66,828 | name=Pepe Copper symbol=PEPECOPP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 03:46 | robinhood | `0x8e676a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 03:46 | robinhood | `0xd4F6d4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,570 mc=$136,064 | chain:robinhood no-audit-adapter | $goatfone no terminal. no twelve monitors. no complicated setup. just a goat. on |
+| 03:46 | solana | `Fr6Dnpvy…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$4,924 | name=PHASEONE｢big｣ symbol=PHASEONE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 03:46 | solana | `F4PaKuUP…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$13,867 mc=$34,051 | name=Chipmunk symbol=CHIP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=44.7 | Why Have we not Sent $CHIP yet??  NVIDIA Beat their earnings by a longshot Top C |
+| 04:06 | solana | `BfKoVHeU…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$35,139 | name=[dog] symbol=[dog]; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.1% |  |
+| 04:06 | robinhood | `0x030bcc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The market for social accounts with motion |
+| 04:06 | robinhood | `0xdB0301…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,934 mc=$70,548 | chain:robinhood no-audit-adapter | Zoomer paired with Zoom Stock. |
+| 04:06 | robinhood | `0x553ed9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:06 | solana | `5KHYLdDx…` | FAIL | TOP10_HEAVY:58% | liq=$0 mc=$16,848 | name=Loom symbol=Loom; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=57.8% | OG mascot of Solana—a community-driven character that represents the early spiri |
+| 04:06 | solana | `7ei9hA14…` | FAIL | TOP10_HEAVY:73%; RC_WARN:Low Liquidity | liq=$6,128 mc=$8,812 | name=Capybara Apple symbol=CAPPLE; contract:clean; rugcheck_score=19 lpLocked=100%; top10_ |  |

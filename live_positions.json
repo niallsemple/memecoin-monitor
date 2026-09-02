@@ -175,5 +175,37 @@
         "actual_fill_note": "sig T6znK3fGyZ52vSGSzGenQVFytTtYVDH3RGNFH5RYyCWW6bqf3H1adXJ7f5bbrFp7g9P2kB3AL3x8n3nNHAA8LRa on-chain verified; wallet delta 0.138279789",
         "closed_reason": "abort15",
         "pnl_sol": 0.00748
+    },
+    "DXes1cmWcWAzMrZGrRcS1znLAsCLGaqjhgVefxsvpump": {
+        "open": false,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788321533.553455,
+        "entry_px": 6.473057016745427e-12,
+        "tokens": 20237655407,
+        "tokens_left": 0,
+        "size_sol": 0.131,
+        "peak_mult": 1.0509963305292023,
+        "freerolled": false,
+        "sol_recovered": 0.137337963,
+        "actual_fill_note": "sig HKLXxLJ3SMZ7RyvyRPuakj2FJpGxCG1WnwVGhwyBXUmQoQ5sbHhPyFxsF5okDvHq4zTcaqTjjnuczBV9GbFhXtW on-chain verified; wallet delta 0.137337963",
+        "closed_reason": "abort15",
+        "pnl_sol": 0.00634
+    },
+    "rKdL63RNqDTF5hDTwkhb1FrgMuQ6r6aCSbpW1nepump": {
+        "open": false,
+        "mode": "live",
+        "venue": "pool",
+        "entry_t": 1788321548.5019772,
+        "entry_px": 7.495884640326254e-11,
+        "tokens": 1659270049,
+        "tokens_left": 0,
+        "size_sol": 0.1244,
+        "peak_mult": 1.0396753941287245,
+        "freerolled": false,
+        "sol_recovered": 0.128985952,
+        "actual_fill_note": "sig 5QRuFcG5h81FzZfnBCSTr2dvkZu8vVuHr7LChXrqKxHwaAqKD1mT23D8i1Bitd1MyfH7Ma8oka75DqYaNVCoeNqf on-chain verified; wallet delta 0.128985952",
+        "closed_reason": "abort15",
+        "pnl_sol": 0.00459
     }
 }
