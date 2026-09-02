@@ -4493,3 +4493,9 @@ another new high.
 - Total rent reclaimed across both runs: ~0.0643 SOL. Remaining token accounts: 0 (LUTN skipped by rule — owner decision pending).
 - Wallet ground truth: **2.511777 SOL** → **−6.41%** vs 2.68389 funding baseline (was −8.19% before reclaim).
 - Book: 32 closes, 29 green (90.6%). 8 closes to the 40-trade verdict.
+
+## §171 — combined-filter shadow s60nm5mbfr deployed (2026-09-02 ~13:56 BST)
+- Paper standings this morning: **s60nm5mb +1.41%/trade (133 closed, 120 wins)** now leads, vs live-gate s60nm5fr +0.79% (151/136). mb = median-buy≥0.25 SOL dust filter (grind-rug fake-breadth); fr = funded-wallet reject (the live gate's bleed protection).
+- Deployed **s60nm5mbfr** = BOTH filters combined (one paper_score call, med_min=0.25 + funded_reject=True) as a pure shadow — live gate unchanged, no entry behavior affected.
+- Decision rule pre-registered: at the 40-close verdict, if mbfr's forward expectancy beats fr's over the same fresh window, it becomes the live-gate amendment candidate.
+- Edit applied to live automation asset + repo mirror (diff-verified identical before/after, syntax OK).

@@ -97,6 +97,7 @@ PAPER_SNM = MON / "mfg_paper_trades_s60nm5.jsonl"  # §79s: s60 + near-miss abor
 PAPER_SMB = MON / "mfg_paper_trades_s60nm5mb.jsonl"  # §79u: s60nm5 + dust-buy filter (med>=0.25) SHADOW
 PAPER_STS = MON / "mfg_paper_trades_s60nm5ts180.jsonl"  # §86a: s60nm5 + 3-min hard time-stop SHADOW
 PAPER_SFR = MON / "mfg_paper_trades_s60nm5fr.jsonl"  # §98a: s60nm5 + funded-wallet reject SHADOW
+PAPER_SMBF = MON / "mfg_paper_trades_s60nm5mbfr.jsonl"  # §171: s60nm5 + med>=0.25 + funded-reject COMBINED SHADOW
 HOLDERS = MON / "mfg_holders.jsonl"  # §79j: top-holder snapshot at each s60 signal
 HOLDERS_SEEN = MON / "mfg_holders_seen.json"
 P_TARGET, P_SELL = 1.5, 0.75    # free-roll: sell 75% at 1.5x entry
@@ -1621,6 +1622,21 @@ def run(ctx):
             paper["paper_s60nm5fr_exp"] = pf.get("paper_exp")
             paper["paper_s60nm5fr_closed"] = pf.get("paper_closed")
             paper["paper_s60nm5fr_wins"] = pf.get("paper_wins")
+    except Exception:
+        pass
+    try:
+        # §171: COMBINED filter SHADOW — s60nm5 + median-buy>=0.25 +
+        # funded-reject. mb leads paper (+1.41%/trade n=133) but lacks
+        # the fr bleed-protection that live runs; fr leads live. If the
+        # combination beats fr alone over a fresh forward window, it is
+        # the amendment candidate for the 40-close verdict.
+        pf2 = paper_score(out_path=PAPER_SMBF, stage1=(15, 1.08),
+                          net_min=60.0, nb_min=20, nm_min=5,
+                          med_min=0.25, funded_reject=True)
+        if pf2:
+            paper["paper_s60nm5mbfr_exp"] = pf2.get("paper_exp")
+            paper["paper_s60nm5mbfr_closed"] = pf2.get("paper_closed")
+            paper["paper_s60nm5mbfr_wins"] = pf2.get("paper_wins")
     except Exception:
         pass
     try:
