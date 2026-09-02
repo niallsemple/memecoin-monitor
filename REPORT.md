@@ -4770,3 +4770,14 @@ Full-blocklist sweep vs live book — crew presence on 10/36 mints:
 - Non-crew mints: 25/26 green (the one red = my reclaim bug, not market).
 
 **EV verdict: crew-present cohort netted −0.215 SOL; crew-free cohort is pristine.** A binary "skip crew mints" gate sacrifices +0.045 of green to avoid −0.260 of death — net +0.215 to the book. The narrow MASTER-A feeder set had 2/2 precision; the enlarged list over-flags survivors, but the EV math carries it anyway. Gate metric candidates for the 40-close verdict: crew_wallet_count ≥ ~20 at entry, or crew sell-velocity. All crew wallets were visible from minute 0 (wash phase) — detection at entry is real.
+
+## §204 — Gate calibration: crew-count(≤2m) separates perfectly at ≥30 (2026-09-02 23:50 UTC)
+
+Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
+- **29H7 (−0.125): 36 crew wallets within 2 MINUTES of entry.** Instant flag.
+- **JwQb (+0.008, drained 60s after exit): 36 ≤2m.** Correctly flaggable — it did drain.
+- **5GJf (+0.004, survived 2,040 SOL crew selling): 11 ≤2m.** Would be sacrificed at a ≥10 threshold, spared at ≥30.
+- All other green crew mints (4GFD 38, Hpyj 41 total): **0 crew wallets in our holding window** — their crew activity happened after we left. Zero early false positives.
+- **LUTN (−0.135): 0 early, 1 total** — MASTER-B's unmapped crew; feeder gate blind to it. Coverage = the §191 insider-overhang screen (its killer held pre-pool tokens → overhang flags at entry).
+
+**Calibrated gate (for 40-close verdict):** block/skip if crew_wallets(≤2m post-entry, or in pool history at entry) ≥ 30 → catches 29H7+JwQb, zero false positives, zero green sacrifice. PLUS insider-overhang ≥ threshold for the lone-insider case (LUTN). Two screens, two attack shapes, full historical coverage of all three drain events.
