@@ -145,16 +145,19 @@
         "pnl_sol": 0.0013
     },
     "x8P4Em9xUeS4yNCotms5FVrf7FzhL56ybPUQFbSpump": {
-        "open": true,
+        "open": false,
         "mode": "live",
         "venue": "pool",
         "entry_t": 1788314353.8013299,
         "entry_px": 8.761635814265952e-12,
         "tokens": 14883065533,
-        "tokens_left": 14883065533,
+        "tokens_left": 0,
         "size_sol": 0.1304,
-        "peak_mult": 1.0,
+        "peak_mult": 1.0703366564417178,
         "freerolled": false,
-        "sol_recovered": 0.0
+        "sol_recovered": 0.139375932,
+        "closed_reason": "abort15",
+        "pnl_sol": 0.00898,
+        "actual_fill_note": "sig Ccq7G498597iArrEWw8vAfEBcn3wkySQW52rEWGdVy2KgfGKR2pXPwXVMhMeHDHuwqwjqAuLLm45e2gzxnJZED6 on-chain verified; wallet delta 0.139375932"
     }
 }

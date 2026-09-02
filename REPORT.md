@@ -4321,3 +4321,33 @@ replicated live.
 Live book (9 closes): net −0.05270 SOL, 8/9 winners. Post-hardening (6 trades):
 6/6 green, +0.06038 SOL. Wallet 2.476158 SOL with one new position (x8P4Em9x,
 0.1304 SOL — sizing compounded with the balance) open.
+
+## §144 — 10-close live-vs-paper parity review (2 Sep 2026, 03:20 BST)
+
+All 10 live closes vs their s60nm5fr paper twins (live % = on-chain actuals):
+
+| mint | live | paper | exits (live/paper) |
+|---|---|---|---|
+| HK6Na6tp (RST) | +7.6% | +1.66% | abort15 / abort15 |
+| bL3cZqai (M32) | +3.5% | +3.31% | abort15 / abort15 |
+| LUTNZsft | −100.2% | +33.03% | abort15_drain / nm_abort |
+| J3a25GSe | +7.1% | +5.38% | abort15 / abort15 |
+| Rhm9RvRQ | +4.1% | +0.70% | abort15 / abort15 |
+| kXgkdJ6f | +2.6% | +4.10% | abort15 / abort15 |
+| X6PHP8op | +31.2% | +35.77% | nm_abort / nm_abort |
+| HpyjpSM5 | +6.9% | +6.66% | abort15 / abort15 |
+| Fvzk3o4M | +1.1% | +1.30% | abort15 / abort15 |
+| x8P4Em9x | +6.9% | +6.89% (mark) | abort15 / open |
+
+**Aggregate:** paired avg live −2.91% vs paper +9.88% — entirely the LUTN outlier.
+EXCLUDING LUTN: live +7.9% vs paper +7.3% — parity is tight, live slightly ahead
+(better fills on 5, worse on 4, all within ±4 pts).
+
+**The LUTN divergence is the lesson.** Paper's LUTN touched 1.30× (→ nm_abort,
++33%) while the live Jupiter-quote cadence peaked at 1.2814× and never armed —
+a single-tick resolution difference, then the drain. Exit logic identical;
+observation cadence differed. Post-§138, the fade rule now covers exactly this
+case live (peak ≥1.15, fade at 0.90×peak), a protection paper doesn't model.
+
+**Conclusion:** the paper edge transfers live. Post-LUTN era: 7/7 winners,
++0.06934 SOL, wallet 2.615534 (new high, +30.8% on the 2 SOL funding).

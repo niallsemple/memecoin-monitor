@@ -3659,3 +3659,9 @@
 | 01:26 | robinhood | `0xb8D9F9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$65,109 mc=$86,677 | chain:robinhood no-audit-adapter | The First Personified AI Cloning Platform in Web3, On-Chain Value × 24/7 Presenc |
 | 01:26 | robinhood | `0x4D3f37…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$388,265 mc=$2,775,068 | chain:robinhood no-audit-adapter | Don't sell your stocks. Borrow against them.  Ripe is an onchain credit protocol |
 | 01:26 | solana | `2R3MTHtR…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$13,679 | name=Not wrong, Early symbol=Sperm; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 02:06 | robinhood | `0x33453A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,052 mc=$87,887 | chain:robinhood no-audit-adapter | First Decentralised Onboarding Ponzi on RobinhoodApp ♻️  Join 0.033 ETH → Onboar |
+| 02:06 | solana | `CW3Z586N…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$7,108 | name=The Short Snouted Shiba symbol=むぎ; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 02:06 | solana | `2UnGwdj3…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$7,444 | name=funcoin symbol=funcoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=74 |  |
+| 02:06 | robinhood | `0x1a911b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$48,988 mc=$58,406 | chain:robinhood no-audit-adapter | Monitoring the situation |
+| 02:06 | robinhood | `0xD1efCE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,444 mc=$158,108 | chain:robinhood no-audit-adapter | people are now tokenized. mint one,  put them to work, and earn stocks from thei |
+| 02:06 | robinhood | `0x0c07f6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,761 mc=$25,006 | chain:robinhood no-audit-adapter | Silver Fox on Robinhood |
