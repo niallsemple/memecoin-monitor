@@ -4571,3 +4571,13 @@ another new high.
 - **Finding 1 — our own wallet captured** (CQcKkSee, 2 mints, 0.24 SOL buys): ledger attribution confirmed end-to-end including backfill windows.
 - **Finding 2 — coordinated cluster visible already:** ~10 wallets (D8MQQJ, Ag8F7y, Ar7cf9, D5Q5Ta, 9c1H3u, DBhEqC…) each made 57–74 buys of ~0.02 SOL median on ONE mint within the SAME ~14.5-min span, ~1.2–1.65 SOL each, almost zero sells. Independently impossible — this is a volume-bot/bundle pattern and a direct feed for EDGE #7/#10 (cluster consensus + bundled-launch rejection).
 - Depth caveat: most wallets have 1 trade; rankings mature as the ledger accrues.
+
+## §184 — Closes #35/#36: abort15 double-green, both on-chain verified (2026-09-02 16:00 UTC)
+
+Both positions entered ~15:41 UTC closed cleanly on the 15:44 automation run:
+- **EoBT...pump**: 0.1261 in → 0.130954507 out (sig Wns9h2U7…1nbci, err=None, slot 443736441). pnl **+0.00485**.
+- **5mAg...pump**: 0.1196 in → 0.124275619 out (sig 5SPNPjde…aSkEq, err=None, slot 443736459). pnl **+0.00468**.
+
+**Book: 36 closes, 33 green (91.7%), net −0.13594 SOL all-time (−5.06% vs 2.68389 funding — best since start).** Post-panic-stop cohort: 18/19 green; the single red is BXiwv (reclaim-bug burn, my tooling error, not a market loss). Pure market-action streak since the panic stop went in: **18/18 green**.
+
+4 closes to the 40-close verdict (review_40.py: sizing scale-up gate + fr-vs-mbfr live-gate decision).

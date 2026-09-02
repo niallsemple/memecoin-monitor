@@ -546,30 +546,35 @@
   "pnl_sol": 0.00377181
  },
  "EoBTrxSZv3Q7SjzpgTTzk4kMDjL9JfAT3o8dkJupump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788363681.621842,
   "entry_px": 5.89039886276755e-11,
   "tokens": 2140771838,
-  "tokens_left": 2140771838,
+  "tokens_left": 0,
   "size_sol": 0.1261,
-  "peak_mult": 1.0324984615384618,
+  "peak_mult": 1.0409244012688343,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.130954507,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00485451,
+  "actual_fill_note": "sell sig Wns9h2U7...1nbci on-chain verified err=None slot 443736441; wallet delta 0.130954507"
  },
  "5mAgtK1TwJWLurfCN3T3GUqyFR1C9kpTZBhvR9Upump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788363696.6473758,
   "entry_px": 5.841670130481552e-11,
   "tokens": 2047359699,
-  "tokens_left": 2047359699,
+  "tokens_left": 0,
   "size_sol": 0.1196,
-  "peak_mult": 1.0326058612040134,
+  "peak_mult": 1.0417409866220735,
   "freerolled": false,
-  "sol_recovered": 0.0,
-  "actual_fill_note": "buy verified on-chain; actual fill 2047359699 raw (1.00002 of quote)"
+  "sol_recovered": 0.124275619,
+  "actual_fill_note": "buy verified on-chain; actual fill 2047359699 raw (1.00002 of quote); sell sig 5SPNPjde...aSkEq on-chain verified err=None slot 443736459; wallet delta 0.124275619",
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00467562
  }
 }
