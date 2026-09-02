@@ -4545,3 +4545,9 @@ another new high.
 ## §179 — AqUecCrz close #34 (2026-09-02 ~15:18 BST)
 - abort15, peak 1.033; sell sig B4DBC8yd… err=None; wallet delta 0.129771807 → **+0.00377 SOL**.
 - Book: **34 closes, 31 green (91.2%)**. 6 closes to the 40-trade verdict. Market-action win streak since the panic stop: 16/16 (§169 loss was tooling, not market).
+
+## §180 — goal extended: SOLANA EDGE BOARD (2026-09-02 ~15:30 BST)
+- Owner added the edge-research brief (docs/edge_research_brief.md): broaden from "one memecoin strategy" to mapping every repeatable Solana edge family, kill-test each. Friction floor noted: 1.25% pump.fun fee + costs — ignore sub-1% gross effects.
+- Created **EDGE_BOARD.md**: 20 hypotheses ranked, each mapped to existing repo assets. Surprising amount already covered: #1 LIVE (34 closes), #3 LIVE as filter, #2/#4 forward-testing, #5/#6/#7/#8/#12/#13/#18 have collectors/scanners already built.
+- Brief's first-five experiments adopted: (1) smart-wallet+cluster lead/lag, (2) survival/graduation model, (3) pump exhaustion, (4) atomic cross-DEX arb + Jito, (5) liquidation cascades.
+- Live book unchanged: 34 closes, 31 green, 6 to verdict.
