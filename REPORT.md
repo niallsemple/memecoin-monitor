@@ -4635,3 +4635,13 @@ Full order-flow autopsy of both total-loss drains using the 190k-row wallet ledg
 **Actionable edge — insider-overhang screen:** insider wallets are detectable BEFORE they dump: big token holders who never appear as pool buyers. Prototype: getTokenLargestAccounts (cheap standard RPC) at entry → cross-ref against ledger buyer set → holders with large balance + no pool buy = overhang risk → skip or tighten exits. Caveat for backtest: post-drain holder state is useless (insider balance is gone), so validate the screen on live forward entries + use ledger seller-without-buy history as the retrospective proxy.
 
 **EDGE_BOARD:** drain precursors → CONFIRMED as insider dumps; new top candidate = insider-overhang entry screen.
+
+## §190 — Insider-overhang screen built; validation says forward-only (2026-09-02 19:05 UTC)
+
+Built `insider_screen.py`: getTokenLargestAccounts → resolve owners (getMultipleAccounts, SPL owner @ bytes 32-64) → exclude pool base account → cross-ref ledger buyers → whales ≥0.5% supply with no pool-buy = insider overhang%. (RPC note: mainnet-beta 429s on getTokenLargestAccounts; Helius RPC handles it — screen uses Helius first.)
+
+Validation on 5 mints (2 drains, 3 winners): **overhang = 0.0% everywhere TODAY** — exactly as predicted. On LUTN/29H7 the pool now holds 99.8-99.9% of supply: the insiders dumped everything, nothing left to detect. On winners (X6PHP, XyUKC) the big non-pool holders (6%, 4.3%) ARE pool buyers — legit.
+
+**Conclusion: the screen is forward-only.** It must run at ENTRY, when the insider allocation is still sitting there. Wiring plan: at live entry, snapshot top-holders + pool-buyer history (fetchable in seconds via the backfill pager), log overhang_pct + insider list into the position record as SHADOW data (non-blocking). After the next ~10-20 entries, correlate overhang vs outcome; if high-overhang mints show the drain pattern, promote to a blocking gate.
+
+Also confirmed by the 0% readings: our ledger buyer-attribution is solid — every large holder on healthy mints maps to a known pool buyer.
