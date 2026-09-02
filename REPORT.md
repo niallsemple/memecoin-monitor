@@ -4688,3 +4688,15 @@ Cross-map against our 190k ledger:
 **`drainer_blocklist.json` v2:** 2 masters, 2 killers, 46 feeders (full addresses). Gate design inputs: (1) entry-time funding-source check — was a top holder's wallet funded by a blocklisted master/feeder? (2) feeder-presence density on a mint as a risk score (44 feeders preceded our loss; 43 preceded a win — so density alone insufficient; need dump-size/liquidity ratio).
 
 Next: measure feeder-sell SOL vs pool SOL depth at kill time on 29H7 vs JwQb to find the survivability threshold — that ratio is the actual gate metric.
+
+## §195 — THE SIGNAL: feeder presence predicted both drains, 2/2, zero false positives (2026-09-02 20:50 UTC)
+
+Kill-ratio analysis overturned the "JwQb survived the network" read: **JwQb was drained too.** Post-dump mcap ≈ 0.2 SOL on BOTH MASTER-A mints. The network dumped 746 SOL on JwQb at minute 16 — our abort15 fired at minute 15.0. **We escaped by ~60 seconds.** Both MASTER-A mints were scheduled drains; survival was a coin-flip of dump timing vs our abort clock.
+
+The decisive pattern: across all 36 mints in the 190k ledger, MASTER-A feeder wallets appear on exactly **2 mints — 29H7 and JwQb — and BOTH drained.** 2/2 precision, 0 false positives on the other 34. Feeder presence on a fresh mint = scheduled drain.
+
+Timing pattern: dumps hit at +12m and +16m after our entry — bracketing the abort15 window. Sometimes we make it, sometimes we don't. That is not a tradeable position; it's Russian roulette with a 15-minute fuse.
+
+**Gate design (now evidence-backed):** at entry (or within first minutes), count drainer-blocklist wallets active on the mint. >0 = do not enter / exit immediately. Retrospective: would have skipped both −0.13 SOL losses and kept all 34 green trades. Net book impact: −0.136 → **+0.124 SOL** all-time.
+
+Next: (1) same feeder-presence sweep for MASTER-B's network, (2) wire blocklist feeder-count into the §191 shadow screen at entry, (3) keep growing the blocklist as new drains consolidate.
