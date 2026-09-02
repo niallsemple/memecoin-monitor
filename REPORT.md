@@ -4442,3 +4442,7 @@ another new high.
 - Observed totals: window + 1.5-2.3m post-processing (940-976s at 14m window). Raising window to 16m → expected total ~18-18.5m, safely under the 20m interval and 22m timeout.
 - Effect: no-watcher gap shrinks from ~4-5m to ~1-2m per cycle — drain exposure window cut by ~60-70%. Combined with §148 panic stop, the tail risk is now doubly bounded.
 - Deployed to the automation asset; MON copy synced. Watch next 3 runs for on-time completion.
+
+## §161 — 5GJf close (2026-09-02 ~09:58 BST)
+- 5GJf1Zzx abort15 at ~15.5m, peak 1.033; verified wallet delta 0.132221996 vs 0.1283 → **+0.00392 SOL**. Book: 26 closes, 24 green (92.3%).
+- Post-panic-stop cohort: **9/9 green, +0.0421**. Wallet 2.56761 — 0.116 from breakeven on the 2.68389 baseline.

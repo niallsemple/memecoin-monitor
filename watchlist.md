@@ -3736,3 +3736,15 @@
 | 07:26 | robinhood | `0x99c3e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$15,645 | chain:robinhood no-audit-adapter | Robinhood's Vlad |
 | 07:26 | solana | `7mG3FCoW…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$11,857 | name=Rufus The Spooked Dog symbol=RUFUS; contract:clean; rugcheck_score=1 lpLocked=100%; t |  |
 | 07:26 | solana | `4r5sdjr6…` | PASS | — | liq=$31,660 mc=$148,801 | name=apebutt symbol=apebutt; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=15 | the cheekiest ape on-chain, scrolling toward the moon. |
+| 08:06 | robinhood | `0xd0641b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11 mc=$15,027 | chain:robinhood no-audit-adapter |  |
+| 08:06 | robinhood | `0xBa711a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,130 mc=$97,069 | chain:robinhood no-audit-adapter | yea it distributes SPY to holders so what $nomie |
+| 08:06 | robinhood | `0x000b21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$56,304 mc=$473,800 | chain:robinhood no-audit-adapter | Chrome Dino 🦖 |
+| 08:06 | robinhood | `0x915b3b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,780 mc=$3,905 | chain:robinhood no-audit-adapter |  |
+| 08:06 | solana | `8UrN6Cgk…` | FAIL | TOP10_HEAVY:87% | liq=$0 mc=$5,073 | name=Paired symbol=Paired; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=87.2 |  |
+| 08:06 | robinhood | `0xbfc834…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13 mc=$32,779 | chain:robinhood no-audit-adapter |  |
+| 08:46 | solana | `FdtKqpPK…` | FAIL | TOP10_HEAVY:51% | liq=$0 mc=$26,774 | name=The Groundhog symbol=Chuffy; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Chuffy - The Groundhog |
+| 08:46 | robinhood | `0x05535a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,306 mc=$97,232 | chain:robinhood no-audit-adapter | Collection of 4444 animated pixel freaks on Robinhood Chain.  A story that start |
+| 08:46 | solana | `27G1fTDi…` | FAIL | TOP10_HEAVY:86% | liq=$0 mc=$7,378 | name=Cats and Dogs symbol=CND; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Speculative stocks with short histories of sales, earnings, and dividend payment |
+| 08:46 | solana | `GyaBdGkr…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$14,116 mc=$36,006 | name=titcoin symbol=☉; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48.9% | Has this ever ran before?  I was looking for narratives and i was searching thro |
+| 08:46 | solana | `5aCLaJSK…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$12,274 | name=Booby the panda symbol=Booby; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Booby |
+| 08:46 | solana | `FPEtiYRV…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,068 mc=$1,995 | name=30 IS A PERSON symbol=30; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold |  |
