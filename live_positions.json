@@ -209,17 +209,21 @@
   "pnl_sol": 0.00459
  },
  "XyUKC8T6oWARrnoRUs3QMECdCUEDv26k63G3ZJcpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788322736.7364979,
   "entry_px": 9.187429919758126e-11,
   "tokens": 1430214991,
-  "tokens_left": 1430214991,
+  "tokens_left": 0,
   "size_sol": 0.1314,
-  "peak_mult": 1.2299843607305936,
+  "peak_mult": 1.352959368340944,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.17765603,
+  "nm_touch_t": 1788325493.431167,
+  "closed_reason": "nm_abort",
+  "pnl_sol": 0.04625603,
+  "actual_fill_note": "sell sig 2B9GCDGB...KYWC on-chain verified; wallet delta 0.17765603"
  },
  "AMsFbuNG3h7LgCQo5S28QPyixLQVA4P4LTHfDesNpump": {
   "open": false,
@@ -252,5 +256,21 @@
   "actual_fill_note": "buy sig 3bRUocq4YyBRXT9kSgNfVsUh92DJGkh6sA63txu7nGhy4NG3M5rTnxfVAyToQgRgT5m2n2axhE2it9L1vUs4mov1 verified; on-chain fill 18534806567 raw; sell sig 3G1wNnMy...65Te on-chain verified; wallet delta 0.129648663",
   "closed_reason": "abort15",
   "pnl_sol": 0.00494866
+ },
+ "29H7GkA9LzMdB1buRScFPUPywjbyFYxBibtpQMFVpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788325148.64522,
+  "entry_px": 1.6496517317522415e-10,
+  "tokens": 756330874,
+  "tokens_left": 0,
+  "size_sol": 0.1248,
+  "peak_mult": 1.0496208708051127,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "actual_fill_note": "buy sig 5VpD67tX...pfoWe verified on-chain; actual fill 756330874 raw; SOL delta -0.12707908; sell sig V24zLk8G...ZMZE err None but pool drained pre-exit (mult 0.0 at trigger) \u2014 dust out, full stake loss + fee",
+  "closed_reason": "abort15",
+  "pnl_sol": -0.12499169
  }
 }

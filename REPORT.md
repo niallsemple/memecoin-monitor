@@ -4370,3 +4370,11 @@ another new high.
 ## §147 — FFQk close (2026-09-02 ~05:54 BST)
 - FFQkDDFD exited via abort15 at 15.3m, mult 1.042 at trigger; sell on-chain verified (err None), wallet delta 0.129648663 vs 0.1247 stake → **+0.00495 SOL (+4.0%)**.
 - Live book: 15 closes, 14/15 green; post-LUTN era 12/12 green, +0.0967 SOL. XyUK still open (peak 1.213, fade armed).
+
+## §148 — XyUK win, 29H7 drain, panic stop deployed (2026-09-02 ~06:20 BST)
+- **XyUKC8T6 closed via nm_abort at 1.353x** (touched 1.30, stalled 5m below 1.50): on-chain verified, wallet delta 0.17765603 vs 0.1314 stake → **+0.04626 SOL (+35.2%)** — biggest live win, beats X6PH's +31.2%. The nm_abort design has now produced both top wins.
+- **29H7GkA9 = second drain** (after LUTN): never ran (peak 1.0496, fade never armed), pool hit mult 0.0 between watcher ticks; abort15 fired into an empty pool, sell succeeded but returned dust → **−0.12499 SOL** full stake loss.
+- **Root cause**: both drains outran the watcher cadence AND the age gates — exit logic was correct but too slow. Detection latency is the whole loss.
+- **Fix deployed**: §148 panic stop — any tick with r < 0.80 sells immediately regardless of age (placed above nm_abort in the stack). Mid-drain ticks now recover a fraction instead of zero. Trade-off: ~20% giveback on wicked dips that recover.
+- **Ground truth**: wallet 2.54611 SOL liquid, zero deployed, vs 2.0 funded → **+27.3% overall**. Book: 16 closes, 14 green; two drains (LUTN, 29H7) are the only losses and both predate the panic stop.
+- Per-trade book sum vs wallet has a residual gap from fee/dust rounding on corrected actuals; wallet balance is the source of truth.

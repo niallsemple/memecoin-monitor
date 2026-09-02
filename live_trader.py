@@ -600,6 +600,12 @@ P_NM_MIN = 5        # minutes below freeroll target after touch -> exit
 # the 1.30x touch (nm cohort keeps the working nm_abort path).
 P_FADE_PEAK = 1.15  # minimum peak that arms the fade exit
 P_FADE_K = 0.90     # exit when r falls to this fraction of peak
+# §148: panic stop. LUTN drained 1.27->0.006 in <3min between watcher
+# ticks and 29H7 sat at ~1.0 then hit 0.0 before abort15's age gate —
+# both returned dust. Any tick seeing r below P_PANIC sells immediately
+# regardless of age, to catch fast drains mid-flight and recover a
+# fraction instead of nothing. Trades off ~20% givebacks on wicked dips.
+P_PANIC = 0.80      # instant market sell if r < this at any check
 
 
 def _load_positions():
@@ -681,6 +687,8 @@ def exit_watch():
                 act, sell_tokens = "freeroll", int(p["tokens_left"] * P_FR_SELL)
             elif p["freerolled"] and r <= P_TRAIL_F * p["peak_mult"]:
                 act, sell_tokens = "trail", p["tokens_left"]
+            elif not p["freerolled"] and r < P_PANIC:
+                act, sell_tokens = "panic", p["tokens_left"]
             elif not p["freerolled"] and p.get("nm_touch_t") \
                     and (time.time() - p["nm_touch_t"]) >= P_NM_MIN * 60 \
                     and r < P_FR_TARGET:

@@ -3701,3 +3701,9 @@
 | 04:26 | solana | `8enwAk7E…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$18,078 | name=Smiski symbol=Smiski; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59.1 |  |
 | 04:26 | robinhood | `0x51d3bB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$324,167 mc=$1,353,309 | chain:robinhood no-audit-adapter | Much wow. Paired with $TSLA. |
 | 04:26 | robinhood | `0x5df105…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,694 mc=$20,715 | chain:robinhood no-audit-adapter | Merrrrrrr. The official Goob token on Robinhood. |
+| 04:56 | robinhood | `0x6c6c52…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Roblox is one of the biggest digital worlds ever built, and Da Hood is one of th |
+| 04:56 | solana | `8xsJv71C…` | FAIL | RC_DANGER:Creator history of rugged tokens | liq=$29,672 mc=$137,917 | name=OH NO symbol=OHNO; contract:clean; rugcheck_score=68 lpLocked=100%; top10_hold=21.8% | The angel is supposed to save souls. The reaper is supposed to take them. Unfort |
+| 04:56 | solana | `CHQATHJi…` | FAIL | TOP10_HEAVY:91% | liq=$0 mc=$5,537 | name=Dog Messenger symbol=DM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=9 | We ran Voice Cat - VC to mils  What about DM - Dog Messenger? |
+| 04:56 | robinhood | `0xE0B2d9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$55,855 mc=$63,762 | chain:robinhood no-audit-adapter | RobinPanda ($RPANDA) | Robinhood Chain  RobinPanda is a new meme-native asset bu |
+| 04:56 | solana | `3oWYhx11…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$9,458 | name=THAT COIN symbol=SHUSH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=70 | 1. We don’t talk about THAT COIN. 2. We don’t shill THAT COIN. 3. Any shilling w |
+| 04:56 | robinhood | `0xbac730…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11 mc=$13,698 | chain:robinhood no-audit-adapter | AI trading & fair token launchpad on Robinhood Chain. |
