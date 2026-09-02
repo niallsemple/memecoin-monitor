@@ -1805,6 +1805,24 @@ def run(ctx):
         treasury_watch(rpc)
     except Exception:
         pass
+    try:
+        # §178: post-run rent sweep — close dust/empty ATAs in-process
+        # after all exits are done. reclaim_ata.scan hard-skips open
+        # positions and unbooked mints (§169 guards). Threshold >=2
+        # closable accounts keeps run time inside the 20-min budget;
+        # smaller piles wait for manual gap sweeps. ~5s scan-only cost
+        # on normal runs.
+        import importlib.util as _ilu2
+        _s2 = _ilu2.spec_from_file_location(
+            "reclaim_ata", str(MON / "reclaim_ata.py"))
+        _ra = _ilu2.module_from_spec(_s2)
+        _s2.loader.exec_module(_ra)
+        _k2, _ad2 = _ra.lt._load_key()
+        _res2 = _ra.scan(_ad2)
+        if _res2 is not None and len(_res2[0]) >= 2:
+            _ra.main()
+    except Exception:
+        pass
     return {"artifact": {
         "summary": (f"births={stats['births']} big_seeds={stats['big_seeds']} "
                     f"armed={stats['armed_births']} "

@@ -4536,3 +4536,8 @@ another new high.
 ## §177 — routine dust sweep (2026-09-02 ~14:41 BST)
 - Gap sweep closed h1xM's dust ATA: sig 5qQzB9fd… landed, **+0.002069 SOL**. Wallet: **2.519852 SOL** (−6.11% vs funding baseline — best since live trading began).
 - Wallet arithmetic ties out: 2.511777 + h1xM net 0.008285 − new-ATA rent 0.00207 − fees ≈ 2.517783 pre-sweep; sweep refunds the rent.
+
+## §178 — rent sweep automated into tracker runs (2026-09-02 ~14:55 BST)
+- Post-run housekeeping now scans for closable ATAs every run and sweeps in-process when ≥2 are pending (reclaim_ata.main with §169 guards: open positions + unbooked mints never touched). Sub-threshold piles wait for manual gap sweeps.
+- Cost on normal runs: one 2-RPC scan (~5s). Runs stay inside the 20-min budget (measured 16.2–17.4 min; sweep adds ≤30s only when triggered).
+- Effect: the ~0.002 SOL rent per close is now collected automatically — worth ~+0.08 SOL/40 trades, roughly one average win per verdict cycle.
