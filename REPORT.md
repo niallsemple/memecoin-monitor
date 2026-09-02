@@ -4803,3 +4803,13 @@ Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
 - Wired into the tracker run ahead of the §178 rent sweep (exception-guarded, ~10–30s quiet cost). Asset + `automations/tracker_live.py` pair byte-identical.
 - Watermarks initialized at current chain head (history skipped; B4's 1,833 SOL inflow already covered in §206). First live poll: clean, no new outflows.
 - This closes the last reactive gap: previously we learned a crew's worker wallets only *after* their mint drained someone. Now a funding burst appends the workers to the blocklist **before** their mint exists — the §204 feeder gate on the next entry can fire on wallets that have never traded.
+
+## §208 — Fee-drag sizing model: the scale-up math for the 40-close verdict (2026-09-02 ~22:05 UTC)
+
+`fee_drag_model.py` replays the panic cohort (18 market-action closes, all green) at 1×/2×/3× stake with a scenario grid over extra round-trip price impact (0/1/2%).
+
+**Headlines:**
+- Edge survives scale-up: **2× stake → +0.155 SOL per 18-trade cohort at 0% added impact** (+3.41%/trade); even at 2% added impact it stays positive (+1.41%/trade). Fees shrink from 1.49% → 0.74% → 0.50% of stake as size grows — fixed priority fees amortize.
+- **But the current cap blocks it:** 5% of wallet at 2× = 0.253 SOL > 0.20 cap. The verdict must raise the cap to ~0.30 (2×) or ~0.40 (3×) or sizing stays at 1× regardless of cohort stats.
+- **The gating risk is drains, not fees:** this model only contains green market-action trades. One undetected insider drain at 2× = −0.25 SOL ≈ the entire cohort's profit. **Scale-up is only safe AFTER the crew≥30 + overhang screens are promoted to blocking** — the two decisions are sequenced, not independent.
+- 3× is marginal: 1–2% extra impact eats 25–50% of edge; recommend 2× max at the verdict, revisit 3× after 20 more closes.
