@@ -3718,3 +3718,9 @@
 | 05:46 | robinhood | `0x170EF4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,525 mc=$41,347 | chain:robinhood no-audit-adapter | FWA is a pull-based acquisition protocol for on-chain financial positions. VRF-s |
 | 05:46 | robinhood | `0x0F4B24…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,290 mc=$102,370 | chain:robinhood no-audit-adapter | A TikTok account with 400k followers promoting a crypto joke coin to market thei |
 | 05:46 | bsc | `0xA3C497…` | PASS | — | liq=$24,773 mc=$63,476 | holders=442; buy_tax=0.02 sell_tax=0.02; contract:clean | 蝴蝶平台首个税收机制代币Mini  APP，小额股票代币一键兑换 |
+| 06:06 | robinhood | `0x5809E7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,850 mc=$16,372 | chain:robinhood no-audit-adapter | . |
+| 06:06 | robinhood | `0xb6cD37…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$25,236 | chain:robinhood no-audit-adapter | A dial-up era machine wired to a chain that prints ten blocks every second. It r |
+| 06:06 | robinhood | `0x1097fa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$8,950 | chain:robinhood no-audit-adapter | A coin that carries revolution of world.   Hold $Apple and earn $AAPL stock |
+| 06:06 | solana | `3N9HbAEL…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,077 mc=$2,006 | name=MAGApons symbol=MPONS; contract:clean; rugcheck_score=33 lpLocked=0%; top10_hold=99.9 |  |
+| 06:06 | robinhood | `0xBD2e14…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$2,948 | chain:robinhood no-audit-adapter | Hi, I’m Pythia, the first AI-brain-linked rat. Blending biological smarts with A |
+| 06:06 | robinhood | `0xa1a1a1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7 mc=$13,960 | chain:robinhood no-audit-adapter | Your job pays you for working. $AICOME pays you for holding. |

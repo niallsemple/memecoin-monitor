@@ -4400,3 +4400,7 @@ another new high.
 - Attribution: 18 green closes +0.1647 total; two drains (LUTN −0.1348, 29H7 −0.1250) −0.2598; fees/dust ≈ −0.027. **Drains are 100% of the problem.** Book win rate 85% but the tail eats the edge.
 - Both drains predate the §148 panic stop. Post-panic-stop cohort (ro8B, BF13, JwQb): 3/3 green, +0.0223. Sample tiny but the fix targets exactly the loss mechanism.
 - Verdict: edge exists in the win rate and nm_abort spikes, but net ROI is NOT yet positive live. The path to positive: panic stop caps drains at ~−20% instead of −100%; at paper's 7% drain rate that flips expectancy clearly positive. Need ~20 more closes under the panic stop to confirm.
+
+## §153 — L1PE close (2026-09-02 ~07:17 BST)
+- L1PE8uhc abort15 at 15.7m, mult 1.038; verified wallet delta 0.132680294 vs 0.1281 → **+0.00458 SOL**. Book: 21 closes, 18 green.
+- Post-panic-stop cohort: 4/4 green, +0.0269. Wallet 2.56387, all liquid.
