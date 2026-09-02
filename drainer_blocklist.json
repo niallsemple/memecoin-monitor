@@ -25,6 +25,22 @@
   "5qrZfD2Li5HxTeqpWBxXi9ip7h29xJrZnsAMVuSDWzxU": {
    "tag": "MASTER-D (AgLS drain)",
    "received_sol": 1498.28
+  },
+  "6iQ9zzNSsAeRHLkEhjDgxBUfhNZXQ5RtoDAzTRJzLdVV": {
+   "tag": "MASTER-B2 (LUTN hop 1)",
+   "seen": "2026-09-02 00:23 UTC",
+   "relayed_sol": 312.39
+  },
+  "9J9RKV9kxc6yJMAVx7zRdyeiBMjUqbsogWG54eszqvmR": {
+   "tag": "MASTER-B3 (LUTN hop 2)",
+   "seen": "2026-09-02 00:23 UTC",
+   "relayed_sol": 312.39,
+   "sent_sol": 1833.34
+  },
+  "324jyx7Mv7arpLT27LJMQWZZsWcUySSmry76htgZXgGC": {
+   "tag": "MASTER-B4 (mega-treasury)",
+   "seen": "2026-09-02 04:04 UTC",
+   "received_sol": 1833.34
   }
  },
  "killers": {
@@ -1371,5 +1387,7 @@
    "funded_by": "MASTER-A",
    "sol": 24.0
   }
- }
+ },
+ "version": "v7",
+ "notes": "v7 2026-09-02: LUTN loot moved. Killer 5Lyboj staged via MASTER-B (now empty) -> B2 -> B3 -> merged into B4 mega-treasury (1,833 SOL single tx 04:04 UTC). Drain crews are cells of one larger operation; capital recycles within hours."
 }
