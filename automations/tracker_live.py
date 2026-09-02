@@ -1806,6 +1806,37 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §181b: wallet-attributed ledger for gate-qualified mints
+        # (EDGE #6 raw material — smart-wallet lead/lag research).
+        # Watermark-incremental; only s60nm5fr-open mints with a
+        # discovered pool; max 4 mints/run to protect the 20-min budget.
+        import importlib.util as _ilu3
+        _s3 = _ilu3.spec_from_file_location(
+            "wallet_ledger", str(MON / "wallet_ledger.py"))
+        _wl = _ilu3.module_from_spec(_s3)
+        _s3.loader.exec_module(_wl)
+        _qualified = set()
+        if PAPER_SFR.exists():
+            for _line in PAPER_SFR.open():
+                try:
+                    _r = json.loads(_line)
+                except Exception:
+                    continue
+                if _r.get("status") == "open" and _r.get("mint"):
+                    _qualified.add(_r["mint"])
+        with LK:
+            _pools = {m: (t.get("pool") or {}).get("pool")
+                      for m, t in tokens.items()}
+        _n = 0
+        for _m in _qualified:
+            _pa = _pools.get(_m)
+            if _pa and _n < 4:
+                _wl.update(_m, _pa)
+                _n += 1
+        paper["wallet_ledger_mints"] = _n
+    except Exception:
+        pass
+    try:
         # §178: post-run rent sweep — close dust/empty ATAs in-process
         # after all exits are done. reclaim_ata.scan hard-skips open
         # positions and unbooked mints (§169 guards). Threshold >=2

@@ -4557,3 +4557,7 @@ another new high.
 - Parser v2 lessons: PumpSwap WSOL leg rides as tokenTransfers (not nativeTransfers); protocol/creator fee splits share the tx (count only feePayer↔pool legs); retail dust trades go down to 3e-8 SOL (threshold now 1e-6); aggregator routes fall back to token-leg counterparty.
 - Test on h1xM pool: **1,270 trades, 1,227 unique wallets** parsed clean. Coverage note: hot tokens exceed the 20-page fetch cap (h1xM ~50k trades/20min) — watermark-forward updates keep pace for typical qualified tokens; mega-hot tokens get newest-biased samples. Known limitation, documented.
 - Next: wire into tracker for s60-qualified mints at qualification time → accrues the leaderboard's raw material forward.
+
+## §181b — wallet ledger wired into tracker (2026-09-02 ~16:05 BST)
+- Every run now updates the wallet-attributed ledger for s60nm5fr-open mints with discovered pools (max 4/run, watermark-incremental). Artifact carries wallet_ledger_mints count.
+- This is the forward data feed for EDGE #6/#7 (smart-wallet leaderboard → cluster consensus). Zero impact on live trading path; runs after all exit logic.
