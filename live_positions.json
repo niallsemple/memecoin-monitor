@@ -598,16 +598,18 @@
   "close_note": "sig 4nAPdA4BVaoYGe59tifvH5DVjJtpSszbC4cmx1z42mviAv87mdfYVKkQiLxWzrXdfuHoNTM1Vopk7cMpHCJha7UF; recorded tokens overstated actual by 0.77% -> 6024 blocked two nm_abort submits at 1.384x; drain completed during blocked window; manual skipPreflight salvage recovered dust"
  },
  "CdwQwELS21TRtDiVq1iMQ2yhLpPtyqxFPS1QggWnpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788388873.676197,
   "entry_px": 1.0908128439818941e-09,
   "tokens": 109918031,
-  "tokens_left": 109918031,
+  "tokens_left": 0,
   "size_sol": 0.1199,
-  "peak_mult": 1.0005349374478731,
+  "peak_mult": 1.0254981567973311,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.122957229,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00306
  }
 }

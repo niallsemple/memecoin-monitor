@@ -5104,3 +5104,12 @@ fails on a first page: `getSignaturesForAddress(until=watermark)` +
 jsonParsed `getTransaction`; side from fee payer's token-delta sign, size
 from native SOL delta + fee (Jupiter unwraps WSOL→native on sells).
 Verified: 14/15 sigs parsed on a live pool. Watermark semantics unchanged.
+
+## §226 — CdwQwELS abort15 green + §223 fix forward proof (2026-09-02)
+
+Close #38: CdwQwELS…pump, 0.1199 SOL in, abort15 at ~15m (peak 1.025x).
+Recovered +0.122644 SOL on-chain (sig 5ZpuUz3A…, meta.err None) →
+**+0.00306 SOL green**. First live exit since the §223 actual-balance
+clamp: **submitted first try, no 6024, no exit_failed retries** — the
+MBCBuuPC failure class is closed forward. Book: 38 closes, 34 green,
+net −0.25907 SOL. Two closes to the 40-close verdict.
