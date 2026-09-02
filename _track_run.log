@@ -190,3 +190,352 @@ HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x395eea2a227b0
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x42b6e552bc8c53b823c3a83ee2b9e2a8cd9689b7
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xca31c8e87def9a13cb8287cc9462492f6ac5c412059e30f09f9029839fc73743
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/4L5bE8qcZwmvymk4XqHBYxFoqYdq2Z95MHiQj7PVgNPg
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/8N8Cbh9BC6mjahJWPjnP8MkzsrWACEwDz7wWfN5AKskR
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x29cc598619926945164f865700ce565ff83b450f18d443c519f9d7b4b1dfd26d
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x6c32bda9d87396aa5b4c042eec679222ac57b0acbc5964d64eb42d928fed81c8
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x6bc490619edc6b062dea87202947a2a65569b5ed/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/7BDLRdAHRy8kBbWXxXSt3Jmcp7xKNK48jHGdDSqG2YKf
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xa567e94b58025506246ff9ea1a83783c651da94b/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x319fb88a482dfa95b83d39407ddb11c97151d1aa
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x6793fbb94bf72098f55edc95b53be99ff731e16b
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/5V7YjAPrH43jUf7xm1hi1wbtxSejNGB1ESdwNSDcHoMT/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/Bvi79bx9jDiGhgjdRMekHXssNe4MrVhxenjSeKf7o7YD
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe527a438e7e59298271a953a8ad94a8e7152cc11/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/8itAP66HchHoDUEMncvpThLQbyUVYcnJGrZUoQMvbgDP/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x8ec3fbdd4214ac0155df329c270c603e319b4e0a
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x1ba57241b47775d1ced4f396d7700309f26203b5/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x5f8de37a87ce97f746f021252422210580034e54/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x967c2f48fad4ca79b1e4f163301c21e96335c54c
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x8fb857c19a1ebc265926a2da4b2095203a098e78/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xa6ee93d4be0386b19fbc919c6a26fc33a8f50457
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x4ffa68e900d2b490a42ec705ef1f7334c0467e48/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x0774030d85ac1366ba1f544eed79ac5746a02f3b9fb8ca48d5720d8b4bdff47d/ohlcv/hour?aggregate=1&limit=48&currency=usd
+
+name                   chain    status  exit      FR  peak   now        ret
+JEW / SOL              solana   closed  timestop  F     1.0x   1.0x     -0%
+BALD / ETH 0.05%       base     closed  timestop  F     1.0x   1.0x     +0%
+🐵GPTC / WBNB           bsc      closed  timestop  F     1.0x   1.0x     +0%
+孙小圣 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+CLAYMO / WETH          eth      closed  timestop  F     1.0x   0.0x   -100%
+CE / WBNB              bsc      closed  timestop  F     1.2x   1.2x    -12%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+MSFT / SOL             solana   closed  trail     F     1.0x   0.0x   -100%
+BAD🔥 / WBNB            bsc      closed  timestop  F     1.2x   0.0x   -100%
+幸运资本 / WBNB            bsc      closed  timestop  F     1.0x   0.0x   -100%
+🐶CM / WBNB             bsc      closed  timestop  F     1.0x   0.0x   -100%
+孙割3000 / SOL           solana   closed  timestop  F     1.0x   1.0x     +0%
+GOODMORNINGDRAGONS /   base     closed  timestop  F     1.0x   1.0x     +0%
+NARTRXDATA / ETH 0.3   base     closed  timestop  F     1.0x   1.0x     +0%
+SNOONINU / WETH        eth      closed  trail     F     1.0x   0.0x   -100%
+TRUMPSTACY / SOL       solana   closed  trail     T     2.3x   0.0x    +37%
+¥1 / SOL               solana   closed  timestop  F     1.0x   1.0x     -1%
+PIF / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+NARTRXDATA / ETH 0.3   base     closed  timestop  F     1.0x   1.0x     +0%
+DAGWOODV / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+Optimus / ETH 0.3%     base     closed  timestop  F     1.0x   1.0x     +0%
+Dancingcat / WETH      base     closed  timestop  F     1.0x   1.0x     +0%
+4 / USDT               bsc      closed  timestop  F     1.0x   1.0x     +0%
+COBIE / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+KOBRA / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
+MEME / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+SHUFFLE / ETH 0.3%     base     closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+XSHUFFLE / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+HOUSE / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+BOUNTY / WETH          eth      closed  trail     F     1.0x   0.0x   -100%
+CASPLAT / SOL          solana   closed  timestop  F     1.0x   0.4x     -0%
+OMOF / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+OpenAI / USDC          base     closed  timestop  F     1.0x   1.0x     -0%
+testmeta / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+Tunekr / ETH 0.3%      base     closed  timestop  F     1.0x   1.0x     +0%
+META / SOL             solana   open    None      T     1.8x   1.8x    +58%
+PUP / SOL              solana   closed  timestop  F     1.0x   1.0x     -0%
+UOR / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+LAIKA / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+FOURTEEN / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+AUR / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+testmeta / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+POWERUSERS / WETH      base     closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   0.1x     +0%
+躺赢 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+UNIFART / WETH         eth      closed  trail     F     1.0x   0.0x   -100%
+COE / WETH             eth      closed  timestop  F     1.0x   0.2x     +0%
+APD / WETH             eth      closed  timestop  F     1.0x   1.0x     +0%
+豹拉 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+LIFE / SOL             solana   closed  timestop  F     1.0x   1.0x     +0%
+Unfoller / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+SPEEDBS / ETH 0.3%     base     closed  timestop  F     1.0x   1.0x     +0%
+testmeta / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+BASELINE / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+AAPL / SOL             solana   closed  trail     T     3.2x   0.2x    +17%
+摇摆熊猫 / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+羊王 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+Aitril / SOL           solana   closed  timestop  F     1.0x   1.0x     +0%
+rizzmaxxing / ETH 0.   base     closed  timestop  F     1.0x   1.0x     +0%
+宝贝牛来 / WBNB            bsc      closed  trail     F     1.0x   0.0x   -100%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+妈年 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+BADPRESIDENT / ETH 0   base     closed  timestop  F     1.0x   1.0x     +0%
+basenoun / WETH        base     closed  timestop  F     1.0x   1.0x     +0%
+我的孙宇晨男友 / USDT         bsc      closed  timestop  F     1.0x   1.0x     +0%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+WOOF / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  trail     T     3.6x   0.0x    +12%
+SELVO / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
+SOUS / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     -2%
+SHRUB / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+HNT / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     -4%
+onboard / SOL          solana   closed  timestop  F     1.0x   1.0x     +2%
+WWR / SOL              solana   closed  trail     F     1.3x   0.0x   -100%
+SPACEX / WETH          base     closed  timestop  F     1.0x   1.0x     +0%
+STO🐼 / WBNB            bsc      closed  timestop  F     2.4x   2.4x   +141%
+SHRUB / ETH 0.05%      base     closed  timestop  F     1.0x   1.0x     +0%
+bGuy / USDT            bsc      closed  timestop  F     1.0x   1.0x     +0%
+ARKIE / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+KARIS / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+HNT / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +2%
+HTN / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+💸CLUB / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+KARIS / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +3%
+HNT / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     -4%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+英伟达股票 / WBNB           bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+EWL / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
+SHRUB / WETH           eth      closed  trail     T    20.6x   0.0x    +12%
+HTN / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+37signals / ETH 0.3%   base     closed  timestop  F     1.0x   1.0x     +0%
+HAM / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+KARIS / ETH 0.3%       base     closed  timestop  F     1.0x   0.9x     -9%
+defi-native / ETH 0.   base     closed  timestop  F     1.0x   1.0x     -2%
+HTN / ETH 0.3%         base     closed  timestop  F     1.1x   1.1x     +8%
+HAM / ETH 0.3%         base     closed  timestop  F     1.1x   1.1x     +6%
+EVE / ETH 0.3%         base     closed  timestop  F     1.4x   1.4x    +38%
+HNT / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+杀零狗 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+Aonusi / SOL           solana   closed  timestop  F     1.0x   1.0x     +0%
+WOFI / SOL             solana   closed  timestop  F     1.0x   0.9x     +1%
+POMM / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+1KTO100M / WETH        base     open    None      T   2608.3x 2608.3x +65221%
+BOT / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+37signals / ETH 0.3%   base     closed  timestop  F     1.0x   1.0x     +0%
+HAM / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+EVE / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+我的孙宇晨男友 / USDT         bsc      closed  timestop  F     1.0x   1.0x     +0%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  timestop  F     1.4x   0.0x   -100%
+BUDDY / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
+CHA🐼 / WBNB            bsc      closed  timestop  F     1.5x   1.5x    +45%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+LARK / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+BIG / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+Dickbots / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+TOKEN / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +4%
+HAM / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+happy猫 / WBNB          bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+CHUBBY / WETH          base     open    None      T   3796.0x 3796.0x +94914%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+杀零狗 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+ESO / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
+BETTY / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+ANTHROPIC / WETH       base     closed  timestop  F     1.0x   1.0x     +0%
+PUMP / SOL             solana   closed  timestop  F     1.0x   1.0x     -0%
+元宇宙马 / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+🏆NIN / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+LIQUIDBGT / WETH       base     open    None      T   4440.2x 4440.2x +111017%
+我的女友景甜 / USDC          base     closed  timestop  F     1.0x   0.4x    -29%
+ROCK / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+PCM / WBNB             bsc      closed  timestop  F     1.1x   1.1x    +13%
+USDT.z / ETH 0.3%      base     closed  timestop  F     1.0x   1.0x     +0%
+ISEEM / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+LIFE / SOL             solana   closed  timestop  F     1.0x   1.0x     +0%
+HeeHaw / WETH          eth      closed  trail     F     1.0x   0.0x   -100%
+MONDO / ETH 0.3%       base     closed  timestop  F     1.0x   0.9x    -12%
+ISEEM / ETH 0.3%       base     closed  timestop  F     1.2x   1.2x    +16%
+PREORDER / ETH 0.3%    base     closed  timestop  F     1.1x   1.1x     +5%
+TDSU / ETH 0.3%        base     closed  timestop  F     1.1x   1.1x     +8%
+WEcast / ETH 0.3%      base     closed  timestop  F     1.2x   1.2x    +17%
+polar / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     -2%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+CAT / WBNB             bsc      closed  timestop  F     1.0x   1.0x     +0%
+polar / ETH 0.3%       base     closed  timestop  F     1.2x   1.2x    +20%
+DISCEXPORT / ETH 0.3   base     closed  timestop  F     1.2x   1.2x    +20%
+ROCK / ETH 0.3%        base     closed  timestop  F     1.0x   0.9x     -7%
+我的女友景甜 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+奶牛猫 / WBNB             bsc      closed  timestop  F     1.0x   1.0x     +0%
+SKYAI / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+BSC / WBNB             bsc      closed  timestop  F     1.0x   0.8x    -17%
+牛来­ / USDC             base     closed  timestop  F     1.0x   1.0x     +0%
+ROVER / SOL            solana   closed  timestop  F     1.2x   1.2x    +24%
+ROVER / SOL            solana   closed  trail     T   123192.9x 1045.0x +26137%
+PHON / SOL             solana   closed  timestop  F     1.2x   0.0x     +7%
+CHUBBY / WETH          base     open    None      T   3310.0x 3310.0x +82763%
+牛来2.0 / USDT           bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+指甲刀 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+HET / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+MONE / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+Minhad / SOL           solana   closed  timestop  F     1.0x   0.8x    -17%
+INVIDIA / SOL          solana   closed  timestop  F     1.0x   1.0x     -1%
+Lakeusa / SOL          solana   closed  timestop  F     1.0x   1.0x     +0%
+GTA6 / SOL             solana   closed  timestop  F     1.0x   1.0x     +0%
+abstract / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+CHILL / WBNB           bsc      closed  timestop  F     1.0x   1.0x     +0%
+STRAPPY / WETH         eth      closed  trail     F     1.2x   0.0x   -100%
+牛来 / USDC              base     closed  timestop  F     1.0x   1.0x     +1%
+白羊座 / WBNB             bsc      closed  timestop  F     1.2x   1.2x    +24%
+MIMIKYU / WETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDC              base     closed  timestop  F     1.0x   1.0x     -0%
+牛来 / USDT              bsc      closed  timestop  F     4.6x   4.6x   +358%
+PEPKING / WETH         base     open    None      T   2549.4x 2549.4x +63749%
+杀零狗 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+杀零狗 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+LIFE / SOL             solana   closed  timestop  F     1.0x   1.0x     +0%
+MACHI / SOL            solana   closed  timestop  F     1.0x   1.0x     -0%
+BALD / SOL             solana   closed  timestop  F     1.0x   1.0x     +0%
+FlashCharge / USDT     bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+我的男友孙宇晨 / USDT         bsc      closed  timestop  F     1.0x   1.0x     +0%
+VRD / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
+GUNICORN / WETH        eth      closed  trail     F     1.0x   0.0x   -100%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+GARFI / WETH           base     open    None      T   3561.8x 3561.8x +89058%
+Agentmuxer / WETH      base     closed  timestop  F     1.0x   1.0x     +1%
+巴泰 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+CZ444 / USDT           bsc      closed  timestop  F     1.0x   1.0x     +0%
+绊倒体 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+CHILL / WBNB           bsc      closed  timestop  F     1.0x   1.0x     +0%
+1KTO100M / WETH        base     open    None      T   4543.9x 4543.9x +113611%
+豹拉 / USDC              base     closed  timestop  F     1.0x   1.0x     -1%
+CBV / WBNB             bsc      closed  timestop  F     1.0x   0.7x    -28%
+UNIFART / WBNB         bsc      closed  timestop  F     1.0x   1.0x     +0%
+杀零狗 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+ANTHROPIC / WETH       base     open    None      T   4892.5x 4892.5x +122325%
+牛牪犇 / WBNB             bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+BULLCOIN / WETH        base     closed  timestop  F     1.0x   1.0x     +1%
+UNIFART / WBNB         bsc      closed  timestop  F     1.0x   1.0x     +0%
+BULLBRAIN / WBNB       bsc      closed  timestop  F     1.0x   1.0x     +0%
+wroon100 / WETH        eth      closed  trail     F     1.1x   0.0x   -100%
+RIZO / ETH             eth      closed  timestop  F     1.0x   1.0x     +0%
+牛来坞 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+MEOW / WETH            base     open    None      T   20938.5x 20938.5x +523476%
+WEBULL / WETH          base     closed  timestop  F     1.0x   1.0x     +1%
+SPACEX / WETH          base     open    None      T   2440.8x 2440.8x +61033%
+Steve / SOL            solana   closed  timestop  F     1.0x   1.0x     +0%
+火币财富 / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+双子座幸💸 / WBNB           bsc      closed  timestop  F     1.0x   1.0x     +0%
+金九 / WBNB              bsc      closed  timestop  F     1.0x   1.0x     +0%
+我的男友孙宇晨 / USDT         bsc      closed  timestop  F     1.0x   1.0x     +0%
+A / WBNB               bsc      closed  trail     F     1.0x   0.0x   -100%
+Chuck / SOL            solana   closed  timestop  F     1.0x   1.0x     -0%
+牛来2.0 / USDT           bsc      closed  timestop  F     1.0x   1.0x     +0%
+我的孙宇晨男友 / USDT         bsc      closed  timestop  F     1.0x   1.0x     +0%
+PStack / ETH 0.05%     base     closed  timestop  F     1.0x   1.0x     +0%
+金融 / WBNB              bsc      closed  timestop  F     9.3x   9.3x   +833%
+BOUGHT / SOL           solana   closed  timestop  F     1.3x   1.3x    +35%
+KINO / ETH 1%          base     closed  timestop  F     1.1x   1.1x     +6%
+XCHAT / WETH           base     open    None      T   2179.8x 2179.8x +54508%
+BSX / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
+Markiplier / SOL       solana   closed  timestop  F     1.0x   1.0x     +0%
+SPACEX / WETH          base     open    None      T   3792.5x 3792.5x +94824%
+CHUBBY / WETH          base     closed  timestop  F    48.6x  48.6x  +4757%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+QSB / WETH             base     closed  timestop  F     1.0x   1.0x     -0%
+U1 / WETH              base     open    None      T   3071.5x 3071.5x +76801%
+CS / WBNB              bsc      open    None      T     1.5x   1.5x    +51%
+1KTO100M / WETH        base     open    None      T   1306.0x 1306.0x +32664%
+土豆 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+BULLBRAIN / WBNB       bsc      closed  timestop  F     1.0x   1.0x     +0%
+GARFI / WETH           base     open    None      T   4329.3x 4329.3x +108246%
+1 / SOL                solana   closed  timestop  F     1.0x   1.0x     +1%
+Eugpt / SOL            solana   closed  timestop  F     1.0x   1.0x     +0%
+BULL / WBNB            bsc      closed  timestop  F     1.4x   1.4x    +40%
+CCE / WETH             eth      closed  timestop  F     1.0x   1.0x     +0%
+AuraBattles / WETH     eth      closed  timestop  F     1.0x   1.0x     +0%
+Kharg / SOL            solana   closed  timestop  F     1.0x   1.0x     +0%
+我的景甜女友 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+💯BAB / WBNB            bsc      closed  timestop  F     1.1x   1.1x    +14%
+ESO / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
+USMS / SOL             solana   closed  trail     T     3.7x   0.0x    +12%
+我的女友景甜 / USDC          base     closed  trail     F     1.0x   0.6x    -78%
+GPRO / WETH            eth      closed  trail     F     1.4x   0.0x   -100%
+GPRO / WETH 0.01%      base     closed  timestop  F     1.0x   1.0x     +0%
+1KTO100M / WETH        base     open    None      T   1829.4x 1829.4x +45749%
+COPPERBULL / SOL       solana   closed  timestop  F     1.0x   1.0x     +0%
+WOODY / WETH 0.3%      base     closed  timestop  F     1.0x   1.0x     +0%
+GROKCAT / WETH         base     closed  timestop  F     1.2x   1.1x    +20%
+BR / WBNB              bsc      closed  timestop  F     1.1x   1.1x    +13%
+ROBBIE / SOL           solana   closed  timestop  F     1.0x   1.0x     +0%
+CALLOUT / SOL          solana   closed  timestop  F     1.0x   0.9x     -5%
+SRK / WETH             eth      closed  timestop  F     1.0x   1.0x     +0%
+🚀ROCK / WBNB           bsc      closed  trail     F     1.0x   0.0x   -100%
+WIFE / WETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+1KTO100M / WETH        base     open    None      T   2952.1x 2952.1x +73816%
+我的景甜女友 / USDT          bsc      closed  timestop  F     1.0x   1.0x     +0%
+FSD / WETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+Fomo / WETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+PPAP / WETH            base     closed  timestop  F     1.0x   1.0x     -1%
+MEGA / WBNB            bsc      open    None      T     1.7x   1.7x    +54%
+豹拉牛来 / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+SAF / WBNB             bsc      closed  timestop  F     1.0x   1.0x     +0%
+豹拉牛来 / WBNB            bsc      closed  timestop  F     1.0x   1.0x     +0%
+BALL / WETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+GOLDDIGGER / WETH 0.   base     closed  timestop  F     1.0x   1.0x     +0%
+CLANKER / ETH 0.3%     base     closed  timestop  F     1.0x   1.0x     +0%
+Palshel / SOL          solana   closed  timestop  F     1.0x   1.0x     +0%
+SHIBUKI / WBNB         bsc      closed  timestop  F     1.0x   1.0x     +0%
+XCX / ETH 0.05%        base     closed  timestop  F     1.0x   1.0x     +0%
+FIDEL / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+FINORA 2.0 / WBNB      bsc      closed  timestop  F     1.0x   1.0x     -1%
+RobinDex / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+SPACEX / WETH          base     open    None      T   4922.0x 4922.0x +123062%
+FINORA 2.0 / WBNB      bsc      closed  timestop  F     1.0x   1.0x     +0%
+ANTHROPIC / WETH       base     open    None      T   1537.2x 1537.2x +38443%
+HERCULES / ETH 0.3%    base     closed  timestop  F     1.0x   1.0x     +0%
+PV / WBNB              bsc      closed  timestop  F     1.0x   0.8x    -20%
+肥嘟嘟 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
+FGL / ETH 0.3%         base     closed  timestop  F     1.0x   1.0x     +0%
+PAN / WBNB             bsc      open    None      F     1.0x   1.0x     +0%
+好运来 / SOL              solana   open    None      F     1.0x   1.0x     +0%
+OMNI / ETH 0.3%        base     open    None      F     1.0x   1.0x     +0%
+1KTO100M / WETH        base     open    None      T   2279.4x 2279.4x +56997%
+GOOGL / SOL            solana   open    None      F     1.0x   1.0x     -1%
+孙哥人生 / SOL             solana   open    None      T     2.9x   2.9x    +86%
+MAGIC / USDC           base     open    None      T     6.0x   6.0x   +163%
+ROBINHOUSE / ETH 0.3   base     open    None      F     1.0x   1.0x     +0%
+HYNIX / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+RHTYJTYRJRTE / ETH 0   base     closed  timestop  F     1.0x   1.0x     +0%
+Kalshi / ETH 0.3%      base     open    None      F     1.0x   1.0x     +0%
+CZ / USDT              bsc      open    None      F     1.0x   1.0x     +0%
+我的女友景甜 / USDT          bsc      open    None      F     1.0x   1.0x     +0%
+onboard / SOL          solana   closed  timestop  F     1.0x   1.0x     +0%
+旺财 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
+MarsCoin / SOL         solana   open    None      T     2.4x   2.4x    +73%
+AI / WETH              eth      closed  trail     T     1.6x   0.0x    +13%
+fone / SOL             solana   closed  trail     F     1.0x   0.1x    -85%
+PEPEFART / SOL         solana   closed  timestop  F     1.0x   1.0x     +3%
+ZIPCAT / WBNB          bsc      closed  timestop  F     1.0x   1.0x     +0%
+CATE / WETH            eth      closed  trail     T     2.8x   0.0x    +13%
+蝴蝶托底协议 / WBNB          bsc      open    None      F     1.0x   1.0x     +0%
+DiamondPepe / WETH 0   base     open    None      F     1.1x   1.1x    +11%
+DINAR / WBNB           bsc      open    None      F     1.0x   1.0x     +0%
+ARROW / SOL            solana   open    None      F     1.0x   1.0x     +0%
+孙小圣 / USDC             base     open    None      F     1.0x   1.0x     +0%
+Ztrpr / SOL            solana   open    None      F     1.0x   1.0x     +0%
+CLA / WBNB             bsc      open    None      F     1.0x   1.0x     +0%
+O1DOLL / WETH          base     open    None      F     1.0x   1.0x     +0%
+蝴蝶托底协议 / WBNB          bsc      open    None      F     1.0x   1.0x     +0%
+处女座属 / WBNB            bsc      open    None      F     1.0x   1.0x     +0%
+Elon Musk / ETH 0.3%   base     open    None      F     1.0x   1.0x     +0%
+
+closed: +104%/trade, win 47/280

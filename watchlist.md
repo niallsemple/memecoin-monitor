@@ -3665,3 +3665,9 @@
 | 02:06 | robinhood | `0x1a911b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$48,988 mc=$58,406 | chain:robinhood no-audit-adapter | Monitoring the situation |
 | 02:06 | robinhood | `0xD1efCE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,444 mc=$158,108 | chain:robinhood no-audit-adapter | people are now tokenized. mint one,  put them to work, and earn stocks from thei |
 | 02:06 | robinhood | `0x0c07f6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,761 mc=$25,006 | chain:robinhood no-audit-adapter | Silver Fox on Robinhood |
+| 02:26 | robinhood | `0x2e0C2a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,904 mc=$43,350 | chain:robinhood no-audit-adapter |  |
+| 02:26 | robinhood | `0x92ef7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,527 mc=$38,235 | chain:robinhood no-audit-adapter | be a normie, invest in SPY |
+| 02:26 | hyperevm | `0xA27082…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4,662 mc=$4,806 | chain:hyperevm no-audit-adapter | Ther call me FRED. Your Hyper best Frend. |
+| 02:26 | solana | `2VQiBPJQ…` | FAIL | TOP10_HEAVY:57%; RC_WARN:Copycat token | liq=$0 mc=$21,851 | name=Fartcoin symbol=Fartcoin; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold |  |
+| 02:26 | solana | `w99NLAV1…` | FAIL | TOP10_HEAVY:81%; RC_WARN:Copycat token | liq=$0 mc=$9,467 | name=NubCat symbol=Nub; contract:clean; rugcheck_score=29 lpLocked=0%; top10_hold=80.6% |  |
+| 02:26 | solana | `5uLawxSb…` | PASS | — | liq=$31,555 mc=$154,104 | name=Pump Dog symbol=Pumpdog; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=1 | Perfect time to finally send this dog which appears on the Pump mobile app, pair |

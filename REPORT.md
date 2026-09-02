@@ -4351,3 +4351,10 @@ case live (peak ≥1.15, fade at 0.90×peak), a protection paper doesn't model.
 
 **Conclusion:** the paper edge transfers live. Post-LUTN era: 7/7 winners,
 +0.06934 SOL, wallet 2.615534 (new high, +30.8% on the 2 SOL funding).
+
+## §145 — 4GFD +5.7%: 10/11 winners, wallet 2.6207 (2 Sep 2026, 03:56 BST)
+
+4GFDcFoQ…pump (entered 03:39, 0.1308 SOL) aborted at 15m on r=1.06. Sell sig
+3aR2no8i…Ee8Ed9 verified on-chain: err=None, wallet delta +0.138279789 → pnl
++0.00748 SOL (+5.7%). Live book (11 closes): net −0.03624 SOL, 10/11 winners;
+post-LUTN era 8/8, +0.07682 SOL. Wallet 2.620735 SOL (+31.0% on funding).
