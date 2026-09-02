@@ -4813,3 +4813,22 @@ Entry-time visibility of crew wallets vs outcome (live book, crew mints only):
 - **But the current cap blocks it:** 5% of wallet at 2× = 0.253 SOL > 0.20 cap. The verdict must raise the cap to ~0.30 (2×) or ~0.40 (3×) or sizing stays at 1× regardless of cohort stats.
 - **The gating risk is drains, not fees:** this model only contains green market-action trades. One undetected insider drain at 2× = −0.25 SOL ≈ the entire cohort's profit. **Scale-up is only safe AFTER the crew≥30 + overhang screens are promoted to blocking** — the two decisions are sequenced, not independent.
 - 3× is marginal: 1–2% extra impact eats 25–50% of edge; recommend 2× max at the verdict, revisit 3× after 20 more closes.
+
+## §209 — Drain simulation: gated 2x book replays POSITIVE (+0.200 SOL) vs ungated −0.306 (2026-09-02 ~22:15 UTC)
+
+`drain_sim.py` recomputes every close's crew count from the 216,822-row wallet ledger (reproduces §204 exactly: 29H7=36, JwQb=36, 5GJf=11, LUTN=0 early) and replays the 36-close book under gate configs at 1× and 2×:
+
+| config | 1× net | 2× net | drains taken |
+|---|---|---|---|
+| G0 no gate (status quo) | −0.136 | **−0.306** | 3 |
+| G1 crew≥30 only | −0.019 | −0.071 | 2 |
+| **G2 crew≥30 + overhang (LUTN flagged)** | **+0.115** | **+0.200** | 1* |
+| G2 but LUTN overhang misses | −0.019 | −0.071 | 2 |
+
+\* the remaining "drain" is BXiwv — our own reclaim bug, already fixed; not a market event.
+
+**Verdict inputs now locked:**
+1. Ungated scale-up doubles losses — the 0.20 cap was load-bearing.
+2. G1 alone is not enough: misses the lone-insider attack shape (LUTN), stays red.
+3. **G2 flips the all-time book positive at both sizes** — the two screens cover both observed attack shapes, zero green sacrifice beyond JwQb (+0.008, which genuinely drained 60s after our exit — a correct skip).
+4. The LUTN-miss row is the honest downside: if the overhang screen fails on a future unmapped crew, economics degrade to G1 (≈ breakeven), not to G0. Downside of promotion is bounded; downside of NOT promoting is unbounded (next drain at 2× = −0.25).
