@@ -4268,3 +4268,16 @@ automations/tracker_live.py updated. Effective from the ~01:04 run.
 
 **Lesson.** Any run whose duration can exceed its schedule interval creates silent
 coverage holes exactly when positions need watching. Run time must fit the interval.
+
+## §140 — Rhm9 closes +4.1%: full stack works end-to-end (2 Sep 2026, 01:03 BST)
+
+Rhm9Rv…pump (entered 00:44, 0.1281 SOL) hit its abort15 gate at r=1.044 and sold
+cleanly: sig 5XsuQAom…skwgX, tx err=None, wallet delta +0.133343952 SOL → pnl
++0.00524 SOL (+4.1%). First exit executed under §137 (on-chain fill verification
+inside exit_watch) — the gate passed the real tx, and independent post-hoc
+verification matched. Book corrected to actuals; dust 2,414,246 raw (99.9% cap).
+
+Live book (5 closes): RST +0.01017, M32 +0.00446, J3a2 +0.00912, LUTN −0.13481,
+Rhm9 +0.00524 → net −0.10582 SOL, 4/5 winners. Wallet 2.564834 SOL — above the
+pre-LUTN level. The book's lone loser remains the unprotected drain; every
+protected trade has closed green.
