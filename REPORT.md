@@ -4485,5 +4485,5 @@ another new high.
 - **Root cause:** docstring said "≤0.2% of original buy" but the code used an absolute constant. Raw token counts vary 600× across mints; absolute thresholds are meaningless. Compound failure: no open-position guard.
 - **Loss booked: −0.12686 SOL** (stake 0.1289 − ATA rent 0.00204 recovered). Third loss ever; first caused by my tooling, not the market. Book: 32 closes, 29 green (90.6%). Panic cohort: 14/15.
 - **Fix shipped:** dust is now RELATIVE (raw ≤ 0.5% of booked tokens); hard skip for any mint with an OPEN book position; hard skip for any mint not in the book. Dry-run verified: 23 true-dust accounts closable (+0.0477 SOL pending), LUTN + open positions correctly skipped.
-- **Process lesson logged:** any script that signs wallet txs must cross-check live_positions.json before touching token accounts. The kill switch gates live_enabled() but did NOT block the burn path in v1's dry-then-live flow — it does now.
+- **Process lesson logged:** any script that signs wallet txs must cross-check live_positions.json (open positions) before touching token accounts. The live gate was checked and passed — the failure was purely the absolute dust cutoff plus no open-position guard.
 - Wallet ground truth after all events: **2.464088 SOL** (−8.19% vs 2.68389 funding baseline).
