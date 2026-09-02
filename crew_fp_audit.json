@@ -1,0 +1,1758 @@
+{
+ "threshold": 30,
+ "window": 120,
+ "rows": [
+  {
+   "mint": "asKMSzdFqh283Crhj9q3WKHH63i6qKLAGNeA6Appump",
+   "ret": 0.0889,
+   "peak": 1.105,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "ENQwVL5ae3m5NsKp4VvBoiTdCRXL5sXxEcTsSM3qpump",
+   "ret": 0.1258,
+   "peak": 1.587,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FgrfkJceSWokvfgShtGXz1uDTQQf7S5ZKDobsAZvpump",
+   "ret": 0.3721,
+   "peak": 2.05,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "boAUPPmeEhYVngfG4hXgAosgTmXtrL58sbtiysopump",
+   "ret": 0.1898,
+   "peak": 4.612,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "fCERmUZgsbKcnK79GmNEHG9cFBNetbkcufRRujwpump",
+   "ret": -0.4481,
+   "peak": 1.239,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Ho716oEZ9R6nimQwM8fcqaPsaZWjn1FtbE2wmErYpump",
+   "ret": 0.1895,
+   "peak": 1.628,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FNkGU1tU1cJr6GMqTKowZMqZRXNYnmu6QB9zRmm3pump",
+   "ret": 0.135,
+   "peak": 1.136,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FpVNDL9EwV2h97gfJ7HFDrQZCWD3VPx2URX5B8Fgpump",
+   "ret": 0.0814,
+   "peak": 1.081,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "nmEbbehHkkUygKs3fMmmQgo2qpTXxWCnHQ8jiSMpump",
+   "ret": 0.0589,
+   "peak": 1.06,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5qPPiqGdbVQ1iotAGVbmMtgPGT4TLa5ktK7vshFopump",
+   "ret": 0.0422,
+   "peak": 1.044,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "B2fTPiFwhL7JAiaYbbEfYyzvpeJz5JcmFTiSdjB7pump",
+   "ret": 0.0531,
+   "peak": 1.119,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "jCPNKECQ9sM1GMsiNrR1dpEZACAmDSbAuWHaGQZpump",
+   "ret": 0.1306,
+   "peak": 3.104,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5JLCmdSdN3bpV5RYaUPCmbcgSUgJrFsa4CfdnMwHpump",
+   "ret": 0.0827,
+   "peak": 1.315,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CHPsKyiHShUsuzqEhCX5kspEqwBmJg56eGk2SKCUpump",
+   "ret": 0.1317,
+   "peak": 1.579,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "rVhpwsohwR3j6euMWmAiJLkhaqFJF163hoBcSWJpump",
+   "ret": 0.0554,
+   "peak": 1.129,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "cA1Jf89mL3eVp2HreeshS3KbLEkyCv8MxvEBw5vpump",
+   "ret": 0.0702,
+   "peak": 1.232,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "2oFGsDGDEbFHcDWd6Qa78ptoTo6jqNxaKas5aYwgpump",
+   "ret": 0.3777,
+   "peak": 1.38,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AP39ZQy4Smq5Tg65NW41ugvtirQFwSJBDvrmdTsQpump",
+   "ret": 0.0599,
+   "peak": 1.06,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7HmZeXvupTP1bP8yayoDzWF6o1QrZGmWqPUKjJjpump",
+   "ret": 0.0459,
+   "peak": 1.105,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "BTJv2pWFnPWVefwJG4ixzPi1xK9zSjNZWcpvkrMdpump",
+   "ret": 0.1274,
+   "peak": 1.767,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "oFxvzBiThY4Gq45egbAHnyYgxWyNwsBNvwqx4ogpump",
+   "ret": 0.1326,
+   "peak": 1.59,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "ZjnXLgvsDH6PcKJAqC9psShMvWv57gcLQCcBhgEpump",
+   "ret": 0.1431,
+   "peak": 1.251,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "8WnaNq61xR2HJ77PtjQ5JxNaacFxBULADyprPLUppump",
+   "ret": 0.1316,
+   "peak": 1.567,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4cy86hpKun5CQzR3864KDPzswUDWuQAX2c2kAiBvpump",
+   "ret": 0.1444,
+   "peak": 1.146,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FwEx5QdsZSmfbaNLoM4HFqAAQoBbQwgyo68ANznupump",
+   "ret": 0.1545,
+   "peak": 1.379,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "JzBaT6QSVcDo8oBpz6VucMPzxZo3b8rvFfJKdNKpump",
+   "ret": 0.1426,
+   "peak": 1.143,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "3JSy9UvhhbGsDibJdgaNyzBNtLKxnTHQk8xUzFB7pump",
+   "ret": 0.1274,
+   "peak": 1.852,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "3g8rhpCfDt8c5mxgeB54Q4e9gVjsgb8vs7aJCWMwpump",
+   "ret": 0.0527,
+   "peak": 1.053,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "QKd4PX58dQrnhCfsDJ813YGgEkxzFzUQueDBMcPpump",
+   "ret": -1.0,
+   "peak": 1.107,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "gKNKwvDg1SfmF1eApad1kkaLprsbnsaHwaj1aNJpump",
+   "ret": 0.1252,
+   "peak": 1.941,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "E6gQraSRNMJsnG5oGfapCKofZoRBikZSLs9FWkLwpump",
+   "ret": 0.1287,
+   "peak": 1.707,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "nVs7YcfFrpou13qNggiWiCsmGVuqmmojQjsK7xbpump",
+   "ret": 0.06,
+   "peak": 1.061,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "2XMzLjawezhV1BBCWqgcpVx2LbG5WxgkNKx29sSDpump",
+   "ret": 0.134,
+   "peak": 2.14,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7caYMNnRciep3TKDeycFEnrJnixe9xr9MNksMjdWpump",
+   "ret": 0.1411,
+   "peak": 1.143,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "SHy9cbH9VaesWQ1eocFy4YJs2DezituUudzQuhvpump",
+   "ret": 0.1274,
+   "peak": 2.571,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Hd1kPxjxVR9ik21gTx7US1dzc2Mu5yp4V22SPE3Rpump",
+   "ret": 0.0929,
+   "peak": 1.094,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "36oTyUNQ1zCkPdxpmPpDCA88WF7g19p6xQFVLFHtpump",
+   "ret": 0.1351,
+   "peak": 2.53,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FAUsvDcwTm6TEWRgCKMdaGg3EY3VMVmcmbGoJvjpump",
+   "ret": 0.0178,
+   "peak": 1.046,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "C5nBy4sRZSfjyGa1VcBewqYECRsscLGpMNbJdewGpump",
+   "ret": 0.1046,
+   "peak": 1.106,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "B9tN5FAJsuNanN6bqbXAqJXArZRcEkjNiDe3eHZfpump",
+   "ret": 0.2424,
+   "peak": 1.251,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CCEzBwPxcyf5mBYK8N8SLgegoQqEeKAeyyKrd2Bvpump",
+   "ret": 0.0602,
+   "peak": 1.061,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "PFKsPtdJh4LDcxgW3iMXZCEwGiCFNJs9XSAVLZYpump",
+   "ret": -0.4787,
+   "peak": 1.0,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Mv4DCCRXy6LTEEBoXGXK3AywZ5B917LXX5Z8cmgpump",
+   "ret": 0.122,
+   "peak": 1.123,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "54yyhySRjFBnroUQod3XiHFt42pxTXAB65rMeUgkpump",
+   "ret": 0.1012,
+   "peak": 1.103,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "K8ADhyn3k9DJifeKVcYx9NPLH2wAH3nFcyrHsAwpump",
+   "ret": 0.0213,
+   "peak": 1.022,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "GsM2NqmdJaguW5yP53wdqLApW1kGscZm7WgMKSHBpump",
+   "ret": -1.0,
+   "peak": 1.054,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "Eodu1fATX8bqJGAVgZu5NHe3xojGEYs3czTrHJmspump",
+   "ret": 0.139,
+   "peak": 1.142,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "E8SQ1Yo58q7AW2SWcTpQmWUXMb1tyB3v8GWQUusfpump",
+   "ret": 0.4666,
+   "peak": 2.219,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HAQJwKBbzF7w71exipogpUKTtGiSu7etd3PypcxGpump",
+   "ret": 0.0143,
+   "peak": 1.015,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4n22SiXzGAbVe3FqTVWrij4Cz1uLT4J97cwMhpYWpump",
+   "ret": 0.1282,
+   "peak": 2.31,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "EPKjHhJ5tQU2oMembg7mJaFygwS2i8Z3d1nRFNtupump",
+   "ret": 0.1061,
+   "peak": 1.108,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "LXsA1Tj6jaZ3kc4UyYdTpxJJV85F9XuTaDgTEpVpump",
+   "ret": 0.0694,
+   "peak": 1.071,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "zV6uEJEKsXUpSDkFm87KruadcNvDHwamE9ZpZLtpump",
+   "ret": 0.0984,
+   "peak": 1.099,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "BdQKZLGUrpvcibuVhtyZTqygNxSwfdtZQ2PFGcnbpump",
+   "ret": 0.09,
+   "peak": 1.093,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "H6DodFrGCHY5cVRb6cmVM7GK7cXsXLq91v2Nm3Pzpump",
+   "ret": 0.1015,
+   "peak": 1.103,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4wguFYki6HK3eiKc8vHTFqBLpg198Fk1tg4FUrfJpump",
+   "ret": 0.3412,
+   "peak": 1.342,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "2eQKEMLPDLEkeCgXNvZg918UYC1Nky3myAAbQfGopump",
+   "ret": 0.1298,
+   "peak": 4.091,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "3r8JB3E1LgcQdStQWxSnYbcgJqmYbDjcFFpN3hXXpump",
+   "ret": 0.0901,
+   "peak": 1.091,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "bV5PhQetGM5edyquxeVhSECbRs2QRaRjLJvpBG4pump",
+   "ret": 0.0098,
+   "peak": 1.02,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CavyDHdXTEQfpJTpNWw7FfijhqkhF9sPMu1Hw81Xpump",
+   "ret": 0.0999,
+   "peak": 1.101,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "oh1h3EGDTcuJW4VrZxaK3snRjUNTWwhzjYRse14pump",
+   "ret": 0.0914,
+   "peak": 1.091,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "89JG3nAW9iEvR7LbuwALrj5FwYwy5hrXQRTYC92Xpump",
+   "ret": 0.0502,
+   "peak": 1.118,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "8Tz7sVf6SVeHwjNDe9DEUXodtpPMCF9wUYY8wW7ppump",
+   "ret": 0.1005,
+   "peak": 1.101,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4xBDmhLTBZgzBqNMw8VSRupHJZ71sxqGiiRoxZCFpump",
+   "ret": 0.1099,
+   "peak": 1.113,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FZHCAoVQ68QEpkHe3exFoExKsoKGXEnPWXoDXMGRpump",
+   "ret": 0.0625,
+   "peak": 1.064,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AYEzsFNC9kxzgkepHK3M6fVxew66CLxmUziNXsGLpump",
+   "ret": 0.1136,
+   "peak": 1.116,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AgLSnYvVmgCbLcRv7v6XsUJxaAgoD5dPKGQ1HPTopump",
+   "ret": -1.0,
+   "peak": 1.077,
+   "loo_crew": 11,
+   "raw_crew": 11,
+   "drain": true
+  },
+  {
+   "mint": "UyD8d1f6SGzDHJ4SEfwAUPBfHnHbT2HyA87KzQMpump",
+   "ret": 0.1126,
+   "peak": 1.113,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FFSddSkB7pPyEc9rnTAkn8bn4SkAmgwGfpdPf9Kpump",
+   "ret": 0.0644,
+   "peak": 1.219,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "8jMMZ5VDZ5YUerNjMyazyxy9LoByjSvBsJLvAgnPpump",
+   "ret": 0.381,
+   "peak": 1.481,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "XzSzp37h7JB4jdDzj4xW3PGZ9mc9cCM85GK22tcpump",
+   "ret": 0.445,
+   "peak": 1.446,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "A5DaPpwFhwbQt9mTkbAnqiTfYa6oyEpzvdEHrQb7pump",
+   "ret": 0.0699,
+   "peak": 1.125,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9jE7V1MaYjn6WH4fUBpvvry4AT2X19cYmgibhBYupump",
+   "ret": 0.1317,
+   "peak": 2.466,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "N7S3itpnAwaU8pL9PhiJZ2NXQXEgqKxHCfabpUkpump",
+   "ret": 0.0896,
+   "peak": 1.09,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "gMGTnyn4VzhyKtWeHaRHGuztCVmFsL4VUCeFiXYpump",
+   "ret": 0.1291,
+   "peak": 2.777,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7t9iBrgdyH4bMmRRHoZwuKsrQ34AwXBsRSnZuFZSpump",
+   "ret": 0.1311,
+   "peak": 1.133,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "BAx8WEPJfUiqZGguou1c66RAh2BYuRKum74sQG7vpump",
+   "ret": 0.1164,
+   "peak": 1.117,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4cnJ4hvw5YT6AsxszYuk14jHMctuRqpLUZnhvrD9pump",
+   "ret": 0.0957,
+   "peak": 1.097,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6QShdNw9u3PXe4hPEwBTFYHkdPyrFMjBnfAhmpw3pump",
+   "ret": 0.0672,
+   "peak": 1.067,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5coSdscRTVa9fnuUJkZKVhyZLjr5K6NDfvvvQyeUpump",
+   "ret": 0.1291,
+   "peak": 1.894,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "E9dwLLqtUZwpxRfsjwhfuehj6ov7xm9YXA6qWy4Kpump",
+   "ret": 0.0936,
+   "peak": 1.094,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "39MkGwH7y8QXjoYWcWSSjF8sp8iV5RaihCzEtgH6pump",
+   "ret": 0.4208,
+   "peak": 1.422,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CyVhZpFEwoJKmap93qMfVXWPLPLTp1QZVrDDyJmHpump",
+   "ret": 0.1287,
+   "peak": 2.429,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "NYW2QZn2fgtCZPhzwoon61tq8A9WX6BNiTewuLRpump",
+   "ret": 0.0622,
+   "peak": 1.12,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "p4V8CQZLWvPpjmzU2YqBuGXgpT5zCTtJTirNj3Jpump",
+   "ret": 0.0335,
+   "peak": 1.075,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FNSzi17DwnVwHUQ9qsgqyPNe9qdzryHxCN8jTDJwpump",
+   "ret": 0.1152,
+   "peak": 1.4,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "75UT2EBPdMgwwqdKSoGFXwHPB6deDmkU9Yxoqzo4pump",
+   "ret": 0.4834,
+   "peak": 1.485,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9cRJtkE38wTrap9rRLsaY4S12eGX6EqbyJ9pmC2Cpump",
+   "ret": 0.131,
+   "peak": 1.132,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Bfmhh3X7fqMq6r8KQgoVnfdA4uxDMJnFeS3hocU3pump",
+   "ret": 0.0937,
+   "peak": 1.094,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "W4Q5JDQzAMoQ6fbRkJkhqpyqYWMQtqxvXLgyjQapump",
+   "ret": 0.133,
+   "peak": 1.134,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7FFGDYsescCMkULBcPgQhEbE3thhz8jEoiJMwUKpump",
+   "ret": -0.338,
+   "peak": 1.36,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9orw5yXP5T6DGJJ9FDSMdAYPe6kE4Lna3Djuk6S2pump",
+   "ret": 0.1516,
+   "peak": 1.152,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "QTw25puRZ6dDMgw2TbAJJ31kKNdrvEmtmWCixvTpump",
+   "ret": 0.0185,
+   "peak": 1.101,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "14qe1NPW7PbeHyW2XvuEwFcgjdWxhG5z8x26p6Mypump",
+   "ret": 0.0815,
+   "peak": 1.081,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CGphgNh6jspGTUR3Q5Sa2gx18L7wSa1ubc82NRsmpump",
+   "ret": -1.0,
+   "peak": 1.164,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "7SKW1cEFy3vbFgBWX8vCwRLgiGU5p1XtpHNdUCfpump",
+   "ret": -0.0395,
+   "peak": 1.007,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FLE8Cc2AJYFvRGDBNyUJxK42Q6xy38cB8jBnCjD4pump",
+   "ret": 0.0638,
+   "peak": 1.064,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6d2Xsj3fVeCo5bRiYEjnyeb6z5Y3VHpfhomyseWopump",
+   "ret": 0.0919,
+   "peak": 1.395,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5dGGJ78ooiU9qja7afHCCuX6s9aXMeVpPRF3cxsppump",
+   "ret": 0.1271,
+   "peak": 1.521,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HK6Na6tphMe6JGVqHkCDCbCwTPjy9JpjB8r1yymcpump",
+   "ret": 0.0622,
+   "peak": 1.063,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "DoZFXLqNihztCoEJByGpF36mULsB3JNLvTB7pxGWpump",
+   "ret": -1.0,
+   "peak": 1.037,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "bL3cZqaiUyq7PPtWdyTQVKPrNKNeLv3qJFv65FWpump",
+   "ret": 0.0883,
+   "peak": 1.089,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "551L5BAn4yHmMHEWxqswetV9HscqExfmVefUpvzZpump",
+   "ret": 0.1607,
+   "peak": 1.182,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "A3n2Ek5fNkBSEndvwr7FfG5VLu8adYtCAHbpC4Gcpump",
+   "ret": 0.0121,
+   "peak": 1.042,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "oWve17FSEc5ny5X4E5DNV2uwp5qrjoo28TykkBnpump",
+   "ret": 0.0277,
+   "peak": 1.084,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "xj5MhjArkATNGEH4UG8SDqE7i29Tsd7ef4K8DM6pump",
+   "ret": -0.9979,
+   "peak": 1.117,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "wc2CKbQiMP5PijZYcbhgCPczVfUyhfaaV1EV7AEpump",
+   "ret": 0.0699,
+   "peak": 1.142,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "i5GY2ZK8FJdimGMw48NdzyKSPszNpUE2c8wmqBMpump",
+   "ret": 0.1115,
+   "peak": 1.114,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5TUrqLajDQs3btBmW1ejTshZKfzmQSSvzJAXyoXqpump",
+   "ret": 0.1401,
+   "peak": 1.14,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "LUTNZsftGW64Zch1mqWp6hoGSHLkHQQ7rsuFy3ppump",
+   "ret": 0.1279,
+   "peak": 1.611,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "J3a25GSe6pkjWfHutcCviKQG56jqax6hp3JD7VbCpump",
+   "ret": 0.1167,
+   "peak": 1.118,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7Q1Svh8CFVnBgQoW8SzHzcUwHaq2aUkF4bxJcWXwpump",
+   "ret": 0.1313,
+   "peak": 1.132,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Rhm9RvRQozJFiDzE688a21QbsrQsjhvUBmMDNKypump",
+   "ret": 0.1267,
+   "peak": 2.788,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "ZHSSqHrW1kjiGEtWaPD6ZVp157kA9XRrGsBjfPtpump",
+   "ret": 0.0851,
+   "peak": 1.089,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Ecfm4EFHg93cm4ye1xZ6iVRyL2EHdFu77RipBkeSpump",
+   "ret": 0.1715,
+   "peak": 1.275,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "kXgkdJ6fshqVeEtEYjvQqScZuLWdiMeo83FB6Fspump",
+   "ret": 0.0971,
+   "peak": 1.097,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "EmUyZ7LPSu6cC8rWNFiG3pccPyqj7MjnYs9e63m5pump",
+   "ret": 0.1193,
+   "peak": 1.145,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "X6PHP8opeuuWQgk6GmjJt4yPi6GB5swH1HqQdjLpump",
+   "ret": 0.1323,
+   "peak": 1.521,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "x8P4Em9xUeS4yNCotms5FVrf7FzhL56ybPUQFbSpump",
+   "ret": 0.1305,
+   "peak": 2.479,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HpyjpSM5bwe257ab1TLVj6dgDtvhy3cboYXAogdupump",
+   "ret": 0.1317,
+   "peak": 1.228,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Fvzk3o4MgosWPQE5XLDsXgEFKEhyLJsgdRaVSA8pump",
+   "ret": 0.4391,
+   "peak": 1.442,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4GFDcFoQCnT956pi3GhkcUBLrGc3bKZxJReNJcMdpump",
+   "ret": 0.1269,
+   "peak": 1.406,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "2zApEPw51k1nfaK5D3rJws26fGe9AnAzKgoBDD5Bpump",
+   "ret": 0.0665,
+   "peak": 1.072,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "XyUKC8T6oWARrnoRUs3QMECdCUEDv26k63G3ZJcpump",
+   "ret": 0.0119,
+   "peak": 1.012,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "DXes1cmWcWAzMrZGrRcS1znLAsCLGaqjhgVefxsvpump",
+   "ret": 0.1235,
+   "peak": 2.701,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "rKdL63RNqDTF5hDTwkhb1FrgMuQ6r6aCSbpW1nepump",
+   "ret": 0.0994,
+   "peak": 1.101,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FFQkDDFDDw3k7gWfhstPTmeJJXsoWPXBbp1ahuZMpump",
+   "ret": 0.1276,
+   "peak": 1.128,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AMsFbuNG3h7LgCQo5S28QPyixLQVA4P4LTHfDesNpump",
+   "ret": 0.0782,
+   "peak": 1.08,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "29H7GkA9LzMdB1buRScFPUPywjbyFYxBibtpQMFVpump",
+   "ret": 0.1513,
+   "peak": 1.184,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "L1PE8uhceidWSLL3hkZAD47Z8X3KRy6an2NLKSopump",
+   "ret": 0.0754,
+   "peak": 1.077,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "ro8Btws2BfLJNGD6BCNdPmwtxtZL2R6LMYGKERdpump",
+   "ret": 0.1166,
+   "peak": 1.118,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "BF13ezeaDz54LLYeWFokHRjdTDFbieckH73Bt19upump",
+   "ret": 0.1304,
+   "peak": 1.399,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7wwht8j3KbHPHNN5pYEvsJCTx6RDVsA8DDGFaVCKpump",
+   "ret": 0.1468,
+   "peak": 1.93,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "JwQb7erbgVY6acmVPHBP2NHeafZZZqmzjwer96Mpump",
+   "ret": 0.1596,
+   "peak": 1.165,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Nt3ytvynWwV4fQjPAktDrQsByZ3V1WdF1ojMauxpump",
+   "ret": 0.0437,
+   "peak": 1.086,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5gNrnaffSD6GaZathT9VcUyyHrtDUupfREKBAPNpump",
+   "ret": 0.0262,
+   "peak": 1.057,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "nPYPLZK5zF51gyTiwYTX3o4hw787YUdQstH1irQpump",
+   "ret": 0.0763,
+   "peak": 1.077,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "g1aiRmCDVe786uQe6aCJhRiKhafK6LAdDB13LJNpump",
+   "ret": 0.1428,
+   "peak": 1.148,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "941CNQZNUKwBLtb4VNBPNnJiBkgYby9DQ7yrJvUWpump",
+   "ret": 0.1478,
+   "peak": 1.15,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5GJf1ZzxW1JwbZ5MfzGNhcwVEX1LQnXZFCuNrgcipump",
+   "ret": 0.0745,
+   "peak": 1.076,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7W9dZP9LUqWKVyBQB7k28vdR5qVLF1dvhQ9LuCyfpump",
+   "ret": 0.1296,
+   "peak": 1.131,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "63TyWbh4Asptxa1wsgTc7VLwsmSxnhjQZ7BnvKZpump",
+   "ret": 0.0926,
+   "peak": 1.094,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HATB635nEWrLCwwrmXWr1YWfzhqqnDjQwDGDJ1xcpump",
+   "ret": 0.1383,
+   "peak": 2.719,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "3HTpFR5aehUAGzsrkabm5QkyyH3pCzDnq4xXZq65pump",
+   "ret": 0.0966,
+   "peak": 1.099,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FicN4hnm3gMcNMyMzVJMLRsQMZChhYbb8JvV597apump",
+   "ret": 0.0243,
+   "peak": 1.026,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "a4gFrsnAo4YRVfHhDQQDzSVTsj282N5M6DFWrRqpump",
+   "ret": 0.0606,
+   "peak": 1.061,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "T1omqqxV9uM2jJchs5orTcFs8NkygsgY3ovFLPApump",
+   "ret": 0.1312,
+   "peak": 1.131,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "ewa6j3p5NgW7vfYQBC37DAuosbQkaXM6Jmxe4ztpump",
+   "ret": 0.0878,
+   "peak": 1.09,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6Bob3ZBhmZn4bLub9ZPNioL77RNTusCENmAxutCCpump",
+   "ret": -0.9578,
+   "peak": 1.004,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "EDahag5VvFXZ64WgqRAdjxc54zG5XyyD6VkobWbNpump",
+   "ret": -0.4945,
+   "peak": 1.466,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "BXiwvsMt7qE55KTvNq62uy35XXuQ5otCCwFbCU8pump",
+   "ret": 0.0888,
+   "peak": 1.089,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "h1xMxzYzLErHkHGNGKrfEt6RU8BvvpVP5TNPvR6pump",
+   "ret": 0.1534,
+   "peak": 1.374,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "4zkgwTUwyruGhVWqsjYH9xpdTJhBZ92bVgjqZh4wpump",
+   "ret": -0.4657,
+   "peak": 1.082,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AqUecCrzToWmknajqwreU9Zo4up6k115VuRSoZ6Zpump",
+   "ret": 0.0739,
+   "peak": 1.074,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "vZrqt3dgiu2XJzPNhPtd4knYK8XMZhp4ahuxht1pump",
+   "ret": 0.006,
+   "peak": 1.012,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "d34Dh94MTuA7BDuiHxoswWbxAdSSs4r3vSAYovBpump",
+   "ret": 0.0842,
+   "peak": 1.101,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "EoBTrxSZv3Q7SjzpgTTzk4kMDjL9JfAT3o8dkJupump",
+   "ret": 0.1499,
+   "peak": 1.15,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "5mAgtK1TwJWLurfCN3T3GUqyFR1C9kpTZBhvR9Upump",
+   "ret": 0.111,
+   "peak": 1.111,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "yFzQuUCUmEaCHz2ufPfr6qZ8fpk22tPqW85pSSSpump",
+   "ret": 0.0827,
+   "peak": 1.083,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HAJN1fySkai8kEsR8z5ttuz1eCVgSmNML4KsVNLpump",
+   "ret": 0.1229,
+   "peak": 1.125,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "kRptpAqSBvmejkyGsCasD6ykEH4qYnqmZSEsYAJpump",
+   "ret": 0.2089,
+   "peak": 1.292,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9ZwoHSixgYnvZngu6cSthnjx8JkVRdTKjf4osNaZpump",
+   "ret": 0.1445,
+   "peak": 1.145,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "jBzFrD6dMXLT71Pp2TmqRh9owjUgGuCn2eUUgbTpump",
+   "ret": -0.4791,
+   "peak": 1.105,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6uEAbQEwaG7RuBkBT6p7sqYLTsU8xGtZCaKrymaTpump",
+   "ret": 0.3474,
+   "peak": 1.746,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "zAp34vqKux3jhMzEYkKhxZWZFVak5zRdwYTZcCSpump",
+   "ret": 0.0216,
+   "peak": 1.03,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "2nrqixJQtRS9q17TLVhrUZyk1wGosHrmRHytizznpump",
+   "ret": 0.0174,
+   "peak": 1.017,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "64Lv5GnKue5u3PtPfa4aduGLU6z7qr2qSuVdySCfpump",
+   "ret": 0.0931,
+   "peak": 1.094,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6qBmNVeGMzPd9xee9fd4cWnzvTen4pGzYNBLXPcrpump",
+   "ret": 0.1197,
+   "peak": 1.12,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "c8bdKqmNcHx3DuQTuqqcDGEtMmy3pTDDAMg9Q4epump",
+   "ret": -1.0,
+   "peak": 1.036,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "6nrCD4L8GEqgXMa4fMHQjBnv9XWfyPwsHPuyRY8npump",
+   "ret": -0.316,
+   "peak": 1.024,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "E1U1WVN8vimpTxJUw5hXaQEX5SUvq4sN9iZZndDpump",
+   "ret": 0.0469,
+   "peak": 1.047,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "3yF1D2iXWtAXu1nPCFJzpwGm2evT9B33XYhr7CyUpump",
+   "ret": -0.8785,
+   "peak": 1.192,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "7KmwWYd7Xw6ZC3KCegr4d5YA3mQ9kvxWv9AvYuTTpump",
+   "ret": -1.0,
+   "peak": 1.112,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "2G1jq9KpK254ViiSuNiuPxM3X5LoV86xHpqiNHX2pump",
+   "ret": 0.3975,
+   "peak": 2.045,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "GgpmmwPUMPs4hexsRYoGGPzf3N5HvSXRhyrLwi3pump",
+   "ret": 0.0123,
+   "peak": 1.013,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "KXwh788REauBMKYCEecVMKm83W5343uDU962GRVpump",
+   "ret": -0.991,
+   "peak": 1.04,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "Duz5NLo5cyLPFrPiocsu7Cq4ovbUg8yBhbGxvBPWpump",
+   "ret": 0.5185,
+   "peak": 2.478,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "fn3QrzvAv28g7T2x9Fpe6h7ndu4mUrgq9L8efhFpump",
+   "ret": 0.0154,
+   "peak": 1.016,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CCEnDWj8hFR7LRHoj2S9ydcfVTwNRwHibr2me6TJpump",
+   "ret": -0.6235,
+   "peak": 1.0,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "C73ArVWUQ3FD6b2v7F1FvwNgtiztXMHPteV6i76qpump",
+   "ret": -0.5379,
+   "peak": 1.084,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "FXd7qWuesiRCgcfZic1PkKUj2uybW71JhKtBnTcqpump",
+   "ret": -1.0,
+   "peak": 1.155,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "127iCtusaPNhGs9BqscgEXZfDkRhThbDZedj31rBpump",
+   "ret": -0.2909,
+   "peak": 1.422,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9SgdtJJTZC4ZxX6QD2YEChfvfhq6GRr8uXMsQsRApump",
+   "ret": -1.0,
+   "peak": 1.168,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "ZBiaJRiUjvNoYGXs8joyjr4k3LcBvyw6wEFNdPepump",
+   "ret": -0.4268,
+   "peak": 1.117,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "744uapJQtfeeTC2FA1bmzSEM6SdWqCzL7GkdXS5cpump",
+   "ret": 0.1108,
+   "peak": 1.112,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9s9eWRGUBTsfLG1mZh5AyqdKjhGxzvR7o7aH4PGpump",
+   "ret": -1.0,
+   "peak": 1.039,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "kz8FrpUzaMTCt6TXsmNNnvue8aLvJZWnFgbSuiBpump",
+   "ret": -0.7851,
+   "peak": 1.0,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "AfnsTYw55ngo8HgwfmnLc3bCpawi61sYwFedrHqHpump",
+   "ret": -1.0,
+   "peak": 1.03,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "8UVAA1rLdZvmewrZHfEDLfkbvfMGWoKSRji3t8oFpump",
+   "ret": 0.0177,
+   "peak": 1.019,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Jy8bkhUo2ZCkgAdJDpG2yztLuFKDYJe76YskMhwpump",
+   "ret": 0.0036,
+   "peak": 1.012,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "9G9gAwY5K8Z4PwbqXMhddGu1rFxZ6JGGojNAqucYpump",
+   "ret": -0.7502,
+   "peak": 1.128,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "dBwVgvF9y7cSUpEREVn5fxuf7x4MDwRJcrhQsjNpump",
+   "ret": 0.0073,
+   "peak": 1.016,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7TRtkUGrm7YAiADRgvbLf2PVEDBpZP8kMjLRkM5Rpump",
+   "ret": 0.4866,
+   "peak": 2.89,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "Fbk91WwYjK3z18cHgdQwugJnVs1P8u6qmhXaC9zUpump",
+   "ret": -0.3267,
+   "peak": 1.183,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HpCSDkF5uGzSXXzn9CoBeLtFmra9KvM5AH2za3CHpump",
+   "ret": 0.0254,
+   "peak": 1.027,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "XMBkEmc29hkabZ3qKCTHr2tNcXgvqZdktHytyVLpump",
+   "ret": 0.0471,
+   "peak": 1.061,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AbPx5ED3rhJnfKgCMkpUXkJWxTNgTXxvHMEMAJuApump",
+   "ret": 0.0036,
+   "peak": 1.024,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "77wurEocr8hmGvyZdDViVzTpjnDgK422LXpMF1wpump",
+   "ret": 0.0289,
+   "peak": 1.03,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "8UEuakh3xAQ71wj1yVeWrzhjkJL7NnLnXLMp15GPpump",
+   "ret": -0.9996,
+   "peak": 1.114,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "4wf5afv6AvuCNjUjBFZLMMbsCYEPbcETkDcA4uppump",
+   "ret": 0.0791,
+   "peak": 1.082,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "gd7iFgfB29heDDgYYuN1cnGNqPDzX3WX4ZnoHZYpump",
+   "ret": -0.9977,
+   "peak": 1.088,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "9awYaDK57hm6zur7QqvZKVghggAd96ZiuzuqGmWWpump",
+   "ret": -0.8634,
+   "peak": 1.1,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "9bqe7Jx6NxH54E4koegmCZRyjrJLH8CtdmZCaSxqpump",
+   "ret": 0.1775,
+   "peak": 1.216,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "84X4w5AkdMsYDhqMaxHTXxo2E2c4aCsWkZp7pby4pump",
+   "ret": -0.2495,
+   "peak": 1.511,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "AjdE84dGqhbqDYhh8Pm8oCRMCTpUGQ4oDaRBF5vwpump",
+   "ret": -0.9756,
+   "peak": 1.375,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "UAQ7ifhCp5kTV47TTvVxze119fXj5YiPjB4sveWpump",
+   "ret": -1.0,
+   "peak": 1.212,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "GGThoEzdkEjdVSzpLk5MqWWZcjuqE3xtDKAjMZmHpump",
+   "ret": 0.0964,
+   "peak": 1.099,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "E18iekDtgaaRxTk3wFL6PHADhjN5TM6mjjLi9BuJpump",
+   "ret": 0.124,
+   "peak": 1.128,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "7CWsWmv2qzQTuKhvDF7AhGauoMMtNiVBuS3FicV1pump",
+   "ret": 0.0545,
+   "peak": 1.055,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "HYrbcyHU2FN1YXDkyJdjVe5TPGbyCVVNfKWG2E7Npump",
+   "ret": -0.9992,
+   "peak": 1.119,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "DEpAeAHmHhWwxxBdbXFKESY3QUPDne24gJUcU4uopump",
+   "ret": 0.1558,
+   "peak": 1.197,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "cv4sL23ia4tz46JPCH2WWPtqiSWv3EFw12EAhNgpump",
+   "ret": 0.0068,
+   "peak": 1.007,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "14ncZoM5Cwabmoy4XYRMjHc5UNFHBggeRBtXUdnApump",
+   "ret": -1.0,
+   "peak": 1.049,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "kSDgAMD9b8APa8YaWdZxR9t7ci5DX6aUfrp9WJGpump",
+   "ret": 0.017,
+   "peak": 1.017,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "yB1mX5SKnSzV2NkLEPbnrz8WvdWGvj2XU1S3fGNpump",
+   "ret": -1.0,
+   "peak": 1.054,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": true
+  },
+  {
+   "mint": "7z8Z21Cs1wv8xsfXdTkJt1FPAJyeeoFDjYUgRrGHpump",
+   "ret": 0.0789,
+   "peak": 1.08,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "opgLCmRKBQhwFVdVBbLzLLNvDvsTwpiDhCjAxxtpump",
+   "ret": 0.0185,
+   "peak": 1.018,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "CfqehMTtELC3qkG5hRMPBsfEWT7ZV3x1QU1wFKappump",
+   "ret": -0.4294,
+   "peak": 1.169,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  },
+  {
+   "mint": "6uYRrUWJ6ggydj1KGSgGUSCFeBG77JbQvDkCnwFxpump",
+   "ret": -0.3989,
+   "peak": 1.483,
+   "loo_crew": 0,
+   "raw_crew": 0,
+   "drain": false
+  }
+ ]
+}

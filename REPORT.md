@@ -4849,3 +4849,12 @@ The verdict activation is now a one-word file flip, not a code change under pres
 - First batch (older mints, calibration-biased): overhang 0–15.3%, none ≥30%, paper rets −0.40 to +0.21 — no false positives at the 30% threshold even on this small stale set, but the forward fresh-age series is the real evidence.
 - Wired into the tracker after the treasury watcher (exception-guarded, 4 screens/run cap). Pair byte-identical.
 - By 40 closes the verdict will have dozens of forward entry-time overhang readings on mints with known outcomes — the overhang gate's false-positive rate stops being an assumption.
+
+## §212 — Leave-one-out audit: crew tripwire's historical edge was leaky; overhang screen is the load-bearing gate (2026-09-02 ~22:45 UTC)
+
+`crew_fp_audit.py` replays 219 closed paper mints against the crew tripwire with **leave-one-out blocklists** (wallets first seen on the mint under test are removed — they couldn't have been known before it launched):
+
+- **Forward catch rate: 0/25 deep drains. False positives: 0/194.** The §204 "crew≥30 catches 29H7" result was self-referential: those 36 wallets were harvested *from* 29H7. Crews mint fresh worker wallets per launch; raw LOO counts on normals are **0 across the board** (194/194), so the gate is safe but nearly blind forward.
+- One partial exception: AgLS showed LOO crew=11 — its C/D treasury wallets were already known from a prior drain. **Known-wallet reuse is the only channel through which the tripwire can ever fire forward.**
+- **Consequence for the verdict:** §210A (overhang screen) becomes the PRIMARY gate — per §189 BOTH live drains (29H7 swarm AND LUTN lone-insider) had killers that never bought via the pool, i.e. both were overhang-detectable at entry. The §209 replay's G2 economics hold only if overhang catches the 29H7 shape; the crew tripwire degrades to a bonus layer.
+- **This elevates two systems:** (1) the §211 forward overhang sampler is now THE critical evidence stream for the verdict; (2) the §207 treasury watcher is the tripwire's only forward feed — it pre-maps next-gen workers before their mint exists (capital recycling proven in §206), which is exactly the gap this audit exposed.
