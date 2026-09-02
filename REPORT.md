@@ -4591,3 +4591,16 @@ Ledger now 7,270 rows / 2,694 wallets across 3 mints (auto-accrual firing each r
 **Depth verdict for EDGE #1 (smart-wallet lead/lag):** only 5 wallets appear on >1 mint (one is ours). Coverage is too narrow for repeat-actor tracking — but this also matches the known bundler practice of fresh wallets per play. Reframe: on Solana memecoins the exploitable signal is likely **cluster detection** (many wallets, uniform tiny buys, one mint, short span) not wallet-following. New signal candidate for EDGE_BOARD: cluster_presence — did a mint we enter have an active bundle network? Did cluster-driven mints behave differently under our exit stack?
 
 **Next:** widen ledger coverage beyond s60nm5fr-open mints (more mints/run), then build the cluster detector.
+
+## §186 — Cluster detector built; first pass: BOTH today's closes were bundled (2026-09-02 17:05 UTC)
+
+Built `cluster_detector.py` — flags bot-like wallets (≥20 buys, median ≤0.06 SOL, buys ≥4× sells) and flags a mint CLUSTER at ≥6 such wallets.
+
+First pass over the 3 ledger-covered mints (our 3 most recent closes, all green):
+- **EoBT… (#35, +0.00485): CLUSTER — 18 bot wallets, 87.0 SOL of coordinated buys = 88.6% of all buy volume**, 1,454 wallets total, 34-min span.
+- **5mAg… (#36, +0.00468): 5 bots (just under flag threshold), 46.0 SOL = 99.2% of buy volume** — effectively fully bundled, detector needs sensitivity tuning at the margin.
+- **h1xM… (#33, +0.00828): clean — 1,227 wallets, zero bots.** Organic token, also green.
+
+**Early read (n=3, hypothesis only):** bundled mints did NOT hurt us — both bundled entries closed green via abort15. Plausible mechanism: bundle volume attracts organic momentum flow that our entry gate reads as qualification, while abort15/panic exits before the bundle network unwinds. Needs the full 36-close backtest: backfill pool discovery + wallet history for all traded mints, then compare pnl/peak_mult/drain-rate for cluster vs clean.
+
+Next: backfill the remaining 33 mints (pool discovery via getProgramAccounts memcmp + wallet_ledger.update), then run the cluster-vs-clean backtest on the live book.
