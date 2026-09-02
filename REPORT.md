@@ -4645,3 +4645,9 @@ Validation on 5 mints (2 drains, 3 winners): **overhang = 0.0% everywhere TODAY*
 **Conclusion: the screen is forward-only.** It must run at ENTRY, when the insider allocation is still sitting there. Wiring plan: at live entry, snapshot top-holders + pool-buyer history (fetchable in seconds via the backfill pager), log overhang_pct + insider list into the position record as SHADOW data (non-blocking). After the next ~10-20 entries, correlate overhang vs outcome; if high-overhang mints show the drain pattern, promote to a blocking gate.
 
 Also confirmed by the 0% readings: our ledger buyer-attribution is solid — every large holder on healthy mints maps to a known pool buyer.
+
+## §191 — Insider screen wired into live entry path as shadow log (2026-09-02 19:25 UTC)
+
+`live_trader.open_position()` now calls `_shadow_insider_screen(mint, pos)` after every entry: discovers the pool (getProgramAccounts memcmp if unmapped), refreshes the wallet ledger for the mint, runs insider_screen, and stamps `insider_overhang_pct` / `insider_n` onto the position record + a full `insider_screen` row into mfg_live_trades.jsonl. Fully exception-guarded — a screen failure can never block or break a trade. Tested in-process with writes neutralized: correct fields and log row produced.
+
+From the next entry onward, every position carries its entry-time insider-overhang snapshot. Validation path: correlate overhang vs outcome across the next ~10-20 entries; if high overhang predicts drains, promote to a blocking gate (§190: would have saved both total losses, −0.26 SOL).

@@ -658,7 +658,54 @@ def open_position(mint, size_sol, mode, venue="curve", entry_px=None,
     _log({"action": "open_position", "mint": mint, "mode": mode,
           "venue": venue, "size_sol": size_sol, "tokens": tokens,
           "entry_px": entry_px})
+    _shadow_insider_screen(mint, pos)
     return pos[mint]
+
+
+# §191: insider-overhang shadow screen at entry (non-blocking).
+# §189 fingerprint: drain killers are whales that never bought via the
+# pool. Snapshot top-holders vs pool-buyer history at entry; log only —
+# promotion to a blocking gate awaits forward correlation evidence.
+AMM_PROG = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA"
+
+
+def _discover_pool(mint):
+    try:
+        r = _rpc("getProgramAccounts",
+                 [AMM_PROG, {"encoding": "base64",
+                             "filters": [{"memcmp": {"offset": 43,
+                                                     "bytes": mint}}],
+                             "dataSlice": {"offset": 0, "length": 0}}])
+        accts = r or []
+        return accts[0]["pubkey"] if accts else None
+    except Exception:
+        return None
+
+
+def _shadow_insider_screen(mint, pos):
+    try:
+        import wallet_ledger
+        import insider_screen
+        pool = insider_screen.POOLS.get(mint) or _discover_pool(mint)
+        if not pool:
+            _log({"action": "insider_screen", "mint": mint,
+                  "error": "no pool found"})
+            return
+        # make sure the ledger has this mint's pool buyers first
+        wallet_ledger.update(mint, pool)
+        if mint not in insider_screen.POOLS:
+            insider_screen.POOLS[mint] = pool
+        s = insider_screen.screen(mint)
+        pos[mint]["insider_overhang_pct"] = s.get("overhang_pct")
+        pos[mint]["insider_n"] = len(s.get("insiders", []))
+        _save_positions(pos)
+        _log({"action": "insider_screen", "mint": mint,
+              "overhang_pct": s.get("overhang_pct"),
+              "insider_n": len(s.get("insiders", [])),
+              "insiders": [i["owner"] for i in s.get("insiders", [])][:8]})
+    except Exception as e:
+        _log({"action": "insider_screen", "mint": mint,
+              "error": str(e)[:150]})
 
 
 def exit_watch():
