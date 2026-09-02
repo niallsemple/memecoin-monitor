@@ -17,6 +17,14 @@
   "59xiZW4jTYDm4t8dEFemUBFYApPBx6PhtERZRKBwgVPL": {
    "tag": "MASTER-A3 (upstream of A)",
    "received_sol": 1500.0
+  },
+  "A8hvpZi5osiYfbrnxujQReqAJhmnYh6WdKBDEAUvZwZg": {
+   "tag": "MASTER-C (AgLS drain)",
+   "received_sol": 1873.75
+  },
+  "5qrZfD2Li5HxTeqpWBxXi9ip7h29xJrZnsAMVuSDWzxU": {
+   "tag": "MASTER-D (AgLS drain)",
+   "received_sol": 1498.28
   }
  },
  "killers": {
@@ -331,7 +339,8 @@
   "734xTmPzAtU9A6Zo6CT9oByZQf7DRVBeaCbMwhfYSPRm": {
    "mint": "6Bob3ZBhmZn4bLub9ZPNioL77RNTusCENmAxutCCpump",
    "dumped_sol": 4058.62,
-   "source": "paper_drain_sweep"
+   "source": "paper_drain_sweep",
+   "note": "still holding - watch-listed"
   },
   "GCXDjhHhBxSSnYfMBntRqtw3GSEckMVrxPZonWWPPjAR": {
    "mint": "6Bob3ZBhmZn4bLub9ZPNioL77RNTusCENmAxutCCpump",
