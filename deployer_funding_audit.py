@@ -129,11 +129,13 @@ def main():
                 origin.setdefault(w, set()).add(meta["mint"])
     cache = json.loads(CACHE_F.read_text()) if CACHE_F.exists() else {}
     todo = sorted({c for c in creators.values()
-                   if c and not cache.get(c, {}).get("funder")})
+                   if c and not cache.get(c, {}).get("funder")
+                   and cache.get(c, {}).get("tries", 0) < 3})
     done = 0
     for c in todo[:per_run]:
         f, sig = find_funder(c)
-        cache[c] = {"funder": f, "sig": sig}
+        cache[c] = {"funder": f, "sig": sig,
+                    "tries": cache.get(c, {}).get("tries", 0) + 1}
         done += 1
         if done % 5 == 0:
             CACHE_F.write_text(json.dumps(cache))   # incremental

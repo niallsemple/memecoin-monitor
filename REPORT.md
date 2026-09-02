@@ -4892,3 +4892,22 @@ Built `insider_screen_v2.py`: classifies each top holder by the program origin o
 - The deployer/creator funding chain survives wallet freshness — capital must come from somewhere (§198 funding loop was predictive). Creator infrastructure already exists (creator_scan.json 41 mints, mfg_creator_blacklist.jsonl §105, §120 funded-recipient arming, §98a funded-reject paper gate).
 - **Next audit (§216): leave-one-out deployer-funding test across the 25 paper drains + live book — what fraction of drain deployers were funded by blocklist-known wallets vs normals?** If that separates, THE gate is creator-funding identity; overhang and crew counts become secondary confirmations.
 - §210A stays inactive regardless until this resolves; g2_gate.json remains false.
+
+## §216 — Deployer-funding LOO audit, FINAL: 0/28 drains at 1, 2, AND 3 hops — identity gates are structurally blind forward (2026-09-02 ~24:00 UTC)
+
+Full resolution: 219/219 creators mapped, 536-wallet funding cache built (`funder_cache.json`), chains walked 3 hops with leave-one-out blocklists.
+
+| depth | drains caught | normal FP |
+|---|---|---|
+| hop 1 (creator's funder) | **0/28** | 3/191 (1.6%) |
+| hop 2 | **0/28** | 5/191 (2.6%) |
+| hop 3 | **0/28** | 6/191 (3.1%) |
+
+Auxiliary: 4/28 drain creators are themselves blocklist-known (vs 4/191 normals — weak but real); zero serial drain creators; zero creators shared between drain and normal mints.
+
+**The complete evidence picture (§212 + §214 + §215 + §216):** drain crews rotate EVERY identity per mint — creators, funders, workers all fresh. Links to known-bad capital surface only AFTER the drain, when loot consolidates to masters (§206). No pre-entry identity or overhang gate tested can predict the next drain. 
+
+**What this settles for the verdict:**
+1. **The edge is the EXIT stack, not the entry gate.** The live record's real defenses: panic/tripwire-fast exits (18/18 market-action green since panic stop), slippage escalation into dying pools, small size. Gate layers (crew tripwire, treasury watcher) stay ON as zero-cost shadow/log channels — their forward value comes only from §207 pre-launch worker mapping, which no crew mint has tested yet.
+2. **Sizing must NOT scale on gate confidence.** Any cap raise at the verdict rests solely on the exit stack's live stats.
+3. Overhang screens (§210A) remain inactive indefinitely — all three metric flavors failed validation.
