@@ -4944,3 +4944,57 @@ Reconstructed the drain windows from the wallet ledger (who actually got filled,
 - **Base book: zero rows.** The Base watcher never produced a trade; treat as unproven.
 - **Pipeline status: DEAD.** bsc_flow.jsonl last row 09-02 10:40 UTC (~10h stale), no listener process running. The BSC book stats are frozen at n=22.
 - **Decision framing:** BSC is the most promising second market on evidence (lossless record, asymmetric winners), but n=22 with different rug mechanics is not tradable proof. Revival cost is low: bsc_listener.py exists and worked; it needs a persistent home (own cron slot or folded into the tracker run). 5 cron slots remain. Until it runs again, the book can't accumulate the n≥60 needed to judge.
+
+---
+
+## §220 — EVM watcher starvation diagnosis (2026-09-02)
+
+**Question:** why was bsc_flow.jsonl stale ~10h while the EVM Flow Watcher
+automation (`automation_2c4eec3e`, BSC+Base paper trader) showed
+enabled/succeeded?
+
+**Finding:** the watcher is an **agent local_conversation** automation (cron
+class). Its run history shows healthy 20-40-min runs 05:51→10:11 UTC, then
+**nothing after 10:11 UTC** — exactly when the main goal conversation was
+resumed. The Solana curve collector (pure Python code execution) kept firing
+every 20 min throughout. Conclusion: agent-type automations in this workspace
+are starved while the goal conversation is active; code-type automations are
+unaffected. BSC/Base flow data and paper scoring are healthy whenever the
+watcher runs; coverage gaps coincide with goal-active windows. Options:
+(a) accept gap-filling when goal idles, (b) free a widget-task slot (0/20
+available) to convert the watcher to code execution, (c) fold a shortened
+BSC window into the code tracker. No slot cost incurred yet.
+
+## §221 — Execution-fingerprint layer: rotation survives the address (2026-09-02)
+
+**Hypothesis (owner's ChatGPT convo):** crews rotate wallet addresses per
+mint, but the bot binary's execution fingerprint may persist — making
+"find every wallet behaving like ABC" possible without funding links.
+
+**Built:** `fingerprint.py` — one Helius parsed-tx page per blocklist wallet
+(294 wallets: 200 killers / 46 feeders / 39 funded_next_gen / 9 masters),
+extracting type/source/program histograms, fee stats, instruction counts,
+timing gaps, SOL-out sizes → `fingerprints.json`. `fp_cluster.py` — blended
+similarity (0.4 program Jaccard / 0.3 source cosine / 0.15 type cosine /
+0.15 numeric) + union-find → `fp_clusters.json`.
+
+**Results:**
+- Priority-fee level is crew-distinctive: flat medians of 8,000 / 15,000 /
+  16,000 / 30,060 / 35,005 lamports partition the book.
+- At 0.90: a 59-killer pure cluster (PUMP_AMM-heavy, fee 15k) = one shared
+  bot binary; a 47-wallet cluster (PUMP_AMM-only, fee 8k, mostly feeders) =
+  a second binary.
+- **n=8 cluster with 58% UNKNOWN-source txs (private program, fee 35,005)
+  contains killers + feeder + masters from MASTER-A, MASTER-C AND MASTER-D** —
+  execution evidence that three "separate" treasuries are one operation.
+  The funding graph had them distinct.
+- funded_next_gen wallets share a distinctive activation fingerprint
+  (pure SYSTEM_PROGRAM, flat fee 30,060) — funding style itself is a tell.
+
+**Limits:** coarse features blob 236 wallets together at 0.80 (everyone
+trading pump.fun looks alike); needs instruction-ordering + CU-price from
+raw txs to split binaries further. Forward value is earlier blocklist
+population / tripwire feed — NOT an entry gate (§212-216 stand).
+
+**Next:** quiet→successor sweep — score early sellers on fresh mints against
+cluster centroids to catch rotations the funding graph misses.

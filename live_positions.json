@@ -579,5 +579,18 @@
   "actual_fill_note": "buy verified on-chain; actual fill 2047359699 raw (1.00002 of quote); sell sig 5SPNPjde...aSkEq on-chain verified err=None slot 443736459; wallet delta 0.124275619",
   "closed_reason": "abort15",
   "pnl_sol": 0.00467562
+ },
+ "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788382890.8817248,
+  "entry_px": 8.241444714170616e-12,
+  "tokens": 15324982983,
+  "tokens_left": 15324982983,
+  "size_sol": 0.1263,
+  "peak_mult": 1.1166115756136183,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
