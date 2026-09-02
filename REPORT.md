@@ -4561,3 +4561,7 @@ another new high.
 ## §181b — wallet ledger wired into tracker (2026-09-02 ~16:05 BST)
 - Every run now updates the wallet-attributed ledger for s60nm5fr-open mints with discovered pools (max 4/run, watermark-incremental). Artifact carries wallet_ledger_mints count.
 - This is the forward data feed for EDGE #6/#7 (smart-wallet leaderboard → cluster consensus). Zero impact on live trading path; runs after all exit logic.
+
+## §182 — wallet ledger auto-accrual verified (2026-09-02 ~16:44 BST)
+- The 15:24 run (first carrying §181b code) updated 2 qualified mints (EoBTrxSZ, 5mAgtK1T): ledger 1270 → **5270 rows**, **749 new unique wallets**, buys 3748 / sells 252 (pump-phase skew as expected).
+- Pipeline confirmed end-to-end: qualification → pool lookup → watermarked parsed-tx fetch → wallet attribution. Next: leaderboard scorer once per-token depth matures.
