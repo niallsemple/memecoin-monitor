@@ -4469,3 +4469,13 @@ another new high.
 ## §166 — a4gF close (2026-09-02 ~12:38 BST)
 - a4gFrsnA abort15, peak 1.025; on-chain verified → **+0.00289 SOL** (exact in book). Book: 31 closes, 29 green (93.5%).
 - Post-panic-stop cohort: **14/14 green**. 9 closes to the 40-trade verdict.
+
+## §167 — review_40.py verdict tool (2026-09-02 ~12:43 BST)
+- Built `review_40.py`: one-shot 40-close review — book stats, exit-rule breakdown, panic-cohort gate, on-chain reconcile, sizing scale-up inputs. Test-run live: cohort **14/14 green, +3.63%/trade**; wallet −3.92% vs 2.68389 funding baseline (improving).
+- Found book-vs-chain drift −0.0745 SOL → traced to **~31 leftover Token-2022 ATAs holding locked rent** (pump.fun graduates are Token-2022, not classic SPL — first scan of Tokenkeg returned 0).
+
+## §168 — ATA rent reclaimer (2026-09-02 ~13:03 BST)
+- Built `reclaim_ata.py`: closes zero-balance ATAs, burns ≤0.2% dust then closes, skips LUTN full-balance (18.6B raw, owner decision pending). Simulates every batch before sending; kill switch respected.
+- Batch 0 (8 accounts) landed: sig 2wA2mYVe… err=None, wallet 2.447500 → 2.464088 (**+0.0166 SOL reclaimed**, ~8 rents − fees). Crash on `_confirm` (wrong name) after send — fixed to `_tx_success`.
+- **23 accounts remain, ~0.0477 SOL reclaimable.** LUTN dust worth ~0 — recommend burn+close (rent 0.0021 SOL) but flagged for owner.
+- Concurrent event: tracker opened **BXiwvsMt** (0.1289 SOL) at 12:01 UTC during the run; manual exit_watch covered 4 passes (r 0.998→1.004, hold). Next run ~12:24 UTC takes over.

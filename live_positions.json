@@ -496,5 +496,18 @@
   "actual_fill_note": "buy sig 5AhMVAGW... verified; actual fill 1355319585 raw; sell sig 2JoafZCo... verified; wallet delta 0.131777109",
   "closed_reason": "abort15",
   "pnl_sol": 0.00287711
+ },
+ "BXiwvsMt7qE55KTvNq62uy35XXuQ5otCCwFbCU8pump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788350479.424138,
+  "entry_px": 7.510466594111442e-11,
+  "tokens": 1716271531,
+  "tokens_left": 1716271531,
+  "size_sol": 0.1289,
+  "peak_mult": 1.0086656633048874,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
