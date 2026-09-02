@@ -4436,3 +4436,9 @@ another new high.
 - 5gNrnaff abort15: verified delta 0.128436215 vs 0.1283 → **+0.00014 SOL** (scratch).
 - nPYPLZK5/USWS abort15: verified delta 0.125337163 vs 0.1218 → **+0.00354 SOL**.
 - **Book: 25 closes, 23 green (92%).** Post-panic-stop cohort: **8/8 green, +0.0382**. Wallet 2.56596, all liquid — 0.118 from breakeven on the 2.68389 baseline.
+
+## §160 — Coverage gap narrowed: window 14m→16m (2026-09-02 ~08:57 BST)
+- Root cause of this morning's missed 06:44 trigger confirmed in-code: any run still alive when the next 20m trigger fires causes a skip (already_running) → no-watcher gap.
+- Observed totals: window + 1.5-2.3m post-processing (940-976s at 14m window). Raising window to 16m → expected total ~18-18.5m, safely under the 20m interval and 22m timeout.
+- Effect: no-watcher gap shrinks from ~4-5m to ~1-2m per cycle — drain exposure window cut by ~60-70%. Combined with §148 panic stop, the tail risk is now doubly bounded.
+- Deployed to the automation asset; MON copy synced. Watch next 3 runs for on-time completion.
