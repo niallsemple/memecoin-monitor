@@ -109,7 +109,8 @@ P_NET_MIN, P_NB_MIN, P_FLOW_MIN = 25.0, 10, 2.0   # E25 early entry trigger
 
 def paper_score(abort_min=None, out_path=None, stage1=None,
                 net_min=None, nb_min=None, flow_min=None, nm_min=None,
-                med_min=None, ts_min=None, funded_reject=False):
+                med_min=None, ts_min=None, funded_reject=False,
+                panic=None, trail_fr_only=False):
     """Replay pool trades with the §56e exit stack; write paper file.
     Fully self-contained and fail-safe: returns {} on any error.
     §72: abort_min/out_path allow shadow variants (a15) alongside the
@@ -123,6 +124,10 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
     §79u: med_min skips entries whose median buy size at the trigger is
     below it — dust-buy fake breadth (grind-rug signature, B9tN 0.248
     SOL vs runners >=1.36). SHADOW only, not an amendment.
+    §173: panic/trail_fr_only mirror the LIVE exit stack (§148 panic:
+    r<0.80 any tick sells all; trail is freerolled-only live; §138
+    fade: peak>=1.15, no nm_touch, r<=0.9*peak). Used by the mbfr
+    shadow so paper and live measure the same tails.
     §86a: ts_min overrides P_TS_MIN — bleeder dumps land at entry
     +3.6-13.8m on positions that never freeroll; forward-test whether a
     3-min hard stop captures the honest +1.0%/trade backtest."""
@@ -269,6 +274,12 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                 proceeds += P_SELL * fill(P_TARGET)
                 pos -= P_SELL
                 fr = True
+            if panic and r < panic and pos > 0:
+                # §148 live mirror: sub-0.80x at ANY tick -> dump all
+                proceeds += pos * fill(r)
+                pos = 0
+                reason = "panic"
+                break
             if nm_min and not fr:
                 if r >= 1.30 and nm_touch_t is None:
                     nm_touch_t = x["t"]
@@ -280,6 +291,14 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                     pos = 0
                     reason = "nm_abort"
                     break
+            if (trail_fr_only and not fr and peak >= 1.15
+                    and nm_touch_t is None and r <= 0.90 * peak
+                    and pos > 0):
+                # §138 live mirror: faded runner without near-miss
+                proceeds += pos * fill(r)
+                pos = 0
+                reason = "fade"
+                break
             if (stage1 and not fr and mins >= stage1[0]
                     and r < stage1[1] and pos > 0):
                 proceeds += pos * _price_at(stage1[0] * 60)
@@ -291,7 +310,8 @@ def paper_score(abort_min=None, out_path=None, stage1=None,
                 pos = 0
                 reason = "abort"
                 break
-            if r <= P_TRAIL * peak and pos > 0:
+            if r <= P_TRAIL * peak and pos > 0 \
+                    and (not trail_fr_only or fr):
                 proceeds += pos * fill(r)
                 pos = 0
                 reason = "trail"
@@ -1632,7 +1652,8 @@ def run(ctx):
         # the amendment candidate for the 40-close verdict.
         pf2 = paper_score(out_path=PAPER_SMBF, stage1=(15, 1.08),
                           net_min=60.0, nb_min=20, nm_min=5,
-                          med_min=0.25, funded_reject=True)
+                          med_min=0.25, funded_reject=True,
+                          panic=0.80, trail_fr_only=True)
         if pf2:
             paper["paper_s60nm5mbfr_exp"] = pf2.get("paper_exp")
             paper["paper_s60nm5mbfr_closed"] = pf2.get("paper_closed")

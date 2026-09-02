@@ -4506,3 +4506,9 @@ another new high.
 - **Backfilled mbfr (intersection, n=131): +2.44%/trade, 91.6% wins, drain rate 5.3%** vs s60nm5 base −0.08%. Strongest variant on the board; beats either filter alone.
 - Caveats: mb was fitted on B9tN (in-sample for that one); the honest test is the forward-accruing mbfr shadow deployed §171. Paper scoring also lacks the live panic stop, which should further cap the −100% tail in live trading.
 - 40-close verdict agenda item: if forward mbfr ≥ forward fr, amend live gate to med_min=0.25 + funded_reject.
+
+## §173 — paper scorer now mirrors the live exit stack (2026-09-02 ~14:10 BST)
+- Gap found: paper_score lacked three live rules — §148 panic (r<0.80 any tick), freerolled-only trail (paper trailed ALL positions), §138 fade (peak≥1.15, no nm_touch, r≤0.9×peak). Paper tails were overstated (−100% drains the live book would cap near −20%).
+- Added `panic=` + `trail_fr_only=` params (default off — all legacy shadows unchanged for continuity) and a fade check; engaged ONLY on the mbfr shadow, which is now an exact mirror of live: gate (med≥0.25 + funded-reject) + full exit stack.
+- Effect: mbfr's forward expectancy is now directly comparable to the live book. Backfilled drain rows will re-score from −100% to ~−20% on the next run — expect mbfr paper exp to jump; that jump is measurement, not edge.
+- Live asset edited, repo mirror synced byte-identical, syntax checked.

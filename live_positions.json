@@ -512,5 +512,18 @@
   "closed_reason": "reclaim_bug_burned",
   "pnl_sol": -0.12686072,
   "actual_fill_note": "buy sig 5rDMWybc\u2026 12:01 UTC. \u00a7169: reclaim_ata.py v1 used ABSOLUTE dust cutoff (5B raw); this position's 1.72B raw fell under it and batch 0 burned the full OPEN position + closed the ATA at 12:03 UTC (sig 2wA2mYVe\u2026 err=None). All subsequent abort15 sells failed: mainnet-beta BlockhashNotFound / helius Custom 6025 insufficient funds. Unrecoverable. sol_recovered = ATA rent only. Booked as loss of stake minus rent."
+ },
+ "h1xMxzYzLErHkHGNGKrfEt6RU8BvvpVP5TNPvR6pump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788354058.698381,
+  "entry_px": 6.164246999315969e-10,
+  "tokens": 203755625,
+  "tokens_left": 203755625,
+  "size_sol": 0.1256,
+  "peak_mult": 1.0,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
