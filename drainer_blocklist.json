@@ -41,6 +41,16 @@
    "tag": "MASTER-B4 (mega-treasury)",
    "seen": "2026-09-02 04:04 UTC",
    "received_sol": 1833.34
+  },
+  "76WBs89F87cPFi53ZnCXrhec6tmSvtGbHJUfbGHYoUq8": {
+   "tag": "MASTER-E",
+   "seen": "MBCBuuPC drain 2026-09-02",
+   "evidence": "\u00a7224 hop-2 convergence: funded 5 of 6 drain-swarm funders"
+  },
+  "7sXi34cVfL29f3W881AyYE2nd27dueZVBjUhrNQ1RbYH": {
+   "tag": "MASTER-E2",
+   "seen": "MBCBuuPC drain 2026-09-02",
+   "evidence": "\u00a7224 hop-2: funded 1 of 6 drain-swarm funders"
   }
  },
  "killers": {
@@ -1042,6 +1052,36 @@
    "feeds": "MASTER-D",
    "sol": 91.04,
    "source": "master_inbound_trace"
+  },
+  "9SRddHA46asAjPBQS1WWMLSny1HmGn9XJueySmHXyxsp": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
+  },
+  "2bbDkpRwtVUqn2jbnsonjz4irEMzxnme8eHcGXoJm92s": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
+  },
+  "DuqzdPjiC7MG9CAB8thdvhEYDc8R11PUGnRxEA44a1c9": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
+  },
+  "9ii7bZUooxio1UgfqfaVhssD4Hxp8nHquWsfHnrbhBGJ": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
+  },
+  "8p9yGgJ6J3h8vBLnKGubZYykqRNg5SxYgKf57FNGx1sQ": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
+  },
+  "GygMCPWgWfhc2kJ2VCXYRPRyw3WPP4xHUiDC91PUbUSb": {
+   "mint": "MBCBuuPCGoKdPU5Mv8qznR8JqygiiMZUwJXeF8tpump",
+   "dumped_sol": 0,
+   "evidence": "\u00a7224 drain-swarm worker (~396.6B raw sold, sampled)"
   }
  },
  "feeders": {
@@ -1228,6 +1268,30 @@
   "7Ljg1CrYNFkAvPjQuiGxQJamxgT6K94jp2bAUxi6byuW": {
    "feeds": "MASTER-A",
    "sol": 2496.46
+  },
+  "DD2F5MUYH6VfK4BmzcuicyBjjwDHar51E6m67xEsR1Mo": {
+   "feeds": "MASTER-E",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
+  },
+  "2yTMiTgob8eA1CKtakwQ9cafE8UnyKyKRJzAGcYF642i": {
+   "feeds": "MASTER-E",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
+  },
+  "DXrmhmYV5bPMtGZQtou4FRGPQPgpX7macuCxxW6K35xz": {
+   "feeds": "MASTER-E2",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
+  },
+  "DEvcAazroAXGDC9CZs3gfCm9MTTWHatQ9KurJZatVEgd": {
+   "feeds": "MASTER-E",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
+  },
+  "4CFqMH82g5TEKoU9edf2zEUTGnai2YppVJ7EUK7rzu1G": {
+   "feeds": "MASTER-E",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
+  },
+  "2Cax4m78pY6pHZ3hp7z8Rfm9E7nWESMX1CQWJMj5JDAD": {
+   "feeds": "MASTER-E",
+   "evidence": "\u00a7224 hop-1 funder of MBCBuuPC drain worker"
   }
  },
  "funded_next_gen": {
@@ -1388,6 +1452,6 @@
    "sol": 24.0
   }
  },
- "version": "v7",
- "notes": "v7 2026-09-02: LUTN loot moved. Killer 5Lyboj staged via MASTER-B (now empty) -> B2 -> B3 -> merged into B4 mega-treasury (1,833 SOL single tx 04:04 UTC). Drain crews are cells of one larger operation; capital recycles within hours."
+ "version": "v8",
+ "notes": "v7 2026-09-02: LUTN loot moved. Killer 5Lyboj staged via MASTER-B (now empty) -> B2 -> B3 -> merged into B4 mega-treasury (1,833 SOL single tx 04:04 UTC). Drain crews are cells of one larger operation; capital recycles within hours. | v8: \u00a7224 MBCBuuPC swarm \u2014 MASTER-E root + 6 workers + 6 feeders via hop-2 convergence"
 }

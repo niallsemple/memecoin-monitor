@@ -5062,3 +5062,26 @@ count; §223 now grounds it in reality.
 **Standing:** market-action cohort 19 closes 18/19 green (+3.79%/trade ex
 infra bugs). 3 closes to the 40-close verdict. Crew treasury feed silent
 throughout — the drain gave no funding-graph warning (§212 consistent).
+
+## §224 — MBCBuuPC swarm lineage: rotation hub found at hop 2 (2026-09-02)
+
+**Post-drain forensics on the §223 loss.** Sampled 60 of 2,441 drain-window
+pool txs (55-80 min post-entry). Seller distribution is a textbook swarm:
+**six wallets each dumping ~396.6B raw units** (max pairwise spread 0.008%)
+plus a ~332B second tier — coordinated equal-split inventory.
+
+**Lineage (Helius RPC; parsed-tx API 403'd mid-shift, RPC path used):**
+- hop 1: six workers ← six DIFFERENT fresh funders (none known) — §212 again
+- hop 2: **five of six funders converge on ONE root:
+  `76WBs89F87cPFi53ZnCXrhec6tmSvtGbHJUfbGHYoUq8`** (sixth on a secondary
+  root `7sXi34cV…`). Not in blocklist or the 536-wallet funder cache — a
+  NEW crew master, invisible until this drain.
+
+**Actioned — blocklist v8:** MASTER-E + MASTER-E2 added (treasury watcher
+now polls both, so their NEXT funding burst is caught forward); 6 feeders,
+6 killer workers recorded against the MBCBuuPC mint.
+
+**Honest limits:** hop-2 convergence only surfaces POST-drain (workers are
+fresh per op) — this strengthens the watcher's forward coverage but does
+not revive pre-entry gating (§212-216 stand). The parsed-API 403 needs
+watching; RPC fallback path proved sufficient.
