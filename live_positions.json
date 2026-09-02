@@ -518,12 +518,13 @@
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788354058.698381,
-  "entry_px": 6.164246999315969e-10,
-  "tokens": 203755625,
-  "tokens_left": 203755625,
+  "entry_px": 6.164251507036797e-10,
+  "tokens": 203755476,
+  "tokens_left": 203755476,
   "size_sol": 0.1256,
-  "peak_mult": 1.0,
+  "peak_mult": 1.0434103184713377,
   "freerolled": false,
-  "sol_recovered": 0.0
+  "sol_recovered": 0.0,
+  "actual_fill_note": "buy sig 5GQAjHpa\u2026 on-chain verified; actual fill 203755476 raw (99.99993% of quote)"
  }
 }
