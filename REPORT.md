@@ -4541,3 +4541,7 @@ another new high.
 - Post-run housekeeping now scans for closable ATAs every run and sweeps in-process when ≥2 are pending (reclaim_ata.main with §169 guards: open positions + unbooked mints never touched). Sub-threshold piles wait for manual gap sweeps.
 - Cost on normal runs: one 2-RPC scan (~5s). Runs stay inside the 20-min budget (measured 16.2–17.4 min; sweep adds ≤30s only when triggered).
 - Effect: the ~0.002 SOL rent per close is now collected automatically — worth ~+0.08 SOL/40 trades, roughly one average win per verdict cycle.
+
+## §179 — AqUecCrz close #34 (2026-09-02 ~15:18 BST)
+- abort15, peak 1.033; sell sig B4DBC8yd… err=None; wallet delta 0.129771807 → **+0.00377 SOL**.
+- Book: **34 closes, 31 green (91.2%)**. 6 closes to the 40-trade verdict. Market-action win streak since the panic stop: 16/16 (§169 loss was tooling, not market).
