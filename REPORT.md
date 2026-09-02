@@ -5113,3 +5113,23 @@ Recovered +0.122644 SOL on-chain (sig 5ZpuUz3A…, meta.err None) →
 clamp: **submitted first try, no 6024, no exit_failed retries** — the
 MBCBuuPC failure class is closed forward. Book: 38 closes, 34 green,
 net −0.25907 SOL. Two closes to the 40-close verdict.
+
+## §227 — Fresh-window divergence: paper shadows vs live book (2026-09-03)
+
+Post-amendment window (since amendment_ts 1788191605, Aug 31 16:53). All 38 live closes fall inside it, so this is a same-tape comparison.
+
+Paper shadow variants, fresh window (entry_t > amendment_ts):
+| variant | n | wins | avg/trade |
+|---|---|---|---|
+| s60nm5 (amended base) | 125 | 108 | −2.86% |
+| s60nm5fr (live-gate twin) | 123 | 108 | −1.83% |
+| s60nm5mb (dust filter) | 101 | 89 | −1.43% |
+| s60nm5mbfr (combined) | 99 | 84 | −5.15% |
+| ts180 (3-min timestop) | 125 | 112 | −2.08% |
+
+Live book, same window: n=38, wins=34, −0.25907 SOL on 4.816 staked = −5.38%/stake all-in; ex-4-infra-losses (LUTN −0.1348, 29H7 −0.1250, BXiw −0.1269, MBCB −0.1262 = −0.5129 SOL of pure infra/bug loss) the market-action cohort is +0.2538 SOL ≈ +3.79%/trade on ~6.7 staked-equivalent... see §209-§218 cohort definition.
+
+Findings:
+1. EVERY paper variant is negative on fresh tape (−1.4% to −5.2%). The "mb leads paper" all-time result (+1.41%) does NOT hold post-amendment; no amendment candidate currently beats the live gate on fresh data.
+2. Paper fr twin took 123 entries vs live's 38 in the same window — paper is NOT a clean twin of live gating (live adds blocklist rejects, venue/sizing availability, freshness window). Paper divergence is partly modeling gap, partly fill model (next-trade fills, no slippage/verified exits).
+3. Verdict input: do NOT amend the entry gate at 40 closes based on paper; the paper shadows currently have no positive candidate. Gate changes require the shadow to go positive on fresh tape first.
