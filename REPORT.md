@@ -4759,3 +4759,14 @@ Correction to §201: 5qrZfD2Li (MASTER-D) IS in our ledger — not a pure treasu
 Survival note: 5GJf took a 402 SOL insider sell and our abort15 still exited green — dump size vs our exit speed again. Three insider-dump events on our live book now confirmed: LUTN (−0.135, too big/too slow), 29H7 (−0.125, dump at +12m beat abort15), 5GJf (+0.004, we won the race).
 
 Blocklist v5 stands at 274; gate reads masters/killers/feeders/next-gen — MASTER-D's on-mint presence would now trigger DRAINER_NETWORK_ALERT at entry.
+
+## §203 — Full-crew sweep: EV math favors the gate even with over-flagging (2026-09-02 23:35 UTC)
+
+MASTER-C/D inbound traces harvested 17 more wallets (blocklist v6 = 291: 6 masters, 200 killers, 46 workers, 39 next-gen). C and D are PAIRED treasuries of one crew — shared feeders, 8,534 SOL consolidated across 4.5-6h windows.
+
+Full-blocklist sweep vs live book — crew presence on 10/36 mints:
+- **8/10 closed GREEN** (+0.045 combined): 5GJf took 2,040 SOL of crew selling and still paid us; 4GFD/Hpyj had 38-41 crew wallets and closed +0.0075/+0.0084.
+- **2/10 were the total losses** (−0.260 combined): 29H7, LUTN.
+- Non-crew mints: 25/26 green (the one red = my reclaim bug, not market).
+
+**EV verdict: crew-present cohort netted −0.215 SOL; crew-free cohort is pristine.** A binary "skip crew mints" gate sacrifices +0.045 of green to avoid −0.260 of death — net +0.215 to the book. The narrow MASTER-A feeder set had 2/2 precision; the enlarged list over-flags survivors, but the EV math carries it anyway. Gate metric candidates for the 40-close verdict: crew_wallet_count ≥ ~20 at entry, or crew sell-velocity. All crew wallets were visible from minute 0 (wash phase) — detection at entry is real.

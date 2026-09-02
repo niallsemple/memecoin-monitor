@@ -941,6 +941,91 @@
    "mint": "CGphgNh6jspGTUR3Q5Sa2gx18L7wSa1ubc82NRsmpump",
    "dumped_sol": 127.91,
    "source": "paper_drain_sweep"
+  },
+  "9dYvcVVAgYvZgPMC57ny3LnRLKvBDdqSAs2SzR1RRZ7g": {
+   "feeds": "MASTER-C",
+   "sol": 260.51,
+   "source": "master_inbound_trace"
+  },
+  "5qrZfD2Li5HxTeqpWBxXi9ip7h29xJrZnsAMVuSDWzxU": {
+   "feeds": "MASTER-C",
+   "sol": 242.46,
+   "source": "master_inbound_trace"
+  },
+  "GGezDe28NpVaf23FGMEhhCUpYLEBe2apvkydg6JZu561": {
+   "feeds": "MASTER-C",
+   "sol": 124.48,
+   "source": "master_inbound_trace"
+  },
+  "9eC35QZ7wAVNpzVM9KFHRjhLx4Bc9JnwSMaJGW1L9NgR": {
+   "feeds": "MASTER-C",
+   "sol": 102.16,
+   "source": "master_inbound_trace"
+  },
+  "FyR32LqEEyGhwgWLMFX7nomZwBc5F25BNQrAzJf6kKRu": {
+   "feeds": "MASTER-C",
+   "sol": 79.96,
+   "source": "master_inbound_trace"
+  },
+  "FLJzwfwNVfJPvQePzHYrakg687fMH1tPR4sZDeYZsX5P": {
+   "feeds": "MASTER-C",
+   "sol": 76.41,
+   "source": "master_inbound_trace"
+  },
+  "5f21YJar7CTfeRdRZECRpGRtk1xMKUXVE76pkofzRHH": {
+   "feeds": "MASTER-C",
+   "sol": 75.89,
+   "source": "master_inbound_trace"
+  },
+  "3ER52y6g8EUJjsjg65bt3ZVvg76Q1FY8Qovrw2QpGJU5": {
+   "feeds": "MASTER-C",
+   "sol": 75.68,
+   "source": "master_inbound_trace"
+  },
+  "DTw6fBXogeWRxzyc9sHRp9QSGtarEV649Ekzvj1A8UxP": {
+   "feeds": "MASTER-C",
+   "sol": 73.96,
+   "source": "master_inbound_trace"
+  },
+  "Aag5FF59jc547Wv39ue39W7q3csby3KQdYfwKLjUGwJd": {
+   "feeds": "MASTER-C",
+   "sol": 73.28,
+   "source": "master_inbound_trace"
+  },
+  "2tFdoozUmg9q2awLJRrK11ZuRiXb6sBNCJD1aLCCh7rD": {
+   "feeds": "MASTER-C",
+   "sol": 73.19,
+   "source": "master_inbound_trace"
+  },
+  "EohBZP58qkKbepkmw768i8MRPQYkJSer4cF9LqbCKtPw": {
+   "feeds": "MASTER-D",
+   "sol": 427.0,
+   "source": "master_inbound_trace"
+  },
+  "7GWmjbWSRxZe9PnsZ4V86Nre257mWPUfK71Yt5yCKvAZ": {
+   "feeds": "MASTER-D",
+   "sol": 243.28,
+   "source": "master_inbound_trace"
+  },
+  "Es84wjnYYP7XzWe2uVpo52q4c2qxqhwb3BQxQ1FxymnC": {
+   "feeds": "MASTER-D",
+   "sol": 95.51,
+   "source": "master_inbound_trace"
+  },
+  "2iwA9dDA2pYXUquW17kg2r5wpqzhJoVwAokRfdDJrgSf": {
+   "feeds": "MASTER-D",
+   "sol": 95.13,
+   "source": "master_inbound_trace"
+  },
+  "EbddUMVHmq23XcjP1sDnwgdTF9dJBZNqAqFYuaA7YNfX": {
+   "feeds": "MASTER-D",
+   "sol": 92.0,
+   "source": "master_inbound_trace"
+  },
+  "DtXUEYoDfVdc6dJN2qHH9XzBBoKrL9cP8fsYwTe6Nbuu": {
+   "feeds": "MASTER-D",
+   "sol": 91.04,
+   "source": "master_inbound_trace"
   }
  },
  "feeders": {
