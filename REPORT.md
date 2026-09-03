@@ -5341,3 +5341,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Both match the rug archetype from §253 (era rugs 46-55%; greens <=15%) — at even higher bundle share. Had the plateau path entered these at +72min, they'd be rug candidates #5/#6. The blocking gate is doing in 50 seconds what the old funnel never could.
 - WATCH: the plateau path (s60nm5fr hook) still has these gates as SHADOW-only — if it buys 7vEV/sfDn later and they rug, that's the final proof to promote the gate to blocking on ALL paths at the 60-close review.
 - Hypothesis ledger: "high first-30s outsider bundle share predicts rug" → PROMISING++ (2 more forward blocks, both would-be entries refused).
+
+## §261 — Close #60: E2PGus abort15 +0.00248 SOL — FIRST BIRTH-WINDOW ENTRY, green
+- E2PGusyR: entered +66.4s after birth (§257 fast path, pool venue, 0.05 SOL, gates clean: deployer first-seen, bundle 0.0%). Peaked 1.05, failed the 15-min bar, abort15 at 15.7min. Verified: meta.err None, wallet delta +0.05216 gross, net +0.00248 (sig 4rHDP2qHgA).
+- Fast-path session tally: 5 evals → 3 bundled-launch blocks (61.6/60.9/60.4%), 1 repeat-offender-free entry → green. The gate refused 3 rug-archetype launches at ZERO cost.
+- Fresh-infra era tally: −0.2711 SOL on 21 trades (16 green, 4 rugs, 1 fast-birth green).
+- 60/60 REACHED — full review follows per DARWIN_TRAINING_LAB charter.

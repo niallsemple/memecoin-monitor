@@ -10,3 +10,7 @@
 {"t": 1788466094.2153962, "phase": "thread_start", "mint": "E2PGusyRyu5XPqrDMfAGeLhqD19koaZwpjqHHVBVpump"}
 {"t": 1788466094.218278, "phase": "lt_loaded", "mint": "E2PGusyRyu5XPqrDMfAGeLhqD19koaZwpjqHHVBVpump"}
 {"t": 1788466167.054451, "phase": "thread_done", "mint": "E2PGusyRyu5XPqrDMfAGeLhqD19koaZwpjqHHVBVpump", "result": "entered"}
+{"t": 1788466542.00694, "phase": "spawned", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump", "creator": "wHTQ8fhnuVx3uD61eLGx6UeJQnBman5Mx6vEW1rPZqz"}
+{"t": 1788466542.007356, "phase": "thread_start", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump"}
+{"t": 1788466542.011001, "phase": "lt_loaded", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump"}
+{"t": 1788466593.345403, "phase": "thread_done", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump", "result": "skip: bundled launch"}
