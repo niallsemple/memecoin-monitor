@@ -35,3 +35,5 @@
 {"event": "run_summary", "init": false, "masters_polled": 11, "raw_events": 0, "treasury_hops": 0, "burst_masters": [], "new_workers": 0, "ts": 1788417730.400461}
 {"event": "run_summary", "init": false, "masters_polled": 11, "raw_events": 0, "treasury_hops": 0, "burst_masters": [], "new_workers": 0, "ts": 1788420091.5827498}
 {"event": "run_summary", "init": false, "masters_polled": 11, "raw_events": 0, "treasury_hops": 0, "burst_masters": [], "new_workers": 0, "ts": 1788421349.585709}
+{"event": "TREASURY_HOP", "master": "BZqGE4sRcUNRFzeBeVXVTqmghqCSEK964vFi9VTwhnA5", "tag": "MASTER-A2 (upstream of A)", "to": "CFb6WFJkBxwPp2BYEkX4xtF2WvUb9j9f2VxYt8fJ8mt9", "sol": 2196.1055, "bt": 1788421462, "sig": "4bJrBkr8Zqge16hf2P7NJ7PXHxUyEKgYcM8aTUpnex69C78RMgcRhcsxNoSraqWCGrAZZ5sbvnA4P7A85gboGbA", "ts": 1788422625.85183}
+{"event": "run_summary", "init": false, "masters_polled": 11, "raw_events": 1, "treasury_hops": 1, "burst_masters": [], "new_workers": 0, "ts": 1788422625.852781}

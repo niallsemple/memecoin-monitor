@@ -5200,3 +5200,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 ## §237 — Close #46: BwdQwg65 abort15 +0.00491 SOL (verified)
 - Pool entry, peak 1.0424, closed r≈1.04 at ~16.9min via abort15. Sig 4NpseF2uzNPdKoLz..., err None, wallet +0.120499 net vs recorded 0.120814 — clean first-try.
 - Fresh-infra era: −0.0637 SOL on 7 trades. Book flat at 46 closes; 14 to re-review.
+
+## §238 — Close #47: 5ogCegLu panic_writeoff −0.116 SOL (second era rug; floor worked)
+- Pool entry 0.116 SOL, peak only 1.0138, r collapsed <0.80 by 13min with est proceeds <0.001 → §235 floor converted the panic to a write-off: NO sell submitted, fee saved, dust stack (1220.5 tokens) kept in ATA. Verified: no sell tx on-chain.
+- Second instant rug in 7 fresh-era trades (GFhw, 5ogC) — era rug rate ~29%, far above the ~5% the expectancy math needs. This is now THE problem for the 60-close review; entry gates passed both (0 blocklist feeders each).
+- Fresh-infra era: −0.1797 SOL on 7 trades. Book: 47 closes, FW5A still open.

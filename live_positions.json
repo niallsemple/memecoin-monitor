@@ -774,5 +774,43 @@
   "exit_sig": "4NpseF2uzNPdKoLzh4sr5sTMF2DQQyiCLkZ9MqQdZffmygepL5p4TGLAuQRytRjBiZcDqUFfQzpzdoP2AcBNXWR4",
   "pnl_sol": 0.00491,
   "actual_fill_note": "verified on-chain: sig 4NpseF2uzNPdKoLz..., err None, wallet +0.120499 SOL net. Clean first-try close."
+ },
+ "5ogCegLuEVG3zUPURzTZCicvHRWTXYGJVkvF2smpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788422475.795709,
+  "entry_px": 9.503006825499426e-11,
+  "tokens": 1220666281,
+  "tokens_left": 1220666281,
+  "size_sol": 0.116,
+  "peak_mult": 1.0138013275862068,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 33.36,
+  "insider_n": 20,
+  "blocklist_feeders": 0,
+  "closed_reason": "panic_writeoff",
+  "exit_reason": "panic_writeoff",
+  "exit_t": 1788423031.369876,
+  "exit_sig": null,
+  "pnl_sol": -0.116,
+  "actual_fill_note": "write-off verified: no sell tx submitted (exit_sig None by design, \u00a7235 floor). Dust tokens remain in ATA. Second instant rug of fresh-infra era \u2014 r collapsed <0.80 with est proceeds <0.001 SOL."
+ },
+ "FW5A2ny4WaHABSVpQK2FrigHacNfbg4mufFEsQ6kpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788422522.097346,
+  "entry_px": 7.329850224456891e-11,
+  "tokens": 1502077077,
+  "tokens_left": 1502077077,
+  "size_sol": 0.1101,
+  "peak_mult": 1.0366679654859219,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 17.6,
+  "insider_n": 19,
+  "blocklist_feeders": 0
  }
 }

@@ -3882,3 +3882,9 @@
 | 07:26 | solana | `8nLN2B1x…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,536 | name=The Odyssean Retriever symbol=Maru; contract:clean; rugcheck_score=1 lpLocked=100%; t |  |
 | 07:26 | solana | `AdpzjgRP…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$9,911 | name=Patience Pays symbol=Patience; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
 | 07:26 | robinhood | `0x680516…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$74,968 mc=$92,914 | chain:robinhood no-audit-adapter | Financial markets once belonged to the few.  Data lived inside expensive termina |
+| 08:06 | cronos | `0x679f68…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,639 mc=$27,326 | chain:cronos no-audit-adapter | Trollcoin, the unrivaled #1 Memecoin on the Cronos blockchain, brings humor and  |
+| 08:06 | robinhood | `0xED12ea…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,645 mc=$154,395 | chain:robinhood no-audit-adapter | A tea house bolted to a chain that prints ten blocks every second. Rent a seat f |
+| 08:06 | solana | `Aio2SJ69…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:98% | liq=$0 mc=$3,713 | name=Buy And Hold symbol=BAH; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold= |  |
+| 08:06 | robinhood | `0x1f1B3e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,612 mc=$302,099 | chain:robinhood no-audit-adapter | Turbo Hood - the home of all memes and pure degen aura |
+| 08:06 | robinhood | `0x9BB610…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$85,795 mc=$826,881 | chain:robinhood no-audit-adapter | Tokenising farts with the help of bots.  No VC, no cabal, fart freely!  By Fartc |
+| 08:06 | robinhood | `0x8aaa80…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,297 mc=$28,196 | chain:robinhood no-audit-adapter | VenusCoin — Elon has Mars. Vlad has Venus. Building the financial frontier of th |
