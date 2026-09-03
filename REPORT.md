@@ -5328,3 +5328,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Clean-gate forward record: 7 entries, 7 green, 0 rugs since scorecard+bundle stack live.
 - Fresh-infra era tally: −0.2736 SOL on 20 trades (15 green, 4 rugs).
 - Total closes: 59/60 — ONE more close to the gate-decision review.
+
+## §259 — ROOT CAUSE of silent fast-entry: the Automation runs a FROZEN COPY, not the repo file
+- The curve-collector Automation's codeEntry is assets/automation.py (assetsRoot) — a snapshot of tracker_live.py frozen Sep 2 21:03. It INLINES the tracker; live_trader.py edits went live only because the tracker importlib-loads it from MON each pass. tracker_live.py edits (§257, §257b) were never executed — VOXEL/DINGALING/WOTF births armed-logged by the stale copy with no spawn.
+- Fix: copied current tracker_live.py (with §257+§257b) over assets/automation.py, cleared its __pycache__, verified byte-identical. Effective next pass (~21:04 BST).
+- deploy_tracker.sh added: compile-check + copy + pycache-clear + verify. MUST be run after every tracker_live.py edit. (Earlier tracker edits since Sep 2 21:03 were also not live — diff showed only §257 lines differed, so nothing else was lost.)
