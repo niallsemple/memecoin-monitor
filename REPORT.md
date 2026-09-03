@@ -5280,3 +5280,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - 8nk9kDEQ (0.102, deployer 3iTRJm8y first-seen clean): passed abort15 + abort30, held 51min, peaked ~1.15-1.3 but no freeroll, closed nm_abort. Verified: meta.err None, gross +0.13813.
 - Fresh-infra era: −0.2820 SOL on 17 trades (13 green, 4 rugs). All three >0.02 winners were double-gate survivors; zero rugs since scorecard went shadow-live (n=4 entries).
 - Total closes: 57/60.
+
+## §252 — Seed-buy-size hypothesis: FAILED, retired (falsification-first)
+- Tested owner's queued at-birth signal: deployer seed-buy size as rug separator. Parsed true deployer spend from create txs (pre/post balance delta).
+- Finding: EVERY traded mint in the fresh-infra era was big-seeded at ~86 SOL (rug GFhw 86.08, rug BESH 86.08, green 4hMy 86.08). Zero separation — the value is uniform across outcomes.
+- Root cause: our entry filter already selects only whale-seeded launches; the feed shows small-seed creates (0.06–3 SOL) exist but never qualify for entry. Within our tradeable universe, seed size is constant → no signal.
+- Hypothesis ledger: "deployer seed-buy size predicts rug" → FAILED → RETIRED. Next at-birth candidate: same-slot bundle share (supply bought by non-deployer wallets in the create slot).
