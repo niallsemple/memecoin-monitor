@@ -5216,3 +5216,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Structural latency: entries and exits both happen at tracker pass-END (~17min apart). An atomic 3-minute rug is already at zero before the first possible exit decision — no exit-side speedup can fix that.
 - Conclusions: (1) no entry filter available in currently-recorded fields; (2) §235 write-off floor is the correct mitigation and already live; (3) small size is the rug hedge — at 5% sizing a 29% rug rate costs ~1.5% of bankroll per rug while abort15s grind +0.4%/trade.
 - Watch item: if a future position peaks <1.01 AND survives past 5min, that shape preceded 5ogC's collapse — candidate early-tripwire signal once n grows.
+
+## §241 — DARWIN Training Lab charter added to goal scope (owner directive)
+- Owner added DARWIN_TRAINING_LAB.md to the goal: a 12-phase research doctrine — point-in-time integrity, wallet genealogy, creator intelligence, blind replay, outcome labels, execution-adjusted EV, falsification-first, regime analysis, hypothesis ledger with status lifecycle.
+- Alignment check: our current practice already follows much of it (fresh-era forward testing = Phase forward test; §240 rug post-mortem = falsification; gates shadow-pending = execution reality). New explicit asks to fold in: hypothesis ledger with NEW→FAILED status lifecycle, per-trade MFE/MAE outcome labels, and the structured 10-section cycle output.
+- Immediate mapping: REPORT.md sections serve as the hypothesis ledger; will add status tags going forward.

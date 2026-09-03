@@ -3888,3 +3888,15 @@
 | 08:06 | robinhood | `0x1f1B3e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,612 mc=$302,099 | chain:robinhood no-audit-adapter | Turbo Hood - the home of all memes and pure degen aura |
 | 08:06 | robinhood | `0x9BB610…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$85,795 mc=$826,881 | chain:robinhood no-audit-adapter | Tokenising farts with the help of bots.  No VC, no cabal, fart freely!  By Fartc |
 | 08:06 | robinhood | `0x8aaa80…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,297 mc=$28,196 | chain:robinhood no-audit-adapter | VenusCoin — Elon has Mars. Vlad has Venus. Building the financial frontier of th |
+| 08:46 | solana | `8uSrp69f…` | FAIL | TOP10_HEAVY:56% | liq=$13,222 mc=$31,638 | name=Ben symbol=BEN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=56.1% |  |
+| 08:46 | robinhood | `0x06E64E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,893 mc=$932,469 | chain:robinhood no-audit-adapter |  |
+| 08:46 | solana | `9ApS1vkN…` | FAIL | TOP10_HEAVY:95%; RC_WARN:Copycat token | liq=$0 mc=$5,546 | name=fih symbol=fih; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=95.3% |  |
+| 08:46 | robinhood | `0x1f2701…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,682 mc=$8,485 | chain:robinhood no-audit-adapter | The internet’s favorite shopping holiday. BLACK FRIDAY / SHOP |
+| 08:46 | robinhood | `0x53Dd41…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,484 mc=$389,013 | chain:robinhood no-audit-adapter |  |
+| 08:46 | solana | `8hWPJYas…` | FAIL | TOP10_HEAVY:83% | liq=$0 mc=$6,547 | name=Gingerbread Man symbol=Gingy; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 09:26 | robinhood | `0x13Dcf4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,269 mc=$80,937 | chain:robinhood no-audit-adapter | Dropship paired with Shopify |
+| 09:26 | robinhood | `0x34cDFa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,092 mc=$16,783 | chain:robinhood no-audit-adapter | Robinhood and flip it upside down, you get poou pooucoin |
+| 09:26 | solana | `3WqmgTAu…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$15,707 | name=The Human Dog  symbol=Normi; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Normi The Human Dog |
+| 09:26 | robinhood | `0x7b217E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,077 mc=$90,782 | chain:robinhood no-audit-adapter | EQUAI centers on breaking the AI monopoly, initially leveraging AI-generated vid |
+| 09:26 | solana | `7bdCY31A…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:92% | liq=$0 mc=$6,733 | name=The Deer symbol=DEER; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=91. | EVERYONE KEEPS SAYING SOL IS DEAD AND DRY RN BUT I THINK WE’RE LITERALLY JUST IN |
+| 09:26 | solana | `EfxdVwr7…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,006 | name=Leh Undrews symbol=Leh; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 |  |
