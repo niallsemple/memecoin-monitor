@@ -268,6 +268,13 @@ def buy(mint, reason="signal"):
         row["result"] = "refused: zero size (balance too low)"
         _log(row)
         return row
+    # §246: deployer scorecard (SHADOW, non-blocking) — repeat-offender
+    # rug crews we've seen before in our own birth feed.
+    try:
+        import deployer_local
+        row["deployer_score"] = deployer_local.score_mint(mint)
+    except Exception as e:
+        row["deployer_score"] = {"error": str(e)}
     # §210A: G2 pre-entry overhang gate (INACTIVE until g2_gate.json).
     if ok and _g2_active():
         _block, _ev = _g2_preentry_gate(mint)

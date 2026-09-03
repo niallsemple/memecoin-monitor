@@ -5245,3 +5245,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Pattern holds: rugs collapse atomically in the first minutes; gates cannot help a position that is dead before the first checkpoint.
 - Fresh-infra era: −0.3576 SOL on 12 trades (8 green, 4 rugs). Rug rate now 33% vs the ~12% breakeven threshold — regime is hostile.
 - Total closes: 52/60.
+
+## §246 — Deployer scorecard LIVE (shadow): repeat-offender detection from our own birth feed
+- Trigger: owner asked if we can see coins before the 7-minute window. Answer: yes — WS birth feed sees creates in ~1s incl. deployer key + seed buy. The window is a decision delay, not detection.
+- KEY FINDING: v4iV and BESH rugs share deployer D84GJoqi9YDA — both rugged, 2h apart. A birth-time lookup would have flagged BESH (prior=1, prior_rugs=1). 3VprJzFM (GFhw rug): 1/1 rug. Green deployers C63suMRA (4Pu3) and 4MgtWzFq (4hMy): 0 prior rugs.
+- RPC history enumeration FAILED for this use: these wallets do 100 txs per ~100s at launch (operational/distribution wallets), so creates are buried 1000s of sigs back — too slow per-entry. Local feed lookup is instant and free.
+- deployer_local.py + score_mint() wired as SHADOW, non-blocking, into live_trader.buy() — logs deployer/prior/prior_rugs on every entry. Hypothesis ledger: "repeat-offender deployer predicts rug" → TESTING (n=4 separation so far; needs forward accumulation).
+- Full-history deep scan (deployer_score.py, create discriminator d6904cec5f8b31b4 confirmed) kept for offline post-mortems.
