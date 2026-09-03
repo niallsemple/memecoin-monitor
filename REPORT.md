@@ -5185,3 +5185,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - COST BUG: sell fees (0.000166) exceeded proceeds (0.0000395). Selling at r≈0 is net-negative vs just abandoning the tokens. Candidate fix: min-proceeds floor (~0.001 SOL) below which panic/fade sells are skipped and the position is written off instead.
 - Fresh-infra era: −0.0730 SOL on 5 trades (GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041, CGMB +0.0048, GFhw −0.1220). Wallet 2.31558 SOL.
 - VERDICT IMPACT: this is the cohort's first −100% stake close, breaching the §1 worst-case bound (−25%) the HOLD verdict rested on. Scale-up case at 60 closes now needs this treated as a base-rate event, not an anomaly.
+
+## §235 — Min-proceeds floor live (write-off instead of fee-negative sell)
+- Exit path now computes est proceeds before submitting; any non-freeroll exit with 0 < est < 0.001 SOL closes as `<reason>_writeoff` — no tx submitted, dust tokens kept, pnl recorded as −stake.
+- Motivation: §234 GFhw sell cost 0.000166 in fees to recover 0.0000395. On a true r=0 rug the write-off and the sell are economically identical (both ~−stake) but the write-off saves the fee.
+- Live next tracker pass.

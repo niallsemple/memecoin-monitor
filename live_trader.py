@@ -920,6 +920,31 @@ def exit_watch():
             elif not p["freerolled"] and mins >= P_TIMESTOP_MIN:
                 act, sell_tokens = "timestop", p["tokens_left"]
             if act:
+                # §235: min-proceeds floor — GFhw panicked at r=0.0 and
+                # the sell's fees (0.000166) exceeded its proceeds
+                # (0.0000395). Below ~0.001 SOL a market sell is
+                # fee-negative; write the position off instead and keep
+                # the tokens as a dust lottery ticket.
+                _est = px * sell_tokens
+                if act != "freeroll" and 0 < _est < 0.001:
+                    p["open"] = False
+                    p["closed_reason"] = act + "_writeoff"
+                    p["exit_reason"] = p["closed_reason"]
+                    p["exit_t"] = time.time()
+                    p["exit_sig"] = None
+                    p["pnl_sol"] = round(
+                        p["sol_recovered"] - p["size_sol"], 5)
+                    p["actual_fill_note"] = (
+                        "write-off: est proceeds %.6f SOL below 0.001 "
+                        "floor; no sell submitted, dust tokens kept" % _est)
+                    actions.append({"mint": mint, "act": p["closed_reason"],
+                                    "r": round(r, 3),
+                                    "est_sol": round(_est, 6)})
+                    _log({"action": "exit_writeoff", "mint": mint,
+                          "exit": act, "mult": round(r, 3),
+                          "mins_open": round(mins, 1),
+                          "est_sol": round(_est, 6)})
+                    continue
                 if venue == "pool":
                     est_sol = px * sell_tokens
                     res = pool_sell(mint, sell_tokens, reason=act)
