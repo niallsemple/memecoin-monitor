@@ -3864,3 +3864,15 @@
 | 04:46 | solana | `7Zo7tPm7…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,174 | name=You Will Buy This symbol=PSYOP; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
 | 04:46 | solana | `Dz37RVhU…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:83% | liq=$0 mc=$10,708 | name=Let Me Sell You a Dream symbol=Dream; contract:clean; rugcheck_score=79 lpLocked=100% |  |
 | 04:46 | robinhood | `0x5107D5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,322 mc=$41,637 | chain:robinhood no-audit-adapter | MUMU is the personification of the bull market, an eternally optimistic bull who |
+| 06:06 | robinhood | `0xe1393c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | MOGUS is a living meme identity. You do not receive the same static mascot as ev |
+| 06:06 | solana | `9ZmpfSq4…` | CAUTION | TOP10_CONCENTRATED:43% | liq=$15,209 mc=$40,675 | name=UniCorn symbol=UniCorn; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=43 | UniCorn |
+| 06:06 | solana | `Cnte2GpD…` | FAIL | TOP10_HEAVY:84% | liq=$0 mc=$5,025 | name=Nietzschean Chicken symbol=CHICKEN; contract:clean; rugcheck_score=1 lpLocked=100%; t | He escaped the herd and chose the unknown |
+| 06:06 | solana | `eUcj3yg4…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$4,495 | name=The Nietzschean Bear symbol=BEAR; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 06:06 | solana | `CYavHLuc…` | FAIL | RC_DANGER:Creator history of rugged tokens | liq=$18,587 mc=$56,446 | name=Yes its You symbol=YIY; contract:clean; rugcheck_score=59 lpLocked=0%; top10_hold=24. | Every tick is a reminder that destiny is moving forward whether you are ready or |
+| 06:06 | robinhood | `0xACb674…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,888 mc=$79,908 | chain:robinhood no-audit-adapter | Hoodiecoin paired with Hood. |
+| 06:46 | solana | `5Jmyc3ae…` | FAIL | TOP10_HEAVY:64%; RC_WARN:Copycat token | liq=$0 mc=$12,923 | name=All Bridges Lead To Solana symbol=SOLANA; contract:clean; rugcheck_score=29 lpLocked= |  |
+| 06:46 | solana | `DcxZYnRB…` | PASS | — | liq=$31,844 mc=$138,697 | name=Pons Pons Pons Sahur symbol=TriplePONS; contract:clean; rugcheck_score=1 lpLocked=100 |  |
+| 06:46 | robinhood | `0x0587e8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,338 mc=$80,656 | chain:robinhood no-audit-adapter |  |
+| 06:46 | robinhood | `0x9BAF5f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,916 mc=$65,369 | chain:robinhood no-audit-adapter | The real BAWSAQ, with every ticker from GTA.   All fees BURN BAWSAQ, All fees fr |
+| 06:46 | solana | `7aFGQ7fD…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$5,757 | name=Monkey Market symbol=MM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=7 |  |
+| 06:46 | robinhood | `0x7579CD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$57,285 mc=$243,740 | chain:robinhood no-audit-adapter | Google were close to dropping their own cryptocurrency called SchmidtCoin back i |

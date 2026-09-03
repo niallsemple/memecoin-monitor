@@ -5190,3 +5190,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Exit path now computes est proceeds before submitting; any non-freeroll exit with 0 < est < 0.001 SOL closes as `<reason>_writeoff` — no tx submitted, dust tokens kept, pnl recorded as −stake.
 - Motivation: §234 GFhw sell cost 0.000166 in fees to recover 0.0000395. On a true r=0 rug the write-off and the sell are economically identical (both ~−stake) but the write-off saves the fee.
 - Live next tracker pass.
+
+## §236 — Close #45: 7YPzi3mZ abort15 +0.00437 SOL (verified)
+- Pool entry, closed at r=1.038 / 17.4min via abort15 on manual cover (tracker mid-gap).
+- On-chain: exit sig 5zpoH1yYmym1J8W6..., err None, wallet +0.119813 net vs recorded 0.120169 — clean first-try close.
+- §233 field fix validated: exit_reason/exit_t/exit_sig all populated on this close.
+- Fresh-infra era: −0.0686 SOL on 6 trades. Book flat at 45 closes.

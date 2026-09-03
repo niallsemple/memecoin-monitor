@@ -730,5 +730,27 @@
   "exit_sig": "3TXyQebJF9P9sB5nUcdPiQNc7KTY7reuJ5Myp1XVxgfT4N5R9iSaPqnUfcz43FfjMNHvK3yDMQf9YRD7ehMJHyjS",
   "pnl_sol": -0.12196,
   "actual_fill_note": "verified on-chain: entry 4r8ymsMbW9yV spent 0.124279 SOL; exit 3TXyQebJF9P9 err None but returned ~0 SOL (pool liquidity gone 3min post-entry \u2014 genuine instant rug, r=0.0 was real). Sell fees 0.000166 exceeded 0.0000395 proceeds. 2.23 dust tokens remain in ATA."
+ },
+ "7YPzi3mZ8TKT82BMAcKSz6Y5W8UkLMDBtHqQsQc2pump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788417677.239021,
+  "entry_px": 7.553264252189498e-12,
+  "tokens": 15331119915,
+  "tokens_left": 0,
+  "size_sol": 0.1158,
+  "peak_mult": 1.0377253108808289,
+  "freerolled": false,
+  "sol_recovered": 0.12016859099999999,
+  "insider_overhang_pct": 0.0,
+  "insider_n": 0,
+  "blocklist_feeders": 9,
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788418758.695348,
+  "exit_sig": "5zpoH1yYmym1J8W6RRD4aqmNxSq5jqZY9SCaBVqvRUYGVdiPQAooTgiWKfFRLPx5pgHfgUzdmkCLxPVqEEmqzNbt",
+  "pnl_sol": 0.00437,
+  "actual_fill_note": "verified on-chain: sig 5zpoH1yYmym1J8W6..., meta.err None, wallet +0.119813 SOL net vs recorded 0.120169 (fee diff). Clean first-try close; exit_sig/exit_t fields now populate correctly."
  }
 }
