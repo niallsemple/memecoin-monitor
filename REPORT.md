@@ -5347,3 +5347,12 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Fast-path session tally: 5 evals → 3 bundled-launch blocks (61.6/60.9/60.4%), 1 repeat-offender-free entry → green. The gate refused 3 rug-archetype launches at ZERO cost.
 - Fresh-infra era tally: −0.2711 SOL on 21 trades (16 green, 4 rugs, 1 fast-birth green).
 - 60/60 REACHED — full review follows per DARWIN_TRAINING_LAB charter.
+
+## §262 — 60-CLOSE REVIEW (DARWIN charter): gates PROMOTED TO BLOCKING on all entry paths
+- Final tally: 60 closes, net −0.5245 SOL all-time (ROI −7.3%); fresh-infra era 21 closes net −0.2711 (ROI −12.2%), 16 green / 4 rugs / 1 fast-birth green.
+- Counterfactual (era): bundle>=40 blocking → +0.0671 SOL (+3.0% ROI), blocks 3/4 rugs, ZERO green casualties across 21 trades. prior_rugs>=1 → 0 in-era blocks (insurance only). Both → +0.0671.
+- Forward validation: 3 birth-window blocks at 61.6/60.9/60.4% (well above the 46-55% rug cluster, zero near the 15-40 gap); 7/7 clean-gate plateau entries green; first birth-window entry (E2PGus +66s) green.
+- DECISION: bundle-share >=40% AND prior_rugs>=1 now BLOCKING in live_trader.buy() (plateau path) — already blocking on the §257 fast path. Fail-open on RPC errors preserved.
+- Known uncovered archetype: 5ogC-style non-bundled rug (0% bundle, first-seen deployer). Scorecard covers repeats only. Mitigation remains §235 write-off floor + small size.
+- Data gap logged: MAE not recorded in position schema; add trough tracking next schema upgrade.
+- Hypothesis ledger status: "bundle share predicts rug" → CONFIRMED (promoted). "repeat-offender deployer" → CONFIRMED as insurance (promoted). "prior-green deployer predicts green" → TESTING (n=4, all green). "birth-window entry captures reprice" → TESTING (n=1, +0.00248).

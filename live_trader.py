@@ -268,22 +268,32 @@ def buy(mint, reason="signal"):
         row["result"] = "refused: zero size (balance too low)"
         _log(row)
         return row
-    # §246: deployer scorecard (SHADOW, non-blocking) — repeat-offender
-    # rug crews we've seen before in our own birth feed.
+    # §246: deployer scorecard — repeat-offender rug crews from our own
+    # birth feed. §262 (60-close review): PROMOTED TO BLOCKING.
     try:
         import deployer_local
         row["deployer_score"] = deployer_local.score_mint(mint)
     except Exception as e:
         row["deployer_score"] = {"error": str(e)}
-    # §253: bundle-share (SHADOW, non-blocking) — % supply grabbed by
-    # non-deployer wallets in the first 30s. Retro: 3/4 rugs >=46%,
-    # 4/4 greens <=15%. Fail-open.
+    if (row["deployer_score"] or {}).get("prior_rugs", 0) >= 1:
+        row["result"] = "blocked: repeat-offender deployer (§262)"
+        _log(row)
+        return row
+    # §253: bundle-share — % supply grabbed by non-deployer wallets in
+    # the first 30s. §262 (60-close review): PROMOTED TO BLOCKING.
+    # Retro 3/4 rugs >=46% vs greens <=15%; forward blocks 60-61%;
+    # zero green casualties in 21 era trades. Fail-open on errors.
     try:
         import bundle_share
         _dep = (row.get("deployer_score") or {}).get("deployer")
         row["bundle_share"] = bundle_share.bundle_share(mint, _dep)
     except Exception as e:
         row["bundle_share"] = {"error": str(e)}
+    if ((row["bundle_share"] or {}).get("outsider_pct") or 0) >= 40.0:
+        row["result"] = ("blocked: bundled launch "
+                         f"{row['bundle_share'].get('outsider_pct')}% (§262)")
+        _log(row)
+        return row
     # §210A: G2 pre-entry overhang gate (INACTIVE until g2_gate.json).
     if ok and _g2_active():
         _block, _ev = _g2_preentry_gate(mint)
