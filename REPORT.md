@@ -5391,3 +5391,12 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Ledger note: both mints now have two real verified trades each (fast_birth + unintended plateau re-entry). Re-entry guard (§267) prevents recurrence.
 - Post-promotion era: 4 closes, +0.0110 SOL, zero rugs, 6 bundled blocks. Every close green since gates went blocking (n=4: DA8HaR, 2oumvU×2, E2PGus×2 — 5 counting both re-entry legs, 6 with 9Arnb9 pending).
 - Open: 7vEVYhk5 freerolled peak 1.79 (trailing); 9Arnb9hN fast_birth 28.9min peak 1.149 (abort30 verdict pending).
+
+## §269 — Close #65: U6XZ7TGQ46 (plateau, graduated pool) — abort15 GREEN
+
+- Entry: 0.1021 SOL via Jupiter pool path (curve already complete); insider overhang 18.83% (1 wallet), bundle gate fail-open (birth beyond 3000-sig window — known gap, logged)
+- Lifecycle: peak 1.037, trough 0.993, abort15 fired per time-based rule
+- Exit verified on-chain: meta.err None, wallet delta +0.10563 SOL gross (net +0.0035 post-fees), sig 3Xcho4isT6BjEA1s2EVNWh6utZ9pqBMmFwYdA8CBm9vpAUHNTjsgvxCFVKF7nvXJu9yQdhKhRbTtQBrdzygiHNAK
+- Logged pnl_sol: +0.00381
+- **Green streak: 11 consecutive closes since gates went blocking.**
+- Session gate tally: 8 bundled launches blocked at birth / 3 fast_birth entries; 1 plateau bundle block (sfDnG9Qw 60.94%)

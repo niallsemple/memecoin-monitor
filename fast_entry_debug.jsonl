@@ -54,3 +54,7 @@
 {"t": 1788470885.0138729, "phase": "thread_start", "mint": "Y3jPmWVztxRxKY2EVkmDSfvqmHQUuzBigsiU8aSpump"}
 {"t": 1788470885.017812, "phase": "lt_loaded", "mint": "Y3jPmWVztxRxKY2EVkmDSfvqmHQUuzBigsiU8aSpump"}
 {"t": 1788470933.961577, "phase": "thread_done", "mint": "Y3jPmWVztxRxKY2EVkmDSfvqmHQUuzBigsiU8aSpump", "result": "skip: bundled launch"}
+{"t": 1788471153.8808708, "phase": "spawned", "mint": "ABjabhtbGFhGiyRf88o2BVei8zMe9CjQz4yuBM5qpump", "creator": "ErWqXiGtsxzPSnFmRK8z8HMbfUsz6RELyG3GNVFRmz2d"}
+{"t": 1788471153.881269, "phase": "thread_start", "mint": "ABjabhtbGFhGiyRf88o2BVei8zMe9CjQz4yuBM5qpump"}
+{"t": 1788471153.8842812, "phase": "lt_loaded", "mint": "ABjabhtbGFhGiyRf88o2BVei8zMe9CjQz4yuBM5qpump"}
+{"t": 1788471204.103881, "phase": "thread_done", "mint": "ABjabhtbGFhGiyRf88o2BVei8zMe9CjQz4yuBM5qpump", "result": "skip: bundled launch"}
