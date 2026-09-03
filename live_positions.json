@@ -931,5 +931,40 @@
   "exit_sig": "oBs6WJXaCQHSgKkBSqwHwBnMt3dhAoT8gmwd6g7Ns1E1YqwvAHdTeFDQ8HG5tpYrrSwPjAL5M752Z4q4DmR1RKS",
   "pnl_sol": 0.03501,
   "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.13532 gross, net +0.03501 (stake 0.1006)"
+ },
+ "E1KoGikNSnku5orgk8h5Uv5tpJHCdWuQYmjKkZCpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788448881.117117,
+  "entry_px": 1.060130839024578e-09,
+  "tokens": 96403195,
+  "tokens_left": 0,
+  "size_sol": 0.1022,
+  "peak_mult": 1.0249088356164384,
+  "freerolled": false,
+  "sol_recovered": 0.10474568300000002,
+  "insider_overhang_pct": 5.97,
+  "insider_n": 6,
+  "blocklist_feeders": 0,
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788449831.239291,
+  "exit_sig": "65GadsrH8PKjQi8VCxnLrLJZT6LomH28M45xXiiAhiQdr7QqF5J59mTyQCTZt69gsTTAwzAGYziicvCshHHPXZBq",
+  "pnl_sol": 0.00255,
+  "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.10428 gross, net +0.00255 (stake 0.1022)"
+ },
+ "Nkb5DVdrbXDHSjwYjR4yCDF9eYw1JJv5PtTxYqWpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788450075.033525,
+  "entry_px": 5.331737223365194e-11,
+  "tokens": 1916823649,
+  "tokens_left": 1916823649,
+  "size_sol": 0.1022,
+  "peak_mult": 1.0,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }
