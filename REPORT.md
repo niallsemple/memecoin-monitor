@@ -5173,3 +5173,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - On-chain verify: sig BCLxFHfSouh8, meta.err None, wallet delta +0.126364 SOL net of 0.000205 fee. Recorded sol_recovered 0.126687. Clean first-try close.
 - Book: 43 closes, flat. Fresh-infra era: +0.0490 SOL on 4 trades (GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041, CGMB +0.0048).
 - NOTE: exit_reason/exit_sig/exit_t came back null on this close — check live_trader close-recording path before next entry.
+
+## §233 — Close-record field fix (no trading-logic change)
+- CGMB close exposed a recording gap: closes wrote `closed_reason` but never `exit_reason`/`exit_t`/`exit_sig`, forcing wallet-history recovery for verification.
+- Patched live_trader.py close block to also store exit_reason, exit_t, exit_sig. CGMB confirmed abort15 via its `closed_reason` field — no data was lost; all 43 closes intact.
+- Live next tracker pass.

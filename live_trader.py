@@ -980,6 +980,9 @@ def exit_watch():
                 else:
                     p["open"] = False
                     p["closed_reason"] = act
+                    p["exit_reason"] = act
+                    p["exit_t"] = time.time()
+                    p["exit_sig"] = res.get("sig")
                     p["pnl_sol"] = round(
                         p["sol_recovered"] - p["size_sol"], 5)
                 actions.append({"mint": mint, "act": act, "r": round(r, 3),
