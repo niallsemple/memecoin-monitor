@@ -5286,3 +5286,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Finding: EVERY traded mint in the fresh-infra era was big-seeded at ~86 SOL (rug GFhw 86.08, rug BESH 86.08, green 4hMy 86.08). Zero separation — the value is uniform across outcomes.
 - Root cause: our entry filter already selects only whale-seeded launches; the feed shows small-seed creates (0.06–3 SOL) exist but never qualify for entry. Within our tradeable universe, seed size is constant → no signal.
 - Hypothesis ledger: "deployer seed-buy size predicts rug" → FAILED → RETIRED. Next at-birth candidate: same-slot bundle share (supply bought by non-deployer wallets in the create slot).
+
+## §253 — Bundle-share detector: SHADOW LIVE — 3/4 rugs >=46% outsider share, greens <=15%
+- Built bundle_share.py: % of supply acquired by non-deployer wallets in the first 30s of life (fixed uiAmount-null bug: raw amount/decimals).
+- Retro on era mints: rugs GFhw 55.2%, BESH 53.6%, v4iV 46.1%, 5ogC 0.0% (outlier); greens 4hMy 14.7%, Vpp3 0.0%, 8nk9 0.0%, 4Pu3 0.01%.
+- A "skip if outsider_pct >= 40" gate would have blocked 3/4 rugs (75%) with ZERO green casualties — rug rate 25%→~6%, past the ~12% breakeven line. THE strongest signal found so far.
+- Wired SHADOW into buy() (non-blocking, fail-open). Hypothesis ledger: "high first-30s outsider bundle share predicts rug" → PROMISING (n=8 retro, needs forward accumulation before blocking).
+- Note: 5ogC rug had 0% bundle — a second rug archetype exists (non-bundled); scorecard covers repeats of that crew.

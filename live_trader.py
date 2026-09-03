@@ -275,6 +275,15 @@ def buy(mint, reason="signal"):
         row["deployer_score"] = deployer_local.score_mint(mint)
     except Exception as e:
         row["deployer_score"] = {"error": str(e)}
+    # §253: bundle-share (SHADOW, non-blocking) — % supply grabbed by
+    # non-deployer wallets in the first 30s. Retro: 3/4 rugs >=46%,
+    # 4/4 greens <=15%. Fail-open.
+    try:
+        import bundle_share
+        _dep = (row.get("deployer_score") or {}).get("deployer")
+        row["bundle_share"] = bundle_share.bundle_share(mint, _dep)
+    except Exception as e:
+        row["bundle_share"] = {"error": str(e)}
     # §210A: G2 pre-entry overhang gate (INACTIVE until g2_gate.json).
     if ok and _g2_active():
         _block, _ev = _g2_preentry_gate(mint)
