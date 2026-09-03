@@ -14,3 +14,19 @@
 {"t": 1788466542.007356, "phase": "thread_start", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump"}
 {"t": 1788466542.011001, "phase": "lt_loaded", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump"}
 {"t": 1788466593.345403, "phase": "thread_done", "mint": "A62Pcxf2yiYPNaqPbGXHeKFC9XktxwEZtYC5Kvypump", "result": "skip: bundled launch"}
+{"t": 1788467398.559577, "phase": "spawned", "mint": "2oumvUmvuk1xjrTiuDwjbeWBevrvUXyShX7qPRhepump", "creator": "AdKJYMff1H9DchnuybqwxrBzggDbURTH64Mw3GiLZyjx"}
+{"t": 1788467398.5601048, "phase": "thread_start", "mint": "2oumvUmvuk1xjrTiuDwjbeWBevrvUXyShX7qPRhepump"}
+{"t": 1788467398.5643442, "phase": "lt_loaded", "mint": "2oumvUmvuk1xjrTiuDwjbeWBevrvUXyShX7qPRhepump"}
+{"t": 1788467398.633186, "phase": "spawned", "mint": "GE573HJ6yLv7Tt78VC3UDH7SmjGVhstQncwJzVFCpump", "creator": "D6nMaeAuKRAy4vrN4ZEZ84F6mLW4vjWtZF2wURDfNYix"}
+{"t": 1788467398.633584, "phase": "thread_start", "mint": "GE573HJ6yLv7Tt78VC3UDH7SmjGVhstQncwJzVFCpump"}
+{"t": 1788467398.660417, "phase": "lt_loaded", "mint": "GE573HJ6yLv7Tt78VC3UDH7SmjGVhstQncwJzVFCpump"}
+{"t": 1788467447.427776, "phase": "thread_done", "mint": "GE573HJ6yLv7Tt78VC3UDH7SmjGVhstQncwJzVFCpump", "result": "skip: bundled launch"}
+{"t": 1788467471.656621, "phase": "thread_done", "mint": "2oumvUmvuk1xjrTiuDwjbeWBevrvUXyShX7qPRhepump", "result": "entered"}
+{"t": 1788467561.499251, "phase": "spawned", "mint": "pJ8rHu2KiP4wqr62mPPFZmn6UUzuC6jvwL2FZXkpump", "creator": "DuLBX34r1koh3N8dJFMdZHb2MGB41wST2iUhLzkJBuU6"}
+{"t": 1788467561.4995499, "phase": "thread_start", "mint": "pJ8rHu2KiP4wqr62mPPFZmn6UUzuC6jvwL2FZXkpump"}
+{"t": 1788467561.5022268, "phase": "lt_loaded", "mint": "pJ8rHu2KiP4wqr62mPPFZmn6UUzuC6jvwL2FZXkpump"}
+{"t": 1788467610.580151, "phase": "thread_done", "mint": "pJ8rHu2KiP4wqr62mPPFZmn6UUzuC6jvwL2FZXkpump", "result": "skip: bundled launch"}
+{"t": 1788467839.035094, "phase": "spawned", "mint": "DkeTwaa7jGuVKCeqDNtY5VHHa5Hmdy52W5K5AW4pump", "creator": "HDPFgtSJ3PpDbSsxxnVJeT4Z2iffru9q8J1L1n6TQ852"}
+{"t": 1788467839.035563, "phase": "thread_start", "mint": "DkeTwaa7jGuVKCeqDNtY5VHHa5Hmdy52W5K5AW4pump"}
+{"t": 1788467839.038929, "phase": "lt_loaded", "mint": "DkeTwaa7jGuVKCeqDNtY5VHHa5Hmdy52W5K5AW4pump"}
+{"t": 1788467886.3997388, "phase": "thread_done", "mint": "DkeTwaa7jGuVKCeqDNtY5VHHa5Hmdy52W5K5AW4pump", "result": "skip: bundled launch"}

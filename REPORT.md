@@ -5360,3 +5360,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 ## §263 — MAE data gap closed: trough_mult now tracked per position
 - live_trader: open_position inits trough_mult=1.0; exit_watch maintains min trough alongside peak_mult (MFE). Applies to all venues/paths from the next entry.
 - review60.py per-trade labels now print MFE and MAE columns.
+
+## §264 — Close #61: 2oumvU abort15 +0.00143 SOL — birth-window entries 2-for-2 green
+- 2oumvUmv: entered +64.4s after birth (bundle 0.0%, deployer clean). Peaked 1.029, trough NEVER below 1.00 (first MAE label on record), abort15 at 16.2min. Verified: meta.err None, wallet delta +0.051166 gross, net +0.00143 (sig 4b63zDiwAWF).
+- Birth-window cohort: E2PGus +0.00248, 2oumvU +0.00143 → 2/2 green, zero drawdown-below-entry on both (MAE 1.00). Contrast with plateau entries which routinely dipped (5ogC-style) or rugged.
+- Fast-path session: 6 evals → 4 bundled blocks (61.6/60.9/60.4/57.45%), 2 entries, 2 green.
+- Post-promotion era tally: +0.00391 SOL on 1 close (2oumvU is #61, first post-§262 close) + 4 avoided bundled launches.
