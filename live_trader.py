@@ -710,7 +710,7 @@ def open_position(mint, size_sol, mode, venue="curve", entry_px=None,
                  "entry_t": time.time(),
                  "entry_px": entry_px, "tokens": tokens,
                  "tokens_left": tokens, "size_sol": size_sol,
-                 "peak_mult": 1.0, "freerolled": False,
+                 "peak_mult": 1.0, "trough_mult": 1.0, "freerolled": False,
                  "sol_recovered": 0.0}
     _save_positions(pos)
     _log({"action": "open_position", "mint": mint, "mode": mode,
@@ -904,6 +904,9 @@ def exit_watch():
                 px = _price_sol_per_token(st)
             r = px / p["entry_px"] if p["entry_px"] else 0.0
             p["peak_mult"] = max(p["peak_mult"], r)
+            # §263: MAE label (60-close review data gap) — trough multiple
+            # alongside MFE peak_mult, for falsification-grade outcome labels.
+            p["trough_mult"] = min(p.get("trough_mult", 1.0), r)
             mins = (time.time() - p["entry_t"]) / 60
             # §131: nm_abort — momentum-stall exit. Forward paper tally:
             # the cohort that touched 1.30x but failed to reach the 1.5x

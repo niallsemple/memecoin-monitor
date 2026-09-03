@@ -5356,3 +5356,7 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Known uncovered archetype: 5ogC-style non-bundled rug (0% bundle, first-seen deployer). Scorecard covers repeats only. Mitigation remains §235 write-off floor + small size.
 - Data gap logged: MAE not recorded in position schema; add trough tracking next schema upgrade.
 - Hypothesis ledger status: "bundle share predicts rug" → CONFIRMED (promoted). "repeat-offender deployer" → CONFIRMED as insurance (promoted). "prior-green deployer predicts green" → TESTING (n=4, all green). "birth-window entry captures reprice" → TESTING (n=1, +0.00248).
+
+## §263 — MAE data gap closed: trough_mult now tracked per position
+- live_trader: open_position inits trough_mult=1.0; exit_watch maintains min trough alongside peak_mult (MFE). Applies to all venues/paths from the next entry.
+- review60.py per-trade labels now print MFE and MAE columns.

@@ -40,7 +40,7 @@ def load_closes():
         if not reason or p.get("pnl_sol") is None:
             continue
         out.append({"mint": m, "reason": reason, "pnl": p["pnl_sol"],
-                    "size": p.get("size_sol"), "peak": p.get("peak_mult"),
+                    "size": p.get("size_sol"), "peak": p.get("peak_mult"), "trough": p.get("trough_mult"),
                     "entry_t": p.get("entry_t"), "exit_t": p.get("exit_t")})
     out.sort(key=lambda r: r.get("exit_t") or 0)
     return out
@@ -179,8 +179,8 @@ def main():
           f"{'prior_rugs':>10} {'bundle%':>8}")
     for r in era:
         print(f"{r['mint'][:8]:10} {r['reason']:15} {r['pnl']:>+9.5f} "
-              f"{(r['peak'] or 0):>6.3f} {str(r['prior_rugs']):>10} "
-              f"{str(r['bundle']):>8}")
+              f"{(r['peak'] or 0):>6.3f} {(r.get('trough') or 1):>6.3f} "
+              f"{str(r['prior_rugs']):>10} {str(r['bundle']):>8}")
     print("   (MAE not recorded in position schema — gap flagged for review)")
 
     tally(closes, "ALL 57+")
