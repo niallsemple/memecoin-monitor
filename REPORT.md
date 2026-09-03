@@ -5196,3 +5196,7 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - On-chain: exit sig 5zpoH1yYmym1J8W6..., err None, wallet +0.119813 net vs recorded 0.120169 — clean first-try close.
 - §233 field fix validated: exit_reason/exit_t/exit_sig all populated on this close.
 - Fresh-infra era: −0.0686 SOL on 6 trades. Book flat at 45 closes.
+
+## §237 — Close #46: BwdQwg65 abort15 +0.00491 SOL (verified)
+- Pool entry, peak 1.0424, closed r≈1.04 at ~16.9min via abort15. Sig 4NpseF2uzNPdKoLz..., err None, wallet +0.120499 net vs recorded 0.120814 — clean first-try.
+- Fresh-infra era: −0.0637 SOL on 7 trades. Book flat at 46 closes; 14 to re-review.

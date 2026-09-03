@@ -3876,3 +3876,9 @@
 | 06:46 | robinhood | `0x9BAF5f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,916 mc=$65,369 | chain:robinhood no-audit-adapter | The real BAWSAQ, with every ticker from GTA.   All fees BURN BAWSAQ, All fees fr |
 | 06:46 | solana | `7aFGQ7fD…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$5,757 | name=Monkey Market symbol=MM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=7 |  |
 | 06:46 | robinhood | `0x7579CD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$57,285 mc=$243,740 | chain:robinhood no-audit-adapter | Google were close to dropping their own cryptocurrency called SchmidtCoin back i |
+| 07:26 | robinhood | `0x2Ae65b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,289 mc=$30,587 | chain:robinhood no-audit-adapter |  |
+| 07:26 | robinhood | `0x91CF7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,560 mc=$96,342 | chain:robinhood no-audit-adapter | The Datadog of Robinhood backed by $DDOG stock |
+| 07:26 | robinhood | `0x16fE89…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,184 mc=$48,289 | chain:robinhood no-audit-adapter |  |
+| 07:26 | solana | `8nLN2B1x…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,536 | name=The Odyssean Retriever symbol=Maru; contract:clean; rugcheck_score=1 lpLocked=100%; t |  |
+| 07:26 | solana | `AdpzjgRP…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$9,911 | name=Patience Pays symbol=Patience; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 07:26 | robinhood | `0x680516…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$74,968 mc=$92,914 | chain:robinhood no-audit-adapter | Financial markets once belonged to the few.  Data lived inside expensive termina |

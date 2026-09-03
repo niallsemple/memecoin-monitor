@@ -752,5 +752,27 @@
   "exit_sig": "5zpoH1yYmym1J8W6RRD4aqmNxSq5jqZY9SCaBVqvRUYGVdiPQAooTgiWKfFRLPx5pgHfgUzdmkCLxPVqEEmqzNbt",
   "pnl_sol": 0.00437,
   "actual_fill_note": "verified on-chain: sig 5zpoH1yYmym1J8W6..., meta.err None, wallet +0.119813 SOL net vs recorded 0.120169 (fee diff). Clean first-try close; exit_sig/exit_t fields now populate correctly."
+ },
+ "BwdQwg65NUvLkeQ4KWJAH7rCkypuCFFcA7wmVJ36pump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788421279.542028,
+  "entry_px": 2.7341178461833093e-10,
+  "tokens": 423902723,
+  "tokens_left": 0,
+  "size_sol": 0.1159,
+  "peak_mult": 1.04239790336497,
+  "freerolled": false,
+  "sol_recovered": 0.120813917,
+  "insider_overhang_pct": 4.96,
+  "insider_n": 2,
+  "blocklist_feeders": 0,
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788422186.1936781,
+  "exit_sig": "4NpseF2uzNPdKoLzh4sr5sTMF2DQQyiCLkZ9MqQdZffmygepL5p4TGLAuQRytRjBiZcDqUFfQzpzdoP2AcBNXWR4",
+  "pnl_sol": 0.00491,
+  "actual_fill_note": "verified on-chain: sig 4NpseF2uzNPdKoLz..., err None, wallet +0.120499 SOL net. Clean first-try close."
  }
 }
