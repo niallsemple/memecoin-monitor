@@ -5333,3 +5333,11 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - The curve-collector Automation's codeEntry is assets/automation.py (assetsRoot) — a snapshot of tracker_live.py frozen Sep 2 21:03. It INLINES the tracker; live_trader.py edits went live only because the tracker importlib-loads it from MON each pass. tracker_live.py edits (§257, §257b) were never executed — VOXEL/DINGALING/WOTF births armed-logged by the stale copy with no spawn.
 - Fix: copied current tracker_live.py (with §257+§257b) over assets/automation.py, cleared its __pycache__, verified byte-identical. Effective next pass (~21:04 BST).
 - deploy_tracker.sh added: compile-check + copy + pycache-clear + verify. MUST be run after every tracker_live.py edit. (Earlier tracker edits since Sep 2 21:03 were also not live — diff showed only §257 lines differed, so nothing else was lost.)
+
+## §260 — FAST-ENTRY LIVE AND BLOCKING: first two birth-window evals both BLOCKED as bundled launches (61.6%, 60.9%)
+- Deployment fixed (§259): patched tracker now in the Automation assets copy; first patched pass (21:04 BST) spawned fast-entry 2s after WOFI's birth. Debug ledger traced every phase clean.
+- Eval #1: 7vEVYhk5 (WOFI) — deployer 2GMKDCCe first-seen clean; bundle_share outsider_pct 61.64% (99 txs, 55 buyers in first 30s) → **skip: bundled launch** at birth+53s.
+- Eval #2: sfDnG9Qw — deployer Hb1brLEG first-seen clean; outsider_pct 60.94% → **skip: bundled launch** at birth+48s.
+- Both match the rug archetype from §253 (era rugs 46-55%; greens <=15%) — at even higher bundle share. Had the plateau path entered these at +72min, they'd be rug candidates #5/#6. The blocking gate is doing in 50 seconds what the old funnel never could.
+- WATCH: the plateau path (s60nm5fr hook) still has these gates as SHADOW-only — if it buys 7vEV/sfDn later and they rug, that's the final proof to promote the gate to blocking on ALL paths at the 60-close review.
+- Hypothesis ledger: "high first-30s outsider bundle share predicts rug" → PROMISING++ (2 more forward blocks, both would-be entries refused).

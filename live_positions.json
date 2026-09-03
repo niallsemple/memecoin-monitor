@@ -1063,5 +1063,22 @@
   "exit_sig": "39YGXY3tguWdK5UZA3RriD1PfAEmJxDfJT3SAyiUXq3tQwT5A38fRYLLfUtLzEGF7KUyfxXBQNERzjqr9kbm4a1d",
   "pnl_sol": 0.00396,
   "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.107465 gross (stake 0.1038), net +0.00396 per ledger"
+ },
+ "E2PGusyRyu5XPqrDMfAGeLhqD19koaZwpjqHHVBVpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788466160.6527371,
+  "entry_px": 9.35090313173154e-10,
+  "tokens": 53470771,
+  "tokens_left": 53470771,
+  "size_sol": 0.05,
+  "peak_mult": 1.00224698,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 79.31,
+  "insider_n": 1,
+  "blocklist_feeders": 0,
+  "entry_kind": "fast_birth"
  }
 }
