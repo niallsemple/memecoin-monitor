@@ -5252,3 +5252,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - RPC history enumeration FAILED for this use: these wallets do 100 txs per ~100s at launch (operational/distribution wallets), so creates are buried 1000s of sigs back — too slow per-entry. Local feed lookup is instant and free.
 - deployer_local.py + score_mint() wired as SHADOW, non-blocking, into live_trader.buy() — logs deployer/prior/prior_rugs on every entry. Hypothesis ledger: "repeat-offender deployer predicts rug" → TESTING (n=4 separation so far; needs forward accumulation).
 - Full-history deep scan (deployer_score.py, create discriminator d6904cec5f8b31b4 confirmed) kept for offline post-mortems.
+
+## §247 — Scorecard retro across all 52 closes: rare but real
+- 51 unique deployers across 52 closed positions; only 2 deployers ever repeated in our traded set:
+  - D84GJoqi: v4iV RUG then BESH RUG — scorecard would have blocked BESH (1 of 4 fresh-infra era rugs, 25%).
+  - Aav6wYFk: BF13 green then HATB green — repeat deployer with clean history went green twice. Flip-side signal: prior-green deployers may be positively predictive.
+- Hypothesis ledger updates: "repeat-offender deployer predicts rug" → TESTING (would have caught 25% of era rugs). NEW hypothesis: "prior-green repeat deployer predicts green" → NEW (n=2, both green).
+- Coverage caveat: scorecard only sees deployers we've observed in our own feed; grows with uptime. Deep-history offline scan remains available for post-mortems.
