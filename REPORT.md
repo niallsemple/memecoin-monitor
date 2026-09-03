@@ -5384,3 +5384,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Collateral damage: open_position overwrote their closed-trade records in live_positions.json (close count 62→60; §261/§264 fill notes lost from the file but preserved in git history + REPORT.md). Ledger note: both mints will close TWICE — both trades were real, so the era tally counting both is correct accounting.
 - Fix: buy() and curve_buy() now refuse any mint already present in the positions file (open OR closed) — re-entries were never in the validated model. Fast path inherits the guard via the central buy functions.
 - Meanwhile: 7vEVYhk5 (bundled stress test) FREEROLLED at 1.5x (peak 1.669) — first live freeroll of the entire era. Its final close remains the gate's miss-cost datum.
+
+## §268 — Closes #63/#64: the §267 re-entries both closed GREEN (2oumvU +0.00256, E2PGus +0.00391)
+- 2oumvUmv (2nd trade, 0.1018): abort15 at ~14min, verified meta.err None, wallet +0.10407 gross, net +0.00256 (sig Rx53MEuz).
+- E2PGusyR (2nd trade, 0.0967): abort15 at ~15min, verified meta.err None, wallet +0.100328 gross, net +0.00391 (sig pXF3H9Nc).
+- Ledger note: both mints now have two real verified trades each (fast_birth + unintended plateau re-entry). Re-entry guard (§267) prevents recurrence.
+- Post-promotion era: 4 closes, +0.0110 SOL, zero rugs, 6 bundled blocks. Every close green since gates went blocking (n=4: DA8HaR, 2oumvU×2, E2PGus×2 — 5 counting both re-entry legs, 6 with 9Arnb9 pending).
+- Open: 7vEVYhk5 freerolled peak 1.79 (trailing); 9Arnb9hN fast_birth 28.9min peak 1.149 (abort30 verdict pending).

@@ -96,5 +96,26 @@
   "txs_in_window": 70,
   "outsider_pct": 0.0,
   "n_buyers": 238
+ },
+ "9s8SkJKvqzS3zeRAMbm28p5ztC8Z4Yg8KXgmaj1jpump": {
+  "birth": 1788469711,
+  "txs_in_window": 96,
+  "outsider_pct": 61.49,
+  "deployer_pct": 79.31,
+  "n_buyers": 54
+ },
+ "Bt6aabUNmLX6wEig3TyvYvpC3GkJNvwBJVNtdo2ypump": {
+  "birth": 1788469922,
+  "txs_in_window": 298,
+  "outsider_pct": 61.2,
+  "deployer_pct": 79.31,
+  "n_buyers": 69
+ },
+ "jrmArmuo1Pw7pmSGwLdecFt7KgXHdr9sexpA2Espump": {
+  "birth": 1788470081,
+  "txs_in_window": 291,
+  "outsider_pct": 55.87,
+  "deployer_pct": 79.31,
+  "n_buyers": 54
  }
 }
