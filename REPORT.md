@@ -5178,3 +5178,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - CGMB close exposed a recording gap: closes wrote `closed_reason` but never `exit_reason`/`exit_t`/`exit_sig`, forcing wallet-history recovery for verification.
 - Patched live_trader.py close block to also store exit_reason, exit_t, exit_sig. CGMB confirmed abort15 via its `closed_reason` field — no data was lost; all 43 closes intact.
 - Live next tracker pass.
+
+## §234 — Close #44: GFhwZDQk INSTANT RUG, −0.12196 SOL (first full-stake loss of fresh-infra era)
+- Pool-venue entry 1788412891, 0.122 SOL, 2.23B tokens, insider overhang 18.6% (19 insiders, 0 blocklist feeders — gates passed).
+- 3.0 min later Jupiter sell quote returned r=0.0 → panic exit. On-chain verify: entry spent 0.124279; exit tx succeeded but returned ~0 SOL — pool liquidity was gone. Real rug, not a quote artifact. 2.23 dust tokens remain.
+- COST BUG: sell fees (0.000166) exceeded proceeds (0.0000395). Selling at r≈0 is net-negative vs just abandoning the tokens. Candidate fix: min-proceeds floor (~0.001 SOL) below which panic/fade sells are skipped and the position is written off instead.
+- Fresh-infra era: −0.0730 SOL on 5 trades (GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041, CGMB +0.0048, GFhw −0.1220). Wallet 2.31558 SOL.
+- VERDICT IMPACT: this is the cohort's first −100% stake close, breaching the §1 worst-case bound (−25%) the HOLD verdict rested on. Scale-up case at 60 closes now needs this treated as a base-rate event, not an anomaly.
