@@ -5233,3 +5233,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - KEY FINDING: ALL five deployers (rugs AND greens) are high-activity serial launchers (775–1000+ txs). Deployer activity level does NOT separate rugs from greens.
 - Hypothesis ledger: "shared deployer/funder predicts rug" → FAILED (n=3 rugs, 3 distinct deployers). "Deployer activity level predicts rug" → FAILED. Status: both RETIRED.
 - Next creator-intel hypothesis (NEW, untested): per-deployer launch OUTCOME history (rug rate of past tokens) — requires enumerating each deployer's created mints and scoring outcomes; bigger build, queue for after 60-close review.
+
+## §244 — Close #51: 4Pu3 nm_abort +0.02575 SOL — strongest fresh-infra trade yet
+- 4Pu3iy2J (pool venue, size 0.1048, insN 19): survived abort15 (r≥1.08 at 15min), reached r=1.181 by 21.6min, closed at 26.4min on nm_abort. Net +0.02575. On-chain verified: meta.err None, wallet delta +0.13022 gross.
+- First fresh-infra position to pass BOTH abort gates and close via nm_abort with a real signature. Validates that the abort-gate stack can catch a genuine runner's exit, not just cut losers.
+- Fresh-infra era tally: −0.2516 SOL on 11 trades (8 green smalls incl. 4hMy +0.041, 4Pu3 +0.0258; 3 rugs −0.3446). Rug rate 27% — still above the ~12% breakeven threshold.
+- Total closes: 51/60 toward the gate re-review.

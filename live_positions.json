@@ -865,19 +865,26 @@
   "actual_fill_note": "verified on-chain: sig 65mi37EqgDJP6yk9..., err None, wallet +0.112231 SOL net. Clean first-try."
  },
  "4Pu3iy2JVbHhiW4QreYDjceQVhWbgGMb5Ravf7Bapump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788433312.315246,
   "entry_px": 3.793842710621899e-12,
   "tokens": 27623707147,
-  "tokens_left": 27623707147,
+  "tokens_left": 0,
   "size_sol": 0.1048,
-  "peak_mult": 1.076240467557252,
+  "peak_mult": 1.41014231870229,
   "freerolled": false,
-  "sol_recovered": 0.0,
+  "sol_recovered": 0.130551292,
   "insider_overhang_pct": 16.37,
   "insider_n": 19,
-  "blocklist_feeders": 0
+  "blocklist_feeders": 0,
+  "nm_touch_t": 1788434324.9766788,
+  "closed_reason": "nm_abort",
+  "exit_reason": "nm_abort",
+  "exit_t": 1788434692.475688,
+  "exit_sig": "5fYFaEmA7bN6c4X98dJwPWvVSUU49eQ9S96raKJjYrE1HyzkxE39RvuEQAGF6WyT9ZK3hqMkke3jjbqzXrkawBED",
+  "pnl_sol": 0.02575,
+  "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.13022 SOL gross, net +0.02575 (stake 0.1048)"
  }
 }
