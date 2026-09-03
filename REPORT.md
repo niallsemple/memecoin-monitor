@@ -5322,3 +5322,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Guards: one fast_birth position at a time; skip if mint already open; respects STOP_LIVE_TRADING via live_enabled(); FE_ACTIVE prevents duplicate threads per mint.
 - Status: LIVE from next tracker pass (importlib reload). Hypothesis ledger: "birth-window entry captures the birth→plateau reprice" → TESTING, first live fire pending.
 - Known limits: pass-gap births entered +2-4 min instead of +1; Jupiter indexing lag may skip some born-terminal entries (logged as "no jupiter quote yet"); MAE still unrecorded (§254 gap).
+
+## §258 — Close #59: 7P7jccqq abort15 +0.00396 SOL — 7-for-7 green on clean-gate entries
+- 7P7jccqq (size 0.1038, deployer mVU2wo9F first-seen prior_rugs=0, bundle 0.0% — both shadow gates clean): peaked 1.035, failed 15-min bar, abort15. Verified: meta.err None, wallet delta +0.107465 gross, net +0.00396 (sig 39YGXY3tguWd).
+- Clean-gate forward record: 7 entries, 7 green, 0 rugs since scorecard+bundle stack live.
+- Fresh-infra era tally: −0.2736 SOL on 20 trades (15 green, 4 rugs).
+- Total closes: 59/60 — ONE more close to the gate-decision review.

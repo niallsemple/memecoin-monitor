@@ -1043,19 +1043,25 @@
   "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.107907 gross (stake 0.1037), net +0.00448 per ledger"
  },
  "7P7jccqqer23KEtRTrsMYUWeaAjFajURACEkYFNZpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788462108.354538,
   "entry_px": 5.833924524022997e-10,
   "tokens": 177924825,
-  "tokens_left": 177924825,
+  "tokens_left": 0,
   "size_sol": 0.1038,
-  "peak_mult": 1.0215732080924855,
+  "peak_mult": 1.0381862716763004,
   "freerolled": false,
-  "sol_recovered": 0.0,
+  "sol_recovered": 0.107763735,
   "insider_overhang_pct": 18.53,
   "insider_n": 20,
-  "blocklist_feeders": 0
+  "blocklist_feeders": 0,
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788463052.8460312,
+  "exit_sig": "39YGXY3tguWdK5UZA3RriD1PfAEmJxDfJT3SAyiUXq3tQwT5A38fRYLLfUtLzEGF7KUyfxXBQNERzjqr9kbm4a1d",
+  "pnl_sol": 0.00396,
+  "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.107465 gross (stake 0.1038), net +0.00396 per ledger"
  }
 }
