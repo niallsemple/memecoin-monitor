@@ -5300,3 +5300,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Per-trade labels: MFE (peak_mult) printed per trade; MAE not recorded in position schema — flagged as a data gap for post-#60 schema upgrade.
 - COUNTERFACTUAL (era, gates BLOCKING): bundle>=40 skip → 3/4 rugs blocked (GFhw 55.2, v4iV 46.1, BESH 53.6), ZERO green casualties, era net −0.2820 → **+0.0562 SOL** (ROI −14.3% → +2.8%). prior_rugs>=1 → 0 blocks in-era (scorecard went live at close #53; would have caught BESH via D84GJoqi repeat had it existed). Both gates → same +0.0562.
 - Verdict preview for the 60-close review: bundle-share ≥40% is the strongest gate candidate found; forward shadow evidence since §253: 4 entries, all 0.0% bundle, all green — no contradiction yet.
+
+## §255 — Close #58: 8zAHQ8di (GOOGL) abort15 +0.00448 SOL — first entry scored by BOTH shadow gates, went green
+- 8zAHQ8di (size 0.1037, deployer 5NMojuub first-seen prior_rugs=0, bundle_share 0.01% — both shadow gates CLEAN): peaked 1.031, failed the 15-min momentum bar, abort15 exit at ~15.9min. On-chain verified: meta.err None, wallet delta +0.107907 gross, net +0.00448 (sig 1E7AeB5GrAo).
+- Shadow-gate forward record since §246+§253: 5 entries, all clean-profile, all green (Vpp3, E1Ko, Nkb5, X11c, 8nk9 + GOOGL = 6 entries 6 green counting from scorecard-live). Zero rugs.
+- Fresh-infra era tally: −0.2775 SOL on 19 trades (14 green, 4 rugs).
+- Total closes: 58/60.
