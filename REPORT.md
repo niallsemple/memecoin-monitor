@@ -5306,3 +5306,11 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Shadow-gate forward record since §246+§253: 5 entries, all clean-profile, all green (Vpp3, E1Ko, Nkb5, X11c, 8nk9 + GOOGL = 6 entries 6 green counting from scorecard-live). Zero rugs.
 - Fresh-infra era tally: −0.2775 SOL on 19 trades (14 green, 4 rugs).
 - Total closes: 58/60.
+
+## §256 — STRUCTURAL: true birth→entry lag is 24–269 min (median ~72 min) — the move happens before we enter
+- Owner directive: "find these coins 5-10 minutes earlier." Measured birth (curves.jsonl _ts, authoritative — bundle_cache births were wrong for >1000-sig mints due to 10-page cap) vs entry_t for all 19 era trades: lag range 23.7–269.1 min, median ~72 min. We enter on the POST-MOVE PLATEAU, not the move.
+- Whale-seeded birth mcap is uniform ~410.9 SOL (§252). First monitor ticks (+4 to +70 min — monitoring itself lags) show the reprice already done: GOOGL 411→6,638 by +16min; FW5A +4min already 60,960. entry/2min-price ratios mostly 1.02–1.56: our late entry and a +2min entry buy nearly the SAME plateau price — the edge is birth→first-minutes, entirely missed.
+- 4Pu3 clean proof (curve-venue ticks from birth): mcap 172.6 at birth → our entry 3,199 (18.5×) → peak 5,967 (34.6× birth). We made +25% buying at 18.5×; birth entry = ~34× on the same coin.
+- Rugs invert the timing story: GFhw pumped 411→42,649 by +8min, dead (0.3) by our +89min entry — crews pump the first 10 min then pull; we were buying corpses. Early entry ALSO changes rug exposure: at-birth gates (scorecard + bundle-share, both computable by +40s) block 3/4 before entry.
+- Hypothesis ledger: "birth-window entry (~+1-2min) on whale-seed creates that pass deployer+bundle gates captures the birth→plateau reprice (10-30×) that plateau entry cannot" → NEW, top priority. This subsumes the exit-timing problem: a +2min entry makes abort15/nm gates evaluate the real move instead of plateau noise.
+- BUILD QUEUE: fast_entry.py — armed-birth trigger (WS feed, ~1s) → instant local scorecard → +35s bundle_share → bonding-curve buy at ~+1min → same exit stack. Size small (0.05 SOL) during validation.
