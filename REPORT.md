@@ -5221,3 +5221,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Owner added DARWIN_TRAINING_LAB.md to the goal: a 12-phase research doctrine — point-in-time integrity, wallet genealogy, creator intelligence, blind replay, outcome labels, execution-adjusted EV, falsification-first, regime analysis, hypothesis ledger with status lifecycle.
 - Alignment check: our current practice already follows much of it (fresh-era forward testing = Phase forward test; §240 rug post-mortem = falsification; gates shadow-pending = execution reality). New explicit asks to fold in: hypothesis ledger with NEW→FAILED status lifecycle, per-trade MFE/MAE outcome labels, and the structured 10-section cycle output.
 - Immediate mapping: REPORT.md sections serve as the hypothesis ledger; will add status tags going forward.
+
+## §242 — Closes #49/#50: v4iV rug after nm_touch −0.1102; p2gP abort15 +0.00801 (both verified)
+- v4iV886R: strongest early shape of the era — cleared abort15 (1.08) AND abort30 (1.15), peaked 1.3253 touching the nm gate at ~50min — then collapsed to r<0.80 before the 5-min nm clock elapsed; panic fired into dead liquidity → §235 write-off, dust kept (394.5 tokens), fee saved. FIRST rug to pass the nm gate: "touched 1.30" is no longer a quality guarantee.
+- p2gP8b5W: textbook abort15, r≈1.077 at 15min, +0.00801 verified (sig 65mi37EqgDJP, err None, wallet +0.112231 net).
+- Era tally: −0.2773 SOL on 10 trades — 7 green smalls (+0.0673 total) vs 3 rugs (−0.3446). Rug rate 30% and rising; greens average +0.0096. Expectancy needs rug rate <~12% at this payoff asymmetry.
+- Ledger implication for 60-close review: the entry funnel is selecting rugs at 3-4x the sustainable rate. Options on the table: (a) find pre-entry rug features (none in current fields, §240), (b) tighten sizing further, (c) reduce trade frequency to highest-conviction only, (d) accept and cap.

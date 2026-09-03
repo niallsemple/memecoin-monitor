@@ -3900,3 +3900,21 @@
 | 09:26 | robinhood | `0x7b217E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,077 mc=$90,782 | chain:robinhood no-audit-adapter | EQUAI centers on breaking the AI monopoly, initially leveraging AI-generated vid |
 | 09:26 | solana | `7bdCY31A…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:92% | liq=$0 mc=$6,733 | name=The Deer symbol=DEER; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=91. | EVERYONE KEEPS SAYING SOL IS DEAD AND DRY RN BUT I THINK WE’RE LITERALLY JUST IN |
 | 09:26 | solana | `EfxdVwr7…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,006 | name=Leh Undrews symbol=Leh; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 |  |
+| 09:46 | solana | `3EFotDUa…` | FAIL | TOP10_HEAVY:54% | liq=$28,341 mc=$126,579 | name=Kirkland symbol=KIRKLAND; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Kirkland Signature energy. Pure value. No fancy packaging. 🛒 |
+| 09:46 | robinhood | `0x4B4967…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,760 mc=$71,896 | chain:robinhood no-audit-adapter | Bringing MSFT forgotten Digital dog back to life on PONS |
+| 09:46 | robinhood | `0x8B1B56…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,819 mc=$13,147 | chain:robinhood no-audit-adapter | The meme coin built for those chasing the million. |
+| 09:46 | solana | `HeKCjqtk…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$17,884 | name=Lottery ticket with a dog on it symbol=Memecoin; contract:clean; rugcheck_score=1 lpL |  |
+| 09:46 | robinhood | `0x428526…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$48,924 mc=$209,936 | chain:robinhood no-audit-adapter | Axio AI is an open protocol where autonomous agents discover each other, agree o |
+| 09:46 | solana | `DjVGs3rL…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$11,870 mc=$26,314 | name=Memecoin for kids symbol=Kidcoin; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 10:06 | bsc | `0xE79206…` | CAUTION | PROXY | liq=$25,604 mc=$31,784 | holders=0; buy_tax= sell_tax= | Flork’s wife is live on BSC, paired with $BTC. |
+| 10:06 | solana | `3PkXvrHS…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$19,668 | name=Monkey In Pain symbol=MIP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 10:06 | robinhood | `0x9EE2B5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,042 mc=$18,283 | chain:robinhood no-audit-adapter |  |
+| 10:06 | robinhood | `0x723790…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The first-ever agentic swarm AI research for cancer, where the agents are reward |
+| 10:06 | robinhood | `0x249581…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,474 mc=$32,329 | chain:robinhood no-audit-adapter | Robinhood: MEMES WORLD ORDER  WE RESUMED THE MEMES WORLD ORDER, welcome the the  |
+| 10:06 | robinhood | `0x22e4Bc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,838 mc=$92,750 | chain:robinhood no-audit-adapter | FOMO for tokenized stocks. Trade, share your thesis, see what others think. Web, |
+| 10:26 | solana | `s3Xi9Z2B…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$15,253 | name=Kit the Fox symbol=Kit; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=56 |  |
+| 10:26 | robinhood | `0xd030a4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | fatman, max stats in one category. |
+| 10:26 | solana | `XhKjwneY…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$17,383 | name=Goldfish Brained Broccoli Heads symbol=Goldfish; contract:clean; rugcheck_score=1 lpL |  |
+| 10:26 | solana | `DRbEq7UU…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$17,805 | name=$3 and a dream symbol=3; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=5 | HELLO? THIS IS ACTUALLY SUCH A FUNNY ASS NARRATIVE,   A British Celeb named Kati |
+| 10:26 | robinhood | `0xb9D803…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$53,963 mc=$336,000 | chain:robinhood no-audit-adapter | 1 buy means you taken down 1 bear. |
+| 10:26 | solana | `DNJe1Vct…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$22,292 | name=RSA-260 symbol=RSA-260; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=72 | 43973286548448269237950681025058725717218835265533496595612569245059739395975934 |
