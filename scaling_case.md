@@ -1,7 +1,8 @@
 # Fast-Entry Size-Scaling Case (0.05 → 0.10 SOL)
 
-Status: DRAFT — pending 3rd fast_birth close (9Arnb9hN) before presenting to owner.
-Do NOT implement scaling without owner sign-off.
+Status: CONDITION FAILED — 9Arnb9hN rugged at 55 min (§270). Birth-entry record now 2 green / 1 rug.
+Scaling stays OFF at 0.05 SOL. Revisit only after: (a) P_BIRTH_CAP_MIN 30-min cap proves it
+converts rugs to small greens across 3+ more birth entries, AND (b) owner approval.
 
 ## Evidence: birth-window entries to date
 

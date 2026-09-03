@@ -5400,3 +5400,14 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Logged pnl_sol: +0.00381
 - **Green streak: 11 consecutive closes since gates went blocking.**
 - Session gate tally: 8 bundled launches blocked at birth / 3 fast_birth entries; 1 plateau bundle block (sfDnG9Qw 60.94%)
+
+## §270 — Close #66: 9Arnb9hN (fast_birth) — RUG, -0.0500 SOL. Streak ends at 11.
+
+- Entry: birth +66s, 0.05 SOL. Birth metrics CLEAN: outsider_pct 0.02% (189 buyers), deployer prior=0/rugs=0
+- Lifecycle: peak 1.251, passed abort15 and abort30 above water, rugged at 55 min (1.25 -> 0.001 instantly, liquidity gone, write-off per §235 floor)
+- FORENSICS (the valuable part):
+  - Deployer wallet EUu1J2nT created 2.9 min before launch, 638 scripted txs — but GREEN entries' deployers were even fresher (0.3 and 1.0 min). Fresh wallets are universal in this market: wallet-age gate has NO discrimination.
+  - insider overhang 79.33% identical across all three birth entries (curve-holding artifact) — not a discriminator either.
+  - CONCLUSION: with current metrics, entry gates CANNOT separate this rug archetype from the greens. The edge is exit timing: 2/2 greens exited ~15 min; the one held past 30 min rugged.
+- FIX DEPLOYED: P_BIRTH_CAP_MIN = 30.0 — non-freerolled fast_birth positions now hard-exit at 30 min (birth_cap), freerolled house-money keeps the normal trail. Counterfactual on 9Arnb9hN: exit at 30 min above water (~1.1-1.25x) => +0.005..+0.012 instead of -0.050.
+- Scaling case: condition 2 (zero birth-entry rugs) FAILED. Fast-entry scaling stays OFF at 0.05.

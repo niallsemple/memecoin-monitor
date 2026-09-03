@@ -1142,7 +1142,7 @@
   "tokens": 94402286,
   "tokens_left": 23600572,
   "size_sol": 0.0961,
-  "peak_mult": 1.9047021864941516,
+  "peak_mult": 1.9711101351392668,
   "trough_mult": 0.9976844016649323,
   "freerolled": true,
   "sol_recovered": 0.11060467271891246,
@@ -1152,7 +1152,7 @@
   "nm_touch_t": 1788468382.3452811
  },
  "9Arnb9hNS7T8MRDLv9Lbg6ttENHAhzfyqDFxB18Fpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788468590.1857312,
@@ -1160,14 +1160,20 @@
   "tokens": 3660975945,
   "tokens_left": 3660975945,
   "size_sol": 0.05,
-  "peak_mult": 1.2421604799999997,
-  "trough_mult": 0.9795888599999999,
+  "peak_mult": 1.2511908799999998,
+  "trough_mult": 0.0012849399999999998,
   "freerolled": false,
   "sol_recovered": 0.0,
   "insider_overhang_pct": 79.33,
   "insider_n": 1,
   "blocklist_feeders": 0,
-  "entry_kind": "fast_birth"
+  "entry_kind": "fast_birth",
+  "closed_reason": "panic_writeoff",
+  "exit_reason": "panic_writeoff",
+  "exit_t": 1788471889.178505,
+  "exit_sig": null,
+  "pnl_sol": -0.05,
+  "actual_fill_note": "write-off confirmed: rug at 55min, 1.25 -> 0.001 instant liquidity pull, no sell possible (est 0.000064 SOL). Forensics \u00a7270: birth metrics identical to the two greens (outsider 0.02%, deployer wallet 2.9min old, 638 scripted txs). Entry gates blind to this archetype; fix is exit-side: P_BIRTH_CAP_MIN=30 hard cap for fast_birth."
  },
  "U6XZ7TGQ46bgF3SQCt3UiykQzJQg5VYU1aqJx3Bpump": {
   "open": false,

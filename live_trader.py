@@ -692,6 +692,13 @@ P_TRAIL_F = 0.5       # trail at 50% of peak
 P_ABORT15 = (15, 1.08)
 P_ABORT30 = (30, 1.15)
 P_TIMESTOP_MIN = 120
+# §270: fast_birth hard cap — 9Arnb9hN forensics showed birth entries are
+# indistinguishable at the gate (rug and greens both: outsider_pct ~0,
+# fresh single-use deployer wallet, 79% curve-holding artifact). The edge
+# is exit timing: 2/2 greens were out by ~15 min; the one held to 55 min
+# rugged instantly (1.25 -> 0.001, no liquidity, no sell possible).
+# Non-freerolled fast_birth positions exit unconditionally at 30 min.
+P_BIRTH_CAP_MIN = 30.0
 P_NM_TOUCH = 1.30   # §131: momentum-touch level that arms nm_abort
 P_NM_MIN = 5        # minutes below freeroll target after touch -> exit
 # §138: pre-nm fade exit. LUTN drained from peak 1.2814x without ever
@@ -977,6 +984,11 @@ def exit_watch():
                 act, sell_tokens = "abort15", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_ABORT30[0] and r < P_ABORT30[1]:
                 act, sell_tokens = "abort30", p["tokens_left"]
+            elif not p["freerolled"] and p.get("entry_kind") == "fast_birth" \
+                    and mins >= P_BIRTH_CAP_MIN:
+                # §270: birth entries above water at 30 min still exit —
+                # the rug risk beyond this horizon dominates the upside.
+                act, sell_tokens = "birth_cap", p["tokens_left"]
             elif not p["freerolled"] and mins >= P_TIMESTOP_MIN:
                 act, sell_tokens = "timestop", p["tokens_left"]
             if act:
