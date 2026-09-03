@@ -5259,3 +5259,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
   - Aav6wYFk: BF13 green then HATB green — repeat deployer with clean history went green twice. Flip-side signal: prior-green deployers may be positively predictive.
 - Hypothesis ledger updates: "repeat-offender deployer predicts rug" → TESTING (would have caught 25% of era rugs). NEW hypothesis: "prior-green repeat deployer predicts green" → NEW (n=2, both green).
 - Coverage caveat: scorecard only sees deployers we've observed in our own feed; grows with uptime. Deep-history offline scan remains available for post-mortems.
+
+## §248 — Close #53: Vpp3Vuvv nm_abort +0.03501 SOL — second consecutive gate-survivor win
+- Vpp3Vuvv (size 0.1006, deployer 8uTjFxJo first-seen clean): passed abort15, held r=1.16–1.33, cleared abort30, peaked near freeroll (1.327 observed) but never touched 1.5x, closed nm_abort at 47.7min. On-chain verified: meta.err None, gross +0.13532.
+- Fresh-infra era: −0.3226 SOL on 13 trades (9 green, 4 rugs). Two largest era wins (4hMy +0.041, 4Pu3 +0.026, Vpp3 +0.035) all came from positions that passed BOTH abort gates.
+- Total closes: 53/60.

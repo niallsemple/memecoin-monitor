@@ -910,19 +910,26 @@
   "actual_fill_note": "write-off verified: no tx sent, dust 1064.674022 tokens remains in ATA DEbDUM7H57oK"
  },
  "Vpp3VuvvbjfA7yUFYAymRZMUd7aurCqiE6xCERspump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788445296.3920588,
   "entry_px": 1.0183974068573149e-10,
   "tokens": 987826553,
-  "tokens_left": 987826553,
+  "tokens_left": 0,
   "size_sol": 0.1006,
-  "peak_mult": 1.0,
+  "peak_mult": 1.3480044234592445,
   "freerolled": false,
-  "sol_recovered": 0.0,
+  "sol_recovered": 0.135609245,
   "insider_overhang_pct": 18.72,
   "insider_n": 19,
-  "blocklist_feeders": 0
+  "blocklist_feeders": 0,
+  "nm_touch_t": 1788447648.5554519,
+  "closed_reason": "nm_abort",
+  "exit_reason": "nm_abort",
+  "exit_t": 1788447982.204863,
+  "exit_sig": "oBs6WJXaCQHSgKkBSqwHwBnMt3dhAoT8gmwd6g7Ns1E1YqwvAHdTeFDQ8HG5tpYrrSwPjAL5M752Z4q4DmR1RKS",
+  "pnl_sol": 0.03501,
+  "actual_fill_note": "verified on-chain: meta.err None, wallet delta +0.13532 gross, net +0.03501 (stake 0.1006)"
  }
 }
