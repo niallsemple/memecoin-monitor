@@ -79,14 +79,31 @@ FAST_ENTRY_DELAY_S = 40         # 30s bundle window + margin
 FE_ACTIVE = set()               # mints with an eval thread in flight
 
 
+FE_DEBUG = MON / "fast_entry_debug.jsonl"
+
+
+def _fe_debug(phase, mint=None, **kw):
+    """Synchronous debug ledger for §257 bring-up — survives silent
+    thread death and tells us exactly which phase was reached."""
+    try:
+        with FE_DEBUG.open("a") as f:
+            f.write(json.dumps({"t": time.time(), "phase": phase,
+                                "mint": mint, **kw}) + "\n")
+    except Exception:
+        pass
+
+
 def fast_entry_spawn(mint, creator):
     """§257: birth-window entry eval. Gates (BLOCKING here, unlike the
     plateau-path shadows): deployer prior_rugs>=1 => skip; bundle
     outsider_pct>=40 => skip. Enters via curve_buy, or Jupiter pool when
     born-terminal (curve complete at birth). Tags position entry_kind."""
     if not FAST_ENTRY or not mint or mint in FE_ACTIVE:
+        _fe_debug("spawn_refused", mint, fast=FAST_ENTRY,
+                  active=mint in FE_ACTIVE)
         return
     FE_ACTIVE.add(mint)
+    _fe_debug("spawned", mint, creator=creator)
 
     def _run():
         import importlib.util
@@ -94,12 +111,14 @@ def fast_entry_spawn(mint, creator):
         row = {"action": "fast_entry_eval", "mint": mint, "t": time.time()}
         lt = None
         try:
+            _fe_debug("thread_start", mint)
             if str(MON) not in sys.path:
                 sys.path.insert(0, str(MON))
             spec = importlib.util.spec_from_file_location(
                 "lt", MON / "live_trader.py")
             lt = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(lt)
+            _fe_debug("lt_loaded", mint)
             import deployer_local
             import bundle_share as _bs
             sc = deployer_local.score_mint(mint)
@@ -185,12 +204,14 @@ def fast_entry_spawn(mint, creator):
             lt._log(row)
         except Exception as e:
             row["result"] = f"error: {e}"
+            _fe_debug("thread_error", mint, err=str(e))
             try:
                 if lt:
                     lt._log(row)
             except Exception:
                 pass
         finally:
+            _fe_debug("thread_done", mint, result=row.get("result"))
             FE_ACTIVE.discard(mint)
 
     threading.Thread(target=_run, daemon=True).start()
