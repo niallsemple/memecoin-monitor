@@ -286,7 +286,22 @@ def buy(mint, reason="signal"):
     try:
         import bundle_share
         _dep = (row.get("deployer_score") or {}).get("deployer")
-        row["bundle_share"] = bundle_share.bundle_share(mint, _dep)
+        # §265: prefer the birth-time measurement from the fast-entry
+        # eval log — old mints can have >3000 sigs, putting the true
+        # birth window beyond RPC pagination reach.
+        row["bundle_share"] = None
+        try:
+            for _l in open(MON / "mfg_live_trades.jsonl"):
+                if '"action": "fast_entry_eval"' in _l and mint in _l:
+                    _ev = json.loads(_l)
+                    _bs = _ev.get("bundle_share") or {}
+                    if _bs.get("outsider_pct") is not None:
+                        row["bundle_share"] = dict(_bs, source="birth_eval")
+            # keep the LAST matching eval (latest measurement at birth)
+        except Exception:
+            pass
+        if row["bundle_share"] is None:
+            row["bundle_share"] = bundle_share.bundle_share(mint, _dep)
     except Exception as e:
         row["bundle_share"] = {"error": str(e)}
     if ((row["bundle_share"] or {}).get("outsider_pct") or 0) >= 40.0:

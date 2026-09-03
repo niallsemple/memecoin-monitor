@@ -1120,7 +1120,7 @@
   "tokens": 7724827041,
   "tokens_left": 7724827041,
   "size_sol": 0.1012,
-  "peak_mult": 1.0,
+  "peak_mult": 1.0196450000000001,
   "trough_mult": 0.9849302371541503,
   "freerolled": false,
   "sol_recovered": 0.0,
@@ -1137,7 +1137,7 @@
   "tokens": 94402286,
   "tokens_left": 23600572,
   "size_sol": 0.0961,
-  "peak_mult": 1.537792142238345,
+  "peak_mult": 1.5918732232986224,
   "trough_mult": 0.9976844016649323,
   "freerolled": true,
   "sol_recovered": 0.11060467271891246,
@@ -1145,5 +1145,23 @@
   "insider_n": 18,
   "blocklist_feeders": 0,
   "nm_touch_t": 1788468382.3452811
+ },
+ "9Arnb9hNS7T8MRDLv9Lbg6ttENHAhzfyqDFxB18Fpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788468590.1857312,
+  "entry_px": 1.3657560374928933e-11,
+  "tokens": 3660975945,
+  "tokens_left": 3660975945,
+  "size_sol": 0.05,
+  "peak_mult": 1.02958472,
+  "trough_mult": 0.9795888599999999,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 79.33,
+  "insider_n": 1,
+  "blocklist_feeders": 0,
+  "entry_kind": "fast_birth"
  }
 }

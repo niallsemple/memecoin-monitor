@@ -22,9 +22,34 @@ def _amt(b):
 
 
 def bundle_share(mint, deployer=None, window_s=WINDOW_S):
-    sigs = rpc("getSignaturesForAddress", [mint, {"limit": 100}]) or []
+    # cache: birth-window share never changes — reuse across paths/runs
+    cache_p = Path(__file__).parent / "bundle_cache.json"
+    try:
+        cache = json.load(open(cache_p)) if cache_p.exists() else {}
+    except Exception:
+        cache = {}
+    if mint in cache and cache[mint].get("outsider_pct") is not None:
+        return cache[mint]
+    # §265: paginate BACKWARD to the true birth. limit-100 newest-only
+    # silently measured the wrong window on any mint with >100 txs,
+    # passing bundled launches (7vEVYhk5: 61.6% at birth, 0.0% at +70min).
+    sigs, before = [], None
+    for _ in range(30):  # up to 3000 sigs, newest-first
+        params = [mint, {"limit": 100}]
+        if before:
+            params[1]["before"] = before
+        page = rpc("getSignaturesForAddress", params) or []
+        if not page:
+            break
+        sigs += page
+        before = page[-1]["signature"]
+        if len(page) < 100:
+            break
     if not sigs:
         return None
+    if len(sigs) >= 3000:
+        # birth still not reached — ambiguous, caller sees None share
+        return {"outsider_pct": None, "error": "birth beyond 3000-sig window"}
     birth = min(s["blockTime"] for s in sigs if s.get("blockTime"))
     early = [s for s in sigs if s.get("blockTime") and
              s["blockTime"] - birth <= window_s]
@@ -48,12 +73,18 @@ def bundle_share(mint, deployer=None, window_s=WINDOW_S):
         time.sleep(0.05)
     outsider = sum(v for k, v in acquired.items() if k != deployer)
     deployer_amt = acquired.get(deployer, 0) if deployer else 0
-    return {
+    res = {
         "birth": birth, "txs_in_window": len(early),
         "outsider_pct": round(100 * outsider / SUPPLY, 2),
         "deployer_pct": round(100 * deployer_amt / SUPPLY, 2),
         "n_buyers": len(acquired),
     }
+    try:
+        cache[mint] = res
+        json.dump(cache, open(cache_p, "w"), indent=1)
+    except Exception:
+        pass
+    return res
 
 
 if __name__ == "__main__":

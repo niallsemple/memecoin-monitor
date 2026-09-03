@@ -5366,3 +5366,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Birth-window cohort: E2PGus +0.00248, 2oumvU +0.00143 → 2/2 green, zero drawdown-below-entry on both (MAE 1.00). Contrast with plateau entries which routinely dipped (5ogC-style) or rugged.
 - Fast-path session: 6 evals → 4 bundled blocks (61.6/60.9/60.4/57.45%), 2 entries, 2 green.
 - Post-promotion era tally: +0.00391 SOL on 1 close (2oumvU is #61, first post-§262 close) + 4 avoided bundled launches.
+
+## §265 — GATE-KILLER BUG FIXED: bundle_share measured the WRONG WINDOW on old mints
+- Found live: 7vEVYhk5 (blocked at birth at 61.64% outsider) was ENTERED by the plateau path 70min later — its buy-time bundle_share read 0.0%. Cause: getSignaturesForAddress limit=100 returns the NEWEST 100 txs; on any mint with >100 txs the true first-30s birth window is gone, so the §262 blocking gate silently passed everything on the plateau path.
+- Fix (two layers): (1) bundle_share.py now paginates backward up to 3000 sigs to reach true birth, caches results in bundle_cache.json (birth share is immutable), and returns outsider_pct=None with an explicit error when birth is beyond reach (fail-open but LOGGED); (2) live_trader.buy() now prefers the birth-time measurement recorded in the fast-entry eval log (source="birth_eval") before falling back to live computation — going forward every armed birth has a correct birth-time measurement on record.
+- Acid test: 7vEVYhk5 now resolves to its birth eval (61.64%) via the log; would be BLOCKED today.
+- WATCH ITEM: 7vEVYhk5 (bundled at birth) pumped +58% over plateau entry — currently open, peak 1.578. Its close is a live stress test of the gate: if bundled launches can run, the gate's EV math needs the miss counted. Either way the ledger records it.
