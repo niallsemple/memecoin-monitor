@@ -5293,3 +5293,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - A "skip if outsider_pct >= 40" gate would have blocked 3/4 rugs (75%) with ZERO green casualties — rug rate 25%→~6%, past the ~12% breakeven line. THE strongest signal found so far.
 - Wired SHADOW into buy() (non-blocking, fail-open). Hypothesis ledger: "high first-30s outsider bundle share predicts rug" → PROMISING (n=8 retro, needs forward accumulation before blocking).
 - Note: 5ogC rug had 0% bundle — a second rug archetype exists (non-bundled); scorecard covers repeats of that crew.
+
+## §254 — review60.py built: 60-close review generator + gate counterfactuals (tooling, pre-#60)
+- New tool review60.py: loads all 57 closes from live_positions.json (older closes use closed_reason — normalized), joins shadow scores from mfg_live_trades.jsonl, retro-computes bundle_share for era mints (paginated getSignaturesForAddress to find birth, concurrent getTransaction; cached in bundle_cache.json; §253 retro values seeded).
+- Era boundary corrected: fresh-infra era = 4hMy3vXP onward (18 trades), script tally −0.2820 SOL now matches the ledger exactly (GBPV-only slice undercounted by 4hMy +0.041).
+- Per-trade labels: MFE (peak_mult) printed per trade; MAE not recorded in position schema — flagged as a data gap for post-#60 schema upgrade.
+- COUNTERFACTUAL (era, gates BLOCKING): bundle>=40 skip → 3/4 rugs blocked (GFhw 55.2, v4iV 46.1, BESH 53.6), ZERO green casualties, era net −0.2820 → **+0.0562 SOL** (ROI −14.3% → +2.8%). prior_rugs>=1 → 0 blocks in-era (scorecard went live at close #53; would have caught BESH via D84GJoqi repeat had it existed). Both gates → same +0.0562.
+- Verdict preview for the 60-close review: bundle-share ≥40% is the strongest gate candidate found; forward shadow evidence since §253: 4 entries, all 0.0% bundle, all green — no contradiction yet.
