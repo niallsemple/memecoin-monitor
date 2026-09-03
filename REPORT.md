@@ -5133,3 +5133,11 @@ Findings:
 1. EVERY paper variant is negative on fresh tape (−1.4% to −5.2%). The "mb leads paper" all-time result (+1.41%) does NOT hold post-amendment; no amendment candidate currently beats the live gate on fresh data.
 2. Paper fr twin took 123 entries vs live's 38 in the same window — paper is NOT a clean twin of live gating (live adds blocklist rejects, venue/sizing availability, freshness window). Paper divergence is partly modeling gap, partly fill model (next-trade fills, no slippage/verified exits).
 3. Verdict input: do NOT amend the entry gate at 40 closes based on paper; the paper shadows currently have no positive candidate. Gate changes require the shadow to go positive on fresh tape first.
+
+## §228 — p948tJqG close #39: abort15 green; Jupiter-fallback entry path proven (2026-09-03)
+
+Entry 02:21 UTC via GRADUATED-CURVE JUPITER FALLBACK (first live use): curve_buy refused "curve complete (use Jupiter path)" → lt.buy Jupiter path submitted sig 4fZ5TWTs (err None, actual fill 213,343,102 raw = 99.9995% of recorded). Insider screen ran clean forward after §225b sys.path fix (overhang 19.88%, n=20, feeders 0 — logged on the position).
+
+Exit 02:37 UTC abort15 at 1.047x (peak 1.0471) — tracker pass-end latency noted (exit stage ~17min into pass; abort15 trigger at +15min fired on first pass ending after 02:36). Sell sig 3mFSYxuH verified err=None, wallet delta +0.12526 SOL. Booked pnl +0.00565 SOL (ledger convention vs size_sol 0.1199); cash-in-hand terms: −0.12218 out / +0.12526 back = +0.00308 net incl fees+rent. Residual dust 213,344 raw remains in ATA.
+
+Book: 39 closes, 35 green, ledger net −0.25342 SOL. Market-action cohort 21 closes, 20/21 green. ONE close to the 40-close verdict.

@@ -611,5 +611,24 @@
   "sol_recovered": 0.122957229,
   "closed_reason": "abort15",
   "pnl_sol": 0.00306
+ },
+ "p948tJqGVBHUGv4s71an3kwoUj4PyQF5mnQvxp9pump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788402078.27723,
+  "entry_px": 5.620027415328065e-10,
+  "tokens": 213344155,
+  "tokens_left": 0,
+  "size_sol": 0.1199,
+  "peak_mult": 1.047123911592994,
+  "freerolled": false,
+  "sol_recovered": 0.125550157,
+  "insider_overhang_pct": 19.88,
+  "insider_n": 20,
+  "blocklist_feeders": 0,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00565,
+  "actual_fill_note": "buy sig 4fZ5TWTs... verified err=None; actual fill 213343102 raw (99.9995% of recorded); sell sig 3mFSYxuH... verified err=None; wallet delta +0.12526 SOL; residual dust 213344 raw"
  }
 }

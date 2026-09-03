@@ -1,16 +1,16 @@
 {
  "bank_start": 1000.0,
- "cash": 721.4025945314135,
+ "cash": 718.9376545910726,
  "positions": {
   "solana:EBLUKPgx5FvTUBU6bTJi3aR8XVELSBdC5FiodSWQpump": {
    "addr": "EBLUKPgx",
-   "entry_mcap": 1189824.0,
-   "entry_min": 8773.4,
-   "size_gbp": 14.73,
-   "peak_mcap": 1189824.0,
+   "entry_mcap": 1019486.0,
+   "entry_min": 8931.3,
+   "size_gbp": 14.68,
+   "peak_mcap": 1191489.0,
    "remaining": 1.0,
    "realized": 0.0,
-   "opened": "2026-09-02T22:29:44.290462+00:00"
+   "opened": "2026-09-03T01:07:41.837944+00:00"
   }
  },
  "closed": [
@@ -1872,6 +1872,19 @@
    "closed_at": "2026-09-02T22:28:42.287646+00:00",
    "exit_r": 0.6,
    "pnl_gbp": -6.3
+  },
+  {
+   "addr": "EBLUKPgx",
+   "entry_mcap": 1189824.0,
+   "entry_min": 8773.4,
+   "size_gbp": 14.73,
+   "peak_mcap": 1189824.0,
+   "remaining": 0,
+   "realized": 12.431900304835002,
+   "opened": "2026-09-02T22:29:44.290462+00:00",
+   "closed_at": "2026-09-03T00:30:10.150958+00:00",
+   "exit_r": 0.857,
+   "pnl_gbp": -2.52
   }
  ],
  "started": "2026-08-27T06:45:31.100112+00:00",
@@ -2087,6 +2100,7 @@
   "solana:5uLawxSbYa7fhoAwNp2NkUqGxM5Ey8Vw1u2mD5BXpump": "failed_momentum_floor",
   "solana:C2k7d3WL3tpd8jXcgkRgAbyTqaVATWbvHVpRac2Apump": "failed_momentum_floor",
   "solana:7VwjRc8it6s3J19NFvc31To7NZvfJjiHvAM2z9KTpump": "failed_momentum_floor",
-  "solana:4r5sdjr66rgDjKeCkdejXjMtwMYfwxBo73qwhB3Dpump": "failed_momentum_floor"
+  "solana:4r5sdjr66rgDjKeCkdejXjMtwMYfwxBo73qwhB3Dpump": "failed_momentum_floor",
+  "solana:Cd2b8guD4a4fgNng43Wk9sHDJ11tB8ie3EGABjWdpump": "failed_momentum_floor"
  }
 }

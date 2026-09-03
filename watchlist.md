@@ -3780,3 +3780,51 @@
 | 22:26 | robinhood | `0x5a722f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
 | 22:26 | robinhood | `0x9E2C4B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,327 mc=$15,368 | chain:robinhood no-audit-adapter |  |
 | 22:26 | robinhood | `0x817516…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,001 mc=$93,721 | chain:robinhood no-audit-adapter | The "Rururemon" meme is an internet joke based on a stereotypical mispronunciati |
+| 23:06 | robinhood | `0xa2109D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,205 mc=$10,687 | chain:robinhood no-audit-adapter | Zoinbase on Robinhood |
+| 23:06 | solana | `9XnjNoaq…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$0 mc=$16,921 | name=https symbol=https; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=40.6% | https |
+| 23:06 | robinhood | `0x9e4B53…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,265 mc=$12,470 | chain:robinhood no-audit-adapter | Skinny pigs, fat bags. Ozempic on RH, paired with $LLY. Grab a fork and earn you |
+| 23:06 | robinhood | `0x07e1c9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Ozzy’s PFP |
+| 23:06 | solana | `Ft7Zin87…` | FAIL | TOP10_HEAVY:72% | liq=$0 mc=$12,692 | name=Kiss the Wall symbol=Wall; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 23:06 | robinhood | `0xAB2300…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,640 mc=$41,861 | chain:robinhood no-audit-adapter | FrontalWedgie (TIE) is the ultimate degen meme coin born from the most cringe-wo |
+| 23:26 | robinhood | `0x93A8D3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,997 mc=$15,853 | chain:robinhood no-audit-adapter | Handle with care 📦 |
+| 23:26 | solana | `GzttC7TX…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_CONCENTRATED:49% | liq=$0 mc=$20,056 | name=Hoodless symbol=HOODLESS; contract:clean; rugcheck_score=49 lpLocked=0%; top10_hold=4 | The Hood Stays Off |
+| 23:26 | robinhood | `0xd404e4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$8,417 | chain:robinhood no-audit-adapter | Automated investing for tokenized stocks on the robinhood chain. Web, iOS, and A |
+| 23:26 | robinhood | `0x0748de…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 23:26 | robinhood | `0xb9CE61…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,496 mc=$1,015,364 | chain:robinhood no-audit-adapter | A tiny meme supporting open source AGI. $Tiny is the community coin and memecoin |
+| 23:26 | robinhood | `0x20ee75…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,368 mc=$9,849 | chain:robinhood no-audit-adapter | $BIRDCAT 🐱🐦  The friendship nobody saw coming. ❤️  A cat and a bird — two unlike |
+| 23:56 | solana | `62MqxAoe…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$0 mc=$32,499 | name=Good Boy symbol=GoodBoy; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=4 | Oh, you just bought this coin? Good Boy |
+| 23:56 | robinhood | `0x6c7d80…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Three doors. One neighbour who sleeps through everything. Vic has a key and no s |
+| 23:56 | solana | `CXG11xiL…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:58% | liq=$0 mc=$18,681 | name=Goldtown symbol=TOWN; contract:clean; rugcheck_score=55 lpLocked=100%; top10_hold=57. |  |
+| 23:56 | robinhood | `0xcd74b9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,894 mc=$20,087 | chain:robinhood no-audit-adapter | Dogs have legs. Cats have arms.  You’ve been lied to your entire life. $CATARM |
+| 23:56 | robinhood | `0xa16de8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,280 mc=$59,785 | chain:robinhood no-audit-adapter | This is not a phase.  PERMA/BULL on Robinhood   $PERMA |
+| 23:56 | solana | `5rDauqJE…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,910 | name=Artificial Inu symbol=AI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 00:06 | robinhood | `0xaAc0Ea…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$80,034 mc=$977,871 | chain:robinhood no-audit-adapter |  |
+| 00:06 | robinhood | `0x130FCA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,578 mc=$28,258 | chain:robinhood no-audit-adapter | Moon coin |
+| 00:06 | robinhood | `0x996399…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$48,013 mc=$56,726 | chain:robinhood no-audit-adapter |  |
+| 00:06 | robinhood | `0x373130…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Berlin Zoo just named Brötchen’s new baby brother VLAD And Robinhood’s CEO is Vl |
+| 00:06 | solana | `Hw4PvsbC…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,705 | name=Real Wealth Assets symbol=RWA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 00:06 | robinhood | `0x70F260…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,668 mc=$185,054 | chain:robinhood no-audit-adapter |  |
+| 00:26 | robinhood | `0xb9b488…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$80,056 mc=$116,066 | chain:robinhood no-audit-adapter | the shit we expect found it's perfect pair |
+| 00:26 | robinhood | `0x16A49c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,379 mc=$213,427 | chain:robinhood no-audit-adapter |  |
+| 00:26 | robinhood | `0xA2fe7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$41,241 mc=$203,305 | chain:robinhood no-audit-adapter |  |
+| 00:26 | robinhood | `0xc2C9f0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,739 mc=$68,196 | chain:robinhood no-audit-adapter |  |
+| 00:26 | solana | `81voyUHf…` | FAIL | TOP10_HEAVY:61%; RC_WARN:Low Liquidity | liq=$7,717 mc=$12,557 | name=Gaku The Bull symbol=Gaku; contract:clean; rugcheck_score=4 lpLocked=100%; top10_hold |  |
+| 00:26 | robinhood | `0x1b6072…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The first endless runner built on Robinhood Chain. Survive the heat, collect chi |
+| 01:06 | solana | `ALBFBJq9…` | FAIL | TOP10_HEAVY:78% | liq=$0 mc=$8,796 | name=fun symbol=fun; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=77.7% |  |
+| 01:06 | solana | `Ak7JbLvK…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$24,367 mc=$95,424 | name=NEVER KILL YOURSELF symbol=NEVER; contract:clean; rugcheck_score=1 lpLocked=99.679436 | September is Suicide Prevention Month. Never Kill Yourself. Ak7JbLvKEFzkcfpvLErn |
+| 01:06 | robinhood | `0x7fcd12…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,015 mc=$182,577 | chain:robinhood no-audit-adapter | Jorkin: Harder and Bigger. |
+| 01:06 | robinhood | `0xd454af…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,455 mc=$25,827 | chain:robinhood no-audit-adapter | $AISLOP Paired to $AI - AISLOP/AI  We watch AISLOP Everyday  Buy $AISLOP and wat |
+| 01:06 | solana | `EZ3Kxv6k…` | FAIL | TOP10_HEAVY:87% | liq=$0 mc=$7,413 | name=Sol symbol=Sol; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=86.5% |  |
+| 01:06 | solana | `E8MnCtZV…` | FAIL | TOP10_HEAVY:76% | liq=$0 mc=$28,952 | name=Bwull symbol=Bwull; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=76.4% |  |
+| 01:46 | robinhood | `0xd3f22b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6 mc=$7,384 | chain:robinhood no-audit-adapter | Just vibing in Y2K. Ipods - Internet - Mobile Phones - We really had it all... |
+| 01:46 | robinhood | `0xdbcbe9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | BTC is moaning! |
+| 01:46 | solana | `79wqMK5S…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:89% | liq=$4,056 mc=$4,789 | name=Major League Trading symbol=MLT; contract:clean; rugcheck_score=28 lpLocked=100%; top |  |
+| 01:46 | robinhood | `0x0b6140…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | PING!!! |
+| 01:46 | robinhood | `0x30F737…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,410 mc=$35,446 | chain:robinhood no-audit-adapter | He sold? Pump it! |
+| 01:46 | solana | `HpWnGa2U…` | CAUTION | TOP10_CONCENTRATED:39% | liq=$18,265 mc=$52,325 | name=Magachud symbol=Magachud; contract:clean; rugcheck_score=1 lpLocked=99.98997390195913 |  |
+| 02:06 | solana | `4fsEWifM…` | CAUTION | TOP10_CONCENTRATED:50% | liq=$0 mc=$31,874 | name=The Schopenhauerian Bear symbol=BEAR; contract:clean; rugcheck_score=1 lpLocked=0%; t |  |
+| 02:06 | solana | `2Ycyk4qG…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:97% | liq=$0 mc=$4,179 | name=Polymarket  symbol=Polymarket; contract:clean; rugcheck_score=80 lpLocked=100%; top10 | Polymarket - the most popular platform for crypto degens and they dont have an o |
+| 02:06 | robinhood | `0x9A4c34…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,675 mc=$34,017 | chain:robinhood no-audit-adapter | Delusional Optimist |
+| 02:06 | robinhood | `0x08bd78…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,984 mc=$11,564 | chain:robinhood no-audit-adapter | Buy a Share |
+| 02:06 | solana | `DRDtQGgs…` | FAIL | TOP10_HEAVY:94% | liq=$0 mc=$4,172 | name=The Grieving Dolphin symbol=DOLPHIN; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
+| 02:06 | solana | `D93aSbr3…` | FAIL | TOP10_HEAVY:61% | liq=$8,583 mc=$15,138 | name=The Meme Fairy symbol=Teehee; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Teehee |
