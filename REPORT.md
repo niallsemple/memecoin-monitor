@@ -5209,3 +5209,10 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 ## §239 — Close #48: FW5A2ny4 abort15 +0.00455 SOL (verified)
 - Pool entry, peak 1.0414, closed ~18min via abort15. Sig 4CqG6NMQF4d7..., err None, wallet delta matches recorded — clean first-try.
 - Fresh-infra era: −0.1751 SOL on 8 trades (6 green smalls, 2 rugs). Book flat at 48 closes; 12 to re-review.
+
+## §240 — Rug post-mortem: GFhw & 5ogC vs 7 green era trades
+- Data: GFhw (ovh 18.6%, insN 19) and 5ogC (ovh 33.4%, insN 20) vs greens incl. FW5A (17.6/19, green +0.0046) and 5N86 (10.4/19, green). Insider fields DO NOT separate rugs from greens — near-identical profiles on both sides.
+- Behavioral split instead: rugs peaked at 1.000/1.014 (never traded up) then collapsed atomically (GFhw to r=0.0 by 3min; 5ogC <0.80 by 13min). Greens all peaked ≥1.03.
+- Structural latency: entries and exits both happen at tracker pass-END (~17min apart). An atomic 3-minute rug is already at zero before the first possible exit decision — no exit-side speedup can fix that.
+- Conclusions: (1) no entry filter available in currently-recorded fields; (2) §235 write-off floor is the correct mitigation and already live; (3) small size is the rug hedge — at 5% sizing a 29% rug rate costs ~1.5% of bankroll per rug while abort15s grind +0.4%/trade.
+- Watch item: if a future position peaks <1.01 AND survives past 5min, that shape preceded 5ogC's collapse — candidate early-tripwire signal once n grows.
