@@ -5378,3 +5378,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - 7vEVYhk5 (WOFI — bundled at birth 61.64%, entered plateau pre-§265-fix): SURVIVED abort15, peak 1.632 at 17min. The bundled launch is a genuine runner — the gate's first potential miss-cost case. If it closes big green, count it against the gate honestly in the ledger.
 - 9Arnb9hN (3rd fast_birth, +66s entry): 9.4min, peak 1.043, trough 0.98 — holding.
 - Post-promotion era: 2 closes, +0.00453 SOL, zero rugs.
+
+## §267 — RE-ENTRY BUG: plateau path re-bought two CLOSED mints; one-trade-per-mint guard now live
+- s60nm5fr signal generator re-fired on still-active pools ~55min after their fast_birth closes: E2PGusyR re-bought 0.0967 SOL, 2oumvUmv re-bought 0.1018 SOL. Both are REAL open positions again (managed by exit_watch normally).
+- Collateral damage: open_position overwrote their closed-trade records in live_positions.json (close count 62→60; §261/§264 fill notes lost from the file but preserved in git history + REPORT.md). Ledger note: both mints will close TWICE — both trades were real, so the era tally counting both is correct accounting.
+- Fix: buy() and curve_buy() now refuse any mint already present in the positions file (open OR closed) — re-entries were never in the validated model. Fast path inherits the guard via the central buy functions.
+- Meanwhile: 7vEVYhk5 (bundled stress test) FREEROLLED at 1.5x (peak 1.669) — first live freeroll of the entire era. Its final close remains the gate's miss-cost datum.

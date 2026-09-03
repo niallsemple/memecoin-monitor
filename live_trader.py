@@ -268,6 +268,16 @@ def buy(mint, reason="signal"):
         row["result"] = "refused: zero size (balance too low)"
         _log(row)
         return row
+    # §267: one trade per mint, ever. The s60nm5fr signal generator
+    # re-fires on still-active pools and re-bought two CLOSED mints
+    # (E2PGus/2oumvU), destroying their close records and doubling
+    # exposure. Re-entries were never part of the validated model.
+    _pos0 = _load_positions()
+    if mint in _pos0:
+        row["result"] = ("refused: mint already traded "
+                         f"(open={_pos0[mint].get('open')}) (§267)")
+        _log(row)
+        return row
     # §246: deployer scorecard — repeat-offender rug crews from our own
     # birth feed. §262 (60-close review): PROMOTED TO BLOCKING.
     try:
@@ -540,6 +550,12 @@ def curve_buy(mint, sol_amount, reason="signal"):
     addr = json.loads(WALLET_F.read_text())["address"]
     row = {"action": "curve_buy", "mint": mint, "reason": reason,
            "mode": "live" if ok else "dry-run", "gate": why}
+    # §267: one trade per mint, ever (re-entry destroyed close records).
+    _pos0 = _load_positions()
+    if mint in _pos0:
+        row["result"] = ("refused: mint already traded "
+                         f"(open={_pos0[mint].get('open')}) (§267)")
+        _log(row); return row
     try:
         st = curve_state(mint)
         if st["complete"]:
