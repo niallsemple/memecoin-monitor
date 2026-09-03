@@ -68,6 +68,133 @@ PUB_RPCS = ("https://api.mainnet-beta.solana.com",
             "https://solana.drpc.org")
 RPC_KEYS = MON / "rpc_keys.json"  # §79w: owner drops extra keyed endpoints here
 
+# §257: fast birth-window entry (owner directive 2026-09-03: enter 5-10 min
+# earlier; §256 measured median entry lag ~72 min — the whole reprice happens
+# in the first 2-10 min of life). On armed birth: scorecard instantly,
+# bundle-share at +40s, then curve_buy / Jupiter pool at ~+1 min.
+FAST_ENTRY = True
+FAST_ENTRY_SIZE = 0.05          # fixed small size during validation
+FAST_ENTRY_BUNDLE_GATE = 40.0   # §253: skip if outsider_pct >= this
+FAST_ENTRY_DELAY_S = 40         # 30s bundle window + margin
+FE_ACTIVE = set()               # mints with an eval thread in flight
+
+
+def fast_entry_spawn(mint, creator):
+    """§257: birth-window entry eval. Gates (BLOCKING here, unlike the
+    plateau-path shadows): deployer prior_rugs>=1 => skip; bundle
+    outsider_pct>=40 => skip. Enters via curve_buy, or Jupiter pool when
+    born-terminal (curve complete at birth). Tags position entry_kind."""
+    if not FAST_ENTRY or not mint or mint in FE_ACTIVE:
+        return
+    FE_ACTIVE.add(mint)
+
+    def _run():
+        import importlib.util
+        import sys
+        row = {"action": "fast_entry_eval", "mint": mint, "t": time.time()}
+        lt = None
+        try:
+            if str(MON) not in sys.path:
+                sys.path.insert(0, str(MON))
+            spec = importlib.util.spec_from_file_location(
+                "lt", MON / "live_trader.py")
+            lt = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(lt)
+            import deployer_local
+            import bundle_share as _bs
+            sc = deployer_local.score_mint(mint)
+            row["deployer_score"] = sc
+            if (sc or {}).get("prior_rugs", 0) >= 1:
+                row["result"] = "skip: repeat-offender deployer"
+                lt._log(row)
+                return
+            time.sleep(FAST_ENTRY_DELAY_S)
+            bsh = _bs.bundle_share(mint, creator)
+            row["bundle_share"] = bsh
+            if bsh and (bsh.get("outsider_pct") or 0) >= FAST_ENTRY_BUNDLE_GATE:
+                row["result"] = "skip: bundled launch"
+                lt._log(row)
+                return
+            ok, why = lt.live_enabled()
+            row["gate"] = why
+            pos = lt._load_positions()
+            if mint in pos and pos[mint].get("open"):
+                row["result"] = "skip: already open"
+                lt._log(row)
+                return
+            if any(p.get("open") and p.get("entry_kind") == "fast_birth"
+                   for p in pos.values()):
+                row["result"] = "skip: fast slot busy"
+                lt._log(row)
+                return
+            b = lt.curve_buy(mint, FAST_ENTRY_SIZE,
+                             reason="fast_birth §257")
+            if str(b.get("result", "")).startswith(
+                    "refused: curve complete"):
+                # born-terminal: Jupiter pool path; indexing lags — 1 retry.
+                q = None
+                for _try in range(2):
+                    try:
+                        q = lt.jupiter_quote(mint, FAST_ENTRY_SIZE, "buy")
+                        break
+                    except Exception:
+                        time.sleep(30)
+                if not q:
+                    row["result"] = "skip: no jupiter quote yet"
+                    lt._log(row)
+                    return
+                b = {"action": "buy", "mint": mint,
+                     "reason": "fast_birth §257 (pool)",
+                     "size_sol": FAST_ENTRY_SIZE,
+                     "mode": "live" if ok else "dry-run", "gate": why,
+                     "quote_out": q.get("outAmount"),
+                     "tokens_raw": q.get("outAmount"),
+                     "quote_price_impact": q.get("priceImpactPct")}
+                if ok:
+                    b["sig"] = lt._jupiter_submit(q)
+                    b["result"] = ("submitted" if b["sig"] else
+                                   "submit failed: no signature (RPC)")
+                    if b["sig"] and not lt._tx_success(b["sig"]):
+                        b["result"] = ("error: buy tx failed on-chain "
+                                       "(sig present)")
+                else:
+                    b["result"] = f"dry-run ok ({why})"
+                lt._log(b)
+                if b.get("result") == "submitted" and b.get("tokens_raw"):
+                    tk = int(b["tokens_raw"])
+                    if tk > 0:
+                        lt.open_position(mint, FAST_ENTRY_SIZE, "live",
+                                         venue="pool",
+                                         entry_px=FAST_ENTRY_SIZE / tk,
+                                         tokens=tk)
+                        _p = lt._load_positions()
+                        if mint in _p:
+                            _p[mint]["entry_kind"] = "fast_birth"
+                            lt._save_positions(_p)
+            else:
+                row["curve_buy_result"] = b.get("result")
+                if str(b.get("result", "")).startswith(("submitted",
+                                                        "dry-run")):
+                    lt.open_position(mint, FAST_ENTRY_SIZE,
+                                     b.get("mode", "dry-run"))
+                    _p = lt._load_positions()
+                    if mint in _p:
+                        _p[mint]["entry_kind"] = "fast_birth"
+                        lt._save_positions(_p)
+            row["result"] = row.get("result") or "entered"
+            lt._log(row)
+        except Exception as e:
+            row["result"] = f"error: {e}"
+            try:
+                if lt:
+                    lt._log(row)
+            except Exception:
+                pass
+        finally:
+            FE_ACTIVE.discard(mint)
+
+    threading.Thread(target=_run, daemon=True).start()
+
 
 def _keyed_rpcs():
     """§79w: extra keyed RPC endpoints (Helius/QuickNode/Alchemy free
@@ -1046,6 +1173,8 @@ def run(ctx):
                             "seed": seed, "initialBuy": ib,
                             "funded": funded, "symbol": d.get("symbol"),
                             "mcap_birth_sol": d.get("marketCapSol")}) + "\n")
+                    # §257: birth-window entry eval (gates INSIDE thread)
+                    fast_entry_spawn(mint, cr)
         elif tt == "migrate":
             stats["migrations"] += 1
             with CURVES.open("a") as f:

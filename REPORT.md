@@ -5314,3 +5314,11 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Rugs invert the timing story: GFhw pumped 411→42,649 by +8min, dead (0.3) by our +89min entry — crews pump the first 10 min then pull; we were buying corpses. Early entry ALSO changes rug exposure: at-birth gates (scorecard + bundle-share, both computable by +40s) block 3/4 before entry.
 - Hypothesis ledger: "birth-window entry (~+1-2min) on whale-seed creates that pass deployer+bundle gates captures the birth→plateau reprice (10-30×) that plateau entry cannot" → NEW, top priority. This subsumes the exit-timing problem: a +2min entry makes abort15/nm gates evaluate the real move instead of plateau noise.
 - BUILD QUEUE: fast_entry.py — armed-birth trigger (WS feed, ~1s) → instant local scorecard → +35s bundle_share → bonding-curve buy at ~+1min → same exit stack. Size small (0.05 SOL) during validation.
+
+## §257 — fast_entry LIVE in tracker: birth-window entry (~+1min) with both gates BLOCKING
+- Owner directive: enter 5-10 min earlier (§256 showed median lag 72 min; the reprice happens in the first 2-10 min of life).
+- Build: fast_entry_spawn() in tracker_live.py, hooked on armed-birth detection (WS feed, ~1s in-pass; worst case next-pass = +2-4 min in the inter-pass gap).
+- Flow: armed birth → deployer scorecard INSTANT (prior_rugs>=1 => skip, now BLOCKING not shadow) → sleep 40s → bundle_share (outsider_pct>=40 => skip, BLOCKING) → curve_buy 0.05 SOL fixed (validation size) → born-terminal curves fall through to Jupiter pool path with one 30s retry (indexing lag) → open_position tagged entry_kind=fast_birth → existing exit stack (abort15/abort30/nm/freeroll) manages.
+- Guards: one fast_birth position at a time; skip if mint already open; respects STOP_LIVE_TRADING via live_enabled(); FE_ACTIVE prevents duplicate threads per mint.
+- Status: LIVE from next tracker pass (importlib reload). Hypothesis ledger: "birth-window entry captures the birth→plateau reprice" → TESTING, first live fire pending.
+- Known limits: pass-gap births entered +2-4 min instead of +1; Jupiter indexing lag may skip some born-terminal entries (logged as "no jupiter quote yet"); MAE still unrecorded (§254 gap).
