@@ -5156,3 +5156,7 @@ DECISION (pre-committed rules):
 5. Infra fixes forward-proven: §223 clamp (CdwQwELS, p948, GBPV, 5N86 clean first-try exits/entries), §225b sys.path (insider screens logging on all 3 latest entries), Jupiter graduated fallback (p948, GBPV, 5N86 entries all clean).
 
 Net read: routine market action is profitable per-trade (abort15/nm_abort lines positive); the book's all-in red is three fixed infra events + fee drag at small size. The positive-ROI case now rests on forward closes with clean infra — accumulate to 60.
+
+## §230 — 5N86HTNM abort15 green +0.00343 (2026-09-03)
+
+Close #41 (counted in the §229 verdict's 41). Entered 03:41 via Jupiter fallback (overhang 10.39%, clean), exit 03:57 abort15 at 1.032x. Sell sig 5tDdXBoy verified err=None, wallet delta +0.111218 SOL. GBPV close was #40. Book after verdict: 41 closes, 37 green (90.2%), net −0.24672 SOL.

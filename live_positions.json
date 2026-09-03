@@ -640,7 +640,7 @@
   "tokens": 1154437537,
   "tokens_left": 1154437537,
   "size_sol": 0.1201,
-  "peak_mult": 1.2408506744379684,
+  "peak_mult": 1.2824006661115737,
   "freerolled": false,
   "sol_recovered": 0.0,
   "insider_overhang_pct": 4.92,
@@ -682,6 +682,7 @@
   "insider_n": 19,
   "blocklist_feeders": 0,
   "closed_reason": "abort15",
-  "pnl_sol": 0.00343
+  "pnl_sol": 0.00343,
+  "actual_fill_note": "buy sig dimWJRA... verified err=None, fill 1176726089 raw (99.986%); sell sig 5tDdXBoy... verified err=None; wallet delta +0.111218 SOL"
  }
 }
