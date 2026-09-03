@@ -863,5 +863,21 @@
   "exit_sig": "65mi37EqgDJP6yk9g4qidKSWtGRYYdb7vFsjgDTUtSe4pCkhNPXEoGimdgKjn3FVe6qFugbzTaWBEruWGqy9346n",
   "pnl_sol": 0.00801,
   "actual_fill_note": "verified on-chain: sig 65mi37EqgDJP6yk9..., err None, wallet +0.112231 SOL net. Clean first-try."
+ },
+ "4Pu3iy2JVbHhiW4QreYDjceQVhWbgGMb5Ravf7Bapump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788433312.315246,
+  "entry_px": 3.793842710621899e-12,
+  "tokens": 27623707147,
+  "tokens_left": 27623707147,
+  "size_sol": 0.1048,
+  "peak_mult": 1.076240467557252,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 16.37,
+  "insider_n": 19,
+  "blocklist_feeders": 0
  }
 }

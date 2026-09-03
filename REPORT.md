@@ -5227,3 +5227,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - p2gP8b5W: textbook abort15, r≈1.077 at 15min, +0.00801 verified (sig 65mi37EqgDJP, err None, wallet +0.112231 net).
 - Era tally: −0.2773 SOL on 10 trades — 7 green smalls (+0.0673 total) vs 3 rugs (−0.3446). Rug rate 30% and rising; greens average +0.0096. Expectancy needs rug rate <~12% at this payoff asymmetry.
 - Ledger implication for 60-close review: the entry funnel is selecting rugs at 3-4x the sustainable rate. Options on the table: (a) find pre-entry rug features (none in current fields, §240), (b) tighten sizing further, (c) reduce trade frequency to highest-conviction only, (d) accept and cap.
+
+## §243 — Deployer genealogy: rugs are NOT one crew; all deployers are serial operators
+- Rug deployers (GFhw CTXXbP2a, 5ogC 5unWHbyL, v4iV 4jv9dcbS) are three DIFFERENT wallets — not a single crew. No shared funder visible: 4 of 5 deployers (incl. both greens) have 1000+ tx histories exceeding the lookup window, so origin funding is invisible at this depth. 5ogC's deployer: 775 txs, funded by EYEiWgNDnKpo.
+- KEY FINDING: ALL five deployers (rugs AND greens) are high-activity serial launchers (775–1000+ txs). Deployer activity level does NOT separate rugs from greens.
+- Hypothesis ledger: "shared deployer/funder predicts rug" → FAILED (n=3 rugs, 3 distinct deployers). "Deployer activity level predicts rug" → FAILED. Status: both RETIRED.
+- Next creator-intel hypothesis (NEW, untested): per-deployer launch OUTCOME history (rug rate of past tokens) — requires enumerating each deployer's created mints and scoring outcomes; bigger build, queue for after 60-close review.
