@@ -5275,3 +5275,8 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - X11cVAmm (0.0969, deployer CQTzxyB9 prior=1 prior_rugs=0): abort15 at 17.7min, verified meta.err None gross +0.09725. First scorecard-flagged "prior-green deployer" entry — went green (hypothesis n=3, all green).
 - Fresh-infra era: −0.3185 SOL on 16 trades (12 green, 4 rugs). Win rate 75%, but rug size still dominates.
 - Total closes: 56/60.
+
+## §251 — Close #57: 8nk9kDEQ nm_abort +0.03646 SOL — third gate-survivor win
+- 8nk9kDEQ (0.102, deployer 3iTRJm8y first-seen clean): passed abort15 + abort30, held 51min, peaked ~1.15-1.3 but no freeroll, closed nm_abort. Verified: meta.err None, gross +0.13813.
+- Fresh-infra era: −0.2820 SOL on 17 trades (13 green, 4 rugs). All three >0.02 winners were double-gate survivors; zero rugs since scorecard went shadow-live (n=4 entries).
+- Total closes: 57/60.
