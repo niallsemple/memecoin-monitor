@@ -3846,3 +3846,9 @@
 | 03:26 | robinhood | `0xF8b223…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$30,070 mc=$147,155 | chain:robinhood no-audit-adapter |  |
 | 03:26 | robinhood | `0x17a6ba…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,667 mc=$106,723 | chain:robinhood no-audit-adapter |  |
 | 03:26 | solana | `AoEHGTFv…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:88% | liq=$3,881 mc=$4,480 | name=9 to 5 symbol=9TO5; contract:clean; rugcheck_score=28 lpLocked=100%; top10_hold=87.9% | the new job is scrolling. |
+| 04:06 | solana | `EzksuFJL…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$14,045 | name=Fuck Face symbol=DoubleF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 04:06 | solana | `Fw6ksDUW…` | PASS | — | liq=$20,206 mc=$66,850 | name=8Bit symbol=8Bit; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=27.0%; b | 8bit is an on-chain camera built for the fastest market on earth. Find the frame |
+| 04:06 | robinhood | `0x95b225…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,984 mc=$37,370 | chain:robinhood no-audit-adapter | Hit the rig, earn USO. |
+| 04:06 | solana | `2gdGXkBr…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,157 | name=pringull symbol=pringull; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | pringull |
+| 04:06 | robinhood | `0x022c90…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$79,484 mc=$305,844 | chain:robinhood no-audit-adapter | Investors believe that if they find a unicorn it will make them rich. |
+| 04:06 | solana | `46kwQaZd…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:98% | liq=$18,835 mc=$53,133 | name=HotPepe symbol=HotPepe; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hold=9 |  |

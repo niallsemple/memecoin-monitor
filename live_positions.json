@@ -632,20 +632,24 @@
   "actual_fill_note": "buy sig 4fZ5TWTs... verified err=None; actual fill 213343102 raw (99.9995% of recorded); sell sig 3mFSYxuH... verified err=None; wallet delta +0.12526 SOL; residual dust 213344 raw"
  },
  "4hMy3vXPFS5aASdHiA5x14LExngxTUhtgKQAhKS6pump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788405673.2045162,
   "entry_px": 1.0403334624071567e-10,
   "tokens": 1154437537,
-  "tokens_left": 1154437537,
+  "tokens_left": 0,
   "size_sol": 0.1201,
-  "peak_mult": 1.2824006661115737,
+  "peak_mult": 1.34138848459617,
   "freerolled": false,
-  "sol_recovered": 0.0,
+  "sol_recovered": 0.161100757,
   "insider_overhang_pct": 4.92,
   "insider_n": 2,
-  "blocklist_feeders": 0
+  "blocklist_feeders": 0,
+  "nm_touch_t": 1788408534.906841,
+  "closed_reason": "nm_abort",
+  "pnl_sol": 0.041,
+  "actual_fill_note": "buy sig 5VsVYqEj... verified err=None, fill 1154196357 raw (99.98%); sell sig 3hJ7WDxu... verified err=None; wallet delta +0.160785 SOL"
  },
  "GBPV3tgXvJdTsLtz56Rw37WBmMACeesTZ6sWiKBpump": {
   "open": false,

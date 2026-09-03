@@ -5160,3 +5160,9 @@ Net read: routine market action is profitable per-trade (abort15/nm_abort lines 
 ## §230 — 5N86HTNM abort15 green +0.00343 (2026-09-03)
 
 Close #41 (counted in the §229 verdict's 41). Entered 03:41 via Jupiter fallback (overhang 10.39%, clean), exit 03:57 abort15 at 1.032x. Sell sig 5tDdXBoy verified err=None, wallet delta +0.111218 SOL. GBPV close was #40. Book after verdict: 41 closes, 37 green (90.2%), net −0.24672 SOL.
+
+## §231 — 4hMy3vXP nm_abort +0.041 SOL: the runner banked (2026-09-03)
+
+Close #42. Entered 03:21 (Jupiter fallback, overhang 4.92%), cleared abort15 (peak 1.078 at gate → held), cleared abort30 (1.1651 at gate), touched 1.30 at ~04:09 arming nm_abort, peaked 1.3414, failed to reach 1.5x in the 5-min window → nm_abort exit at 1.341x, 04:14 UTC. Sell sig 3hJ7WDxu verified err=None, wallet delta +0.160785 SOL on 0.122379 spent (+31% cash).
+
+nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack's best line. Book: 42 closes, 38 green (90.5%), net −0.20572 SOL. Post-verdict closes so far: GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041 → +0.0442 SOL on the fresh-infra era.
