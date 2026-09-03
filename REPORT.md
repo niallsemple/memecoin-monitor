@@ -5372,3 +5372,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - Fix (two layers): (1) bundle_share.py now paginates backward up to 3000 sigs to reach true birth, caches results in bundle_cache.json (birth share is immutable), and returns outsider_pct=None with an explicit error when birth is beyond reach (fail-open but LOGGED); (2) live_trader.buy() now prefers the birth-time measurement recorded in the fast-entry eval log (source="birth_eval") before falling back to live computation — going forward every armed birth has a correct birth-time measurement on record.
 - Acid test: 7vEVYhk5 now resolves to its birth eval (61.64%) via the log; would be BLOCKED today.
 - WATCH ITEM: 7vEVYhk5 (bundled at birth) pumped +58% over plateau entry — currently open, peak 1.578. Its close is a live stress test of the gate: if bundled launches can run, the gate's EV math needs the miss counted. Either way the ledger records it.
+
+## §266 — Close #62: DA8HaRid abort15 +0.0031 SOL; 7vEVYhk5 stress test running HOT
+- DA8HaRid (plateau, deployer Grs6BJkn clean, bundle 0.01%): peaked 1.022, abort15. Verified: meta.err None, wallet delta +0.104074 gross, net +0.0031.
+- 7vEVYhk5 (WOFI — bundled at birth 61.64%, entered plateau pre-§265-fix): SURVIVED abort15, peak 1.632 at 17min. The bundled launch is a genuine runner — the gate's first potential miss-cost case. If it closes big green, count it against the gate honestly in the ledger.
+- 9Arnb9hN (3rd fast_birth, +66s entry): 9.4min, peak 1.043, trough 0.98 — holding.
+- Post-promotion era: 2 closes, +0.00453 SOL, zero rugs.
