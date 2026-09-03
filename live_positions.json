@@ -688,5 +688,25 @@
   "closed_reason": "abort15",
   "pnl_sol": 0.00343,
   "actual_fill_note": "buy sig dimWJRA... verified err=None, fill 1176726089 raw (99.986%); sell sig 5tDdXBoy... verified err=None; wallet delta +0.111218 SOL"
+ },
+ "CGMBxDzdB2k3wQgM7e8ZYvFnDcRQBzc8esFEbqypump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788410485.162494,
+  "entry_px": 9.77481277083859e-10,
+  "tokens": 124708271,
+  "tokens_left": 0,
+  "size_sol": 0.1219,
+  "peak_mult": 1.0392734044298606,
+  "freerolled": false,
+  "sol_recovered": 0.126687428,
+  "insider_overhang_pct": 29.03,
+  "insider_n": 7,
+  "blocklist_feeders": 0,
+  "closed_reason": "abort15",
+  "pnl_sol": 0.00479,
+  "actual_fill_note": "verified on-chain: sig BCLxFHfSouh8R85U5icXFmkXSc5HjRGGMsEgaQorWe9nnyLgM6DCxkGZySosMmPvnWHxpBvPFPYjJH6PMvpPnn1, meta.err None, wallet +0.126364 SOL net (fee 0.000205); close at 15.2min peak 1.0393 consistent w/ abort15 (exit_reason field null in record)",
+  "exit_sig": "BCLxFHfSouh8R85U5icXFmkXSc5HjRGGMsEgaQorWe9nnyLgM6DCxkGZySosMmPvnWHxpBvPFPYjJH6PMvpPnn1"
  }
 }

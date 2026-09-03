@@ -3852,3 +3852,15 @@
 | 04:06 | solana | `2gdGXkBr…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,157 | name=pringull symbol=pringull; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | pringull |
 | 04:06 | robinhood | `0x022c90…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$79,484 mc=$305,844 | chain:robinhood no-audit-adapter | Investors believe that if they find a unicorn it will make them rich. |
 | 04:06 | solana | `46kwQaZd…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:98% | liq=$18,835 mc=$53,133 | name=HotPepe symbol=HotPepe; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hold=9 |  |
+| 04:26 | robinhood | `0x6a3dE2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,760 mc=$73,438 | chain:robinhood no-audit-adapter | Jason Duval is hottest man |
+| 04:26 | solana | `6Fmy4h78…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$12,960 | name=Test Your Candle symbol=Candle; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 04:26 | solana | `GiUHYs5H…` | PASS | — | liq=$52,778 mc=$394,507 | name=Rich Debt symbol=RICHDEBT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 04:26 | robinhood | `0x74ce44…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | paint that learned how to move |
+| 04:26 | robinhood | `0xb65304…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$3 mc=$5,197 | chain:robinhood no-audit-adapter | Trump Pepe |
+| 04:26 | robinhood | `0x61C0b8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,614 mc=$41,577 | chain:robinhood no-audit-adapter | Knovy turns X profiles into tradable markets. Each profile can become its own co |
+| 04:46 | robinhood | `0xB8D03b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,753 mc=$26,842 | chain:robinhood no-audit-adapter |  |
+| 04:46 | solana | `CfBYu1ds…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$17,129 mc=$49,765 | name=CyberCoin symbol=CyberCoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 04:46 | solana | `9sW8VYpS…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,112 mc=$2,052 | name=dih symbol=DIH; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=100.0% | The Solana First Dog |
+| 04:46 | solana | `7Zo7tPm7…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,174 | name=You Will Buy This symbol=PSYOP; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 04:46 | solana | `Dz37RVhU…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:83% | liq=$0 mc=$10,708 | name=Let Me Sell You a Dream symbol=Dream; contract:clean; rugcheck_score=79 lpLocked=100% |  |
+| 04:46 | robinhood | `0x5107D5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,322 mc=$41,637 | chain:robinhood no-audit-adapter | MUMU is the personification of the bull market, an eternally optimistic bull who |

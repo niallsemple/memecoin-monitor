@@ -5166,3 +5166,10 @@ Close #41 (counted in the §229 verdict's 41). Entered 03:41 via Jupiter fallbac
 Close #42. Entered 03:21 (Jupiter fallback, overhang 4.92%), cleared abort15 (peak 1.078 at gate → held), cleared abort30 (1.1651 at gate), touched 1.30 at ~04:09 arming nm_abort, peaked 1.3414, failed to reach 1.5x in the 5-min window → nm_abort exit at 1.341x, 04:14 UTC. Sell sig 3hJ7WDxu verified err=None, wallet delta +0.160785 SOL on 0.122379 spent (+31% cash).
 
 nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack's best line. Book: 42 closes, 38 green (90.5%), net −0.20572 SOL. Post-verdict closes so far: GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041 → +0.0442 SOL on the fresh-infra era.
+
+## §232 — Close #43: CGMBxDzd pool entry, +0.00479 SOL (verified)
+- Entry 1788410485, pool venue, 0.1219 SOL in, 124.7M tokens; insider overhang 29% (7 insiders, 0 blocklist feeders).
+- Peak 1.0393; never threatened freeroll or nm_touch; closed at 15.2min — timing/profile consistent with abort15 (record's exit_reason field null; sig was recovered from wallet history).
+- On-chain verify: sig BCLxFHfSouh8, meta.err None, wallet delta +0.126364 SOL net of 0.000205 fee. Recorded sol_recovered 0.126687. Clean first-try close.
+- Book: 43 closes, flat. Fresh-infra era: +0.0490 SOL on 4 trades (GBPV −0.0002, 5N86 +0.0034, 4hMy +0.041, CGMB +0.0048).
+- NOTE: exit_reason/exit_sig/exit_t came back null on this close — check live_trader close-recording path before next entry.
