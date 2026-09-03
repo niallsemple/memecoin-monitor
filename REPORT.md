@@ -5239,3 +5239,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - First fresh-infra position to pass BOTH abort gates and close via nm_abort with a real signature. Validates that the abort-gate stack can catch a genuine runner's exit, not just cut losers.
 - Fresh-infra era tally: −0.2516 SOL on 11 trades (8 green smalls incl. 4hMy +0.041, 4Pu3 +0.0258; 3 rugs −0.3446). Rug rate 27% — still above the ~12% breakeven threshold.
 - Total closes: 51/60 toward the gate re-review.
+
+## §245 — Close #52: BESHQjLG panic_writeoff −0.106 SOL — 4th fresh-infra rug
+- BESHQjLG rugged at 6.5 min, before abort15 could even fire. Panic write-off: no tx sent, dust (1064.67 tokens) confirmed in ATA DEbDUM7H57oK.
+- Pattern holds: rugs collapse atomically in the first minutes; gates cannot help a position that is dead before the first checkpoint.
+- Fresh-infra era: −0.3576 SOL on 12 trades (8 green, 4 rugs). Rug rate now 33% vs the ~12% breakeven threshold — regime is hostile.
+- Total closes: 52/60.
