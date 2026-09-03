@@ -5141,3 +5141,18 @@ Entry 02:21 UTC via GRADUATED-CURVE JUPITER FALLBACK (first live use): curve_buy
 Exit 02:37 UTC abort15 at 1.047x (peak 1.0471) — tracker pass-end latency noted (exit stage ~17min into pass; abort15 trigger at +15min fired on first pass ending after 02:36). Sell sig 3mFSYxuH verified err=None, wallet delta +0.12526 SOL. Booked pnl +0.00565 SOL (ledger convention vs size_sol 0.1199); cash-in-hand terms: −0.12218 out / +0.12526 back = +0.00308 net incl fees+rent. Residual dust 213,344 raw remains in ATA.
 
 Book: 39 closes, 35 green, ledger net −0.25342 SOL. Market-action cohort 21 closes, 20/21 green. ONE close to the 40-close verdict.
+
+## §229 — 40-CLOSE VERDICT: HOLD (2026-09-03)
+
+review_40 + drain_sim at 41 closes (GBPV abort15 −0.00016 was #40; GBPV sell sig M91ejYvM verified err=None, +0.113482 SOL).
+
+Book: 41 closes, 36 green (87.8%), net −0.25015 SOL on 5.158 staked (−4.85%/trade). Exit stack: abort15 n=36 +0.0514; nm_abort n=2 +0.0863; three infra-event losses −0.3879 combined (6001 slippage fail, reclaim bug, 6024 block — ALL fixed, each forward-proven on later closes).
+
+DECISION (pre-committed rules):
+1. §1 gate: GO — market-action cohort 23 closes, 91.3% green, worst ≥ −25% stake.
+2. §2.2 sizing: NO SCALE-UP — §176 slippage escalation never fired live (no panic/nm/fade failure to escalate from), so the second pre-condition fails. MAX_SOL stays 0.20, 5% sizing unchanged. Re-review at 60 closes.
+3. §2.1 gates: stay shadow (§227: no paper variant positive on fresh tape; §212-216 forward-fail evidence stands). g2_gate.json = false.
+4. §2.3 exit stack: untouched. drain_sim G2 replay +0.0013 at 1× vs actual −0.2502 — theoretical only, forward-leaky; no action.
+5. Infra fixes forward-proven: §223 clamp (CdwQwELS, p948, GBPV, 5N86 clean first-try exits/entries), §225b sys.path (insider screens logging on all 3 latest entries), Jupiter graduated fallback (p948, GBPV, 5N86 entries all clean).
+
+Net read: routine market action is profitable per-trade (abort15/nm_abort lines positive); the book's all-in red is three fixed infra events + fee drag at small size. The positive-ROI case now rests on forward closes with clean infra — accumulate to 60.

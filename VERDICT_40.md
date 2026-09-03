@@ -1,17 +1,17 @@
 # 40-CLOSE VERDICT — Live Memecoin Book
 
-**Status: ARMED — awaiting closes #37–#40 (currently 36).**
+**Status: DECIDED 2026-09-03 ~04:05 UTC — at 41 closes (GBPV3tgX abort15 was #40; count includes MBCB manual salvage row).**
 Fill the `[_]` fields from `python3 review_40.py` + `python3 drain_sim.py` at 40 closes. Every rule below was pre-agreed from evidence; no re-analysis at decision time.
 
 ---
 
 ## 1. Book state at 40 (from review_40.py)
 
-- Closes: [_]  Green: [_] ([_]%)  Net: [_] SOL  Expectancy/trade: [_]%
-- On-chain wallet: [_] SOL vs funding 2.68389 → [_]% | residual after fees/rent: [_] (must be "plausible")
-- Panic cohort (market-action only): [_] closes, [_]% green, [_]%/trade
+- Closes: [41]  Green: [36] ([87.8]%)  Net: [−0.25015] SOL  Expectancy/trade: [−4.85]%
+- On-chain wallet: [2.277055 + ~0.23 deployed in 2 open positions ≈ 2.51] SOL vs funding 2.68389 → [≈−6.5]% | residual after fees/rent: [plausible — avg 0.0024 SOL/tx over ~86 txs]
+- Panic cohort (market-action only): [23] closes, [91.3]% green, [−0.98]%/trade (incl both drain-window infra losses)
 
-**Go/no-go for ANY change:** market-action cohort ≥ 20 closes AND ≥ 85% green AND worst ≥ −25% of stake (BXiwv −0.127 was infra, excluded per §218-standard). If NO-GO: hold everything, accumulate 20 more closes.
+**Go/no-go for ANY change:** market-action cohort ≥ 20 closes AND ≥ 85% green AND worst ≥ −25% of stake (BXiwv −0.127 was infra, excluded per §218-standard). **RESULT: §1 GO (23 ≥ 20, 91.3% ≥ 85%, worst market-action ≥ −25%) — BUT §2.2 blocks scale-up: no verified §176 escalated fill ever fired live.**
 
 ## 2. Decisions (pre-committed)
 

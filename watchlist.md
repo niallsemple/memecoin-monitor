@@ -3828,3 +3828,21 @@
 | 02:06 | robinhood | `0x08bd78…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,984 mc=$11,564 | chain:robinhood no-audit-adapter | Buy a Share |
 | 02:06 | solana | `DRDtQGgs…` | FAIL | TOP10_HEAVY:94% | liq=$0 mc=$4,172 | name=The Grieving Dolphin symbol=DOLPHIN; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
 | 02:06 | solana | `D93aSbr3…` | FAIL | TOP10_HEAVY:61% | liq=$8,583 mc=$15,138 | name=The Meme Fairy symbol=Teehee; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Teehee |
+| 02:46 | solana | `AU8ZmbsX…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$16,624 | name=ObviousCoin symbol=OBVIOUS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 02:46 | robinhood | `0x172b23…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$52,945 mc=$59,351 | chain:robinhood no-audit-adapter | Vestra Finance is a finance-focused asset built for the emerging Robinhood Chain |
+| 02:46 | solana | `X2oB1Mp8…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$20,324 | name=it's all a fugazi symbol=FUGAZI; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 02:46 | solana | `A56ZES8x…` | FAIL | TOP10_HEAVY:72%; RC_WARN:Low Liquidity | liq=$5,471 mc=$7,384 | name=Beavercoin symbol=BEAVER; contract:clean; rugcheck_score=16 lpLocked=100%; top10_hold |  |
+| 02:46 | solana | `g7Mf4oAT…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,465 | name=FLOCK CAMERA symbol=FLOCK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 02:46 | robinhood | `0x357792…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,324 mc=$22,117 | chain:robinhood no-audit-adapter | looks good, pump it |
+| 03:06 | solana | `7W8uumZv…` | FAIL | TOP10_HEAVY:77% | liq=$0 mc=$8,262 | name=NatureCoin symbol=NATURE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 03:06 | solana | `NFA2vkDt…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$4,271 | name=Never Forget symbol=NF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=98 |  |
+| 03:06 | solana | `8ahGYNWn…` | FAIL | TOP10_HEAVY:90% | liq=$0 mc=$6,101 | name=Spesh symbol=SPESH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=90.1% |  |
+| 03:06 | robinhood | `0x4Cd8bB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,991 mc=$43,405 | chain:robinhood no-audit-adapter | An AI world you own, where the npc's earn for you! Use $EMERGE in game and allow |
+| 03:06 | robinhood | `0xc1a017…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$74,410 mc=$87,831 | chain:robinhood no-audit-adapter | Welcome to the Redacted and Recursive Index (RR500), where redacted financial ob |
+| 03:06 | robinhood | `0x8de9e0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,824 mc=$154,643 | chain:robinhood no-audit-adapter | 🦄 The Unicorn Robinhood told us about. Hidden in plain sight. |
+| 03:26 | bsc | `0x5191b1…` | PASS | — | liq=$405,451 mc=$37,227,837 | holders=43; buy_tax=0 sell_tax=0; contract:clean | NOXO is the utility and governance token of NOXCAT, a self-custodial Web3 wallet |
+| 03:26 | solana | `3kwDUuS5…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:91% | liq=$3,588 mc=$4,045 | name=pale frog symbol=prog; contract:clean; rugcheck_score=29 lpLocked=100%; top10_hold=91 |  |
+| 03:26 | robinhood | `0xe74D61…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,228 mc=$21,206 | chain:robinhood no-audit-adapter | Tesla giga press coin. Priced in TSLA. Buys charge the Factory. Sells burn. Pres |
+| 03:26 | robinhood | `0xF8b223…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$30,070 mc=$147,155 | chain:robinhood no-audit-adapter |  |
+| 03:26 | robinhood | `0x17a6ba…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,667 mc=$106,723 | chain:robinhood no-audit-adapter |  |
+| 03:26 | solana | `AoEHGTFv…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:88% | liq=$3,881 mc=$4,480 | name=9 to 5 symbol=9TO5; contract:clean; rugcheck_score=28 lpLocked=100%; top10_hold=87.9% | the new job is scrolling. |
