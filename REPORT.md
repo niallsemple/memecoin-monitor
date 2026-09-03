@@ -5269,3 +5269,9 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - E1KoGikN (size 0.1022, deployer DcP4BGPH first-seen clean): failed the 15-min momentum bar but exited green. On-chain verified: meta.err None, gross +0.10428.
 - Fresh-infra era: −0.3200 SOL on 14 trades (10 green, 4 rugs). Rug rate 29%.
 - Total closes: 54/60.
+
+## §250 — Closes #55-56: Nkb5 +0.00092, X11c abort15 +0.00058 — two more small greens
+- Nkb5DVdr (0.1022, deployer 4ZqzgAFC first-seen): abort15 at 18.4min, verified meta.err None gross +0.10281.
+- X11cVAmm (0.0969, deployer CQTzxyB9 prior=1 prior_rugs=0): abort15 at 17.7min, verified meta.err None gross +0.09725. First scorecard-flagged "prior-green deployer" entry — went green (hypothesis n=3, all green).
+- Fresh-infra era: −0.3185 SOL on 16 trades (12 green, 4 rugs). Win rate 75%, but rug size still dominates.
+- Total closes: 56/60.
