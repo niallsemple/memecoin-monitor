@@ -3,98 +3,126 @@
   "pnl": 2.727,
   "spent": 0.7732,
   "mints": 21,
+  "n_buys": 7,
   "roi_pct": 352.7,
-  "persistent": true
+  "persistent": true,
+  "cls": "selective"
  },
  "3nXfcradnyqwbWx6jZztoyekmUXcoDm6GjCV59WpJwWB": {
   "pnl": 0.226,
   "spent": 1.3979,
   "mints": 9,
+  "n_buys": 7,
   "roi_pct": 16.2,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "4mKFpYp5sXURwpnH53WqnuVozZiyLZ45j64ehxGgpjsM": {
   "pnl": 0.3411,
   "spent": 0.5921,
   "mints": 5,
+  "n_buys": 2,
   "roi_pct": 57.6,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "DdNtMfyMUmi2naX4GZTPZzuLAnd6JwtA69i2FLmudd7U": {
   "pnl": 1.0254,
   "spent": 1.503,
   "mints": 5,
+  "n_buys": 3,
   "roi_pct": 68.2,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "A1whpgaAeo9bu4fCqK96JLkYoZdZvSbboaN5ansnSznx": {
   "pnl": 2.7289,
   "spent": 3.211,
   "mints": 8,
+  "n_buys": 4,
   "roi_pct": 85.0,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "7fjYmBurTV7yqwg82J6ZQdpmF26dewyTRzBZbQ9mpko": {
   "pnl": 0.0355,
   "spent": 0.6223,
   "mints": 9,
+  "n_buys": 9,
   "roi_pct": 5.7,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "2BMQs8BsDUhg6ByvRGjvEB8eyhx84RogrDCnzxw8Brqj": {
   "pnl": 0.504,
   "spent": 33.1713,
   "mints": 7,
+  "n_buys": 716,
   "roi_pct": 1.5,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "AkdUhXNkQHTCQUykEdsLZVC3qQib2r2NSuR7AMNH3KNG": {
   "pnl": 0.2341,
   "spent": 35.3237,
   "mints": 7,
+  "n_buys": 712,
   "roi_pct": 0.7,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "9mHdv7gMqEoZZh6pEFRHrb4gjZPBZfMKAdByfnwnoLzd": {
   "pnl": 0.6647,
   "spent": 34.4517,
   "mints": 7,
+  "n_buys": 712,
   "roi_pct": 1.9,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "7yY4AjdPomxLaLgg6ujS2LndLLEqxzs8LtoUp8SQy4Wo": {
   "pnl": 5.5667,
   "spent": 28.3841,
   "mints": 7,
+  "n_buys": 715,
   "roi_pct": 19.6,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "3ga98t7RTMQVUBZmTkR4949T6Pv3qKodAs9F21sVYJhW": {
   "pnl": 5.9909,
   "spent": 39.1822,
   "mints": 7,
+  "n_buys": 717,
   "roi_pct": 15.3,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "AfVWSGb62FKz7keLYyM7dzRu88qJqTuBgt33iJw1qLLE": {
   "pnl": 12.2095,
   "spent": 34.8429,
   "mints": 7,
+  "n_buys": 713,
   "roi_pct": 35.0,
-  "persistent": false
+  "persistent": false,
+  "cls": "bot"
  },
  "FHaUejLkKriBrsT6j3jnW7Xsdep4igCqe62yc1bfzYz5": {
   "pnl": 0.3199,
   "spent": 0.5989,
   "mints": 6,
+  "n_buys": 4,
   "roi_pct": 53.4,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  },
  "8qNupZGMcFwg75efaG6njLusgn3wCwr7JXvamsACeVAq": {
   "pnl": 2.203,
   "spent": 0.586,
   "mints": 5,
+  "n_buys": 1,
   "roi_pct": 375.9,
-  "persistent": false
+  "persistent": false,
+  "cls": "selective"
  }
 }

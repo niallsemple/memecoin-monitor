@@ -130,14 +130,19 @@ def fast_entry_spawn(mint, creator):
             time.sleep(FAST_ENTRY_DELAY_S)
             bsh = _bs.bundle_share(mint, creator)
             row["bundle_share"] = bsh
-            # §289: winner-wallet registry cross-ref (LOG ONLY, non-blocking)
+            # §289/§290: winner-wallet registry cross-ref (LOG ONLY, non-blocking)
             try:
                 if not hasattr(fast_entry_spawn, "_winners"):
                     wp = MON / "winner_wallets.json"
-                    fast_entry_spawn._winners = set(json.load(open(wp))) if wp.exists() else set()
-                hits = [w for w in (bsh or {}).get("buyers", []) if w in fast_entry_spawn._winners]
+                    fast_entry_spawn._winners = json.load(open(wp)) if wp.exists() else {}
+                reg_ = fast_entry_spawn._winners
+                hits = [w for w in (bsh or {}).get("buyers", []) if w in reg_]
                 if hits:
                     row["winner_in_window"] = hits
+                    sel = [w for w in hits if reg_[w].get("cls") == "selective"]
+                    if len(sel) >= 2:
+                        # §290: >=2 SELECTIVE proven winners converging = strong signal
+                        row["selective_convergence"] = sel
             except Exception:
                 pass
             if bsh and (bsh.get("outsider_pct") or 0) >= FAST_ENTRY_BUNDLE_GATE:

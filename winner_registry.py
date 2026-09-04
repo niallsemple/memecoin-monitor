@@ -25,13 +25,14 @@ def main():
                 t_min = t if t_min is None else min(t_min, t)
                 t_max = max(t_max, t)
     mid = (t_min + t_max) / 2
-    span = defaultdict(lambda: [0.0, 0.0, set()])   # w -> [in, out, mints]
+    span = defaultdict(lambda: [0.0, 0.0, set(), 0])   # w -> [in, out, mints, n_buys]
     h1 = defaultdict(lambda: [0.0, 0.0, 0])
     h2 = defaultdict(lambda: [0.0, 0.0, 0])
     for w, m, t, side, sol in rows:
         c = span[w]
         if side == 'buy':
             c[0] += sol
+            c[3] += 1
         else:
             c[1] += sol
         c[2].add(m)
@@ -42,15 +43,17 @@ def main():
             d[w][1] += sol
         d[w][2] += 1
     reg = {}
-    for w, (si, so, mints) in span.items():
+    for w, (si, so, mints, nb) in span.items():
         pnl = so - si
         n = len(mints)
         if pnl > 0 and n >= 5 and si >= 0.5:
             p1 = h1[w][1] - h1[w][0] if h1[w][2] >= 3 else None
             p2 = h2[w][1] - h2[w][0] if h2[w][2] >= 3 else None
             persistent = (p1 is not None and p2 is not None and p1 > 0 and p2 > 0)
-            reg[w] = dict(pnl=round(pnl, 4), spent=round(si, 4), mints=n,
-                          roi_pct=round(100 * pnl / si, 1), persistent=persistent)
+            # §290: breadth bots (systematic pool traders) vs selective winners
+            cls = 'bot' if nb >= 50 else 'selective'
+            reg[w] = dict(pnl=round(pnl, 4), spent=round(si, 4), mints=n, n_buys=nb,
+                          roi_pct=round(100 * pnl / si, 1), persistent=persistent, cls=cls)
     out = f'{MON}/winner_wallets.json'
     with open(out, 'w') as f:
         json.dump(reg, f, indent=1)
