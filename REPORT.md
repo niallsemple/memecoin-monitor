@@ -5487,3 +5487,7 @@ before that sample.
 ## §279 — Second interval-scheduler slip (10:42–10:53 UTC)
 
 Pass cadence slipped again: the 10:24 UTC pass ended 10:42 and the next interval fire (~10:44) never happened. Detected via tapes stalling ~9 min (both `curves.jsonl` and `mfg_trades.jsonl` froze — passes are the writers). Recovered with a manual Automation run (10:53–11:11, exit 0). Blind window ~11 min; the recovering pass re-evaluated mints born in the gap (`to6icCZC`, `Jt1GPaca`) and correctly blocked both as bundled (61.05% / 61.49%). This is the second slip after §274 — same signature, same fix. If a third occurs, add a watchdog (dead-man switch on tape mtime that auto-triggers a manual run).
+
+## §280 — Feed keeper deployed (dead-man switch for scheduler slips)
+
+After two interval slips (§274, §279), a watchdog now guards the birth feed: `feed_keeper.py` (PID tracked in `feed_keeper.log`) checks `curves.jsonl` freshness every 60 s. When no tracker pass is alive, no backup collector is running, and the tape is stale >5 min, it spawns `curve_collector.py` for 20 min (births + migrations keep landing on disk for the recovering pass to re-evaluate) and fires a macOS notification. It never trades — entries/exits stay exclusive to real passes. Deploy note: stdout must NOT be re-redirected to `feed_keeper.log` (nohup `>> feed_keeper.log` doubles every line; log via the file append only). Verified live: keeper up (single instance), backup collector writing births within seconds of a stale window.
