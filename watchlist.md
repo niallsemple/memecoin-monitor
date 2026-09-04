@@ -4047,3 +4047,19 @@
 | 07:16 | robinhood | `0x37336e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,766 mc=$60,097 | chain:robinhood no-audit-adapter | So i’ve been building cool things around y combinator and contributing a lot alo |
 | 07:16 | robinhood | `0x931c73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Pons volume into strategy exposure, settled back to holders. The winning strateg |
 | 07:16 | robinhood | `0xAe0A10…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,942 mc=$21,908 | chain:robinhood no-audit-adapter | Ape Meme Coins |
+| 07:26 | solana | `8Fh9VHKi…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$14,954 | name=imposter symbol=imposter; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 07:26 | solana | `Bfa8y5GV…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$4,965 | name=Never Lose Your SOL symbol=SOL; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 07:26 | solana | `5bxiEDHv…` | FAIL | TOP10_HEAVY:93%; RC_WARN:Single holder ownership; RC_WARN:High holder concentration | liq=$0 mc=$20,430 | name=BETANO symbol=BETANO; contract:clean; rugcheck_score=34 lpLocked=100%; top10_hold=92. | BETANO ($BETANO) — The ultimate community-driven token. Built for the bold, powe |
+| 07:26 | solana | `EjkPpzHH…` | FAIL | TOP10_HEAVY:72% | liq=$0 mc=$11,404 | name=A Meme Coin symbol=MEME; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=7 |  |
+| 07:46 | solana | `CozTSN85…` | PASS | — | liq=$58,648 mc=$479,216 | name=dogwifPONS symbol=wifPONS; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=2 |  |
+| 07:46 | robinhood | `0x10E99A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$48,465 mc=$354,934 | chain:robinhood no-audit-adapter | Hoodlife |
+| 07:46 | robinhood | `0xCb7b48…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,386 mc=$78,588 | chain:robinhood no-audit-adapter |  |
+| 07:46 | robinhood | `0x136dEA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,634 mc=$58,858 | chain:robinhood no-audit-adapter | On august 2022 AMC CEO announces 1 $ APE for every $ AMC share. Issues as stock  |
+| 07:46 | robinhood | `0xAb9021…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,729 mc=$19,277 | chain:robinhood no-audit-adapter | “Demon stock” is just China’s blunt word for a stock that rips for no good reaso |
+| 07:46 | base | `0xf20438…` | PASS | — | liq=$7,487 mc=$8,596 | holders=3; buy_tax=0 sell_tax=0; contract:clean | Merlin the Microsoft wizard on Base. Buy $MERLIN, earn $MSFT stock. |
+| 08:26 | robinhood | `0xABC78a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,617 mc=$67,670 | chain:robinhood no-audit-adapter |  |
+| 08:26 | solana | `5rzG196f…` | FAIL | TOP10_HEAVY:57% | liq=$34,768 mc=$180,240 | name=UNSTABLE COIN symbol=UNSTABLE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | Built for chaos. UNSTABLE COIN turns wild charts into the whole narrative. |
+| 08:26 | robinhood | `what's t…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | What's The Concern? |
+| 08:26 | hyperevm | `0xEba50F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,144 mc=$5,505 | chain:hyperevm no-audit-adapter | $AUCTION is the official coin of Hyperauction, the coin auction house on HyperEV |
+| 08:26 | robinhood | `0xc2E5A3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$148,025 mc=$303,818 | chain:robinhood no-audit-adapter |  |
+| 08:26 | solana | `7Pz1XW24…` | CAUTION | RC_WARN:Copycat token | liq=$26,057 mc=$100,731 | name=Greatest Meme Ever symbol=GME; contract:clean; rugcheck_score=29 lpLocked=100%; top10 | Greatest Meme Ever brings legendary vibes, unstoppable laughs, and pure meme ene |

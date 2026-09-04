@@ -30,6 +30,11 @@ MFG_TRADES = MON / "mfg_trades.jsonl"   # venue=curve prints (§272 feed)
 OUT = MON / "shadow_ledger.jsonl"
 
 SIZE = 0.05            # the SOL we would have staked
+SLIP = 0.02            # §275: 2% slippage each way — bundled-launch pumps
+                       # are manufactured; assume we pay 2% more on entry
+                       # and receive 2% less on every exit. All proceeds
+                       # scale with r, so one factor covers the stack.
+SLIP_F = (1 - SLIP) / (1 + SLIP)
 P_FR_TARGET, P_FR_SELL = 1.5, 0.75
 P_TRAIL_F = 0.5
 P_PANIC = 0.80
@@ -211,12 +216,13 @@ def simulate(mint, eval_ts, birth_t, events):
         last_r = body[-1][1] if body else 1.0
         return {"mint": mint, "status": "open", "eval_ts": eval_ts,
                 "entry_t": t0, "peak": round(peak, 3),
-                "freerolled": fr, "mark": round(proceeds + pos * last_r - 1, 4),
+                "freerolled": fr,
+                "mark": round((proceeds + pos * last_r) * SLIP_F - 1, 4),
                 "ret": None}
     return {"mint": mint, "status": "closed", "eval_ts": eval_ts,
             "entry_t": t0, "peak": round(peak, 3),
             "freerolled": fr, "exit_reason": reason,
-            "ret": round(proceeds - 1, 4)}
+            "ret": round(proceeds * SLIP_F - 1, 4)}
 
 
 def summarize():
