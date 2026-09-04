@@ -5451,3 +5451,13 @@ The 20-min tracker interval missed its 06:44 UTC fire after a clean
 Manual Automation.run at 06:55 executed a full pass (06:55-07:12,
 exit 0, binding publish OK). The 07:04 interval fire was skipped by
 overlap protection — schedule confirmed alive. Blind window ~13 min.
+
+## §276 — Marker: formal gate-EV review at 100 closed shadow rows
+As of Sep 4 (~09:45 BST): 39 closed shadow rows, shaved verdict (§275,
+2% slippage each way) = gate SAVED +0.0641 SOL; avg skipped bundled
+launch -3.3%/trade; unshaved replay briefly flipped the verdict
+(-0.0129) — fill realism proved decisive. When shadow_closed >= 100,
+run the formal review: if the shaved verdict still favors skipping by
+>= 2x the era-rug counterfactual, gate stays; if it flips durably,
+bring threshold options (50/60%) to the owner. No threshold change
+before that sample.
