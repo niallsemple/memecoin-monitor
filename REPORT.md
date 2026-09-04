@@ -5491,3 +5491,20 @@ Pass cadence slipped again: the 10:24 UTC pass ended 10:42 and the next interval
 ## §280 — Feed keeper deployed (dead-man switch for scheduler slips)
 
 After two interval slips (§274, §279), a watchdog now guards the birth feed: `feed_keeper.py` (PID tracked in `feed_keeper.log`) checks `curves.jsonl` freshness every 60 s. When no tracker pass is alive, no backup collector is running, and the tape is stale >5 min, it spawns `curve_collector.py` for 20 min (births + migrations keep landing on disk for the recovering pass to re-evaluate) and fires a macOS notification. It never trades — entries/exits stay exclusive to real passes. Deploy note: stdout must NOT be re-redirected to `feed_keeper.log` (nohup `>> feed_keeper.log` doubles every line; log via the file append only). Verified live: keeper up (single instance), backup collector writing births within seconds of a stale window.
+
+## §281 — Interim gate-EV at 62 closed shadow rows + birth_cap runner forensics (4 Sep 2026, ~19:00 UTC)
+
+**Gate-EV (interim, n=62 closed; full review still at n=100):** shaved verdict (SLIP=2% each way) over all closed shadow rows at 0.05 SOL sizing: gate has SAVED **+0.3449 SOL** (vs +0.0641 at n=39). Skipped-cohort win rate 15% (9/62); avg shaved ret per skipped trade **−11.12%**. By exit reason: abort15 n=46 −5.32%, panic n=8 −68.46%, birth_cap n=6 **+11.42%**, abort30 n=1 +5.55%, nm_abort n=1 +28.49%.
+
+**birth_cap runner forensics (n=6, rets +12.5% to +22.7%):** all 6 were skipped at fast-entry eval as bundled launches (outsider_pct 55.9–61.0%), and all 6 were ALSO blocked post-graduation by the §262 gate when the s60nm5fr hook tried to buy them (`blocked: bundled launch`). No SOL was at risk in any of them — shadow-only outcomes. Metric separability vs the other cohorts:
+
+| cohort | n | outsider% mean | n_buyers med | txs med | deployer prior>0 |
+|---|---|---|---|---|---|
+| birth_cap winners | 6 | 57.4 | 59 | 112 | 1/6 |
+| abort15 losers | 46 | 59.1 | 58 | 110 | 3/46 |
+| panic rugs | 8 | 59.2 | **192** | 124 | 1/8 |
+
+**Conclusions:**
+1. outsider_pct, txs_in_window, deployer history do NOT separate bundled winners from losers at eval time — the gate is blind-but-correct (net cohort EV is deeply negative, so blocking the whole band stays right).
+2. `n_buyers ≥ ~150` is a panic-rug shape marker (median 192 vs ~59 elsewhere) — already blocked, but usable as a harder-flag / logging feature.
+3. Finding the winners inside the bundled band needs richer post-birth features (price-path shape, holder evolution, LP behavior) than the eval record currently captures. Candidate next experiment: enrich shadow rows with first-10-min price path (dip-then-recover vs straight bleed) and retest separability.

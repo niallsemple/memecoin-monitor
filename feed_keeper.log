@@ -1,2 +1,10 @@
 2026-09-04 11:17:55Z feed_keeper start (stale>300s, keep=20min)
 2026-09-04 11:17:55Z hb: age=6s pass_up=False keep_up=True
+[collector] 200 events logged
+[collector] closed after 283 events
+2026-09-04 12:17:58Z hb: age=6s pass_up=True keep_up=False
+2026-09-04 13:18:01Z hb: age=0s pass_up=True keep_up=False
+2026-09-04 14:18:04Z hb: age=3s pass_up=True keep_up=False
+2026-09-04 15:18:08Z hb: age=0s pass_up=True keep_up=False
+2026-09-04 16:18:11Z hb: age=0s pass_up=True keep_up=False
+2026-09-04 17:18:15Z hb: age=8s pass_up=True keep_up=False
