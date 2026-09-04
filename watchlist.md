@@ -4063,3 +4063,32 @@
 | 08:26 | hyperevm | `0xEba50F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,144 mc=$5,505 | chain:hyperevm no-audit-adapter | $AUCTION is the official coin of Hyperauction, the coin auction house on HyperEV |
 | 08:26 | robinhood | `0xc2E5A3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$148,025 mc=$303,818 | chain:robinhood no-audit-adapter |  |
 | 08:26 | solana | `7Pz1XW24…` | CAUTION | RC_WARN:Copycat token | liq=$26,057 mc=$100,731 | name=Greatest Meme Ever symbol=GME; contract:clean; rugcheck_score=29 lpLocked=100%; top10 | Greatest Meme Ever brings legendary vibes, unstoppable laughs, and pure meme ene |
+| 09:06 | robinhood | `0x192ebD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$30,358 mc=$31,846 | chain:robinhood no-audit-adapter | the climax of onchain finance |
+| 09:06 | solana | `GqC3SsSu…` | FAIL | TOP10_HEAVY:66%; RC_WARN:Copycat token | liq=$0 mc=$15,432 | name=Pump Until Millions Print symbol=PUMP; contract:clean; rugcheck_score=29 lpLocked=0%; | Pump Until Millions Print |
+| 09:06 | robinhood | `0x5D8c72…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,168 mc=$18,848 | chain:robinhood no-audit-adapter | $Robinhood - The new wall street. |
+| 09:06 | robinhood | `0xd5FEE7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$84,859 mc=$164,683 | chain:robinhood no-audit-adapter |  |
+| 09:06 | robinhood | `0xE402EC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,407 mc=$24,794 | chain:robinhood no-audit-adapter | HODL $HOOD Earn $HOOD |
+| 09:06 | bsc | `0xD43dA6…` | CAUTION | PROXY | liq=$0 mc=$51,712 | holders=0; buy_tax= sell_tax= |  |
+| 09:17 | robinhood | `0x33F257…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,413 mc=$67,872 | chain:robinhood no-audit-adapter |  |
+| 09:17 | robinhood | `0xe4902e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$41,736 mc=$503,835 | chain:robinhood no-audit-adapter | DumbMoney paired with AMC and GME |
+| 09:17 | robinhood | `0x898be0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$42,991 mc=$83,587 | chain:robinhood no-audit-adapter | It's just a circle flippening |
+| 09:17 | robinhood | `0x5555d2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Robinhood Chain is being built around tokenized real-world assets, 24/7 markets, |
+| 09:17 | solana | `2CJ9rFxo…` | PASS | — | liq=$35,668 mc=$184,393 | name=Meme Season symbol=MEMESZN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Meme Season came now |
+| 09:17 | robinhood | `0xA4F285…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,915 mc=$57,692 | chain:robinhood no-audit-adapter | Disperse any token on Robinhood Chain to unlimited wallets instantly with no fee |
+| 09:26 | robinhood | `0x5328f6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Yield infrastructure for your tokenized stocks. Bootstrapped by @RobinhoodCrypto |
+| 09:26 | robinhood | `0x29EA36…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,801 mc=$9,843 | chain:robinhood no-audit-adapter | This is a dam |
+| 09:26 | robinhood | `0x3B4246…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,778 mc=$13,363 | chain:robinhood no-audit-adapter | Mascot Meme + AI coin on Robinhood Chain ⛓️ ETH pairing 💎 1% META stock rewards  |
+| 09:26 | solana | `GqzdVCaE…` | PASS | — | liq=$30,209 mc=$132,706 | name=MEMES EVENTUALLY TAKE ALL symbol=META; contract:clean; rugcheck_score=1 lpLocked=100% | META brings next-level meme energy to Solana, blending bold vibes, wild culture, |
+| 09:26 | solana | `2S86e5KS…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$9,808 | name=For All Meme Investors symbol=FAMI; contract:clean; rugcheck_score=1 lpLocked=100%; t | For all meme investors |
+| 09:46 | robinhood | `0x84712B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,026 mc=$46,224 | chain:robinhood no-audit-adapter | Encrypted mesh network over Bluetooth with a private, self-custodial wallet - no |
+| 09:46 | solana | `7Zddh63U…` | PASS | — | liq=$36,590 mc=$193,914 | name=WORTHLESS COIN symbol=WORTHLESS; contract:clean; rugcheck_score=1 lpLocked=100%; top1 | Zero utility. Zero promises. Just a coin proudly worth absolutely nothing. |
+| 09:46 | solana | `FaVJEP9c…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,961 | name=ANSEM INU symbol=ANSEMINU; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | ANSEM INU HAS AWAKENED The next generation of COPPERINU x ANSEM meme energy. Bor |
+| 09:46 | solana | `GLRGgpet…` | FAIL | TOP10_HEAVY:55% | liq=$0 mc=$19,997 | name=PONSLESS symbol=PONSLESS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 09:46 | robinhood | `0x3190a3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Perpetual downside protection for tokenized stocks. Set a strike, pay premium by |
+| 09:46 | robinhood | `0x0A83FE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$53,307 mc=$314,126 | chain:robinhood no-audit-adapter | $SHIT was always meant to meet $COIN |
+| 10:06 | robinhood | `0xb54ba8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Send USDG to any @username. Your X handle is the address - funds arrive shielded |
+| 10:06 | solana | `Hyddgx7v…` | FAIL | RC_DANGER:Creator history of rugged tokens; RC_DANGER:Top 10 holders high ownership; RC_DANGER:Single holder ownership; RC_DANGER:High ownership; TOP10_HEAVY:97% | liq=$43,337 mc=$277,204 | name=boldleonidas symbol=BOLD; contract:clean; rugcheck_score=81 lpLocked=100%; top10_hold |  |
+| 10:06 | robinhood | `0x6885d7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,168 mc=$32,682 | chain:robinhood no-audit-adapter | the common GME and AMC slogan , paired with both stocks |
+| 10:06 | solana | `7Kpm6bUz…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,384 | name=RUSSEL CROW symbol=crow; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=70. |  |
+| 10:06 | robinhood | `0xd73111…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Launch coins on Pons V2 with Ponsium. Every launched coin including Ponsium, con |
+| 10:06 | robinhood | `0xEdC0fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$92,024 mc=$189,547 | chain:robinhood no-audit-adapter | ChatGPT's cartoon cousin. Same autocomplete. Worse posture. Will clown the other |

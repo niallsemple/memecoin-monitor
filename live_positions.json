@@ -1203,5 +1203,20 @@
   "exit_sig": "3Xcho4isT6BjEA1s2EVNWh6utZ9pqBMmFwYdA8CBm9vpAUHNTjsgvxCFVKF7nvXJu9yQdhKhRbTtQBrdzygiHNAK",
   "pnl_sol": 0.00381,
   "actual_fill_note": "verified on-chain: meta.err None, wallet +0.10563 SOL gross on 0.1021 stake (net +0.0035 post-fees), abort15 exit, sig 3Xcho4is"
+ },
+ "5CrfJjuyydxF3Twhg52rzdrZzuU8mcEWFNhiGvYUpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "curve",
+  "entry_t": 1788515234.074591,
+  "entry_px": 0.0004051907659981095,
+  "tokens": 122111752934,
+  "tokens_left": 122111752934,
+  "size_sol": 0.05,
+  "peak_mult": 1.0,
+  "trough_mult": 0.0,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "entry_kind": "fast_birth"
  }
 }

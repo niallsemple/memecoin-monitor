@@ -192,14 +192,24 @@ def fast_entry_spawn(mint, creator):
                             lt._save_positions(_p)
             else:
                 row["curve_buy_result"] = b.get("result")
-                if str(b.get("result", "")).startswith(("submitted",
-                                                        "dry-run")):
+                _res = str(b.get("result", ""))
+                # live-mode "submitted" is only real if a tx signature
+                # came back; sig=None means the buy never landed (\u00a7277)
+                _landed = (_res.startswith("dry-run")
+                           or (_res.startswith("submitted") and b.get("sig")))
+                if _landed:
                     lt.open_position(mint, FAST_ENTRY_SIZE,
                                      b.get("mode", "dry-run"))
                     _p = lt._load_positions()
                     if mint in _p:
                         _p[mint]["entry_kind"] = "fast_birth"
                         lt._save_positions(_p)
+                elif _res.startswith("submitted"):
+                    row["result"] = (f"skip: buy not landed "
+                                     f"({b.get('result')})")
+                    row["curve_buy_result"] = None
+                    lt._log(row)
+                    return
             row["result"] = row.get("result") or "entered"
             lt._log(row)
         except Exception as e:

@@ -619,7 +619,13 @@ def curve_buy(mint, sol_amount, reason="signal"):
             row["result"] = "submitted"; row["sig"] = sig
             # §137b: verify on-chain success; "error:" keeps the signal
             # unconsumed so the next run retries instead of ghosting.
-            if sig and not _tx_success(sig):
+            # §277: sig=None means sendTransaction returned an RPC error
+            # object (slippage guard rejected, dead curve, etc.) — that
+            # is NOT a fill. "submitted" without a sig opened a phantom
+            # position on 5CrfJju (buy never landed; balance untouched).
+            if not sig:
+                row["result"] = "error: sendTransaction returned no sig"
+            elif not _tx_success(sig):
                 row["result"] = "error: buy tx failed on-chain (sig present)"
     except Exception as e:
         row["result"] = f"error: {e}"

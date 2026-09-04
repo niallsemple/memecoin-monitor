@@ -5461,3 +5461,19 @@ run the formal review: if the shaved verdict still favors skipping by
 >= 2x the era-rug counterfactual, gate stays; if it flips durably,
 bring threshold options (50/60%) to the owner. No threshold change
 before that sample.
+
+## §277 — Phantom-entry bug: position opened on a buy that never landed
+
+**Event.** A fast_birth entry fired on mint `5CrfJjuyydxF3Twhg52rzdrZzuU8mcEWFNhiGvYUpump` — the first launch ever evaluated in the previously-empty 1–39% bundle outsider_pct band (eval outsider_pct 21.99%, so the ≥40% gate passed it). The launch dumped to ~zero within a minute.
+
+**What actually happened on-chain.** The buy NEVER landed: `sendTransaction` returned `sig=null` (slippage guard rejected — min_tokens guard saved the full 0.05 SOL). Wallet verified: balance 2.0656 SOL unchanged, ZERO token accounts for the mint. The trade cost nothing.
+
+**The bug.** The tracker opened a position anyway: the curve entry path treated any result starting with `"submitted"` as a fill, regardless of whether a signature came back. That produced an 18-minute panic-sell loop (`exit_failed`, mult=0.0, every ~45 s, all sig=null — sells of zero tokens can never land).
+
+**Fixes (both deployed):**
+1. `live_trader.py` curve_buy: after `row["result"]="submitted"; row["sig"]=sig`, now — no sig → `result="error: sendTransaction returned no sig"`; sig present but tx failed on-chain → error. (Live automatically via importlib.)
+2. `tracker_live.py` curve-path caller: live-mode `"submitted"` now counts as landed ONLY with a truthy `b["sig"]`; otherwise the row is logged as `skip: buy not landed (...)` and NO position is opened. Dry-run opens unchanged. Compiled + redeployed to the automation assets copy.
+
+**Cleanup.** Phantom position closed manually (`exit_reason=phantom_entry_no_fill`, pnl 0.0, close row appended to `mfg_live_trades.jsonl`). Fast slot freed; open positions back to 0.
+
+**Remaining hardening note.** The exact RPC error text for the sig=null response was not captured; a future pass should log the full RPC response when sig comes back None.

@@ -265,3 +265,5 @@
 | 02:08 | SELL 10x | DVxaAXi3 | £20.04 | ladder stage 3 |
 | 03:27 | BUY | 5TiPtwDZ | £7.86 | entry mc $170,538 | +21min |
 | 03:47 | STOP | 5TiPtwDZ | £0.10 | trail-stop at 0.01x |
+| 09:27 | BUY | 2CJ9rFxo | £7.70 | entry mc $206,535 | +10min |
+| 10:06 | BUY | 7Zddh63U | £7.54 | entry mc $220,995 | +21min |
