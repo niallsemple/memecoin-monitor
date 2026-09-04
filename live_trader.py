@@ -63,6 +63,9 @@ PRIOR_FEE_MICROLAMPORTS = 200_000  # ~0.0002 SOL priority fee
 
 _state = {"rpc": 0}
 
+# §278: last RPC error object, for diagnosing sig=None rejections
+_last_rpc = {"error": None, "method": None, "ts": 0}
+
 
 def _log(row):
     row["ts"] = time.time()
@@ -84,10 +87,16 @@ def _rpc(method, params):
             with urllib.request.urlopen(req, timeout=25) as r:
                 out = json.loads(r.read())
             if "error" in out:
+                _last_rpc["error"] = out["error"]
+                _last_rpc["method"] = method
+                _last_rpc["ts"] = time.time()
                 time.sleep(2.0)
                 continue
             return out.get("result")
-        except Exception:
+        except Exception as e:
+            _last_rpc["error"] = f"{type(e).__name__}: {e}"
+            _last_rpc["method"] = method
+            _last_rpc["ts"] = time.time()
             time.sleep(2.0)
     return None
 
@@ -625,6 +634,7 @@ def curve_buy(mint, sol_amount, reason="signal"):
             # position on 5CrfJju (buy never landed; balance untouched).
             if not sig:
                 row["result"] = "error: sendTransaction returned no sig"
+                row["rpc_error"] = _last_rpc.get("error")
             elif not _tx_success(sig):
                 row["result"] = "error: buy tx failed on-chain (sig present)"
     except Exception as e:
@@ -678,6 +688,10 @@ def curve_sell(mint, token_amount, min_sol_out=0, reason="exit"):
         else:
             sig = _rpc("sendTransaction", [tx_b64, {"encoding": "base64"}])
             row["result"] = "submitted"; row["sig"] = sig
+            # §278: expose RPC error text when the sell never got a sig
+            if not sig:
+                row["result"] = "error: sendTransaction returned no sig"
+                row["rpc_error"] = _last_rpc.get("error")
     except Exception as e:
         row["result"] = f"error: {e}"
     _log(row)
