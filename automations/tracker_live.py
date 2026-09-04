@@ -161,6 +161,22 @@ def fast_entry_spawn(mint, creator):
                 row["result"] = "skip: fast slot busy"
                 lt._log(row)
                 return
+            # §295: tape-visibility safety — never open a position whose
+            # price feed we can't see (§291 blind-exit risk). Visible =
+            # tracker state shows curve notifs flowing OR pool discovered.
+            try:
+                _st = json.loads((MON / "mfg_state.json").read_text())
+                _tt = _st.get(mint) or {}
+                _vis = (_tt.get("notifs", 0) > 0
+                        or _tt.get("pool_notifs", 0) > 0
+                        or _tt.get("pool"))
+            except Exception:
+                _vis = False
+            row["visible"] = bool(_vis)
+            if not _vis:
+                row["result"] = "skip: no tape visibility (§295)"
+                lt._log(row)
+                return
             b = lt.curve_buy(mint, FAST_ENTRY_SIZE,
                              reason="fast_birth §257")
             if str(b.get("result", "")).startswith(

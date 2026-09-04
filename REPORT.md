@@ -5639,3 +5639,7 @@ Section headers in §286, §287, §288, §289, §290, §290a, §291, §292, §29
 Pass run_27e6d7d1 (first with GPA-first discovery): pools_found=5/10 migrations (was 1/14), pool_trades=14,277 (2.7x prior pass), curve trades=3,058 (2.9x), runner alerts=4 (was 0 — alert pipeline sees pools again), helius_err=0. Shadow ledger: no_data count FELL 138→135 (replay reclassifies as data lands), closed 71→78, n=214. Remaining invisible migrations are untracked mints (not in tokens → no discovery by design); evaluated/armed mints now get pools.
 
 Also notable: paper_s60nm5fr_exp=+0.0128 and s60nm5mb_exp=+0.0119 — the paper exit-stack variants are printing positive expectancy on the recovering tape.
+
+## §295 — Pre-entry visibility safety check DEPLOYED (4 Sep 2026, 19:55 UTC)
+
+fast_entry_spawn now refuses entry when the tracker state shows no price feed for the mint (no curve notifs, no pool notifs, no discovered pool) — result "skip: no tape visibility (§295)", logged with a `visible` flag. Closes the §291 blind-exit risk on the birth path. The graduated hook path needs no separate check: its signal is computed from pool tape, so visibility is implied by the signal existing.
