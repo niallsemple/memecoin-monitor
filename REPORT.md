@@ -5594,3 +5594,16 @@ Mined `mfg_wallet_trades.jsonl` (~100MB, 49,358 wallets, 4.2-day span) against p
 - `AXDYPYx8` (1 selective wallet, DdNtMfyM — below the ≥2 convergence threshold): skipped bundled (60.43%); outcome pending in shadow ledger.
 
 Early read: none. Signal remains in TESTING with zero usable outcomes.
+
+## §291 — CRITICAL data gap: 66% of evaluated mints are tape-invisible (4 Sep 2026, ~22:35 UTC)
+
+Shadow ledger census: 138/210 rows are `no_data` (zero rows in mfg_trades.jsonl). Assumed dead-on-arrival — FALSE: **137/138 no_data mints GRADUATED** (curves.jsonl has their migrate events). They lived full, tradeable lifecycles — likely including runners — and the tape saw nothing. The 71 closed rows all graduated too.
+
+**Implications:**
+1. Shadow ledger outcomes are SURVIVOR-BIASED: the 71 closed rows are the mints the tape happened to capture; 66% of the eval universe is missing. All gate-EV numbers (§281/§283) describe only the visible third.
+2. Both convergence-signal test coins (§290a) are no_data → unevaluable, and NOT evidence against the signal (they graduated, didn't die).
+3. **Trading safety:** if a live entry ever fired on a tape-invisible mint, the exit stack would have NO price feed — flying blind. Must add a pre-entry tape-visibility check (or fix subscription coverage) before any entry can be considered safe.
+
+**Root-cause hypothesis (to verify next):** births recovered from blind windows (feed_keeper/curve_collector path) or evaluated in threads get eval'd via RPC but never get their Helius curve accountSubscribe — so their trades never land. Visible-third = births seen by an actively-listening pass.
+
+**Priority:** this outranks signal research. Next: diff a no_data mint vs a closed mint in fast_entry_debug.jsonl / subscription logs to find where the subscription is skipped.
