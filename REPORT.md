@@ -5477,3 +5477,5 @@ before that sample.
 **Cleanup.** Phantom position closed manually (`exit_reason=phantom_entry_no_fill`, pnl 0.0, close row appended to `mfg_live_trades.jsonl`). Fast slot freed; open positions back to 0.
 
 **Remaining hardening note.** The exact RPC error text for the sig=null response was not captured; a future pass should log the full RPC response when sig comes back None.
+
+**§277 addendum — stale-pass overwrite.** The first manual close was overwritten within minutes: the automation pass that had started BEFORE the redeploy (PID 51050, 10:04 UTC) still held the pre-fix code and a stale in-memory copy of the positions file, re-saving `open=True` and continuing the panic loop. Fix: waited for that pass to exit (~10:21 UTC), re-closed the phantom position (10:22:27 UTC), and verified stability across the next pass start (10:24 UTC, new code): position stayed closed, zero new activity on the mint, feed fresh. Operational lesson: after deploying tracker fixes, any in-flight pass started pre-deploy must be allowed to finish (or be killed) before manual state repairs, or it will resurrect stale state.

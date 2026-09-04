@@ -1205,7 +1205,7 @@
   "actual_fill_note": "verified on-chain: meta.err None, wallet +0.10563 SOL gross on 0.1021 stake (net +0.0035 post-fees), abort15 exit, sig 3Xcho4is"
  },
  "5CrfJjuyydxF3Twhg52rzdrZzuU8mcEWFNhiGvYUpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "curve",
   "entry_t": 1788515234.074591,
@@ -1217,6 +1217,10 @@
   "trough_mult": 0.0,
   "freerolled": false,
   "sol_recovered": 0.0,
-  "entry_kind": "fast_birth"
+  "entry_kind": "fast_birth",
+  "exit_reason": "phantom_entry_no_fill",
+  "pnl_sol": 0.0,
+  "exit_t": 1788517347.9852989,
+  "actual_fill_note": "buy never landed: sendTransaction returned sig=null, 0 token accounts, wallet 2.0656 SOL unchanged (\u00a7277). re-closed after stale pre-deploy pass overwrote first close."
  }
 }

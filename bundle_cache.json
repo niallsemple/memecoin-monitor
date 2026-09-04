@@ -936,5 +936,19 @@
   "outsider_pct": 61.49,
   "deployer_pct": 79.31,
   "n_buyers": 55
+ },
+ "BmP1v9dKbRSQEaF9G6WgYQfsKy8cfrPStAgCnqh5pump": {
+  "birth": 1788516780,
+  "txs_in_window": 84,
+  "outsider_pct": 60.43,
+  "deployer_pct": 79.31,
+  "n_buyers": 37
+ },
+ "a6MnfdamWHkiwqg7yY9ory8iFs3mUh1E9dB1uP4pump": {
+  "birth": 1788517511,
+  "txs_in_window": 84,
+  "outsider_pct": 61.13,
+  "deployer_pct": 79.31,
+  "n_buyers": 37
  }
 }
