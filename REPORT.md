@@ -5629,3 +5629,7 @@ Empirical root-cause test on 5 tape-invisible mints: GeckoTerminal 429'd on 4/5;
 3. Migrate handler: immediate GPA fallback when migrate-tx parse misses (previously waited ~60s for the GT-throttled snapshot loop).
 
 **Validation plan:** next pass stats — pools_found should jump from ~1/pass toward migrations/pass; new shadow rows should stop accumulating no_data. Gate-EV re-baseline (§281/§283 survivor-bias caveat) once the visible fraction recovers. Pre-entry visibility safety check still pending.
+
+### Erratum — section timestamps §286-§293 (4 Sep 2026)
+
+Section headers in §286, §287, §288, §289, §290, §290a, §291, §292, §293 state UTC times ~2 hours late (author clock error). Correct UTC write times per git log (commit local −0100): §286 18:17, §287 18:19, §288 18:30, §289 18:32, §290 18:53/19:01, §290a 19:06, §291 19:14, §292 19:17, §293 19:21-19:22. All programmatic timestamps (eval_ts, entry_t, run records) are correct; only prose headers were wrong.
