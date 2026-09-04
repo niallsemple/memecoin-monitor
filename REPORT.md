@@ -5419,3 +5419,19 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
 - MISS-COST ANALYSIS (honest EV check on the §262 bundle gate): this is the one bundled launch in 100h that became a runner. The gate would have skipped it and forfeit +0.0375. Against that: the same gate blocked 3 confirmed era rugs (-0.122, -0.110, -0.106 = -0.338 avoided) plus 40+ bundled launches tonight alone, of which a sampled one (pJ8rHu2KiP) is already dead. Net: the gate remains strongly +EV. One WOFI per 40 blocks is a price worth paying.
 - Post-promotion ledger: 13 closes, 12 green / 1 rug, net ≈ +0.087 SOL. Wallet ~2.06 SOL liquid (from 2.0).
 - NO OPEN POSITIONS. Birth path armed with birth_cap(30m); gates blocking on both paths.
+
+## §272 — Shadow ledger: the gate's live scoreboard (Sep 4, ~04:30 BST)
+Problem: the fast path sees every armed birth ~2s after creation, but 82/85
+evals skip (bundle gate). Skipped mints had NO curve prints — the tracker only
+subscribed curves when seed >= SEED_MIN and the 40-slot MAX_TRACK had room, so
+we could never answer "what did the gate save/cost?" with real trajectories.
+Fix (deployed): armed births now ALWAYS subscribe the bonding-curve account
+(tracker_live.py armed block). Skipped-mint prints now land in
+mfg_trades.jsonl (venue=curve) like any tracked mint.
+New: shadow_ledger.py replays the EXACT live fast_birth exit stack
+(freeroll 1.5x/75%, trail 0.5x peak, panic <0.80, nm_abort, fade,
+abort15/30, birth_cap 30m, timestop 120m, §235 floor) on every
+fast_entry_eval skip, entry at the first print at/after decision time.
+Output shadow_ledger.jsonl; verdict line = cumulative SOL the gate saved
+(negative paper ret) or cost (positive). The 87 pre-fix skips are marked
+no_data (no prints exist) — the scoreboard starts accruing from deploy.
