@@ -3977,3 +3977,38 @@
 | 01:26 | robinhood | `0xB05618…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,442 mc=$129,371 | chain:robinhood no-audit-adapter | Figure AI's third-gen humanoid. NVIDIA-backed. $39B company. Helix-powered. |
 | 01:26 | robinhood | `0xBa471F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,676 mc=$72,251 | chain:robinhood no-audit-adapter | HARD Money paired with BONER ,LP Fees are split between buyback and burn and oth |
 | 01:26 | solana | `TigR9Rwy…` | FAIL | TOP10_HEAVY:95% | liq=$9,016 mc=$6,955 | name=TIGR Token symbol=TIGR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=95 | TIGR is a token on Solana with a fixed supply. 36.15% of supply burned. Founder- |
+| 02:06 | solana | `7tM9LA8Q…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$8,904 | name=Solanuts symbol=SOLANUTS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 02:06 | base | `0xB20000…` | PASS | — | liq=$31,090 mc=$74,860 | holders=0; buy_tax=0 sell_tax=0; contract:clean | RetardCoin |
+| 02:06 | solana | `EbT2jpoe…` | FAIL | TOP10_HEAVY:71% | liq=$19,678 mc=$28,723 | name=Anonymous Dog symbol=ZDOG; contract:clean; rugcheck_score=1 lpLocked=99.9982409682587 | The Dog Stays Anonymous. No Socials. Zcash Rewards. |
+| 02:06 | robinhood | `0x364287…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | built around the oldest chart in history: gold. fees buy gold and distribute it  |
+| 02:06 | robinhood | `0xef6835…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | goldcoin |
+| 02:06 | robinhood | `0x5E322C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,099 mc=$39,931 | chain:robinhood no-audit-adapter | Superposition is key. |
+| 02:26 | solana | `45p6Ah2N…` | FAIL | TOP10_HEAVY:58% | liq=$9,674 mc=$18,070 | name=aero symbol=AERO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=58.3% |  |
+| 02:26 | robinhood | `0x72a967…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,199 mc=$91,929 | chain:robinhood no-audit-adapter | Anyone can run a hedge fund. Showcase it, grow it, get paid twice. Or back someo |
+| 02:26 | solana | `2cwHMek1…` | FAIL | TOP10_HEAVY:58% | liq=$0 mc=$17,603 | name=Dog Of The Year symbol=Canyon; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 02:26 | robinhood | `0x6f2eaa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,102 mc=$62,514 | chain:robinhood no-audit-adapter | rivian cto 100% fees + 11%  to ansem |
+| 02:26 | robinhood | `0xAf373c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,478 mc=$247,425 | chain:robinhood no-audit-adapter | x |
+| 02:26 | robinhood | `0xC60bA2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$310,360 mc=$4,814,777 | chain:robinhood no-audit-adapter | Shape what assets can do |
+| 03:06 | solana | `5TiPtwDZ…` | PASS | — | liq=$32,649 mc=$157,084 | name=MarsCoin symbol=MarsCoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | The first memecoin by Elon and Ansem, the destination is Mars. The future is red |
+| 03:06 | ethereum | `0xE35C52…` | PASS | — | liq=$18,537 mc=$31,630 | holders=3; buy_tax= sell_tax=; contract:clean |  |
+| 03:06 | bsc | `0x20793C…` | CAUTION | PROXY | liq=$0 mc=$52,087 | holders=0; buy_tax= sell_tax= | 向熊猫神祈祷 |
+| 03:06 | solana | `DKQYJETT…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:83% | liq=$4,545 mc=$5,542 | name=hopium symbol=hopium; contract:clean; rugcheck_score=27 lpLocked=100%; top10_hold=82. |  |
+| 03:06 | robinhood | `0x03dfc6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Viral Reddit Cat |
+| 03:06 | robinhood | `0x43304b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,816 mc=$116,373 | chain:robinhood no-audit-adapter | 6 agents, 1 patient, 0 candidates and 0 doses. milo is still at 1.4/10 mobility, |
+| 03:26 | solana | `87Y8yTks…` | PASS | — | liq=$22,128 mc=$76,961 | name=Kimi Ga Itakara symbol=Kimi; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Quiet days look good on Kimi. Kimi finds joy in quiet, ordinary moments—watching |
+| 03:26 | robinhood | `0x93c8e2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$9,764 | chain:robinhood no-audit-adapter | Cni6900 |
+| 03:26 | solana | `7MheGcnp…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99% | liq=$2,310 mc=$2,265 | name=biketrump symbol=biketrump; contract:clean; rugcheck_score=33 lpLocked=100%; top10_ho | biketrump |
+| 03:26 | robinhood | `0x654c7c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,775 mc=$44,502 | chain:robinhood no-audit-adapter |  |
+| 03:26 | robinhood | `0xe63260…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,818 mc=$5,400 | chain:robinhood no-audit-adapter | An abandoned Activision project from 1985, brought back to life using modern tec |
+| 03:26 | robinhood | `0xB934ca…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,912 mc=$74,822 | chain:robinhood no-audit-adapter | Connect a ChatGPT, Grok Build or Kimi Code seat subscription. Use it from the Op |
+| 03:46 | solana | `29Jrc7qi…` | FAIL | TOP10_HEAVY:90% | liq=$0 mc=$6,408 | name=just memecoin symbol=MEME; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | No tokenized equity, this is just a memecoin. |
+| 03:46 | solana | `2RxLo1w3…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,176 mc=$2,089 | name=Pons Inu symbol=pons; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=99. | A Shiba made of glass |
+| 03:46 | solana | `7jAxKsGd…` | FAIL | TOP10_HEAVY:78%; RC_WARN:Single holder ownership; RC_WARN:High holder concentration | liq=$15,676 mc=$41,846 | name=SIDE EYE BABY symbol=SIDEEYE; contract:clean; rugcheck_score=39 lpLocked=100%; top10_ | From the creator of Pepark and fukyeah comes Side Eye Baby. a Memeify original b |
+| 03:46 | solana | `3m19wMzc…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$10,152 | name=Mellow  symbol=Hope; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=68.9% |  |
+| 03:46 | robinhood | `0xC35465…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,666 mc=$25,617 | chain:robinhood no-audit-adapter | Wooing the ‘apes’ Wold said Aron was smart to shift his focus from industry anal |
+| 04:06 | robinhood | `0xE0514A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$132,842 mc=$671,204 | chain:robinhood no-audit-adapter |  |
+| 04:06 | solana | `62sRxxH4…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$10,675 | name=Trump Monkey symbol=Trump; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | Crazy ass monkey look just like Donald Trump |
+| 04:06 | robinhood | `0x1547Dc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$64,611 mc=$144,185 | chain:robinhood no-audit-adapter | Doggo is OpenAI's only AI Agent Dog introduced in 2019 to help research how AI a |
+| 04:06 | ethereum | `0x4188fA…` | PASS | — | liq=$11,378 mc=$14,746 | holders=43; buy_tax=0 sell_tax=0; contract:clean | First Microduck pair with NVIDIA on Ethereum |
+| 04:06 | robinhood | `0x9c06e2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:06 | robinhood | `0x1F8B49…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,500 mc=$6,257 | chain:robinhood no-audit-adapter | JOTXA.FUN first launching test token  just JOTXA |

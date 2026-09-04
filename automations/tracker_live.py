@@ -1180,6 +1180,16 @@ def run(ctx):
                         new_token(mint, d)
                         stats["new_tracks"] += 1
                     t120 = tokens[mint]
+                    shadow_curve = d.get("bondingCurveKey")
+                # §272: shadow ledger — ALWAYS subscribe the armed mint's
+                # curve (armed births bypass MAX_TRACK for tracking but
+                # previously often missed the curve subscription when the
+                # 40-slot cap was full). Skipped mints' prints then land in
+                # mfg_trades.jsonl (venue=curve) so shadow_ledger.py can
+                # replay the exact exit stack on every gate skip.
+                if shadow_curve:
+                    subscribe_account(mint, "curve", shadow_curve)
+                with LK:
                     already = t120.get("armed")
                     t120["armed"] = True
                     if (d.get("vSolInBondingCurve") or 0) >= 110 \
