@@ -5563,3 +5563,15 @@ Tested the mirror of §284/§285: buy strength (enter at +5/+10/+20/+50% above o
 Owner directive history: "see coins before the 7-minute window", "find coins 5-10 min earlier". Latency profile of fast_entry_eval (n=209): **birth→detection 1s** (websocket subscription); detection→eval median **54s** (p25 52, p75 59, p90 74). Decomposition: `FAST_ENTRY_DELAY_S=40` deliberate sleep = 30s bundle-observation window (outsider_pct needs ~30s of post-birth txs to detect bundled launches) + margin, then ~14s of serial RPC scoring (deployer_score + bundle_share getTransaction fetches, rate-limited 0.8s/tx on ≤24 sigs).
 
 **Conclusion:** entry speed is NOT the bottleneck and never was — we see every coin within 1s of birth. The 54s is the cost of the evidence that makes the §262 gate work (the only proven positive-EV component, §283). Shaving it further = trading on weaker evidence = re-exposing the left tail that §286 proved cannot be exited profitably. Max safe optimization: parallelize the RPC scoring with the observation sleep (~10s saving, med 54s→~44s) — marginal. Marking the "find coins earlier" directive ANSWERED: we already see everything instantly; waiting is the price of the gate.
+
+## §288 — Wallet intelligence phase 1: copying is weak, data gap found (4 Sep 2026, ~20:40 UTC)
+
+Mined `mfg_wallet_trades.jsonl` (~100MB, 49,358 wallets, 4.2-day span) against price tape (4,466 mints). `wallet_mine.py` committed.
+
+**Findings:**
+1. **Paper-PnL leaders are unrealized bag-holders** (top wallet +2,343 SOL "profit" on 5.2 SOL spent = unsold bags valued at last mcap). Not copyable.
+2. **Realized edge is rare:** only **5%** of active wallets (≥4 mints per half) are profitable on a realized (sells−buys) basis.
+3. **Persistence weak but nonzero:** H1 realized winners staying profitable in H2: 2/7 (29%) vs 5% base rate — a ~6x lift but n=7, statistically thin. Overall rank correlation (n=1032, looser threshold): Spearman +0.095 ≈ noise.
+4. **DATA GAP:** wallet tape covers only 104 of 4,466 mints and lags birth by median **2,426s (~40 min)** — it records post-graduation pool trading, NOT the birth window. Early-buy (≤5s) share is 0% for ALL wallets — not because bots don't snipe, but because this feed never sees the birth window. Wallet-copying at birth cannot come from this tape.
+
+**Salvage path:** build a winner-wallet registry from the graduated-coin trading the wallet tape DOES cover (realized winners, persistence-tested), then check each new birth's first-30s signers (already fetched for the §262 bundle gate) against that registry. "Known winner wallet in the birth window" would be a point-in-time-valid signal using data we already collect. Status: TESTING.
