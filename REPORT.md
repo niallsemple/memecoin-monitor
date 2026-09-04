@@ -5665,3 +5665,7 @@ fast_entry_spawn now refuses entry when the tracker state shows no price feed fo
 ## §296b — VALIDATED (4 Sep 2026, ~20:53 UTC)
 
 First new-code pass (started 20:24 UTC) drained the backlog: graduated no-pool backlog **170 → 3** (the 3 are fresh, awaiting GPA indexing). Graduated-last-2h pool coverage **19/19 (100%)** — vs 6/15 pre-fix and 1/14 before the §293 arc. 21 pools show `pool_poll_ts`, confirming the deferred-poll HTTP path ran with ws up. Side effect to watch: the pass ran ~28 min (backlog GPA drain is one-off work); steady-state pass duration should normalize next pass — if it stays >20 min, triggers will skip and the interval needs a look.
+
+### §296b artifact confirmation (pass 20:24–20:42 UTC, duration normal at 18.0 min)
+
+`pools_found=174` in one pass (backlog drained), `pool_pruned=137` (stale slots recycled as designed), `helius_err=0` under the added GPA+poll load. Shadow ledger inflected: no_data 138→**132** and closed 79→**85** — previously invisible mints now get tape and close properly. Expected side effect observed: shadow_ret_total dropped to −7.45 as the newly-visible cohort includes dead mints the old biased sample excluded — the universe now reflects reality, which is precisely why the gate-EV re-baseline (next) must replace §281/§283's survivor-biased +0.26 SOL estimate. Paper exit-stack s60nm5fr +0.0153 / s60nm5mb +0.0119 holding.
