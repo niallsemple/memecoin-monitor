@@ -5633,3 +5633,9 @@ Empirical root-cause test on 5 tape-invisible mints: GeckoTerminal 429'd on 4/5;
 ### Erratum — section timestamps §286-§293 (4 Sep 2026)
 
 Section headers in §286, §287, §288, §289, §290, §290a, §291, §292, §293 state UTC times ~2 hours late (author clock error). Correct UTC write times per git log (commit local −0100): §286 18:17, §287 18:19, §288 18:30, §289 18:32, §290 18:53/19:01, §290a 19:06, §291 19:14, §292 19:17, §293 19:21-19:22. All programmatic timestamps (eval_ts, entry_t, run records) are correct; only prose headers were wrong.
+
+## §294 — Visibility fix VALIDATED, first pass with §293 (4 Sep 2026, 19:42 UTC)
+
+Pass run_27e6d7d1 (first with GPA-first discovery): pools_found=5/10 migrations (was 1/14), pool_trades=14,277 (2.7x prior pass), curve trades=3,058 (2.9x), runner alerts=4 (was 0 — alert pipeline sees pools again), helius_err=0. Shadow ledger: no_data count FELL 138→135 (replay reclassifies as data lands), closed 71→78, n=214. Remaining invisible migrations are untracked mints (not in tokens → no discovery by design); evaluated/armed mints now get pools.
+
+Also notable: paper_s60nm5fr_exp=+0.0128 and s60nm5mb_exp=+0.0119 — the paper exit-stack variants are printing positive expectancy on the recovering tape.
