@@ -5530,6 +5530,6 @@ Per-trade leakage audit over 66 landed closed positions (sent 7.7146 SOL, recove
 
 **Re-tests with realistic costs:**
 - Late-entry momentum rule (§282): still NEGATIVE at 0.3% slippage (−0.0147 SOL) — rejection stands; failure is tail-driven (post-confirmation rug −66.8%, +39% round-trip), not cost-driven.
-- Gate-EV restated at 0.5% slip: **+0.2202 SOL saved** (vs +0.3449 at 2%) — gate remains decisively positive.
+- Gate-EV restated at 0.5% slip: **+0.2588 SOL saved, skipped-win-rate 19/68** (vs +0.3517 at 2%, 10/68) — gate remains decisively positive. (Shadow ledger now at 68 closed rows.)
 
 **Strategy implication:** execution cost is NOT the bottleneck (0.65% is fine). The edge hunt narrows to: tail-risk avoidance (done — gates) + finding entries whose expected move clears ~1% with high precision. birth_cap shadow cohort (+11.4% avg, n=6) remains the candidate class; waiting on first gated-pass live entry.
