@@ -5587,3 +5587,10 @@ Mined `mfg_wallet_trades.jsonl` (~100MB, 49,358 wallets, 4.2-day span) against p
 **Key observation:** all 4 wallets that hit `iGzxXPAi` are from the SELECTIVE class. Four of ~8 selective proven winners converging on one birth window is a far stronger signal than bot presence. NB: negative lags in the analysis confirm tape "birth" ≠ true birth for pre-existing mints (collection-start artifact) — lag numbers approximate.
 
 **Next refinement:** split registry into bot/selective classes (breadth cutoff ~50 buys/4 days); count a hit only for selective-class convergence (≥2 selective wallets). Track `iGzxXPAi` outcome as the first datapoint.
+
+### §290a — convergence datapoints #1-2 (4 Sep 2026, ~22:15 UTC)
+
+- `iGzxXPAi` (4 selective winners in window): shadow row came back **no_data** — coin effectively didn't trade on our tape. Datapoint is a wash, not a confirmation either way.
+- `AXDYPYx8` (1 selective wallet, DdNtMfyM — below the ≥2 convergence threshold): skipped bundled (60.43%); outcome pending in shadow ledger.
+
+Early read: none. Signal remains in TESTING with zero usable outcomes.
