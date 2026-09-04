@@ -4023,3 +4023,27 @@
 | 04:46 | solana | `AkhdUwDZ…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99% | liq=$2,371 mc=$2,215 | name=ROBINAPE symbol=ROBINAPE; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hold |  |
 | 04:46 | robinhood | `0xD96fC8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,151 mc=$20,795 | chain:robinhood no-audit-adapter | Elon Musk has one of the biggest visions in human history: making humanity a mul |
 | 04:46 | bsc | `0x49155a…` | CAUTION | PROXY | liq=$32,312 mc=$118,742 | holders=0; buy_tax= sell_tax= | The most iconic panda in the East, now on @Binance. |
+| 05:26 | solana | `4PTcQTnp…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$14,189 | name=Stick With This Coin symbol=STICK; contract:clean; rugcheck_score=1 lpLocked=100%; to | Unite the Volume Stick together |
+| 05:26 | solana | `G3tqANw8…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$14,760 | name=THE TESLA INU symbol=FLOKI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 05:26 | robinhood | `0xcf5d32…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 05:26 | solana | `EdDSkCK4…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,549 mc=$2,526 | name=Long Cat symbol=のび子; contract:clean; rugcheck_score=32 lpLocked=99.99074578426274%; t | Longcat was a white cat who became a meme legend on 2chan (2ch) in the mid2000s  |
+| 05:26 | robinhood | `0x709a24…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Relay AI |
+| 05:26 | robinhood | `0x4fFb83…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,995 mc=$36,789 | chain:robinhood no-audit-adapter |  |
+| 06:26 | robinhood | `0x64eE81…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$76,963 mc=$338,725 | chain:robinhood no-audit-adapter | A Meme Cat |
+| 06:26 | solana | `Ai82d2wx…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,932 | name=Make Solana Great Again symbol=MSGA; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
+| 06:26 | solana | `oEK1k6oX…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$13,904 | name=Bot Mesh World symbol=World; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold | Persistent 3D world of Grok Bots. |
+| 06:26 | solana | `F2bLKM4u…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:51% | liq=$21,581 mc=$53,718 | name=worthless symbol=worthless; contract:clean; rugcheck_score=59 lpLocked=86.12455196186 | It’s a worthless token |
+| 06:26 | robinhood | `0xab7726…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Farms, grow produce and sell it for supply. |
+| 06:26 | robinhood | `0xc60fe0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 06:56 | solana | `G5Ag5wwC…` | FAIL | TOP10_HEAVY:85% | liq=$0 mc=$7,390 | name=Gooncoin symbol=Gooncoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | The prophecized Claude's Gooncoin. |
+| 06:56 | solana | `8W4RRWij…` | FAIL | TOP10_HEAVY:77% | liq=$0 mc=$8,224 | name=BRAINROT symbol=BRAINROT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 06:56 | robinhood | `0xb423d0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | $MSTR: Meme season’s top runner. |
+| 06:56 | solana | `JBrzNDUr…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$19,345 mc=$55,420 | name=A Meme Coin symbol=AMC; contract:clean; rugcheck_score=1 lpLocked=99.59791781877539%; | amc |
+| 06:56 | robinhood | `0xe15b43…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,444 mc=$81,698 | chain:robinhood no-audit-adapter | iPhone and a dream 📲🍎 |
+| 06:56 | solana | `AKyGbpeE…` | FAIL | TOP10_HEAVY:84% | liq=$0 mc=$4,396 | name=call'd symbol=call'd; contract:clean; rugcheck_score=1 lpLocked=99.99268368156224%; t | Watch the Axiom wallet you trade with Stay logged into pumpfun as that same wall |
+| 07:06 | robinhood | `0x5e1F35…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,399 mc=$8,901 | chain:robinhood no-audit-adapter | THE INDEX WAS JUST A FRONT. |
+| 07:06 | robinhood | `0x4C24e2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$154,130 mc=$3,596,905 | chain:robinhood no-audit-adapter |  |
+| 07:06 | solana | `5VQWQzgc…` | CAUTION | RC_WARN:High holder correlation | liq=$29,832 mc=$129,223 | name=A Meme Coin symbol=MEME; contract:clean; rugcheck_score=30 lpLocked=0%; top10_hold=13 | The theater was just a front. Behind the curtain, it was a meme coin all along. |
+| 07:16 | robinhood | `0x37336e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,766 mc=$60,097 | chain:robinhood no-audit-adapter | So i’ve been building cool things around y combinator and contributing a lot alo |
+| 07:16 | robinhood | `0x931c73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Pons volume into strategy exposure, settled back to holders. The winning strateg |
+| 07:16 | robinhood | `0xAe0A10…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,942 mc=$21,908 | chain:robinhood no-audit-adapter | Ape Meme Coins |

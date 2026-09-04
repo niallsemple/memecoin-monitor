@@ -5444,3 +5444,10 @@ fast_entry_eval count exceeds ~700 (roughly 72h). Question to answer:
 do clean (outsider_pct<40) launches cluster by hour, or is the armed
 birth stream's flat 9-32/hour profile the whole story? If flat, the
 edge is unschedulable and 24/7 automation is confirmed as the answer.
+
+## §274 — Ops: interval slip + manual recovery (Sep 4, ~07:15 BST)
+The 20-min tracker interval missed its 06:44 UTC fire after a clean
+06:24-06:42 pass (transient scheduler slip; ps=0, logs stale ~14 min).
+Manual Automation.run at 06:55 executed a full pass (06:55-07:12,
+exit 0, binding publish OK). The 07:04 interval fire was skipped by
+overlap protection — schedule confirmed alive. Blind window ~13 min.
