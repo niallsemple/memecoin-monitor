@@ -5435,3 +5435,12 @@ fast_entry_eval skip, entry at the first print at/after decision time.
 Output shadow_ledger.jsonl; verdict line = cumulative SOL the gate saved
 (negative paper ret) or cost (positive). The 87 pre-fix skips are marked
 no_data (no prints exist) — the scoreboard starts accruing from deploy.
+
+## §273 — Marker: time-of-day re-analysis at 700+ evals
+As of Sep 4 (~05:45 BST) the fast-path eval set is 92 rows over 8.6h —
+too thin for any time-of-day conclusion (1 burst at 20:00 UTC Sep 3 is
+an anecdote). Re-run the hourly clean-launch analysis once
+fast_entry_eval count exceeds ~700 (roughly 72h). Question to answer:
+do clean (outsider_pct<40) launches cluster by hour, or is the armed
+birth stream's flat 9-32/hour profile the whole story? If flat, the
+edge is unschedulable and 24/7 automation is confirmed as the answer.

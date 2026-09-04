@@ -4017,3 +4017,9 @@
 | 04:26 | robinhood | `0xb8Df00…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,784 mc=$33,358 | chain:robinhood no-audit-adapter | The AMC CEO is mad! |
 | 04:26 | solana | `qViDuQPp…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:64% | liq=$0 mc=$12,129 | name=Make PumpFun Great Again symbol=MPGA; contract:clean; rugcheck_score=61 lpLocked=100% | Official MPGA coin |
 | 04:26 | robinhood | `0xe2dAE1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,585 mc=$132,569 | chain:robinhood no-audit-adapter |  |
+| 04:46 | robinhood | `0xe50809…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Land on a square, mint its deed. The deed pays rent in that company's actual sto |
+| 04:46 | robinhood | `0xb2e3fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | GET FREE ROBUX NOW! |
+| 04:46 | bsc | `0x75B364…` | PASS | — | liq=$22,486 mc=$51,620 | holders=0; buy_tax=0.03 sell_tax=0.03; contract:clean | TrustCat |
+| 04:46 | solana | `AkhdUwDZ…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99% | liq=$2,371 mc=$2,215 | name=ROBINAPE symbol=ROBINAPE; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hold |  |
+| 04:46 | robinhood | `0xD96fC8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,151 mc=$20,795 | chain:robinhood no-audit-adapter | Elon Musk has one of the biggest visions in human history: making humanity a mul |
+| 04:46 | bsc | `0x49155a…` | CAUTION | PROXY | liq=$32,312 mc=$118,742 | holders=0; buy_tax= sell_tax= | The most iconic panda in the East, now on @Binance. |
