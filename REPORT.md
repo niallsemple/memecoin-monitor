@@ -5533,3 +5533,15 @@ Per-trade leakage audit over 66 landed closed positions (sent 7.7146 SOL, recove
 - Gate-EV restated at 0.5% slip: **+0.2588 SOL saved, skipped-win-rate 19/68** (vs +0.3517 at 2%, 10/68) — gate remains decisively positive. (Shadow ledger now at 68 closed rows.)
 
 **Strategy implication:** execution cost is NOT the bottleneck (0.65% is fine). The edge hunt narrows to: tail-risk avoidance (done — gates) + finding entries whose expected move clears ~1% with high precision. birth_cap shadow cohort (+11.4% avg, n=6) remains the candidate class; waiting on first gated-pass live entry.
+
+## §284 — "Buy everything / buy the dip" tested and REJECTED (4 Sep 2026, ~19:45 UTC)
+
+Owner question: instead of freeroll-selectivity, is there a mechanical point to buy-and-sell everything — e.g., does a 40% dip offer +10% ROI?
+
+**Raw tape stats (4,453 mints, first 2h of life):** 77% of coins hit +10% above birth price at some point; 83% suffer a ≥40% dip from peak (median max-dip 70%, p90 100%); of those dippers, 79% bounce ≥10% *from the true bottom* within 60 min, median bounce +81.7%.
+
+**The catch — you can't buy the bottom:** the bottom is only known retroactively. Realistic entry = when mcap crosses −40% from peak on the way down. Simulated honestly (enter at the cross, +10% target or 60-min timeout, 0.5% slippage): hit rate **40%**, median loser **−18.3%**, 9% go to ≤2% of entry, **net EV −14.6% per trade**.
+
+**Variant sweep — all 17 cells negative:** dip depth 40/50/60/70% × target +5/+10/+20% × −15% stop → net −3.9% to −6.0%. Liquidity floors (mcap ≥10/30 SOL at entry) and 5-min floor-confirmation don't fix it (−4.5% to −6.3%).
+
+**Conclusion:** the huge bounce statistics are survivorship-on-dead-liquidity artifacts — the big bounces print on 0.01 SOL trades no size can fill, while size-fillable entries keep catching knives. "Buy and sell everything" is structurally negative-EV on this market; selectivity (gates) remains the only proven positive component (+0.2588 SOL saved at real costs, §283). The freeroll approach stands.

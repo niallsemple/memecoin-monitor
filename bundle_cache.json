@@ -1405,5 +1405,19 @@
   "outsider_pct": 60.91,
   "deployer_pct": 79.31,
   "n_buyers": 178
+ },
+ "fZzDKZyg6qZJACR9ZFfvismfY2P9eUh5CgD5q24pump": {
+  "birth": 1788545141,
+  "txs_in_window": 102,
+  "outsider_pct": 60.07,
+  "deployer_pct": 79.31,
+  "n_buyers": 59
+ },
+ "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump": {
+  "birth": 1788545319,
+  "txs_in_window": 111,
+  "outsider_pct": 60.95,
+  "deployer_pct": 79.31,
+  "n_buyers": 54
  }
 }
