@@ -5523,3 +5523,13 @@ Backfilled first-10-min mcap paths from the tape for 61/62 closed shadow rows.
 1. Momentum-confirmation entry does NOT survive costs at 0.05 SOL sizing. Rejected.
 2. The binding constraint on this whole strategy is now explicit: **round-trip cost (slippage+fees ≈4%) vs average edge per trade.** Signal quality is no longer the bottleneck — cost structure is. Any positive-ROI route must either (a) cut per-trade costs (larger size amortizes fixed fees; tighter slippage routes; better execution), or (b) target only moves ≫4% with high precision.
 3. Gate-avoidance (+0.3449 SOL saved, §281) remains the only proven positive-EV component. Full gate-EV review still due at 100 closed shadow rows.
+
+## §283 — Real cost structure: 0.65% round-trip, not 4% (4 Sep 2026, ~19:30 UTC)
+
+Per-trade leakage audit over 66 landed closed positions (sent 7.7146 SOL, recovered 7.1389): true unaccounted overhead (fees+rent+dust) ≈ **0.05 SOL = 0.65% per round trip**. The 2%-each-way shadow assumption is ~6x too harsh vs realized fills. Mainstream abort15 cohort (n=50, real money): +0.1039 SOL on 5.99 sent (+1.7%/trade gross) — profitable per-trade; ALL cumulative damage came from tail cohorts (panic_writeoff, panic, drain_tx_failed, reclaim_bug, 6024_blocked) which the §262+ gates now block.
+
+**Re-tests with realistic costs:**
+- Late-entry momentum rule (§282): still NEGATIVE at 0.3% slippage (−0.0147 SOL) — rejection stands; failure is tail-driven (post-confirmation rug −66.8%, +39% round-trip), not cost-driven.
+- Gate-EV restated at 0.5% slip: **+0.2202 SOL saved** (vs +0.3449 at 2%) — gate remains decisively positive.
+
+**Strategy implication:** execution cost is NOT the bottleneck (0.65% is fine). The edge hunt narrows to: tail-risk avoidance (done — gates) + finding entries whose expected move clears ~1% with high precision. birth_cap shadow cohort (+11.4% avg, n=6) remains the candidate class; waiting on first gated-pass live entry.
