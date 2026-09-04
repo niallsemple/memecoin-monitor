@@ -5508,3 +5508,18 @@ After two interval slips (§274, §279), a watchdog now guards the birth feed: `
 1. outsider_pct, txs_in_window, deployer history do NOT separate bundled winners from losers at eval time — the gate is blind-but-correct (net cohort EV is deeply negative, so blocking the whole band stays right).
 2. `n_buyers ≥ ~150` is a panic-rug shape marker (median 192 vs ~59 elsewhere) — already blocked, but usable as a harder-flag / logging feature.
 3. Finding the winners inside the bundled band needs richer post-birth features (price-path shape, holder evolution, LP behavior) than the eval record currently captures. Candidate next experiment: enrich shadow rows with first-10-min price path (dip-then-recover vs straight bleed) and retest separability.
+
+## §282 — Price-path separability: real signal, NOT tradable (4 Sep 2026, ~19:15 UTC)
+
+Backfilled first-10-min mcap paths from the tape for 61/62 closed shadow rows.
+
+**Separation test:** `end10 > 1.05` (mcap ≥5% above entry at 10 min post-entry) catches 9/19 positive rows including ALL big winners (+5.5%…+33.7%) while admitting only 1/39 losers. dip5 is useless (median 1.00 both cohorts — nothing dips below entry-base in 5 min).
+
+**Tradability test (late-entry at 10-min price, 2% slippage each way, 0.05 SOL):** n=11 triggered, 7 wins, **EV = −0.0326 SOL (−0.0030/trade) — NEGATIVE.** Two failure modes:
+1. Thin margins: most confirmed winners only added +1–6% after the +5% confirmation; the 4% round-trip slippage eats them.
+2. Late-momentum traps: `AbTacXBq` (end10=1.39) was entered at +39% and round-tripped (−7.7% net); `FcbT9tYP` confirmed +15% then panic-rugged (−66.8%).
+
+**Conclusions:**
+1. Momentum-confirmation entry does NOT survive costs at 0.05 SOL sizing. Rejected.
+2. The binding constraint on this whole strategy is now explicit: **round-trip cost (slippage+fees ≈4%) vs average edge per trade.** Signal quality is no longer the bottleneck — cost structure is. Any positive-ROI route must either (a) cut per-trade costs (larger size amortizes fixed fees; tighter slippage routes; better execution), or (b) target only moves ≫4% with high precision.
+3. Gate-avoidance (+0.3449 SOL saved, §281) remains the only proven positive-EV component. Full gate-EV review still due at 100 closed shadow rows.
