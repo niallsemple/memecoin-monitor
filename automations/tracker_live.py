@@ -1935,6 +1935,43 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §299: selective-convergence scoreboard — join CONV eval hits
+        # (>=2 selective winner wallets in the birth window) against the
+        # s60nm5fr paper replay. Promotion path to a live gate override:
+        # paper_conv avg >0 at real costs AND zero wipeouts at n>=10
+        # closed (§299). Lone-winner hits stay disqualified (§298).
+        _conv = set()
+        with (MON / "mfg_live_trades.jsonl").open() as _f:
+            for _ln in _f:
+                try:
+                    _r = json.loads(_ln)
+                except Exception:
+                    continue
+                if (_r.get("action") == "fast_entry_eval"
+                        and _r.get("selective_convergence")):
+                    _conv.add(_r.get("mint"))
+        _pr = []
+        if PAPER_SFR.exists():
+            with PAPER_SFR.open() as _f:
+                for _ln in _f:
+                    try:
+                        _r = json.loads(_ln)
+                    except Exception:
+                        continue
+                    if _r.get("mint") in _conv:
+                        _pr.append(_r)
+        _cl = [_r["ret"] for _r in _pr
+               if _r.get("status") == "closed" and _r.get("ret") is not None]
+        paper["paper_conv_hits"] = len(_conv)
+        paper["paper_conv_rows"] = len(_pr)
+        paper["paper_conv_closed"] = len(_cl)
+        if _cl:
+            paper["paper_conv_exp"] = round(sum(_cl) / len(_cl), 4)
+            paper["paper_conv_wins"] = sum(1 for v in _cl if v > 0)
+            paper["paper_conv_wipes"] = sum(1 for v in _cl if v <= -0.5)
+    except Exception:
+        pass
+    try:
         # §112: live hook — fr-gated entries go to live_trader in
         # dry-run (nothing submits until the owner's manual_signoff.json
         # exists; STOP_LIVE_TRADING halts instantly). Entries whose
