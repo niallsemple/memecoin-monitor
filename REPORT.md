@@ -5683,3 +5683,12 @@ Universe: 220 skipped | 87 closed | 7 open | 126 no_data. Skipped-cohort avg ret
 - **Skipped mints that ran >+50%: ZERO.** Best single foregone trade: +0.0189 SOL. The "we're missing the runners" hypothesis is empirically empty in this cohort — loosening the gates would add left tail, not right tail.
 
 **Verdict: KEEP current gates (outsider_pct ≥40, prior_rugs ≥1, §262 bundle block). No tightening or loosening indicated.** The gates are the only proven positive-EV component; the pass-gate cohort still has zero live entries since gates went blocking — the open question is no longer whether the gates save money but whether ANYTHING passes them often enough to trade. Next measurement frontier: convergence-signal quality and the s60nm5fr exit-stack paper expectancy (+0.0153 and holding).
+
+## §298 — Wallet-signal first quality read (4 Sep 2026, ~21:35 UTC; PRELIMINARY, sub-threshold)
+
+Cohort outcomes now that §296 gives them tape (threshold for verdict remains ≥5 closed CONV hits):
+
+- **selective_convergence (≥2 selective winners), n=3:** h1FERATgom −1.1%, ZEaeu9GeC3 +0.3%, 9GSv65STa5 open (Coca-Cola — tape revived retroactively by §296, confirming old no_data rows heal). Closed avg −0.4% vs all-closed baseline −6.15% (§297). No tail losses so far.
+- **winner_in_window (≥1 winner), n=9:** closed avg **−12.6%**, WORSE than baseline — dragged by EEvENJmY −100% wipeout that had a winner wallet in its window. Single-winner presence is NOT an edge; it does not filter tail risk.
+
+Preliminary read: convergence (multi-selective) is the only wallet signal worth continuing to measure; lone-winner hits are noise and will not be promoted. No gate override considered until ≥5 closed CONV outcomes.
