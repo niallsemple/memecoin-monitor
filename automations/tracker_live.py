@@ -827,12 +827,26 @@ def run(ctx):
     def discover_pool(mint):
         """Return {'pool','pbt','pqt'} for the mint's WSOL pool, else None.
 
-        §66: GT-first (free) to avoid getProgramAccounts credit burn that
-        exhausted the Helius quota (429 'max usage reached', 2026-08-30).
-        GT gives the pumpswap pool address; ONE getAccountInfo parses the
-        vaults (layout: quoteMint@75, poolBaseTA@139, poolQuoteTA@171).
-        Falls back to the getProgramAccounts scan if GT is blind.
+        §293: GPA-FIRST — GeckoTerminal now 429s constantly (4 Sep 2026:
+        4/5 test mints rate-limited, GPA found all 4 instantly). Helius
+        quota was raised to 10M calls/month 2 Sep — the §66 GPA credit
+        burn concern no longer applies. GT kept as fallback only.
+        (layout: quoteMint@75, poolBaseTA@139, poolQuoteTA@171).
         """
+        try:
+            r = rpc("getProgramAccounts", [AMM_PROG, {
+                "encoding": "base64",
+                "filters": [{"memcmp": {"offset": 43, "bytes": mint}}]}])
+            res = (r or {}).get("result") if isinstance(r, dict) else r
+            for a in res or []:
+                raw = base64.b64decode(a["account"]["data"][0])
+                if len(raw) < 203 or _b58e(raw[75:107]) != WSOL:
+                    continue
+                return {"pool": a["pubkey"],
+                        "pbt": _b58e(raw[139:171]),
+                        "pqt": _b58e(raw[171:203])}
+        except Exception:
+            pass
         try:
             url = ("https://api.geckoterminal.com/api/v2/networks/solana/"
                    f"tokens/{mint}/pools")
@@ -853,19 +867,6 @@ def run(ctx):
                         return {"pool": addr,
                                 "pbt": _b58e(raw[139:171]),
                                 "pqt": _b58e(raw[171:203])}
-        except Exception:
-            pass
-        try:
-            r = rpc("getProgramAccounts", [AMM_PROG, {
-                "encoding": "base64",
-                "filters": [{"memcmp": {"offset": 43, "bytes": mint}}]}])
-            for a in r.get("result") or []:
-                raw = base64.b64decode(a["account"]["data"][0])
-                if len(raw) < 203 or _b58e(raw[75:107]) != WSOL:
-                    continue
-                return {"pool": a["pubkey"],
-                        "pbt": _b58e(raw[139:171]),
-                        "pqt": _b58e(raw[171:203])}
         except Exception:
             pass
         return None
@@ -1239,8 +1240,9 @@ def run(ctx):
                 if mint in tokens and not tokens[mint]["grad_ts"]:
                     tokens[mint]["grad_ts"] = d["_ts"]
                 t_mig = tokens.get(mint)
-                want_pool = bool(t_mig and t_mig.get("armed")
-                                 and not t_mig.get("pool"))
+                # §293: pool discovery for ALL tracked mints, not just armed —
+                # the armed-only gate made 66% of evaluated mints tape-invisible
+                want_pool = bool(t_mig and not t_mig.get("pool"))
             # §120: armed births get the pool parsed out of the migrate tx
             # immediately — GT indexing lags minutes and the quiet entry
             # window is only ~18-25 min (§119). Pool = owner holding both
@@ -1301,6 +1303,19 @@ def run(ctx):
                         stats["pools_found"] += 1
                 except Exception:
                     pass
+                # §293: migrate-tx parse often misses — GPA fallback now,
+                # not 60s later in snapshot_loop (GT 429s made that path
+                # near-useless; Helius 10M/month makes GPA affordable).
+                with LK:
+                    still_need = t_mig is not None and not t_mig.get("pool")
+                if still_need:
+                    p2 = discover_pool(mint)
+                    if p2:
+                        with LK:
+                            t_mig["pool"] = p2
+                            t_mig["pool_last_ts"] = time.time()
+                        subscribe_pool(mint, t_mig)
+                        stats["pools_found"] += 1
         elif tt in ("buy", "sell") and mint and not hws_ref["open"]:
             # §67: Helius down — pumpportal trade feed replaces curve deltas
             try:
