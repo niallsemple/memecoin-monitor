@@ -5607,3 +5607,14 @@ Shadow ledger census: 138/210 rows are `no_data` (zero rows in mfg_trades.jsonl)
 **Root-cause hypothesis (to verify next):** births recovered from blind windows (feed_keeper/curve_collector path) or evaluated in threads get eval'd via RPC but never get their Helius curve accountSubscribe — so their trades never land. Visible-third = births seen by an actively-listening pass.
 
 **Priority:** this outranks signal research. Next: diff a no_data mint vs a closed mint in fast_entry_debug.jsonl / subscription logs to find where the subscription is skipped.
+
+## §292 — Tape-visibility root cause FOUND (4 Sep 2026, ~23:00 UTC)
+
+Chain of evidence:
+1. Curve accounts FREEZE at graduation; armed births are born-terminal (curve complete in create tx, same-slot migrate) → their curve subscriptions yield ZERO notifications forever. All post-birth trading is on the PumpSwap pool.
+2. Pool discovery runs ONLY in the migrate handler and ONLY when `want_pool` = token tracked AND `armed` AND no pool yet (tracker_live.py:1242). Non-armed graduated mints get NO pool discovery — their post-grad life is invisible by design.
+3. Even for armed mints, parse success is low: last pass pools_found=1 vs migrations=14 (and no getProgramAccounts fallback fires).
+4. Confirmed: tape rows for closed shadow mints are venue='pool' — the visible 34% are exactly the mints whose pool was found and subscribed. The invisible 66% had no pool sub.
+5. Last pass stats: births=484, curve_subs=52, helius_err=0 (quota NOT the issue), pools_found=1.
+
+**Fix design (next):** (a) attempt pool discovery on EVERY migrate for tracked/eval'd mints, not just armed; (b) add getProgramAccounts fallback (memcmp offset 43 = mint) when migrate-tx parse fails; (c) pre-entry safety check: refuse live entry unless tape visibility (curve active OR pool subscribed) is confirmed — prevents blind-exit risk flagged in §291.
