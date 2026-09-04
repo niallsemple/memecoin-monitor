@@ -1354,6 +1354,7 @@ def run(ctx):
 
     # ---- snapshot / pool-discovery / unsubscriber thread ----
     exit_ck = {"t": 0.0, "lt": None}  # §126: fast-exit cadence state
+    reg_ck = {"t": time.time()}       # §290: weekly winner-registry refresh (registry built 4 Sep; first auto-refresh +7d)
 
     def snapshot_loop():
         while not stop.is_set():
@@ -1635,6 +1636,17 @@ def run(ctx):
                             if _a.get("act") not in ("hold",):
                                 stats["live_exits"] = \
                                     stats.get("live_exits", 0) + 1
+                except Exception:
+                    pass
+            # 6) §290: weekly winner-registry refresh — keeps the
+            # selective-convergence signal's wallet list current as the
+            # wallet tape grows. No-op unless 7 days since last refresh.
+            if now - reg_ck["t"] > 7 * 86400:
+                reg_ck["t"] = now
+                try:
+                    subprocess.run(
+                        ["python3", str(MON / "winner_registry.py")],
+                        capture_output=True, timeout=280)
                 except Exception:
                     pass
             stop.wait(10)
