@@ -4092,3 +4092,14 @@
 | 10:06 | solana | `7Kpm6bUz…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,384 | name=RUSSEL CROW symbol=crow; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=70. |  |
 | 10:06 | robinhood | `0xd73111…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Launch coins on Pons V2 with Ponsium. Every launched coin including Ponsium, con |
 | 10:06 | robinhood | `0xEdC0fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$92,024 mc=$189,547 | chain:robinhood no-audit-adapter | ChatGPT's cartoon cousin. Same autocomplete. Worse posture. Will clown the other |
+| 10:56 | robinhood | `0x58905A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,275 mc=$13,854 | chain:robinhood no-audit-adapter | AMC and GME are 2 main MEMESTOCKS. This memestocks is paired with both of them 5 |
+| 10:56 | robinhood | `0x938dD9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,183 mc=$62,557 | chain:robinhood no-audit-adapter | NVIDIA+INTEL+GOOGLE+GME+APPLE = NIGGA  BULLISH NIGGA |
+| 10:56 | robinhood | `0x806103…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,676 mc=$8,894 | chain:robinhood no-audit-adapter | Duhcat , The cat that looks at every dumb trade and just goes… duh. $DUH — the o |
+| 10:56 | robinhood | `0xdE3468…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$73,261 mc=$105,120 | chain:robinhood no-audit-adapter | just a dog trying to get that selfie |
+| 10:56 | solana | `8Wog9WG9…` | PASS | — | liq=$36,335 mc=$191,193 | name=DUMBMONEY symbol=DUMBMONEY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | DUMBMONEY hits Solana with wild memes, reckless trades, and pure degen market en |
+| 10:56 | bsc | `0xF94a65…` | PASS | — | liq=$20,503 mc=$21,123 | holders=0; buy_tax= sell_tax=; contract:clean | 狴犴骑士 · 以神兽之威，铸持币者权益 20%回购销毁｜80%社区分红，狴犴守护每一份筹码   项目简介   狴犴，上古神兽，主公正、守律法，象征铁面无私、秉公 |
+| 11:06 | solana | `7ikAErwb…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:66% | liq=$0 mc=$10,745 | name=Puggle symbol=Puggle; contract:clean; rugcheck_score=77 lpLocked=100%; top10_hold=65. |  |
+| 11:06 | robinhood | `0xF139f7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$60,529 mc=$66,870 | chain:robinhood no-audit-adapter | Assemble a Schrödinger apparatus. Once assembled, it runs on chain forever: a se |
+| 11:06 | solana | `4X61ERVp…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$25,183 mc=$98,326 | name=Gao symbol=Gao; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=35.2% | Gao was made with unlimited creativity, nothing to do with crypto or anything li |
+| 11:06 | robinhood | `0x3533e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,001 mc=$7,019 | chain:robinhood no-audit-adapter |  |
+| 11:06 | robinhood | `0x019E71…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,852 mc=$6,180 | chain:robinhood no-audit-adapter |  |

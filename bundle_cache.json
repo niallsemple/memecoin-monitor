@@ -957,5 +957,47 @@
   "outsider_pct": 52.46,
   "deployer_pct": 79.05,
   "n_buyers": 22
+ },
+ "HRPhkrkmfmQg3eyJZCbs2bE9azH8U2PBeEmcDbd8pump": {
+  "birth": 1788517796,
+  "txs_in_window": 114,
+  "outsider_pct": 57.47,
+  "deployer_pct": 79.31,
+  "n_buyers": 56
+ },
+ "to6icCZCPcaZ9XzzYR3DuztxxvXgMmnK6vn4ouupump": {
+  "birth": 1788518100,
+  "txs_in_window": 121,
+  "outsider_pct": 61.49,
+  "deployer_pct": 79.31,
+  "n_buyers": 72
+ },
+ "ErsBCLNcJbo4StNbFakDNQG5huD4D7JeJ1MvG94Ypump": {
+  "birth": 1788518114,
+  "txs_in_window": 1065,
+  "outsider_pct": 49.48,
+  "deployer_pct": 87.15,
+  "n_buyers": 24
+ },
+ "e36imoJSqfmBhLPxdvdcQooS1WgFxZph8MYGQ4Apump": {
+  "birth": 1788519234,
+  "txs_in_window": 103,
+  "outsider_pct": 61.72,
+  "deployer_pct": 79.31,
+  "n_buyers": 57
+ },
+ "9535pqjgD1s6AkxcbTFFN5y6M5UkFtLYB8hG8Djtpump": {
+  "birth": 1788519481,
+  "txs_in_window": 119,
+  "outsider_pct": 60.88,
+  "deployer_pct": 79.31,
+  "n_buyers": 81
+ },
+ "7VJsew2gdFgTXdakDS7o9t7XjvJvnuVy4U5HQygDpump": {
+  "birth": 1788520013,
+  "txs_in_window": 165,
+  "outsider_pct": 60.07,
+  "deployer_pct": 79.31,
+  "n_buyers": 76
  }
 }

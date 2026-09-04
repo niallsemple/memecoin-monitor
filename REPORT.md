@@ -5483,3 +5483,7 @@ before that sample.
 ## §278 — RPC error capture on sig=None (hardening after §277)
 
 `_rpc()` now records the last RPC error object (or exception) in module-level `_last_rpc`. When `sendTransaction` returns no signature, `curve_buy` and `curve_sell` attach `rpc_error` to the ledger row, and `curve_sell` now reports `error: sendTransaction returned no sig` instead of a bare `submitted` (exit watcher already requires a truthy sig + on-chain success, so no behavior change there). Next rejection will tell us exactly why (slippage guard, dead curve, blockhash, etc.) instead of a silent null. `live_trader.py` is importlib-loaded from MON each pass, so this is live immediately.
+
+## §279 — Second interval-scheduler slip (10:42–10:53 UTC)
+
+Pass cadence slipped again: the 10:24 UTC pass ended 10:42 and the next interval fire (~10:44) never happened. Detected via tapes stalling ~9 min (both `curves.jsonl` and `mfg_trades.jsonl` froze — passes are the writers). Recovered with a manual Automation run (10:53–11:11, exit 0). Blind window ~11 min; the recovering pass re-evaluated mints born in the gap (`to6icCZC`, `Jt1GPaca`) and correctly blocked both as bundled (61.05% / 61.49%). This is the second slip after §274 — same signature, same fix. If a third occurs, add a watchdog (dead-man switch on tape mtime that auto-triggers a manual run).
