@@ -5575,3 +5575,15 @@ Mined `mfg_wallet_trades.jsonl` (~100MB, 49,358 wallets, 4.2-day span) against p
 4. **DATA GAP:** wallet tape covers only 104 of 4,466 mints and lags birth by median **2,426s (~40 min)** — it records post-graduation pool trading, NOT the birth window. Early-buy (≤5s) share is 0% for ALL wallets — not because bots don't snipe, but because this feed never sees the birth window. Wallet-copying at birth cannot come from this tape.
 
 **Salvage path:** build a winner-wallet registry from the graduated-coin trading the wallet tape DOES cover (realized winners, persistence-tested), then check each new birth's first-30s signers (already fetched for the §262 bundle gate) against that registry. "Known winner wallet in the birth window" would be a point-in-time-valid signal using data we already collect. Status: TESTING.
+
+## §290 — First winner_in_window hit + registry anatomy (4 Sep 2026, ~21:40 UTC)
+
+**First hit:** `iGzxXPAivr361RqPas8poucRqn3Lci3ktVwrqLvpump` — 4 of 14 registry wallets bought within its first 30s: 3nXfcrad (+16% ROI/9 mints), 8qNupZGM (+376%/5), DdNtMfyM (+68%/5), FHaUejLk (+53%/6). Mint was skipped as bundled (60.93% outsider); shadow ledger will show its outcome.
+
+**Registry anatomy (entry-lag analysis vs tape births):** the 14 wallets split into TWO classes:
+- **6 breadth bots** (3ga98t7R, 2BMQs8Bs, 7yY4AjdP, AfVWSGb6, AkdUhXNk, 9mHdv7gM): 700+ buys each over 4.2 days, median entry ~33 min post-birth, ROI 2–35% — systematic pool-trading bots, NOT discretionary smart money.
+- **8 selective wallets** (HxcdEi6C, 3nXfcrad, A1whpgaA, FHaUejLk, DdNtMfyM, 4mKFpYp5, 8qNupZGM, 7fjYmBur): ≤21 trades, mostly higher ROI.
+
+**Key observation:** all 4 wallets that hit `iGzxXPAi` are from the SELECTIVE class. Four of ~8 selective proven winners converging on one birth window is a far stronger signal than bot presence. NB: negative lags in the analysis confirm tape "birth" ≠ true birth for pre-existing mints (collection-start artifact) — lag numbers approximate.
+
+**Next refinement:** split registry into bot/selective classes (breadth cutoff ~50 buys/4 days); count a hit only for selective-class convergence (≥2 selective wallets). Track `iGzxXPAi` outcome as the first datapoint.
