@@ -5618,3 +5618,14 @@ Chain of evidence:
 5. Last pass stats: births=484, curve_subs=52, helius_err=0 (quota NOT the issue), pools_found=1.
 
 **Fix design (next):** (a) attempt pool discovery on EVERY migrate for tracked/eval'd mints, not just armed; (b) add getProgramAccounts fallback (memcmp offset 43 = mint) when migrate-tx parse fails; (c) pre-entry safety check: refuse live entry unless tape visibility (curve active OR pool subscribed) is confirmed — prevents blind-exit risk flagged in §291.
+
+## §293 — Visibility fix DEPLOYED (4 Sep 2026, ~23:15 UTC)
+
+Empirical root-cause test on 5 tape-invisible mints: GeckoTerminal 429'd on 4/5; getProgramAccounts found all 4 instantly. GT-first discovery (§66, designed for the old exhausted-quota era) had become the failure point; the owner's Helius upgrade (10M calls/month, 2 Sep) makes GPA-first affordable.
+
+**Changes (tracker_live.py, deployed to frozen automation copy):**
+1. `discover_pool()`: GPA-first, GT demoted to fallback.
+2. Migrate handler: pool discovery for ALL tracked mints (armed-only gate removed).
+3. Migrate handler: immediate GPA fallback when migrate-tx parse misses (previously waited ~60s for the GT-throttled snapshot loop).
+
+**Validation plan:** next pass stats — pools_found should jump from ~1/pass toward migrations/pass; new shadow rows should stop accumulating no_data. Gate-EV re-baseline (§281/§283 survivor-bias caveat) once the visible fraction recovers. Pre-entry visibility safety check still pending.
