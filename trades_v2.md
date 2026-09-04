@@ -259,3 +259,5 @@
 | 22:06 | STOP | 3DV5zVYW | £2.34 | trail-stop at 0.31x |
 | 03:06 | BUY | 5uLawxSb | £7.56 | entry mc $230,834 | +40min |
 | 04:26 | STOP | 5uLawxSb | £0.08 | trail-stop at 0.01x |
+| 23:28 | SELL 5x | DVxaAXi3 | £10.02 | ladder stage 2 |
+| 01:26 | BUY | BFR7Ku41 | £7.61 | entry mc $175,892 | +41min |

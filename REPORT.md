@@ -5411,3 +5411,11 @@ nm_abort branch now n=3: +0.0863 + 0.041 = +0.1273 SOL cumulative — the stack'
   - CONCLUSION: with current metrics, entry gates CANNOT separate this rug archetype from the greens. The edge is exit timing: 2/2 greens exited ~15 min; the one held past 30 min rugged.
 - FIX DEPLOYED: P_BIRTH_CAP_MIN = 30.0 — non-freerolled fast_birth positions now hard-exit at 30 min (birth_cap), freerolled house-money keeps the normal trail. Counterfactual on 9Arnb9hN: exit at 30 min above water (~1.1-1.25x) => +0.005..+0.012 instead of -0.050.
 - Scaling case: condition 2 (zero birth-entry rugs) FAILED. Fast-entry scaling stays OFF at 0.05.
+
+## §271 — Close #67: 7vEVYhk5 (WOFI, plateau, pre-fix bundled entry) — TRAIL EXIT +0.0375 SOL (+39%)
+
+- The bundled stress test that slipped through pre-§262. Freerolled at 1.5x (banked 0.1106 on 0.0961 stake), then house money ran 5.2 hours to peak 2.967x; trail took it out at 0.957x for a final +0.0228 SOL leg. Verified on-chain (meta.err None).
+- Total: +0.0375 SOL on 0.0961 staked — best trade of the run.
+- MISS-COST ANALYSIS (honest EV check on the §262 bundle gate): this is the one bundled launch in 100h that became a runner. The gate would have skipped it and forfeit +0.0375. Against that: the same gate blocked 3 confirmed era rugs (-0.122, -0.110, -0.106 = -0.338 avoided) plus 40+ bundled launches tonight alone, of which a sampled one (pJ8rHu2KiP) is already dead. Net: the gate remains strongly +EV. One WOFI per 40 blocks is a price worth paying.
+- Post-promotion ledger: 13 closes, 12 green / 1 rug, net ≈ +0.087 SOL. Wallet ~2.06 SOL liquid (from 2.0).
+- NO OPEN POSITIONS. Birth path armed with birth_cap(30m); gates blocking on both paths.
