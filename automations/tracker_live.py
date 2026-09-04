@@ -1400,11 +1400,25 @@ def run(ctx):
                 need.sort(key=lambda x: -x[1]["birth_ts"])
             n_pool_tracked = sum(1 for t in tokens.values()
                                  if t.get("pool") and not t.get("pool_done"))
+            # §296: promote deferred pools (discovered but never subscribed —
+            # sub cap was hit) into freed slots, youngest first. mint_sub is
+            # this run's live subscription registry.
+            if n_pool_tracked < MAX_POOL_TRACK:
+                with LK:
+                    deferred = [(m, t) for m, t in tokens.items()
+                                if t.get("pool") and not t.get("pool_done")
+                                and "pool_q" not in mint_sub.get(m, {})
+                                and now - t["birth_ts"] < 26 * 3600]
+                    deferred.sort(key=lambda x: -x[1]["birth_ts"])
+                for m, t in deferred[:MAX_POOL_TRACK - n_pool_tracked]:
+                    subscribe_pool(m, t)
+                    n_pool_tracked += 1
             for m, t in need[:5]:
                 with LK:
                     t["pool_try_ts"] = now
-                if n_pool_tracked >= MAX_POOL_TRACK:
-                    break
+                # §296: discovery is cheap HTTP GPA — NEVER gate it on the
+                # ws subscription cap. The old `break` here starved a 170-mint
+                # graduated backlog into permanent tape-invisibility (§296).
                 p = discover_pool(m)
                 if p:
                     # seed baseline balances so dead pools still get an mcap
@@ -1427,11 +1441,20 @@ def run(ctx):
                         _liq_update(t)
                         t["pool"] = p
                         t["pool_last_ts"] = now
-                        n_pool_tracked += 1
                         stats["pools_found"] += 1
-                    subscribe_pool(m, t)
-            # 1b) §66b: poll pool vaults over HTTP while Helius ws is down
-            if not hws_ref["open"]:
+                    # §296: subscribe only while a slot is free; otherwise the
+                    # §296b HTTP poll (below) covers the tape until one opens.
+                    if n_pool_tracked < MAX_POOL_TRACK:
+                        subscribe_pool(m, t)
+                        n_pool_tracked += 1
+            # 1b) §66b: poll pool vaults over HTTP while Helius ws is down.
+            # §296b: when ws is UP, poll only discovered-but-unsubscribed
+            # (deferred) pools — the 30-slot ws cap starved a 170-mint
+            # graduated backlog into tape-invisibility. Never poll a
+            # ws-streamed pool: dv accounting on pool_last_q would
+            # double-count against accountNotification updates.
+            _ws_open = hws_ref["open"]
+            if True:
                 # §66f: open paper positions must never age out of the
                 # poll window — exit management depends on their flow.
                 open_mints = set()
@@ -1446,13 +1469,20 @@ def run(ctx):
                     poll = [(m, t) for m, t in tokens.items()
                             if t.get("pool") and not t.get("pool_done")
                             and t.get("pool_last_q") is not None
-                            and now - t["birth_ts"] < 6 * 3600]
+                            and now - t["birth_ts"] < 6 * 3600
+                            # §296b: ws up -> deferred pools only, 20s per-pool
+                            # re-poll floor (quota: ~0.8M calls/mo at cap 6).
+                            and (not _ws_open
+                                 or ("pool_q" not in mint_sub.get(m, {})
+                                     and now - t.get("pool_poll_ts", 0) > 20))]
                     # §66b: youngest first — E25 lives in the first hour
                     poll.sort(key=lambda x: -x[1]["birth_ts"])
                     prot = [x for x in poll if x[0] in open_mints]
                     rest = [x for x in poll if x[0] not in open_mints]
-                    poll = (prot + rest)[:12]
+                    poll = (prot + rest)[:(8 if _ws_open else 12)]
                 for m, t in poll:
+                    with LK:
+                        t["pool_poll_ts"] = now
                     p = t["pool"]
                     amts = {}
                     for k, addr in (("b", p["pbt"]), ("q", p["pqt"])):

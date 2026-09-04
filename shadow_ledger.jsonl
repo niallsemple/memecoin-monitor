@@ -201,7 +201,7 @@
 {"mint": "CDLFpLb4ryMRdGZsqo3qzCeeBLaGj7xCf3uPjJ8pump", "status": "no_data", "ret": null}
 {"mint": "gZSvWSudTJnRv6fd4Ag1ZVYNmGZLUFWGWLAAJpupump", "status": "closed", "eval_ts": 1788544689.435833, "entry_t": 1788545233.256785, "peak": 1.002, "freerolled": false, "exit_reason": "abort15", "ret": -0.0377}
 {"mint": "fZzDKZyg6qZJACR9ZFfvismfY2P9eUh5CgD5q24pump", "status": "closed", "eval_ts": 1788545194.532738, "entry_t": 1788549916.852454, "peak": 1.038, "freerolled": false, "exit_reason": "abort15", "ret": -0.0033}
-{"mint": "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump", "status": "open", "eval_ts": 1788545373.1061811, "entry_t": 1788549916.008661, "peak": 1.163, "freerolled": false, "mark": 0.1175, "ret": null}
+{"mint": "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump", "status": "closed", "eval_ts": 1788545373.1061811, "entry_t": 1788549916.008661, "peak": 1.255, "freerolled": false, "exit_reason": "panic", "ret": -0.8803}
 {"mint": "DMoYXtcytQQanPQNcF5SXW393Lc9nZCcLpipgLjZpump", "status": "closed", "eval_ts": 1788545772.5726001, "entry_t": 1788549915.468487, "peak": 1.052, "freerolled": false, "exit_reason": "abort15", "ret": 0.0106}
 {"mint": "nLiK49iKRhXKBz7nHAwY9Wgg2fU9Uxccd7avxozpump", "status": "closed", "eval_ts": 1788545994.768926, "entry_t": 1788549625.0806348, "peak": 1.048, "freerolled": false, "exit_reason": "abort15", "ret": 0.006}
 {"mint": "9fkGaRUEbcUvqFeFjBf7GAxCzdCEdGEZXvUhi6Kipump", "status": "closed", "eval_ts": 1788547266.899338, "entry_t": 1788548370.0958972, "peak": 1.0, "freerolled": false, "exit_reason": "abort15", "ret": -0.0392}
@@ -212,3 +212,5 @@
 {"mint": "4rXCi8i98tWQgdoeJvMb5sEM34d7EqyjHMyMhX8mpump", "status": "no_data", "ret": null}
 {"mint": "h1FERATgomYe64GPBv5YMvMWj32MxMVmtRywgkZpump", "status": "no_data", "ret": null}
 {"mint": "5c7W6KjEB41ZfcLjikWYJN9ME5BjmUPpUp5t1Znbpump", "status": "no_data", "ret": null}
+{"mint": "9GSv65STa5ma2FZhzQ6JaGrgN5VxWyDMRSddp9fpump", "status": "no_data", "ret": null}
+{"mint": "9g6Z1W8SmqtNfYyJ9hMv3HmPq4ozaJNXYoYXiBrfpump", "status": "no_data", "ret": null}

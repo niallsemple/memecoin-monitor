@@ -5643,3 +5643,21 @@ Also notable: paper_s60nm5fr_exp=+0.0128 and s60nm5mb_exp=+0.0119 — the paper 
 ## §295 — Pre-entry visibility safety check DEPLOYED (4 Sep 2026, 19:55 UTC)
 
 fast_entry_spawn now refuses entry when the tracker state shows no price feed for the mint (no curve notifs, no pool notifs, no discovered pool) — result "skip: no tape visibility (§295)", logged with a `visible` flag. Closes the §291 blind-exit risk on the birth path. The graduated hook path needs no separate check: its signal is computed from pool tape, so visibility is implied by the signal existing.
+
+## §296 — Pool visibility root cause #2: subscription-cap starvation (FIX DEPLOYED 4 Sep 2026, 20:09 UTC)
+
+**Trigger:** first selective_convergence hit since iGzxXPAi — mint 9GSv65STa5 ("Coca-Cola", born+instant-migrate 19:49 UTC, 2 selective winner wallets in birth window, outsider 55.86%, deployer rugs 0) — landed shadow `no_data` with pool=None, zero tape rows.
+
+**Diagnosis (verified live):**
+1. The mint DID graduate (pump-amm), but the pumpportal "migrate" tx touches only the pump.fun program — the real AMM pool is created in a separate transaction. So the §120 migrate-tx parse can never find these pools, and GPA at migrate-time misses due to indexing lag. Only retries work.
+2. The pool IS discoverable via GPA right now (valid pool 84hCM7FZ…, WSOL quote, correct layout) — but the tracker never retried: `n_pool_tracked` hit MAX_POOL_TRACK=30, and snapshot_loop did `if n_pool_tracked >= MAX_POOL_TRACK: break` BEFORE calling discover_pool. Discovery (cheap HTTP) was gated behind websocket subscription capacity.
+3. Result: a graduated no-pool backlog of 170 mints, permanently tape-invisible while 30 ws slots stayed occupied. This — not discovery failure — is why no_data kept growing after §293 (135→137).
+
+**Fix (three parts, deployed):**
+- §296: discovery decoupled from the sub cap — discover_pool always runs for the backlog; subscribe_pool only when a slot is free. Deferred pools are promoted into freed slots (youngest first) each snapshot iteration.
+- §296b: the §66b HTTP vault-poll path now also runs when the ws is UP, restricted to discovered-but-unsubscribed pools (double-count guard: never poll a pool with a live pool_q sub), cap 8, 20s per-pool re-poll floor (~0.8M Helius calls/month worst case at cap — affordable against the 10M plan).
+- §296c: `pool_poll_ts` stamp throttles deferred polling.
+
+**Expected effect:** graduated mints get tape within ~1-2 snapshot iterations of GPA indexing catching up, regardless of ws slot pressure. no_data should resume decaying; the CONV cohort becomes measurable for the signal-quality check.
+
+**Validation plan:** next pass artifacts — pools_found should rise toward the 170 backlog, shadow no_data growth should stop, and the Coca-Cola mint should gain tape retroactively on its next shadow re-eval… (note: already-closed no_data rows are final; the fix helps new evals only).
