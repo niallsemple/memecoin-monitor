@@ -78,6 +78,7 @@ def bundle_share(mint, deployer=None, window_s=WINDOW_S):
         "outsider_pct": round(100 * outsider / SUPPLY, 2),
         "deployer_pct": round(100 * deployer_amt / SUPPLY, 2),
         "n_buyers": len(acquired),
+        "buyers": sorted(acquired),  # §289: winner-wallet registry cross-ref
     }
     try:
         cache[mint] = res

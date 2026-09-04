@@ -130,6 +130,16 @@ def fast_entry_spawn(mint, creator):
             time.sleep(FAST_ENTRY_DELAY_S)
             bsh = _bs.bundle_share(mint, creator)
             row["bundle_share"] = bsh
+            # §289: winner-wallet registry cross-ref (LOG ONLY, non-blocking)
+            try:
+                if not hasattr(fast_entry_spawn, "_winners"):
+                    wp = MON / "winner_wallets.json"
+                    fast_entry_spawn._winners = set(json.load(open(wp))) if wp.exists() else set()
+                hits = [w for w in (bsh or {}).get("buyers", []) if w in fast_entry_spawn._winners]
+                if hits:
+                    row["winner_in_window"] = hits
+            except Exception:
+                pass
             if bsh and (bsh.get("outsider_pct") or 0) >= FAST_ENTRY_BUNDLE_GATE:
                 row["result"] = "skip: bundled launch"
                 lt._log(row)
