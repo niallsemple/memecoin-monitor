@@ -5669,3 +5669,17 @@ First new-code pass (started 20:24 UTC) drained the backlog: graduated no-pool b
 ### §296b artifact confirmation (pass 20:24–20:42 UTC, duration normal at 18.0 min)
 
 `pools_found=174` in one pass (backlog drained), `pool_pruned=137` (stale slots recycled as designed), `helius_err=0` under the added GPA+poll load. Shadow ledger inflected: no_data 138→**132** and closed 79→**85** — previously invisible mints now get tape and close properly. Expected side effect observed: shadow_ret_total dropped to −7.45 as the newly-visible cohort includes dead mints the old biased sample excluded — the universe now reflects reality, which is precisely why the gate-EV re-baseline (next) must replace §281/§283's survivor-biased +0.26 SOL estimate. Paper exit-stack s60nm5fr +0.0153 / s60nm5mb +0.0119 holding.
+
+## §297 — Gate-EV re-baseline on the FULL visible universe (4 Sep 2026, ~21:20 UTC)
+
+Post-§296 the shadow universe is no longer survivor-biased (pool coverage 100% for fresh graduates; no_data draining 138→126 and falling). Reran the shaved-verdict over ALL closed shadow rows at real costs (SLIP=0.005, SIZE=0.05).
+
+**Result: skipping has SAVED +0.2674 SOL** — within noise of §283's survivor-biased +0.2588. The gates' value is CONFIRMED on the corrected universe, not an artifact of which mints happened to be visible.
+
+Universe: 220 skipped | 87 closed | 7 open | 126 no_data. Skipped-cohort avg return −6.15% per trade. Structure of the saving:
+- panic exits: n=13, avg **−63.6%** (−0.4132 SOL) — the left tail the gates exist to avoid; includes multiple −100% total wipes (e36imoJS, 9535pqjg, EEvENJmY).
+- abort15: n=64, avg +1.35% (+0.0432) — noise around zero.
+- birth_cap: n=7, avg +20.1% (+0.0702) — small foregone upside.
+- **Skipped mints that ran >+50%: ZERO.** Best single foregone trade: +0.0189 SOL. The "we're missing the runners" hypothesis is empirically empty in this cohort — loosening the gates would add left tail, not right tail.
+
+**Verdict: KEEP current gates (outsider_pct ≥40, prior_rugs ≥1, §262 bundle block). No tightening or loosening indicated.** The gates are the only proven positive-EV component; the pass-gate cohort still has zero live entries since gates went blocking — the open question is no longer whether the gates save money but whether ANYTHING passes them often enough to trade. Next measurement frontier: convergence-signal quality and the s60nm5fr exit-stack paper expectancy (+0.0153 and holding).
