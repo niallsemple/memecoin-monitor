@@ -833,3 +833,7 @@
 {"t": 1788545319.4864728, "phase": "thread_start", "mint": "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump"}
 {"t": 1788545319.491065, "phase": "lt_loaded", "mint": "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump"}
 {"t": 1788545373.107446, "phase": "thread_done", "mint": "56k1FmaY2ieDJcuS1LoBPZQjKBcSZZMCXNZBdTLapump", "result": "skip: bundled launch"}
+{"t": 1788545715.727998, "phase": "spawned", "mint": "DMoYXtcytQQanPQNcF5SXW393Lc9nZCcLpipgLjZpump", "creator": "JCyaXTAR58SBqAvMm13LsFxfcSKuDhtWZoaeKQa4Dfzy"}
+{"t": 1788545715.729245, "phase": "thread_start", "mint": "DMoYXtcytQQanPQNcF5SXW393Lc9nZCcLpipgLjZpump"}
+{"t": 1788545715.733261, "phase": "lt_loaded", "mint": "DMoYXtcytQQanPQNcF5SXW393Lc9nZCcLpipgLjZpump"}
+{"t": 1788545772.57349, "phase": "thread_done", "mint": "DMoYXtcytQQanPQNcF5SXW393Lc9nZCcLpipgLjZpump", "result": "skip: bundled launch"}

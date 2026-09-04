@@ -5549,3 +5549,11 @@ Owner question: instead of freeroll-selectivity, is there a mechanical point to 
 ## §285 — Early-window dip-buy: also REJECTED (4 Sep 2026, ~19:55 UTC)
 
 Follow-up to §284 testing whether dips behave differently inside our operating window (first 7 min after birth, entry only after a >15% pump, 15-min timeout): all 6 cells negative (dip 15/25/40% × tgt +10/+20%): net **−1.7% to −6.2%**. Best cell (dip 25%, tgt +20%, n=1113, win 38%) still −1.73%. Combined with §284, 23/23 dip-buy variants are negative-EV. Mechanical dip-buying is dead on this market in every window tested; the selective gated-freeroll path remains the only live route.
+
+## §286 — Momentum/strength entry: rejected under gap-fill realism; the stop-loss fantasy (4 Sep 2026, ~20:05 UTC)
+
+Tested the mirror of §284/§285: buy strength (enter at +5/+10/+20/+50% above open within first 7 min) vs buy-at-birth baseline, targets +10/+20/+30%, −15% stop, 60-min timeout, 0.5% slippage.
+
+**With ideal stop fills** several cells looked positive (best: trig +5%, tgt +20% → net +2.91%, n=1673). **With realistic stop fills the whole grid dies:** when a −15% stop is breached, the actual next-trade fill is median **−22.4%**, mean **−31.5%**, p25 **−43.2%** — stops gap. Re-run with fills at the breaching print: all 12 cells negative, −3.1% to −6.7% net.
+
+**General principle (matches live panic-exit experience of −68% avg):** on pump.fun, ANY strategy whose risk control requires SELLING after price starts falling is structurally broken — exits are the weak link, not entries. This is direct evidence FOR the current architecture: pre-entry gating (avoid the left tail entirely) + freeroll (recover principal into early strength, hold free tokens) is the only strategy shape that doesn't depend on selling into weakness. 35 mechanical-entry variants now tested and rejected across §282/§284/§285/§286; selective gated freeroll remains the sole positive-EV design.
