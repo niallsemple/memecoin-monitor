@@ -5661,3 +5661,7 @@ fast_entry_spawn now refuses entry when the tracker state shows no price feed fo
 **Expected effect:** graduated mints get tape within ~1-2 snapshot iterations of GPA indexing catching up, regardless of ws slot pressure. no_data should resume decaying; the CONV cohort becomes measurable for the signal-quality check.
 
 **Validation plan:** next pass artifacts — pools_found should rise toward the 170 backlog, shadow no_data growth should stop, and the Coca-Cola mint should gain tape retroactively on its next shadow re-eval… (note: already-closed no_data rows are final; the fix helps new evals only).
+
+## §296b — VALIDATED (4 Sep 2026, ~20:53 UTC)
+
+First new-code pass (started 20:24 UTC) drained the backlog: graduated no-pool backlog **170 → 3** (the 3 are fresh, awaiting GPA indexing). Graduated-last-2h pool coverage **19/19 (100%)** — vs 6/15 pre-fix and 1/14 before the §293 arc. 21 pools show `pool_poll_ts`, confirming the deferred-poll HTTP path ran with ws up. Side effect to watch: the pass ran ~28 min (backlog GPA drain is one-off work); steady-state pass duration should normalize next pass — if it stays >20 min, triggers will skip and the interval needs a look.
