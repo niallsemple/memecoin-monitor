@@ -219,7 +219,9 @@ def simulate(mint, eval_ts, birth_t, events):
             "ret": round(proceeds - 1, 4)}
 
 
-def main():
+def summarize():
+    """Run the full replay; write shadow_ledger.jsonl; return a compact
+    dict for the tracker pass-end stats block (§272c)."""
     skips = load_skips()
     ev = load_curves(set(skips))
     rows = []
@@ -230,16 +232,29 @@ def main():
             f.write(json.dumps(r) + "\n")
     closed = [r for r in rows if r["status"] == "closed"]
     open_ = [r for r in rows if r["status"] == "open"]
-    nodata = [r for r in rows if r["status"] == "no_data"]
     tot = sum(r["ret"] for r in closed)
-    sol = tot * SIZE
-    print(f"shadow ledger: {len(rows)} skipped mints | closed {len(closed)} "
-          f"| open {len(open_)} | no_data {len(nodata)}")
+    return {"shadow_n": len(rows), "shadow_closed": len(closed),
+            "shadow_open": len(open_),
+            "shadow_nodata": len(rows) - len(closed) - len(open_),
+            "shadow_ret_total": round(tot, 4),
+            "shadow_sol_at_005": round(tot * SIZE, 4),
+            "shadow_wins": sum(1 for r in closed if r["ret"] > 0),
+            "shadow_avg": round(tot / len(closed), 4) if closed else None,
+            "rows": rows}
+
+
+def main():
+    s = summarize()
+    rows, closed = s["rows"], [r for r in s["rows"] if r["status"] == "closed"]
+    sol = s["shadow_sol_at_005"]
+    print(f"shadow ledger: {s['shadow_n']} skipped mints | closed "
+          f"{s['shadow_closed']} | open {s['shadow_open']} | no_data "
+          f"{s['shadow_nodata']}")
     if closed:
-        wins = sum(1 for r in closed if r["ret"] > 0)
-        print(f"closed paper ret: total {tot:+.4f} per-unit = "
-              f"{sol:+.4f} SOL at {SIZE} | avg {tot/len(closed):+.4f} "
-              f"| win {wins}/{len(closed)}")
+        print(f"closed paper ret: total {s['shadow_ret_total']:+.4f} "
+              f"per-unit = {sol:+.4f} SOL at {SIZE} | avg "
+              f"{s['shadow_avg']:+.4f} | win {s['shadow_wins']}/"
+              f"{len(closed)}")
         by_reason = collections.Counter(r["exit_reason"] for r in closed)
         print("exit reasons:", dict(by_reason))
         worst = sorted(closed, key=lambda r: r["ret"])[:3]

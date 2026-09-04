@@ -1821,6 +1821,22 @@ def run(ctx):
     except Exception:
         pass
     try:
+        # §272c: gate scoreboard — replay the live exit stack on every
+        # fast-path SKIP each pass; the verdict (SOL saved/cost by the
+        # bundle gate) accrues automatically into pass stats.
+        import importlib.util as _ilu2
+        _spec2 = _ilu2.spec_from_file_location(
+            "shadow_ledger", str(MON / "shadow_ledger.py"))
+        _sl = _ilu2.module_from_spec(_spec2)
+        _spec2.loader.exec_module(_sl)
+        _s = _sl.summarize()
+        for k in ("shadow_n", "shadow_closed", "shadow_open",
+                  "shadow_nodata", "shadow_ret_total",
+                  "shadow_sol_at_005", "shadow_wins", "shadow_avg"):
+            paper[k] = _s.get(k)
+    except Exception:
+        pass
+    try:
         # §112: live hook — fr-gated entries go to live_trader in
         # dry-run (nothing submits until the owner's manual_signoff.json
         # exists; STOP_LIVE_TRADING halts instantly). Entries whose
