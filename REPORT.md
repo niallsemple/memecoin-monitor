@@ -5692,3 +5692,19 @@ Cohort outcomes now that §296 gives them tape (threshold for verdict remains �
 - **winner_in_window (≥1 winner), n=9:** closed avg **−12.6%**, WORSE than baseline — dragged by EEvENJmY −100% wipeout that had a winner wallet in its window. Single-winner presence is NOT an edge; it does not filter tail risk.
 
 Preliminary read: convergence (multi-selective) is the only wallet signal worth continuing to measure; lone-winner hits are noise and will not be promoted. No gate override considered until ≥5 closed CONV outcomes.
+
+## §299 — Selective-convergence signal: 5-closed verdict (4 Sep 2026, ~22:15 UTC)
+
+Threshold reached. CONV cohort (≥2 selective winner wallets in birth window; all were §262 bundle-gate blocked):
+
+| mint | ret (2% slip) | exit |
+|---|---|---|
+| h1FERATg | −4.0% | abort15 |
+| 9GSv65ST (Coca-Cola) | **+16.5%** | birth_cap |
+| ZEaeu9Ge | −2.7% | abort15 |
+| 4W7d438D | −1.7% | abort15 |
+| pJiB4cg2 | −3.3% | abort15 |
+
+**CONV avg +0.97% vs all-closed baseline −8.3% (n=96) — a ~9.3pp spread.** At real 0.5% costs the cohort avg is ~+4%. Caveats: n=5, one birth_cap winner carries the average (ex-Coca-Cola avg −3.2%, still 5pp above baseline but negative). No CONV mint produced a tail wipeout — the signal appears to filter the −60%/−100% cohort that dominates baseline losses.
+
+**Decision: promote CONV to PAPER entries (0.05 SOL virtual, s60nm5fr exit stack) — risk-free evidence acceleration; live gates unchanged.** Lone-winner hits remain disqualified (§298: −12.6% avg, worse than baseline). Re-review at n=10 closed CONV paper+shadow outcomes: promotion to a live gate override requires paper-CONV avg >0 at 0.5% costs AND zero tail wipeouts.
