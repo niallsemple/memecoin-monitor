@@ -4012,3 +4012,8 @@
 | 04:06 | ethereum | `0x4188fA…` | PASS | — | liq=$11,378 mc=$14,746 | holders=43; buy_tax=0 sell_tax=0; contract:clean | First Microduck pair with NVIDIA on Ethereum |
 | 04:06 | robinhood | `0x9c06e2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
 | 04:06 | robinhood | `0x1F8B49…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,500 mc=$6,257 | chain:robinhood no-audit-adapter | JOTXA.FUN first launching test token  just JOTXA |
+| 04:26 | solana | `HUnWuoFn…` | FAIL | RC_DANGER:Creator history of rugged tokens | liq=$34,896 mc=$179,533 | name=fragile symbol=fragile; contract:clean; rugcheck_score=49 lpLocked=100%; top10_hold=1 | Fragile was created from the idea that everyone carries something they don't alw |
+| 04:26 | robinhood | `0xFFdf39…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,348 mc=$212,315 | chain:robinhood no-audit-adapter | DawnFinance is a decentralized perpetual futures exchange on Robinhood Chain, of |
+| 04:26 | robinhood | `0xb8Df00…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,784 mc=$33,358 | chain:robinhood no-audit-adapter | The AMC CEO is mad! |
+| 04:26 | solana | `qViDuQPp…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:64% | liq=$0 mc=$12,129 | name=Make PumpFun Great Again symbol=MPGA; contract:clean; rugcheck_score=61 lpLocked=100% | Official MPGA coin |
+| 04:26 | robinhood | `0xe2dAE1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,585 mc=$132,569 | chain:robinhood no-audit-adapter |  |

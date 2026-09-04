@@ -56,22 +56,28 @@ def load_skips():
 
 
 def load_curves(mints):
-    """Price prints for skipped mints. Primary: mfg_trades.jsonl
-    venue=curve rows (mcap_sol per trade, written by tracker for every
-    armed/subscribed mint). Fallback: the create row in curves.jsonl
-    gives the birth mcap so a print-less mint still gets an entry mark.
-    Returns {mint: [(t, mcap_sol), ...]} sorted by t."""
-    ev = collections.defaultdict(list)
+    """Relative price paths for skipped mints. Sources:
+      - curves.jsonl create row: birth mcap (true SOL scale) -> tag 'c'
+      - mfg_trades.jsonl venue=curve: curve mcap (same scale) -> 'c'
+      - mfg_trades.jsonl venue=pool: pool mcap (DIFFERENT scale) -> 'p'
+    The gate's skip targets are mostly born-terminal (§120 manufactured
+    meta) so pool prints are often the ONLY tape. Returns per mint a
+    CHAINED multiple series [(t, mult)] where consecutive prints of the
+    same tag multiply through and a tag switch anchors (no jump) —
+    robust to the scale discontinuity at migration."""
+    raw = collections.defaultdict(list)
     for line in MFG_TRADES.open():
         try:
             r = json.loads(line)
         except Exception:
             continue
-        if r.get("venue") != "curve":
+        v = r.get("venue")
+        if v not in ("curve", "pool"):
             continue
         m = r.get("mint")
-        if m in mints and r.get("mcap_sol") and r.get("t"):
-            ev[m].append((r["t"], r["mcap_sol"]))
+        mc = r.get("mcap_sol")
+        if m in mints and mc and mc > 0 and r.get("t"):
+            raw[m].append((r["t"], "c" if v == "curve" else "p", mc))
     for line in CURVES.open():
         try:
             r = json.loads(line)
@@ -81,9 +87,18 @@ def load_curves(mints):
             continue
         m = r.get("mint")
         if m in mints and r.get("marketCapSol") and r.get("_ts"):
-            ev[m].append((r["_ts"], r["marketCapSol"]))
-    for m in ev:
-        ev[m] = sorted(set(ev[m]))
+            raw[m].append((r["_ts"], "c", r["marketCapSol"]))
+    ev = {}
+    for m, xs in raw.items():
+        xs.sort()
+        mult, pv, pmc = 1.0, None, None
+        series = []
+        for t, v, mc in xs:
+            if v == pv and pmc:
+                mult *= mc / pmc
+            pv, pmc = v, mc
+            series.append((t, mult))
+        ev[m] = series
     return ev
 
 
@@ -91,46 +106,42 @@ def simulate(mint, eval_ts, birth_t, events):
     # entry: first print at/after decision time (react-to-signal fill);
     # if the mint went quiet after eval, use the last print before it.
     if len(events) < 2:
-        # only the birth create row (or nothing) — no trajectory to
-        # replay; pre-§272 skips predate the curve-print subscription.
+        # no trajectory to replay; pre-§272 skips predate the print feed
         return {"mint": mint, "status": "no_data", "ret": None}
     ent = None
     prev = None
-    for t, mc in events:
-        if mc <= 0:
-            continue
+    for t, mult in events:
         if t >= eval_ts:
-            ent = (t, mc)
+            ent = (t, mult)
             break
-        prev = (t, mc)
+        prev = (t, mult)
     if ent is None:
         ent = prev
-    if ent is None:
+    if ent is None or ent[1] <= 0:
         return {"mint": mint, "status": "no_data", "ret": None}
-    t0, emc = ent
-    body = [(t, mc) for t, mc in events if t > t0 and mc > 0]
+    t0, emult = ent
+    body = [(t, mult / emult) for t, mult in events if t > t0]
     proceeds, pos, peak = 0.0, 1.0, 1.0
     fr, reason, nm_touch_t = False, None, None
 
     def price_at(deadline_s):
-        p = emc
-        for t, mc in body:
+        r = 1.0
+        for t, rr in body:
             if t - t0 > deadline_s:
                 break
-            p = mc
-        return p / emc
+            r = rr
+        return r
 
     def sellable(frac, r):
         # §235: below floor, write off instead of selling
         return frac * r * SIZE >= MIN_PROCEEDS
 
-    for i, (t, mc) in enumerate(body):
-        r = mc / emc
+    for i, (t, r) in enumerate(body):
         peak = max(peak, r)
         mins = (t - t0) / 60
         if not fr and r >= P_NM_TOUCH and nm_touch_t is None:
             nm_touch_t = t
-        fill = body[i + 1][1] / emc if i + 1 < len(body) else r
+        fill = body[i + 1][1] if i + 1 < len(body) else r
         if not fr and r >= P_FR_TARGET:
             proceeds += P_FR_SELL * (fill if sellable(P_FR_SELL, fill) else 0)
             pos -= P_FR_SELL
@@ -178,11 +189,6 @@ def simulate(mint, eval_ts, birth_t, events):
     if pos > 0:
         # still riding: mark against clock deadlines then last print
         mins_now = (time.time() - t0) / 60
-        for deadline, nm in ((P_ABORT15, "abort15"), (P_ABORT30, "abort30"),
-                             (P_BIRTH_CAP_MIN, "birth_cap"),
-                             (P_TIMESTOP_MIN, "timestop")):
-            if not fr and mins_now >= deadline[0] if isinstance(deadline, tuple) else False:
-                pass
         if not fr and mins_now >= P_ABORT15[0]:
             r1 = price_at(P_ABORT15[0] * 60)
             if r1 < P_ABORT15[1]:
@@ -202,13 +208,13 @@ def simulate(mint, eval_ts, birth_t, events):
             proceeds += pos * (r2 if sellable(pos, r2) else 0)
             pos, reason = 0, "timestop"
     if pos > 0:
-        last_r = body[-1][1] / emc if body else 1.0
+        last_r = body[-1][1] if body else 1.0
         return {"mint": mint, "status": "open", "eval_ts": eval_ts,
-                "entry_t": t0, "entry_mcap": emc, "peak": round(peak, 3),
+                "entry_t": t0, "peak": round(peak, 3),
                 "freerolled": fr, "mark": round(proceeds + pos * last_r - 1, 4),
                 "ret": None}
     return {"mint": mint, "status": "closed", "eval_ts": eval_ts,
-            "entry_t": t0, "entry_mcap": emc, "peak": round(peak, 3),
+            "entry_t": t0, "peak": round(peak, 3),
             "freerolled": fr, "exit_reason": reason,
             "ret": round(proceeds - 1, 4)}
 
