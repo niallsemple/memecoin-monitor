@@ -5545,3 +5545,7 @@ Owner question: instead of freeroll-selectivity, is there a mechanical point to 
 **Variant sweep — all 17 cells negative:** dip depth 40/50/60/70% × target +5/+10/+20% × −15% stop → net −3.9% to −6.0%. Liquidity floors (mcap ≥10/30 SOL at entry) and 5-min floor-confirmation don't fix it (−4.5% to −6.3%).
 
 **Conclusion:** the huge bounce statistics are survivorship-on-dead-liquidity artifacts — the big bounces print on 0.01 SOL trades no size can fill, while size-fillable entries keep catching knives. "Buy and sell everything" is structurally negative-EV on this market; selectivity (gates) remains the only proven positive component (+0.2588 SOL saved at real costs, §283). The freeroll approach stands.
+
+## §285 — Early-window dip-buy: also REJECTED (4 Sep 2026, ~19:55 UTC)
+
+Follow-up to §284 testing whether dips behave differently inside our operating window (first 7 min after birth, entry only after a >15% pump, 15-min timeout): all 6 cells negative (dip 15/25/40% × tgt +10/+20%): net **−1.7% to −6.2%**. Best cell (dip 25%, tgt +20%, n=1113, win 38%) still −1.73%. Combined with §284, 23/23 dip-buy variants are negative-EV. Mechanical dip-buying is dead on this market in every window tested; the selective gated-freeroll path remains the only live route.
