@@ -6279,3 +6279,19 @@ Classified all 26 accounts by owner/size (getMultipleAccounts):
 **New wrinkle**: [11] is a **Switchboard** oracle (owner SBondMDrcV3K, 3208B) — the setup byte enum has SB variants in the wild; our health pricer currently skips non-Pyth-pull banks (18,967 slot-reads skipped in §347). To capture accounts collateralised via SB-oracle banks we need an SB price reader too (decode pending).
 
 Build recipe is now fully specified: derive vault-authority PDA, pass vaults + token program, append bank/oracle pairs for all active balances on both accounts, args = disc + asset_amount u64 + flags. Then simulateTransaction.
+
+## §352 — All liquidate PDAs derived and verified (19:02 BST)
+
+PDA seeds confirmed byte-exact against real tx 8V1k2f74 (liab bank DMoqjmsu):
+
+| seed | derives | real tx position |
+|---|---|---|
+| `liquidity_vault_auth` + bank | 6PWVauGL… | [6] ✓ |
+| `liquidity_vault` + bank | DMQUXpb6… | [7] ✓ |
+| `insurance_vault` + bank | eGdk2hRpBn… | [8] ✓ |
+
+(bump search 255→0 with ed25519 off-curve check via PyNaCl.)
+
+**Every account in the liquidate instruction is now derivable from data we already read natively** — no SDK, no guesswork. The only account we must create is our own liquidator MarginfiAccount (one init tx, ~rent-only cost); everything else is derive-and-pass.
+
+Remaining before simulation: (a) assemble the tx for one target (start with smallest whale GFxxnJpDAjb3, debt $12.6k, to minimise blast radius), (b) simulateTransaction with sigVerify=false against mainnet, (c) if clean, present live-fire plan to owner (needs: marginfi account init + flash-loan begin/end wrapping per Project 0 constraints — one flash loan per tx, fixed positions, no CPI).
