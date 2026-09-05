@@ -4228,3 +4228,6 @@
 | 09:26 | robinhood | `0x2308d7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$89,590 mc=$184,410 | chain:robinhood no-audit-adapter | dogshit memecoin supremacy |
 | 09:26 | robinhood | `0xeD135A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$221 mc=$36,027 | chain:robinhood no-audit-adapter | FAANG is an acronym representing five of the most prominent, high-performing Ame |
 | 09:26 | solana | `HiEtnqDJ…` | PASS | — | liq=$21,141 mc=$67,549 | name=BrainPons symbol=BRAINPONS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | One brain cell, cast in glass, left running in a cold room. It still knows exact |
+| 09:56 | robinhood | `0x6beDf7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,748 mc=$72,586 | chain:robinhood no-audit-adapter | Real fruit-fly neurons are ALIVE inside Minecraft! Google tech just took gaming  |
+| 09:56 | robinhood | `0x83fb87…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,044 mc=$4,043 | chain:robinhood no-audit-adapter |  |
+| 09:56 | robinhood | `0xeb999f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40 mc=$20,426 | chain:robinhood no-audit-adapter |  |
