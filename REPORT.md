@@ -6189,3 +6189,12 @@ Tier-2 health formula once mapped: assets = Σ asset_shares × asset_share_value
 Cross-check vs volatile-asset bank Guu5uBc8 (JUP-mint group): weights 296≈0.4, 312=0.65, 328=2.5, 344=1.5 — consistent semantics (stricter init, looser maint, liab weights >1). Decimals: read from the SPL mint account (byte 44) at decode time rather than hunting the u8 in the bank.
 
 Tier-2 remaining: oracle type byte (setup enum near offset ~500), oracle price reader (Pyth pull / Switchboard / migrated), then health = (Σassets×px×w_maint − Σliabs×px×w_maint)/liabs over the 81k shortlist with a ≥$100 materiality floor.
+
+## §346 — Oracle chain decoded end-to-end: Tier-2 fully unblocked (18:26 BST)
+
+- Bank oracle_setup byte @608 (USDC bank = 1 → Pyth pull, post-migration), oracle_keys[0] at **offset 610** (unaligned — setup byte shifts the array).
+- Oracle account owner `rec2HHDDnjLfj4kE7VyE…` = Pyth Solana **pull** receiver. Account = PriceUpdateV2, 134 bytes:
+  - feed_id @41–72, price i64 @73, conf u64 @81, exponent i32 @89, publish_time i64 @93.
+- **Live decode verified: USDC/USD = 0.999885, publish age 17s.** Fresh, correct, atomic.
+- This closes the last unknown for Tier-2 health computation. Full recipe now proven: bank → mint @8 (+decimals from mint acct), share values @80/96, weights @296/312/328/344, oracle key @610 → Pyth pull price. Account side: slots @72+i×104 (§342). health = (Σ assets×px×asset_w_maint − Σ liabs×px×liab_w_maint) / liabs.
+- Note: oracle_setup is an enum — other banks may use legacy Pyth push or Switchboard; Tier-2 must branch on the setup byte (only variant 1 verified so far).
