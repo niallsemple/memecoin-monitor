@@ -5967,3 +5967,20 @@ Method: replayed full mcap tape for every closed conv_override trade, simulated 
 - ⚠️ **Data-quality bug found**: `deployer_pct` reads a constant 79.31 on every eval row, and `insider_overhang_pct` is stuck at 79.31 on most positions. These gating inputs are broken/stale — the bundle gate has been running partially blind.
 - Cohort: **8/10 done, −0.18646 SOL**, win rate 5/8. Live book: **30 closed, −0.16547 SOL** (26 green / 2 scratch / 2 wipeouts).
 - Hypothesis for next analysis: both rugs were FLAT before the drain (SDbx +0.2% at 8.6m, HBA7 flat to 3m). If winners show >+2% by minute 5, a **conditional early exit** ("flat at 5min → out") dodges rugs while keeping runners. Numbers next.
+
+## §328 — Conditional exit replay: "red at minute 3 → out" flips the book positive
+
+Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditional exits (fees neutral — exit count unchanged, just earlier).
+
+| Rule | Total PnL (SOL) | Trades cut |
+|---|---|---|
+| actual (abort15 + panic) | −0.16547 | — |
+| exit@5m if <0% | −0.18384 | 18 — too late for minute-3 rugs |
+| exit@4m if <0% | −0.08890 | 23 |
+| **exit@3m if chg<0%** | **+0.00614** | 25 |
+| 2-stage @3m<0% then @5m<+1% | +0.00511 | 26 |
+
+- The minute-3 rule kept exactly 4 trades: **1kebGNLF, 7NtAqAsr, 12SfSNvJ, 8o8ZSAS3** — the top-4 PnL in the book. Perfect in-sample separation.
+- Both rugs red at minute 3 (SDbx −0.3%, HBA7 −0.1%) → exited pre-drain. Mechanism hypothesis: insiders suppress price while staging the drain; genuine demand lifts price early. Flat-before-rug confirmed on both wipeouts.
+- Caveats: (1) HBA7's drain started ~2.5–3.3 min — a live 3:00 check could land mid-drain; still ≫ write-off. (2) n=30, rule fit to 2 rugs — needs shadow validation before promotion. (3) Survivors' early strength pattern: winners showed +0.5–0.7% by minute 3.
+- **Proposal: add `abort3_if_red` to tracker in SHADOW mode (log-only) for the next ~20 entries, then promote to live if separation holds.**
