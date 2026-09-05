@@ -5863,3 +5863,8 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - **n=20 cohort stats**: 18 green / 2 red (90.0% win rate), cumulative **+0.02014 SOL**, expectancy **+2.01%/trip**, median +1.13%, best +13.3% (1kebGNLF), worst −0.16%, stdev 3.02%, runners(>10%)=1.
 - Downside containment is near-perfect: worst loss −0.16% vs best win +13.3% → 83:1 asymmetry.
 - Wallet ground truth 2.04249 SOL remains ahead of ledger.
+
+## §315 — Trade #21 closed (n=21)
+
+- **eKXPiPR9**: conv_override 0.05 SOL → **+0.00021 SOL (+0.4%)**, exit `abort15` (scratch-green class).
+- Live book: **21 closed**, cumulative **+0.02035 SOL**, zero wipeouts.

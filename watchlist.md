@@ -4231,3 +4231,6 @@
 | 09:56 | robinhood | `0x6beDf7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,748 mc=$72,586 | chain:robinhood no-audit-adapter | Real fruit-fly neurons are ALIVE inside Minecraft! Google tech just took gaming  |
 | 09:56 | robinhood | `0x83fb87…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,044 mc=$4,043 | chain:robinhood no-audit-adapter |  |
 | 09:56 | robinhood | `0xeb999f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40 mc=$20,426 | chain:robinhood no-audit-adapter |  |
+| 10:06 | solana | `41bP8auk…` | PASS | — | liq=$24,004 mc=$87,477 | name=ROBINAPE symbol=ROBINAPE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Just a monkey with a bow, stealing memes from the rich and feeding the jungle. |
+| 10:06 | robinhood | `0x4B7C21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$78,916 mc=$148,650 | chain:robinhood no-audit-adapter | Hunter_boden posted about a Minecraft fruit fly. The background is a real fruit  |
+| 10:06 | robinhood | `0xA93FD9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,021 mc=$12,798 | chain:robinhood no-audit-adapter | Do Only Good Everyday |
