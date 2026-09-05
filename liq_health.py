@@ -79,9 +79,22 @@ SWB_SETUPS = {4}
 FIXED_SETUPS = {8}
 LST_SETUPS = {22}
 SVSP_SETUPS = {5}   # StakedWithPythPush: SOL px x SVSP NAV/supply
+KAMINO_SETUPS = {6, 7}  # KaminoPythPush / KaminoSwitchboardPull: feed px x reserve rate
 SWB_MAX_AGE_S = 3600
 STAKED_FLAG_ONRAMP = 1024
 RENT_PER_BYTE = 6960  # rent-exempt = (128 + len) * 6960 lamports (mainnet constant)
+
+# Kamino MinimalReserve (refs/kamino_mocks_state.rs, 8616B + 8B disc, repr(C)).
+# Discriminator [43,242,204,202,26,247,59,127]. _sf fields are I68F60 u128 (/2^60).
+KM_DISC = bytes([43, 242, 204, 202, 26, 247, 59, 127])
+KM_AVAILABLE = 224        # u64
+KM_BORROWED_SF = 232      # u128 I68F60
+KM_MINT_DECIMALS = 272    # u64
+KM_PROTOCOL_FEES_SF = 344
+KM_REFERRER_FEES_SF = 360
+KM_PENDING_REFERRER_SF = 376
+KM_MINT_TOTAL_SUPPLY = 2592  # u64 (collateral tokens)
+SF60 = float(2 ** 60)
 
 
 def load_banks() -> dict:
@@ -128,9 +141,9 @@ def load_banks() -> dict:
 
 def load_prices(banks: dict) -> dict:
     keys = {b["oracle"] for b in banks.values()
-            if b["setup"] in PYTH_SETUPS | SWB_SETUPS | SVSP_SETUPS}
+            if b["setup"] in PYTH_SETUPS | SWB_SETUPS | SVSP_SETUPS | KAMINO_SETUPS}
     swb_oracles = {b["oracle"]: b["max_conf"] for b in banks.values()
-                   if b["setup"] in SWB_SETUPS}
+                   if b["setup"] in SWB_SETUPS or b["setup"] == 7}  # 7=KaminoSwbPull
     px = {}
     for k in keys:
         if k in swb_oracles:
@@ -220,6 +233,35 @@ def load_multipliers(banks: dict) -> None:
                 pts = struct.unpack("<Q", d[266:274])[0]
                 if tl > 0 and pts > 0:
                     b["mult"] = tl / pts
+            except Exception:
+                pass
+            time.sleep(0.05)
+        elif b["setup"] in KAMINO_SETUPS:
+            # Kamino cToken rate (refs/kamino_mocks_state.rs):
+            # mult = total_liq / total_col where
+            # total_liq = available + borrowed_sf - protocol_fees_sf
+            #             - referrer_fees_sf - pending_referrer_fees_sf
+            # (scale_supplies divides both by 10^decimals -> cancels in ratio).
+            # NOTE: on-chain requires reserve refreshed in the SAME slot
+            # (ensure_kamino_reserve_fresh) — fire txs must bundle the Kamino
+            # refresh_reserve ix; scanner uses last-refreshed state for health.
+            try:
+                v = rpc("getAccountInfo", [b["oracle2"], {"encoding": "base64"}])["result"]["value"]
+                d = base64.b64decode(v["data"][0])
+                if d[:8] != KM_DISC or len(d) < 2600:
+                    continue
+                avail = struct.unpack("<Q", d[KM_AVAILABLE:KM_AVAILABLE + 8])[0]
+                borr = int.from_bytes(d[KM_BORROWED_SF:KM_BORROWED_SF + 16], "little") / SF60
+                pf = int.from_bytes(d[KM_PROTOCOL_FEES_SF:KM_PROTOCOL_FEES_SF + 16], "little") / SF60
+                rf = int.from_bytes(d[KM_REFERRER_FEES_SF:KM_REFERRER_FEES_SF + 16], "little") / SF60
+                prf = int.from_bytes(d[KM_PENDING_REFERRER_SF:KM_PENDING_REFERRER_SF + 16], "little") / SF60
+                supply = struct.unpack("<Q", d[KM_MINT_TOTAL_SUPPLY:KM_MINT_TOTAL_SUPPLY + 8])[0]
+                total_liq = avail + borr - pf - rf - prf
+                if supply > 0:
+                    rate = total_liq / supply
+                    # cToken rate appreciates slowly from 1.0; wide bound vs garbage
+                    if 0.5 < rate < 100:
+                        b["mult"] = rate
             except Exception:
                 pass
             time.sleep(0.05)

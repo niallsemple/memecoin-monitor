@@ -6400,3 +6400,13 @@ IDL gotcha logged: marginfi runs anchor-lang 1.0.2; account_loader.rs:169 panic 
 **Full rescan with SVSP priced:** 165,571 accounts, 6,728 material, skipped-setup slots 415 → **382**, stale-oracle slots 23,291. Liquidatable-now set unchanged: 7 accounts, all health −1.0 with **$0 raw collateral** — pure bad debt, nothing to seize. Universe remains clean at current prices.
 
 **Coverage now:** 437 banks, 107 oracles priced, 204 mints. Remaining unpriced: Kamino (23 banks — next, unlocks same-mint FuNhzGJ54Yx2-class, needs refresh_reserve ix bundled), Drift/JupLend (16), PythLegacy (47 — permanent dead zone, panics on-chain).
+
+## §365 — Kamino multiplier unlock: all 24 cToken banks priced; first seizable Kamino candidate surfaces (2026-09-05 ~20:15 BST)
+
+**Build:** `load_multipliers` Kamino branch — MinimalReserve layout fetched from mrgnlabs/marginfi-v2 `programs/kamino-mocks/src/state.rs` (8616B zero-copy, disc [43,242,204,202,26,247,59,127], saved to refs/kamino_mocks_state.rs). mult = (available + borrowed_sf − protocol_fees_sf − referrer_fees_sf − pending_referrer_fees_sf) / mint_total_supply; _sf fields are I68F60 u128 (/2^60); 10^decimals scaling cancels in the ratio. Byte offsets derived field-by-field from the repr(C) struct (available @224, borrowed @232, fees @344/360/376, mint_total_supply @2592, all +8 disc). Oracle keys[0] feeds added to price map (setup 6 → Pyth, setup 7 → SwbPull). Bank 27Cpv49j confirmed setup=6 asset_tag=3 → existing 3-account sim schema covers it.
+
+**Result:** all 24 Kamino banks priced, mults 1.05–1.20 (plausible cToken appreciation). Skipped-setup slots 382 → **74** (remaining: Drift 9, JupLend 7, None 5, PythLegacy 47-class, SwbV2 13).
+
+**New candidate — the FuNhzGJ54Yx2 class is now visible:** GPkitqFXLPAM7hK9kaZVuEVRZAedKfyVmNBKd46G4Sp2, health **−0.0211** (assets $350 vs liabs $357). Composition: 291.87 kUSDC (Kamino USDC cToken, bank 27Cpv49j, mult 1.199) collateral vs ~$340 BTC-denominated debt (cbBTC + zBTC banks). First liquidatable account with real seizable collateral since radar started.
+
+**Blocker to firing (known, next build):** on-chain `ensure_kamino_reserve_fresh` requires the reserve refreshed in the SAME slot — fire tx must bundle Kamino `refresh_reserve` ix or it fails ReserveStale 6206. Need kamino_lending IDL (marginfi repo idls/kamino_lending.json) for the refresh ix layout + account list. Edge math at face: ~$350 seize × 5% bonus ≈ $17.5 — thin but inside the ≤$50 envelope and a perfect end-to-end drill for the Kamino class before size.
