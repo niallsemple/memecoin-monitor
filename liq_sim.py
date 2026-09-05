@@ -43,6 +43,41 @@ TRAILER = bytes.fromhex("0a04")  # as seen on the real tx (flags/version bytes)
 LIQ_STANDIN = "A91fDng3SdKxBMPq4DxUSE4LKqBR1g6tf3rC8ypvogRy"   # §358: OUR marginfi account (main group)
 LIQ_AUTH = "CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K"      # our wallet = its authority
 
+# Kamino refresh_reserve bundle (§365-366): marginfi requires any Kamino bank
+# touched by the health check to have its reserve refreshed in the SAME slot
+# (ensure_kamino_reserve_fresh, ReserveStale 6206). Accounts per kamino_lending
+# IDL: reserve(w), lending_market, pyth_oracle, swb_price, swb_twap, scope.
+# Unused oracle slots take the KLend program id as placeholder (Kamino convention).
+KLEND = lt.b58dec("KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD")
+KM_REFRESH_DISC = bytes([2, 218, 138, 235, 79, 201, 25, 102])
+KAMINO_SETUPS = {6, 7}  # KaminoPythPush / KaminoSwitchboardPull
+
+
+def build_refresh_ix(bank_pk: str):
+    """Kamino refresh_reserve ix for a marginfi Kamino bank, or None.
+
+    Oracle slots are filled from the RESERVE's own token_info config (§366):
+    scope price_feed @5112, swb aggregator @5160 (+twap @5192), pyth @5224
+    (on-chain, incl. 8B disc). All-default slot -> KLend placeholder."""
+    raw = acct_raw(bank_pk)
+    setup = raw[609]
+    if setup not in KAMINO_SETUPS:
+        return None
+    reserve = raw[642:674]        # oracle_keys[1]
+    r_raw = acct_raw(b58encode(reserve))
+    lending_market = r_raw[32:64]  # MinimalReserve: disc(8) + version(8) + slot(8) + stale(1) + status(1) + pad(6) -> @32
+    ZERO = bytes(32)
+    scope = r_raw[5112:5144]
+    swb = r_raw[5160:5192]
+    swb_twap = r_raw[5192:5224]
+    pyth = r_raw[5224:5256]
+    A = [(reserve, True, False), (lending_market, False, False),
+         (pyth if pyth != ZERO else KLEND, False, False),
+         (swb if swb != ZERO else KLEND, False, False),
+         (swb_twap if swb_twap != ZERO else KLEND, False, False),
+         (scope if scope != ZERO else KLEND, False, False)]
+    return (KLEND, A, KM_REFRESH_DISC)
+
 
 def pda(seeds, prog=PROG):
     return lt.pda(list(seeds), prog) if hasattr(lt, "pda") else _pda(seeds, prog)
@@ -132,8 +167,14 @@ def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amou
     A.append((liq_vault, True, False))                   # 7 liquidity vault
     A.append((ins_vault, True, False))                   # 8 insurance vault
     A.append((TOK, False, False))                        # 9 token program
-    A.append((lt.b58dec(asset_oracle), False, False))    # 10 asset oracle
-    A.append((lt.b58dec(liab_oracle), False, False))     # 11 liab oracle
+    # §366: head of remaining = asset bank's per-bank accounts (oracle [+
+    # reserve for Kamino/Drift/etc]), then liab bank's — NOT two bare oracles.
+    # liquidate.rs: asset consumes get_remaining_accounts_per_bank(asset)-1,
+    # then liab consumes its own count-1 (lines 260-272).
+    for entry in bank_remaining(asset_bank)[1:]:
+        A.append(entry)
+    for entry in bank_remaining(liab_bank)[1:]:
+        A.append(entry)
     # health remaining: liquidatee banks+oracles, then liquidator's
     # §354: remaining schema from marginfi-v2 source (liquidate.rs):
     # [asset_oracle, liab_oracle, liquidator_obs pairs..., liquidatee_obs pairs...]
@@ -146,7 +187,18 @@ def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amou
     A.extend(liq_accts)
     A.extend(tee_accts)
     data = LIQ_DISC + struct.pack("<Q", asset_amount) + struct.pack("<BB", len(tee_accts), len(liq_accts))
-    return [(PROG, A, data)]
+    # §366: prepend refresh_reserve for every Kamino bank either account touches
+    # (health check prices all active slots; stale reserve -> ReserveStale 6206)
+    refreshes = []
+    seen_reserves = set()
+    for bpk in set(active_slots(liq_raw)) | set(active_slots(tee_raw)) | {asset_bank, liab_bank}:
+        if bpk in seen_reserves:
+            continue
+        seen_reserves.add(bpk)
+        r = build_refresh_ix(bpk)
+        if r:
+            refreshes.append(r)
+    return refreshes + [(PROG, A, data)]
 
 
 def simulate(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int):

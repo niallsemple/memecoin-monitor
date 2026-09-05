@@ -127,6 +127,11 @@ def load_banks() -> dict:
             "oracle": b58encode(raw[610:642]),
             "max_conf": struct.unpack("<I", raw[804:808])[0] if len(raw) >= 824 else 0,
             "fixed_px": i80(raw[808:824]) if len(raw) >= 824 else 0.0,
+            # §366: liquidation fees (u32 centi, u32::MAX=100%; 0 => default 2.5%)
+            "liq_fee": (struct.unpack("<I", raw[1544:1548])[0] / 4294967295.0
+                        if len(raw) >= 1552 else 0.0) or 0.025,
+            "ins_fee": (struct.unpack("<I", raw[1548:1552])[0] / 4294967295.0
+                        if len(raw) >= 1552 else 0.0) or 0.025,
             "oracle3": b58encode(raw[674:706]),   # SVSP pool stake account
             "oracle4": b58encode(raw[706:738]),   # SVSP onramp (may be default)
             "flags": struct.unpack("<Q", raw[840:848])[0] if len(raw) >= 848 else 0,
@@ -369,12 +374,34 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                 if s["l_nat"] > 0:
                     liabs += s["l_nat"] * s["px_hi"] * b["lw_maint"]
             if liabs > 0:
-                material.append({
+                entry = {
                     "pk": r["pubkey"],
                     "assets": round(assets, 2),
                     "liabs": round(liabs, 2),
                     "health": round((assets - liabs) / liabs, 4),
-                })
+                }
+                if assets < liabs:
+                    # §366 feasibility: a seize improves health only if
+                    # w_asset < (1 - liq_fee - ins_fee) * lw_liab for SOME pair.
+                    # Failing every pair = twilight zone (e.g. GPkitqFXLPAM:
+                    # kUSDC aw 1.0 vs BTC lw 1.05 @5% fees — never liquidatable
+                    # via the standard ix; receivership only).
+                    feas = False
+                    for sa in slots:
+                        if sa["a_nat"] <= 0 or sa["b"]["risk_tier"] == 1:
+                            continue
+                        wa = sa["b"]["aw_maint"]
+                        if sa["b"]["emode_tag"]:
+                            wa = max(wa, rec.get(sa["b"]["emode_tag"], 0.0))
+                        for sl in liab_slots:
+                            fee = sl["b"]["liq_fee"] + sl["b"]["ins_fee"]
+                            if wa < (1.0 - fee) * sl["b"]["lw_maint"]:
+                                feas = True
+                                break
+                        if feas:
+                            break
+                    entry["feasible"] = feas
+                material.append(entry)
     material = [m for m in material if m["liabs"] >= MIN_DEBT_USD]
     material.sort(key=lambda m: m["health"])
     return {
