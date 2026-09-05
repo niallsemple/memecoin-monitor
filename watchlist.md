@@ -4180,3 +4180,9 @@
 | 03:06 | solana | `HRA7zppo…` | FAIL | TOP10_HEAVY:61%; RC_WARN:Missing file metadata | liq=$0 mc=$15,411 | name=Solana Trenches 2023-2026 symbol=Trenches; contract:clean; rugcheck_score=16 lpLocked |  |
 | 03:06 | robinhood | `0xBE2F94…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$126,492 mc=$2,101,816 | chain:robinhood no-audit-adapter | The highest $IQ thing you can do is own the casino... on leverage  We are giving |
 | 03:06 | solana | `9H5xgKFT…` | PASS | — | liq=$28,400 mc=$125,607 | name=ANGRY FROG symbol=ANGRYFROG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Little Green Frog, Big Attitude. Angryfrog is a little green frog with a big att |
+| 03:46 | solana | `97vcYHbA…` | FAIL | TOP10_HEAVY:82% | liq=$0 mc=$7,610 | name=Memefolio symbol=Memefolio; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 03:46 | solana | `8T6y9rW4…` | FAIL | TOP10_HEAVY:86% | liq=$0 mc=$6,163 | name=The Somali Nazi symbol=WADNA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 03:46 | solana | `HXe9JMFG…` | FAIL | TOP10_HEAVY:62% | liq=$8,979 mc=$16,150 | name=motion symbol=motion; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=62.1 | Solana is the real chain with motion. Let's show them. |
+| 03:46 | ethereum | `0x599398…` | PASS | — | liq=$54,741,048 mc=$60,792,099 | holders=2; buy_tax=0 sell_tax=0; contract:clean | Hororo (Bottle Fairy) - the origin of Milday NFTs |
+| 03:46 | robinhood | `0xFAF3Bf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,390 mc=$3,452 | chain:robinhood no-audit-adapter | 0xpresso |
+| 03:46 | robinhood | `0x775f76…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,714 mc=$259,390 | chain:robinhood no-audit-adapter | $KING is the house token of King of Robinhood.  You bid ETH for the crown. 10% o |

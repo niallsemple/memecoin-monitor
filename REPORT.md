@@ -5784,3 +5784,7 @@ wYiw944w closed **+0.00052 SOL (+1.0%)**. CONV live book: **7/7 green, cumulativ
 ### §303f — 8th live round-trip green (5 Sep 2026, ~03:28 UTC)
 
 6dYjtBu5 closed **+0.00052 SOL (+1.0%)**. CONV live book: **8/8 green, cumulative +0.00526 SOL**. Two closes to the n=10 sizing-review checkpoint.
+
+### §303g — 9th close: first scratch red (5 Sep 2026, ~03:53 UTC)
+
+sw5BWZzm closed **−0.00008 SOL (−0.2%)** — first non-green close of the live book, a scratch at the abort15 checkpoint after holding −0.5% most of the hold. CONV live book: **9 closed, 8 green / 1 scratch, cumulative +0.00518 SOL**. Downside control continues to match the shadow profile (typical small loss −2%, worst −4%; live worst so far −0.2%). One more close to the n=10 sizing-review checkpoint.

@@ -275,3 +275,4 @@
 | 22:06 | BUY | FiAum2V5 | £7.21 | entry mc $219,916 | +10min |
 | 23:46 | SELL 2x | 5761e8gC | £3.62 | ladder stage 1 |
 | 00:26 | STOP | FiAum2V5 | £0.06 | trail-stop at 0.01x |
+| 03:47 | BUY | 9H5xgKFT | £7.14 | entry mc $150,674 | +41min |
