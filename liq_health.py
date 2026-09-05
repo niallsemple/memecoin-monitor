@@ -80,9 +80,21 @@ FIXED_SETUPS = {8}
 LST_SETUPS = {22}
 SVSP_SETUPS = {5}   # StakedWithPythPush: SOL px x SVSP NAV/supply
 KAMINO_SETUPS = {6, 7}  # KaminoPythPush / KaminoSwitchboardPull: feed px x reserve rate
+DRIFT_SETUPS = {9, 10}  # DriftPythPull / DriftSwitchboardPull: feed px x spot mkt cum. interest
+JUP_SETUPS = {15, 16}   # JuplendPythPull / JuplendSwitchboardPull: feed px x token_exchange_price
 SWB_MAX_AGE_S = 3600
 STAKED_FLAG_ONRAMP = 1024
 RENT_PER_BYTE = 6960  # rent-exempt = (128 + len) * 6960 lamports (mainnet constant)
+
+# §368: Drift MinimalSpotMarket (drift-mocks state.rs, disc [100,177,8,107,168,65,65,39]):
+# mult = cumulative_deposit_interest u128 / 1e10. Struct offset 456 (+8 disc) = 464.
+DRIFT_DISC = bytes([100, 177, 8, 107, 168, 65, 65, 39])
+DRIFT_CUM_DEP_INT = 464
+# §368: JupLend Lending (juplend-mocks state.rs, repr(C, packed),
+# disc [135,199,82,16,249,131,182,241]): mult = token_exchange_price u64 / 1e12.
+# Struct offset 107 (+8 disc) = 115.
+JUP_DISC = bytes([135, 199, 82, 16, 249, 131, 182, 241])
+JUP_TOKEN_EXCH_PX = 115
 
 # Kamino MinimalReserve (refs/kamino_mocks_state.rs, 8616B + 8B disc, repr(C)).
 # Discriminator [43,242,204,202,26,247,59,127]. _sf fields are I68F60 u128 (/2^60).
@@ -146,9 +158,10 @@ def load_banks() -> dict:
 
 def load_prices(banks: dict) -> dict:
     keys = {b["oracle"] for b in banks.values()
-            if b["setup"] in PYTH_SETUPS | SWB_SETUPS | SVSP_SETUPS | KAMINO_SETUPS}
+            if b["setup"] in PYTH_SETUPS | SWB_SETUPS | SVSP_SETUPS | KAMINO_SETUPS
+            | DRIFT_SETUPS | JUP_SETUPS}
     swb_oracles = {b["oracle"]: b["max_conf"] for b in banks.values()
-                   if b["setup"] in SWB_SETUPS or b["setup"] == 7}  # 7=KaminoSwbPull
+                   if b["setup"] in SWB_SETUPS or b["setup"] in (7, 10, 16)}  # Kamino/Drift/Jup SwbPull
     px = {}
     for k in keys:
         if k in swb_oracles:
@@ -267,6 +280,36 @@ def load_multipliers(banks: dict) -> None:
                     # cToken rate appreciates slowly from 1.0; wide bound vs garbage
                     if 0.5 < rate < 100:
                         b["mult"] = rate
+            except Exception:
+                pass
+            time.sleep(0.05)
+        elif b["setup"] in DRIFT_SETUPS:
+            # §368: mult = cumulative_deposit_interest / 1e10 (interest-bearing
+            # scaled balance -> underlying). Sim side note: drift spot market
+            # must be fresh on-chain (same-slot rule like Kamino).
+            try:
+                v = rpc("getAccountInfo", [b["oracle2"], {"encoding": "base64"}])["result"]["value"]
+                d = base64.b64decode(v["data"][0])
+                if d[:8] != DRIFT_DISC or len(d) < 480:
+                    continue
+                cum = int.from_bytes(d[DRIFT_CUM_DEP_INT:DRIFT_CUM_DEP_INT + 16], "little")
+                rate = cum / 10.0 ** 10
+                if 0.5 < rate < 100:
+                    b["mult"] = rate
+            except Exception:
+                pass
+            time.sleep(0.05)
+        elif b["setup"] in JUP_SETUPS:
+            # §368: mult = token_exchange_price / 1e12 (fToken -> underlying).
+            try:
+                v = rpc("getAccountInfo", [b["oracle2"], {"encoding": "base64"}])["result"]["value"]
+                d = base64.b64decode(v["data"][0])
+                if d[:8] != JUP_DISC or len(d) < 123:
+                    continue
+                tep = struct.unpack("<Q", d[JUP_TOKEN_EXCH_PX:JUP_TOKEN_EXCH_PX + 8])[0]
+                rate = tep / 10.0 ** 12
+                if 0.5 < rate < 100:
+                    b["mult"] = rate
             except Exception:
                 pass
             time.sleep(0.05)
