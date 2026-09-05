@@ -200,6 +200,85 @@ def exit_seized(asset_bank: str, asset_mint: str, dec: int) -> dict:
     return row
 
 
+def fire_flash(liquidatee: str, asset_bank: str, liab_bank: str, amount: int,
+               est_seize_usd: float, dry_run: bool = False) -> dict:
+    """§370/§371: full flash-recipe fire — build_recipe (start_flash ->
+    liquidate -> withdraw seized -> Jupiter exit swap -> repay_all -> end)
+    compiled as one v0 tx over our ALTs, simmed, then sent. Atomic exit: no
+    follow-up needed, no capital tied up."""
+    row = {"kind": "liq_fire_flash", "liquidatee": liquidatee,
+           "asset_bank": asset_bank, "liab_bank": liab_bank,
+           "amount": amount, "est_seize_usd": est_seize_usd}
+    est_edge = est_seize_usd * 0.05 * SLIPPAGE_HAIRCUT
+    row["est_edge_usd"] = round(est_edge, 2)
+    if est_edge < MIN_EDGE_USD:
+        row["result"] = "skip_below_min_edge"
+        _log_fire(row); return row
+    ok, why = lt.live_enabled()
+    if not ok and not dry_run:
+        row["result"] = f"gate: {why}"
+        _log_fire(row); return row
+    if not LIVE_FIRE_OK.exists() and not dry_run:
+        row["result"] = "not_armed (no LIQ_FIRE_OK)"
+        _log_fire(row); return row
+    # fail-closed: for Kamino/Drift/JupLend collateral the liquidate amount is
+    # position tokens, not underlying — swap sizing needs the venue rate,
+    # not built yet (§371)
+    if liq_sim.acct_raw(asset_bank)[609] in (6, 7, 9, 10, 15, 16):
+        row["result"] = "skip_integrated_asset_unsized"
+        _log_fire(row); return row
+
+    import liq_flash
+    wallet_key, wallet_addr = lt._load_key()
+    wallet_b = lt.b58dec(wallet_addr)
+    try:
+        ixs, alts = liq_flash.build_recipe(
+            liquidatee, asset_bank, liab_bank, amount,
+            int(amount * 0.999), wallet_b)
+        tx = liq_flash.build_v0_tx(wallet_b, ixs, alts)
+    except Exception as e:
+        row["result"] = "build_error"
+        row["error"] = str(e)[:300]
+        _log_fire(row); return row
+    sim = lh.rpc("simulateTransaction", [tx, {"encoding": "base64",
+                 "sigVerify": False, "replaceRecentBlockhash": True,
+                 "commitment": "processed"}])
+    if sim.get("error"):
+        row["result"] = "sim_rpc_error"
+        row["rpc_error"] = json.dumps(sim["error"])[:300]
+        _log_fire(row); return row
+    val = sim["result"]["value"]
+    row["sim_err"] = val.get("err")
+    row["sim_units"] = val.get("unitsConsumed")
+    if val.get("err"):
+        row["result"] = "sim_failed"
+        row["logs_tail"] = [l for l in (val.get("logs") or []) if "rror" in l or "health" in l][-4:]
+        _log_fire(row); return row
+    if dry_run:
+        row["result"] = "dry_run_sim_ok"
+        _log_fire(row); return row
+
+    res = lh.rpc("sendTransaction", [tx, {"encoding": "base64", "skipPreflight": False}])
+    sig = res.get("result")
+    row["sig"] = sig
+    if not sig:
+        row["result"] = "send_rejected"
+        row["rpc_error"] = json.dumps(res.get("error"))[:300]
+        _log_fire(row); return row
+    for _ in range(30):
+        st = lt._rpc("getSignatureStatuses", [[sig]])
+        r0 = (st.get("value") or [None])[0]
+        if r0 and r0.get("confirmationStatus") in ("confirmed", "finalized"):
+            row["result"] = "confirmed" if not r0.get("err") else "failed_onchain"
+            row["onchain_err"] = r0.get("err")
+            break
+        time.sleep(2)
+    else:
+        row["result"] = "unconfirmed_timeout"
+    _log_fire(row)
+    return row
+
+
 if __name__ == "__main__":
     # construction smoke test: dry-run fire against a known account; expect
     # sim to reach the program (HealthyAccount proves assembly correctness).

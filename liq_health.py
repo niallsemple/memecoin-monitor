@@ -136,6 +136,7 @@ def load_banks() -> dict:
             "lw_maint": i80(raw[344:360]),
             "op_state": raw[608],   # 1=Operational; only Initial margin cares
             "setup": raw[609],      # OracleSetup discriminant (§357 fix: was 608)
+            "tag": raw[785] if len(raw) >= 786 else 0,  # asset_tag: 2=staked (§371 6047 gate)
             "oracle": b58encode(raw[610:642]),
             "max_conf": struct.unpack("<I", raw[804:808])[0] if len(raw) >= 824 else 0,
             "fixed_px": i80(raw[808:824]) if len(raw) >= 824 else 0.0,

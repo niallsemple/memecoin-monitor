@@ -6471,3 +6471,15 @@ liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RP
 **Two NEW fire-path gates discovered (must wire into liq_hunt/liq_fire next):**
 1. **6047 AssetTagMismatch**: an account holding a plain SOL deposit CANNOT absorb staked (tag-2) collateral — and the only real candidate so far (GFxx) was staked-collateral. Fix: empty our marginfi account (flash recipe needs no deposit; also frees 0.30 SOL) or maintain a dedicated staked-only liquidator account.
 2. **Jupiter routability**: staked LST collateral (e.g. BADo3D6n, SVSP setup-5 bank) returns TOKEN_NOT_TRADABLE — no exit leg → such candidates are untradeable via this recipe. Routability check joins the feasibility gate (with SVSP unstake path as possible future exit).
+
+## §371 — Fire-path gates wired, liquidator account emptied, ALT repaired
+
+**Gates (liq_hunt.py):** (1) Jupiter routability probe per collateral mint, cached in liq_routable.json — unroutable collateral is skipped before any sim (staked LSTs like BADo3D6n return TOKEN_NOT_TRADABLE). (2) 6047 staked-collateral gate: tag-2 asset banks require liab=SOL mint AND our liquidator account holding zero non-staked assets; sim/fire branch now respects all skip markers.
+
+**Liquidator account emptied:** withdrew the entire SOL deposit (withdraw_all + WSOL close), tx 2o2iLNnCvHYZ… finalized. Account A91fDng3 now has zero active balances → staked-collateral liquidations (liab=SOL) no longer trip AssetTagMismatch. Wallet 1.380 SOL after withdrawal (deposit was ~0.03 SOL at withdrawal time, not the originally deposited 0.30 — earlier test activity had drawn it down).
+
+**Flash fire is now primary (liq_fire.fire_flash):** build_recipe → v0/ALT compile → processed-commitment sim → send → confirm; atomic exit via Jupiter inside the same tx (no exit_seized follow-up). Fail-closed on integrated-collateral banks (Kamino/Drift/JupLend — amount is position tokens, swap sizing needs venue rate, not built). Legacy deposit+borrow fire remains as build-error fallback. Hunt calls flash first.
+
+**ALT repair:** audit found table 0 missing 20 keys (shifted chunk from the crashed first runs) + system program (zero-key filter had eaten it — 32 zero bytes == the skip sentinel). Extended table 4 with all 21 missing keys (tx As4VSgGi…). Re-audit: tables 1–4 perfect, all intended keys now resolvable. Post-repair dry-run: sim executes to liquidate domain logic (6002 on a bad-debt test account — correct fail-closed), 105.5k CU, message under packet limit.
+
+**Fire readiness status:** the pipeline is armed end-to-end. Remaining known gaps: integrated-collateral swap sizing, SVSP onramp 5-account sim, and a live underwater-with-collateral candidate (field is currently clean — all health<0 accounts are $0-collateral bad debt).
