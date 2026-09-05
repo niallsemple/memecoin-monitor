@@ -6054,3 +6054,11 @@ Owner directive: "add to goal in 2 hours if we can't get memecoins to work" (wit
 Action taken: created one-shot cron job **"memecoin viability checkpoint"** (`automation_c86e6816-69d5-4f8a-b53e-8d6fc0f47590`), firing **2026-09-05 19:09 BST**. At fire time it reads this report + live_positions.json + live ledger, checks (1) abort3_if_red live/shadow status, (2) book recovery, (3) Helius wallet balance — and if abort3_if_red is still not live and the book isn't recovering, pivots research to the structural edges from the observatory doc's final section: cross-venue correction, backrun/rebate capture, fee-boundary effects, execution alpha.
 
 Still open before the deadline: owner decision on promoting abort3_if_red (shadow 5/5 OOS), sizing for the confirmation cohort, §262 gate flip to outsider_pct_net, dust-ATA burn.
+
+## §336 — Shadow rule 6/6; t87cw5FB closes green again (17:09 BST)
+
+- **t87cw5FB** (2nd live trade on this mint today): entered 16:54:22 @ 0.10 SOL (fast_birth §257 pool path). Minute-3.4 shadow: r = 1.0075 → GREEN → KEEP (correct per rule). Closed 17:09:30 on abort15 at **+0.00134 SOL**, peak mult 1.013.
+- **abort3_if_red shadow OOS now 6/6 correct**: 1 CUT (later rugged), 5 KEEPs all closed green.
+- Feeds healthy (curves 20s, tape 0s). Activity last 30m: 1 entry, 1 shadow log, 3 bundled-launch skips, 3 fast-slot-busy skips.
+- Full position-file tally: 103 closed, cum −0.78130 SOL (includes all historical modes; conv-override book tracked separately at §330).
+- Deadline clock: viability checkpoint automation fires 19:09 BST (§335).
