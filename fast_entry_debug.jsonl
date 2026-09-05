@@ -1790,3 +1790,6 @@
 {"t": 1788623991.0140958, "phase": "lt_loaded", "mint": "SKzJmGeJ8VmAByGnv9turCbFWeNyn14FqkJfXGapump"}
 {"t": 1788624002.134409, "phase": "thread_done", "mint": "DT9gFviJ5Ksz6g34Ch7FrP3qvcF4Gz1NmCGQG4mpump", "result": "skip: fast slot busy"}
 {"t": 1788624117.591707, "phase": "thread_done", "mint": "SKzJmGeJ8VmAByGnv9turCbFWeNyn14FqkJfXGapump", "result": "skip: bundled launch"}
+{"t": 1788624922.952922, "phase": "spawned", "mint": "DZmSktdysUwzJ3NxDaHuGQfpYKj8T8GBG4Nu4Zeapump", "creator": "3yVBrR6FbhW8Z8VZKb9X75Py5onMPnJg8vBc4xec3yix"}
+{"t": 1788624922.953435, "phase": "thread_start", "mint": "DZmSktdysUwzJ3NxDaHuGQfpYKj8T8GBG4Nu4Zeapump"}
+{"t": 1788624922.9567711, "phase": "lt_loaded", "mint": "DZmSktdysUwzJ3NxDaHuGQfpYKj8T8GBG4Nu4Zeapump"}

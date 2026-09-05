@@ -6046,3 +6046,11 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - **Framework adoption (docs/DARWIN_OBSERVATORY.md):** HYPOTHESES.md extended with H7–H14. Highest-value mappings: H7 (first-5-min rug classification is academically validated — abort3 is our 1-feature instance), H12 (Value-of-Information ladder as research-budget allocator), H13 (first-passage targets), H14 (structural discontinuities: graduation/fee-tier/Mayhem-termination event studies).
 - Infra audit: Jito ShredStream shutdown today does not affect us (Helius WSS + pump portal WSS only). Ledger already dual-timestamps (chain t / observation ts).
 - Live: t87cw5FB open at 7.6 min, peak +1.1%, shadow KEEP logged at minute ~3.
+
+## §335 — 2-hour memecoin viability deadline (owner directive, 2026-09-05 17:09 BST)
+
+Owner directive: "add to goal in 2 hours if we can't get memecoins to work" (with re-send of the DARWIN_OBSERVATORY doc, already saved at docs/DARWIN_OBSERVATORY.md).
+
+Action taken: created one-shot cron job **"memecoin viability checkpoint"** (`automation_c86e6816-69d5-4f8a-b53e-8d6fc0f47590`), firing **2026-09-05 19:09 BST**. At fire time it reads this report + live_positions.json + live ledger, checks (1) abort3_if_red live/shadow status, (2) book recovery, (3) Helius wallet balance — and if abort3_if_red is still not live and the book isn't recovering, pivots research to the structural edges from the observatory doc's final section: cross-venue correction, backrun/rebate capture, fee-boundary effects, execution alpha.
+
+Still open before the deadline: owner decision on promoting abort3_if_red (shadow 5/5 OOS), sizing for the confirmation cohort, §262 gate flip to outsider_pct_net, dust-ATA burn.
