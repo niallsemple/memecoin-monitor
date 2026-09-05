@@ -101,6 +101,35 @@ def _rpc(method, params):
     return None
 
 
+def _tx_sol_delta(sig, tries=4, gap=2.0):
+    """§382: realized SOL change for OUR wallet from a confirmed tx
+    (postBalances - preBalances at our account index) — net of fees and
+    slippage. Quote-estimated est_sol systematically overstates results;
+    this is the ground-truth number for ROI accounting. None if unknown."""
+    try:
+        _, addr = _load_key()
+    except Exception:
+        return None
+    for _ in range(tries):
+        try:
+            r = _rpc("getTransaction", [sig, {"encoding": "json",
+                                              "maxSupportedTransactionVersion": 0}])
+            tx = (r or {}).get("result") or r  # _rpc may pre-unwrap 'result'
+            if tx and tx.get("meta"):
+                keys = [k if isinstance(k, str) else k.get("pubkey")
+                        for k in tx["transaction"]["message"]["accountKeys"]]
+                if addr in keys:
+                    i = keys.index(addr)
+                    pre = tx["meta"]["preBalances"][i]
+                    post = tx["meta"]["postBalances"][i]
+                    return (post - pre) / 1e9
+                return None
+        except Exception:
+            pass
+        time.sleep(gap)
+    return None
+
+
 def _tx_success(sig, tries=6, gap=2.5):
     """§137: a signature is not a fill. Confirm the tx landed AND
     succeeded on-chain before position state may be mutated.
@@ -1112,6 +1141,11 @@ def exit_watch():
                           "result": res.get("result")})
                     continue
                 p["sol_recovered"] += est_sol
+                # §382: realized ground truth alongside the estimate.
+                _real = _tx_sol_delta(res["sig"])
+                if _real is not None:
+                    p["sol_recovered_real"] = round(
+                        p.get("sol_recovered_real", 0.0) + _real, 6)
                 p["tokens_left"] -= sell_tokens
                 if act == "freeroll":
                     p["freerolled"] = True
@@ -1123,12 +1157,17 @@ def exit_watch():
                     p["exit_sig"] = res.get("sig")
                     p["pnl_sol"] = round(
                         p["sol_recovered"] - p["size_sol"], 5)
+                    if p.get("sol_recovered_real"):
+                        p["pnl_sol_real"] = round(
+                            p["sol_recovered_real"] - p["size_sol"], 5)
                 actions.append({"mint": mint, "act": act, "r": round(r, 3),
                                 "est_sol": round(est_sol, 5),
                                 "result": res.get("result")})
                 _log({"action": "exit_decision", "mint": mint, "exit": act,
                       "mult": round(r, 3), "mins_open": round(mins, 1),
                       "est_sol": round(est_sol, 5),
+                      "realized_sol": (round(_real, 6)
+                                       if _real is not None else None),
                       "result": res.get("result")})
             else:
                 actions.append({"mint": mint, "act": "hold",

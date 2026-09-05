@@ -6659,3 +6659,19 @@ manual run was triggered to restart management immediately. Deployed.
 Watch item: if holes persist (check run history next turns), escalate to a
 cron trigger (fires on wall-clock regardless) or split the heavy tail into
 its own automation.
+
+## §382 — Realized-PnL accounting (estimate vs ground truth)
+
+Wallet reconciliation: 2.0 SOL funded, 1.4786 liquid now, zero ATAs
+outstanding (reclaims clean), 223 submitted trade txs. Unaccounted 0.5214 =
+tx fees + ALT rent (0.0593) + marginfi account costs + trading losses — while
+the est-based book showed +0.10. Diagnosis: est_sol is a Jupiter quote at
+DECISION time, not the landed fill. Spot checks: rug-day escalated sell
+quoted 0.0012 but the wallet realized 0.00100 (-17%); the §376 winner matched
+exactly (0.107905 vs 0.10789).
+
+Built: _tx_sol_delta(sig) — wallet's on-chain pre/post balance delta, net of
+fees and slippage. Wired into exit_watch: every exit_decision now logs
+realized_sol alongside est_sol, positions carry sol_recovered_real and
+pnl_sol_real. From here the §376 forward sample and any sizing decision use
+REALIZED numbers; est remains for intra-exit logic only.

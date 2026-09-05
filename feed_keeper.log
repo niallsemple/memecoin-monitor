@@ -62,3 +62,4 @@
 [collector] subscribed: newToken + migration
 [collector] 200 events logged
 2026-09-05 22:19:46Z hb: age=7s pass_up=True keep_up=True
+[collector] closed after 345 events
