@@ -1064,3 +1064,7 @@
 {"t": 1788567460.136906, "phase": "thread_start", "mint": "dMxx6sqfB3LybfnX8QxJddqCbFYb7ugjVXFXZhypump"}
 {"t": 1788567460.140194, "phase": "lt_loaded", "mint": "dMxx6sqfB3LybfnX8QxJddqCbFYb7ugjVXFXZhypump"}
 {"t": 1788567513.701578, "phase": "thread_done", "mint": "dMxx6sqfB3LybfnX8QxJddqCbFYb7ugjVXFXZhypump", "result": "skip: bundled launch"}
+{"t": 1788567921.007026, "phase": "spawned", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump", "creator": "F7AAEa5eFPmYms3jUA1n1cJWVKXvi6kKJQ2Ds7XQoWYq"}
+{"t": 1788567921.0079732, "phase": "thread_start", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump"}
+{"t": 1788567921.037627, "phase": "lt_loaded", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump"}
+{"t": 1788567980.24817, "phase": "thread_done", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump", "result": "skip: no tape visibility (\u00a7295)"}

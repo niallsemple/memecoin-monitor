@@ -80,6 +80,7 @@ FAST_ENTRY_BUNDLE_GATE = 40.0   # §253: skip if outsider_pct >= this
 # baseline, zero wipeouts, worst -4.0%). Extreme manufacture at/above this
 # outsider_pct stays blocked even with convergence.
 CONV_OVERRIDE_MAX_OUTSIDER = 70.0
+FE_VIS_RETRY_S = 150            # §301: deferred visibility re-check for CONV
 FAST_ENTRY_DELAY_S = 40         # 30s bundle window + margin
 FE_ACTIVE = set()               # mints with an eval thread in flight
 
@@ -179,14 +180,39 @@ def fast_entry_spawn(mint, creator):
             # §295: tape-visibility safety — never open a position whose
             # price feed we can't see (§291 blind-exit risk). Visible =
             # tracker state shows curve notifs flowing OR pool discovered.
-            try:
-                _st = json.loads((MON / "mfg_state.json").read_text())
-                _tt = _st.get(mint) or {}
-                _vis = (_tt.get("notifs", 0) > 0
-                        or _tt.get("pool_notifs", 0) > 0
-                        or _tt.get("pool"))
-            except Exception:
-                _vis = False
+            # §301: check the LIVE in-memory token dict first — the state
+            # file only flushes at pass end, so disk state never contains
+            # a birth-window mint and §295 would block every fast entry.
+            # CONV-override candidates get one deferred re-check: born-
+            # terminal tokens (APFgxWWb) discover their pool ~3min after
+            # birth, after the +40s eval.
+            def _fe_visible():
+                try:
+                    _tk = getattr(fast_entry_spawn, "_tokens", None)
+                    _lk = getattr(fast_entry_spawn, "_lk", None)
+                    if _tk is not None and _lk is not None:
+                        with _lk:
+                            _tt = dict(_tk.get(mint) or {})
+                        if (_tt.get("notifs", 0) > 0
+                                or _tt.get("pool_notifs", 0) > 0
+                                or _tt.get("pool")):
+                            return True
+                except Exception:
+                    pass
+                try:
+                    _st = json.loads((MON / "mfg_state.json").read_text())
+                    _tt = _st.get(mint) or {}
+                    return bool(_tt.get("notifs", 0) > 0
+                                or _tt.get("pool_notifs", 0) > 0
+                                or _tt.get("pool"))
+                except Exception:
+                    return False
+            _vis = _fe_visible()
+            if not _vis and row.get("conv_override"):
+                row["visibility_retry"] = True
+                time.sleep(FE_VIS_RETRY_S)
+                _vis = _fe_visible()
+                row["visible_after_retry"] = bool(_vis)
             row["visible"] = bool(_vis)
             if not _vis:
                 row["result"] = "skip: no tape visibility (§295)"
@@ -1266,6 +1292,11 @@ def run(ctx):
                             "funded": funded, "symbol": d.get("symbol"),
                             "mcap_birth_sol": d.get("marketCapSol")}) + "\n")
                     # §257: birth-window entry eval (gates INSIDE thread)
+                    # §301: give the eval thread the LIVE token dict + lock
+                    # so §295 visibility sees mid-pass births (disk state
+                    # only flushes at pass end).
+                    fast_entry_spawn._tokens = tokens
+                    fast_entry_spawn._lk = LK
                     fast_entry_spawn(mint, cr)
         elif tt == "migrate":
             stats["migrations"] += 1

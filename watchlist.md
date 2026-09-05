@@ -4144,3 +4144,9 @@
 | 00:06 | solana | `3eWu5v5b…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$3,857 | name=PoohCoin symbol=POOH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=92.1 | Pooh Coin |
 | 00:06 | robinhood | `0x43b96E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,215 mc=$83,298 | chain:robinhood no-audit-adapter | 🖨️ NVDA Brrr ($BRRR) | Robinhood Chain Pair: $BRRR / $NVDA  🟩 $NVDA Stocks Go Up |
 | 00:06 | solana | `5erj4fz4…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$12,811 mc=$29,664 | name=Shivolink symbol=SLINK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48 |  |
+| 00:26 | robinhood | `0xa9D632…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$154,680 mc=$358,624 | chain:robinhood no-audit-adapter |  |
+| 00:26 | robinhood | `0xddab13…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,537 mc=$58,906 | chain:robinhood no-audit-adapter | 7/FIG |
+| 00:26 | robinhood | `0xB36CD2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,316 mc=$86,030 | chain:robinhood no-audit-adapter | What's better than a par?  A fucking eagle. Eagles mog birdies.    No affiliatio |
+| 00:26 | robinhood | `0x533288…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$62,530 mc=$324,613 | chain:robinhood no-audit-adapter | Coins that pay their holders in real stock. |
+| 00:26 | robinhood | `0x2b4f29…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Equal is a token launchpad on Robinhood Chain.Create a token in one click. Trade |
+| 00:26 | solana | `Bw7KNf9Q…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,180 | name=dinosaur crap symbol=crap; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
