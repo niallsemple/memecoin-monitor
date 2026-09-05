@@ -6062,3 +6062,17 @@ Still open before the deadline: owner decision on promoting abort3_if_red (shado
 - Feeds healthy (curves 20s, tape 0s). Activity last 30m: 1 entry, 1 shadow log, 3 bundled-launch skips, 3 fast-slot-busy skips.
 - Full position-file tally: 103 closed, cum −0.78130 SOL (includes all historical modes; conv-override book tracked separately at §330).
 - Deadline clock: viability checkpoint automation fires 19:09 BST (§335).
+
+## §337 — Flash-loan research added to pivot pile (owner directive, 17:26 BST)
+
+Owner: "also add this to research if we can't get memecoins to work" — ChatGPT brief saved at **docs/DARWIN_FLASH_LOANS.md**. Core ideas:
+
+- Flash loans solve the **capital problem, not the edge problem** — borrow uncollateralised inside one atomic tx; if repayment fails the whole tx reverts. Project 0/marginfi: **zero flash-loan fee** currently.
+- Best fits: **atomic DEX/triangular/multi-venue arbitrage** and **flash-funded liquidations** (borrow debt asset → liquidate → sell seized collateral → repay → keep surplus). Combined play: liquidation event → forced flow → cross-venue dislocation → capture both A (liquidation incentive) and B (resulting arb).
+- **Optimal sizing q\***: maximise Profit(q) = Revenue − DEXFees − Slippage − Impact − PriorityFee − Tip − FlashFee; borrow the argmax, not the max available. Bankroll stops capping opportunity size.
+- Constraints: everything atomic — tx size, compute, account locks, ALTs, landing probability. Real objective = P(Fits) × P(Lands) × Profit. Project 0 restrictions: one flash loan per tx, no nesting, no CPI, fixed begin/end positions.
+- **FLASH_LIQUIDITY router** abstraction: per opportunity decide own capital vs flash by NetEV; never hard-couple to one provider.
+- **SDK warning**: marginfi-client-v2 deprecated Mar 2026; broken after Aug 25 2026 program upgrade; oracle migration began Sep 4 2026 — must use `@0dotxyz/p0-ts-sdk` ≥ 2.8.0.
+- Suggested build order: **shadow/paper flash searcher first** (log every opportunity + simulated PnL, risk nothing), graduate mechanisms that survive execution modelling.
+
+Checkpoint automation `automation_c86e6816-69d5-4f8a-b53e-8d6fc0f47590` (fires 19:09 BST) prompt updated to incorporate this doc alongside the observatory framework.

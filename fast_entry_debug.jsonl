@@ -1803,3 +1803,16 @@
 {"t": 1788625030.715565, "phase": "spawned", "mint": "4FgrRdQTt71eDTpmCogYDKMvFj3S8JTyKYSUZj8hpump", "creator": "ANsm2VXyMjST3znH94RKvYEpLmjeFUvNm6ruDFQzd6AR"}
 {"t": 1788625030.716104, "phase": "thread_start", "mint": "4FgrRdQTt71eDTpmCogYDKMvFj3S8JTyKYSUZj8hpump"}
 {"t": 1788625030.719727, "phase": "lt_loaded", "mint": "4FgrRdQTt71eDTpmCogYDKMvFj3S8JTyKYSUZj8hpump"}
+{"t": 1788625086.807652, "phase": "thread_done", "mint": "4FgrRdQTt71eDTpmCogYDKMvFj3S8JTyKYSUZj8hpump", "result": "skip: bundled launch"}
+{"t": 1788625145.0468538, "phase": "thread_done", "mint": "AFG63H7CJafEKJAEeJre1BdPyaR4mBj6SytaLdhpump", "result": "skip: fast slot busy (\u00a7302)"}
+{"t": 1788625157.23661, "phase": "thread_done", "mint": "djnzH7GgMr9CNa72gtNnfxE1Ax3bptsvj4LkRPxpump", "result": "entered"}
+{"t": 1788625241.14887, "phase": "spawned", "mint": "ySNHmfPbd57cx2ypi7UU6UaxCx6zYuXRFXNWuBWpump", "creator": "AA7kVsMmoRyrdxM5PysRoprCb3JXb796pSsGbiXumXKu"}
+{"t": 1788625241.1493409, "phase": "thread_start", "mint": "ySNHmfPbd57cx2ypi7UU6UaxCx6zYuXRFXNWuBWpump"}
+{"t": 1788625241.152698, "phase": "lt_loaded", "mint": "ySNHmfPbd57cx2ypi7UU6UaxCx6zYuXRFXNWuBWpump"}
+{"t": 1788625320.5251148, "phase": "thread_done", "mint": "ySNHmfPbd57cx2ypi7UU6UaxCx6zYuXRFXNWuBWpump", "result": "skip: fast slot busy"}
+{"t": 1788625675.934842, "phase": "spawned", "mint": "9GsXygowhsTXLEtNQWaRH2oqCbkWQRdeVxgQkmQpump", "creator": "41Ve2cBzcX1pwPkY2QzaggA22QGVEt8oTvMCdop4NaQX"}
+{"t": 1788625675.9354382, "phase": "thread_start", "mint": "9GsXygowhsTXLEtNQWaRH2oqCbkWQRdeVxgQkmQpump"}
+{"t": 1788625675.938943, "phase": "lt_loaded", "mint": "9GsXygowhsTXLEtNQWaRH2oqCbkWQRdeVxgQkmQpump"}
+{"t": 1788625681.317976, "phase": "spawned", "mint": "fN367QrqSAYJmsiXqpE9Yor4Xg8PAdxU4FiquRSpump", "creator": "C7cZkWsEWKmLx5UpvhpK9yk5uLuZzrbwXKy1MVxCzJim"}
+{"t": 1788625681.318298, "phase": "thread_start", "mint": "fN367QrqSAYJmsiXqpE9Yor4Xg8PAdxU4FiquRSpump"}
+{"t": 1788625681.3252559, "phase": "lt_loaded", "mint": "fN367QrqSAYJmsiXqpE9Yor4Xg8PAdxU4FiquRSpump"}
