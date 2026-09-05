@@ -5874,3 +5874,8 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Entry size flipped **0.05 → 0.10 SOL** (FAST_ENTRY_SIZE) per owner directive 2026-09-05.
 - Review gate: after 10 trades at 0.10, check buy price impact (<1.2% target) and win rate (>85%) before any further step.
 - Book at flip: 21 closed, +0.02035 SOL cumulative, 90% win rate, zero wipeouts.
+
+## §317 — Trade #22 closed (n=22, last at 0.05)
+
+- **Uxujsivo**: conv_override 0.05 SOL → **+0.00064 SOL (+1.3%)**, exit `abort15`. Final 0.05-size trade; all future entries at 0.10 (§316).
+- Live book: **22 closed**, cumulative **+0.02099 SOL**, zero wipeouts.

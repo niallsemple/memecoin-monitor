@@ -4234,3 +4234,9 @@
 | 10:06 | solana | `41bP8auk…` | PASS | — | liq=$24,004 mc=$87,477 | name=ROBINAPE symbol=ROBINAPE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Just a monkey with a bow, stealing memes from the rich and feeding the jungle. |
 | 10:06 | robinhood | `0x4B7C21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$78,916 mc=$148,650 | chain:robinhood no-audit-adapter | Hunter_boden posted about a Minecraft fruit fly. The background is a real fruit  |
 | 10:06 | robinhood | `0xA93FD9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,021 mc=$12,798 | chain:robinhood no-audit-adapter | Do Only Good Everyday |
+| 10:26 | solana | `CiZxizEm…` | PASS | — | liq=$23,074 mc=$82,097 | name=CHUMP WHALE symbol=CHUMPWHALE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 10:26 | robinhood | `0x95e68a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 10:26 | solana | `C72HVCwk…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$19,108 | name=Duct-Taped Man symbol=Arthur; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 10:26 | solana | `CbwbWMTq…` | FAIL | TOP10_HEAVY:57%; METADATA_MUTABLE; RC_WARN:Mutable metadata | liq=$14,341 mc=$27,227 | name=S500 symbol=S500; rugcheck_score=7 lpLocked=0%; top10_hold=57.1% | The first token launched with launchlabs integration on Stonkfun |
+| 10:26 | robinhood | `0xC80883…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4,895 mc=$2,725 | chain:robinhood no-audit-adapter | Grok it. |
+| 10:26 | solana | `D2Z57dsE…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,123 | name=Charititty symbol=Charititty; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
