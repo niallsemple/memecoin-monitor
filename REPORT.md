@@ -6095,3 +6095,9 @@ Next builds in the pivot pipeline (from §337 doc): per-venue quote decompositio
 - **First matrix read** ($2,000 size): best cross pair buy TesseraV → sell HumidiFi = **−0.62 bps net** — no cross-venue dislocation beyond costs in calm conditions, as theory predicts. The value is the time series: dislocations should widen during liquidation cascades / forced-flow events (per §337 doc: "SOL already fell and caused mechanically forced events").
 - Aggregator round trip still marginally positive at small sizes (+0.36 bps @ $500, +0.32 @ $1k, +0.17 @ $2k) — consistent sub-bps noise band; the interesting signal will be breakouts above ~5 bps.
 - No redeploy needed (tracker importlib-loads shadow_searcher from MON each pass). Pass cost ~45s of quote calls, inside the 20-min budget.
+
+## §340 — Shock detector live in shadow searcher (17:55 BST)
+
+- Each scan now records `sol_px` (implied from the $500 leg) and a `shock` block: latest inter-pass return, rolling σ (36 scans ≈ 12h), max |ret|, and a boolean flag when |ret| > max(1%, 3σ). Rationale per §337: we monetise forced mechanical events — the shock flag tells us when the venue matrix *should* be lighting up, giving a clean natural experiment: shock=True rows vs venue_best_bps.
+- Verified live: SOL ≈ $205 implied; matrix still quiet (best pair −0.85 bps). Aggregator noise band unchanged (+0.05 to +0.36 bps at ≤$2k sizes).
+- Two more abort3_if_red shadow rows fired (8 total now); new position XkTApk3a open at 0.10 SOL. Book steady.

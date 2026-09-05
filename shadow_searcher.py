@@ -111,6 +111,35 @@ def venue_matrix(size_usdc: float = VENUE_SCAN_SIZE_USDC) -> dict:
     }
 
 
+def shock_report(sol_px: float, lookback: int = 36) -> dict:
+    """Rolling shock detector over scan history (§340). Liquidation cascades
+    and forced-flow events show up as sharp SOL moves between passes; those
+    are exactly the windows where cross-venue dislocations should widen.
+    lookback 36 scans ~= 12h at 20-min cadence."""
+    try:
+        with open(LOG_PATH) as f:
+            hist = [json.loads(l) for l in f if l.strip()]
+    except FileNotFoundError:
+        hist = []
+    pxs = [r["sol_px"] for r in hist if r.get("sol_px")][-lookback:]
+    pxs.append(sol_px)
+    if len(pxs) < 3:
+        return {"n": len(pxs), "shock": False}
+    rets = [(pxs[i] / pxs[i - 1] - 1) for i in range(1, len(pxs))]
+    latest = rets[-1]
+    mean = sum(rets) / len(rets)
+    var = sum((r - mean) ** 2 for r in rets) / len(rets)
+    sd = var ** 0.5
+    return {
+        "n": len(pxs),
+        "sol_px": round(sol_px, 3),
+        "latest_ret_pct": round(latest * 100, 3),
+        "sd_ret_pct": round(sd * 100, 3),
+        "max_abs_ret_pct": round(max(abs(r) for r in rets) * 100, 3),
+        "shock": abs(latest) > max(0.01, 3 * sd),
+    }
+
+
 def scan_once() -> dict:
     rows = []
     for q in SIZES_USDC:
@@ -136,6 +165,7 @@ def scan_once() -> dict:
         time.sleep(0.4)  # be polite to the quote API
     ok = [r for r in rows if "net_usdc" in r]
     best = max(ok, key=lambda r: r["net_usdc"]) if ok else None
+    sol_px = (rows[0]["size_usdc"] / rows[0]["sol_out"]) if ok and rows[0].get("sol_out") else None
     rec = {
         "ts": time.time(),
         "kind": "shadow_arb_scan",
@@ -145,6 +175,9 @@ def scan_once() -> dict:
         "any_positive": bool(best and best["net_usdc"] > 0),
         "ladder": rows,
     }
+    if sol_px:
+        rec["sol_px"] = round(sol_px, 3)
+        rec["shock"] = shock_report(sol_px)
     try:
         vm = venue_matrix()
         rec["venue_matrix"] = vm
