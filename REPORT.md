@@ -6244,3 +6244,16 @@ Net EV per account = 2.5% × debt repaid − JLP exit impact (live Jupiter quote
 | **total** | | | | **≈ +$11,439** |
 
 JLP liquidity is deep (0.37% on $283k). Open protocol questions before building the tx: (a) partial-liquidation caps (may limit per-tx size → multiple txs), (b) post-liquidation health-improvement requirement, (c) CONF_INTERVAL adjustments could shift borderline health. Next build: construct the atomic flash-liquidate-swap tx and simulate (simulateTransaction) against mainnet state — paper only until owner approves live fire.
+
+## §350 — Liquidate instruction anatomy extracted from real tx (18:50 BST)
+
+Source: tx 8V1k2f74…GTcP (real marginfi liquidation found via USDC-bank signature scan).
+
+- Discriminator: sha256("global:lending_account_liquidate")[:8] = `d6a997d5fba756db` — confirmed on-chain.
+- Args: `asset_amount u64` (= 776,761,745 native units) + trailing bytes `0a04` (flags; decode pending).
+- 26 accounts. Anchors identified by cross-reference with our decoded layout:
+  - [22] = USDC bank 2s37akK2 (liab bank), [23] = its Pyth pull oracle 6HAuqASb — **validates our §345/§346 offsets against a real protocol tx**.
+  - [1]/[12]/[16] = DeyH7QxW bank, [20] = 6hS9i46W bank, [24] = 22DcjMZr bank — repeated bank+oracle quads = liquidator & liquidatee health-check banks (banks+oracles for every active balance on both accounts must be passed).
+  - [9] = Tokenkeg (SPL token program).
+- Build implication: our tx must enumerate the liquidatee's AND our liquidator account's active bank+oracle pairs as remaining accounts. We already decode both layouts natively, so this is mechanical.
+- Next: map remaining positions (0–8, 10, 11, 21, 25) to group/vaults/ATAs via owner checks, then assemble + simulateTransaction.
