@@ -144,13 +144,19 @@ def jup_quote(input_mint: str, output_mint: str, amount_raw: int, slippage_bps=3
         return json.loads(r.read())
 
 
-def jup_swap_ixs(quote, user_pk: str):
+def jup_swap_ixs(quote, user_pk: str, max_accounts=24):
     """POST /swap/v1/swap-instructions: returns raw instruction objects we can
-    splice into our own v0 message, plus the ALTs Jupiter's route needs."""
+    splice into our own v0 message, plus the ALTs Jupiter's route needs.
+    §377: maxAccounts caps the route's total account footprint — the flash
+    recipe shares a 1232-byte packet with the liquidation legs, and an
+    uncapped route (SWB 1MB feed account, vote accounts, route ATAs) blew it
+    to 1684B on the Kamino-asset candidate. If Jupiter can't fit the route in
+    max_accounts it errors -> caller falls back to legacy fire()."""
     req = urllib.request.Request(
         JUP_SI, data=json.dumps({
             "quoteResponse": quote, "userPublicKey": user_pk,
-            "wrapAndUnwrapSol": True}).encode(),
+            "wrapAndUnwrapSol": True,
+            "maxAccounts": max_accounts}).encode(),
         headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=25) as r:
         j = json.loads(r.read())

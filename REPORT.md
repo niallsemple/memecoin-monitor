@@ -6592,3 +6592,19 @@ bounds the right tail, so abort15 was harvesting too early.
 Change: P_ABORT15 (15, 1.08) -> (28, 1.08). abort3_if_red (3 min) and panic
 (0.80) unchanged — early losers still die fast. One-line revert if forward
 performance disagrees.
+
+## §377 — Packet-size gap closed (Jupiter maxAccounts cap)
+
+The Kamino-asset fire attempt had failed pre-sim: 1684B vs the 1232B raw v0
+packet limit. Diagnosis: recipe carried 49 unique accounts, 13 uncovered by
+any ALT — and the uncovered set was mostly JUPITER ROUTE accounts (an SWB
+1MB feed buffer, a vote account, route ATAs), which change per quote and
+can't be pre-tabled. (The emptying of our marginfi account §371 had already
+shrunk recipe_obs and brought the same recipe to 1221B, but with only 11B
+margin — one bigger route would break it again.)
+
+Fix: jup_swap_ixs now passes maxAccounts=24 to /swap/v1/swap-instructions —
+Jupiter picks a route that fits the budget or errors (hunt then falls back to
+legacy fire()). Rebuilt Kamino recipe: 37 unique accounts, 921B (311B margin),
+sim still reaches marginfi domain logic (6002 on the no-collateral test
+candidate — correct abort).
