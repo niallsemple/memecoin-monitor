@@ -5929,3 +5929,11 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Scale-up cohort: **7/10 done**, cumulative **−0.08958 SOL** (+4.5, −0.14, +1.1, +0.8, +3.0, **−100**, +1.2). Win rate 5/7 = 71%.
 - **Review-gate status: FAILS as defined** — best possible win rate at n=10 is 8/10 = 80% < 85%, and cohort PnL is deeply negative. Step 3 (0.20 SOL) is OFF under current criteria.
 - Live book: **28 closed — 25 green / 2 scratch-red / 1 wipeout**, cumulative **−0.07160 SOL**.
+
+## §325 — Erratum: trade numbering and cumulative figures (bookkeeping fix)
+
+- Position-file ground truth: **29 closed conv_override trades**, cumulative **−0.06859 SOL** (= +0.03023 at §322, −0.10000 wipeout, +0.00118 N5Hkg). Reconciles to the penny.
+- Corrections: SDbxhdgc wipeout was trade **#28** (§323), N5HkgiXr close was trade **#29** (§324). The "−0.07160" cumulative printed in §324 was an arithmetic slip; correct post-wipeout figure was −0.06977, now −0.06859.
+- Green/red tally unchanged: 26 green / 2 scratch-red / 1 wipeout.
+- Scale-up cohort unchanged: 7/10 done, −0.08958 SOL, win rate 5/7.
+- Monitoring loop now scans **all live buy/sell paths** (not just fast_birth conv entries) using the `ts` field — s60nm5fr hook activity will surface in every status check.
