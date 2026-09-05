@@ -5816,3 +5816,8 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Live book now **11 closed: 10 green / 1 scratch red**, cumulative **+0.01186 SOL**, expectancy ~+2.16%/trip, zero wipeouts.
 - Runner-carry thesis validated live: shadow runners (+16.5%/+27.1%) now have a live counterpart (+13.3%).
 - Note: exit stack capped this runner at the 30-min abort checkpoint while still green (+11.5% at 27m → +13.3% at close). Candidate tuning question: let abort30 pass when position is >+10% and trail instead.
+
+## §306 — Trade #12 closed (n=12)
+
+- **uLQpXLzT**: conv_override 0.05 SOL → **+0.00023 SOL (+0.5%)**, held 15.3 min, exit `abort15` (scratch-green class).
+- Live book: **12 closed — 11 green / 1 scratch red**, cumulative **+0.01209 SOL**, expectancy ~+2.0%/trip, zero wipeouts.
