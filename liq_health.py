@@ -216,6 +216,106 @@ def load_prices(banks: dict) -> dict:
     return px
 
 
+def fetch_prices_batched(keys, banks: dict) -> dict:
+    """§374 part 2: lightweight live-price fetch for a specific set of oracle
+    keys via getMultipleAccounts (100/call). Mirrors load_prices parsing but
+    returns bare {oracle_key: price} — used by shock_recheck between full scans.
+    """
+    keys = list(dict.fromkeys(keys))
+    swb_conf = {b["oracle"] for b in banks.values()
+                if b["setup"] in SWB_SETUPS or b["setup"] in (7, 10, 16)}
+    px = {}
+    for i in range(0, len(keys), 100):
+        batch = keys[i:i + 100]
+        try:
+            res = rpc("getMultipleAccounts", [batch, {"encoding": "base64"}])
+            vals = (res.get("result") or {}).get("value") or []
+        except Exception:
+            continue
+        for k, v in zip(batch, vals):
+            if not v:
+                continue
+            try:
+                d = base64.b64decode(v["data"][0])
+                if k in swb_conf:
+                    if len(d) < 2384:
+                        continue
+                    value = int.from_bytes(d[2264:2280], "little", signed=True)
+                    price = value / 10.0 ** 18
+                else:
+                    if len(d) < 101:
+                        continue
+                    price_i = struct.unpack("<q", d[73:81])[0]
+                    expo = struct.unpack("<i", d[89:93])[0]
+                    if not (-30 <= expo <= 0):
+                        continue
+                    price = price_i * 10.0 ** expo
+                if 0 < abs(price) < 10 ** 15:
+                    px[k] = price
+            except Exception:
+                pass
+    return px
+
+
+def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
+    """§374 part 2: re-estimate watched accounts' health from FRESH oracle
+    prices without a full rescan. Returns [{pk, health, assets, liabs}] for
+    accounts estimated to have crossed below health 0 (small margin applied —
+    the hunt drill re-verifies exact on-chain state before any sim/fire).
+    """
+    try:
+        last = None
+        with open(watch_path) as f:
+            for line in f:
+                if line.strip():
+                    last = line
+        rec = json.loads(last) if last else {}
+    except Exception:
+        return []
+    accts = rec.get("accounts") or []
+    if not accts:
+        return []
+    banks = load_banks()
+    keys = set()
+    for a in accts:
+        keys |= set(a.get("a_by_key") or {})
+        keys |= set(a.get("l_by_key") or {})
+    fixed = {k for k in keys if k in banks}  # fixed-setup keys are bank pubkeys
+    px_new = fetch_prices_batched([k for k in keys if k not in fixed], banks)
+    out = []
+    for a in accts:
+        old_px = a.get("px_by_key") or {}
+        a_new = l_new = 0.0
+        ok = True
+        for k, usd in (a.get("a_by_key") or {}).items():
+            o = old_px.get(k)
+            if k in fixed or not o:
+                a_new += usd
+            elif px_new.get(k):
+                a_new += usd * px_new[k] / o
+            else:
+                ok = False
+                break
+        if not ok:
+            continue
+        for k, usd in (a.get("l_by_key") or {}).items():
+            o = old_px.get(k)
+            if k in fixed or not o:
+                l_new += usd
+            elif px_new.get(k):
+                l_new += usd * px_new[k] / o
+            else:
+                ok = False
+                break
+        if not ok or l_new <= 0:
+            continue
+        h = (a_new - l_new) / l_new
+        if h < -0.003:  # margin vs conf-band noise; drill re-verifies exactly
+            out.append({"pk": a["pk"], "health": round(h, 4),
+                        "assets": round(a_new, 2), "liabs": round(l_new, 2)})
+    return out
+
+
 def load_multipliers(banks: dict) -> None:
     """PythLST banks: LST/SOL rate = pool.total_lamports / pool.pool_token_supply
     (SPL stake pool layout, u64 @258 / @266 — verified vs Sanctum pool §357)."""
@@ -391,6 +491,7 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                 slots.append({"b": b, "bpk": bpk,
                               "a_nat": a_sh / (10 ** d),
                               "l_nat": l_sh / (10 ** d),
+                              "px_mid": p["px"] * b["mult"],
                               "px_lo": (p["px"] - band) * b["mult"],
                               "px_hi": (p["px"] + band) * b["mult"]})
             if bad:
@@ -414,10 +515,11 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                             del rec[t]
             rec = rec or {}
             assets = liabs = 0.0
-            a_by_key, l_by_key = {}, {}
+            a_by_key, l_by_key, px_by_key = {}, {}, {}
             for s in slots:
                 b = s["b"]
                 okey = s["bpk"] if b["setup"] in FIXED_SETUPS else b["oracle"]
+                px_by_key.setdefault(okey, s["px_mid"])
                 if s["a_nat"] > 0 and b["risk_tier"] != 1:
                     w = b["aw_maint"]
                     if b["emode_tag"]:
@@ -445,6 +547,8 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                     entry["watch"] = {
                         "a_by_key": {k: round(v, 2) for k, v in a_by_key.items()},
                         "l_by_key": {k: round(v, 2) for k, v in l_by_key.items()},
+                        "px_by_key": {k: round(v, 8) for k, v in px_by_key.items()
+                                      if k in a_by_key or k in l_by_key},
                         "breakeven_drop_pct": round(100 * (1 - liabs / assets), 2),
                     }
                 if assets < liabs:

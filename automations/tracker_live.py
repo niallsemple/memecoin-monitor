@@ -1805,9 +1805,47 @@ def run(ctx):
                 pass
 
     pump_ref = {"ws": None}
+
+    # §374 part 2: shock pre-positioning. Between the 20-min full scans, a
+    # sharp SOL/LST dip can make watched accounts liquidatable and someone
+    # else takes the fee. Every 90s: re-price only the oracles involved in
+    # the latest watch record (getMultipleAccounts, ~2 calls), re-estimate
+    # health, and hunt any account that crossed below 0 mid-interval.
+    SHOCK_CHECK_S = 90
+
+    def shock_loop():
+        import importlib.util as _ilu9
+        while not stop.is_set():
+            stop.wait(SHOCK_CHECK_S)
+            if stop.is_set():
+                break
+            try:
+                _s9 = _ilu9.spec_from_file_location(
+                    "liq_health", str(MON / "liq_health.py"))
+                _lh9 = _ilu9.module_from_spec(_s9)
+                _s9.loader.exec_module(_lh9)
+                crossed = _lh9.shock_recheck()
+                if crossed:
+                    _s10 = _ilu9.spec_from_file_location(
+                        "liq_hunt", str(MON / "liq_hunt.py"))
+                    _lhu9 = _ilu9.module_from_spec(_s10)
+                    _s10.loader.exec_module(_lhu9)
+                    _hits = _lhu9.hunt({"liquidatable_now": crossed})
+                    with (MON / "liq_shock_fires.jsonl").open("a") as f:
+                        f.write(json.dumps({
+                            "ts": time.time(), "kind": "shock_recheck_fire",
+                            "crossed": crossed,
+                            "hits": [{"pk": h.get("pk"),
+                                      "actionable": h.get("actionable"),
+                                      "skipped": h.get("skipped")}
+                                     for h in _hits]}) + "\n")
+            except Exception:
+                pass
+
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
+    threading.Thread(target=shock_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
     # births for the rest of the run (20-min blind window 17:04-17:24

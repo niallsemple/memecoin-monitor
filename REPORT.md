@@ -6523,3 +6523,23 @@ accounts exist continuously; the field is just thin at current sizes.
 Next (part 2, not built yet): tracker hook that reads the latest watch record
 each pass, fetches live prices for the oracles involved, re-estimates health,
 and fires the hunt immediately on any account that crossed 0 mid-interval.
+
+## §374 (part 2) — Shock watcher live in tracker
+
+`liq_health.py` gained `fetch_prices_batched()` (getMultipleAccounts, 100/call,
+Pyth + SWB parsing mirrors load_prices) and `shock_recheck()`: reads the latest
+liq_shock_watch.jsonl record, re-prices ONLY the oracles involved (typically
+~5 keys = 1 RPC call + 1 bank-table call), rescales each watched account's
+per-oracle USD contributions by px_new/px_old (px_by_key now stored per watch
+entry; fixed-setup banks keyed by bank pubkey, ratio 1), and returns any account
+estimated across health 0 (with a -0.003 noise margin — hunt drill re-verifies
+exact on-chain state before sim/fire).
+
+`tracker_live.py` gained a `shock_loop` daemon thread: every 90s during the
+pass it runs shock_recheck and, on any crossing, fires liq_hunt.hunt with a
+synthetic record immediately — no longer waiting for the 20-min scan cadence.
+Crossings + hunt outcomes log to liq_shock_fires.jsonl.
+
+Verified: full scan writes px_by_key (12 watched accounts); live recheck runs
+the ratio math and correctly reports no crossings at current prices. Tracker
+redeployed (assets copy identical).
