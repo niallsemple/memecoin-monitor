@@ -35,7 +35,7 @@ exits = {}
 for r in trades:
     if r.get("action") == "exit_decision":
         exits.setdefault(r["mint"], []).append(r)
-S376 = 1788645600  # §376 flip ~22:00 BST Sep 5
+S376 = 1788643200  # §376 flip 21:00 UTC (22:00 BST) Sep 5
 coh = [o for o in opens if o["_ts"] >= S376]
 pnl376 = wins376 = closed376 = 0
 for o in coh:
