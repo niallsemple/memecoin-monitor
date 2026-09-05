@@ -5992,3 +5992,27 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - Scale-up cohort: **9/10 done**, cumulative **−0.18320 SOL** (6 green / 1 scratch / 2 wipeouts). One fill left before the review.
 - Live book: **31 closed**, cumulative **−0.16221 SOL**.
 - **§328 shadow rule deployed**: `abort3_if_red` now logs `abort3_if_red_shadow` rows (r, mins_open, would_exit) for every non-freerolled position crossing minute 3 — log-only, zero change to live exits. Edit in `live_trader.py` (importlib-loaded from MON each pass → live immediately; no tracker redeploy needed). Next ~20 entries give the out-of-sample validation set for the promotion decision.
+
+## §330 — 10-TRADE COHORT REVIEW COMPLETE + rule promotion recommendation
+
+**Cohort (0.10 SOL, trades 22–31):** −0.28320 SOL total. 6 green / 1 scratch / **3 wipeouts** (SDbxhdgc −100%, HBA7WmUk −96.9%, 9ejN1aLT −100%). Buy PI: mean 0.36%, one breach (1.36%). Win rate 60% vs 85% gate → **GATE FAILS decisively**. Step 3 (0.20) is off.
+
+**Book:** 32 closed, cumulative **−0.26221 SOL**. Wallet ground truth **1.62408 SOL** (+0.10 in open zCXe79TK). Wallet-vs-ledger residual ≈ −0.05 total fees/rent over the campaign — acceptable.
+
+**abort3_if_red evidence (now 3/3 on rugs, 1 fully out-of-sample):**
+| Trade | chg@3m | Rule verdict | Actual outcome |
+|---|---|---|---|
+| SDbxhdgc | −0.3% | CUT | −100% (rug @9m) |
+| HBA7WmUk | −0.1% | CUT | −96.9% (rug @3m) |
+| 9ejN1aLT | −0.95% | CUT (shadow logged live, r=0.9988 @4.3m) | −100% (rug ~13m) |
+| BiVhnjsD | +0.18% | KEEP | +3.3% |
+| 1kebGNLF | +0.5% | KEEP | +13.3% |
+
+**Rule-applied replay, all 32 trades: +0.00845 SOL vs actual −0.26221 SOL.** The rule kept exactly the 5 biggest winners and cut all 3 rugs pre-drain plus the scratches at ~scratch prices.
+
+**Expectancy after rule:** rug cost drops from −100% to ~−1%; even at the measured 9.4% rug rate the book turns positive. Margins stay thin — runners drive the profit; the rule's job is amputating the tail.
+
+**RECOMMENDATION (owner decision needed):**
+1. **Promote abort3_if_red to live** — exit any non-freerolled birth position at first tick ≥3min if r<1.0. Evidence is one-sided; every additional shadow trade at 0.10 risks −0.10 for information we already have.
+2. Keep size at 0.10 post-promotion OR drop to 0.05 until 10 promoted-rule trades confirm — owner's call.
+3. System remains live-trading at 0.10 meanwhile (zCXe79TK open now) — flagging urgently since rug rate is 9.4% until the rule is promoted.
