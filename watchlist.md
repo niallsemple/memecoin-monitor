@@ -4168,3 +4168,9 @@
 | 02:06 | solana | `4ZiuMyVH…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$0 mc=$22,658 | name=Official Elon Coin symbol=ELON; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
 | 02:06 | robinhood | `0x74D754…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,452 mc=$25,804 | chain:robinhood no-audit-adapter | MemeCoin paired with ExxonMobil tokenized stock on Robinhood Chain.  Bankrbot la |
 | 02:06 | robinhood | `0x3c3102…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$113,152 mc=$1,522,031 | chain:robinhood no-audit-adapter | Stock Miner is an onchain mining game on Robinhood Chain where virtual rigs comp |
+| 02:46 | solana | `BpggQrMv…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$12,463 | name=SolStar symbol=SOLSTAR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=65 |  |
+| 02:46 | robinhood | `0xB6a9fa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,743 mc=$46,549 | chain:robinhood no-audit-adapter |  |
+| 02:46 | solana | `DzTJ9azf…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,864 | name=COPIUM symbol=COPIUM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100. |  |
+| 02:46 | robinhood | `0x9A9595…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,149 mc=$27,278 | chain:robinhood no-audit-adapter | A systematic desk, issued as a token. A cut of every trade funds the book; the b |
+| 02:46 | robinhood | `0x290ef7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,668 mc=$78,696 | chain:robinhood no-audit-adapter | stonk powered by $IBM |
+| 02:46 | solana | `F8exVS4w…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$8,616 | name=Buy and Retire symbol=401k; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |

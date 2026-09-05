@@ -5776,3 +5776,7 @@ ABLxmJkH closed **+0.00123 SOL (+2.5%)**. CONV live book: **5/5 green, cumulativ
 ### §303d — 6th live round-trip green (5 Sep 2026, ~02:36 UTC)
 
 Dv7XaYZq closed **+0.00006 SOL (+0.1%)** after dipping to −0.7% mid-hold — the abort15 exit caught it near breakeven. CONV live book: **6/6 green, cumulative +0.00422 SOL**. Worst live outcome so far is +0.1% — the zero-wipeout shadow profile is holding live.
+
+### §303e — 7th live round-trip green (5 Sep 2026, ~03:00 UTC)
+
+wYiw944w closed **+0.00052 SOL (+1.0%)**. CONV live book: **7/7 green, cumulative +0.00474 SOL** (~+1.4% avg per round trip). Three more closes to the n=10 sizing-review checkpoint.

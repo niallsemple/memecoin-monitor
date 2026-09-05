@@ -1155,3 +1155,16 @@
 {"t": 1788575794.922933, "phase": "spawned", "mint": "3WbEf5YupKuAXV51RqhyHyuHM916F5XeKiMUZbDRpump", "creator": "9pRVBAmqAHeyYyBLZyDaLWYZz6FDbVfGw9kMVpADA7a"}
 {"t": 1788575794.924342, "phase": "thread_start", "mint": "3WbEf5YupKuAXV51RqhyHyuHM916F5XeKiMUZbDRpump"}
 {"t": 1788575794.9301288, "phase": "lt_loaded", "mint": "3WbEf5YupKuAXV51RqhyHyuHM916F5XeKiMUZbDRpump"}
+{"t": 1788575818.9813309, "phase": "spawned", "mint": "wYiw944wtkn3k3PM5RwiGfp63v75T21L7mx6KsEpump", "creator": "7PXwVhSrTJ6EukvGnyfpNrsTWzPZq44TBrTra8UscXWM"}
+{"t": 1788575818.982319, "phase": "thread_start", "mint": "wYiw944wtkn3k3PM5RwiGfp63v75T21L7mx6KsEpump"}
+{"t": 1788575818.987947, "phase": "lt_loaded", "mint": "wYiw944wtkn3k3PM5RwiGfp63v75T21L7mx6KsEpump"}
+{"t": 1788575844.3770292, "phase": "thread_done", "mint": "3WbEf5YupKuAXV51RqhyHyuHM916F5XeKiMUZbDRpump", "result": "skip: bundled launch"}
+{"t": 1788576039.5968158, "phase": "thread_done", "mint": "wYiw944wtkn3k3PM5RwiGfp63v75T21L7mx6KsEpump", "result": "entered"}
+{"t": 1788576484.37049, "phase": "spawned", "mint": "CJsL5Y9acGqVMhEeT9v6aKoTS3SxBWfMtFvZMNXpump", "creator": "3b2KCF2dBs96AfKFsbZrt7HmQ8n5gWKt4FBuCBKGyqHW"}
+{"t": 1788576484.371289, "phase": "thread_start", "mint": "CJsL5Y9acGqVMhEeT9v6aKoTS3SxBWfMtFvZMNXpump"}
+{"t": 1788576484.3751948, "phase": "lt_loaded", "mint": "CJsL5Y9acGqVMhEeT9v6aKoTS3SxBWfMtFvZMNXpump"}
+{"t": 1788576538.900254, "phase": "thread_done", "mint": "CJsL5Y9acGqVMhEeT9v6aKoTS3SxBWfMtFvZMNXpump", "result": "skip: fast slot busy"}
+{"t": 1788577134.559374, "phase": "spawned", "mint": "54S4ZyRzmdfWdFr3ATEpexNUdhHpARBw6HQJRZRapump", "creator": "DdzDE36HQw92jcEBdEJ552YFRt2uGY5ZUtEWVG3wDFZL"}
+{"t": 1788577134.560076, "phase": "thread_start", "mint": "54S4ZyRzmdfWdFr3ATEpexNUdhHpARBw6HQJRZRapump"}
+{"t": 1788577134.564657, "phase": "lt_loaded", "mint": "54S4ZyRzmdfWdFr3ATEpexNUdhHpARBw6HQJRZRapump"}
+{"t": 1788577190.2555552, "phase": "thread_done", "mint": "54S4ZyRzmdfWdFr3ATEpexNUdhHpARBw6HQJRZRapump", "result": "skip: bundled launch"}
