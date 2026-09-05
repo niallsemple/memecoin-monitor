@@ -2285,13 +2285,14 @@
   "tokens": 681629649,
   "tokens_left": 681629649,
   "size_sol": 0.1,
-  "peak_mult": 1.0,
+  "peak_mult": 1.00175096,
   "trough_mult": 0.9978316600000001,
   "freerolled": false,
   "sol_recovered": 0.0,
   "insider_overhang_pct": 18.79,
   "insider_n": 19,
   "blocklist_feeders": 0,
-  "entry_kind": "conv_override"
+  "entry_kind": "conv_override",
+  "a3r_logged": true
  }
 }
