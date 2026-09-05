@@ -5984,3 +5984,11 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - Both rugs red at minute 3 (SDbx −0.3%, HBA7 −0.1%) → exited pre-drain. Mechanism hypothesis: insiders suppress price while staging the drain; genuine demand lifts price early. Flat-before-rug confirmed on both wipeouts.
 - Caveats: (1) HBA7's drain started ~2.5–3.3 min — a live 3:00 check could land mid-drain; still ≫ write-off. (2) n=30, rule fit to 2 rugs — needs shadow validation before promotion. (3) Survivors' early strength pattern: winners showed +0.5–0.7% by minute 3.
 - **Proposal: add `abort3_if_red` to tracker in SHADOW mode (log-only) for the next ~20 entries, then promote to live if separation holds.**
+
+## §329 — Trade #31 closed (n=31, scale-up 9/10) + abort3_if_red shadow deployed
+
+- **BiVhnjsD**: conv_override 0.10 SOL → **+0.00326 SOL (+3.3%)**, held ~15 min, exit `abort15`. Survived both rug windows; peaked +2.2%.
+- Footprint: buy PI **0.11%**, sell PI **0.52%** — buy side clean.
+- Scale-up cohort: **9/10 done**, cumulative **−0.18320 SOL** (6 green / 1 scratch / 2 wipeouts). One fill left before the review.
+- Live book: **31 closed**, cumulative **−0.16221 SOL**.
+- **§328 shadow rule deployed**: `abort3_if_red` now logs `abort3_if_red_shadow` rows (r, mins_open, would_exit) for every non-freerolled position crossing minute 3 — log-only, zero change to live exits. Edit in `live_trader.py` (importlib-loaded from MON each pass → live immediately; no tracker redeploy needed). Next ~20 entries give the out-of-sample validation set for the promotion decision.

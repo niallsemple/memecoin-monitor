@@ -966,6 +966,18 @@ def exit_watch():
             # alongside MFE peak_mult, for falsification-grade outcome labels.
             p["trough_mult"] = min(p.get("trough_mult", 1.0), r)
             mins = (time.time() - p["entry_t"]) / 60
+            # §328 SHADOW: abort3_if_red — log-only. Replay of all 30 conv
+            # trades: exiting when red at minute 3 flips the book from
+            # -0.165 to +0.006 SOL (both rugs were red at 3m; all four
+            # big winners were green). Observe out-of-sample; promotion
+            # to a live exit needs owner sign-off.
+            if not p.get("a3r_logged") and mins >= 3.0 \
+                    and not p.get("freerolled"):
+                p["a3r_logged"] = True
+                _log({"action": "abort3_if_red_shadow", "mint": mint,
+                      "entry_kind": p.get("entry_kind"),
+                      "r": round(r, 4), "mins_open": round(mins, 2),
+                      "would_exit": bool(r < 1.0)})
             # §131: nm_abort — momentum-stall exit. Forward paper tally:
             # the cohort that touched 1.30x but failed to reach the 1.5x
             # freeroll within 5 min exited at +34.5% avg (n=14); riding
