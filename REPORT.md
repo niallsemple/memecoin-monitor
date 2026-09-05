@@ -6105,3 +6105,20 @@ Next builds in the pivot pipeline (from §337 doc): per-venue quote decompositio
 ### §340a — correction: SOL spot is ~$103, not ~$205
 
 §340's "SOL ≈ $205 implied" was an arithmetic slip on my part: the $500 leg returned ~4.85 SOL, i.e. **SOL ≈ $103.3** per the Jupiter quotes (ground truth). The scanner was right; my prose was wrong. Priority-fee constant in shadow_searcher.py (0.002 USDC ≈ 10k lamports at $200) is actually ~19k lamports at $103 — still the right order of magnitude; leave as-is, it's conservative either way.
+
+## §341 — Liquidation radar feasibility probe (18:05 BST)
+
+Helius `getProgramAccounts` on marginfi v2 program `MFv2hWf...acA`, anchor discriminator memcmp @ offset 0, 0-byte dataSlice:
+
+| account type | discriminator | count | latency |
+|---|---|---|---|
+| MarginfiAccount | CKkRR4La3xu | **165,568** | 1.3s |
+| Bank | QnTef4UXSzF | **437** | 0.1s |
+
+Feasibility: **confirmed**. Both calls are light on the 10M/month budget (2 calls/pass × 3 passes/hr × 720hr ≈ 4.3k calls/month for the count tier).
+
+Design implication (two-tier radar):
+1. **Tier 1 (every pass)**: gPA with a dataSlice over only the balance-active flags / first balances region → cheap shortlist of accounts with nonzero borrow balances. (165k accounts × ~200-byte slice ≈ 33MB/pass — need to measure; may restrict further via memcmp on active-flag bytes.)
+2. **Tier 2 (shortlist only)**: full account fetch + health computation using the 437 Bank configs (LTV weights, oracle pubkeys) and Pyth/oracle prices. Health < threshold → log to `liq_radar_log.jsonl`, and flag the shadow searcher to tighten scan cadence.
+- Oracle note: marginfi oracle migration began Sep 4 2026 (§337 doc) — radar must read whatever oracle the bank config points at, not assume Pyth legacy.
+- Status: probe only; no radar built yet. Next build step is measuring Tier-1 slice size, then the Balance struct layout decode.
