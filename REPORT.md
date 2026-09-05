@@ -6151,3 +6151,19 @@ Verified on account JEHw31DY…: 6 active slots, active byte = 1 before every ba
 - Shortlist: **81,309 accounts with ≥1 nonzero liability share (~49%)**. That rate says most are dust/residual shares, not material borrows — expected; Tier-2 converts shares→USD via Bank liability-share-price and applies a materiality floor (e.g. debt ≥ $100) before health computation.
 - Output: `liq_radar_log.jsonl` (counts per shard + borrower shortlist pks for Tier-2).
 - Not yet wired into the tracker pass — decide cadence when Tier-2 lands (proposal: hourly, every 3rd tracker pass).
+
+## §344 — Bank layout decode: partial, key fields located (18:35 BST)
+
+Bank account = 1864 bytes. Empirically located on sample bank Guu5uBc8 (mint RHvmTfRo…, group JUPyiwrY…):
+
+| field | offset | value on sample | confidence |
+|---|---|---|---|
+| group | 8–39 | JUPyiwrYJFsk… | confirmed |
+| mint | 40–71 | RHvmTfRooBgu… | confirmed |
+| asset_share_value | 80–95 | 0.933847 (I80F48) | high |
+| liability_share_value | 96–111 | 1.030941 (I80F48) | high |
+| config weights block | ~312+ (8-aligned) | 0.65 / 2.5 / 1.5 | offsets confirmed, semantics mapping pending |
+
+Open for next pass: mint_decimals offset (byte@72 = 0x61, not decimals — layout has extra flags), oracle setup + keys offsets, and which of 0.65/2.5/1.5 map to asset_weight_init/maint vs liab_weight_init/maint (validate against a USDC bank whose weights are public: expect ~0.8/0.9 init/maint, liab ~1.25/1.1).
+
+Tier-2 health formula once mapped: assets = Σ asset_shares × asset_share_value × px × asset_weight_maint; liabs = Σ liab_shares × liab_share_value × px × liab_weight_maint; health = (assets − liabs) / liabs.
