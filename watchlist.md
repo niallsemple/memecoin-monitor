@@ -4216,3 +4216,9 @@
 | 08:06 | robinhood | `0x7ad7b2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,001 mc=$246,011 | chain:robinhood no-audit-adapter |  |
 | 08:06 | robinhood | `0x8C69C5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,968 mc=$42,700 | chain:robinhood no-audit-adapter | $PLUMBER - Laying pipe on the plumbers chain |
 | 08:06 | robinhood | `0x6653A1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,164 mc=$10,740 | chain:robinhood no-audit-adapter | Fake it till you make it. |
+| 08:26 | solana | `4dFAig7x…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$7,154 | name=Where Did Everyone Go? symbol=WDEG; contract:clean; rugcheck_score=1 lpLocked=100%; t | Where Did Everyone Go? |
+| 08:26 | robinhood | `0x6cecc5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Hold $BULL. Earn $BULL  Robinhood has a REAL LIVE image trademark for a bull. |
+| 08:26 | robinhood | `0x34201a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | When you use the cyber cab app, book a ride, and complete it.  You get the optio |
+| 08:26 | robinhood | `0x04c3d7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Cannibalistic Humanoid Underground Dwellers aka CHUD |
+| 08:26 | solana | `8qA3pCHs…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$17,165 mc=$48,747 | name=Pumpany symbol=PUMPANY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41 | First company on Solana to reach 1B$. Get employed now. |
+| 08:26 | robinhood | `0x6eE191…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,964 mc=$21,680 | chain:robinhood no-audit-adapter |  |
