@@ -6579,3 +6579,16 @@ Loosening the 15-min abort threshold lets more positions reach the 1.5x
 freeroll; (b) accept the 0.9% tail as cost of business (-0.004 SOL/trade
 expected drag vs +0.001-0.005 avg win — marginal); (c) smaller size cuts tail
 loss proportionally.
+
+## §376 — abort15 loosened 15m -> 28m (LIVE, replay-backed)
+
+Shadow replay over the 0.10-SOL cohort using poller mark series: all 17
+abort15 exits re-simulated as holds. At 30 min EVERY position was higher than
+its 15-min exit (+0.0281 actual vs +0.0588 held-to-30m with the 1.5x freeroll
+cap, +109%). At 60 min the cohort flips -0.0703 — two positions drained
+between 30-60m. The profitable window is 15->30m; birth_cap (30m) already
+bounds the right tail, so abort15 was harvesting too early.
+
+Change: P_ABORT15 (15, 1.08) -> (28, 1.08). abort3_if_red (3 min) and panic
+(0.80) unchanged — early losers still die fast. One-line revert if forward
+performance disagrees.

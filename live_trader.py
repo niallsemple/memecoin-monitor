@@ -709,7 +709,13 @@ POSITIONS = MON / "live_positions.json"
 P_FR_TARGET = 1.5     # freeroll trigger
 P_FR_SELL = 0.75      # sell 75%
 P_TRAIL_F = 0.5       # trail at 50% of peak
-P_ABORT15 = (15, 1.08)
+# §376: abort15 age 15 -> 28 min. Shadow replay of the 0.10-SOL cohort
+# (17 abort15 exits): EVERY position was higher at 30m than at its 15m exit
+# (+0.0281 actual vs +0.0588 held-to-30m with freeroll cap). The 15-min
+# abort was harvesting before the profitable window. 28 min keeps a
+# pre-birth_cap (30m) safety net; drains between 30-60m (2 in replay) are
+# excluded by the 30m birth_cap. Revert to (15, 1.08) if forward breaks.
+P_ABORT15 = (28, 1.08)
 P_ABORT30 = (30, 1.15)
 P_TIMESTOP_MIN = 120
 # §270: fast_birth hard cap — 9Arnb9hN forensics showed birth entries are
