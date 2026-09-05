@@ -6543,3 +6543,39 @@ Crossings + hunt outcomes log to liq_shock_fires.jsonl.
 Verified: full scan writes px_by_key (12 watched accounts); live recheck runs
 the ratio math and correctly reports no crossings at current prices. Tracker
 redeployed (assets copy identical).
+
+## §375 — Cohort verdict + the rug forensics (owner decision point)
+
+0.10 SOL cohort (since 11:22 BST, owner checkpoint "10 trades then decide"):
+24 opens, 21 closed, 18 wins (86%), cumPnL(est) -0.0424 SOL. The ENTIRE net
+loss is one trade: HBA7WmUk7u panic at x0.031 (-0.0969). All other closed
+trades net +0.0545 (~+2.6% on 2.1 SOL deployed in 10h).
+
+Full live book: 114 opens, 106 matched exits, cumPnL(est) +0.0102 SOL.
+Instant-drain rugs (panic < 0.15x): exactly 1 in 114 (0.9% rate, -0.0969 avg).
+Caveat: est_sol is a Jupiter quote estimate at decision time, not landed value;
+wallet stands at 1.3727 SOL (fees + dust included in reality).
+
+Rug forensics (HBA7WmUk7u): entry 14:53:33. Pool healthy at 14:56:05 mark
+(mcap 2.8M SOL-paired). Single 6,259-SOL drain tx landed ~14:56:2x ON-CHAIN
+BEFORE our first quote saw it: panic sell at 14:56:28 failed 6001 (slippage —
+price already gone), escalated sell landed 14:56:35 recovering 0.0031. The
+ws/poller observation of the drain arrived 14:56:50 — 20s after our fill.
+CONCLUSION: not fixable by reaction speed. The drain tx confirms before any
+observer (no public mempool). Only defenses are pre-entry or position-level.
+
+Pre-entry gate evaluation (G2 overhang gate, dormant): shadow screens show the
+rug's fingerprint IDENTICAL to winners — overhang 79.31% appears on 17/24
+cohort entries including every big winner; insider_n=1 everywhere; bundle
+outsider% ~61 across the board. The 79.31 constant is structural (residual
+pool-side account), not signal. Activating G2 at 30% would block 21/24 entries
+including ALL winners (net effect +0.044 but kills the strategy's trade flow).
+VERDICT: G2 stays INACTIVE. Current entry signals cannot discriminate this
+rug class.
+
+Levers that remain: (a) win-size — the two big cohort wins came from freeroll
+(+0.0148) and abort30 (+0.0117); abort15 bread-and-butter averages +0.0017.
+Loosening the 15-min abort threshold lets more positions reach the 1.5x
+freeroll; (b) accept the 0.9% tail as cost of business (-0.004 SOL/trade
+expected drag vs +0.001-0.005 avg win — marginal); (c) smaller size cuts tail
+loss proportionally.
