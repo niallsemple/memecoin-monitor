@@ -5957,3 +5957,13 @@ Method: replayed full mcap tape for every closed conv_override trade, simulated 
 2. The SDbxhdgc rug cliff sat between minute 8 and 10 — only an exit ≤8 min dodges it, and that exit kills the strategy's economics.
 3. **Exit timing is the wrong lever.** Expectancy = p_rug × (−100%) + (1−p_rug) × avg_win. Measured: avg non-rug win +0.00112 SOL/trade; rug cost 0.10 at current size. Breakeven rug rate ≈ **1.1%** at 0.10 sizing (2.2% at 0.05). Measured gated rug rate: 3.7% (1-in-27).
 4. The two viable levers: (a) **better entry filtering** — cut rug rate 3–4× (target <1.1%), or (b) **rug-precursor kill-switch** — sub-10s liquidity/drawdown monitor that emergency-sells during the drain (a −50% catch would double the breakeven rug rate to ~2.2%). The SDbx tape shows the drain took <30s, so (b) needs a fast loop the current 20-min-pass tracker doesn't have.
+
+## §327 — SECOND WIPEOUT: HBA7WmUk rugged at minute ~3 (n=30, scale-up 8/10)
+
+- **HBA7WmUk**: conv_override 0.10 SOL → **−0.09688 SOL (−96.9%)**, exit `panic` at 3.1 min. Pool drained between 2.5–3.3 min (mcap 2.8M → 33k).
+- **Panic kill-switch worked this time**: detection → pool_sell submitted within ~3s, slip escalation to 3000bps, recovered 0.0022 SOL. (SDbxhdgc's drain was too deep — proceeds below sell floor.) Proof the fast-exit path exists and functions; it just can't outrun a total drain.
+- **Back-to-back rugs: measured gated rug rate now 2/30 = 6.7%** vs 1.1% breakeven at 0.10 sizing. Strategy is sharply −EV under current filters.
+- **Discriminating-feature analysis (all 30 entries): NO clean separator.** Rug vs winners — outsider_pct 61.3 vs 57.5–61.8 (mid-range); n_buyers 32 vs 19–572; winner wallets present in BOTH rugs and all winners. The §300 winner-wallet signal does not discriminate rugs.
+- ⚠️ **Data-quality bug found**: `deployer_pct` reads a constant 79.31 on every eval row, and `insider_overhang_pct` is stuck at 79.31 on most positions. These gating inputs are broken/stale — the bundle gate has been running partially blind.
+- Cohort: **8/10 done, −0.18646 SOL**, win rate 5/8. Live book: **30 closed, −0.16547 SOL** (26 green / 2 scratch / 2 wipeouts).
+- Hypothesis for next analysis: both rugs were FLAT before the drain (SDbx +0.2% at 8.6m, HBA7 flat to 3m). If winners show >+2% by minute 5, a **conditional early exit** ("flat at 5min → out") dodges rugs while keeping runners. Numbers next.
