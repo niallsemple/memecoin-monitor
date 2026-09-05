@@ -38,11 +38,17 @@ def hunt(record: dict) -> list:
         pk = m["pk"]
         rec = {"ts": time.time(), "pk": pk, "health": m["health"],
                "assets": m["assets"], "liabs": m["liabs"]}
+        # §366 twilight gate: scanner proved no pair can improve health —
+        # drilling is wasted RPC and any fire would fail 6072.
+        if m.get("feasible") is False:
+            rec["skipped"] = "twilight_zone"
+            out.append(rec)
+            continue
         try:
             v = lh.rpc("getAccountInfo", [pk, {"encoding": "base64"}])["result"]["value"]
             raw = base64.b64decode(v["data"][0])
             bal = raw[lh.BAL_OFF:lh.BAL_OFF + lh.STRIDE * lh.SLOTS]
-            best_asset = best_liab = None  # (usd, bank_pk, mint, dec, px)
+            assets, liabs = [], []
             for i in range(lh.SLOTS):
                 o = i * lh.STRIDE
                 if bal[o] != 1:
@@ -58,13 +64,29 @@ def hunt(record: dict) -> list:
                 mult = b.get("mult") or 1.0
                 a_usd = lh.i80(bal[o + 40:o + 56]) * b["asset_sv"] / (10 ** d) * p["px"] * mult
                 l_usd = lh.i80(bal[o + 56:o + 72]) * b["liab_sv"] / (10 ** d) * p["px"] * mult
-                if a_usd > 1 and (best_asset is None or a_usd > best_asset[0]):
-                    best_asset = (a_usd, bpk, b["mint"], d, p["px"] * mult)
-                if l_usd > 1 and (best_liab is None or l_usd > best_liab[0]):
-                    best_liab = (l_usd, bpk, b["mint"])
+                if a_usd > 1 and b["risk_tier"] != 1:
+                    assets.append((a_usd, bpk, b["mint"], d, p["px"] * mult, b["aw_maint"]))
+                if l_usd > 1:
+                    liabs.append((l_usd, bpk, b["mint"], b["lw_maint"],
+                                  b["liq_fee"] + b["ins_fee"], b["liq_fee"]))
+            # §366: pick the best FEASIBLE pair — a seize only improves health
+            # when aw_asset < (1 - fees) * lw_liab. Base weight used
+            # (conservative: emode can only loosen the inequality).
+            best_asset = best_liab = None
+            best_cov = 0.0
+            for a in assets:
+                for l in liabs:
+                    if a[5] < (1.0 - l[4]) * l[3]:
+                        cov = min(a[0], l[0])
+                        if cov > best_cov:
+                            best_cov = cov
+                            best_asset = a
+                            best_liab = l
             rec["seizable_usd"] = round(best_asset[0], 2) if best_asset else 0.0
             rec["seize_mint"] = best_asset[2] if best_asset else None
             rec["repay_mint"] = best_liab[2] if best_liab else None
+            if not best_asset or not best_liab:
+                rec["skipped"] = "no_feasible_pair"
             if best_asset and best_liab and best_asset[0] >= MIN_SEIZE_USD and sims_left > 0:
                 sims_left -= 1
                 import liq_sim
@@ -77,8 +99,9 @@ def hunt(record: dict) -> list:
                 rec["sim_seize_usd"] = round(seize_usd, 2)
                 rec["actionable"] = err is None
                 if err is None:
-                    # 5% liquidation bonus on seized value, minus ~0.5% swap est.
-                    rec["est_gross_usd"] = round(seize_usd * 0.05, 2)
+                    # liquidator's bonus = the liab bank's actual liquidator
+                    # fee (insurance portion goes to the bank, not us)
+                    rec["est_gross_usd"] = round(seize_usd * best_liab[5], 2)
                     # §362: armed live fire (owner authorized live test).
                     # fire() re-sims signed and fail-closes on any error.
                     try:

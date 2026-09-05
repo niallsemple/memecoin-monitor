@@ -4240,3 +4240,9 @@
 | 10:26 | solana | `CbwbWMTq…` | FAIL | TOP10_HEAVY:57%; METADATA_MUTABLE; RC_WARN:Mutable metadata | liq=$14,341 mc=$27,227 | name=S500 symbol=S500; rugcheck_score=7 lpLocked=0%; top10_hold=57.1% | The first token launched with launchlabs integration on Stonkfun |
 | 10:26 | robinhood | `0xC80883…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4,895 mc=$2,725 | chain:robinhood no-audit-adapter | Grok it. |
 | 10:26 | solana | `D2Z57dsE…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,123 | name=Charititty symbol=Charititty; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 19:26 | robinhood | `0xB3D285…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,076 mc=$72,630 | chain:robinhood no-audit-adapter | We stand behind Stock Tokens. Robinhood Stock Tokens Daily. |
+| 19:26 | robinhood | `0xe503b0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | RWA Reserve is built to make auto-investing in tokenized stocks easier. Users wi |
+| 19:26 | hyperevm | `0x73F8ED…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,120 mc=$6,565 | chain:hyperevm no-audit-adapter | SHORTS ("always in shorts.") is a meme token on HyperEVM built around one detail |
+| 19:26 | solana | `H65nTRfD…` | FAIL | TOP10_HEAVY:73%; RC_WARN:Single holder ownership; RC_WARN:High holder concentration | liq=$16,855 mc=$47,636 | name=CHIKAI symbol=CHIKAI; contract:clean; rugcheck_score=34 lpLocked=100%; top10_hold=73. | Crypto gossip, memes, raids, and token scans - powered by AI. Chat with the CHIK |
+| 19:26 | robinhood | `0xFF636A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,255 mc=$44,103 | chain:robinhood no-audit-adapter | Apparently, I was born on the PONS GitHub.  I opened my eyes, looked around for  |
+| 19:26 | solana | `CEoBBZCu…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$17,496 mc=$50,849 | name=Hugh Jackman symbol=JACKMAN; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold |  |
