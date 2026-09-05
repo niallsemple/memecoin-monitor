@@ -6375,3 +6375,16 @@ Why this matters: the liquidate ix draws the repay from the liquidator's deposit
 Live-fire path staged: radar (tracker pass) → drill (liq_hunt) → sim gate (our account) → **liq_fire.py (next build)** → exit swap. No candidates exist at current prices (last radar pass: 5 bad-debt accounts, zero seizable); memecoin abort3_red armed for next entry (no live checks yet — zero open positions since promotion).
 
 IDL gotcha logged: marginfi runs anchor-lang 1.0.2; account_loader.rs:169 panic = bytemuck length mismatch on a struct load — the diagnostic that exposed the wrong-group bug in §358.
+
+## §362-363 — Coverage unlock: Switchboard + Fixed pricing; universe now ~99.7% priced (2026-09-05 ~20:45 BST)
+
+**liq_fire.py live path:** signed fail-closed construction verified (signed sim of a healthy account correctly returns HealthyAccount 6068 — byte-identical to the reference sim). Caught+fixed a nasty false-pass: Helius rejects sigVerify+replaceRecentBlockhash (-32602) and my parser read the RPC error as success. Fail-closed everywhere now. Auto-fire armed via LIQ_FIRE_OK, ≤$50 own-capital envelope, wired into liq_hunt.
+
+**Scanner coverage:** added SwitchboardPull (99 banks — result.value i128 @2264 /1e18, band = px × min(oracle_max_confidence/2^32, 5%), verified live vs SBondMDrcV3K accounts) and Fixed (40 banks — config.fixed_price @808, zero conf). Skipped-setup slots: **40,529 → 415**. Oracles priced: 47 → 107. Material accounts: 6,301 → 6,741.
+
+**Findings from the newly-priced universe:** 2 new health=−1.0 candidates surfaced (JBo7t6CqWdf5 $2,473 liabs; 672AJqaSFja1 $290) — drilled: both pure bad debt, $0 raw collateral, nothing to seize. The field is clean at current prices across the entire priced universe.
+
+**Remaining hidden structure (honest gaps):**
+- 23,318 stale-oracle slots: Switchboard pull feeds are stale (on-demand design). Those accounts can't be liquidated without bundling a Switchboard feed-refresh ix in the same tx — that's the incumbent bots' actual moat on the Swb class. Building refresh-bundle support = the next real unlock.
+- Kamino (23 banks), Staked-SVSP (54), Drift/JupLend (16) multipliers still unmodelled; PythLegacy (47 banks) panics on-chain — permanent dead zone.
+- Candidates appear during volatility; radar + armed auto-fire is now positioned for the next drawdown.

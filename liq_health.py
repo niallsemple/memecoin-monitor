@@ -68,12 +68,17 @@ def i80(b: bytes) -> float:
     return int.from_bytes(b, "little", signed=True) / F48
 
 
-# Exact-pricing setups: 3 = PythPushOracle (multiplier-free). 22 = PythLST gets its
-# SPL-stake-pool multiplier applied in load_multipliers. All other setups
-# (Kamino/Drift/Solend/JupLend/Staked-SVSP/Switchboard/Scope/Fixed/PT) carry
-# exchange-rate multipliers we do not model yet -> skipped, not mispriced.
+# Exact-pricing setups: 3 = PythPushOracle (multiplier-free); 4 = SwitchboardPull
+# (price @2264 i128 / 1e18, conf from bank oracle_max_confidence fraction);
+# 8 = Fixed (bank.config.fixed_price, zero conf, no staleness);
+# 22 = PythLST with SPL-stake-pool multiplier. All other setups
+# (Kamino/Drift/Solend/JupLend/Staked-SVSP/Scope/PT) carry exchange-rate
+# multipliers we do not model yet -> skipped, not mispriced.
 PYTH_SETUPS = {3}
+SWB_SETUPS = {4}
+FIXED_SETUPS = {8}
 LST_SETUPS = {22}
+SWB_MAX_AGE_S = 3600
 
 
 def load_banks() -> dict:
@@ -104,6 +109,8 @@ def load_banks() -> dict:
             "op_state": raw[608],   # 1=Operational; only Initial margin cares
             "setup": raw[609],      # OracleSetup discriminant (§357 fix: was 608)
             "oracle": b58encode(raw[610:642]),
+            "max_conf": struct.unpack("<I", raw[804:808])[0] if len(raw) >= 824 else 0,
+            "fixed_px": i80(raw[808:824]) if len(raw) >= 824 else 0.0,
             "oracle2": b58encode(raw[642:674]),  # LST stake pool / kamino reserve
             "mult": None,           # set by load_multipliers
             "risk_tier": risk_tier,
@@ -114,9 +121,34 @@ def load_banks() -> dict:
 
 
 def load_prices(banks: dict) -> dict:
-    keys = {b["oracle"] for b in banks.values() if b["setup"] in PYTH_SETUPS}
+    keys = {b["oracle"] for b in banks.values() if b["setup"] in PYTH_SETUPS | SWB_SETUPS}
+    swb_oracles = {b["oracle"]: b["max_conf"] for b in banks.values()
+                   if b["setup"] in SWB_SETUPS}
     px = {}
     for k in keys:
+        if k in swb_oracles:
+            # Switchboard pull: PullFeedAccountData — result.value i128 @2264
+            # (abs), last_update_timestamp i64 @2216. PRECISION = 18.
+            # conf band = px * min(max_conf / 2^32, 0.05); 0 disables band.
+            try:
+                v = rpc("getAccountInfo", [k, {"encoding": "base64"}])["result"]["value"]
+                if not v:
+                    continue
+                d = base64.b64decode(v["data"][0])
+                if len(d) < 2384:
+                    continue
+                value = int.from_bytes(d[2264:2280], "little", signed=True)
+                pub = struct.unpack("<q", d[2216:2224])[0]
+                price = value / 10.0 ** 18
+                if not (0 < abs(price) < 10 ** 15):
+                    continue
+                frac = min(swb_oracles[k] / float(2 ** 32), CONF_CAP)
+                px[k] = {"px": price, "conf_px": price * frac,
+                         "age_s": time.time() - pub, "swb": True}
+            except Exception:
+                pass
+            time.sleep(0.05)
+            continue
         try:
             v = rpc("getAccountInfo", [k, {"encoding": "base64"}])["result"]["value"]
             if not v:
@@ -143,7 +175,7 @@ def load_multipliers(banks: dict) -> None:
     """PythLST banks: LST/SOL rate = pool.total_lamports / pool.pool_token_supply
     (SPL stake pool layout, u64 @258 / @266 — verified vs Sanctum pool §357)."""
     for b in banks.values():
-        if b["setup"] in PYTH_SETUPS:
+        if b["setup"] in PYTH_SETUPS | SWB_SETUPS | FIXED_SETUPS:
             b["mult"] = 1.0
         elif b["setup"] in LST_SETUPS:
             try:
@@ -198,16 +230,23 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                 b = banks.get(bpk)
                 if not b:
                     continue
-                p = px.get(b["oracle"])
                 d = dec.get(b["mint"])
                 if b["mult"] is None:
                     skipped_setup += 1
                     bad = True
                     break
+                if b["setup"] in FIXED_SETUPS:
+                    if b["fixed_px"] <= 0:
+                        bad = True
+                        break
+                    p = {"px": b["fixed_px"], "conf_px": 0.0, "age_s": 0}
+                else:
+                    p = px.get(b["oracle"])
                 if not p or d is None or d > 18:
                     bad = True
                     break
-                if p["age_s"] > 120:
+                max_age = SWB_MAX_AGE_S if p.get("swb") else 120
+                if p["age_s"] > max_age:
                     stale_oracle += 1
                     bad = True
                     break
