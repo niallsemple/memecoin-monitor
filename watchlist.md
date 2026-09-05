@@ -4186,3 +4186,9 @@
 | 03:46 | ethereum | `0x599398…` | PASS | — | liq=$54,741,048 mc=$60,792,099 | holders=2; buy_tax=0 sell_tax=0; contract:clean | Hororo (Bottle Fairy) - the origin of Milday NFTs |
 | 03:46 | robinhood | `0xFAF3Bf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,390 mc=$3,452 | chain:robinhood no-audit-adapter | 0xpresso |
 | 03:46 | robinhood | `0x775f76…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,714 mc=$259,390 | chain:robinhood no-audit-adapter | $KING is the house token of King of Robinhood.  You bid ETH for the crown. 10% o |
+| 04:06 | robinhood | `0xa7d73c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | 3D browser racing on Robinhood Chain. 6 obstacle zones. Multiplayer. |
+| 04:06 | solana | `5Wx6c1Tp…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$20,757 | name=Autonomous Loop Agent symbol=Looprat; contract:clean; rugcheck_score=1 lpLocked=100%; | Looprat |
+| 04:06 | robinhood | `0xF6cA5A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,134 mc=$12,711 | chain:robinhood no-audit-adapter |  |
+| 04:06 | solana | `EUuZC9Zp…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,568 | name=Reaction Injection Molding symbol=RIM; contract:clean; rugcheck_score=1 lpLocked=100% |  |
+| 04:06 | robinhood | `0x4f342A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,574 mc=$84,182 | chain:robinhood no-audit-adapter | The ChairMan |
+| 04:06 | ethereum | `0x1AA7c7…` | PASS | — | liq=$27,555 mc=$63,231 | holders=86; buy_tax=0 sell_tax=0; contract:clean | Launch anything on ethereum via gweistocks fun Powered by Ondo tokenized stocks. |

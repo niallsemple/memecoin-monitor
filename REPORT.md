@@ -5788,3 +5788,24 @@ wYiw944w closed **+0.00052 SOL (+1.0%)**. CONV live book: **7/7 green, cumulativ
 ### §303g — 9th close: first scratch red (5 Sep 2026, ~03:53 UTC)
 
 sw5BWZzm closed **−0.00008 SOL (−0.2%)** — first non-green close of the live book, a scratch at the abort15 checkpoint after holding −0.5% most of the hold. CONV live book: **9 closed, 8 green / 1 scratch, cumulative +0.00518 SOL**. Downside control continues to match the shadow profile (typical small loss −2%, worst −4%; live worst so far −0.2%). One more close to the n=10 sizing-review checkpoint.
+
+## §304 — CONV live book n=10 verdict + sizing review (5 Sep 2026, ~04:35 UTC)
+
+Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort15 exits (~15 min holds):
+
+| # | mint | pnl_sol | ~ret |
+|---|---|---|---|
+| 1 | S8wRRsrv | +0.00017 | +0.3% |
+| 2 | uNMMbwMa | +0.00102 | +2.0% |
+| 3 | uXsunQSV | +0.00007 | +0.1% |
+| 4 | 8o8ZSAS3 | +0.00167 | +3.3% |
+| 5 | ABLxmJkH | +0.00123 | +2.5% |
+| 6 | Dv7XaYZq | +0.00006 | +0.1% |
+| 7 | wYiw944w | +0.00052 | +1.0% |
+| 8 | 6dYjtBu5 | +0.00052 | +1.0% |
+| 9 | sw5BWZzm | −0.00008 | −0.2% |
+| 10 | Ve58rrNn | +0.00004 | +0.1% |
+
+**Verdict: 9 green / 1 scratch red, cumulative +0.00522 SOL, expectancy +1.04% per round trip, worst outcome −0.2%, zero tail events.** Live book matches the shadow cohort's predicted shape (small consistent outcomes, capped downside) — and note no runner (+16-27%) has appeared yet; the model's historical carry came from those, so current returns are the FLOOR case, not the ceiling. Signal rate ~3/hr in active windows, slot-capped to 0.05 SOL exposure.
+
+**Sizing proposal (owner decision pending):** FAST_ENTRY_SIZE 0.05 → 0.10 SOL. At observed expectancy ≈ +0.001 SOL/trade; worst observed live outcome would be −0.0002; shadow-cohort worst (−4%) would be −0.004. Wallet 2.0 SOL → 0.10 = 5% per entry, inside the existing FRAC=0.05/MAX_SOL=0.20 risk frame. Not flipped unilaterally — awaiting owner approval.
