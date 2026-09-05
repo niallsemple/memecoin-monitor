@@ -5905,3 +5905,11 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Footprint: buy PI **0.24%**, sell PI **0.51%** — buy side fine; sell PI drifting up across cohort (0.15/0.01/0.43/0.51%), still small in absolute terms, watch at 0.20 sizing.
 - Scale-up cohort: **4/10 done**, cumulative **+0.00623 SOL** (+4.5%, −0.14%, +1.1%, +0.8%); buy PIs 0.21/0.16/0.12/0.24%.
 - Live book: **26 closed — 24 green / 2 scratch-red**, cumulative **+0.02722 SOL**, zero wipeouts.
+
+## §322 — Trade #27 closed (n=27, scale-up 5/10, halfway)
+
+- **nAMg4ftc**: conv_override 0.10 SOL → **+0.00301 SOL (+3.0%)**, held ~16 min, exit `abort15`. Dipped to −2.9% early, recovered to close green.
+- ⚠️ Footprint: buy PI **1.36%** — first cohort trade over the 1.2% review threshold (thinner pool; still paid +3.0%). Sell PI 0.12%.
+- Cohort buy PIs so far: 0.21 / 0.16 / 0.12 / 0.24 / **1.36**% — 1 breach in 5; mean 0.42%.
+- Scale-up cohort: **5/10 done (halfway)**, cumulative **+0.00924 SOL**, 4 green / 1 red (80% — gate wants >85% at n=10).
+- Live book: **27 closed — 25 green / 2 scratch-red**, cumulative **+0.03023 SOL**, zero wipeouts.
