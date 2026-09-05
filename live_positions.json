@@ -2227,5 +2227,23 @@
   "exit_sig": null,
   "pnl_sol": 0.01482,
   "actual_fill_note": "write-off: est proceeds 0.000092 SOL below 0.001 floor; no sell submitted, dust tokens kept"
+ },
+ "XhsMxRkrP7fXB2AnM6CKBw8HbNW8B4HqeTSKhkKpump": {
+  "open": true,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788633718.3757792,
+  "entry_px": 2.2304163406439222e-10,
+  "tokens": 448346787,
+  "tokens_left": 448346787,
+  "size_sol": 0.1,
+  "peak_mult": 1.0,
+  "trough_mult": 0.9992463199999999,
+  "freerolled": false,
+  "sol_recovered": 0.0,
+  "insider_overhang_pct": 79.31,
+  "insider_n": 1,
+  "blocklist_feeders": 0,
+  "entry_kind": "conv_override"
  }
 }

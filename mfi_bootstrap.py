@@ -93,9 +93,11 @@ def main():
     ], DEPOSIT_DISC + struct.pack("<Q", DEPOSIT_AMT) + b"\x00"))
 
     tx = build_signed_tx({wallet_b: wallet_key}, wallet_b, ixs)
-    sim = rpc("simulateTransaction", [tx, {"encoding": "base64", "sigVerify": True,
+    sim = rpc("simulateTransaction", [tx, {"encoding": "base64", "sigVerify": False,
                                          "replaceRecentBlockhash": True}])
-    val = sim.get("result", {}).get("value", {})
+    if sim.get("error"):
+        print("SIM RPC ERROR (fail-closed):", sim["error"]); return
+    val = sim["result"]["value"]
     print("simulate err:", val.get("err"))
     if val.get("err"):
         for l in val.get("logs") or []:

@@ -137,9 +137,11 @@ def main():
     signers = {wallet_b: wallet_key, acct_b: acct_key}
     tx = build_signed_tx(signers, wallet_b, ixs)
 
-    sim = rpc("simulateTransaction", [tx, {"encoding": "base64", "sigVerify": True,
+    sim = rpc("simulateTransaction", [tx, {"encoding": "base64", "sigVerify": False,
                                          "replaceRecentBlockhash": True}])
-    err = sim.get("result", {}).get("value", {}).get("err")
+    if sim.get("error"):
+        print("SIM RPC ERROR (fail-closed):", sim["error"]); return
+    err = sim["result"]["value"].get("err")
     print("simulate err:", err)
     if err:
         for l in sim["result"]["value"].get("logs") or []:

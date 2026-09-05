@@ -68,7 +68,8 @@ def hunt(record: dict) -> list:
             if best_asset and best_liab and best_asset[0] >= MIN_SEIZE_USD and sims_left > 0:
                 sims_left -= 1
                 import liq_sim
-                seize_usd = min(best_asset[0], best_liab[0] * SEIZE_FRACTION)
+                seize_usd = min(best_asset[0], best_liab[0] * SEIZE_FRACTION,
+                                50.0)  # own-capital envelope until flash ships
                 amount = int(seize_usd / best_asset[4] * (10 ** best_asset[3]))
                 res = liq_sim.simulate(pk, best_asset[1], best_liab[1], amount)
                 err = res.get("result", {}).get("value", {}).get("err")
@@ -78,6 +79,21 @@ def hunt(record: dict) -> list:
                 if err is None:
                     # 5% liquidation bonus on seized value, minus ~0.5% swap est.
                     rec["est_gross_usd"] = round(seize_usd * 0.05, 2)
+                    # §362: armed live fire (owner authorized live test).
+                    # fire() re-sims signed and fail-closes on any error.
+                    try:
+                        import liq_fire
+                        fr = liq_fire.fire(pk, best_asset[1], best_liab[1],
+                                           amount, seize_usd)
+                        rec["fire_result"] = fr.get("result")
+                        rec["fire_sig"] = fr.get("sig")
+                        if fr.get("result") == "confirmed":
+                            ex = liq_fire.exit_seized(best_asset[1], best_asset[2],
+                                                      best_asset[3])
+                            rec["exit_result"] = ex.get("result")
+                            rec["exit_out_sol"] = ex.get("exit_quote_out_sol")
+                    except Exception as e:
+                        rec["fire_error"] = str(e)[:200]
         except Exception as e:
             rec["error"] = str(e)[:200]
         out.append(rec)
