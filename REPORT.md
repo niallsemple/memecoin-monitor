@@ -6445,3 +6445,15 @@ liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RP
 **Result:** Drift 9/9, JupLend 7/7 priced (mults 1.00–1.20, plausible). Full rescan: 165,571 accounts, **7,855 material** (was 6,835 — 1,020 Drift/JupLend positions newly visible), skipped-setup slots 74 → **9** (5 None + stragglers; PythLegacy's 47 banks panic on-chain = permanent dead zone by design). stale_oracle_slots also collapsed 23k → 3.4k (live SwbPull feeds getting landed by the network + complete coverage reveals true staleness). Liquidatable-now unchanged: all $0-collateral bad debt.
 
 **Scanner coverage is now complete:** every liquidatable-relevant oracle class priced — PythPush, SwbPull, Fixed, PythLST, SVSP (legacy+onramp), Kamino, Drift, JupLend. Every refresh moat breached (Kamino same-slot, SwbPull crossbar). Every phantom class filtered (twilight-zone feasibility gate). The radar sees everything the chain sees; what remains is waiting for volatility + the §337 flash recipe for size.
+
+## §369 — Flash-loan machinery PROVEN: start/borrow/repay/end roundtrip sim-clean (2026-09-05 ~22:15 BST)
+
+**liq_flash.py** builds and sims a complete marginfi flash loan: start_flashloan (end_index via instructions sysvar) → borrow 5 USDC → repay_all → end_flashloan — **err: None, 176k CU**. Three hard-won semantics (each cost a failing sim):
+
+1. **withdraw ≠ borrow.** Current marginfi split them: withdraw is WithdrawOnly (can't flip deposit→liability, 6020), borrow is BorrowOnly (can't touch an existing deposit in the same bank, 6021 — borrow from a bank you hold no position in). Flash-borrowing = `lending_account_borrow` from a zero-balance bank.
+2. **repay needs repay_all=true.** Share-value rounding makes exact-amount repay overshoot into an asset → OperationRepayOnly 6022. With repay_all the program takes exactly the liability.
+3. **Observation accounts are required even under the flash flag.** The CB price gate (borrow.rs:224) is NOT skipped by ACCOUNT_IN_FLASHLOAN (only check_account_init_health is, account.rs:1420). Borrow's remaining must include pairs for every active balance INCLUDING the just-created borrow balance; end_flashloan's final health check needs them too. Missing → InvalidBankAccount 6008 (three variants debugged: pre-borrow gate, post-borrow gate with new balance, end health check).
+
+**Also mapped:** asset_tag gating — standard borrow rejects integrated banks (Kamino tag 3 → WrongAssetTagForStandardInstructions 6200); flash borrows must come from tag-0/SOL banks (main USDC bank 2s37akK2ey works).
+
+**What this unlocks:** the full §337 recipe — start_flash → borrow liab-token → liquidate (position transfer) → withdraw seized collateral (flash skips health) → Jupiter swap → repay → end. Own capital covers gas only; size becomes limited by vault liquidity + exit depth, not our 1.4 SOL. Remaining assembly: v0 tx + ALT (account count exceeds legacy 1232B), the Jupiter swap leg, and amount sizing math (seize ≤ debt×(1+fee) and ≤ exit-liquidity).
