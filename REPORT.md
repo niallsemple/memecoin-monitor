@@ -5913,3 +5913,19 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Cohort buy PIs so far: 0.21 / 0.16 / 0.12 / 0.24 / **1.36**% — 1 breach in 5; mean 0.42%.
 - Scale-up cohort: **5/10 done (halfway)**, cumulative **+0.00924 SOL**, 4 green / 1 red (80% — gate wants >85% at n=10).
 - Live book: **27 closed — 25 green / 2 scratch-red**, cumulative **+0.03023 SOL**, zero wipeouts.
+
+## §323 — FIRST WIPEOUT: SDbxhdgc rugged mid-window (n=27, scale-up 6/10)
+
+- **SDbxhdgc**: conv_override 0.10 SOL → **−0.10000 SOL (−100%)**, exit `panic_writeoff` at 9.1 min age. Zero-wipeout streak ended at 26.
+- Post-mortem: mcap ground up slowly (+0.2% at 8.6 min) then the pool was drained between 4.6–9.0 min — trough_mult 7.3e-05. Panic detector fired promptly (write-off at 9.1 min) but est. proceeds 0.000007 SOL were below the 0.001 sell floor → no sell submitted, 341M dust tokens kept.
+- **Structural lesson: abort15 cannot save fast rugs.** The collapse happened 5–9 min in, before any timed exit. This is the birth-window tail risk the gates filter down but cannot eliminate: ~1 rug in 27 gated entries (3.7%).
+- Expectancy math now explicit: avg win ~+1.5% vs rug −100% → the strategy is only +EV if gated rug rate stays under ~1.5%. One more rug in the next ~40 trades keeps the book underwater.
+- Wallet re-audit after wipeout: **1.82785 SOL** (+0.10 in open N5Hkg tokens) vs anchor 2.04249 → effective −0.115; ledger conv since anchor −0.091; residual −0.024 ≈ priority fees/tips (~0.0015/tx) + ~5 new ATA rents. No hidden trades — the s60nm5fr hook buy on GyT6j7jA (0.0965) was **blocked by §262** (bundled 60.91%), never executed. NOTE: the hook path exists and fires live entries independent of §302 slot lock; it must be included in monitoring from now on.
+
+## §324 — Trade #28 closed (n=28, scale-up 7/10)
+
+- **N5HkgiXr**: conv_override 0.10 SOL → **+0.00118 SOL (+1.2%)**, held ~15 min, exit `abort15`. Entered 101s after the SDbxhdgc write-off (slot lock working).
+- Footprint: buy PI **0.12%**, sell PI **0.41%** — clean.
+- Scale-up cohort: **7/10 done**, cumulative **−0.08958 SOL** (+4.5, −0.14, +1.1, +0.8, +3.0, **−100**, +1.2). Win rate 5/7 = 71%.
+- **Review-gate status: FAILS as defined** — best possible win rate at n=10 is 8/10 = 80% < 85%, and cohort PnL is deeply negative. Step 3 (0.20 SOL) is OFF under current criteria.
+- Live book: **28 closed — 25 green / 2 scratch-red / 1 wipeout**, cumulative **−0.07160 SOL**.
