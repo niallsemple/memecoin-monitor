@@ -6257,3 +6257,25 @@ Source: tx 8V1k2f74…GTcP (real marginfi liquidation found via USDC-bank signat
   - [9] = Tokenkeg (SPL token program).
 - Build implication: our tx must enumerate the liquidatee's AND our liquidator account's active bank+oracle pairs as remaining accounts. We already decode both layouts natively, so this is mechanical.
 - Next: map remaining positions (0–8, 10, 11, 21, 25) to group/vaults/ATAs via owner checks, then assemble + simulateTransaction.
+
+## §351 — Liquidate account map complete (18:57 BST)
+
+Classified all 26 accounts by owner/size (getMultipleAccounts):
+
+| pos | identity | evidence |
+|---|---|---|
+| 0 | MarginfiGroup | mfi-owned, 9256B |
+| 1 | asset_bank | mfi bank (repeated in health tail) |
+| 2 | liab_bank | mfi bank |
+| 3 | liquidator MarginfiAccount | 2312B |
+| 4 | liquidator authority (signer) | system wallet, 0B |
+| 5 | liquidatee MarginfiAccount | 2312B |
+| 6 | liab vault authority PDA | account doesn't exist on-chain (0-lamport PDA — derive via seed) |
+| 7 | liab bank liquidity vault | token acct, mint = debt asset (LST here) |
+| 8 | liab bank insurance vault | token acct, same mint |
+| 9 | SPL token program | Tokenkeg |
+| 10+ | health-check remaining accounts: every active bank + its oracle for BOTH liquidator and liquidatee | 134B Pyth-pull accounts (rec2HHDD owner) confirmed at [10][21][25] |
+
+**New wrinkle**: [11] is a **Switchboard** oracle (owner SBondMDrcV3K, 3208B) — the setup byte enum has SB variants in the wild; our health pricer currently skips non-Pyth-pull banks (18,967 slot-reads skipped in §347). To capture accounts collateralised via SB-oracle banks we need an SB price reader too (decode pending).
+
+Build recipe is now fully specified: derive vault-authority PDA, pass vaults + token program, append bank/oracle pairs for all active balances on both accounts, args = disc + asset_amount u64 + flags. Then simulateTransaction.
