@@ -60,17 +60,17 @@ def collect_keys():
     seen = set()
 
     def add(b):
+        assert len(b) == 32, f"non-32-byte key slipped in: {lt.b58enc(b)}"
         if b != bytes(32) and b not in seen:
             seen.add(b)
             keys.append(b)
 
     for s in ("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",      # token prog
               "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",      # ATA prog
-              "1" * 32,                                            # system
               "Sysvar1nstructions1111111111111111111111111",
               "ComputeBudget111111111111111111111111111111",
               "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
-              "SBondMDrcV3K54YvHFvy7Mwx7LRN2ZZ3bzuxCpbm6SB1M",     # SWB on-demand
+              "SBondMDrcV3K4kxZR1HNVT7osZxAHVHgYXL5Ze1oMUv",      # SWB on-demand (liq_sim.swb_prog_id)
               "A91fDng3SdKxBMPq4DxUSE4LKqBR1g6tf3rC8ypvogRy",      # our mfi acct
               GROUP_S):
         add(lt.b58dec(s))

@@ -172,7 +172,7 @@ def hunt(record: dict) -> list:
                         import liq_fire
                         fr = liq_fire.fire_flash(pk, best_asset[1], best_liab[1],
                                                  amount, seize_usd)
-                        if fr.get("result") == "build_error":
+                        if fr.get("result") in ("build_error", "skip_integrated_no_mult"):
                             fr = liq_fire.fire(pk, best_asset[1], best_liab[1],
                                                amount, seize_usd)
                             rec["fire_path"] = "legacy"

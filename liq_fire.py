@@ -221,12 +221,21 @@ def fire_flash(liquidatee: str, asset_bank: str, liab_bank: str, amount: int,
     if not LIVE_FIRE_OK.exists() and not dry_run:
         row["result"] = "not_armed (no LIQ_FIRE_OK)"
         _log_fire(row); return row
-    # fail-closed: for Kamino/Drift/JupLend collateral the liquidate amount is
-    # position tokens, not underlying — swap sizing needs the venue rate,
-    # not built yet (§371)
-    if liq_sim.acct_raw(asset_bank)[609] in (6, 7, 9, 10, 15, 16):
-        row["result"] = "skip_integrated_asset_unsized"
-        _log_fire(row); return row
+    # §372: integrated-collateral banks (Kamino/Drift/JupLend) — the liquidate
+    # amount is venue position tokens, but the withdraw pays out bank.mint
+    # (underlying): swap input = amount x venue rate (mult), haircut 1% for
+    # share-value rounding so the swap never exceeds the actual ATA balance.
+    setup = liq_sim.acct_raw(asset_bank)[609]
+    swap_in = int(amount * 0.999)
+    if setup in (6, 7, 9, 10, 15, 16):
+        banks = lh.load_banks()
+        lh.load_multipliers(banks)
+        mult = (banks.get(asset_bank) or {}).get("mult")
+        if not mult:
+            row["result"] = "skip_integrated_no_mult"
+            _log_fire(row); return row
+        swap_in = int(amount * mult * 0.99)
+        row["venue_mult"] = mult
 
     import liq_flash
     wallet_key, wallet_addr = lt._load_key()
@@ -234,7 +243,7 @@ def fire_flash(liquidatee: str, asset_bank: str, liab_bank: str, amount: int,
     try:
         ixs, alts = liq_flash.build_recipe(
             liquidatee, asset_bank, liab_bank, amount,
-            int(amount * 0.999), wallet_b)
+            swap_in, wallet_b)
         tx = liq_flash.build_v0_tx(wallet_b, ixs, alts)
     except Exception as e:
         row["result"] = "build_error"

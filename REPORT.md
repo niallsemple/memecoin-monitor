@@ -6483,3 +6483,15 @@ liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RP
 **ALT repair:** audit found table 0 missing 20 keys (shifted chunk from the crashed first runs) + system program (zero-key filter had eaten it — 32 zero bytes == the skip sentinel). Extended table 4 with all 21 missing keys (tx As4VSgGi…). Re-audit: tables 1–4 perfect, all intended keys now resolvable. Post-repair dry-run: sim executes to liquidate domain logic (6002 on a bad-debt test account — correct fail-closed), 105.5k CU, message under packet limit.
 
 **Fire readiness status:** the pipeline is armed end-to-end. Remaining known gaps: integrated-collateral swap sizing, SVSP onramp 5-account sim, and a live underwater-with-collateral candidate (field is currently clean — all health<0 accounts are $0-collateral bad debt).
+
+## §372 — Integrated-collateral sizing wired; ALT poison-key root cause found + repaired
+
+**Integrated-collateral swap sizing (liq_fire.fire_flash):** for Kamino/Drift/JupLend collateral banks the liquidate `asset_amount` is venue position tokens but withdraw pays out bank.mint (underlying — verified: integrated banks' mints are USDC/SOL/mSOL/USDS/CASH, and withdraw.rs sends bank.mint). Swap input = amount × venue mult (load_multipliers) × 0.99 haircut for share-rounding; fail-closed ("skip_integrated_no_mult", legacy fallback) when the rate is unavailable. Kamino-USDC mult verified live: 1.03953.
+
+**ALT root cause (nasty, worth recording):** my hand-typed Switchboard program string in liq_alt.py extras was 45 base58 chars → decoded to **33 bytes**. Everything downstream was poisoned by that one byte: (a) table 0's first extend chunk misaligned all entries after idx 4 (the "off-by-one" key positions); (b) every repair extend re-imported the same 33-byte key first, shifting the 20 following keys by one byte — which is why confirmed extends "didn't change" membership (they wrote shifted garbage). Fix: canonical SWB id from liq_sim.swb_prog_id ("SBondMDrcV3K4kxZR1HNVT7osZxAHVHgYXL5Ze1oMUv") + a hard `assert len(key)==32` guard in collect_keys. Lesson: b58dec never errors on length — always assert decoded length for hand-typed addresses.
+
+**Repair:** 20 truly-missing keys extended into table 4 (tx 3E1jJ8ac…, verified on-chain; table 4 now 158/256, junk entries from the poisoned repairs are harmless wasted slots). Global audit: all 1099 universe keys resolvable.
+
+**Validation:** fire_flash dry-run with Kamino-USDC collateral bank now compiles under the packet limit and sims into marginfi domain logic (6002 on the bad-debt test account — correct fail-closed; 97.6k CU).
+
+**Note:** liq_alts.json fingerprint predates the SWB fix — a future `liq_alt.py create` will start fresh tables rather than resume; don't rerun it unless rebuilding intentionally.

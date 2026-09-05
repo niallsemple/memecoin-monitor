@@ -1962,3 +1962,6 @@
 {"t": 1788635786.487543, "phase": "thread_start", "mint": "1gBFVnDnNxzwCkvgWoENLvTV6r4kn27Gb5JpWdSpump"}
 {"t": 1788635786.491072, "phase": "lt_loaded", "mint": "1gBFVnDnNxzwCkvgWoENLvTV6r4kn27Gb5JpWdSpump"}
 {"t": 1788635840.881444, "phase": "thread_done", "mint": "1gBFVnDnNxzwCkvgWoENLvTV6r4kn27Gb5JpWdSpump", "result": "skip: fast slot busy"}
+{"t": 1788640429.570752, "phase": "spawned", "mint": "BeEffdaHbeBR7mES66H5DZgo38XMrPKsfw6R5rQpump", "creator": "EakKFetGkqFPfGuCS9vNvHB8jkT63uHvKamByYv7ce2K"}
+{"t": 1788640429.571331, "phase": "thread_start", "mint": "BeEffdaHbeBR7mES66H5DZgo38XMrPKsfw6R5rQpump"}
+{"t": 1788640429.573961, "phase": "lt_loaded", "mint": "BeEffdaHbeBR7mES66H5DZgo38XMrPKsfw6R5rQpump"}
