@@ -1068,3 +1068,19 @@
 {"t": 1788567921.0079732, "phase": "thread_start", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump"}
 {"t": 1788567921.037627, "phase": "lt_loaded", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump"}
 {"t": 1788567980.24817, "phase": "thread_done", "mint": "APFgxWWbzyQ4mcFjDaZnp8iEcPE9NQBv5K6QWMZpump", "result": "skip: no tape visibility (\u00a7295)"}
+{"t": 1788569249.7691011, "phase": "spawned", "mint": "S8wRRsrvph7WQ76v7Wa74fwsFu4cTXM6fXDU4ENpump", "creator": "6EAs4oxKyFXXjQEMiyfEaKnfs23st4LXX1XiaPewFnDp"}
+{"t": 1788569249.770439, "phase": "thread_start", "mint": "S8wRRsrvph7WQ76v7Wa74fwsFu4cTXM6fXDU4ENpump"}
+{"t": 1788569249.798982, "phase": "lt_loaded", "mint": "S8wRRsrvph7WQ76v7Wa74fwsFu4cTXM6fXDU4ENpump"}
+{"t": 1788569279.3588102, "phase": "spawned", "mint": "uNMMbwMagM2nvVFx8K1efKM8Gvh2LiisQxj64a5pump", "creator": "4DprruTJYn2qdLBwrG4u4qWdv8zr4aYfUc1YChNq57tq"}
+{"t": 1788569279.360248, "phase": "thread_start", "mint": "uNMMbwMagM2nvVFx8K1efKM8Gvh2LiisQxj64a5pump"}
+{"t": 1788569279.3658051, "phase": "lt_loaded", "mint": "uNMMbwMagM2nvVFx8K1efKM8Gvh2LiisQxj64a5pump"}
+{"t": 1788569297.408573, "phase": "spawned", "mint": "uXsunQSVunLsrQNYNzLD8i7Z67fnT4v4UcnWKs8pump", "creator": "6YkMgncHV5Erfni9aPZAxuMottpcHkcqqYjJ8JxgAxUq"}
+{"t": 1788569297.410295, "phase": "thread_start", "mint": "uXsunQSVunLsrQNYNzLD8i7Z67fnT4v4UcnWKs8pump"}
+{"t": 1788569297.4150999, "phase": "lt_loaded", "mint": "uXsunQSVunLsrQNYNzLD8i7Z67fnT4v4UcnWKs8pump"}
+{"t": 1788569410.309673, "phase": "spawned", "mint": "k47tCJzdzvvET7bwFRrWqwgJSwKPs8nBEfkYgpDpump", "creator": "FVoTYC1xFHjRpSM38PtsbkZynxEmB5EpcPGZDapiP5i7"}
+{"t": 1788569410.3109848, "phase": "thread_start", "mint": "k47tCJzdzvvET7bwFRrWqwgJSwKPs8nBEfkYgpDpump"}
+{"t": 1788569410.317133, "phase": "lt_loaded", "mint": "k47tCJzdzvvET7bwFRrWqwgJSwKPs8nBEfkYgpDpump"}
+{"t": 1788569463.036093, "phase": "thread_done", "mint": "k47tCJzdzvvET7bwFRrWqwgJSwKPs8nBEfkYgpDpump", "result": "skip: bundled launch"}
+{"t": 1788569474.783123, "phase": "thread_done", "mint": "S8wRRsrvph7WQ76v7Wa74fwsFu4cTXM6fXDU4ENpump", "result": "entered"}
+{"t": 1788569504.710233, "phase": "thread_done", "mint": "uNMMbwMagM2nvVFx8K1efKM8Gvh2LiisQxj64a5pump", "result": "entered"}
+{"t": 1788569516.2441442, "phase": "thread_done", "mint": "uXsunQSVunLsrQNYNzLD8i7Z67fnT4v4UcnWKs8pump", "result": "entered"}

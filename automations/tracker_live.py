@@ -83,6 +83,11 @@ CONV_OVERRIDE_MAX_OUTSIDER = 70.0
 FE_VIS_RETRY_S = 150            # §301: deferred visibility re-check for CONV
 FAST_ENTRY_DELAY_S = 40         # 30s bundle window + margin
 FE_ACTIVE = set()               # mints with an eval thread in flight
+# §302: concurrent eval threads raced the fast-slot check (3 simultaneous
+# CONV entries, 5 Sep 2026). Claim the slot atomically BEFORE buying; the
+# claim bridges the window between check and open_position landing.
+FE_SLOT_LOCK = threading.Lock()
+FE_SLOT_CLAIMED = set()
 
 
 FE_DEBUG = MON / "fast_entry_debug.jsonl"
@@ -218,6 +223,19 @@ def fast_entry_spawn(mint, creator):
                 row["result"] = "skip: no tape visibility (§295)"
                 lt._log(row)
                 return
+            # §302: atomic slot claim — re-check under lock immediately
+            # before spending; a concurrent thread may have entered while
+            # this one slept through the §301 visibility retry.
+            with FE_SLOT_LOCK:
+                _pos2 = lt._load_positions()
+                if (any(p.get("open") and p.get("entry_kind") in
+                        ("fast_birth", "conv_override")
+                        for p in _pos2.values())
+                        or FE_SLOT_CLAIMED):
+                    row["result"] = "skip: fast slot busy (§302)"
+                    lt._log(row)
+                    return
+                FE_SLOT_CLAIMED.add(mint)
             b = lt.curve_buy(mint, FAST_ENTRY_SIZE,
                              reason="fast_birth §257")
             if str(b.get("result", "")).startswith(
@@ -299,6 +317,8 @@ def fast_entry_spawn(mint, creator):
         finally:
             _fe_debug("thread_done", mint, result=row.get("result"))
             FE_ACTIVE.discard(mint)
+            with FE_SLOT_LOCK:
+                FE_SLOT_CLAIMED.discard(mint)
 
     threading.Thread(target=_run, daemon=True).start()
 

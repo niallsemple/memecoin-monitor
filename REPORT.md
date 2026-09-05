@@ -5737,3 +5737,17 @@ Deployed and compiled clean. Next milestone: first live conv_override entry — 
 First CONV-override signal fired 4 min after §300 deploy (APFgxWWb, 2 selective winners, outsider 61%) — and was skipped by §295. Root cause: §295 read `mfg_state.json` from disk, but `_save_state` only flushes at pass end (~18 min), so a birth-window mint NEVER appears in disk state at eval time. §295 would have blocked every fast/CONV entry ever. APFgxWWb was born-terminal (85 SOL initial buy, instant migrate); pool tape only appeared ~3 min after birth, so even a fresh-state check at +40s fails for this class.
 
 Fix (deployed): (1) §295 now checks the LIVE in-memory token dict first (passed into the eval thread with the tracker's lock), disk state only as fallback; (2) CONV-override candidates that fail visibility get ONE deferred re-check after 150s (`FE_VIS_RETRY_S`) — entry lands ~+3min for born-terminal tokens, matching when their pool tape actually appears. All other gates unchanged. APFgxWWb itself was trading at 2.6–2.7 SOL pool buys within 3 min of the skip — the signal was real, the plumbing was blind.
+
+## §302 — FIRST LIVE CONV ENTRIES + slot-race fix (5 Sep 2026, ~00:55 UTC)
+
+25 minutes after the §301 visibility fix deployed, the first three live CONV-override entries fired and landed on-chain (0.05 SOL each, all born-terminal → Jupiter pool path, all required the §301 deferred visibility retry — validating that fix end-to-end):
+
+| mint | outsider_pct | price impact | sig landed |
+|---|---|---|---|
+| S8wRRsrv | 60.97% | 1.18% | yes |
+| uNMMbwMa | 61.47% | 0.15% | yes |
+| uXsunQSV | 61.19% | 0.99% | yes |
+
+All three would have been "skip: bundled launch" before §300. Entry prices ~flat at +5min (−0.6%/+0.3%/−0.6% vs entry mcap) — exit stack manages from here.
+
+**Defect found:** the one-slot exposure cap raced — three eval threads sleeping through the 150s visibility retry all woke within ~40s, each passed the slot check before any position was written, and all three bought. Exposure 0.15 SOL instead of the designed 0.05 max. Fix: `FE_SLOT_LOCK` + `FE_SLOT_CLAIMED` — an atomic slot claim immediately before the buy bridges the check→open_position window; claim released in the thread's finally. Deployed; max concurrent birth-entry exposure is again 0.05 SOL.
