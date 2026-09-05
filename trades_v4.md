@@ -305,3 +305,4 @@
 | 01:08 | BUY | 5761e8gC | £14.33 | entry mc $336,113 | +202min @ 2.15x detect |
 | 03:08 | TIME | 5761e8gC | £12.23 | time-stop at 0.87x after 121min |
 | 03:10 | BUY | 5761e8gC | £14.28 | entry mc $277,876 | +324min @ 1.78x detect |
+| 06:07 | TIME | 5761e8gC | £12.05 | time-stop at 0.86x after 178min |

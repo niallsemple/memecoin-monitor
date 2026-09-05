@@ -4198,3 +4198,9 @@
 | 04:46 | robinhood | `0x0529d5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | smoking cod in a chicken bod |
 | 04:46 | robinhood | `0x6bd6d8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Buttcoin is a peer-to-peer butt. Peer-to-peer means that no central authority is |
 | 04:46 | solana | `5bTDJ9Rj…` | FAIL | TOP10_HEAVY:56% | liq=$10,505 mc=$20,828 | name=Fuck Robinhood symbol=FHOOD; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 06:06 | robinhood | `0x3b5a2c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,547 mc=$36,891 | chain:robinhood no-audit-adapter | Hedge against the uncertainty of the open markets. $Hedge is Paired with SGOV, a |
+| 06:06 | solana | `6L3k4uNX…` | PASS | — | liq=$40,205 mc=$234,747 | name=CYBERCAT symbol=OLIVER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 | Cybercab Cat, say it 3x fast: Cybercab Cat, Cybercab Cat, Cybercab Cat! Try not  |
+| 06:06 | robinhood | `0x7aBD95…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,449 mc=$62,242 | chain:robinhood no-audit-adapter | Tracking 500 of America's smallest performers. |
+| 06:06 | solana | `ErXqkcfw…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$11,816 | name=a slow runner symbol=snail; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | A slow runner. |
+| 06:06 | solana | `D4QVMAGG…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,227 mc=$2,144 | name=Mine Pons symbol=MPONS; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=9 | crafting table is ready |
+| 06:06 | robinhood | `0x3c24e3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,513 mc=$3,617 | chain:robinhood no-audit-adapter | Walk. Find. Own. |

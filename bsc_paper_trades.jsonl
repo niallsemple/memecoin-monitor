@@ -24,3 +24,4 @@
 {"name": "\u68d2\u54e5 / WBNB", "pair": "0x01919b3fd1026445294f83886dcb2b18bf8965f4", "entry_t": 1788473538.1592782, "exit_t": 1788477163.8907552, "ret": 0.9761, "exit": "abort", "entry_flow_usd": 7171.0, "hold_min": 60.4}
 {"name": "GME / WBNB", "pair": "0x173b65c3fcf226f8bc97df01cfe2bb8c8d07d7ca", "entry_t": 1788507199.1041129, "exit_t": 1788509010.45218, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3420.0, "hold_min": 30.2}
 {"name": "bCompany / WBNB", "pair": "0x335a0829283291874a753972ce64f89089b75f3b", "entry_t": 1788575589.2138119, "exit_t": 1788577924.213398, "ret": 0.062, "exit": "abort", "entry_flow_usd": 3561.0, "hold_min": 38.9}
+{"name": "BNB fam / WBNB", "pair": "0x796cb17ab6418d597b131a34e65149f6070223e2", "entry_t": 1788582877.043683, "exit_t": 1788587529.7882218, "ret": 0.1228, "exit": "abort", "entry_flow_usd": 3688.0, "hold_min": 77.5}
