@@ -585,6 +585,10 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
         "secs": round(time.time() - t0, 1),
         "top20": material[:20],
         "liquidatable_now": [m for m in material if m["health"] < 0][:20],
+        # §386: watched set must come from the FULL material list — when 20+
+        # bad-debt accounts sit at health -1.0 they fill top20 and silently
+        # evict every near-zero watch candidate (observed 2026-09-06).
+        "watched": [m for m in material if "watch" in m][:25],
     }
 
 
@@ -601,10 +605,9 @@ def main() -> dict:
     rec["total_secs"] = round(time.time() - t0, 1)
     with open(LOG_PATH, "a") as f:
         f.write(json.dumps(rec) + "\n")
-    watched = [m for m in rec["top20"] if "watch" in m]
-    # top20 is sorted by health and capped at 20; watch entries only exist
-    # below SHOCK_WATCH_MAX_HEALTH, so any watched account is in top20 unless
-    # >20 accounts qualify — accept that cap for log size.
+    # §386: watched comes from the full material list (see health_scan), not
+    # top20 — bad-debt saturation of top20 must not blind the shock watch.
+    watched = rec.get("watched") or []
     if watched:
         with open(WATCH_LOG_PATH, "a") as f:
             f.write(json.dumps({

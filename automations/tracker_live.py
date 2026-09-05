@@ -62,6 +62,7 @@ POOL_QUIET_S = 2 * 3600                 # §56g: recycle pool slots after 2h sil
 ARMED = MON / "mfg_armed_births.jsonl"  # §120: armed/instant-grad birth ledger
 ARMED_SEED = 80.0                       # §120: instant-grad fingerprint seed (SOL)
 ARMED_IB_MIN = 700e6                    # §120: >=70% of 1e9 supply in create tx
+CREATE_SEED_BLOCK = 50.0                # §385: unfunded deployer seed above this = farm signature, skip entry
 SNAP_AGES = (300, 900, 3600)            # +5m, +15m, +60m
 GRAD_SNAP_AGES = (14400, 43200, 86400)  # +4h, +12h, +24h (graduated only)
 TRACK_MAX_AGE = 3600                    # unsubscribe curve after 1h
@@ -109,10 +110,11 @@ def _fe_debug(phase, mint=None, **kw):
         pass
 
 
-def fast_entry_spawn(mint, creator):
+def fast_entry_spawn(mint, creator, seed=0.0, funded=False):
     """§257: birth-window entry eval. Gates (BLOCKING here, unlike the
     plateau-path shadows): deployer prior_rugs>=1 => skip; bundle
-    outsider_pct>=40 => skip. Enters via curve_buy, or Jupiter pool when
+    outsider_pct>=40 => skip; §385 unfunded create seed >=50 SOL => skip.
+    Enters via curve_buy, or Jupiter pool when
     born-terminal (curve complete at birth). Tags position entry_kind."""
     if not FAST_ENTRY or not mint or mint in FE_ACTIVE:
         _fe_debug("spawn_refused", mint, fast=FAST_ENTRY,
@@ -135,6 +137,16 @@ def fast_entry_spawn(mint, creator):
             lt = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(lt)
             _fe_debug("lt_loaded", mint)
+            # §385: CREATE_SEED gate — the rug farm of 2026-09-06 seeds every
+            # birth with an identical outsized create buy (85.005 SOL = p99
+            # outlier vs 0.20 SOL median, §384) from a FRESH unfunded wallet,
+            # props the pool ~4 min, then drains in one tx. Visible at birth.
+            row["create_seed_sol"] = seed
+            if seed >= CREATE_SEED_BLOCK and not funded:
+                row["result"] = "skip: oversized unfunded create seed %.2f" % seed
+                lt._log(row)
+                _fe_debug("seed_blocked", mint, seed=seed)
+                return
             import deployer_local
             import bundle_share as _bs
             sc = deployer_local.score_mint(mint)
@@ -1335,7 +1347,7 @@ def run(ctx):
                     # only flushes at pass end).
                     fast_entry_spawn._tokens = tokens
                     fast_entry_spawn._lk = LK
-                    fast_entry_spawn(mint, cr)
+                    fast_entry_spawn(mint, cr, seed=seed, funded=funded)
         elif tt == "migrate":
             stats["migrations"] += 1
             with CURVES.open("a") as f:

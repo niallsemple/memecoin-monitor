@@ -6675,3 +6675,7 @@ fees and slippage. Wired into exit_watch: every exit_decision now logs
 realized_sol alongside est_sol, positions carry sol_recovered_real and
 pnl_sol_real. From here the §376 forward sample and any sizing decision use
 REALIZED numbers; est remains for intra-exit logic only.
+
+## §386 — Shock-watch blind spot fixed: bad-debt saturation evicted the watch set (2026-09-06 00:40 UTC)
+
+Digest showed "shock watch 52m ago" spanning two full passes. Cause: main() derived the watch set from rec["top20"], and with 20 bad-debt accounts parked at health −1.0 the top20 (sorted by health ascending) was fully saturated — every near-zero account (Hru3iS2a6e1 at +0.0007, EZP1Hyt at +0.0031, …) was evicted, so no watch record was written for two passes. The 90s shock_loop kept repricing the STALE 22:41 UTC set, so existing prey stayed covered, but no new near-zero account could enter the watch. Fix: health_scan now returns "watched" built from the FULL material list (cap 25) and main() consumes that. liq_health.py loads fresh via importlib each pass — no redeploy needed; effective next pass. This is exactly the class of silent-degradation bug the digest exists to catch.
