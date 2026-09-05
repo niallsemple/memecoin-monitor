@@ -78,7 +78,10 @@ PYTH_SETUPS = {3}
 SWB_SETUPS = {4}
 FIXED_SETUPS = {8}
 LST_SETUPS = {22}
+SVSP_SETUPS = {5}   # StakedWithPythPush: SOL px x SVSP NAV/supply
 SWB_MAX_AGE_S = 3600
+STAKED_FLAG_ONRAMP = 1024
+RENT_PER_BYTE = 6960  # rent-exempt = (128 + len) * 6960 lamports (mainnet constant)
 
 
 def load_banks() -> dict:
@@ -111,6 +114,9 @@ def load_banks() -> dict:
             "oracle": b58encode(raw[610:642]),
             "max_conf": struct.unpack("<I", raw[804:808])[0] if len(raw) >= 824 else 0,
             "fixed_px": i80(raw[808:824]) if len(raw) >= 824 else 0.0,
+            "oracle3": b58encode(raw[674:706]),   # SVSP pool stake account
+            "oracle4": b58encode(raw[706:738]),   # SVSP onramp (may be default)
+            "flags": struct.unpack("<Q", raw[840:848])[0] if len(raw) >= 848 else 0,
             "oracle2": b58encode(raw[642:674]),  # LST stake pool / kamino reserve
             "mult": None,           # set by load_multipliers
             "risk_tier": risk_tier,
@@ -121,7 +127,8 @@ def load_banks() -> dict:
 
 
 def load_prices(banks: dict) -> dict:
-    keys = {b["oracle"] for b in banks.values() if b["setup"] in PYTH_SETUPS | SWB_SETUPS}
+    keys = {b["oracle"] for b in banks.values()
+            if b["setup"] in PYTH_SETUPS | SWB_SETUPS | SVSP_SETUPS}
     swb_oracles = {b["oracle"]: b["max_conf"] for b in banks.values()
                    if b["setup"] in SWB_SETUPS}
     px = {}
@@ -177,6 +184,34 @@ def load_multipliers(banks: dict) -> None:
     for b in banks.values():
         if b["setup"] in PYTH_SETUPS | SWB_SETUPS | FIXED_SETUPS:
             b["mult"] = 1.0
+        elif b["setup"] in SVSP_SETUPS:
+            # StakedWithPythPush (lst_stake_price.rs): mult = NAV / supply.
+            # Onramp path: NAV = (pool.lamports - rent) + (onramp.lamports - rent),
+            #   supply_eff = mint_supply + 1e9 (phantom).
+            # Legacy: NAV = stake.delegation.stake (@156 in StakeStateV2) - 1e9,
+            #   supply_eff = raw mint supply.
+            try:
+                mint_v = rpc("getAccountInfo", [b["mint"], {"encoding": "base64"}])["result"]["value"]
+                supply = struct.unpack("<Q", base64.b64decode(mint_v["data"][0])[36:44])[0]
+                pool_v = rpc("getAccountInfo", [b["oracle3"], {"encoding": "base64"}])["result"]["value"]
+                pool_data = base64.b64decode(pool_v["data"][0])
+                pool_nav = pool_v["lamports"] - (128 + len(pool_data)) * RENT_PER_BYTE
+                if b["flags"] & STAKED_FLAG_ONRAMP and b["oracle4"].strip("1"):
+                    onr_v = rpc("getAccountInfo", [b["oracle4"], {"encoding": "base64"}])["result"]["value"]
+                    onr_data = base64.b64decode(onr_v["data"][0])
+                    pool_nav += onr_v["lamports"] - (128 + len(onr_data)) * RENT_PER_BYTE
+                    supply_eff = supply + 10 ** 9
+                else:
+                    pool_nav = int.from_bytes(pool_data[156:164], "little") - 10 ** 9
+                    supply_eff = supply
+                rate = pool_nav / supply_eff if supply_eff > 0 else 0
+                # Bound wide: BAD-like banks legitimately run ~2.26 SOL/token
+                # (validated vs program sim §364); only reject garbage (<=0, absurd).
+                if 0.001 < rate < 1000:
+                    b["mult"] = rate
+            except Exception:
+                pass
+            time.sleep(0.05)
         elif b["setup"] in LST_SETUPS:
             try:
                 v = rpc("getAccountInfo", [b["oracle2"], {"encoding": "base64"}])["result"]["value"]

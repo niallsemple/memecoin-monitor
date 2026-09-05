@@ -6388,3 +6388,15 @@ IDL gotcha logged: marginfi runs anchor-lang 1.0.2; account_loader.rs:169 panic 
 - 23,318 stale-oracle slots: Switchboard pull feeds are stale (on-demand design). Those accounts can't be liquidated without bundling a Switchboard feed-refresh ix in the same tx — that's the incumbent bots' actual moat on the Swb class. Building refresh-bundle support = the next real unlock.
 - Kamino (23 banks), Staked-SVSP (54), Drift/JupLend (16) multipliers still unmodelled; PythLegacy (47 banks) panics on-chain — permanent dead zone.
 - Candidates appear during volatility; radar + armed auto-fire is now positioned for the next drawdown.
+
+## §364 — SVSP multiplier unlock: legacy+onramp NAV/supply pricing, validated vs program (2026-09-05 ~19:58 BST)
+
+**Build:** `load_multipliers` now prices StakedWithPythPush banks (setup 5, 54 banks) — mult = NAV/supply per refs/lst_stake_price.rs. Legacy path: NAV = stake.delegation.stake (@156 in StakeStateV2) − 1e9 lamports, supply = raw mint supply. Onramp path (flags & 1024): NAV = (pool.lamports − rent) + (onramp.lamports − rent), supply_eff = mint_supply + 1e9 phantom. Bank Pyth oracle_keys[0] added to the price map (line 130 was excluding setup-5 oracles entirely).
+
+**Debug caught:** my first-pass sanity bound (0.5 < rate < 2.0) silently rejected the BAD bank's *correct* 2.26 rate — the bound itself was the bug. Widened to 0.001–1000 with a comment so it can't silently drop legit LST premiums again. 29/54 SVSP banks now carry multipliers; the rest fail on missing/stale stake accounts (left unpriced, fail-closed).
+
+**Validation:** GFxxnJpDAjb3 scanner health = **+$1,377.10** (assets $15,234.85 vs liabs $13,857.75) vs program sim pre_health **+$1,376.68** — delta $0.42 (0.03%). liq_fire's signed sim confirms the program agrees: HealthyAccount 6068, pre_liquidation_health 1375.91. Scanner ≈ program across PythPush, SwbPull, Fixed, PythLST, and now SVSP.
+
+**Full rescan with SVSP priced:** 165,571 accounts, 6,728 material, skipped-setup slots 415 → **382**, stale-oracle slots 23,291. Liquidatable-now set unchanged: 7 accounts, all health −1.0 with **$0 raw collateral** — pure bad debt, nothing to seize. Universe remains clean at current prices.
+
+**Coverage now:** 437 banks, 107 oracles priced, 204 mints. Remaining unpriced: Kamino (23 banks — next, unlocks same-mint FuNhzGJ54Yx2-class, needs refresh_reserve ix bundled), Drift/JupLend (16), PythLegacy (47 — permanent dead zone, panics on-chain).
