@@ -6310,3 +6310,25 @@ Remaining before simulation: (a) assemble the tx for one target (start with smal
 **§355 Simulation result — the critical catch**: after 4 schema iterations the tx executed to the health gate and the protocol said **"HealthyAccount (6068)": pre_liquidation_health = +$32,616** (assets $227,634 vs liabs $195,018). Our scanner said −0.23. Root cause: **our health math omits oracle confidence-interval adjustments** (program prices assets LOW-bias, liabs HIGH-bias using the conf field; JLP's conf ≈ 1.5% — 227,634/231,007 = 0.985 exactly matches). Possibly emode too. The "unclaimed whales" were never liquidatable — incumbent bots aren't broken, they just read the conf bands.
 - **Scanner fix (next)**: decode conf @81 from Pyth pull accounts; assets use px−k·conf, liabs px+k·conf; re-rank. The pipeline (Tier-1 → Tier-2 → sim) is proven end-to-end; this is a pricing-fidelity patch, not a rebuild.
 - Value delivered this session: full liquidation tx construction validated against the live program — when a TRUE health<0 account appears, we can simulate in ~1 min.
+
+## §356 — Conf-band + emode patch: scanner now matches the on-chain risk engine to 0.01% (2026-09-05 ~19:25 BST)
+
+**The §355 false-positive root cause is fully solved — two layers, not one:**
+
+1. **Confidence bands** (CONF_INTERVAL_MULTIPLE=2.12, MAX_CONF_INTERVAL=5%, confirmed in type-crate/src/constants.rs): collateral priced at px−band, debt at px+band.
+2. **Emode weight boosts** (the bigger miss): banks carry `emode.emode_tag`; every LIABILITY bank's emode config maps collateral tags → boosted weights. The risk engine reconciles by intersection across ALL borrowed banks (min weight; any empty config zeroes it), then collateral weight = max(base, emode). JLP bank has tag 619; the USDC bank boosts tag 619 to **0.99 maint** vs base 0.65.
+
+**Validation:** whale 57WvwCCthAhm recomputed at assets $227,605 / liabs $195,011 vs the program's own sim output $227,634 / $195,018 — **0.01% / 0.00% off**. liq_health.py now reproduces marginfi's risk engine.
+
+**First TRUE rescan (165k accounts, 70s):** 9 liquidatable candidates — but 5 are health=−1.0 with $0.00 raw collateral (pure bad debt, nothing to seize, skip). Real set:
+- **GFxxnJpDAjb3**: $12,588 SOL debt vs $7,093 raw BADo3D6n collateral (health −0.51). Biggest prize, but collateral bank is asset_tag=STAKED (needs 5-account oracle schema + staked-compatible liquidator account).
+- **9VtU887m9HCJ**: $2,284 SOL debt vs $2,351 sctmB7GP collateral (health −0.065).
+- **FuNhzGJ54Yx2**: $222 USDC debt vs $204 USDC collateral in a KAMINO-tag bank — same-mint repay, no swap needed, tiny but zero-slippage.
+
+**Sim gate results (liq_sim_candidates.py):** all three got PAST the liquidatee health check (no more HealthyAccount 6068 — they are genuinely liquidatable). Failures are in MY tx assembly, not the thesis:
+- GFxx…: AssetTagMismatch 6047 — the borrowed stand-in liquidator account can't receive STAKED collateral. Our own fresh account can (SOL borrow + STAKED collateral is a permitted mix).
+- The other two: WrongNumberOfOracleAccounts 6051 — remaining-accounts schema varies per bank: DEFAULT/SOL=2, KAMINO/DRIFT/SOLEND=3 (bank, oracle, reserve), STAKED=5 (bank, oracle, mint, pool, onramp). Patch mapped from get_remaining_accounts_per_bank; exact keys/order next from price.rs.
+
+**Housekeeping:** disabled the 19:09 checkpoint automation (automation_c86e6816) — it never fired and its pivot mission is already executed here.
+
+**Next:** (a) price.rs remaining-account composition for KAMINO/STAKED banks → patch liq_sim; (b) re-sim all 3 candidates; (c) Jupiter exit-liquidity check for BADo3D6n + sctmB7GP; (d) init our own marginfi liquidator account for clean live fire; (e) loop liq_health as a standing radar (candidates appear/disappear with price moves).

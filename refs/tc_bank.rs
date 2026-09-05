@@ -1,0 +1,602 @@
+use std::cmp::max;
+
+use crate::{
+    assert_struct_align, assert_struct_size,
+    constants::{
+        discriminators, ASSET_TAG_DRIFT, BANK_SAME_ASSET_EMODE_ELIGIBLE,
+        DRIFT_SCALED_BALANCE_DECIMALS, FEE_VAULT_AUTHORITY_SEED, FEE_VAULT_SEED,
+        INSURANCE_VAULT_AUTHORITY_SEED, INSURANCE_VAULT_SEED, LIQUIDITY_VAULT_AUTHORITY_SEED,
+        LIQUIDITY_VAULT_SEED, STAKED_ORACLE_DISABLED, STAKED_ORACLE_PRICE_USES_ONRAMP,
+    },
+    types::{BalanceSide, BankCache, BankConfig, ReconciledEmodeConfig, RequirementType},
+};
+
+#[cfg(feature = "anchor")]
+use anchor_lang::prelude::*;
+
+use bytemuck::{Pod, Zeroable};
+use fixed::types::I80F48;
+
+#[cfg(not(feature = "anchor"))]
+use super::Pubkey;
+use super::{BankRateLimiter, EmodeSettings, OnRampTransition, WrappedI80F48};
+
+assert_struct_size!(Bank, 1856);
+assert_struct_align!(Bank, 8);
+#[repr(C)]
+#[cfg_attr(feature = "anchor", account(zero_copy), derive(Default, PartialEq, Eq))]
+#[cfg_attr(not(feature = "anchor"), derive(Pod, Zeroable, Copy, Clone))]
+#[derive(Debug)]
+pub struct Bank {
+    /// The SPL token mint this bank manages
+    pub mint: Pubkey,
+    /// Number of decimals of the `mint`. Must be < 24.
+    pub mint_decimals: u8,
+
+    /// The `MarginfiGroup` this bank belongs to
+    pub group: Pubkey,
+
+    // Note: The padding is here, not after mint_decimals. Pubkey has alignment 1, so those 32
+    // bytes can cross the alignment 8 threshold, but WrappedI80F48 has alignment 8 and cannot
+    pub _pad0: [u8; 7], // 1x u8 + 7 = 8
+
+    /// Monotonically increases as interest rate accumulates. For typical banks, a user's asset
+    /// value in token = (number of shares the user has * asset_share_value).
+    /// * A float (arbitrary decimals)
+    /// * Initially 1
+    pub asset_share_value: WrappedI80F48,
+    /// Monotonically increases as interest rate accumulates. For typical banks, a user's liabilty
+    /// value in token = (number of shares the user has * liability_share_value)
+    /// * A float (arbitrary decimals)
+    /// * Initially 1
+    pub liability_share_value: WrappedI80F48,
+
+    /// The SPL token account holding deposited liquidity
+    pub liquidity_vault: Pubkey,
+    /// PDA bump for the liquidity vault
+    pub liquidity_vault_bump: u8,
+    /// PDA bump for the liquidity vault authority
+    pub liquidity_vault_authority_bump: u8,
+
+    /// The SPL token account holding insurance fund tokens
+    pub insurance_vault: Pubkey,
+    /// PDA bump for the insurance vault
+    pub insurance_vault_bump: u8,
+    /// PDA bump for the insurance vault authority
+    pub insurance_vault_authority_bump: u8,
+
+    pub _pad1: [u8; 4], // 4x u8 + 4 = 8
+
+    /// Fees collected and pending withdraw for the `insurance_vault`
+    pub collected_insurance_fees_outstanding: WrappedI80F48,
+
+    /// The SPL token account holding collected group fees
+    pub fee_vault: Pubkey,
+    /// PDA bump for the fee vault
+    pub fee_vault_bump: u8,
+    /// PDA bump for the fee vault authority
+    pub fee_vault_authority_bump: u8,
+
+    pub _pad2: [u8; 6], // 2x u8 + 6 = 8
+
+    /// Fees collected and pending withdraw for the `fee_vault`
+    pub collected_group_fees_outstanding: WrappedI80F48,
+
+    /// Sum of all liability shares held by all borrowers in this bank.
+    /// Multiply by `liability_share_value` to get the total liability amount in native token units.
+    pub total_liability_shares: WrappedI80F48,
+    /// Sum of all asset shares held by all depositors in this bank.
+    /// Multiply by `asset_share_value` to get the total asset amount in native token units.
+    /// * For Kamino banks, this is the quantity of collateral tokens (NOT liquidity tokens) in the
+    ///   bank, and also uses `mint_decimals`, though the mint itself will always show (6) decimals
+    ///   exactly (i.e Kamino ignores this and treats it as if it was using `mint_decimals`)
+    pub total_asset_shares: WrappedI80F48,
+
+    /// Unix timestamp (i64) of the last interest accrual
+    pub last_update: i64,
+
+    /// The bank's configuration parameters (weights, limits, oracle setup, interest rate config)
+    pub config: BankConfig,
+
+    /// Bank flags bitfield (u64).
+    ///
+    /// - Bit 0 (1): `EMISSIONS_FLAG_BORROW_ACTIVE` — borrow-side emissions are active
+    /// - Bit 1 (2): `EMISSIONS_FLAG_LENDING_ACTIVE` — lending-side emissions are active
+    /// - Bit 2 (4): `PERMISSIONLESS_BAD_DEBT_SETTLEMENT_FLAG` — anyone can settle bad debt
+    /// - Bit 3 (8): `FREEZE_SETTINGS` — bank configuration is frozen (only limits can change)
+    /// - Bit 4 (16): `CLOSE_ENABLED_FLAG` — bank can be closed (set at creation for banks >= 0.1.4)
+    /// - Bit 5 (32): `TOKENLESS_REPAYMENTS_ALLOWED` — risk admin can repay debt without tokens
+    /// - Bit 6 (64): `TOKENLESS_REPAYMENTS_COMPLETE` — all debt cleared, lender purge enabled
+    /// - Bit 7 (128): `IS_T22` — 1 if T22, 0 if token classic
+    /// - Bit 8 (256): `BANK_SEED_KNOWN` — bank is known to be PDA/seed-derived. If not set, bank
+    ///   may still be a PDA, but created before this flag launched (1.8 or earlier) or is a legacy
+    ///   keypair-based bank.
+    /// - Bit 9 (512): `STAKED_ORACLE_DISABLED` — staked oracle pricing is temporarily disabled.
+    /// - Bit 10 (1024): `STAKED_ORACLE_PRICE_USES_ONRAMP` — staked oracle pricing includes the SPL
+    ///   single-pool on-ramp account in NAV.
+    /// - Bit 11 (2048): `CIRCUIT_BREAKER_ENABLED` — oracle deviation breaker active on this bank
+    /// - Bit 12 (4096): `BANK_SAME_ASSET_EMODE_ELIGIBLE` — bank may participate in same-asset e-mode.
+    pub flags: u64,
+    /// Emissions APR. Number of emitted tokens (emissions_mint) per 1e(bank.mint_decimal) tokens
+    /// (bank mint) (native amount) per 1 YEAR.
+    pub emissions_rate: u64,
+    /// Remaining emissions tokens available for distribution
+    pub emissions_remaining: WrappedI80F48,
+    /// The SPL token mint used for emissions rewards
+    pub emissions_mint: Pubkey,
+
+    /// Fees collected and pending withdraw for the `FeeState.global_fee_wallet`'s canonical ATA for `mint`
+    pub collected_program_fees_outstanding: WrappedI80F48,
+
+    /// Controls this bank's emode configuration, which enables some banks to treat the assets of
+    /// certain other banks more preferentially as collateral.
+    pub emode: EmodeSettings,
+
+    /// Set with `update_fees_destination_account`. Fees can be withdrawn to the canonical ATA of
+    /// this wallet without the admin's input (withdraw_fees_permissionless). If pubkey default, the
+    /// bank doesn't support this feature, and the fees must be collected manually (withdraw_fees).
+    pub fees_destination_account: Pubkey,
+
+    /// Cached bank metrics (interest rates, oracle price, etc.)
+    pub cache: BankCache,
+    /// Number of user lending positions currently open in this bank
+    /// * For banks created prior to 0.1.4, this is the number of positions opened/closed after
+    ///   0.1.4 goes live, and may be negative.
+    /// * For banks created in 0.1.4 or later, this is the number of positions open in total, and
+    ///   the bank may safely be closed if this is zero. Will never go negative.
+    pub lending_position_count: i32,
+    /// Number of user borrowing positions currently open in this bank
+    /// * For banks created prior to 0.1.4, this is the number of positions opened/closed after
+    ///   0.1.4 goes live, and may be negative.
+    /// * For banks created in 0.1.4 or later, this is the number of positions open in total, and
+    ///   the bank may safely be closed if this is zero. Will never go negative.
+    pub borrowing_position_count: i32,
+
+    /// Fee the liquidator earns when liquidating against this bank's liability. Decode with
+    /// `u32_to_centi` (`u32::MAX` = 100%).
+    /// * 0 falls back to the default (`DEFAULT_LIQUIDATION_FEE` = 2.5%).
+    pub liquidation_liquidator_fee: u32,
+    /// Fee routed to this bank's insurance fund on a liquidation against its liability. Decode
+    /// with `u32_to_centi` (`u32::MAX` = 100%).
+    /// * 0 falls back to the default (`DEFAULT_LIQUIDATION_FEE` = 2.5%).
+    pub liquidation_insurance_fee: u32,
+
+    /// Reserved for future use
+    pub _padding_0: [u8; 8],
+
+    /// Integration account slot 1 (default Pubkey for non-integrations).
+    /// - Kamino: reserve
+    /// - Drift: spot market
+    /// - Solend: reserve
+    /// - JupLend: lending state
+    /// - Staked Collateral: Validator vote account
+    pub integration_acc_1: Pubkey,
+    /// Integration account slot 2 (default Pubkey for non-integrations).
+    /// - Kamino: obligation
+    /// - Drift: user
+    /// - Solend: obligation
+    /// - JupLend: fToken vault
+    pub integration_acc_2: Pubkey,
+    /// Integration account slot 3 (default Pubkey for non-integrations).
+    /// - Drift: user stats
+    /// - JupLend: withdraw intermediary ATA (ATA of liquidity_vault_authority for bank mint)
+    pub integration_acc_3: Pubkey,
+
+    /// Rate limiter for controlling withdraw/borrow outflow.
+    /// Tracks net outflow (outflows - inflows) in native tokens.
+    pub rate_limiter: BankRateLimiter,
+
+    pub _pad_0: [u8; 16], // 16B
+
+    /// * `0` for legacy banks created via `lending_pool_add_bank` (created via keypair, not a PDA),
+    ///   or pre-backfill banks (1.8 or earlier) where seed remains unknown.
+    /// * Otherwise the `bank_seed: u64` argument passed when creating the bank.
+    /// * Use `flags & BANK_SEED_KNOWN` to verify this value has known seed provenance.
+    pub bank_seed: u64,
+    /// Unix-seconds when the current halt started, zero if not halted.
+    pub cb_halt_started_at: i64,
+    /// Unix-seconds when the current halt's tier duration ends. Tier stays sticky past this for
+    /// the escalation window; a fresh breach within the window ratchets to the next tier.
+    pub cb_halt_ended_at: i64,
+    /// 0 = operational, 1..=3 = escalating halt severity.
+    pub cb_tier: u8,
+    /// Consecutive tier-3 trips with no clean escalation-window between them. Hitting
+    /// `CB_MAX_TIER3_BEFORE_CIRCUIT_BREAK` forces the bank to `CircuitBroken`.
+    pub cb_tier3_consecutive_trips: u8,
+    /// `BankOperationalState` (as `u8`) the bank held before the breaker forced it to
+    /// `CircuitBroken`. Restored by `clear_circuit_breaker`. Meaningless unless
+    /// `operational_state == CircuitBroken`.
+    pub cb_pre_break_state: u8,
+    pub _cb_pad: [u8; 5],
+    /// Solana slot of the last counted CB observation; used for slot-level dedup.
+    pub cb_last_observed_slot: u64,
+    /// Publisher-side timestamp of the last counted CB observation; rejects re-reads of the same
+    /// publication across multiple Solana slots. Zero when the adapter doesn't expose one.
+    pub cb_last_oracle_source_time: i64,
+    /// EMA reference price used by the circuit breaker, in the multiplier-adjusted effective-price
+    /// domain the risk engine uses. Frozen while halted, zero until the first observation after
+    /// enable.
+    pub cb_reference_price: WrappedI80F48,
+    /// Long-window reference price (same multiplier-adjusted domain as `cb_reference_price`) used
+    /// to catch slow oracle walking that stays below the per-observation breaker threshold.
+    pub cb_window_reference_price: WrappedI80F48,
+    /// Unix-seconds when `cb_window_reference_price` was anchored.
+    pub cb_window_started_at: i64,
+
+    /// Frozen halt seconds from halt intervals overwritten or cleared before `accrue_interest`
+    /// consumed them. Non-zero only when the halt record changes without a preceding accrual, i.e.
+    /// a paused pulse; the next accrual excludes these on top of the current halt. Zero normally.
+    pub cb_frozen_seconds_pending: u64,
+
+    pub _padding_1: [u64; 2],
+}
+
+impl Bank {
+    pub const LEN: usize = std::mem::size_of::<Bank>();
+    pub const DISCRIMINATOR: [u8; 8] = discriminators::BANK;
+
+    #[inline]
+    pub fn asset_amount(&self, shares: I80F48) -> Option<I80F48> {
+        shares.checked_mul(self.asset_share_value.into())
+    }
+
+    #[inline]
+    pub fn liability_amount(&self, shares: I80F48) -> Option<I80F48> {
+        shares.checked_mul(self.liability_share_value.into())
+    }
+
+    pub fn get_balance_decimals(&self) -> u8 {
+        if self.config.asset_tag == ASSET_TAG_DRIFT {
+            DRIFT_SCALED_BALANCE_DECIMALS
+        } else {
+            self.mint_decimals
+        }
+    }
+
+    /// Taking the most favorable asset weight of:
+    /// - the bank's configured weight,
+    /// - cross-asset e-mode weight for its tag,
+    /// - same-asset e-mode weight (if applicable).
+    pub fn get_asset_weight(
+        &self,
+        requirement_type: RequirementType,
+        reconciled_emode_config: &ReconciledEmodeConfig,
+    ) -> I80F48 {
+        let mut asset_weight = self
+            .config
+            .get_weight(requirement_type, BalanceSide::Assets);
+
+        if let Some(emode_entry) = reconciled_emode_config.find_with_tag(self.emode.emode_tag) {
+            asset_weight = max(asset_weight, emode_entry.asset_weight);
+        }
+
+        let same_asset = &reconciled_emode_config.same_asset;
+        if same_asset.is_enabled()
+            && self.mint == same_asset.mint
+            && self.config.oracle_keys[0] == same_asset.oracle_key
+            && self.config.oracle_setup.feed_family() == same_asset.feed_family
+            && I80F48::from(self.config.fixed_price) == same_asset.fixed_price
+            && self.flags & BANK_SAME_ASSET_EMODE_ELIGIBLE != 0
+            && matches!(self.config.risk_tier, RiskTier::Collateral)
+            && !matches!(
+                (self.config.operational_state, requirement_type),
+                (
+                    BankOperationalState::Paused | BankOperationalState::ReduceOnly,
+                    RequirementType::Initial
+                )
+            )
+        {
+            asset_weight = max(asset_weight, same_asset.asset_weight);
+        }
+
+        asset_weight
+    }
+
+    // To be removed once SVSP update is rolled out (likely in 1.10)
+    pub fn on_ramp_transition(&self) -> OnRampTransition {
+        if self.flags & STAKED_ORACLE_PRICE_USES_ONRAMP != 0 {
+            OnRampTransition::OnRampEnabled
+        } else if self.flags & STAKED_ORACLE_DISABLED != 0 {
+            OnRampTransition::StakeOraclesDisabled
+        } else {
+            OnRampTransition::PreTransition
+        }
+    }
+}
+
+#[repr(u8)]
+#[cfg_attr(feature = "anchor", derive(AnchorDeserialize, AnchorSerialize))]
+#[derive(Debug, PartialEq, Eq, Copy, Clone, Default)]
+pub enum RiskTier {
+    #[default]
+    Collateral, // 0
+    /// ## Isolated Risk
+    /// Assets in this tier can be borrowed only in isolation.
+    /// They can't be borrowed together with other assets.
+    ///
+    /// For example, if users has USDC, and wants to borrow XYZ which is isolated,
+    /// they can't borrow XYZ together with SOL, only XYZ alone.
+    Isolated, // 1
+}
+unsafe impl Zeroable for RiskTier {}
+unsafe impl Pod for RiskTier {}
+
+#[repr(u8)]
+#[cfg_attr(feature = "anchor", derive(AnchorDeserialize, AnchorSerialize))]
+#[derive(Debug, PartialEq, Eq, Copy, Clone)]
+pub enum BankOperationalState {
+    /// All operations are halted
+    Paused,
+    /// Normal operations
+    Operational,
+    /// Only withdrawals and repayments are allowed (no new deposits or borrows)
+    ReduceOnly,
+    /// Bank was killed by a bankruptcy event (irrecoverable)
+    KilledByBankruptcy,
+    /// Awaiting one-time setup (JupLend `juplend_init_position` seed deposit). All operations are
+    /// blocked, and the state is unreachable from `lending_pool_configure_bank`.
+    Uninitialized,
+    /// Same instruction restrictions as ReduceOnly, but assets still count for initial health.
+    ReduceOnlyWithBorrowingPower,
+    /// Non-expiring circuit-breaker end state, reached after repeated breaker escalation.
+    /// Blocks borrows and risk-carrying withdraws and restricts liquidation to the risk admin;
+    /// deposit/repay/riskless-withdraw follow the pre-break state stashed in
+    /// `Bank.cb_pre_break_state`. Set only by the breaker, never by an admin. Cleared only by
+    /// `clear_circuit_breaker`, which restores the pre-break state.
+    CircuitBroken,
+}
+unsafe impl Zeroable for BankOperationalState {}
+unsafe impl Pod for BankOperationalState {}
+
+impl BankOperationalState {
+    pub fn is_reduce_only(self) -> bool {
+        matches!(
+            self,
+            BankOperationalState::ReduceOnly | BankOperationalState::ReduceOnlyWithBorrowingPower
+        )
+    }
+}
+
+#[repr(u8)]
+#[cfg_attr(feature = "anchor", derive(AnchorSerialize, AnchorDeserialize))]
+#[derive(Debug, PartialEq, Eq, Copy, Clone)]
+pub enum OracleSetup {
+    None,                   // 0
+    PythLegacy,             // 1
+    SwitchboardV2,          // 2
+    PythPushOracle,         // 3
+    SwitchboardPull,        // 4
+    StakedWithPythPush,     // 5
+    KaminoPythPush,         // 6
+    KaminoSwitchboardPull,  // 7
+    Fixed,                  // 8
+    DriftPythPull,          // 9
+    DriftSwitchboardPull,   // 10
+    SolendPythPull,         // 11
+    SolendSwitchboardPull,  // 12
+    FixedKamino,            // 13
+    FixedDrift,             // 14
+    JuplendPythPull,        // 15
+    JuplendSwitchboardPull, // 16
+    FixedJuplend,           // 17
+    Scope,                  // 18
+    PythMSOL,               // 19
+    KaminoMSOL,             // 20
+    JuplendMSOL,            // 21
+    PythLST,                // 22
+    KaminoLST,              // 23
+    JuplendLST,             // 24
+    PTPyth,                 // 25
+    PTFixed,                // 26
+}
+unsafe impl Zeroable for OracleSetup {}
+unsafe impl Pod for OracleSetup {}
+
+impl OracleSetup {
+    pub fn from_u8(value: u8) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::PythLegacy),    // Deprecated
+            2 => Some(Self::SwitchboardV2), // Deprecated
+            3 => Some(Self::PythPushOracle),
+            4 => Some(Self::SwitchboardPull),
+            5 => Some(Self::StakedWithPythPush),
+            6 => Some(Self::KaminoPythPush),
+            7 => Some(Self::KaminoSwitchboardPull),
+            8 => Some(Self::Fixed),
+            9 => Some(Self::DriftPythPull),
+            10 => Some(Self::DriftSwitchboardPull),
+            11 => Some(Self::SolendPythPull),
+            12 => Some(Self::SolendSwitchboardPull),
+            13 => Some(Self::FixedKamino),
+            14 => Some(Self::FixedDrift),
+            15 => Some(Self::JuplendPythPull),
+            16 => Some(Self::JuplendSwitchboardPull),
+            17 => Some(Self::FixedJuplend),
+            18 => Some(Self::Scope),
+            19 => Some(Self::PythMSOL),
+            20 => Some(Self::KaminoMSOL),
+            21 => Some(Self::JuplendMSOL),
+            22 => Some(Self::PythLST),
+            23 => Some(Self::KaminoLST),
+            24 => Some(Self::JuplendLST),
+            25 => Some(Self::PTPyth),
+            26 => Some(Self::PTFixed),
+            _ => None,
+        }
+    }
+
+    pub fn is_fixed_price(self) -> bool {
+        matches!(
+            self,
+            Self::Fixed | Self::FixedKamino | Self::FixedDrift | Self::FixedJuplend
+        )
+    }
+
+    /// Base feed semantics for `oracle_keys[0]`. Setups in the same family read that key as the
+    /// same kind of feed account *and* derive the mint's price from it the same way, so two banks
+    /// sharing a family and `oracle_keys[0]` price from the same source. Venue integrations
+    /// stay in their base family.
+    /// Returns `None` for fixed-price, deprecated, and unset setups.
+    pub fn feed_family(self) -> Option<OracleFeedFamily> {
+        match self {
+            Self::PythPushOracle
+            | Self::KaminoPythPush
+            | Self::DriftPythPull
+            | Self::SolendPythPull
+            | Self::JuplendPythPull => Some(OracleFeedFamily::PythPush),
+            // The setups below read `oracle_keys[0]` as a proxy for some underlying asset and bake
+            // their own multiplier into the price, so they are not price-equivalent to a setup
+            // reading that key directly, nor to each other. Each multiplier kind therefore gets its
+            // own family.
+            Self::StakedWithPythPush => Some(OracleFeedFamily::StakedPythPush),
+            Self::PythMSOL | Self::KaminoMSOL | Self::JuplendMSOL => {
+                Some(OracleFeedFamily::MSOLPythPull)
+            }
+            Self::PythLST | Self::KaminoLST | Self::JuplendLST => {
+                Some(OracleFeedFamily::LSTPythPull)
+            }
+            Self::PTPyth => Some(OracleFeedFamily::PtPythPull),
+            Self::SwitchboardPull
+            | Self::KaminoSwitchboardPull
+            | Self::DriftSwitchboardPull
+            | Self::SolendSwitchboardPull
+            | Self::JuplendSwitchboardPull => Some(OracleFeedFamily::SwitchboardPull),
+            Self::None
+            | Self::PythLegacy
+            | Self::SwitchboardV2
+            | Self::Fixed
+            | Self::FixedKamino
+            | Self::FixedDrift
+            | Self::FixedJuplend
+            // Scope's price identity is (oracle_keys[0], scope_entry_index); a family that only
+            // covers `oracle_keys[0]` cannot express that, so Scope banks never pair.
+            | Self::Scope
+            | Self::PTFixed => None,
+        }
+    }
+}
+
+/// The kind of feed account an `OracleSetup` reads from `oracle_keys[0]`.
+#[derive(Debug, PartialEq, Eq, Copy, Clone)]
+pub enum OracleFeedFamily {
+    PythPush,
+    StakedPythPush,
+    SwitchboardPull,
+    MSOLPythPull,
+    LSTPythPull,
+    PtPythPull,
+}
+
+#[cfg(test)]
+mod feed_family_tests {
+    use super::*;
+
+    /// Integration setups read `oracle_keys[0]` as the same feed the native bank does, so they stay
+    /// price-equivalent to it. Staked derives the mint's price from a pool multiplier over a proxy
+    /// feed, so it forms its own family and cannot pair with a bank reading that key directly.
+    #[test]
+    fn feed_family_groups_integrations_with_native_and_isolates_staked() {
+        assert_eq!(
+            OracleSetup::KaminoPythPush.feed_family(),
+            OracleSetup::PythPushOracle.feed_family()
+        );
+        assert_eq!(
+            OracleSetup::JuplendSwitchboardPull.feed_family(),
+            OracleSetup::SwitchboardPull.feed_family()
+        );
+        assert_ne!(
+            OracleSetup::PythPushOracle.feed_family(),
+            OracleSetup::SwitchboardPull.feed_family()
+        );
+
+        assert_eq!(
+            OracleSetup::StakedWithPythPush.feed_family(),
+            Some(OracleFeedFamily::StakedPythPush)
+        );
+        assert_ne!(
+            OracleSetup::StakedWithPythPush.feed_family(),
+            OracleSetup::PythPushOracle.feed_family()
+        );
+
+        for setup in [
+            OracleSetup::None,
+            OracleSetup::PythLegacy,
+            OracleSetup::SwitchboardV2,
+            OracleSetup::Fixed,
+            OracleSetup::FixedKamino,
+            OracleSetup::FixedDrift,
+            OracleSetup::FixedJuplend,
+            OracleSetup::PTFixed,
+        ] {
+            assert_eq!(setup.feed_family(), None);
+        }
+    }
+
+    /// If a multiplier setup shared `PythPush`, an admin could migrate a same-asset-e-mode bank
+    /// between them without tripping the `config_bank_oracle` guard (which compares only
+    /// `oracle_keys[0]` and the feed family), re-marking collateral at `base × multiplier` while
+    /// the liability side stayed on the bare base feed.
+    #[test]
+    fn multiplier_setups_are_isolated_from_the_base_feed_and_each_other() {
+        let multiplier_families = [
+            OracleSetup::StakedWithPythPush.feed_family(),
+            OracleSetup::PythMSOL.feed_family(),
+            OracleSetup::PythLST.feed_family(),
+            OracleSetup::PTPyth.feed_family(),
+        ];
+
+        for family in multiplier_families {
+            assert!(family.is_some());
+            assert_ne!(family, OracleSetup::PythPushOracle.feed_family());
+        }
+        for (i, a) in multiplier_families.iter().enumerate() {
+            for b in &multiplier_families[i + 1..] {
+                assert_ne!(a, b, "multiplier kinds must not share a feed family");
+            }
+        }
+
+        // Venue wrappers stay in their base multiplier's family.
+        assert_eq!(
+            OracleSetup::KaminoMSOL.feed_family(),
+            OracleSetup::PythMSOL.feed_family()
+        );
+        assert_eq!(
+            OracleSetup::JuplendMSOL.feed_family(),
+            OracleSetup::PythMSOL.feed_family()
+        );
+        assert_eq!(
+            OracleSetup::KaminoLST.feed_family(),
+            OracleSetup::PythLST.feed_family()
+        );
+        assert_eq!(
+            OracleSetup::JuplendLST.feed_family(),
+            OracleSetup::PythLST.feed_family()
+        );
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum BankVaultType {
+    Liquidity,
+    Insurance,
+    Fee,
+}
+
+impl BankVaultType {
+    pub fn get_seed(self) -> &'static [u8] {
+        match self {
+            BankVaultType::Liquidity => LIQUIDITY_VAULT_SEED.as_bytes(),
+            BankVaultType::Insurance => INSURANCE_VAULT_SEED.as_bytes(),
+            BankVaultType::Fee => FEE_VAULT_SEED.as_bytes(),
+        }
+    }
+
+    pub fn get_authority_seed(self) -> &'static [u8] {
+        match self {
+            BankVaultType::Liquidity => LIQUIDITY_VAULT_AUTHORITY_SEED.as_bytes(),
+            BankVaultType::Insurance => INSURANCE_VAULT_AUTHORITY_SEED.as_bytes(),
+            BankVaultType::Fee => FEE_VAULT_AUTHORITY_SEED.as_bytes(),
+        }
+    }
+}

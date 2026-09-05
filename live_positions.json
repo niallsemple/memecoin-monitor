@@ -2209,16 +2209,17 @@
   "entry_t": 1788630777.484017,
   "entry_px": 4.835003359038081e-12,
   "tokens": 20682508899,
-  "tokens_left": 20682508899,
+  "tokens_left": 5170627225,
   "size_sol": 0.1,
-  "peak_mult": 1.09721787,
+  "peak_mult": 1.5308864299999998,
   "trough_mult": 1.0,
-  "freerolled": false,
-  "sol_recovered": 0.0,
+  "freerolled": true,
+  "sol_recovered": 0.11481648224814954,
   "insider_overhang_pct": 79.42,
   "insider_n": 1,
   "blocklist_feeders": 0,
   "entry_kind": "conv_override",
-  "a3r_logged": true
+  "a3r_logged": true,
+  "nm_touch_t": 1788631692.810011
  }
 }
