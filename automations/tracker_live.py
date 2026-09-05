@@ -141,6 +141,19 @@ def fast_entry_spawn(mint, creator):
             time.sleep(FAST_ENTRY_DELAY_S)
             bsh = _bs.bundle_share(mint, creator)
             row["bundle_share"] = bsh
+            # §334: mechanism label (LOG ONLY). Mayhem-mode tokens carry a
+            # 2B supply (1B reserved for Pump's trading agent, which pays no
+            # platform/creator fees and self-excites on volume). Early price
+            # action on Mayhem is partly machine-generated — abort3 and
+            # demand features must be interpretable per-mechanism.
+            try:
+                from deployer_score import rpc as _rpc
+                _sup = _rpc("getTokenSupply", [mint]) or {}
+                _amt = float(_sup["value"]["amount"]) / \
+                    (10 ** _sup["value"]["decimals"])
+                row["mech"] = "mayhem2b" if _amt > 1.5e9 else "standard1b"
+            except Exception:
+                row["mech"] = "unknown"
             # §289/§290: winner-wallet registry cross-ref (LOG ONLY, non-blocking)
             try:
                 if not hasattr(fast_entry_spawn, "_winners"):

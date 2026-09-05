@@ -6039,3 +6039,10 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - **Fix (bundle_share.py §333):** create tx identified by >700M creator delta and excluded from new NET accumulators. New log-only fields on every eval: `outsider_pct_net`, `n_buyers_net`. **Live gate still reads the legacy field — zero behavior change.** Verified on fresh mint 13iPjiYvJdQb: raw 60.98% → net 40.29% (platform 20.69pp stripped; genuine sniper demand measured).
 - bundle_share.py is path-imported from MON each pass → net fields flow automatically; no redeploy needed. Cache note: mints cached pre-fix keep legacy-only fields (harmless).
 - Next evidence step: collect net-vs-outcome distribution on new entries → data-backed decision on flipping §262 to the net sensor (paired with the abort3 promotion decision).
+
+## §334 — DARWIN Observatory framework integrated; Mayhem audit clean; mech labels live
+
+- **Mayhem contamination audit (H8): 0/36 traded mints are 2B-supply Mayhem tokens** — the abort3 evidence base is free of platform-bot price action. Going forward every eval row now carries a `mech` label (`mayhem2b`/`standard1b`/`unknown`) via §334 tracker edit (deployed).
+- **Framework adoption (docs/DARWIN_OBSERVATORY.md):** HYPOTHESES.md extended with H7–H14. Highest-value mappings: H7 (first-5-min rug classification is academically validated — abort3 is our 1-feature instance), H12 (Value-of-Information ladder as research-budget allocator), H13 (first-passage targets), H14 (structural discontinuities: graduation/fee-tier/Mayhem-termination event studies).
+- Infra audit: Jito ShredStream shutdown today does not affect us (Helius WSS + pump portal WSS only). Ledger already dual-timestamps (chain t / observation ts).
+- Live: t87cw5FB open at 7.6 min, peak +1.1%, shadow KEEP logged at minute ~3.
