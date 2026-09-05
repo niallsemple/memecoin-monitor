@@ -2341,6 +2341,14 @@ def run(ctx):
         # emode + LST multipliers), then liq_hunt drills any health<0 account
         # for raw seizable collateral and sim-gates it with OUR marginfi
         # account (§358). Actionable verdicts -> liq_opportunities.jsonl.
+        # §380b: tail budget guard — if the pass is already past 17.5 min,
+        # defer this scan+hunt to the next pass. A hunt tail (sims + fire)
+        # can otherwise push the run past the 20-min grid and trigger a
+        # scheduler overlap-skip (§380). The 90s shock_loop still covers
+        # mid-pass crossings, so deferring one full scan is low-risk.
+        if (time.time() - now0) / 60 > 17.5:
+            stats["liq_deferred"] = True
+            raise RuntimeError("liq scan deferred: tail budget")
         import importlib.util as _ilu7
         _s7 = _ilu7.spec_from_file_location(
             "liq_health", str(MON / "liq_health.py"))
