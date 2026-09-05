@@ -5826,3 +5826,8 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 
 - **AhiWggtX**: conv_override 0.05 SOL → **+0.00092 SOL (+1.8%)**, held 15.5 min, exit `abort15` (scratch-green class).
 - Live book: **13 closed — 12 green / 1 scratch red**, cumulative **+0.01301 SOL**, expectancy ~+2.0%/trip, zero wipeouts.
+
+## §308 — Trade #14 closed (n=14)
+
+- **b9jdJeHu**: conv_override 0.05 SOL → **+0.00027 SOL (+0.5%)**, held 15.1 min, exit `abort15` (scratch-green class).
+- Live book: **14 closed — 13 green / 1 scratch red**, cumulative **+0.01328 SOL**, zero wipeouts.
