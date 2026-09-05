@@ -6608,3 +6608,22 @@ Jupiter picks a route that fits the budget or errors (hunt then falls back to
 legacy fire()). Rebuilt Kamino recipe: 37 unique accounts, 921B (311B margin),
 sim still reaches marginfi domain logic (6002 on the no-collateral test
 candidate — correct abort).
+
+## §378 — Atomic-arb route evaluated and CLOSED (data-backed)
+
+Two measurements:
+1. Blue-chip USDC->SOL->USDC via Jupiter-lite (shadow_searcher, 12 valid
+   scans): best net +0.05..+0.42 bps — a coin flip around zero, and any
+   positive is below priority-fee + execution-slippage reality. No edge.
+2. Freshly-graduated memecoin roundtrips (0.05 SOL buy+sell-back, 8 tokens
+   aged 27-127 min): -60 to -301 bps (median -226). Venue fees (~0.25% x2)
+   plus spread/impact dominate by two orders of magnitude. No cross-venue
+   dislocation harvestable at our sizes through aggregate routes.
+
+CONCLUSION: atomic arbitrage (same-pair roundtrip, with or without flash
+loans) is structurally closed to us. The ROI-positive tracks that remain:
+(1) memecoin birth-window trading (live, marginal-positive, §376 tuning in
+forward sample), (2) marginfi liquidations (armed end-to-end incl. §377
+packet cap; field currently clean — waiting for a real candidate or a shock
+crossing). Flash-loan capital only matters for track 2. No further arb
+investment unless venue-fee economics change.
