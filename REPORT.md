@@ -6076,3 +6076,15 @@ Owner: "also add this to research if we can't get memecoins to work" — ChatGPT
 - Suggested build order: **shadow/paper flash searcher first** (log every opportunity + simulated PnL, risk nothing), graduate mechanisms that survive execution modelling.
 
 Checkpoint automation `automation_c86e6816-69d5-4f8a-b53e-8d6fc0f47590` (fires 19:09 BST) prompt updated to incorporate this doc alongside the observatory framework.
+
+## §338 — Shadow searcher v0 built + wired into tracker (pivot prep, 17:35 BST)
+
+Owner: "in the background get ready for the switch if we have to." Built **shadow_searcher.py** per docs/DARWIN_FLASH_LOANS.md ("build a completely shadow/paper searcher that records every opportunity... without risking anything"):
+
+- USDC→SOL→USDC atomic round trip, quoted read-only through Jupiter lite API (`lite-api.jup.ag/swap/v1/quote`; old `quote-api.jup.ag` v6 endpoint is dead — DNS gone).
+- 8-size ladder $500–$75,000; net = gross − priority fee (0.002 USDC) − tip − flash fee (0, per Project 0 docs). Logs full ladder + q* to `shadow_arb_log.jsonl` every tracker pass (~20 min).
+- **First live scan**: mostly negative (aggregator round trips usually eat spread) but two sizes marginally positive — best $2,000 @ **+0.28 bps net** (+0.057 USDC), $500 @ +0.30 bps. Sub-noise, but the sensor works and the q*-vs-size curve already shows the expected shape (impact kills size beyond ~$2k on normal conditions).
+- Wired into `automations/tracker_live.py` (importlib from MON, same pattern as reclaim_ata); result surfaced in run artifact as `shadow_arb_best_bps` / `shadow_arb_positive`. **Deployed** via deploy_tracker.sh (assets copy identical). No new Automation slots consumed.
+- Zero risk: no transactions constructed or signed; quotes only.
+
+Next builds in the pivot pipeline (from §337 doc): per-venue quote decomposition (find WHICH venue pair carries the dislocation), liquidation radar (marginfi accounts near health-factor 1), then the FLASH_LIQUIDITY router abstraction.

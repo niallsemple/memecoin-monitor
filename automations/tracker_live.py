@@ -2277,6 +2277,22 @@ def run(ctx):
             _ra.main()
     except Exception:
         pass
+    try:
+        # §338: shadow/paper atomic-arb scan (USDC->SOL->USDC size ladder via
+        # Jupiter lite quotes; quotes embed venue spread + price impact).
+        # Read-only — logs to shadow_arb_log.jsonl. Pivot-prep per
+        # docs/DARWIN_FLASH_LOANS.md: record the dislocation distribution and
+        # q* economics BEFORE any live flash-loan build.
+        import importlib.util as _ilu6
+        _s6 = _ilu6.spec_from_file_location(
+            "shadow_searcher", str(MON / "shadow_searcher.py"))
+        _ss = _ilu6.module_from_spec(_s6)
+        _s6.loader.exec_module(_ss)
+        _scan = _ss.scan_once()
+        stats["shadow_arb_best_bps"] = (_scan.get("best") or {}).get("net_bps")
+        stats["shadow_arb_positive"] = _scan.get("any_positive")
+    except Exception:
+        pass
     return {"artifact": {
         "summary": (f"births={stats['births']} big_seeds={stats['big_seeds']} "
                     f"armed={stats['armed_births']} "

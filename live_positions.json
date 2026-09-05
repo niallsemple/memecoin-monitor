@@ -2083,22 +2083,27 @@
   "pnl_sol": 0.00134
  },
  "djnzH7GgMr9CNa72gtNnfxE1Ax3bptsvj4LkRPxpump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788625151.443089,
   "entry_px": 1.4648789385665341e-10,
   "tokens": 682650268,
-  "tokens_left": 682650268,
+  "tokens_left": 0,
   "size_sol": 0.1,
-  "peak_mult": 1.0040436799999999,
+  "peak_mult": 1.0051953299999998,
   "trough_mult": 0.9962813299999999,
   "freerolled": false,
-  "sol_recovered": 0.0,
+  "sol_recovered": 0.10051953299999998,
   "insider_overhang_pct": 18.79,
   "insider_n": 19,
   "blocklist_feeders": 0,
   "entry_kind": "conv_override",
-  "a3r_logged": true
+  "a3r_logged": true,
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788626113.589385,
+  "exit_sig": "53rdddjrLRjXfH3iPNV7omrixW4QmuV82bL4Aufhbu555FypGmGqNibFVj3YvZNMxjuobSe2oowe1Z4H69FmXBko",
+  "pnl_sol": 0.00052
  }
 }
