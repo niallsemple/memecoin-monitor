@@ -4222,3 +4222,9 @@
 | 08:26 | robinhood | `0x04c3d7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Cannibalistic Humanoid Underground Dwellers aka CHUD |
 | 08:26 | solana | `8qA3pCHs…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$17,165 mc=$48,747 | name=Pumpany symbol=PUMPANY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41 | First company on Solana to reach 1B$. Get employed now. |
 | 08:26 | robinhood | `0x6eE191…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,964 mc=$21,680 | chain:robinhood no-audit-adapter |  |
+| 09:26 | solana | `9TCjvTFg…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$21,238 mc=$71,128 | name=CATIUS symbol=CATIUS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=32.6 | meow meow meow |
+| 09:26 | robinhood | `0xa9e47f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 09:26 | solana | `dXKzTT6v…` | FAIL | TOP10_HEAVY:80% | liq=$0 mc=$7,350 | name=EatTradeFart symbol=ETF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=7 |  |
+| 09:26 | robinhood | `0x2308d7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$89,590 mc=$184,410 | chain:robinhood no-audit-adapter | dogshit memecoin supremacy |
+| 09:26 | robinhood | `0xeD135A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$221 mc=$36,027 | chain:robinhood no-audit-adapter | FAANG is an acronym representing five of the most prominent, high-performing Ame |
+| 09:26 | solana | `HiEtnqDJ…` | PASS | — | liq=$21,141 mc=$67,549 | name=BrainPons symbol=BRAINPONS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | One brain cell, cast in glass, left running in a cold room. It still knows exact |
