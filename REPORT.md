@@ -6359,3 +6359,9 @@ Init saga: keypair init + PDA init both panicked (anchor 1.0.2 account_loader.rs
 `liq_hunt.py` + tracker wiring (deployed): every pass runs the exact-price health scan; any health<0 account gets drilled for raw seizable collateral; seizable ≥$50 goes through the real liquidate tx in simulateTransaction with our account; only sim-verified opportunities land in `liq_opportunities.jsonl` with est_gross_usd (5% bonus − costs). Smoke test on the 5 bad-debt accounts: correctly drilled, zero seizable, no sims wasted.
 
 **Known coverage gaps (honest):** Kamino/Drift/Solend/JupLend/Staked-SVSP multiplier pricing still skipped in the scanner (40,529 slot-reads hidden) — those accounts surface only via sim when they cross. Kamino class also needs refresh_reserve bundling. Next: Jupiter exit-liquidity probe for the seize-side mints, then the flash-borrow→deposit→liquidate→swap→repay recipe from §337 for live fire.
+
+## §360 — LIVE TEST: abort3_if_red promoted to live exits (2026-09-05 19:40 BST, owner green-lit "try for a live test, use existing wallet")
+
+The §328 shadow rule is now a live exit in live_trader.py exit_watch: one-shot check at the first pass ≥3 min after entry; if the position is red (r<1.0), full exit as `abort3_red`. Faithful to the validated one-shot semantics (not a persistent red-cut). Shadow record: replay flipped the conv book positive; out-of-sample shadow ~11/11. Context: book is on an 8-green streak (7× abort15 + 1 trail_writeoff), cum −0.759 SOL on 109 closes, wallet 1.71 SOL. Next positions entering now will live-fire the rule; `abort3_if_red_live_check` log rows carry r/mins/would_exit for every check.
+
+Liquidation side: radar wired into the tracker pass (§359); last scans: zero seizable candidates; GFxx healthy under program pricing (+$1,377). Jupiter probe: sctmB7GP exits at 0.0017% impact ($2.5k size) — excellent; BADo3D6n not on Jupiter-lite (400) — that seize class would need a different venue.
