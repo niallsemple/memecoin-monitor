@@ -16788,5 +16788,37 @@
   ],
   "outsider_pct_net": 36.78,
   "n_buyers_net": 294
+ },
+ "XkTApk3aoiQADjXnYecrs5dMPSX85qS1dDW3ycQpump": {
+  "birth": 1788626315,
+  "txs_in_window": 67,
+  "outsider_pct": 60.92,
+  "deployer_pct": 79.31,
+  "n_buyers": 21,
+  "buyers": [
+   "27HFmP7ccLadGswvQfvea4o3juLw75cPF4V6jWpHM3MX",
+   "2JtexUyf2hBpbg5ZzX378ag8UcoESod8V14eBsxZuC1s",
+   "3KcPSJ8ouE7H1feoWHmhDwXhLnXhpxP6R6713uytFmBM",
+   "3nXfcradnyqwbWx6jZztoyekmUXcoDm6GjCV59WpJwWB",
+   "4ws8wNQGEJi13EdWuJsxVX5tfyvFicA1TB2vK1snnuxy",
+   "5W4TAAdV95H8s6JWZU1n3emGmutUt6U7F89sUZo3k1Bv",
+   "5WdjQoYzYCzKkJUBiTxrZN7X1vxZf6sA5Z4h1yD2paqQ",
+   "5zZYFTFZbDzu2LiabaynP2Jaa18gvB52RHtubge77vQv",
+   "6876WnNCAbLAqjiudQzD8fzKrGAanmMEhpR1xvME9DZA",
+   "7mzEZ6uF5nTg5QgCQpdsLxSH9w81oqcUrMFSmnW8YJBg",
+   "8DDA1enAgjGCDo3efdcGLwkPaWQ1MBvxSBQ7Py2tmmUv",
+   "8qNupZGMcFwg75efaG6njLusgn3wCwr7JXvamsACeVAq",
+   "CK2PyVHdJrq5XXcubQWV79tV3jhXpgducauWeZH2KS1A",
+   "Dm7sTNoeGqBwg86KiFZU7SrbpDYHviA8C55LeQLkbZmb",
+   "DvewB6CGrkHHGqyGrXBT3kfy1mwa1rcZkuuQJFWxogyf",
+   "EvDTDvN9SUzgfR1LzsAevrXKLcDW2rQ3GPS7TDY18dzr",
+   "EzPYPTz9oXCp5fdApm5A2DpitQoVDv72MYcmEh8ErDSp",
+   "FHaUejLkKriBrsT6j3jnW7Xsdep4igCqe62yc1bfzYz5",
+   "Fs9RN3wAsuJKPbTmtX5eek1bhW5krNH8RkQxkFAtgNfR",
+   "Gf9fbJiKrqHH5oEep1wZHU2Wm6NTJqvNadxPgAGL4yAa",
+   "HKWYYMuMg3xTae6KQuSq9KxhiZ9Msf2c3E9dsoWDD5m8"
+  ],
+  "outsider_pct_net": 40.23,
+  "n_buyers_net": 19
  }
 }

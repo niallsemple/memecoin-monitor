@@ -6088,3 +6088,10 @@ Owner: "in the background get ready for the switch if we have to." Built **shado
 - Zero risk: no transactions constructed or signed; quotes only.
 
 Next builds in the pivot pipeline (from §337 doc): per-venue quote decomposition (find WHICH venue pair carries the dislocation), liquidation radar (marginfi accounts near health-factor 1), then the FLASH_LIQUIDITY router abstraction.
+
+## §339 — Venue decomposition added to shadow searcher (17:45 BST)
+
+- Jupiter lite API supports `dexes=` venue restriction (verified: Raydium-only quote returned). shadow_searcher.py now runs a **venue matrix** each scan: buy leg + sell leg quoted across 19 candidate venues (14 answered), all cross pairs computed from the 38 leg quotes with linear scaling — best pair + top3 logged per pass.
+- **First matrix read** ($2,000 size): best cross pair buy TesseraV → sell HumidiFi = **−0.62 bps net** — no cross-venue dislocation beyond costs in calm conditions, as theory predicts. The value is the time series: dislocations should widen during liquidation cascades / forced-flow events (per §337 doc: "SOL already fell and caused mechanically forced events").
+- Aggregator round trip still marginally positive at small sizes (+0.36 bps @ $500, +0.32 @ $1k, +0.17 @ $2k) — consistent sub-bps noise band; the interesting signal will be breakouts above ~5 bps.
+- No redeploy needed (tracker importlib-loads shadow_searcher from MON each pass). Pass cost ~45s of quote calls, inside the 20-min budget.
