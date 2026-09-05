@@ -4192,3 +4192,9 @@
 | 04:06 | solana | `EUuZC9Zp…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,568 | name=Reaction Injection Molding symbol=RIM; contract:clean; rugcheck_score=1 lpLocked=100% |  |
 | 04:06 | robinhood | `0x4f342A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,574 mc=$84,182 | chain:robinhood no-audit-adapter | The ChairMan |
 | 04:06 | ethereum | `0x1AA7c7…` | PASS | — | liq=$27,555 mc=$63,231 | holders=86; buy_tax=0 sell_tax=0; contract:clean | Launch anything on ethereum via gweistocks fun Powered by Ondo tokenized stocks. |
+| 04:46 | robinhood | `0xf9fc31…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Don't be Bren |
+| 04:46 | robinhood | `0xea1901…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:46 | solana | `9ij4EGWP…` | FAIL | TOP10_HEAVY:82% | liq=$0 mc=$9,622 | name=Sam Altcoin symbol=ALTCOIN; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold= |  |
+| 04:46 | robinhood | `0x0529d5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | smoking cod in a chicken bod |
+| 04:46 | robinhood | `0x6bd6d8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Buttcoin is a peer-to-peer butt. Peer-to-peer means that no central authority is |
+| 04:46 | solana | `5bTDJ9Rj…` | FAIL | TOP10_HEAVY:56% | liq=$10,505 mc=$20,828 | name=Fuck Robinhood symbol=FHOOD; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |

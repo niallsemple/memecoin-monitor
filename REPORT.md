@@ -5809,3 +5809,10 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 **Verdict: 9 green / 1 scratch red, cumulative +0.00522 SOL, expectancy +1.04% per round trip, worst outcome −0.2%, zero tail events.** Live book matches the shadow cohort's predicted shape (small consistent outcomes, capped downside) — and note no runner (+16-27%) has appeared yet; the model's historical carry came from those, so current returns are the FLOOR case, not the ceiling. Signal rate ~3/hr in active windows, slot-capped to 0.05 SOL exposure.
 
 **Sizing proposal (owner decision pending):** FAST_ENTRY_SIZE 0.05 → 0.10 SOL. At observed expectancy ≈ +0.001 SOL/trade; worst observed live outcome would be −0.0002; shadow-cohort worst (−4%) would be −0.004. Wallet 2.0 SOL → 0.10 = 5% per entry, inside the existing FRAC=0.05/MAX_SOL=0.20 risk frame. Not flipped unilaterally — awaiting owner approval.
+
+## §305 — First live runner closed (n=11)
+
+- **1kebGNLF**: conv_override entry 0.05 SOL → **+0.00664 SOL (+13.3%)**, held 30.2 min, exit `abort30`.
+- Live book now **11 closed: 10 green / 1 scratch red**, cumulative **+0.01186 SOL**, expectancy ~+2.16%/trip, zero wipeouts.
+- Runner-carry thesis validated live: shadow runners (+16.5%/+27.1%) now have a live counterpart (+13.3%).
+- Note: exit stack capped this runner at the 30-min abort checkpoint while still green (+11.5% at 27m → +13.3% at close). Candidate tuning question: let abort30 pass when position is >+10% and trail instead.
