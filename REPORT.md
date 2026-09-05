@@ -6495,3 +6495,11 @@ liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RP
 **Validation:** fire_flash dry-run with Kamino-USDC collateral bank now compiles under the packet limit and sims into marginfi domain logic (6002 on the bad-debt test account — correct fail-closed; 97.6k CU).
 
 **Note:** liq_alts.json fingerprint predates the SWB fix — a future `liq_alt.py create` will start fresh tables rather than resume; don't rerun it unless rebuilding intentionally.
+
+## §373 — SVSP onramp derivation + staked 5-account path verified
+
+**Survey:** 54 main-group staked (tag-2) banks. 53 carry oracle_keys[3] (onramp) explicitly — `bank_remaining` assembles the full 5-account set (bank + oracle + lst_mint + stake_pool + onramp) for all of them. Exactly one bank (Hco1P3dGRX) has neither oracle_keys[3] nor integration_acc_1 — an unconfigured bank marginfi itself cannot price (StakePoolValidationFailed); our fail-closed raise mirrors the program.
+
+**Fallback derivation (liq_sim.bank_remaining):** when oracle_keys[3] is default, onramp = PDA["onramp", vote_account] under SPL_SINGLE_POOL (SVSPxpvHdN29nkVg9rPapPNDddN5DipNLRUFhyjFThE, refs/constants.rs), vote = bank.integration_acc_1 @1560 (lst_stake_price.rs: expected_staked_onramp). No live bank needs it today; fail-closed if a future bank lacks both sources.
+
+**Sim proof:** liquidate sim through staked bank 8g5qG6PV on GFxx reaches health pricing (pre_liquidation_health 1369.7, matching the scanner) and aborts 6068 HealthyAccount — the 5-account remaining set is accepted, and post-§371 (empty liquidator account) the 6047 staked-collateral tag rule no longer fires.

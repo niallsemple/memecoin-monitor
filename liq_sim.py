@@ -52,6 +52,10 @@ KLEND = lt.b58dec("KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD")
 KM_REFRESH_DISC = bytes([2, 218, 138, 235, 79, 201, 25, 102])
 KAMINO_SETUPS = {6, 7}  # KaminoPythPush / KaminoSwitchboardPull
 
+# §373: SPL single-validator-pool program (refs/constants.rs SPL_SINGLE_POOL_ID) —
+# staked-bank onramp PDAs derive under it as ["onramp", vote_account].
+SPL_SINGLE_POOL = lt.b58dec("SVSPxpvHdN29nkVg9rPapPNDddN5DipNLRUFhyjFThE")
+
 
 def build_refresh_ix(bank_pk: str):
     """Kamino refresh_reserve ix for a marginfi Kamino bank, or None.
@@ -137,7 +141,13 @@ def bank_remaining(bpk: str):
     if count >= 5:
         onramp = keys[3] if keys[3] != bytes(32) else None
         if onramp is None:
-            raise RuntimeError(f"staked onramp PDA derivation needed for {bpk}")
+            # §373 (lst_stake_price.rs: expected_staked_onramp): when
+            # oracle_keys[3] is default, onramp = PDA["onramp", vote] under the
+            # SPL single-pool program, vote = bank.integration_acc_1 @1560.
+            vote = raw[1560:1592]
+            if vote == bytes(32):
+                raise RuntimeError(f"staked onramp: no oracle_keys[3] or integration_acc_1 for {bpk}")
+            onramp = pda([b"onramp", vote], SPL_SINGLE_POOL)
         out.append((onramp, False, False))
     return out
 
