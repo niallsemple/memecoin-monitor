@@ -6030,3 +6030,12 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - Ledger fully reconciled: the 40-min-window writeoff was 9ejN1aLT's own row (ts at window edge); hook attempt HxQrCSzH (0.0812) blocked by §262 again — no untracked spend.
 - Live book: **34 closed**, cumulative **−0.26001 SOL**.
 - **Adopted the DARWIN Training Lab framework** (docs/DARWIN_TRAINING_LAB.md): created `HYPOTHESES.md` — a Phase-12 registry with status ladder. H2 (abort3_if_red) is the first LIVE CANDIDATE; H3/H4 marked FAILED; H6 logged the deployer_pct 79.31 data bug as a blocking fix for trusting the insider gates.
+
+## §333 — Sensor bug H6 root-caused & fixed (log-only) + trades #35-36, shadow 5/5
+
+- **Trades:** ApbMDptj +0.00238 (+2.4%), 68fQfizT +0.00108 (+1.1%), both `abort15`. Live book: **36 closed, −0.25655 SOL**.
+- **Shadow OOS tally 5/5**: CUT→rugged (9ejN); KEEPs all green (zCXe +0.5%, HyPT +1.7%, ApbM +2.4%, 68fQ +1.1%).
+- **H6 root cause (confirmed on-chain):** the pump.fun create transaction credits the *creator wallet* the curve's 793.1M inventory (→ `deployer_pct` stuck at 79.31 on every mint) and a platform reserve account 206.9M (→ constant **+20.69pp offset** inside `outsider_pct`). Correction to §327's estimate: the raw field was offset, not pure noise — the gate read real demand shifted by +20.7pp.
+- **Fix (bundle_share.py §333):** create tx identified by >700M creator delta and excluded from new NET accumulators. New log-only fields on every eval: `outsider_pct_net`, `n_buyers_net`. **Live gate still reads the legacy field — zero behavior change.** Verified on fresh mint 13iPjiYvJdQb: raw 60.98% → net 40.29% (platform 20.69pp stripped; genuine sniper demand measured).
+- bundle_share.py is path-imported from MON each pass → net fields flow automatically; no redeploy needed. Cache note: mints cached pre-fix keep legacy-only fields (harmless).
+- Next evidence step: collect net-vs-outcome distribution on new entries → data-backed decision on flipping §262 to the net sensor (paired with the abort3 promotion decision).

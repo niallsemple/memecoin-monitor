@@ -53,7 +53,8 @@ def bundle_share(mint, deployer=None, window_s=WINDOW_S):
     birth = min(s["blockTime"] for s in sigs if s.get("blockTime"))
     early = [s for s in sigs if s.get("blockTime") and
              s["blockTime"] - birth <= window_s]
-    acquired = {}  # owner -> token delta
+    acquired = {}      # owner -> token delta (raw, includes create tx)
+    acquired_net = {}  # §333: same but with the create tx excluded
     for s in early:
         tx = rpc("getTransaction", [s["signature"], {
                  "encoding": "jsonParsed",
@@ -66,19 +67,33 @@ def bundle_share(mint, deployer=None, window_s=WINDOW_S):
         post = {b["owner"]: _amt(b)
                 for b in tx["meta"].get("postTokenBalances", [])
                 if b.get("mint") == mint and b.get("owner")}
-        for owner, amt in post.items():
-            delta = amt - pre.get(owner, 0)
+        deltas = {o: a - pre.get(o, 0) for o, a in post.items()}
+        # §333: create tx credits the creator the curve's 793.1M inventory
+        # (79.31% constant — dead deployer_pct sensor) and a platform
+        # reserve account 206.9M (a constant +20.69pp offset inside
+        # outsider_pct). Identify it by the >700M creator delta and
+        # exclude it from the NET accumulators.
+        is_create = bool(deployer) and deltas.get(deployer, 0) > 700_000_000
+        for owner, delta in deltas.items():
             if delta > 0:
                 acquired[owner] = acquired.get(owner, 0) + delta
+                if not is_create:
+                    acquired_net[owner] = acquired_net.get(owner, 0) + delta
         time.sleep(0.05)
     outsider = sum(v for k, v in acquired.items() if k != deployer)
     deployer_amt = acquired.get(deployer, 0) if deployer else 0
+    outsider_net = sum(v for k, v in acquired_net.items() if k != deployer)
     res = {
         "birth": birth, "txs_in_window": len(early),
         "outsider_pct": round(100 * outsider / SUPPLY, 2),
         "deployer_pct": round(100 * deployer_amt / SUPPLY, 2),
         "n_buyers": len(acquired),
         "buyers": sorted(acquired),  # §289: winner-wallet registry cross-ref
+        # §333: NET birth-window buyer share (LOG-ONLY — the live gate
+        # still reads outsider_pct). Genuine first-window demand with the
+        # create-tx platform allocations stripped out.
+        "outsider_pct_net": round(100 * outsider_net / SUPPLY, 2),
+        "n_buyers_net": len(acquired_net),
     }
     try:
         cache[mint] = res
