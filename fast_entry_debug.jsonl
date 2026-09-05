@@ -1862,3 +1862,14 @@
 {"t": 1788628627.898515, "phase": "thread_start", "mint": "73tR8yCus9UYdKpmffQB2dUAEBZNgAS6sehqBWppump"}
 {"t": 1788628627.90419, "phase": "lt_loaded", "mint": "73tR8yCus9UYdKpmffQB2dUAEBZNgAS6sehqBWppump"}
 {"t": 1788628687.647163, "phase": "thread_done", "mint": "73tR8yCus9UYdKpmffQB2dUAEBZNgAS6sehqBWppump", "result": "skip: bundled launch"}
+{"t": 1788629093.565035, "phase": "spawned", "mint": "mVeg2VBD6qwcuuDfdsn8m4wrWq6UsJc4G7pBocLpump", "creator": "HBvzKLzh9VcwoxXG7USJtDrAYcEPWWeKYwPMXKksCY24"}
+{"t": 1788629093.5658, "phase": "thread_start", "mint": "mVeg2VBD6qwcuuDfdsn8m4wrWq6UsJc4G7pBocLpump"}
+{"t": 1788629093.57105, "phase": "lt_loaded", "mint": "mVeg2VBD6qwcuuDfdsn8m4wrWq6UsJc4G7pBocLpump"}
+{"t": 1788629149.8019772, "phase": "thread_done", "mint": "mVeg2VBD6qwcuuDfdsn8m4wrWq6UsJc4G7pBocLpump", "result": "skip: bundled launch"}
+{"t": 1788629249.607181, "phase": "spawned", "mint": "Afmivg7dS2dxgRQHoQq526m4FK8mygGYUEgZubXpump", "creator": "Cv1YFVo3GqwNsrzT6vyvyQQZa13aJnG45nssFVN2ywai"}
+{"t": 1788629249.60773, "phase": "thread_start", "mint": "Afmivg7dS2dxgRQHoQq526m4FK8mygGYUEgZubXpump"}
+{"t": 1788629249.610584, "phase": "lt_loaded", "mint": "Afmivg7dS2dxgRQHoQq526m4FK8mygGYUEgZubXpump"}
+{"t": 1788629299.974122, "phase": "thread_done", "mint": "Afmivg7dS2dxgRQHoQq526m4FK8mygGYUEgZubXpump", "result": "skip: fast slot busy"}
+{"t": 1788629593.1672478, "phase": "spawned", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump", "creator": "2TuQ5gYvhrv3G91QEwgLw2UMiZZsxL5yA7WFdnrFrioX"}
+{"t": 1788629593.168258, "phase": "thread_start", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump"}
+{"t": 1788629593.17412, "phase": "lt_loaded", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump"}

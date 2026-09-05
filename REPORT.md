@@ -6198,3 +6198,16 @@ Tier-2 remaining: oracle type byte (setup enum near offset ~500), oracle price r
 - **Live decode verified: USDC/USD = 0.999885, publish age 17s.** Fresh, correct, atomic.
 - This closes the last unknown for Tier-2 health computation. Full recipe now proven: bank → mint @8 (+decimals from mint acct), share values @80/96, weights @296/312/328/344, oracle key @610 → Pyth pull price. Account side: slots @72+i×104 (§342). health = (Σ assets×px×asset_w_maint − Σ liabs×px×liab_w_maint) / liabs.
 - Note: oracle_setup is an enum — other banks may use legacy Pyth push or Switchboard; Tier-2 must branch on the setup byte (only variant 1 verified so far).
+
+## §347 — Tier-2 health ranking LIVE: liquidatable accounts found (18:33 BST)
+
+First full run of `liq_health.py` (paper/recon):
+
+- **165,569 accounts scanned in 61.1s total** (banks 437 in 1 call, 38 Pyth-pull oracles priced, 204 mint decimals, 256-shard balance scan 30.8s). RPC ≈ 1,000 calls/run.
+- **6,320 accounts with material debt (≥$100)** after dust filtering — the 81k Tier-1 shortlist was indeed mostly dust, as suspected.
+- **Accounts reading as liquidatable RIGHT NOW** (health < 0), including whales:
+  - Bry1WUdXtDN5… assets $232,937 / liabs $297,311 → health **−0.2165**
+  - 57WvwCCthAhm… assets $150,046 / liabs $194,966 → health **−0.2304**
+  - GFxxnJpDAjb3… liabs $13,876 → health −0.5134; plus small-debt dust at health −1.0.
+- Caveats before trusting: 18,967 slot-reads skipped (oracle_setup ≠ 1 — legacy Pyth push / Switchboard banks excluded; accounts containing them dropped entirely), 692 stale (>120s). Persistent health<0 whales could be (a) real unclaimed bad debt, (b) decode edge cases, or (c) accounts whose collateral moved after scan. Validation next: refetch top accounts individually and cross-check against marginfi UI/API before treating as opportunity.
+- Formula: health = (Σ a_sh×asset_sv×px×aw_maint − Σ l_sh×liab_sv×px×lw_maint) / liabs, shares÷10^decimals.

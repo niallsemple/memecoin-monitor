@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""
+DARWIN liquidation radar — Tier 2: health ranking (recon/paper only).
+
+Combines §342 (balance layout), §345 (bank layout), §346 (Pyth pull oracle)
+into one pass:
+
+  1. Bank table: all 437 banks, full data, one gPA call.
+  2. Oracle prices: unique Pyth-pull keys (setup byte == 1), one call each.
+  3. Mint decimals from SPL mint accounts (byte 44), one call each.
+  4. 256-shard balance-region scan (Tier 1), computing per-account:
+       assets = Σ asset_shares/2^48 × asset_share_value × px × asset_w_maint
+       liabs  = Σ liab_shares/2^48  × liab_share_value  × px × liab_w_maint
+     health = (assets - liabs) / liabs   (liquidatable when < 0)
+  5. Log accounts with liab value >= MIN_DEBT_USD, ranked by health.
+
+Only oracle_setup == 1 (Pyth pull @ offset 610) is priced; other setups are
+counted and skipped (their accounts get health=None).
+"""
+import json
+import time
+import hashlib
+import base64
+import struct
+import urllib.request
+from pathlib import Path
+
+MON = Path(__file__).resolve().parent
+KEY = (MON / "helius_key.txt").read_text().strip()
+RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
+PROG = "MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA"
+LOG_PATH = str(MON / "liq_health_log.jsonl")
+F48 = float(2 ** 48)
+MIN_DEBT_USD = 100.0
+
+ALPHA = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+BAL_OFF, STRIDE, SLOTS = 72, 104, 16
+
+
+def b58encode(b: bytes) -> str:
+    n = int.from_bytes(b, "big")
+    s = ""
+    while n:
+        n, r = divmod(n, 58)
+        s = ALPHA[r] + s
+    return "1" * (len(b) - len(b.lstrip(b"\0"))) + s
+
+
+def disc(name: str) -> str:
+    return b58encode(hashlib.sha256(f"account:{name}".encode()).digest()[:8])
+
+
+def rpc(method: str, params: list, timeout: int = 300) -> dict:
+    body = {"jsonrpc": "2.0", "id": 1, "method": method, "params": params}
+    req = urllib.request.Request(RPC, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    return json.loads(urllib.request.urlopen(req, timeout=timeout).read())
+
+
+def i80(b: bytes) -> float:
+    return int.from_bytes(b, "little", signed=True) / F48
+
+
+def load_banks() -> dict:
+    res = rpc("getProgramAccounts", [PROG, {"encoding": "base64",
+              "filters": [{"memcmp": {"offset": 0, "bytes": disc("Bank")}}]}])["result"]
+    banks = {}
+    for r in res:
+        raw = base64.b64decode(r["account"]["data"][0])
+        if len(raw) < 642:
+            continue
+        banks[r["pubkey"]] = {
+            "mint": b58encode(raw[8:40]),
+            "asset_sv": i80(raw[80:96]),
+            "liab_sv": i80(raw[96:112]),
+            "aw_maint": i80(raw[312:328]),
+            "lw_maint": i80(raw[344:360]),
+            "setup": raw[608],
+            "oracle": b58encode(raw[610:642]),
+        }
+    return banks
+
+
+def load_prices(banks: dict) -> dict:
+    keys = {b["oracle"] for b in banks.values() if b["setup"] == 1}
+    px = {}
+    for k in keys:
+        try:
+            v = rpc("getAccountInfo", [k, {"encoding": "base64"}])["result"]["value"]
+            if not v:
+                continue
+            d = base64.b64decode(v["data"][0])
+            if len(d) < 101:
+                continue
+            price = struct.unpack("<q", d[73:81])[0]
+            expo = struct.unpack("<i", d[89:93])[0]
+            pub = struct.unpack("<q", d[93:101])[0]
+            if not (-30 <= expo <= 0) or not (0 < abs(price) < 10 ** 15):
+                continue
+            px[k] = {"px": price * 10.0 ** expo, "age_s": time.time() - pub}
+        except Exception:
+            pass
+        time.sleep(0.05)
+    return px
+
+
+def load_decimals(banks: dict) -> dict:
+    mints = {b["mint"] for b in banks.values()}
+    dec = {}
+    for m in mints:
+        try:
+            v = rpc("getAccountInfo", [m, {"encoding": "base64"}])["result"]["value"]
+            d = base64.b64decode(v["data"][0])
+            dec[m] = d[44]
+        except Exception:
+            pass
+        time.sleep(0.05)
+    return dec
+
+
+def health_scan(banks: dict, px: dict, dec: dict) -> dict:
+    t0 = time.time()
+    material = []
+    scanned = skipped_setup = stale_oracle = 0
+    for byte_val in range(256):
+        resp = rpc("getProgramAccounts", [PROG, {
+            "encoding": "base64",
+            "dataSlice": {"offset": BAL_OFF, "length": STRIDE * SLOTS},
+            "filters": [
+                {"memcmp": {"offset": 0, "bytes": disc("MarginfiAccount")}},
+                {"memcmp": {"offset": 40, "bytes": b58encode(bytes([byte_val]))}},
+            ],
+        }])
+        for r in resp.get("result") or []:
+            scanned += 1
+            raw = base64.b64decode(r["account"]["data"][0])
+            assets = liabs = 0.0
+            has_liab = bad = False
+            for i in range(SLOTS):
+                o = i * STRIDE
+                if o + STRIDE > len(raw) or raw[o] != 1:
+                    continue
+                bpk = b58encode(raw[o + 1:o + 33])
+                b = banks.get(bpk)
+                if not b:
+                    continue
+                p = px.get(b["oracle"])
+                d = dec.get(b["mint"])
+                if b["setup"] != 1:
+                    skipped_setup += 1
+                    bad = True
+                    break
+                if not p or d is None or d > 18:
+                    bad = True
+                    break
+                if p["age_s"] > 120:
+                    stale_oracle += 1
+                    bad = True
+                    break
+                a_sh = i80(raw[o + 40:o + 56]) * b["asset_sv"]
+                l_sh = i80(raw[o + 56:o + 72]) * b["liab_sv"]
+                # shares x share_value = native token units; /10^d -> tokens
+                assets += a_sh / (10 ** d) * p["px"] * b["aw_maint"]
+                liabs += l_sh / (10 ** d) * p["px"] * b["lw_maint"]
+            if bad:
+                continue
+            if liabs > 0:
+                has_liab = True
+            if has_liab:
+                material.append({
+                    "pk": r["pubkey"],
+                    "assets": round(assets, 2),
+                    "liabs": round(liabs, 2),
+                    "health": round((assets - liabs) / liabs, 4),
+                })
+    material = [m for m in material if m["liabs"] >= MIN_DEBT_USD]
+    material.sort(key=lambda m: m["health"])
+    return {
+        "ts": time.time(),
+        "kind": "liq_health_tier2",
+        "scanned": scanned,
+        "material": len(material),
+        "skipped_setup_slots": skipped_setup,
+        "stale_oracle_slots": stale_oracle,
+        "secs": round(time.time() - t0, 1),
+        "top20": material[:20],
+        "liquidatable_now": [m for m in material if m["health"] < 0][:20],
+    }
+
+
+def main() -> dict:
+    t0 = time.time()
+    banks = load_banks()
+    px = load_prices(banks)
+    dec = load_decimals(banks)
+    rec = health_scan(banks, px, dec)
+    rec["banks"] = len(banks)
+    rec["oracles_priced"] = len(px)
+    rec["mints"] = len(dec)
+    rec["total_secs"] = round(time.time() - t0, 1)
+    with open(LOG_PATH, "a") as f:
+        f.write(json.dumps(rec) + "\n")
+    return rec
+
+
+if __name__ == "__main__":
+    r = main()
+    print(json.dumps({k: v for k, v in r.items() if k != "top20" and k != "liquidatable_now"}, indent=1))
+    print("closest to liquidation:")
+    for m in r["top20"][:10]:
+        print(f"  {m['pk'][:12]}  health={m['health']:+.4f}  assets=${m['assets']:,.0f}  liabs=${m['liabs']:,.0f}")
+    if r["liquidatable_now"]:
+        print("LIQUIDATABLE NOW:")
+        for m in r["liquidatable_now"][:10]:
+            print(f"  {m['pk'][:12]}  health={m['health']:+.4f}  liabs=${m['liabs']:,.0f}")
