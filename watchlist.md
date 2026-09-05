@@ -4204,3 +4204,9 @@
 | 06:06 | solana | `ErXqkcfw…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$11,816 | name=a slow runner symbol=snail; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | A slow runner. |
 | 06:06 | solana | `D4QVMAGG…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,227 mc=$2,144 | name=Mine Pons symbol=MPONS; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=9 | crafting table is ready |
 | 06:06 | robinhood | `0x3c24e3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,513 mc=$3,617 | chain:robinhood no-audit-adapter | Walk. Find. Own. |
+| 07:26 | robinhood | `0x23bd03…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,274 mc=$88,744 | chain:robinhood no-audit-adapter | Worlds Best Asset |
+| 07:26 | robinhood | `0xe2bd4E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,139 mc=$155,132 | chain:robinhood no-audit-adapter | Nullark is a fixed-denomination, native-ETH shielded pool built around bundle-ch |
+| 07:26 | robinhood | `0x61778f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,080 mc=$63,407 | chain:robinhood no-audit-adapter | we are all NPCs until were not |
+| 07:26 | robinhood | `0xE45f30…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,787 mc=$78,982 | chain:robinhood no-audit-adapter | Dogecoin brings iconic meme energy, loyal community vibes, and Robinhood culture |
+| 07:26 | robinhood | `0xAF793D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,278 mc=$70,014 | chain:robinhood no-audit-adapter |  |
+| 07:26 | solana | `AN5jbsYD…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:97% | liq=$2,449 mc=$2,294 | name=Vlad's Dog symbol=SUNSHINE; contract:clean; rugcheck_score=32 lpLocked=100%; top10_ho | Sunshine, Vlad Tenev's rescue Lab mix, joins the family as a six-month-old compa |
