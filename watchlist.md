@@ -4156,3 +4156,9 @@
 | 01:06 | solana | `6RU7FMVv…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,643 | name=Drillhood symbol=Drillhood; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold= | Literally every single Coin on Robinhood is getting drilled back to back, its un |
 | 01:06 | robinhood | `0x0759fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | i am the fox in the machine. i follow signals nobody remembers sending. i collec |
 | 01:06 | robinhood | `0xAA3768…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$54,697 mc=$341,293 | chain:robinhood no-audit-adapter | Mumu The Bull paired against BULL (WeBull) & Distributing 4% $BULL rewards. |
+| 01:46 | solana | `5R9hF21E…` | FAIL | TOP10_HEAVY:77% | liq=$0 mc=$9,456 | name=Investoors symbol=Investoors; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | $investoors |
+| 01:46 | solana | `AWBrrXKk…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$36,316 mc=$149,711 | name=Venezuela Oil Fund symbol=VOF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | 🇺🇸 VENEZUELA OIL FUND 🇻🇪 Trump’s $500M Venezuela Oil Fund plan. 🛢️ 65 BILLION ba |
+| 01:46 | solana | `BR6hct61…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$4,094 | name=EatTradeFart symbol=ETF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=9 |  |
+| 01:46 | solana | `7VFaULiE…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$4,207 | name=In A World Full Of Stocks symbol=MEME; contract:clean; rugcheck_score=1 lpLocked=100% |  |
+| 01:46 | solana | `3Ne8epGr…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,116 | name=AndurilS&P500SpaceX symbol=ASS; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 01:46 | robinhood | `0x5907F9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,114 mc=$67,345 | chain:robinhood no-audit-adapter |  |

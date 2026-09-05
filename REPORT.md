@@ -5768,3 +5768,7 @@ First live-money confirmation that the CONV pipeline (§300 override + §301 vis
 ### §303b — 4th live round-trip green (5 Sep 2026, ~01:31 UTC)
 
 8o8ZSAS3 closed abort15 at **+0.00167 SOL (+3.3%)** after clearing the 15-min abort checkpoint and riding to +3.0% before the exit. CONV live book: **4/4 green, cumulative +0.00293 SOL** on 0.05 SOL sizing. Meanwhile the slot cap turned away 2 more CONV signals while occupied — per design; frequency is not the constraint, signal quality is.
+
+### §303c — 5th live round-trip green (5 Sep 2026, ~01:54 UTC)
+
+ABLxmJkH closed **+0.00123 SOL (+2.5%)**. CONV live book: **5/5 green, cumulative +0.00416 SOL** (~+1.5% avg per 0.05 SOL round trip, ~15 min hold each). Hit rate and zero-wipeout profile continue to match the shadow cohort. Halfway to the n=10 sizing-review checkpoint.
