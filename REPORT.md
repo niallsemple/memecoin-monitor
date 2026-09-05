@@ -6167,3 +6167,25 @@ Bank account = 1864 bytes. Empirically located on sample bank Guu5uBc8 (mint RHv
 Open for next pass: mint_decimals offset (byte@72 = 0x61, not decimals — layout has extra flags), oracle setup + keys offsets, and which of 0.65/2.5/1.5 map to asset_weight_init/maint vs liab_weight_init/maint (validate against a USDC bank whose weights are public: expect ~0.8/0.9 init/maint, liab ~1.25/1.1).
 
 Tier-2 health formula once mapped: assets = Σ asset_shares × asset_share_value × px × asset_weight_maint; liabs = Σ liab_shares × liab_share_value × px × liab_weight_maint; health = (assets − liabs) / liabs.
+
+## §345 — Bank layout corrected + USDC bank fully mapped (19:05 BST)
+
+**Correction to §344**: field order is **mint @8–39, group @40–71** (not the reverse). Proof: USDC mint bytes found at offset 8 of bank 2s37akK2, WSOL at offset 8 of CCKtUs6C; RHvmTfRooB… repeats at offset 40 across banks = shared group.
+
+**USDC bank (2s37akK2eyBbp8DZgCm7RtsaEz8eJP3Nxd4urLHQv7yB) field map:**
+
+| field | offset | value |
+|---|---|---|
+| mint | 8–39 | EPjFWdd5… (USDC) |
+| group | 40–71 | RHvmTfRooB… |
+| asset_share_value | 80–95 | 1.239794 |
+| liability_share_value | 96–111 | 1.380990 |
+| asset_weight_init | 296 | 1.000000 |
+| asset_weight_maint | 312 | 1.000000 |
+| liability_weight_init | 328 | 1.100000 |
+| liability_weight_maint | 344 | 1.050000 |
+| oracle keys region | ~512 | EnTJCSAq22Tk… (first key; array ~512–672) |
+
+Cross-check vs volatile-asset bank Guu5uBc8 (JUP-mint group): weights 296≈0.4, 312=0.65, 328=2.5, 344=1.5 — consistent semantics (stricter init, looser maint, liab weights >1). Decimals: read from the SPL mint account (byte 44) at decode time rather than hunting the u8 in the bank.
+
+Tier-2 remaining: oracle type byte (setup enum near offset ~500), oracle price reader (Pyth pull / Switchboard / migrated), then health = (Σassets×px×w_maint − Σliabs×px×w_maint)/liabs over the 81k shortlist with a ≥$100 materiality floor.
