@@ -6627,3 +6627,15 @@ forward sample), (2) marginfi liquidations (armed end-to-end incl. §377
 packet cap; field currently clean — waiting for a real candidate or a shock
 crossing). Flash-loan capital only matters for track 2. No further arb
 investment unless venue-fee economics change.
+
+## §379 — Entry-latency question CLOSED (owner's "5-10 min earlier" ask)
+
+Measured the actual cost of our birth->entry lag across all 27 recent live
+entries: median lag ~51s (7-131s), median price move birth->entry +0.3%
+(mean +0.5%). The 40s bundle-measurement window costs ~0.3-0.5% on entry —
+negligible next to the §376 exit-side win (+109% on the abort15 class) and
+cheap insurance given the §253 bundle gate blocks manufactured launches.
+The original "72-minute median entry lag" problem (§256) was already solved
+by §257; the reprice window myth ("everything happens in 2-10 min") does not
+show up in the first ~2 min of marks for coins we actually enter. No change
+to FAST_ENTRY_DELAY_S. Entry side is done; edge lives in exit timing.
