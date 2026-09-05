@@ -4174,3 +4174,9 @@
 | 02:46 | robinhood | `0x9A9595…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,149 mc=$27,278 | chain:robinhood no-audit-adapter | A systematic desk, issued as a token. A cut of every trade funds the book; the b |
 | 02:46 | robinhood | `0x290ef7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,668 mc=$78,696 | chain:robinhood no-audit-adapter | stonk powered by $IBM |
 | 02:46 | solana | `F8exVS4w…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$8,616 | name=Buy and Retire symbol=401k; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 03:06 | solana | `8zcnf2Dg…` | PASS | — | liq=$23,357 mc=$77,063 | name=Bike Anson symbol=BIKEANSON; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | They built a cage for the bull and a road for the man. Anson broke both. Now he  |
+| 03:06 | robinhood | `0x64a61c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | earn $bull hold $pit |
+| 03:06 | robinhood | `0x31af06…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,651 mc=$87,127 | chain:robinhood no-audit-adapter | SIGMA on pons paired with FIGMA |
+| 03:06 | solana | `HRA7zppo…` | FAIL | TOP10_HEAVY:61%; RC_WARN:Missing file metadata | liq=$0 mc=$15,411 | name=Solana Trenches 2023-2026 symbol=Trenches; contract:clean; rugcheck_score=16 lpLocked |  |
+| 03:06 | robinhood | `0xBE2F94…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$126,492 mc=$2,101,816 | chain:robinhood no-audit-adapter | The highest $IQ thing you can do is own the casino... on leverage  We are giving |
+| 03:06 | solana | `9H5xgKFT…` | PASS | — | liq=$28,400 mc=$125,607 | name=ANGRY FROG symbol=ANGRYFROG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Little Green Frog, Big Attitude. Angryfrog is a little green frog with a big att |

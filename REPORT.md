@@ -5780,3 +5780,7 @@ Dv7XaYZq closed **+0.00006 SOL (+0.1%)** after dipping to −0.7% mid-hold — t
 ### §303e — 7th live round-trip green (5 Sep 2026, ~03:00 UTC)
 
 wYiw944w closed **+0.00052 SOL (+1.0%)**. CONV live book: **7/7 green, cumulative +0.00474 SOL** (~+1.4% avg per round trip). Three more closes to the n=10 sizing-review checkpoint.
+
+### §303f — 8th live round-trip green (5 Sep 2026, ~03:28 UTC)
+
+6dYjtBu5 closed **+0.00052 SOL (+1.0%)**. CONV live book: **8/8 green, cumulative +0.00526 SOL**. Two closes to the n=10 sizing-review checkpoint.
