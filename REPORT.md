@@ -5764,3 +5764,7 @@ All three §302 entries closed via abort15 at ~15 min, sells landed on-chain (si
 | **total** | **+0.00126 SOL** | +0.84% on 0.15 deployed in ~15 min |
 
 First live-money confirmation that the CONV pipeline (§300 override + §301 visibility retry + exit stack) produces positive closed round-trips, consistent with the shadow cohort's small-loss/big-win shape (these three resolved as small wins; the cohort's carry comes from the occasional +16-27% runner). Wallet anchored at 2.007729424 SOL post-cycle (wallet_balance_log.jsonl started for exact future deltas — earlier ~2.07 figure was a stale estimate, not reconcilable from ledger). 4th CONV entry (8o8ZSAS3) opened ~01:11 UTC — one slot at a time, §302 cap working.
+
+### §303b — 4th live round-trip green (5 Sep 2026, ~01:31 UTC)
+
+8o8ZSAS3 closed abort15 at **+0.00167 SOL (+3.3%)** after clearing the 15-min abort checkpoint and riding to +3.0% before the exit. CONV live book: **4/4 green, cumulative +0.00293 SOL** on 0.05 SOL sizing. Meanwhile the slot cap turned away 2 more CONV signals while occupied — per design; frequency is not the constraint, signal quality is.
