@@ -1647,3 +1647,11 @@
 {"t": 1788615470.861569, "phase": "thread_start", "mint": "HxQrCSzHBmv8hyoiLw5k1XCmUdusa3Mde3SNbfcpump"}
 {"t": 1788615470.865205, "phase": "lt_loaded", "mint": "HxQrCSzHBmv8hyoiLw5k1XCmUdusa3Mde3SNbfcpump"}
 {"t": 1788615524.21504, "phase": "thread_done", "mint": "HxQrCSzHBmv8hyoiLw5k1XCmUdusa3Mde3SNbfcpump", "result": "skip: fast slot busy"}
+{"t": 1788616347.210979, "phase": "spawned", "mint": "HBA7WmUk7ufhK325eKSgiabiKUMRyDoXD2pWjM1vpump", "creator": "BXHKgYNUm1ywNmGLbGidKB6WCXAv2RfgDs4wvy7vi91v"}
+{"t": 1788616347.212251, "phase": "thread_start", "mint": "HBA7WmUk7ufhK325eKSgiabiKUMRyDoXD2pWjM1vpump"}
+{"t": 1788616347.2493062, "phase": "lt_loaded", "mint": "HBA7WmUk7ufhK325eKSgiabiKUMRyDoXD2pWjM1vpump"}
+{"t": 1788616420.767113, "phase": "thread_done", "mint": "HBA7WmUk7ufhK325eKSgiabiKUMRyDoXD2pWjM1vpump", "result": "entered"}
+{"t": 1788616437.620585, "phase": "spawned", "mint": "yic34a6kHU4WqKjCvWdcc77h4aGUPJcMXrDUe8Kpump", "creator": "7C4usCvWmkjL3XfH6wuvQAKFBBcb52idWa4mow7t7TLZ"}
+{"t": 1788616437.623219, "phase": "thread_start", "mint": "yic34a6kHU4WqKjCvWdcc77h4aGUPJcMXrDUe8Kpump"}
+{"t": 1788616437.627538, "phase": "lt_loaded", "mint": "yic34a6kHU4WqKjCvWdcc77h4aGUPJcMXrDUe8Kpump"}
+{"t": 1788616501.7117891, "phase": "thread_done", "mint": "yic34a6kHU4WqKjCvWdcc77h4aGUPJcMXrDUe8Kpump", "result": "skip: fast slot busy"}

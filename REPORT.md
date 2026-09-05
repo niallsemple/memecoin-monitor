@@ -5937,3 +5937,23 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Green/red tally unchanged: 26 green / 2 scratch-red / 1 wipeout.
 - Scale-up cohort unchanged: 7/10 done, −0.08958 SOL, win rate 5/7.
 - Monitoring loop now scans **all live buy/sell paths** (not just fast_birth conv entries) using the `ts` field — s60nm5fr hook activity will surface in every status check.
+
+## §326 — Exit-timing replay: abort15 vs abort5/6/7/8/10/12 across all 29 trades
+
+Method: replayed full mcap tape for every closed conv_override trade, simulated flat exit at fixed ages.
+
+| Exit rule | Total PnL (SOL) | vs actual |
+|---|---|---|
+| abort@5min | −0.00151 | wipeout avoided, all upside gone |
+| abort@6min | +0.00222 | ~breakeven before fees |
+| abort@7min | +0.00343 | ~breakeven before fees |
+| abort@8min | +0.00449 | ~breakeven; **net negative after ~0.002/trade fees** |
+| abort@10min | −0.08917 | rug (at 9min) already happened |
+| abort@12min | −0.08719 | same |
+| **actual (abort15+runner)** | **−0.06859** | rug cost −0.10, winners kept +0.031 |
+
+**Findings:**
+1. Winners need 12–16 min to develop — any flat exit ≤8 min forfeits ~85% of gross upside and lands below fee costs. Earlier aborts convert tail risk into fee bleed. Not viable.
+2. The SDbxhdgc rug cliff sat between minute 8 and 10 — only an exit ≤8 min dodges it, and that exit kills the strategy's economics.
+3. **Exit timing is the wrong lever.** Expectancy = p_rug × (−100%) + (1−p_rug) × avg_win. Measured: avg non-rug win +0.00112 SOL/trade; rug cost 0.10 at current size. Breakeven rug rate ≈ **1.1%** at 0.10 sizing (2.2% at 0.05). Measured gated rug rate: 3.7% (1-in-27).
+4. The two viable levers: (a) **better entry filtering** — cut rug rate 3–4× (target <1.1%), or (b) **rug-precursor kill-switch** — sub-10s liquidity/drawdown monitor that emergency-sells during the drain (a −50% catch would double the breakeven rug rate to ~2.2%). The SDbx tape shows the drain took <30s, so (b) needs a fast loop the current 20-min-pass tracker doesn't have.
