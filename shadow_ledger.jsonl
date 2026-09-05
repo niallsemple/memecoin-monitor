@@ -360,6 +360,7 @@
 {"mint": "Gah2rNVAbnEj2Gm6sMS1ixbVAXT7aNnqCskXNwtpump", "status": "closed", "eval_ts": 1788607066.32676, "entry_t": 1788607116.271293, "peak": 1.036, "freerolled": false, "exit_reason": "abort15", "ret": -0.0059}
 {"mint": "ENtaecVyFnzCRY2aLMgfyaGuj5zcMoLG1bUxsuxhpump", "status": "closed", "eval_ts": 1788608084.911123, "entry_t": 1788608099.360754, "peak": 1.234, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.1398}
 {"mint": "EgaiwstpogJH82P7BBoL4D9CJbSNcYrDCeFX8Despump", "status": "closed", "eval_ts": 1788608491.780086, "entry_t": 1788608696.1366231, "peak": 1.0, "freerolled": false, "exit_reason": "panic", "ret": -0.1423}
-{"mint": "2s2Gnsnu8UD6RZJnfFChj3TjBxXs125PYKcTTTtgpump", "status": "closed", "eval_ts": 1788609008.745452, "entry_t": 1788609057.135217, "peak": 1.191, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.144}
-{"mint": "GyT6j7jALXbH1VHp8XNF4Sf985jy9zoXDwu5yR1pump", "status": "open", "eval_ts": 1788610151.2068899, "entry_t": 1788610210.8858292, "peak": 1.02, "freerolled": false, "mark": -0.0202, "ret": null}
-{"mint": "3eGzbmMbmMdQu3ZasrTRMvPL79uYumKN8mAtW3Cupump", "status": "open", "eval_ts": 1788610286.9699268, "entry_t": 1788610303.292129, "peak": 1.061, "freerolled": false, "mark": 0.0192, "ret": null}
+{"mint": "2s2Gnsnu8UD6RZJnfFChj3TjBxXs125PYKcTTTtgpump", "status": "closed", "eval_ts": 1788609008.745452, "entry_t": 1788609057.135217, "peak": 1.213, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.144}
+{"mint": "GyT6j7jALXbH1VHp8XNF4Sf985jy9zoXDwu5yR1pump", "status": "closed", "eval_ts": 1788610151.2068899, "entry_t": 1788610210.8858292, "peak": 1.022, "freerolled": false, "exit_reason": "abort15", "ret": -0.0186}
+{"mint": "3eGzbmMbmMdQu3ZasrTRMvPL79uYumKN8mAtW3Cupump", "status": "closed", "eval_ts": 1788610286.9699268, "entry_t": 1788610303.292129, "peak": 1.16, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.1119}
+{"mint": "8M5Q7y3wxjjf1RjECsXGJBFUmfAiSJBYtQcQQv3Dpump", "status": "closed", "eval_ts": 1788611644.232437, "entry_t": 1788611649.9415538, "peak": 1.16, "freerolled": false, "exit_reason": "panic", "ret": -0.2695}

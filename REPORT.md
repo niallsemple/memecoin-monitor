@@ -5898,3 +5898,10 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 - Footprint: buy PI **0.12%**, sell PI **0.43%** — buy side well under the 1.2% threshold; sell PI highest of cohort so far but small in absolute terms.
 - Scale-up cohort: **3/10 done**, cumulative **+0.00540 SOL** (+4.5%, −0.14%, +1.1%); buy PIs 0.21/0.16/0.12%.
 - Live book: **25 closed — 23 green / 2 scratch-red**, cumulative **+0.02639 SOL**, zero wipeouts.
+
+## §321 — Trade #26 closed (n=26, scale-up 4/10)
+
+- **gz9VFREJ**: conv_override 0.10 SOL → **+0.00083 SOL (+0.8%)**, held ~16 min, exit `abort15` (scratch-green class).
+- Footprint: buy PI **0.24%**, sell PI **0.51%** — buy side fine; sell PI drifting up across cohort (0.15/0.01/0.43/0.51%), still small in absolute terms, watch at 0.20 sizing.
+- Scale-up cohort: **4/10 done**, cumulative **+0.00623 SOL** (+4.5%, −0.14%, +1.1%, +0.8%); buy PIs 0.21/0.16/0.12/0.24%.
+- Live book: **26 closed — 24 green / 2 scratch-red**, cumulative **+0.02722 SOL**, zero wipeouts.
