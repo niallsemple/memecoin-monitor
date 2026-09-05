@@ -4150,3 +4150,9 @@
 | 00:26 | robinhood | `0x533288…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$62,530 mc=$324,613 | chain:robinhood no-audit-adapter | Coins that pay their holders in real stock. |
 | 00:26 | robinhood | `0x2b4f29…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Equal is a token launchpad on Robinhood Chain.Create a token in one click. Trade |
 | 00:26 | solana | `Bw7KNf9Q…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,180 | name=dinosaur crap symbol=crap; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 01:06 | robinhood | `0x96B4AB…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,197 mc=$34,605 | chain:robinhood no-audit-adapter |  |
+| 01:06 | robinhood | `0x8a413d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,276 mc=$112,483 | chain:robinhood no-audit-adapter | crcl is the stock jerk is what we do with it. |
+| 01:06 | solana | `6QqyUFRo…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,276 | name=ELONGATE symbol=ELONGATE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 01:06 | solana | `6RU7FMVv…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,643 | name=Drillhood symbol=Drillhood; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold= | Literally every single Coin on Robinhood is getting drilled back to back, its un |
+| 01:06 | robinhood | `0x0759fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | i am the fox in the machine. i follow signals nobody remembers sending. i collec |
+| 01:06 | robinhood | `0xAA3768…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$54,697 mc=$341,293 | chain:robinhood no-audit-adapter | Mumu The Bull paired against BULL (WeBull) & Distributing 4% $BULL rewards. |

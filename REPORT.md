@@ -5751,3 +5751,16 @@ Fix (deployed): (1) §295 now checks the LIVE in-memory token dict first (passed
 All three would have been "skip: bundled launch" before §300. Entry prices ~flat at +5min (−0.6%/+0.3%/−0.6% vs entry mcap) — exit stack manages from here.
 
 **Defect found:** the one-slot exposure cap raced — three eval threads sleeping through the 150s visibility retry all woke within ~40s, each passed the slot check before any position was written, and all three bought. Exposure 0.15 SOL instead of the designed 0.05 max. Fix: `FE_SLOT_LOCK` + `FE_SLOT_CLAIMED` — an atomic slot claim immediately before the buy bridges the check→open_position window; claim released in the thread's finally. Deployed; max concurrent birth-entry exposure is again 0.05 SOL.
+
+## §303 — First live CONV round-trips: 3/3 GREEN (5 Sep 2026, ~01:12 UTC)
+
+All three §302 entries closed via abort15 at ~15 min, sells landed on-chain (sigs verified, err=None on all 6 wallet txs — 3 buys + 3 sells):
+
+| mint | pnl_sol | exit |
+|---|---|---|
+| S8wRRsrv | +0.00017 | abort15 |
+| uNMMbwMa | +0.00102 | abort15 |
+| uXsunQSV | +0.00007 | abort15 |
+| **total** | **+0.00126 SOL** | +0.84% on 0.15 deployed in ~15 min |
+
+First live-money confirmation that the CONV pipeline (§300 override + §301 visibility retry + exit stack) produces positive closed round-trips, consistent with the shadow cohort's small-loss/big-win shape (these three resolved as small wins; the cohort's carry comes from the occasional +16-27% runner). Wallet anchored at 2.007729424 SOL post-cycle (wallet_balance_log.jsonl started for exact future deltas — earlier ~2.07 figure was a stale estimate, not reconcilable from ledger). 4th CONV entry (8o8ZSAS3) opened ~01:11 UTC — one slot at a time, §302 cap working.
