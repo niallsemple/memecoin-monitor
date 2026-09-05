@@ -277,3 +277,4 @@
 | 00:26 | STOP | FiAum2V5 | £0.06 | trail-stop at 0.01x |
 | 03:47 | BUY | 9H5xgKFT | £7.14 | entry mc $150,674 | +41min |
 | 06:07 | STOP | 9H5xgKFT | £0.09 | trail-stop at 0.01x |
+| 08:06 | STOP | 5761e8gC | £4.60 | trail-stop at 0.85x |

@@ -4210,3 +4210,9 @@
 | 07:26 | robinhood | `0xE45f30…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,787 mc=$78,982 | chain:robinhood no-audit-adapter | Dogecoin brings iconic meme energy, loyal community vibes, and Robinhood culture |
 | 07:26 | robinhood | `0xAF793D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,278 mc=$70,014 | chain:robinhood no-audit-adapter |  |
 | 07:26 | solana | `AN5jbsYD…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:97% | liq=$2,449 mc=$2,294 | name=Vlad's Dog symbol=SUNSHINE; contract:clean; rugcheck_score=32 lpLocked=100%; top10_ho | Sunshine, Vlad Tenev's rescue Lab mix, joins the family as a six-month-old compa |
+| 08:06 | robinhood | `0xEcfE33…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,593 mc=$64,232 | chain:robinhood no-audit-adapter | Coco the Robinhood Dog |
+| 08:06 | solana | `6zbYeyBb…` | CAUTION | RC_WARN:High holder correlation | liq=$43,574 mc=$273,639 | name=Keyboard Cat symbol=KEYCAT; contract:clean; rugcheck_score=31 lpLocked=100%; top10_ho | Larp is the face behind Keycat. In the KOL meta, we need one true believer backi |
+| 08:06 | robinhood | `0xC5e20B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,497 mc=$20,022 | chain:robinhood no-audit-adapter |  |
+| 08:06 | robinhood | `0x7ad7b2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,001 mc=$246,011 | chain:robinhood no-audit-adapter |  |
+| 08:06 | robinhood | `0x8C69C5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,968 mc=$42,700 | chain:robinhood no-audit-adapter | $PLUMBER - Laying pipe on the plumbers chain |
+| 08:06 | robinhood | `0x6653A1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,164 mc=$10,740 | chain:robinhood no-audit-adapter | Fake it till you make it. |
