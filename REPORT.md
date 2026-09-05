@@ -6347,3 +6347,15 @@ Remaining before simulation: (a) assemble the tx for one target (start with smal
 **Post-fix rescan (exact-priced universe):** zero seizable liquidatable accounts. Five health=−1.0 remain — all $0.00 raw collateral, pure bad debt (settlement socializes loss; no liquidator payoff). Closest healthy accounts: +0.5% at $130-630 size.
 
 **The strategic picture:** marginfi's easy liquidations are captured instantly by incumbents; what remains is exactly where the engineering is hard — staked collateral, Kamino reserves, SVSP NAV pricing. Our scanner+sim chain is now *more* accurate than the filters that produce phantom queues. Next builds: (1) standing radar loop (rescan every ~2 min, sim-gate, alert); (2) our own marginfi liquidator account to unlock the STAKED class including GFxx; (3) Jupiter exit-liquidity probe for BADo3D6n.
+
+## §358 — Our marginfi liquidator account is LIVE on-chain (2026-09-05 ~20:05 BST)
+
+Init saga: keypair init + PDA init both panicked (anchor 1.0.2 account_loader.rs:169 = bytemuck length panic on group load) because I passed community group 2v4DXmm (1064B). Ground truth from a real on-chain creation tx: plain `marginfi_account_initialize` against the canonical group **4qp6Fx6tnZkY5Wropq9wUYgtFxXKwE6viZxFHg3rdAG8** (204/437 banks, all the ones we care about). Our account: **A91fDng3SdKxBMPq4DxUSE4LKqBR1g6tf3rC8ypvogRy**, authority = our wallet, tx 5aGdixKs3N…DHA8t confirmed, cost ~0.0155 SOL rent+fee. Wallet: ~1.715 SOL.
+
+**GFxx update:** re-sim with our clean account reaches the health gate — and the program now reports pre_health **+$1,376.68 (HEALTHY)**. The staked-collateral SVSP NAV premium means my earlier −0.51 was overstated-distressed; under program pricing the account is fine at current prices. It joins the watchlist, not the fire list.
+
+## §359 — Standing radar deployed in the 20-min tracker pass
+
+`liq_hunt.py` + tracker wiring (deployed): every pass runs the exact-price health scan; any health<0 account gets drilled for raw seizable collateral; seizable ≥$50 goes through the real liquidate tx in simulateTransaction with our account; only sim-verified opportunities land in `liq_opportunities.jsonl` with est_gross_usd (5% bonus − costs). Smoke test on the 5 bad-debt accounts: correctly drilled, zero seizable, no sims wasted.
+
+**Known coverage gaps (honest):** Kamino/Drift/Solend/JupLend/Staked-SVSP multiplier pricing still skipped in the scanner (40,529 slot-reads hidden) — those accounts surface only via sim when they cross. Kamino class also needs refresh_reserve bundling. Next: Jupiter exit-liquidity probe for the seize-side mints, then the flash-borrow→deposit→liquidate→swap→repay recipe from §337 for live fire.

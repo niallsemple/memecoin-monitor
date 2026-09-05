@@ -2203,7 +2203,7 @@
   "pnl_sol": 0.00281
  },
  "9SZabBzs7UrRwHDaGUviZfHpdazcMRmp9ZTzTMVepump": {
-  "open": true,
+  "open": false,
   "mode": "live",
   "venue": "pool",
   "entry_t": 1788630777.484017,
@@ -2211,8 +2211,8 @@
   "tokens": 20682508899,
   "tokens_left": 5170627225,
   "size_sol": 0.1,
-  "peak_mult": 1.7022339599176968,
-  "trough_mult": 1.0,
+  "peak_mult": 1.9897354799037958,
+  "trough_mult": 0.003665159999822789,
   "freerolled": true,
   "sol_recovered": 0.11481648224814954,
   "insider_overhang_pct": 79.42,
@@ -2220,6 +2220,12 @@
   "blocklist_feeders": 0,
   "entry_kind": "conv_override",
   "a3r_logged": true,
-  "nm_touch_t": 1788631692.810011
+  "nm_touch_t": 1788631692.810011,
+  "closed_reason": "trail_writeoff",
+  "exit_reason": "trail_writeoff",
+  "exit_t": 1788632800.6386938,
+  "exit_sig": null,
+  "pnl_sol": 0.01482,
+  "actual_fill_note": "write-off: est proceeds 0.000092 SOL below 0.001 floor; no sell submitted, dust tokens kept"
  }
 }

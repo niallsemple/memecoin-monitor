@@ -2293,6 +2293,29 @@ def run(ctx):
         stats["shadow_arb_positive"] = _scan.get("any_positive")
     except Exception:
         pass
+    try:
+        # §359: marginfi liquidation radar. Exact-price rescan (conf bands +
+        # emode + LST multipliers), then liq_hunt drills any health<0 account
+        # for raw seizable collateral and sim-gates it with OUR marginfi
+        # account (§358). Actionable verdicts -> liq_opportunities.jsonl.
+        import importlib.util as _ilu7
+        _s7 = _ilu7.spec_from_file_location(
+            "liq_health", str(MON / "liq_health.py"))
+        _lh = _ilu7.module_from_spec(_s7)
+        _s7.loader.exec_module(_lh)
+        _rec = _lh.main()
+        stats["liq_scanned"] = _rec.get("scanned")
+        stats["liq_candidates"] = len(_rec.get("liquidatable_now") or [])
+        stats["liq_closest"] = (_rec.get("top20") or [{}])[0].get("health")
+        if _rec.get("liquidatable_now"):
+            _s8 = _ilu7.spec_from_file_location(
+                "liq_hunt", str(MON / "liq_hunt.py"))
+            _lhu = _ilu7.module_from_spec(_s8)
+            _s8.loader.exec_module(_lhu)
+            _hits = _lhu.hunt(_rec)
+            stats["liq_actionable"] = sum(1 for h in _hits if h.get("actionable"))
+    except Exception:
+        pass
     return {"artifact": {
         "summary": (f"births={stats['births']} big_seeds={stats['big_seeds']} "
                     f"armed={stats['armed_births']} "

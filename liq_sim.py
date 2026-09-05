@@ -40,8 +40,8 @@ TOK = lt.b58dec("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
 LIQ_DISC = hashlib.sha256(b"global:lending_account_liquidate").digest()[:8]
 TRAILER = bytes.fromhex("0a04")  # as seen on the real tx (flags/version bytes)
 
-LIQ_STANDIN = "6oqK5Xy3y9mMjSP5gUUjJ8s1Yy1pQpz8De8dHHdQvdGS"   # real liquidator acct (unsigned stand-in)
-LIQ_AUTH = "12NZhrj5FRoqXKM2rSdiN3MF78AbeYckiR9FJ6wQcZcR"      # its authority (unchecked in sim)
+LIQ_STANDIN = "A91fDng3SdKxBMPq4DxUSE4LKqBR1g6tf3rC8ypvogRy"   # §358: OUR marginfi account (main group)
+LIQ_AUTH = "CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K"      # our wallet = its authority
 
 
 def pda(seeds, prog=PROG):
