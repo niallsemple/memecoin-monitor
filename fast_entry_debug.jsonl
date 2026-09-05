@@ -1554,3 +1554,8 @@
 {"t": 1788606436.3339221, "phase": "thread_start", "mint": "13Q4HJKLfV2sPfuSUUSUf9e6aKSVbj5AEuHLuvmWpump"}
 {"t": 1788606436.339972, "phase": "lt_loaded", "mint": "13Q4HJKLfV2sPfuSUUSUf9e6aKSVbj5AEuHLuvmWpump"}
 {"t": 1788606459.209291, "phase": "thread_done", "mint": "71UhScJFAJ9sfoXPv7E7uRVbkuFdxmPa4Viw384Tpump", "result": "skip: bundled launch"}
+{"t": 1788606654.73469, "phase": "thread_done", "mint": "13Q4HJKLfV2sPfuSUUSUf9e6aKSVbj5AEuHLuvmWpump", "result": "entered"}
+{"t": 1788607013.077902, "phase": "spawned", "mint": "Gah2rNVAbnEj2Gm6sMS1ixbVAXT7aNnqCskXNwtpump", "creator": "4M4X2Q2pDpaNEYwEVPJXEz1kMhDbZwpw6BT7k5SYo7nH"}
+{"t": 1788607013.078728, "phase": "thread_start", "mint": "Gah2rNVAbnEj2Gm6sMS1ixbVAXT7aNnqCskXNwtpump"}
+{"t": 1788607013.083333, "phase": "lt_loaded", "mint": "Gah2rNVAbnEj2Gm6sMS1ixbVAXT7aNnqCskXNwtpump"}
+{"t": 1788607066.3276942, "phase": "thread_done", "mint": "Gah2rNVAbnEj2Gm6sMS1ixbVAXT7aNnqCskXNwtpump", "result": "skip: fast slot busy"}
