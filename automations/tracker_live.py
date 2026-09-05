@@ -73,7 +73,7 @@ RPC_KEYS = MON / "rpc_keys.json"  # §79w: owner drops extra keyed endpoints her
 # in the first 2-10 min of life). On armed birth: scorecard instantly,
 # bundle-share at +40s, then curve_buy / Jupiter pool at ~+1 min.
 FAST_ENTRY = True
-FAST_ENTRY_SIZE = 0.05          # fixed small size during validation
+FAST_ENTRY_SIZE = 0.10          # §316: owner-approved scale-up step 2 (0.05→0.10); review price impact after 10 trades
 FAST_ENTRY_BUNDLE_GATE = 40.0   # §253: skip if outsider_pct >= this
 # §300: CONV override — a birth window with >=2 SELECTIVE proven winners
 # bypasses the §262 bundle block (shadow n=16 closed: +0.9% avg vs -7.4%

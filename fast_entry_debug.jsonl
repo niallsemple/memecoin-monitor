@@ -1519,3 +1519,7 @@
 {"t": 1788603038.6564171, "phase": "thread_start", "mint": "LWtnACFPXpkdr3BfvEzZTfZZXgj6FdafJSRgU9ipump"}
 {"t": 1788603038.661613, "phase": "lt_loaded", "mint": "LWtnACFPXpkdr3BfvEzZTfZZXgj6FdafJSRgU9ipump"}
 {"t": 1788603092.409448, "phase": "thread_done", "mint": "LWtnACFPXpkdr3BfvEzZTfZZXgj6FdafJSRgU9ipump", "result": "skip: fast slot busy"}
+{"t": 1788603521.5618858, "phase": "spawned", "mint": "Uxujsivo4znqBcgifzyxfPrdYPHTK1AfhTDdpgqpump", "creator": "6neppHZ7pY14r9XHFdTbos4BuhQrHEazTdk15bKViw3E"}
+{"t": 1788603521.5623412, "phase": "thread_start", "mint": "Uxujsivo4znqBcgifzyxfPrdYPHTK1AfhTDdpgqpump"}
+{"t": 1788603521.564953, "phase": "lt_loaded", "mint": "Uxujsivo4znqBcgifzyxfPrdYPHTK1AfhTDdpgqpump"}
+{"t": 1788603589.130176, "phase": "thread_done", "mint": "Uxujsivo4znqBcgifzyxfPrdYPHTK1AfhTDdpgqpump", "result": "entered"}

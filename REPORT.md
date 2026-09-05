@@ -5868,3 +5868,9 @@ Ten closed live round-trips, all 0.05 SOL, all conv_override entries, all abort1
 
 - **eKXPiPR9**: conv_override 0.05 SOL → **+0.00021 SOL (+0.4%)**, exit `abort15` (scratch-green class).
 - Live book: **21 closed**, cumulative **+0.02035 SOL**, zero wipeouts.
+
+## §316 — Scale-up step 2 live (owner-approved)
+
+- Entry size flipped **0.05 → 0.10 SOL** (FAST_ENTRY_SIZE) per owner directive 2026-09-05.
+- Review gate: after 10 trades at 0.10, check buy price impact (<1.2% target) and win rate (>85%) before any further step.
+- Book at flip: 21 closed, +0.02035 SOL cumulative, 90% win rate, zero wipeouts.
