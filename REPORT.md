@@ -6332,3 +6332,18 @@ Remaining before simulation: (a) assemble the tx for one target (start with smal
 **Housekeeping:** disabled the 19:09 checkpoint automation (automation_c86e6816) — it never fired and its pivot mission is already executed here.
 
 **Next:** (a) price.rs remaining-account composition for KAMINO/STAKED banks → patch liq_sim; (b) re-sim all 3 candidates; (c) Jupiter exit-liquidity check for BADo3D6n + sctmB7GP; (d) init our own marginfi liquidator account for clean live fire; (e) loop liq_health as a standing radar (candidates appear/disappear with price moves).
+
+## §357 — Exact-pricing rescan: the field is picked over; the residual edge is the engineering-hard remnant (2026-09-05 ~19:45 BST)
+
+**Offset fix:** oracle_setup is byte @609, not 608 (608 = operational_state; all our banks read "1" = Operational, which had accidentally worked as a filter).
+
+**Multiplier fidelity added:** PythLST (setup 22) banks now priced at SOL px × pool.total_lamports/pool_token_supply (SPL stake-pool layout u64 @258/@266, verified on Sanctum pool pyZMBjpW: rate 1.0976). Kamino/Drift/Solend/JupLend/Staked-SVSP/PT setups are now SKIPPED (40,529 slot-reads) instead of mispriced — their exchange-rate multipliers are not yet modelled.
+
+**Sim results with corrected remaining-accounts schema** (per-bank count by setup→tag: DEFAULT/SOL=2, KAMINO=3 [bank, oracle, reserve=keys1], PythLST=3 [bank, oracle, pool=keys1], STAKED=5 [bank, oracle, mint=keys1, pool=keys2, onramp=keys3]):
+- 9VtU887m9HCJ: schema FIXED, but program says pre-health **+64.9** — my scanner's −0.065 was an LST-multiplier phantom. Third false-positive class caught by the sim gate.
+- FuNhzGJ54Yx2: ReserveStale 6206 — Kamino banks need a refresh_reserve ix bundled before liquidate. Real bots do this; documented, deferred ($10 EV not worth it).
+- GFxxnJpDAjb3: liquidatee side PASSES health gate; fails only on the liquidator side — the borrowed stand-in account can't hold STAKED collateral (AssetTagMismatch 6047). Fix: our own fresh marginfi account (SOL borrow + STAKED collateral is a permitted mix). **This one is REAL: ~$12.6k SOL debt, ~$7-8k seizable staked collateral.**
+
+**Post-fix rescan (exact-priced universe):** zero seizable liquidatable accounts. Five health=−1.0 remain — all $0.00 raw collateral, pure bad debt (settlement socializes loss; no liquidator payoff). Closest healthy accounts: +0.5% at $130-630 size.
+
+**The strategic picture:** marginfi's easy liquidations are captured instantly by incumbents; what remains is exactly where the engineering is hard — staked collateral, Kamino reserves, SVSP NAV pricing. Our scanner+sim chain is now *more* accurate than the filters that produce phantom queues. Next builds: (1) standing radar loop (rescan every ~2 min, sim-gate, alert); (2) our own marginfi liquidator account to unlock the STAKED class including GFxx; (3) Jupiter exit-liquidity probe for BADo3D6n.

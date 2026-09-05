@@ -68,6 +68,14 @@ def i80(b: bytes) -> float:
     return int.from_bytes(b, "little", signed=True) / F48
 
 
+# Exact-pricing setups: 3 = PythPushOracle (multiplier-free). 22 = PythLST gets its
+# SPL-stake-pool multiplier applied in load_multipliers. All other setups
+# (Kamino/Drift/Solend/JupLend/Staked-SVSP/Switchboard/Scope/Fixed/PT) carry
+# exchange-rate multipliers we do not model yet -> skipped, not mispriced.
+PYTH_SETUPS = {3}
+LST_SETUPS = {22}
+
+
 def load_banks() -> dict:
     res = rpc("getProgramAccounts", [PROG, {"encoding": "base64",
               "filters": [{"memcmp": {"offset": 0, "bytes": disc("Bank")}}]}])["result"]
@@ -93,8 +101,11 @@ def load_banks() -> dict:
             "liab_sv": i80(raw[96:112]),
             "aw_maint": i80(raw[312:328]),
             "lw_maint": i80(raw[344:360]),
-            "setup": raw[608],
+            "op_state": raw[608],   # 1=Operational; only Initial margin cares
+            "setup": raw[609],      # OracleSetup discriminant (§357 fix: was 608)
             "oracle": b58encode(raw[610:642]),
+            "oracle2": b58encode(raw[642:674]),  # LST stake pool / kamino reserve
+            "mult": None,           # set by load_multipliers
             "risk_tier": risk_tier,
             "emode_tag": emode_tag,
             "emode_entries": entries,
@@ -103,7 +114,7 @@ def load_banks() -> dict:
 
 
 def load_prices(banks: dict) -> dict:
-    keys = {b["oracle"] for b in banks.values() if b["setup"] == 1}
+    keys = {b["oracle"] for b in banks.values() if b["setup"] in PYTH_SETUPS}
     px = {}
     for k in keys:
         try:
@@ -126,6 +137,25 @@ def load_prices(banks: dict) -> dict:
             pass
         time.sleep(0.05)
     return px
+
+
+def load_multipliers(banks: dict) -> None:
+    """PythLST banks: LST/SOL rate = pool.total_lamports / pool.pool_token_supply
+    (SPL stake pool layout, u64 @258 / @266 — verified vs Sanctum pool §357)."""
+    for b in banks.values():
+        if b["setup"] in PYTH_SETUPS:
+            b["mult"] = 1.0
+        elif b["setup"] in LST_SETUPS:
+            try:
+                v = rpc("getAccountInfo", [b["oracle2"], {"encoding": "base64"}])["result"]["value"]
+                d = base64.b64decode(v["data"][0])
+                tl = struct.unpack("<Q", d[258:266])[0]
+                pts = struct.unpack("<Q", d[266:274])[0]
+                if tl > 0 and pts > 0:
+                    b["mult"] = tl / pts
+            except Exception:
+                pass
+            time.sleep(0.05)
 
 
 def load_decimals(banks: dict) -> dict:
@@ -170,7 +200,7 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                     continue
                 p = px.get(b["oracle"])
                 d = dec.get(b["mint"])
-                if b["setup"] != 1:
+                if b["mult"] is None:
                     skipped_setup += 1
                     bad = True
                     break
@@ -190,8 +220,8 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                 slots.append({"b": b,
                               "a_nat": a_sh / (10 ** d),
                               "l_nat": l_sh / (10 ** d),
-                              "px_lo": p["px"] - band,
-                              "px_hi": p["px"] + band})
+                              "px_lo": (p["px"] - band) * b["mult"],
+                              "px_hi": (p["px"] + band) * b["mult"]})
             if bad:
                 continue
             liab_slots = [s for s in slots if s["l_nat"] > 0]
@@ -247,6 +277,7 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
 def main() -> dict:
     t0 = time.time()
     banks = load_banks()
+    load_multipliers(banks)
     px = load_prices(banks)
     dec = load_decimals(banks)
     rec = health_scan(banks, px, dec)

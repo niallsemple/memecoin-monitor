@@ -77,6 +77,36 @@ def active_slots(raw: bytes):
     return out
 
 
+def bank_remaining(bpk: str):
+    """Remaining accounts for one active balance, per
+    get_remaining_accounts_per_bank / get_remaining_accounts_per_asset_tag.
+    Count from oracle_setup when explicitly mapped, else from asset_tag:
+    DEFAULT/SOL=2, KAMINO/DRIFT/SOLEND/JUPLEND=3, STAKED=5 (5th = onramp).
+    """
+    raw = acct_raw(bpk)
+    setup, tag = raw[609], raw[785]
+    keys = [raw[610 + 32 * k:642 + 32 * k] for k in range(5)]
+    SETUP_COUNT = {8: 1, 13: 2, 14: 2, 17: 2, 19: 3, 20: 4, 21: 4,
+                   22: 3, 23: 4, 24: 4, 25: 3, 26: 2}
+    TAG_COUNT = {0: 2, 1: 2, 2: 5, 3: 3, 4: 3, 5: 3, 6: 3}
+    count = SETUP_COUNT.get(setup) or TAG_COUNT.get(tag)
+    if count is None:
+        raise RuntimeError(f"unknown remaining count for {bpk} setup={setup} tag={tag}")
+    out = [(lt.b58dec(bpk), False, False)]
+    if count >= 2:
+        out.append((keys[0], False, False))
+    if count >= 3:
+        out.append((keys[1], False, False))
+    if count >= 4:
+        out.append((keys[2], False, False))
+    if count >= 5:
+        onramp = keys[3] if keys[3] != bytes(32) else None
+        if onramp is None:
+            raise RuntimeError(f"staked onramp PDA derivation needed for {bpk}")
+        out.append((onramp, False, False))
+    return out
+
+
 def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int):
     banks = load_banks()
     ab_raw = acct_raw(asset_bank)
@@ -108,16 +138,14 @@ def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amou
     # §354: remaining schema from marginfi-v2 source (liquidate.rs):
     # [asset_oracle, liab_oracle, liquidator_obs pairs..., liquidatee_obs pairs...]
     # args trailer = u8 len(liquidatee remaining) + u8 len(liquidator remaining).
-    liq_pairs, tee_pairs = [], []
+    liq_accts, tee_accts = [], []
     for bpk in active_slots(liq_raw):
-        braw = acct_raw(bpk)
-        liq_pairs += [(lt.b58dec(bpk), False, False), (braw[610:642], False, False)]
+        liq_accts += bank_remaining(bpk)
     for bpk in active_slots(tee_raw):
-        braw = acct_raw(bpk)
-        tee_pairs += [(lt.b58dec(bpk), False, False), (braw[610:642], False, False)]
-    A.extend(liq_pairs)
-    A.extend(tee_pairs)
-    data = LIQ_DISC + struct.pack("<Q", asset_amount) + struct.pack("<BB", len(tee_pairs), len(liq_pairs))
+        tee_accts += bank_remaining(bpk)
+    A.extend(liq_accts)
+    A.extend(tee_accts)
+    data = LIQ_DISC + struct.pack("<Q", asset_amount) + struct.pack("<BB", len(tee_accts), len(liq_accts))
     return [(PROG, A, data)]
 
 
