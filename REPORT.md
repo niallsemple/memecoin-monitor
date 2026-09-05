@@ -6211,3 +6211,20 @@ First full run of `liq_health.py` (paper/recon):
   - GFxxnJpDAjb3… liabs $13,876 → health −0.5134; plus small-debt dust at health −1.0.
 - Caveats before trusting: 18,967 slot-reads skipped (oracle_setup ≠ 1 — legacy Pyth push / Switchboard banks excluded; accounts containing them dropped entirely), 692 stale (>120s). Persistent health<0 whales could be (a) real unclaimed bad debt, (b) decode edge cases, or (c) accounts whose collateral moved after scan. Validation next: refetch top accounts individually and cross-check against marginfi UI/API before treating as opportunity.
 - Formula: health = (Σ a_sh×asset_sv×px×aw_maint − Σ l_sh×liab_sv×px×lw_maint) / liabs, shares÷10^decimals.
+
+## §348 — VALIDATED: liquidatable whales are real, collateral is liquid JLP (18:40 BST)
+
+Individual refetch + recompute of the top accounts matches the scan exactly (decode is sound):
+
+| account | collateral | debt | health |
+|---|---|---|---|
+| Bry1WUdXtDN5… | $358,623 JLP | $270,193 SOL-bank | **−0.216** |
+| 57WvwCCthAhm… | $231,007 JLP | $185,686 USDC | **−0.230** |
+| 9p95Kj1CKCNQ… | $92,447 JLP | $70,180 USDC | **−0.185** |
+| GFxxnJpDAjb3… | $7,106 | $12,610 SOL-bank | **−0.513** |
+
+Key facts:
+- Collateral token 27G8MtK7… = **JLP (Jupiter Perps LP)** — oracle $4.48 (57s fresh), Jupiter exit-liquidity test: $10k sells at **0.1% impact** across GoonFi/Manifest/Meteora/Whirlpool. Not an illiquid-token trap.
+- Small health=−1.0 accounts are zero-collateral abandoned bad debt (unprofitable to touch). The whales are NOT — they hold saleable collateral.
+- **Why are they unclaimed?** Working thesis (matches §337 doc): marginfi's Aug 25 2026 program upgrade broke `marginfi-client-v2` flash-loan/liquidation paths and the Sep 4 oracle migration forced SDK ≥2.8.0 — the incumbent liquidator fleet is likely degraded. These accounts may be visible-but-unclaimed precisely because the old tooling is broken.
+- Next: (1) confirm protocol-side liquidatability (simulate a marginfi liquidate ix on a fork / or check recent successful liquidation txs for these banks), (2) size the capture: liquidation incentive × debt minus execution costs, (3) build the atomic liquidate-with-flash-loan tx per §337 recipe.

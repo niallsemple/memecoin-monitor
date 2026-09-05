@@ -1873,3 +1873,8 @@
 {"t": 1788629593.1672478, "phase": "spawned", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump", "creator": "2TuQ5gYvhrv3G91QEwgLw2UMiZZsxL5yA7WFdnrFrioX"}
 {"t": 1788629593.168258, "phase": "thread_start", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump"}
 {"t": 1788629593.17412, "phase": "lt_loaded", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump"}
+{"t": 1788629607.3247511, "phase": "spawned", "mint": "AMBCpX7QcfJLJGaNYQMg1Qd14GaCYkRTgH6VTbkopump", "creator": "HLefaXzS1vpyMfsX3G2o4S2kbSQ8G8AegWgYqdH7r9mT"}
+{"t": 1788629607.3257651, "phase": "thread_start", "mint": "AMBCpX7QcfJLJGaNYQMg1Qd14GaCYkRTgH6VTbkopump"}
+{"t": 1788629607.3323672, "phase": "lt_loaded", "mint": "AMBCpX7QcfJLJGaNYQMg1Qd14GaCYkRTgH6VTbkopump"}
+{"t": 1788629656.066957, "phase": "thread_done", "mint": "AMBCpX7QcfJLJGaNYQMg1Qd14GaCYkRTgH6VTbkopump", "result": "skip: bundled launch"}
+{"t": 1788629665.067341, "phase": "thread_done", "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump", "result": "entered"}
