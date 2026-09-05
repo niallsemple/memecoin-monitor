@@ -4258,3 +4258,9 @@
 | 21:26 | robinhood | `0xd49f8d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,751 mc=$245,759 | chain:robinhood no-audit-adapter | All the trading fees pile into one pot, and there's a bubble machine everyone's  |
 | 21:26 | solana | `EcZMqqYx…` | PASS | — | liq=$48,540 mc=$333,237 | name=Stonk Guy symbol=STONKGUY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | Stonk Guy is built different—buying dips, chasing green candles, and sending Sol |
 | 21:26 | robinhood | `0xD61bfF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,727 mc=$88,771 | chain:robinhood no-audit-adapter | $1 is all you need |
+| 21:46 | robinhood | `0x5647F4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,970 mc=$81,688 | chain:robinhood no-audit-adapter |  |
+| 21:46 | solana | `gUKni96D…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,108 | name=homo symbol=hoмо; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.6% | $homo is born from FOMO, a parody character for everyone who panic-buys the next |
+| 21:46 | robinhood | `0x545233…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,252 mc=$89,809 | chain:robinhood no-audit-adapter | Vera is the strongest AI CPU From NVIDIA  $VERA is one of the first onchain CPU' |
+| 21:46 | solana | `BRiPubrb…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:83% | liq=$4,984 mc=$5,867 | name=just a normal dude symbol=ELON; contract:clean; rugcheck_score=27 lpLocked=100%; top1 | Affirm's Max Levchin says Elon Musk is "just a normal dude."  His takeaway is si |
+| 21:46 | robinhood | `0xE74159…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,386 mc=$306,420 | chain:robinhood no-audit-adapter | A computer on every desk and in every home |
+| 21:46 | solana | `2e2iYy7G…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$21,992 | name=BILLY symbol=BILLY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=63.9% | Billy |
