@@ -6228,3 +6228,19 @@ Key facts:
 - Small health=−1.0 accounts are zero-collateral abandoned bad debt (unprofitable to touch). The whales are NOT — they hold saleable collateral.
 - **Why are they unclaimed?** Working thesis (matches §337 doc): marginfi's Aug 25 2026 program upgrade broke `marginfi-client-v2` flash-loan/liquidation paths and the Sep 4 oracle migration forced SDK ≥2.8.0 — the incumbent liquidator fleet is likely degraded. These accounts may be visible-but-unclaimed precisely because the old tooling is broken.
 - Next: (1) confirm protocol-side liquidatability (simulate a marginfi liquidate ix on a fork / or check recent successful liquidation txs for these banks), (2) size the capture: liquidation incentive × debt minus execution costs, (3) build the atomic liquidate-with-flash-loan tx per §337 recipe.
+
+## §349 — Liquidation economics: net EV table with real exit quotes (18:45 BST)
+
+Fee structure (marginfi/Project 0 docs, authoritative): borrower pays **5% penalty** on liquidated debt — **2.5% to liquidator**, 2.5% to insurance fund. Health uses maintenance weights (as implemented §347) plus oracle confidence-interval adjustments (not yet in our math — edge cases only).
+
+Net EV per account = 2.5% × debt repaid − JLP exit impact (live Jupiter quote at seized size) − ~$3 tx/priority costs. Flash-funded (0% fee per §337), so **zero capital at risk beyond gas**:
+
+| account | debt | seize (×1.05) | JLP exit impact | net EV |
+|---|---|---|---|---|
+| Bry1WUdXtDN5… | $270,193 | $283,703 | 0.37% | **+$5,691** |
+| 57WvwCCthAhm… | $185,686 | $194,970 | 0.37% | **+$3,925** |
+| 9p95Kj1CKCNQ… | $70,180 | $73,689 | 0.29% | **+$1,535** |
+| GFxxnJpDAjb3… | $12,610 | $13,240 | 0.18% | **+$288** |
+| **total** | | | | **≈ +$11,439** |
+
+JLP liquidity is deep (0.37% on $283k). Open protocol questions before building the tx: (a) partial-liquidation caps (may limit per-tx size → multiple txs), (b) post-liquidation health-improvement requirement, (c) CONF_INTERVAL adjustments could shift borderline health. Next build: construct the atomic flash-liquidate-swap tx and simulate (simulateTransaction) against mainnet state — paper only until owner approves live fire.
