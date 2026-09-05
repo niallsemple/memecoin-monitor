@@ -6639,3 +6639,23 @@ The original "72-minute median entry lag" problem (§256) was already solved
 by §257; the reprice window myth ("everything happens in 2-10 min") does not
 show up in the first ~2 min of marks for coins we actually enter. No change
 to FAST_ENTRY_DELAY_S. Entry side is done; edge lives in exit timing.
+
+## §380 — Tracker scheduler overlap-skip: root cause + fix (LIVE RELIABILITY)
+
+Symptom: exit_watch stopped managing a live 0.10-SOL position for 29 min
+(21:41->22:11 BST). The open position sat through its abort window with no
+watcher. Manual exit_watch closed it at abort15 r=1.004 (+0.0004).
+
+Root cause: the 20-min interval trigger skips a fire while the previous run
+is still active. Pass total = WINDOW_S(16m) + post-window tail (liq scan,
+paper scorer, arb shadow = 2-4.7m) = 18-20.7 min. Whenever the tail pushes a
+pass past 20m, the next fire is skipped — observed holes 19:25->20:24 UTC
+(~80 min blind) and 20:45->21:12 UTC. During holes: no births, no exits, no
+shock watcher, no liq scan.
+
+Fix: WINDOW_S 16m -> 13.5m so pass total stays ~15.5-18m < 20m grid. Plus a
+manual run was triggered to restart management immediately. Deployed.
+
+Watch item: if holes persist (check run history next turns), escalate to a
+cron trigger (fires on wall-clock regardless) or split the heavy tail into
+its own automation.

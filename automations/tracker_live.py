@@ -45,7 +45,12 @@ SNAPS = MON / "mfg_tokens.jsonl"
 STATE = MON / "mfg_state.json"
 KEYFILE = MON / "helius_key.txt"
 PUMP_WSS = "wss://pumpportal.fun/data-api/real-time"
-WINDOW_S = 16 * 60  # §160: 14m -> 16m. Observed total = window + ~1.5-2.3m
+WINDOW_S = 13.5 * 60  # §380: 16m -> 13.5m. The interval scheduler skips a
+# fire when the previous run is still active; pass total = window + 2-4.7m
+# scan/scorer tail, and at 16m the total crossed 20m on busy passes —
+# producing multi-fire holes (19:25->20:24 UTC, then 20:45->21:12 UTC, live
+# position unmanaged 29 min until manual exit_watch). At 13.5m the total
+# stays ~15.5-18m, safely under the 20m grid.
                     # post-processing (~16.3m max), so 16m finishes ~18.5m <
                     # 20m interval — next trigger never skips — while shrinking
                     # the no-watcher gap from ~4-5m to ~1-2m (drain exposure).

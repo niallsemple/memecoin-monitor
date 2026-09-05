@@ -4252,3 +4252,9 @@
 | 20:46 | robinhood | `0xEe513e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Click a button one million times. Watch your screen get blurrier and your priori |
 | 20:46 | robinhood | `0x52638B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$2,515 | chain:robinhood no-audit-adapter | Astramon is an onchain collectible card platform built around sealed-card gacha, |
 | 20:46 | robinhood | `0x491D91…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$49,219 mc=$272,907 | chain:robinhood no-audit-adapter | Bears season off now. Time to die for them. |
+| 21:26 | solana | `9TBjqThc…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$0 mc=$33,656 | name=2pac symbol=2pac; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=46.5% | 2pac, but as a two pack. |
+| 21:26 | robinhood | `0x349957…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Build your dream island, achieve quests, open lucky boxes, visit your friends, a |
+| 21:26 | solana | `Gjs2FksG…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$34,447 mc=$176,486 | name=employim symbol=employim; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Another shift. Another mountain of boxes. Still pushing forward. 📦 |
+| 21:26 | robinhood | `0xd49f8d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,751 mc=$245,759 | chain:robinhood no-audit-adapter | All the trading fees pile into one pot, and there's a bubble machine everyone's  |
+| 21:26 | solana | `EcZMqqYx…` | PASS | — | liq=$48,540 mc=$333,237 | name=Stonk Guy symbol=STONKGUY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | Stonk Guy is built different—buying dips, chasing green candles, and sending Sol |
+| 21:26 | robinhood | `0xD61bfF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,727 mc=$88,771 | chain:robinhood no-audit-adapter | $1 is all you need |
