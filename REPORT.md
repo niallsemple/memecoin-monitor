@@ -6295,3 +6295,18 @@ PDA seeds confirmed byte-exact against real tx 8V1k2f74 (liab bank DMoqjmsu):
 **Every account in the liquidate instruction is now derivable from data we already read natively** — no SDK, no guesswork. The only account we must create is our own liquidator MarginfiAccount (one init tx, ~rent-only cost); everything else is derive-and-pass.
 
 Remaining before simulation: (a) assemble the tx for one target (start with smallest whale GFxxnJpDAjb3, debt $12.6k, to minimise blast radius), (b) simulateTransaction with sigVerify=false against mainnet, (c) if clean, present live-fire plan to owner (needs: marginfi account init + flash-loan begin/end wrapping per Project 0 constraints — one flash loan per tx, fixed positions, no CPI).
+
+## §353-355 — Simulation harness WORKS; the whales were false positives (19:08 BST)
+
+**§353 Layout corrections**: Bank: mint @8, mint_decimals @40 (u8), group @41–72 (not @40). MarginfiAccount authority @40 confirmed.
+
+**§354 Instruction spec from marginfi-v2 source** (github.com/0dotxyz/marginfi-v2, liquidate.rs):
+- Args: `asset_amount u64 + liquidatee_accounts u8 + liquidator_accounts u8` (real tx's `0a04` trailer = 10 + 4 remaining accounts ✓).
+- Remaining accounts: `[asset_oracle, liab_oracle, liquidator_obs pairs…, liquidatee_obs pairs…]` — liquidatee's are sliced from the END, counts given in args.
+- Fees: per-liab-bank configurable (`liquidation_liquidator_fee` / `liquidation_insurance_fee`, centi-encoded u32, 0 → default 2.5% each).
+- Liquidator mechanics: repay draws from liquidator's own deposit in the liab bank first, then BORROWS the rest — post-tx init-weight health must pass. Seized collateral lands on our account before the final health check. (Shapes the flash-deposit→liquidate→withdraw→swap→repay atomic recipe.)
+- Liquidatee must be pre-liquidation UNHEALTHY and post-liquidation BETTER.
+
+**§355 Simulation result — the critical catch**: after 4 schema iterations the tx executed to the health gate and the protocol said **"HealthyAccount (6068)": pre_liquidation_health = +$32,616** (assets $227,634 vs liabs $195,018). Our scanner said −0.23. Root cause: **our health math omits oracle confidence-interval adjustments** (program prices assets LOW-bias, liabs HIGH-bias using the conf field; JLP's conf ≈ 1.5% — 227,634/231,007 = 0.985 exactly matches). Possibly emode too. The "unclaimed whales" were never liquidatable — incumbent bots aren't broken, they just read the conf bands.
+- **Scanner fix (next)**: decode conf @81 from Pyth pull accounts; assets use px−k·conf, liabs px+k·conf; re-rank. The pipeline (Tier-1 → Tier-2 → sim) is proven end-to-end; this is a pricing-fidelity patch, not a rebuild.
+- Value delivered this session: full liquidation tx construction validated against the live program — when a TRUE health<0 account appears, we can simulate in ~1 min.
