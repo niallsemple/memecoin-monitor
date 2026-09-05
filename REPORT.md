@@ -6023,3 +6023,10 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 - **Shadow out-of-sample tally: 2/2 correct** (9ejN CUT → rugged −100%; zCXe KEEP → +0.5%).
 - Live book: **33 closed**, cumulative **−0.26170 SOL**.
 - New entry HyPToSzn opened (system still trading at 0.10 pending owner's §330 decision).
+
+## §332 — Trade #34 + framework integration (DARWIN Training Lab)
+
+- **HyPToSzn**: conv_override 0.10 SOL → **+0.00169 SOL (+1.7%)**, exit `abort15`. Shadow said KEEP (r=1.0032 @3.66m) — correct. **Shadow OOS tally: 3/3.**
+- Ledger fully reconciled: the 40-min-window writeoff was 9ejN1aLT's own row (ts at window edge); hook attempt HxQrCSzH (0.0812) blocked by §262 again — no untracked spend.
+- Live book: **34 closed**, cumulative **−0.26001 SOL**.
+- **Adopted the DARWIN Training Lab framework** (docs/DARWIN_TRAINING_LAB.md): created `HYPOTHESES.md` — a Phase-12 registry with status ladder. H2 (abort3_if_red) is the first LIVE CANDIDATE; H3/H4 marked FAILED; H6 logged the deployer_pct 79.31 data bug as a blocking fix for trusting the insider gates.
