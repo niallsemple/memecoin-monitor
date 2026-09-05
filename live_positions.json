@@ -1337,5 +1337,28 @@
   "exit_t": 1788573162.255539,
   "exit_sig": "2HWXJaDEqyDa1XquxYaNkP4wLKZ9HWXokDyfmgchojVaR3bNkmWSy6WaQtYa7VT2n41zXncnhbMjSsocctB7wdp2",
   "pnl_sol": 0.00123
+ },
+ "Dv7XaYZqNL8xS9mhcXG3H8yugpvzw59Vqmkn1wKpump": {
+  "open": false,
+  "mode": "live",
+  "venue": "pool",
+  "entry_t": 1788574639.3481631,
+  "entry_px": 1.4247207016004042e-10,
+  "tokens": 350945978,
+  "tokens_left": 0,
+  "size_sol": 0.05,
+  "peak_mult": 1.0017827,
+  "trough_mult": 0.99786388,
+  "freerolled": false,
+  "sol_recovered": 0.050061562000000004,
+  "insider_overhang_pct": 79.32,
+  "insider_n": 1,
+  "blocklist_feeders": 0,
+  "entry_kind": "conv_override",
+  "closed_reason": "abort15",
+  "exit_reason": "abort15",
+  "exit_t": 1788575557.016887,
+  "exit_sig": "4Hgok6mKeFHVV6bZDRE9E9XKJjLSCuzU4eZz9N8QaixHspV6fvA548aUG2vu8mZvjwdSqXrMJ46sxBxKiUQq2BXK",
+  "pnl_sol": 6e-05
  }
 }

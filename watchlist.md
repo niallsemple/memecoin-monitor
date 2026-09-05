@@ -4162,3 +4162,9 @@
 | 01:46 | solana | `7VFaULiE…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$4,207 | name=In A World Full Of Stocks symbol=MEME; contract:clean; rugcheck_score=1 lpLocked=100% |  |
 | 01:46 | solana | `3Ne8epGr…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,116 | name=AndurilS&P500SpaceX symbol=ASS; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
 | 01:46 | robinhood | `0x5907F9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,114 mc=$67,345 | chain:robinhood no-audit-adapter |  |
+| 02:06 | robinhood | `0x691E88…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,621 mc=$131,774 | chain:robinhood no-audit-adapter |  |
+| 02:06 | robinhood | `0x3dc62e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | StockYield is the derivatives layer for Robinhood Stock Tokens on Robinhood Chai |
+| 02:06 | bsc | `0x5972B2…` | PASS | — | liq=$34,621 mc=$126,596 | holders=148; buy_tax= sell_tax=; contract:clean | Binance's latest US stock trading bot |
+| 02:06 | solana | `4ZiuMyVH…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$0 mc=$22,658 | name=Official Elon Coin symbol=ELON; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 02:06 | robinhood | `0x74D754…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,452 mc=$25,804 | chain:robinhood no-audit-adapter | MemeCoin paired with ExxonMobil tokenized stock on Robinhood Chain.  Bankrbot la |
+| 02:06 | robinhood | `0x3c3102…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$113,152 mc=$1,522,031 | chain:robinhood no-audit-adapter | Stock Miner is an onchain mining game on Robinhood Chain where virtual rigs comp |

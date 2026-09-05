@@ -5772,3 +5772,7 @@ First live-money confirmation that the CONV pipeline (§300 override + §301 vis
 ### §303c — 5th live round-trip green (5 Sep 2026, ~01:54 UTC)
 
 ABLxmJkH closed **+0.00123 SOL (+2.5%)**. CONV live book: **5/5 green, cumulative +0.00416 SOL** (~+1.5% avg per 0.05 SOL round trip, ~15 min hold each). Hit rate and zero-wipeout profile continue to match the shadow cohort. Halfway to the n=10 sizing-review checkpoint.
+
+### §303d — 6th live round-trip green (5 Sep 2026, ~02:36 UTC)
+
+Dv7XaYZq closed **+0.00006 SOL (+0.1%)** after dipping to −0.7% mid-hold — the abort15 exit caught it near breakeven. CONV live book: **6/6 green, cumulative +0.00422 SOL**. Worst live outcome so far is +0.1% — the zero-wipeout shadow profile is holding live.
