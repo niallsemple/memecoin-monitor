@@ -6016,3 +6016,10 @@ Method: per-trade tape chg at minutes 3/4/5 vs actual outcome; simulated conditi
 1. **Promote abort3_if_red to live** — exit any non-freerolled birth position at first tick ≥3min if r<1.0. Evidence is one-sided; every additional shadow trade at 0.10 risks −0.10 for information we already have.
 2. Keep size at 0.10 post-promotion OR drop to 0.05 until 10 promoted-rule trades confirm — owner's call.
 3. System remains live-trading at 0.10 meanwhile (zCXe79TK open now) — flagging urgently since rug rate is 9.4% until the rule is promoted.
+
+## §331 — Trade #33 closed (n=33): zCXe79TK, shadow 2/2
+
+- **zCXe79TK**: conv_override 0.10 SOL → **+0.00051 SOL (+0.5%)**, exit `abort15`. Shadow rule said KEEP at 3.45 min (r=1.0021) — correct: paid green.
+- **Shadow out-of-sample tally: 2/2 correct** (9ejN CUT → rugged −100%; zCXe KEEP → +0.5%).
+- Live book: **33 closed**, cumulative **−0.26170 SOL**.
+- New entry HyPToSzn opened (system still trading at 0.10 pending owner's §330 decision).

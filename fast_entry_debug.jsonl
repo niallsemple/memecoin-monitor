@@ -1694,3 +1694,7 @@
 {"t": 1788618709.772923, "phase": "thread_start", "mint": "zCXe79TKb6AmsXtxDbLkq8gQWKDuwEujs5tVPk6pump"}
 {"t": 1788618709.776143, "phase": "lt_loaded", "mint": "zCXe79TKb6AmsXtxDbLkq8gQWKDuwEujs5tVPk6pump"}
 {"t": 1788618775.5044942, "phase": "thread_done", "mint": "zCXe79TKb6AmsXtxDbLkq8gQWKDuwEujs5tVPk6pump", "result": "entered"}
+{"t": 1788619772.7410681, "phase": "spawned", "mint": "HyPToSznkvy4FyVUxTAFNEFkYGntpohodBTdbYRKpump", "creator": "GxkqmAU8QMMYEUwsEg1hEfksoCy8r4mPibM8XwYX1JCy"}
+{"t": 1788619772.74191, "phase": "thread_start", "mint": "HyPToSznkvy4FyVUxTAFNEFkYGntpohodBTdbYRKpump"}
+{"t": 1788619772.746666, "phase": "lt_loaded", "mint": "HyPToSznkvy4FyVUxTAFNEFkYGntpohodBTdbYRKpump"}
+{"t": 1788619840.5431628, "phase": "thread_done", "mint": "HyPToSznkvy4FyVUxTAFNEFkYGntpohodBTdbYRKpump", "result": "entered"}
