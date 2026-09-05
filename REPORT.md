@@ -6101,3 +6101,7 @@ Next builds in the pivot pipeline (from §337 doc): per-venue quote decompositio
 - Each scan now records `sol_px` (implied from the $500 leg) and a `shock` block: latest inter-pass return, rolling σ (36 scans ≈ 12h), max |ret|, and a boolean flag when |ret| > max(1%, 3σ). Rationale per §337: we monetise forced mechanical events — the shock flag tells us when the venue matrix *should* be lighting up, giving a clean natural experiment: shock=True rows vs venue_best_bps.
 - Verified live: SOL ≈ $205 implied; matrix still quiet (best pair −0.85 bps). Aggregator noise band unchanged (+0.05 to +0.36 bps at ≤$2k sizes).
 - Two more abort3_if_red shadow rows fired (8 total now); new position XkTApk3a open at 0.10 SOL. Book steady.
+
+### §340a — correction: SOL spot is ~$103, not ~$205
+
+§340's "SOL ≈ $205 implied" was an arithmetic slip on my part: the $500 leg returned ~4.85 SOL, i.e. **SOL ≈ $103.3** per the Jupiter quotes (ground truth). The scanner was right; my prose was wrong. Priority-fee constant in shadow_searcher.py (0.002 USDC ≈ 10k lamports at $200) is actually ~19k lamports at $103 — still the right order of magnitude; leave as-is, it's conservative either way.
