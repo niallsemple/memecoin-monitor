@@ -1934,3 +1934,6 @@
 {"t": 1788632161.596417, "phase": "lt_loaded", "mint": "C6j4jTKAsZ6keCapQnfKGgED3oBs7ArNH5LSGR1Rpump"}
 {"t": 1788632191.321154, "phase": "thread_done", "mint": "2PYiU8mAR6wjQB2arnyv4Wk2neJL6qdGMUsRwzEqpump", "result": "skip: bundled launch"}
 {"t": 1788632263.469942, "phase": "thread_done", "mint": "C6j4jTKAsZ6keCapQnfKGgED3oBs7ArNH5LSGR1Rpump", "result": "skip: bundled launch"}
+{"t": 1788633507.281596, "phase": "spawned", "mint": "XhsMxRkrP7fXB2AnM6CKBw8HbNW8B4HqeTSKhkKpump", "creator": "F4VZELdWqVz1wVZFdSnM4d5EMxU3FrzAir6NhkXmwvvN"}
+{"t": 1788633507.282285, "phase": "thread_start", "mint": "XhsMxRkrP7fXB2AnM6CKBw8HbNW8B4HqeTSKhkKpump"}
+{"t": 1788633507.292812, "phase": "lt_loaded", "mint": "XhsMxRkrP7fXB2AnM6CKBw8HbNW8B4HqeTSKhkKpump"}

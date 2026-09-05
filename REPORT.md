@@ -6365,3 +6365,13 @@ Init saga: keypair init + PDA init both panicked (anchor 1.0.2 account_loader.rs
 The §328 shadow rule is now a live exit in live_trader.py exit_watch: one-shot check at the first pass ≥3 min after entry; if the position is red (r<1.0), full exit as `abort3_red`. Faithful to the validated one-shot semantics (not a persistent red-cut). Shadow record: replay flipped the conv book positive; out-of-sample shadow ~11/11. Context: book is on an 8-green streak (7× abort15 + 1 trail_writeoff), cum −0.759 SOL on 109 closes, wallet 1.71 SOL. Next positions entering now will live-fire the rule; `abort3_if_red_live_check` log rows carry r/mins/would_exit for every check.
 
 Liquidation side: radar wired into the tracker pass (§359); last scans: zero seizable candidates; GFxx healthy under program pricing (+$1,377). Jupiter probe: sctmB7GP exits at 0.0017% impact ($2.5k size) — excellent; BADo3D6n not on Jupiter-lite (400) — that seize class would need a different venue.
+
+## §361 — Liquidator account funded: 0.30 SOL deposit live (2026-09-05 ~20:15 BST)
+
+mfi_bootstrap.py: create wSOL ATA (idempotent) + transfer + syncNative + lending_account_deposit in one legacy tx — confirmed on-chain (2EmWuPbA…TRG3). Our marginfi account A91fDng3 now holds an active SOL-bank balance (~0.298 SOL after share value). Wallet: 1.41 SOL (memecoin float untouched at 0.10 sizing).
+
+Why this matters: the liquidate ix draws the repay from the liquidator's deposit in the liab bank FIRST, then borrows the rest against init-weight health. So SOL-debt candidates (the most common class) are now fireable with a single atomic ix — repay+seize in one program call — with the exit swap as a separate follow-up tx seconds later. Borrow capacity ~$24 (covers micro candidates); the flash-loan recipe (§337) unlocks size later.
+
+Live-fire path staged: radar (tracker pass) → drill (liq_hunt) → sim gate (our account) → **liq_fire.py (next build)** → exit swap. No candidates exist at current prices (last radar pass: 5 bad-debt accounts, zero seizable); memecoin abort3_red armed for next entry (no live checks yet — zero open positions since promotion).
+
+IDL gotcha logged: marginfi runs anchor-lang 1.0.2; account_loader.rs:169 panic = bytemuck length mismatch on a struct load — the diagnostic that exposed the wrong-group bug in §358.
