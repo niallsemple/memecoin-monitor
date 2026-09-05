@@ -142,7 +142,8 @@ def bank_remaining(bpk: str):
     return out
 
 
-def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int):
+def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int,
+                 payer_b: bytes = None):
     banks = load_banks()
     ab_raw = acct_raw(asset_bank)
     group = ab_raw[41:73]  # §353: mint@8, decimals@40, group@41-72
@@ -198,18 +199,34 @@ def build_liq_ix(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amou
         r = build_refresh_ix(bpk)
         if r:
             refreshes.append(r)
+    swb_feeds = []  # §367: SwbPull banks among touched slots need crossbar refresh
+    for bpk in set(active_slots(liq_raw)) | set(active_slots(tee_raw)) | {asset_bank, liab_bank}:
+        braw = acct_raw(bpk)
+        if braw[609] == 4:  # SwitchboardPull
+            swb_feeds.append(b58encode(braw[610:642]))
+    if swb_feeds and payer_b is not None:
+        import swb_refresh
+        # fail-closed: dead feeds raise here -> no tx built at all
+        refreshes = swb_refresh.fetch_update_ixs(sorted(set(swb_feeds)), payer_b) + refreshes
     return refreshes + [(PROG, A, data)]
 
 
 def simulate(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int):
-    ixs = build_liq_ix(liquidatee_pk, asset_bank, liab_bank, asset_amount)
     payer = lt.b58dec(lt._load_key()[1])
+    ixs = build_liq_ix(liquidatee_pk, asset_bank, liab_bank, asset_amount, payer_b=payer)
+    has_swb = any(lt.b58enc(p) == swb_prog_id() for p, _, _ in ixs) if ixs else False
+    cfg = {"encoding": "base64", "sigVerify": False, "replaceRecentBlockhash": True}
+    if has_swb:
+        # crossbar signs at the tip; finalized sims falsely reject (InvalidSlot
+        # 6039). Real txs also execute at the tip, so processed is honest here.
+        cfg["commitment"] = "processed"
     tx_b64 = lt.build_legacy_tx(payer, ixs)
-    res = rpc("simulateTransaction", [tx_b64, {
-        "encoding": "base64", "sigVerify": False,
-        "replaceRecentBlockhash": True,
-    }])
+    res = rpc("simulateTransaction", [tx_b64, cfg])
     return res
+
+
+def swb_prog_id():
+    return "SBondMDrcV3K4kxZR1HNVT7osZxAHVHgYXL5Ze1oMUv"
 
 
 if __name__ == "__main__":

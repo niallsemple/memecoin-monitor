@@ -6425,3 +6425,15 @@ IDL gotcha logged: marginfi runs anchor-lang 1.0.2; account_loader.rs:169 panic 
 
 ### §366 addendum — hunt gate wired (2026-09-05 ~21:00 BST)
 liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RPC, and picks the best **feasible** asset/liab pair (max coverage subject to aw < (1−fees)×lw) instead of biggest-asset/biggest-liab blindly. Edge estimate uses the liab bank's actual on-chain liquidator fee instead of a flat 5%. liq_fire inherits the §366 refresh-bundle + head-schema fixes automatically (it builds through liq_sim.build_liq_ix). Tracker redeployed; dry-run verified: bad debt → no_feasible_pair, twilight → skipped without RPC.
+
+## §367 — Switchboard moat broken: crossbar refresh bundling built and sim-verified (2026-09-05 ~21:25 BST)
+
+**The incumbent moat, mapped then dismantled:** 23k+ stale-oracle slots exist because SwbPull (on-demand) feeds only update when someone pays the oracle network to land a signed update. Recon nuance: a crossbar sample of marginfi's 99 SwbPull feeds showed ~60% are DEAD (no live oracle coverage — those positions are frozen forever unless marginfi migrates banks), but ~40% are LIVE and refreshable. The live ones were the moat.
+
+**Build:** swb_refresh.py — crossbar `/updates/solana/mainnet/{feeds}` returns pre-built bincode instructions (pullIxns): [0] secp256k1 signature verify (0 accounts, 129B), [1] PullFeedSubmitResponseConsensus on SBondMDrcV3K (12 accounts). Decoder: program[32] + u64 n + n×(pubkey+is_signer+is_writable) + u64 data_len + data (bincode, NOT shortvec — two failed parses before the SDK source confirmed). Payer placeholder (system-program-id with signer+writable) swapped for our wallet. Dead feeds raise → fail-closed.
+
+**Integration:** liq_sim.build_liq_ix now prepends crossbar refresh ixs for every SwbPull bank either account touches (alongside the §366 Kamino refreshes); simulate()/liq_fire use commitment=processed when SWB ixs are bundled (crossbar signs at the tip; finalized sims falsely reject with InvalidSlot 6039 — verified empirically: processed ✓, confirmed ✓, finalized ✗).
+
+**Validation:** bundled tx against a real account holding the cPQPBN7W SwbPull bank — secp verify ✓, SBond submit **success on-chain (sim)**, marginfi liquidate proceeded into its own logic (failed only on deliberately-wrong liab bank choice, 6002). The 23,318-stale-slot moat is now armed-for-volatility: when a live-feed SwbPull account goes underwater, we can refresh and fire in one tx.
+
+**Full arsenal status:** PythPush/SwbPull/Fixed/PythLST/SVSP/Kamino priced; Kamino refresh_reserve + SwbPull crossbar refresh bundles built; feasibility gate live; armed fail-closed auto-fire ≤$50. Remaining: Drift/JupLend multipliers (16 banks), PythLegacy (47, dead zone), flash-loan size (§337).

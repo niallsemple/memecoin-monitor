@@ -76,14 +76,19 @@ def fire(liquidatee: str, asset_bank: str, liab_bank: str, amount: int,
         row["result"] = "not_armed (no LIQ_FIRE_OK)"
         _log_fire(row); return row
 
-    ixs = liq_sim.build_liq_ix(liquidatee, asset_bank, liab_bank, amount)
     wallet_key, wallet_addr = lt._load_key()
     wallet_b = lt.b58dec(wallet_addr)
+    ixs = liq_sim.build_liq_ix(liquidatee, asset_bank, liab_bank, amount,
+                               payer_b=wallet_b)
     tx = build_signed_tx({wallet_b: wallet_key}, wallet_b, ixs)
     # sigVerify can't combine with replaceRecentBlockhash (Helius -32602);
     # program-logic sim here, signature validity is enforced by send preflight.
-    sim = lh.rpc("simulateTransaction", [tx, {"encoding": "base64",
-                 "sigVerify": False, "replaceRecentBlockhash": True}])
+    sim_cfg = {"encoding": "base64",
+               "sigVerify": False, "replaceRecentBlockhash": True}
+    if any(lt.b58enc(p) == liq_sim.swb_prog_id() for p, _, _ in ixs):
+        # §367: crossbar signs at the tip; finalized sim falsely rejects (6039)
+        sim_cfg["commitment"] = "processed"
+    sim = lh.rpc("simulateTransaction", [tx, sim_cfg])
     if sim.get("error"):
         row["result"] = "sim_rpc_error"
         row["rpc_error"] = json.dumps(sim["error"])[:300]
