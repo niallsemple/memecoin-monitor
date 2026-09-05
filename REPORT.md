@@ -6122,3 +6122,24 @@ Design implication (two-tier radar):
 2. **Tier 2 (shortlist only)**: full account fetch + health computation using the 437 Bank configs (LTV weights, oracle pubkeys) and Pyth/oracle prices. Health < threshold → log to `liq_radar_log.jsonl`, and flag the shadow searcher to tighten scan cadence.
 - Oracle note: marginfi oracle migration began Sep 4 2026 (§337 doc) — radar must read whatever oracle the bank config points at, not assume Pyth legacy.
 - Status: probe only; no radar built yet. Next build step is measuring Tier-1 slice size, then the Balance struct layout decode.
+
+## §342 — Marginfi account layout decoded + verified (18:15 BST)
+
+Empirically decoded (bank-pubkey byte-search across live accounts, no IDL assumption):
+
+**MarginfiAccount (2312 bytes)** — 16 balance slots, slot i at offset `72 + i×104`:
+
+| field | offset in slot | format |
+|---|---|---|
+| active | 0 | u8 (0/1) |
+| bank_pk | 1–32 | pubkey |
+| (pad) | 33–39 | — |
+| asset_shares | 40–55 | I80F48 LE |
+| liability_shares | 56–71 | I80F48 LE |
+| emissions_outstanding | 72–87 | I80F48 LE |
+| last_update | 88–95 | u64 |
+| (pad) | 96–103 | — |
+
+Verified on account JEHw31DY…: 6 active slots, active byte = 1 before every bank_pk hit, share fields decode as sensible I80F48 values, slot 4 carries a real liability (borrower). Trailing 576 bytes after slot 15 = account-level fields (flags/emissions/padding).
+
+**Tier-1 shortlist strategy** (from §341): a full balance-region slice (offset 72, len 1664) over 165,568 accounts ≈ 377MB base64 — too big for one call. Plan: shard by authority-pubkey first-nibble memcmp (offset 40) into 16 calls ≈ 24MB each, ≈ 35k calls/month at 3 passes/hr — well inside budget. Shortlist rule: any active slot with `liability_shares != 0` → Tier-2 full health decode.
