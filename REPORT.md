@@ -6143,3 +6143,11 @@ Empirically decoded (bank-pubkey byte-search across live accounts, no IDL assump
 Verified on account JEHw31DY…: 6 active slots, active byte = 1 before every bank_pk hit, share fields decode as sensible I80F48 values, slot 4 carries a real liability (borrower). Trailing 576 bytes after slot 15 = account-level fields (flags/emissions/padding).
 
 **Tier-1 shortlist strategy** (from §341): a full balance-region slice (offset 72, len 1664) over 165,568 accounts ≈ 377MB base64 — too big for one call. Plan: shard by authority-pubkey first-nibble memcmp (offset 40) into 16 calls ≈ 24MB each, ≈ 35k calls/month at 3 passes/hr — well inside budget. Shortlist rule: any active slot with `liability_shares != 0` → Tier-2 full health decode.
+
+## §343 — liq_radar.py Tier-1 built and validated (18:22 BST)
+
+- 256-way shard by authority first byte (exact-byte memcmp @ offset 40; nibble idea discarded — memcmp can't range-match). Each shard ≈ 650 accounts / ~1MB / sub-second.
+- **Full validation run: 165,569 accounts scanned in 37.7s, 256/256 shards OK** (matches §341 count of 165,568 +1 new). RPC cost: 258 calls/scan ≈ 190k/month at hourly cadence — 2% of the 10M budget.
+- Shortlist: **81,309 accounts with ≥1 nonzero liability share (~49%)**. That rate says most are dust/residual shares, not material borrows — expected; Tier-2 converts shares→USD via Bank liability-share-price and applies a materiality floor (e.g. debt ≥ $100) before health computation.
+- Output: `liq_radar_log.jsonl` (counts per shard + borrower shortlist pks for Tier-2).
+- Not yet wired into the tracker pass — decide cadence when Tier-2 lands (proposal: hourly, every 3rd tracker pass).
