@@ -267,3 +267,10 @@
 | 03:47 | STOP | 5TiPtwDZ | £0.10 | trail-stop at 0.01x |
 | 09:27 | BUY | 2CJ9rFxo | £7.70 | entry mc $206,535 | +10min |
 | 10:06 | BUY | 7Zddh63U | £7.54 | entry mc $220,995 | +21min |
+| 21:47 | STOP | 2CJ9rFxo | £0.10 | trail-stop at 0.01x |
+| 21:47 | STOP | 7Zddh63U | £0.08 | trail-stop at 0.01x |
+| 21:48 | STOP | CTPoyCwk | £6.06 | trail-stop at 0.78x |
+| 21:49 | BUY | CTPoyCwk | £7.51 | entry mc $8,738,245 | +12821min |
+| 21:57 | BUY | 5761e8gC | £7.36 | entry mc $163,414 | +11min |
+| 22:06 | BUY | FiAum2V5 | £7.21 | entry mc $219,916 | +10min |
+| 23:46 | SELL 2x | 5761e8gC | £3.62 | ladder stage 1 |

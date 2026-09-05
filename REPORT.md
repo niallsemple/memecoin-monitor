@@ -5708,3 +5708,26 @@ Threshold reached. CONV cohort (≥2 selective winner wallets in birth window; a
 **CONV avg +0.97% vs all-closed baseline −8.3% (n=96) — a ~9.3pp spread.** At real 0.5% costs the cohort avg is ~+4%. Caveats: n=5, one birth_cap winner carries the average (ex-Coca-Cola avg −3.2%, still 5pp above baseline but negative). No CONV mint produced a tail wipeout — the signal appears to filter the −60%/−100% cohort that dominates baseline losses.
 
 **Decision: promote CONV to PAPER entries (0.05 SOL virtual, s60nm5fr exit stack) — risk-free evidence acceleration; live gates unchanged.** Lone-winner hits remain disqualified (§298: −12.6% avg, worse than baseline). Re-review at n=10 closed CONV paper+shadow outcomes: promotion to a live gate override requires paper-CONV avg >0 at 0.5% costs AND zero tail wipeouts.
+
+## §300 — CONV shadow verdict at n=16 + live gate override WIRED (5 Sep 2026, ~00:20 UTC)
+
+Shadow-side CONV cohort reached 20 hits / **16 closed** (all §262 bundle-gate blocked, so all have full outcome tape):
+
+- **avg +0.86% vs all-closed baseline −7.36% (n=129)** — an ~8.2pp spread
+- 3 wins: sFtwoEY6 **+27.1%** (nm_abort), 9GSv65ST **+16.5%** (birth_cap), EheFqqh5 +1.5%
+- **ZERO wipeouts** — worst −4.0%; the −60%/−100% tail that dominates baseline losses does not appear in CONV hits
+- outsider_pct of all 16 closed hits clusters 55.9–61.5% (manufactured launches that still attracted ≥2 selective winners)
+- Paper-side CONV (§299 promotion): 6/6 closed wins, avg +22.8%, 0 open — but paper applies s60nm5fr entry filters so only ~30% of CONV hits get paper rows; shadow covers all blocked hits
+
+Both promotion bars from §299 are cleared: avg >0 at real costs, zero tail wipeouts, n=16 ≥ the n≥10 threshold.
+
+**Decision (owner-approved 5 Sep 2026, "yes please"): CONV is promoted to a LIVE gate override.** Implementation in `automations/tracker_live.py`:
+
+- `selective_convergence` (≥2 selective winner wallets in birth window) bypasses the §262 bundle block
+- `CONV_OVERRIDE_MAX_OUTSIDER = 70.0` — extreme manufacture stays blocked even with convergence (no observed hit above 61.5%; cheap insurance)
+- prior_rugs repeat-offender gate UNCHANGED (still blocks before the override is consulted)
+- §295 tape-visibility gate UNCHANGED; one-trade-per-mint (§267) UNCHANGED
+- CONV entries share the single fast-entry slot with fast_birth (max one open 0.05 SOL birth entry at a time); positions tagged `entry_kind: "conv_override"` for separate outcome tracking
+- Size: FAST_ENTRY_SIZE = 0.05 SOL (unchanged, owner-approved validation scale)
+
+Deployed and compiled clean. Next milestone: first live conv_override entry — verify entry, exit-stack behavior, and landed P&L.

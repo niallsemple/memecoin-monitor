@@ -75,6 +75,11 @@ RPC_KEYS = MON / "rpc_keys.json"  # §79w: owner drops extra keyed endpoints her
 FAST_ENTRY = True
 FAST_ENTRY_SIZE = 0.05          # fixed small size during validation
 FAST_ENTRY_BUNDLE_GATE = 40.0   # §253: skip if outsider_pct >= this
+# §300: CONV override — a birth window with >=2 SELECTIVE proven winners
+# bypasses the §262 bundle block (shadow n=16 closed: +0.9% avg vs -7.4%
+# baseline, zero wipeouts, worst -4.0%). Extreme manufacture at/above this
+# outsider_pct stays blocked even with convergence.
+CONV_OVERRIDE_MAX_OUTSIDER = 70.0
 FAST_ENTRY_DELAY_S = 40         # 30s bundle window + margin
 FE_ACTIVE = set()               # mints with an eval thread in flight
 
@@ -146,9 +151,18 @@ def fast_entry_spawn(mint, creator):
             except Exception:
                 pass
             if bsh and (bsh.get("outsider_pct") or 0) >= FAST_ENTRY_BUNDLE_GATE:
-                row["result"] = "skip: bundled launch"
-                lt._log(row)
-                return
+                # §300: CONV override — >=2 selective proven winners in the
+                # window bypass the bundle block (approved by owner
+                # 2026-09-05; evidence REPORT.md §300). prior_rugs gate
+                # above is untouched; extreme manufacture still blocked.
+                if (row.get("selective_convergence")
+                        and (bsh.get("outsider_pct") or 0)
+                            < CONV_OVERRIDE_MAX_OUTSIDER):
+                    row["conv_override"] = True
+                else:
+                    row["result"] = "skip: bundled launch"
+                    lt._log(row)
+                    return
             ok, why = lt.live_enabled()
             row["gate"] = why
             pos = lt._load_positions()
@@ -156,7 +170,8 @@ def fast_entry_spawn(mint, creator):
                 row["result"] = "skip: already open"
                 lt._log(row)
                 return
-            if any(p.get("open") and p.get("entry_kind") == "fast_birth"
+            if any(p.get("open") and p.get("entry_kind") in
+                   ("fast_birth", "conv_override")
                    for p in pos.values()):
                 row["result"] = "skip: fast slot busy"
                 lt._log(row)
@@ -219,7 +234,9 @@ def fast_entry_spawn(mint, creator):
                                          tokens=tk)
                         _p = lt._load_positions()
                         if mint in _p:
-                            _p[mint]["entry_kind"] = "fast_birth"
+                            _p[mint]["entry_kind"] = (
+                                "conv_override" if row.get("conv_override")
+                                else "fast_birth")
                             lt._save_positions(_p)
             else:
                 row["curve_buy_result"] = b.get("result")
@@ -233,7 +250,9 @@ def fast_entry_spawn(mint, creator):
                                      b.get("mode", "dry-run"))
                     _p = lt._load_positions()
                     if mint in _p:
-                        _p[mint]["entry_kind"] = "fast_birth"
+                        _p[mint]["entry_kind"] = (
+                            "conv_override" if row.get("conv_override")
+                            else "fast_birth")
                         lt._save_positions(_p)
                 elif _res.startswith("submitted"):
                     row["result"] = (f"skip: buy not landed "

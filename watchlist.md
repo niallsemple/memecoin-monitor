@@ -4103,3 +4103,44 @@
 | 11:06 | solana | `4X61ERVp…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$25,183 mc=$98,326 | name=Gao symbol=Gao; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=35.2% | Gao was made with unlimited creativity, nothing to do with crypto or anything li |
 | 11:06 | robinhood | `0x3533e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,001 mc=$7,019 | chain:robinhood no-audit-adapter |  |
 | 11:06 | robinhood | `0x019E71…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,852 mc=$6,180 | chain:robinhood no-audit-adapter |  |
+| 21:46 | base | `0xB20000…` | PASS | — | liq=$15,756 mc=$24,789 | holders=0; buy_tax=0 sell_tax=0; contract:clean | Obie said "Buy my new stock LiTesla: Tesla Lite. It’s the same as Tesla but fast |
+| 21:46 | robinhood | `0xb3267e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 21:46 | robinhood | `0x45Ea1E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$47,773 mc=$391,827 | chain:robinhood no-audit-adapter |  |
+| 21:46 | robinhood | `0x16bf9e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Live liquidity intelligence on Robinhood Chain.  See every pool, one route, one  |
+| 21:46 | base | `0xA46Dfa…` | PASS | — | liq=$36,227 mc=$110,060 | holders=0; buy_tax= sell_tax=; contract:clean | Trade tokens on real stocks. |
+| 21:46 | solana | `5761e8gC…` | PASS | — | liq=$32,264 mc=$156,069 | name=Pump Life symbol=PUMPLIFE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | Life is pumping. Abundance, balance, wealth and success—attracted naturally and  |
+| 21:56 | solana | `FiAum2V5…` | PASS | — | liq=$35,394 mc=$185,543 | name=USELESS MEMECOIN symbol=MEMELESS; contract:clean; rugcheck_score=1 lpLocked=100%; top | A broken monument to meme coin culture, chaos, hype and pure internet energy. |
+| 21:56 | robinhood | `0x5e8De0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,636 mc=$48,564 | chain:robinhood no-audit-adapter | The SpaceX Pepe |
+| 21:56 | robinhood | `0xcC65ef…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,236 mc=$50,287 | chain:robinhood no-audit-adapter | Fitcoin |
+| 21:56 | robinhood | `0x72939c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,133 mc=$10,019 | chain:robinhood no-audit-adapter |  |
+| 22:06 | robinhood | `0xA75004…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,633 mc=$23,993 | chain:robinhood no-audit-adapter | ALPHA > DELTA. There is no comparison. |
+| 22:36 | solana | `CfLwV6Sv…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$10,875 | name=degen hotline symbol=hotline; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | The live call-in show for the crypto trenches.   Wins, rugs, roundtrips and real |
+| 22:36 | robinhood | `0xf479aa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,012 mc=$39,242 | chain:robinhood no-audit-adapter | snorp now paired with $UPS |
+| 22:36 | robinhood | `0x875647…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The Book of Mozilla is a secret easter egg hidden inside Firefox for decades, un |
+| 22:36 | robinhood | `0xF0f34B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$40,679 mc=$203,929 | chain:robinhood no-audit-adapter | Building the biggest online destination for Peptides on Robinhood. Hold PEPTI an |
+| 22:36 | bsc | `0xE9C1AB…` | CAUTION | BLACKLIST_FUNC; WHITELIST_FUNC | liq=$6,985 mc=$40,245 | holders=92; buy_tax=0.02 sell_tax=0.02 | $FRENZY IS MORE THAN JUST ANOTHER MEME TOKEN, IT'S A MOVEMENT, IT'S A REVOLUTION |
+| 22:36 | base | `0xb20000…` | PASS | — | liq=$79,005 mc=$401,480 | holders=2; buy_tax=0 sell_tax=0; contract:clean | Blue is Meta |
+| 22:46 | robinhood | `0xe4F44D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$103,308 mc=$186,231 | chain:robinhood no-audit-adapter | FRAMON is a token on LONG, on Robinhood Chain, built to stay.   Every fee the to |
+| 22:46 | robinhood | `0xc20764…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,803 mc=$162,820 | chain:robinhood no-audit-adapter |  |
+| 22:46 | robinhood | `0x67C9E7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,052 mc=$43,159 | chain:robinhood no-audit-adapter | Build your Wall Street empire on Robinhood chain. |
+| 22:46 | solana | `Fd8Az4iP…` | FAIL | TOP10_HEAVY:80% | liq=$0 mc=$7,113 | name=TICK symbol=TICK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=80.1% |  |
+| 22:46 | robinhood | `0xe6f422…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$42,846 mc=$218,227 | chain:robinhood no-audit-adapter | Welcome to Bubble City. Built from 2,222 Genesis Buns and powered by $BUBBLE. Th |
+| 22:46 | base | `0x4D2EfF…` | PASS | — | liq=$37,061 mc=$103,731 | holders=16; buy_tax=0 sell_tax=0; contract:clean | Stack $BOX, unbox $AMZN. |
+| 23:06 | solana | `Fc5HxSeq…` | FAIL | TOP10_HEAVY:73% | liq=$0 mc=$8,889 | name=topdog symbol=topdog; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=73.3 |  |
+| 23:06 | robinhood | `0x1F8512…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,890 mc=$26,341 | chain:robinhood no-audit-adapter | IMAGINE LOOKING YOUR MANAGER IN THE EYE AND SAYING "ROBINHOODTRUMPSHEREK67AI, SI |
+| 23:06 | solana | `3D8KYFmg…` | FAIL | RC_DANGER:Creator history of rugged tokens; RC_DANGER:Top 10 holders high ownership; RC_DANGER:Single holder ownership; RC_DANGER:High ownership; TOP10_HEAVY:96% | liq=$57,606 mc=$489,837 | name=Murad symbol=Murad; contract:clean; rugcheck_score=81 lpLocked=100%; top10_hold=96.1% | Murad |
+| 23:06 | robinhood | `0xF3c5B0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,152 mc=$22,805 | chain:robinhood no-audit-adapter |  |
+| 23:06 | robinhood | `0x957de1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,287 mc=$31,693 | chain:robinhood no-audit-adapter | Dogecoin was made by an IBM employee using IBM software, this is paired with IBM |
+| 23:06 | solana | `8YNmGPQT…` | FAIL | TOP10_HEAVY:52% | liq=$0 mc=$26,051 | name=The Last Trencher symbol=Onoda; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 23:46 | robinhood | `0x8E8266…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,476 mc=$26,714 | chain:robinhood no-audit-adapter | Stake one token, earn DeFi's best assets: ETH, stETH, WBTC, stables, Tokenized s |
+| 23:46 | robinhood | `0xeb4900…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,280 mc=$25,302 | chain:robinhood no-audit-adapter | the inverse pons |
+| 23:46 | solana | `UdtYiD7z…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$7,004 | name=apeonpc symbol=PC; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=81.3% |  |
+| 23:46 | robinhood | `0x680386…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 23:46 | robinhood | `0xFA89ed…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$362,593 mc=$19,901,718 | chain:robinhood no-audit-adapter |  |
+| 23:46 | robinhood | `0xc72a5A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,671 mc=$81,703 | chain:robinhood no-audit-adapter | Bingus |
+| 00:06 | robinhood | `0x7dbf38…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$57,959 mc=$398,521 | chain:robinhood no-audit-adapter | zzz |
+| 00:06 | robinhood | `0xED44A1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$98,602 mc=$795,458 | chain:robinhood no-audit-adapter | It's time to plug in. |
+| 00:06 | solana | `Ftco1ebh…` | FAIL | TOP10_HEAVY:89% | liq=$9,859 mc=$11,410 | name=Anonymous Smoking Fish symbol=ZUSHI; contract:clean; rugcheck_score=1 lpLocked=100%;  | No Face. No Name. No Socials.  Just a Fish, a Bag and Zcash Rewards. |
+| 00:06 | solana | `3eWu5v5b…` | FAIL | TOP10_HEAVY:92% | liq=$0 mc=$3,857 | name=PoohCoin symbol=POOH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=92.1 | Pooh Coin |
+| 00:06 | robinhood | `0x43b96E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,215 mc=$83,298 | chain:robinhood no-audit-adapter | 🖨️ NVDA Brrr ($BRRR) | Robinhood Chain Pair: $BRRR / $NVDA  🟩 $NVDA Stocks Go Up |
+| 00:06 | solana | `5erj4fz4…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$12,811 mc=$29,664 | name=Shivolink symbol=SLINK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48 |  |
