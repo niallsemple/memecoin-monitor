@@ -1363,3 +1363,7 @@
 {"t": 1788591369.5940979, "phase": "lt_loaded", "mint": "thaNgAcvbwfQy7Vqk46NuZye7mreA1sxNAexqsTpump"}
 {"t": 1788591425.459512, "phase": "thread_done", "mint": "9TgPkfpPhKyxNi3VCCbERTbJvdWPeZc1muEDL9ypump", "result": "skip: bundled launch"}
 {"t": 1788591587.916607, "phase": "thread_done", "mint": "thaNgAcvbwfQy7Vqk46NuZye7mreA1sxNAexqsTpump", "result": "entered"}
+{"t": 1788591947.297302, "phase": "spawned", "mint": "hNboYeqfnk1VuGUPDHkhEnmZFyXSqFk5HTZsXSGpump", "creator": "6HEZZYrhF1uugj9m2JEKYQDpKUaHqKYhri65rNUnnhWk"}
+{"t": 1788591947.297944, "phase": "thread_start", "mint": "hNboYeqfnk1VuGUPDHkhEnmZFyXSqFk5HTZsXSGpump"}
+{"t": 1788591947.308094, "phase": "lt_loaded", "mint": "hNboYeqfnk1VuGUPDHkhEnmZFyXSqFk5HTZsXSGpump"}
+{"t": 1788592006.136021, "phase": "thread_done", "mint": "hNboYeqfnk1VuGUPDHkhEnmZFyXSqFk5HTZsXSGpump", "result": "skip: bundled launch"}
