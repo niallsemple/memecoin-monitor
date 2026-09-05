@@ -6503,3 +6503,23 @@ liq_hunt now short-circuits twilight candidates (`feasible=false`) before any RP
 **Fallback derivation (liq_sim.bank_remaining):** when oracle_keys[3] is default, onramp = PDA["onramp", vote_account] under SPL_SINGLE_POOL (SVSPxpvHdN29nkVg9rPapPNDddN5DipNLRUFhyjFThE, refs/constants.rs), vote = bank.integration_acc_1 @1560 (lst_stake_price.rs: expected_staked_onramp). No live bank needs it today; fail-closed if a future bank lacks both sources.
 
 **Sim proof:** liquidate sim through staked bank 8g5qG6PV on GFxx reaches health pricing (pre_liquidation_health 1369.7, matching the scanner) and aborts 6068 HealthyAccount — the 5-account remaining set is accepted, and post-§371 (empty liquidator account) the 6047 staked-collateral tag rule no longer fires.
+
+## §374 — Shock pre-positioning watcher (part 1: sensitivity log)
+
+Problem: tracker scans every 20 min; a sharp SOL/LST dip can make accounts
+liquidatable between scans and someone else takes the fee.
+
+Built: `liq_health.py` now records, for every material account with
+0 <= health < 0.30, a per-oracle USD breakdown of weighted assets and
+liabilities plus the break-even collateral price drop (s* = 1 - liabs/assets).
+Logged to `liq_shock_watch.jsonl` each scan. Fixed-setup banks are keyed by
+bank pubkey (their oracle field is the default key); already-liquidatable
+accounts are excluded (handled by the normal hunt path).
+
+First live run: 12 watched accounts, all small ($100-$650 debt), several with
+health < 1% — a sub-1% oracle move flips them. Confirms near-liquidation
+accounts exist continuously; the field is just thin at current sizes.
+
+Next (part 2, not built yet): tracker hook that reads the latest watch record
+each pass, fetches live prices for the oracles involved, re-estimates health,
+and fires the hunt immediately on any account that crossed 0 mid-interval.

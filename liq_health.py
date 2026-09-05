@@ -31,8 +31,14 @@ KEY = (MON / "helius_key.txt").read_text().strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
 PROG = "MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA"
 LOG_PATH = str(MON / "liq_health_log.jsonl")
+WATCH_LOG_PATH = str(MON / "liq_shock_watch.jsonl")
 F48 = float(2 ** 48)
 MIN_DEBT_USD = 100.0
+# §374 shock pre-positioning: material accounts with health below this get a
+# per-oracle asset/liab USD breakdown logged, so a price-shock watcher can
+# recompute health instantly on a sharp dip instead of waiting 20 min for the
+# next full scan.
+SHOCK_WATCH_MAX_HEALTH = 0.30
 # marginfi oracle confidence-band pricing (the §355 false-positive fix):
 # collateral valued at px - band, liabilities at px + band,
 # band = min(CONF_K * conf, CONF_CAP * px).  Raw midpoint pricing produced
@@ -382,7 +388,7 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                 # marginfi prices collateral LOW and debt HIGH by the oracle
                 # confidence band — midpoint pricing here was the §355 bug.
                 band = min(CONF_K * p["conf_px"], CONF_CAP * p["px"])
-                slots.append({"b": b,
+                slots.append({"b": b, "bpk": bpk,
                               "a_nat": a_sh / (10 ** d),
                               "l_nat": l_sh / (10 ** d),
                               "px_lo": (p["px"] - band) * b["mult"],
@@ -408,15 +414,21 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                             del rec[t]
             rec = rec or {}
             assets = liabs = 0.0
+            a_by_key, l_by_key = {}, {}
             for s in slots:
                 b = s["b"]
+                okey = s["bpk"] if b["setup"] in FIXED_SETUPS else b["oracle"]
                 if s["a_nat"] > 0 and b["risk_tier"] != 1:
                     w = b["aw_maint"]
                     if b["emode_tag"]:
                         w = max(w, rec.get(b["emode_tag"], 0.0))
-                    assets += s["a_nat"] * s["px_lo"] * w
+                    usd = s["a_nat"] * s["px_lo"] * w
+                    assets += usd
+                    a_by_key[okey] = a_by_key.get(okey, 0.0) + usd
                 if s["l_nat"] > 0:
-                    liabs += s["l_nat"] * s["px_hi"] * b["lw_maint"]
+                    usd = s["l_nat"] * s["px_hi"] * b["lw_maint"]
+                    liabs += usd
+                    l_by_key[okey] = l_by_key.get(okey, 0.0) + usd
             if liabs > 0:
                 entry = {
                     "pk": r["pubkey"],
@@ -424,6 +436,17 @@ def health_scan(banks: dict, px: dict, dec: dict) -> dict:
                     "liabs": round(liabs, 2),
                     "health": round((assets - liabs) / liabs, 4),
                 }
+                if assets > 0 and 0 <= (assets - liabs) / liabs < SHOCK_WATCH_MAX_HEALTH:
+                    # shock watch: break-even uniform collateral price drop is
+                    # s* = 1 - liabs/assets; per-oracle breakdown lets the
+                    # tracker re-estimate health from a single live price move.
+                    # health < 0 accounts are excluded — already liquidatable
+                    # and handled by the normal hunt path each pass.
+                    entry["watch"] = {
+                        "a_by_key": {k: round(v, 2) for k, v in a_by_key.items()},
+                        "l_by_key": {k: round(v, 2) for k, v in l_by_key.items()},
+                        "breakeven_drop_pct": round(100 * (1 - liabs / assets), 2),
+                    }
                 if assets < liabs:
                     # §366 feasibility: a seize improves health only if
                     # w_asset < (1 - liq_fee - ins_fee) * lw_liab for SOME pair.
@@ -474,6 +497,19 @@ def main() -> dict:
     rec["total_secs"] = round(time.time() - t0, 1)
     with open(LOG_PATH, "a") as f:
         f.write(json.dumps(rec) + "\n")
+    watched = [m for m in rec["top20"] if "watch" in m]
+    # top20 is sorted by health and capped at 20; watch entries only exist
+    # below SHOCK_WATCH_MAX_HEALTH, so any watched account is in top20 unless
+    # >20 accounts qualify — accept that cap for log size.
+    if watched:
+        with open(WATCH_LOG_PATH, "a") as f:
+            f.write(json.dumps({
+                "ts": rec["ts"], "kind": "liq_shock_watch",
+                "n": len(watched),
+                "accounts": [{"pk": m["pk"], "health": m["health"],
+                              "assets": m["assets"], "liabs": m["liabs"],
+                              **m["watch"]} for m in watched],
+            }) + "\n")
     return rec
 
 

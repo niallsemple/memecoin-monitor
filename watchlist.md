@@ -4246,3 +4246,9 @@
 | 19:26 | solana | `H65nTRfD…` | FAIL | TOP10_HEAVY:73%; RC_WARN:Single holder ownership; RC_WARN:High holder concentration | liq=$16,855 mc=$47,636 | name=CHIKAI symbol=CHIKAI; contract:clean; rugcheck_score=34 lpLocked=100%; top10_hold=73. | Crypto gossip, memes, raids, and token scans - powered by AI. Chat with the CHIK |
 | 19:26 | robinhood | `0xFF636A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,255 mc=$44,103 | chain:robinhood no-audit-adapter | Apparently, I was born on the PONS GitHub.  I opened my eyes, looked around for  |
 | 19:26 | solana | `CEoBBZCu…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$17,496 mc=$50,849 | name=Hugh Jackman symbol=JACKMAN; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold |  |
+| 20:46 | robinhood | `0xf53081…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,934 mc=$33,744 | chain:robinhood no-audit-adapter | eloncoin spcx x tsla |
+| 20:46 | solana | `7tVc487j…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:65% | liq=$0 mc=$13,771 | name=PUMPONS symbol=PUMPONS; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=6 |  |
+| 20:46 | robinhood | `0x5e7516…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,014 mc=$144,205 | chain:robinhood no-audit-adapter | Choose a pet, assign one pool task, deposit into its vault, and trade its separa |
+| 20:46 | robinhood | `0xEe513e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Click a button one million times. Watch your screen get blurrier and your priori |
+| 20:46 | robinhood | `0x52638B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$2,515 | chain:robinhood no-audit-adapter | Astramon is an onchain collectible card platform built around sealed-card gacha, |
+| 20:46 | robinhood | `0x491D91…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$49,219 mc=$272,907 | chain:robinhood no-audit-adapter | Bears season off now. Time to die for them. |
