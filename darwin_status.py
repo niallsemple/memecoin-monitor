@@ -33,7 +33,9 @@ print("=== DARWIN status", time.strftime("%Y-%m-%d %H:%M:%S"), "===")
 opens = [r for r in trades if r.get("action") == "open_position" and r.get("mode") == "live"]
 exits = {}
 for r in trades:
-    if r.get("action") == "exit_decision":
+    # §390: writeoffs ARE exits (rug dust) — excluding them hid rug losses
+    # from the forward tally after §384/§389.
+    if r.get("action") in ("exit_decision", "exit_writeoff"):
         exits.setdefault(r["mint"], []).append(r)
 S376 = 1788643200  # §376 flip 21:00 UTC (22:00 BST) Sep 5
 coh = [o for o in opens if o["_ts"] >= S376]
