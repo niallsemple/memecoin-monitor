@@ -7154,3 +7154,9 @@ h16_early2/e2_live_bridge — single-driver invariant holds. RULE from here:
 any edit to automations/tracker_live.py must be mirrored into the collector
 automation's assets copy; liq_health.py and watcher-module edits go live on
 the next pass automatically.
+
+## §432c Fast loop CONFIRMED live — 15s pass cadence in state ring
+First window with the synced assets copy fired 18:48: h16_early2_state.json
+hist ring shows uniform 15s pass gaps (was 90s + double-invocation pairs).
+Shadow scoring + bridge dry-runs now resolve within ~15s of window close;
+live bridge fills (post-flag-flip) land ~+70-80s post-birth per §431 curve.
