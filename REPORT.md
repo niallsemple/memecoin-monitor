@@ -6758,3 +6758,11 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   +0.2609 SOL vs actual -0.1443 (0.40 SOL swing).
 - Import-checked; live exit pass runs clean with the flag off. Promotion is
   a one-line config flip on owner sign-off.
+
+## §400 — H15 PROMOTED LIVE as sell-all-at-1.2x (owner sign-off 2026-09-06 09:55)
+- `BANK_12X_ENABLED=True`, `P_BANK12_SELL=1.0`: any open position touching
+  r>=1.2 now fully exits (`bank12x`), banking +20% less fees/slippage.
+- Basis: §400a counterfactual on the 116-trade closed book — sell-all
+  +0.4013 SOL vs actual; sell-half +0.2511 SOL. Only 2/12 poppers ever
+  reached 1.5x; the runner option wasn't paying in this meta.
+- First live `bank12x` exit will be ledgered to live_log and tallied here.

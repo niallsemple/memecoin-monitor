@@ -4385,3 +4385,9 @@
 | 08:06 | solana | `7NU4DMAm…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,186 | name=Nuke Inc symbol=NKE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.9% |  |
 | 08:06 | solana | `Bie937Ap…` | FAIL | TOP10_HEAVY:99%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Zerocat symbol=ZEROCAT; rugcheck_score=12 lpLocked=100%; top10_hold=98.9% | Zcash original name was Zerocoin - Zerocat |
 | 08:06 | robinhood | `0x11bdcE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$66,634 mc=$487,079 | chain:robinhood no-audit-adapter | The one candle to pump them all.  We just discovered a new candle: FGOD Candle.  |
+| 08:46 | robinhood | `0x17472b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,258 mc=$110,233 | chain:robinhood no-audit-adapter | GPT‑6 Astra ushers in the era of on‑chain intelligence. The swirling galaxy embo |
+| 08:46 | solana | `7uU1MwDe…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,468 | name=stocklesscoin symbol=stockless; contract:clean; rugcheck_score=1 lpLocked=100%; top10 | This coin is stockless |
+| 08:46 | solana | `CtEd76hr…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$6,385 | name=pixel cat symbol=PC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=79.1% | pixel cat |
+| 08:46 | solana | `Da28zQTF…` | CAUTION | TOP10_CONCENTRATED:31% | liq=$20,440 mc=$65,057 | name=Ponshub symbol=PONSHUB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=31 |  |
+| 08:46 | robinhood | `0xb49207…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,066 mc=$12,039 | chain:robinhood no-audit-adapter | A stock trading AI recently started accepting donations in a new cryptocurrency  |
+| 08:46 | solana | `Fat8u5Rn…` | FAIL | TOP10_HEAVY:81%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=McCoin symbol=McCoin; rugcheck_score=12 lpLocked=100%; top10_hold=80.9% | McDonalds official account says they are trading MEMECOINS!!  Literally perfect  |
