@@ -6845,3 +6845,12 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   failure class) -> landing-probability-per-route; Jito bundles evaluated
   after measurement. (We do NOT use Jito today; ShredStream shutdown
   irrelevant to our plain-RPC path.)
+
+## §408 — RPC order fixed: Helius first (measured, not guessed)
+- Latency census: publicnode 3/3 timeouts, mainnet-beta 522ms, Helius 45ms.
+- Old order tried publicnode FIRST (15s+ failover burn per call during
+  drains); code contradicted its own §164 comment. Reordered so Helius
+  leads; first call now served in 62ms.
+- This is the first Execution Alpha fix landed off §406/§407 measurement.
+- Also: H16 shadow trade #3 closed at 0.92x (0/3 forward). Post-exit audit
+  pending; stops were right on 1&2.

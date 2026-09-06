@@ -48,9 +48,14 @@ SOL = "So11111111111111111111111111111111111111112"
 # (its WS birth feed in the tracker is unaffected and benefits from the plan).
 _HK_F = MON / "helius_key.txt"
 _HK = _HK_F.read_text().strip() if _HK_F.exists() else ""
-RPCS = ["https://solana-rpc.publicnode.com",
-        "https://api.mainnet-beta.solana.com"] + \
-       ([f"https://mainnet.helius-rpc.com/?api-key={_HK}"] if _HK else [])
+# §408: Helius FIRST for real — measured 2026-09-06: publicnode ALL FAILED
+# (3/3 timeouts), mainnet-beta 522ms, Helius 45ms (12x faster). The old
+# order burned 15s+ of failover before reaching Helius on every call —
+# plausibly a chunk of the §406 exit failures during drains. Code now
+# matches the §164 comment's documented intent.
+RPCS = ([f"https://mainnet.helius-rpc.com/?api-key={_HK}"] if _HK else []) + \
+       ["https://solana-rpc.publicnode.com",
+        "https://api.mainnet-beta.solana.com"]
 JUP_Q = "https://lite-api.jup.ag/swap/v1/quote"
 JUP_S = "https://lite-api.jup.ag/swap/v1/swap"
 
