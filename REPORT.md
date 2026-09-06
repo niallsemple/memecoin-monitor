@@ -6875,3 +6875,13 @@ weak dd/bf (0.743/0.600) lost. Pattern: mom alone selects churners; dd+bf carry
 the signal. Candidate H16b bar: mom≥1.20 AND dd≥0.80 AND bf≥0.85 — would have
 taken only the winner (n=5, curve-fit risk high; validate passively from logged
 metrics, no code change, re-score at 10+ closes). Exits remain validated (§405).
+
+## §411 dbc_scout.py — post-birth tick capture for competitor births
+birth_watch sees births; dbc_scout now tracks what happens next. For every
+birth_watch mint, polls Jupiter (1 SOL -> token) at ages 60/120/180/300/600/
+1800s and logs price multiple vs first successful quote to dbc_scout.jsonl.
+Failed quotes log indexed:false (time-to-index = earliest-entry window).
+Hooked into shock_recheck tail (§411b). First pass backfilled 5 DBC births;
+4/5 Jupiter-indexed, DtmdoiMes not (base null). Backfill polls share one
+timestamp (mult=1.0 artifact) — true offsets apply to real-time births only.
+Next: enough real-time births to test whether the H16b entry bar travels.

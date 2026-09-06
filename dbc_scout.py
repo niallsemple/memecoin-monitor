@@ -1,0 +1,107 @@
+"""dbc_scout.py — §411: post-birth tick capture for birth_watch mints
+(Meteora DBC + Raydium LaunchLab). READ-ONLY.
+
+Why: birth_watch SEES births on pump.fun's competitors but nothing tracks
+what happens next. H16 asks "+20% within minutes?" for pump.fun seeds;
+this asks the same question cross-venue so the entry filter (§410 H16b
+candidate bar) can be tested on DBC/LaunchLab births too.
+
+Method: for each mint in birth_watch.jsonl, poll Jupiter lite-api
+(1 SOL -> token quote) at fixed ages [60,120,180,300,600,1800]s.
+First successful quote = baseline price; later polls log the multiple.
+Failed quotes log indexed:false — time-to-index is itself a signal
+(pre-index window = the earliest-entry opportunity).
+
+State: dbc_scout_state.json {mint: {birth_t, venue, done:[ages], base}}
+Log:   dbc_scout.jsonl {t, mint, venue, age, price_sol, mult, indexed}
+"""
+import json
+import time
+import urllib.request
+from pathlib import Path
+
+MON = Path(__file__).resolve().parent
+STATE = MON / "dbc_scout_state.json"
+BIRTHS = MON / "birth_watch.jsonl"
+LOG = MON / "dbc_scout.jsonl"
+
+AGES = [60, 120, 180, 300, 600, 1800]      # post-birth poll offsets (s)
+WSOL = "So11111111111111111111111111111111111111112"
+QUOTE = ("https://lite-api.jup.ag/swap/v1/quote?inputMint=%s&outputMint=%s"
+         "&amount=%d&slippageBps=50")
+MAX_TRACKED = 40                            # cap concurrent tracked mints
+
+
+def _load_state():
+    try:
+        return json.loads(STATE.read_text())
+    except Exception:
+        return {}
+
+
+def _save_state(st):
+    STATE.write_text(json.dumps(st))
+
+
+def _quote_sol_to_token(mint):
+    """Return price in SOL per token, or None if not indexed / no route."""
+    url = QUOTE % (WSOL, mint, 1_000_000_000)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "darwin"})
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+        out = int(d.get("outAmount", 0))
+        if out <= 0:
+            return None
+        return 1e9 / out                      # lamports per raw token unit
+    except Exception:
+        return None
+
+
+def run_pass():
+    now = time.time()
+    st = _load_state()
+
+    # register new births
+    if BIRTHS.exists():
+        for line in BIRTHS.read_text().splitlines():
+            try:
+                b = json.loads(line)
+            except Exception:
+                continue
+            m = b.get("mint")
+            if m and m not in st and len(st) < MAX_TRACKED:
+                st[m] = {"birth_t": b.get("t", now), "venue": b.get("venue"),
+                         "done": [], "base": None}
+
+    out = []
+    for mint, s in list(st.items()):
+        age_now = now - s["birth_t"]
+        for a in AGES:
+            if a in s["done"] or age_now < a:
+                continue
+            px = _quote_sol_to_token(mint)
+            rec = {"t": now, "mint": mint, "venue": s["venue"], "age": a}
+            if px is None:
+                rec["indexed"] = False
+            else:
+                if s["base"] is None:
+                    s["base"] = px
+                rec.update({"indexed": True, "price_sol": px,
+                            "mult": round(px / s["base"], 4)})
+            out.append(rec)
+            s["done"].append(a)
+        # expire fully-polled mints
+        if len(s["done"]) == len(AGES):
+            del st[mint]
+
+    if out:
+        with LOG.open("a") as f:
+            for r in out:
+                f.write(json.dumps(r) + "\n")
+    _save_state(st)
+
+
+if __name__ == "__main__":
+    run_pass()
+    print("dbc_scout pass ok")

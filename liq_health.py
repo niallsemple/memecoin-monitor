@@ -345,6 +345,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _ejm2.run_pass()
     except Exception:
         pass
+    # §411b: dbc_scout — Jupiter tick capture for birth_watch mints at
+    # fixed post-birth ages. Log-only; same cadence + isolation.
+    try:
+        import importlib.util as _ilds
+        _ds = _ilds.spec_from_file_location("dbc_scout", MON / "dbc_scout.py")
+        _dsm = _ilds.module_from_spec(_ds)
+        _ds.loader.exec_module(_dsm)
+        _dsm.run_pass()
+    except Exception:
+        pass
     return out
 
 

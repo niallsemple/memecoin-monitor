@@ -238,3 +238,12 @@
 {"action": "h16_close", "mint": "EsWsA6LVyqMmbUQd26zhm6MQRihEayCqcLkbEAbFpump", "t": 1788695887.4262242, "outcome": "win", "mult": 1.2, "mins": 5.8, "mom": 1.217, "dd": 0.822, "bf": 0.87, "seed": 9.876543208}
 {"action": "h16_drop", "mint": "9KC4z67cPgM6YZVCc8o6dtx7EatPTYgLjstiq9J5pump", "reason": "no ticks", "t": 1788696363.854103}
 {"action": "h16_reject", "mint": "5c91P8hjAE3JJi1QZxySPVnC51RBvSL6L8HDWxVypump", "t": 1788696363.854103, "mom": 0.691, "dd": 0.39, "bf": 0.629, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "HCx4FgqZqPd1Bmyd5cqjGNTwJCwwG3Bmfdymz68Hpump", "t": 1788696546.729877, "mom": 0.665, "dd": 0.556, "bf": 0.455, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "Ak8XvyrZJSwu2hQdHHGXbxxaAW3TELgqUVVFfPGEpump", "t": 1788696639.3729842, "mom": 0.965, "dd": 0.843, "bf": 0.583, "seed": 2.967496174}
+{"action": "h16_reject", "mint": "3bWXhj4dkinjVM2X31jvkmXSUkKof2DB4VE3rcvgpump", "t": 1788696639.3729842, "mom": 0.862, "dd": 0.846, "bf": 0.25, "seed": 2}
+{"action": "h16_reject", "mint": "13UZyb2np9YoeK8csmk6UeYj8Huf7WzqLohQPhsSpump", "t": 1788696639.3729842, "mom": 0.631, "dd": 0.626, "bf": 0.4, "seed": 4.888888887}
+{"action": "h16_open", "mint": "2K1b58FM9WaYgj9LnJRFoNyfoSo1EiGus3zsWoL8pump", "t": 1788696626.8403358, "scored_at": 1788696639.3729842, "entry_mcap": 42.3087, "mom": 1.287, "dd": 0.771, "bf": 0.734, "seed": 2.374471431}
+{"action": "h16_reject", "mint": "NRciSA6Vr34ab5D5Qib1PfTW1qjBbMUb1odx2STpump", "t": 1788696732.129344, "mom": 1.075, "dd": 0.688, "bf": 0.725, "seed": 4.888888887}
+{"action": "h16_close", "mint": "2K1b58FM9WaYgj9LnJRFoNyfoSo1EiGus3zsWoL8pump", "t": 1788696663.859766, "outcome": "win", "mult": 1.2, "mins": 0.6, "mom": 1.287, "dd": 0.771, "bf": 0.734, "seed": 2.374471431}
+{"action": "h16_drop", "mint": "4nkZo87oABNDhD6aYVRzB2b8fiNT7Yc23jBG94udpump", "reason": "no ticks", "t": 1788696824.825139}
+{"action": "h16_reject", "mint": "6K2YtkxgXBWMBKzUDG7NcVUmFLMd32jcxJzNkAdtpump", "t": 1788696824.825139, "mom": 0.483, "dd": 0.476, "bf": 0.353, "seed": 5}
