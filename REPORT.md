@@ -6854,3 +6854,16 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
 - This is the first Execution Alpha fix landed off §406/§407 measurement.
 - Also: H16 shadow trade #3 closed at 0.92x (0/3 forward). Post-exit audit
   pending; stops were right on 1&2.
+
+## §409 — Blockspace-priced priority fees LIVE on curve buy/sell
+- _dyn_prior_fee([curve]) -> getRecentPrioritizationFees p75 for the exact
+  writable account we lock, clamped [50k, 2M] µL/CU, fallback 200k.
+  Wired into curve_buy + curve_sell. Quiet curve now pays the 50k floor
+  instead of fixed 200k; contended curve pays the real market price during
+  drains — directly targets the §406 exit-failure class.
+- Bugs caught in validation: st['curve'] is bytes (str() mangled it into
+  a b'...' literal -> RPC None); zero-fee slots were being filtered out,
+  making quiet accounts fall back. Both fixed; probe returns floor on a
+  quiet curve and the module passes a live exit_watch pass.
+- Owner's ChatGPT brief #7 (rent recovery) also probed: wallet has ZERO
+  token accounts — nothing recoverable, dead ATAs already cleaned.

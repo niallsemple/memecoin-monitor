@@ -64,7 +64,27 @@ FRAC = 0.05              # 5% of wallet balance per entry
 MAX_SOL = 0.20           # never more than 0.2 SOL on one entry
 MIN_BAL_KEEP = 0.05      # always keep this much for fees/rent
 SLIPPAGE_BPS = 1500      # memecoin reality; tight slips just fail
-PRIOR_FEE_MICROLAMPORTS = 200_000  # ~0.0002 SOL priority fee
+PRIOR_FEE_MICROLAMPORTS = 200_000  # ~0.0002 SOL priority fee (fallback)
+
+
+def _dyn_prior_fee(acct_addrs, floor=50_000, ceil=2_000_000):
+    """§409: blockspace-priced priority fee. getRecentPrioritizationFees
+    takes the WRITABLE accounts our tx locks and returns what recent
+    landings paid to lock them — p75 of that is the market price for this
+    state right now. Falls back to PRIOR_FEE_MICROLAMPORTS on any error.
+    """
+    try:
+        addrs = [b58enc(a) if isinstance(a, (bytes, bytearray)) else str(a)
+                 for a in acct_addrs]
+        res = _rpc("getRecentPrioritizationFees", [addrs])
+        fees = sorted(r["prioritizationFee"] for r in (res or [])
+                      if r.get("prioritizationFee") is not None)
+        if not fees:
+            return PRIOR_FEE_MICROLAMPORTS
+        p75 = fees[int(len(fees) * 0.75)]
+        return max(floor, min(ceil, p75))
+    except Exception:
+        return PRIOR_FEE_MICROLAMPORTS
 
 _state = {"rpc": 0}
 
@@ -657,9 +677,12 @@ def curve_buy(mint, sol_amount, reason="signal"):
             row["result"] = "refused: creator unknown"
             _log(row); return row
         creator_vault = pda([b"creator-vault", creator], PUMP_PROG)
+        # §409: price blockspace for THIS curve right now (the curve is the
+        # account everyone write-locks during a pump/drain).
+        _pfee = _dyn_prior_fee([st["curve"]])
         ixs = [
             (CMP_PROG, [], struct.pack("<BI", 2, 300_000)),
-            (CMP_PROG, [], struct.pack("<BQ", 3, PRIOR_FEE_MICROLAMPORTS)),
+            (CMP_PROG, [], struct.pack("<BQ", 3, _pfee)),
             (ATA_PROG, [(ub, True, True), (user_ata, True, False),
                         (ub, False, False), (mb, False, False),
                         (SYS_PROG, False, False), (st["token_prog"], False, False)],
@@ -728,9 +751,10 @@ def curve_sell(mint, token_amount, min_sol_out=0, reason="exit"):
         cc = _get_account(b58enc(st["curve"]))
         creator = cc["data"][49:81] if len(cc["data"]) >= 81 else None
         creator_vault = pda([b"creator-vault", creator], PUMP_PROG)
+        _pfee = _dyn_prior_fee([st["curve"]])   # §409 — exits need it most
         ixs = [
             (CMP_PROG, [], struct.pack("<BI", 2, 200_000)),
-            (CMP_PROG, [], struct.pack("<BQ", 3, PRIOR_FEE_MICROLAMPORTS)),
+            (CMP_PROG, [], struct.pack("<BQ", 3, _pfee)),
             (PUMP_PROG, [
                 (G_GLOBAL, False, False),
                 (b58dec(st["fee_recipient"]), True, False),
