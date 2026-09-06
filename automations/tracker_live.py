@@ -146,6 +146,16 @@ def fast_entry_spawn(mint, creator, seed=0.0, funded=False):
                 row["result"] = "skip: oversized unfunded create seed %.2f" % seed
                 lt._log(row)
                 _fe_debug("seed_blocked", mint, seed=seed)
+                # §389: grow the persistent farm denylist so the graduated
+                # hook paths refuse this mint hours later too.
+                try:
+                    _dl = MON / "farm_denylist.json"
+                    _lst = json.loads(_dl.read_text()) if _dl.exists() else []
+                    if mint not in _lst:
+                        _lst.append(mint)
+                        _dl.write_text(json.dumps(_lst, indent=1))
+                except Exception:
+                    pass
                 return
             import deployer_local
             import bundle_share as _bs

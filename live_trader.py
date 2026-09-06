@@ -73,6 +73,23 @@ def _log(row):
         f.write(json.dumps(row) + "\n")
 
 
+FARM_DENY = MON / "farm_denylist.json"
+
+
+def _farm_blocked(mint):
+    """§389: persistent farm denylist — any mint whose create tx carried an
+    outsized (>=50 SOL) seed matches the §384 rug-farm signature and is
+    refused by EVERY entry path, not just the §385 birth window. The farm
+    coin oZkqKQgk re-entered via the graduated s60nm5fr hook 83 min after
+    the birth gate blocked it and drained 4.8 min after we bought."""
+    try:
+        if not FARM_DENY.exists():
+            return False
+        return mint in set(json.loads(FARM_DENY.read_text()))
+    except Exception:
+        return False
+
+
 def _rpc(method, params):
     for attempt in range(4):
         # §164: ordered fallback — Helius first on every call, public only
@@ -314,6 +331,10 @@ def buy(mint, reason="signal"):
     if mint in _pos0:
         row["result"] = ("refused: mint already traded "
                          f"(open={_pos0[mint].get('open')}) (§267)")
+        _log(row)
+        return row
+    if _farm_blocked(mint):
+        row["result"] = "refused: farm denylist (§389)"
         _log(row)
         return row
     # §246: deployer scorecard — repeat-offender rug crews from our own
@@ -593,6 +614,9 @@ def curve_buy(mint, sol_amount, reason="signal"):
     if mint in _pos0:
         row["result"] = ("refused: mint already traded "
                          f"(open={_pos0[mint].get('open')}) (§267)")
+        _log(row); return row
+    if _farm_blocked(mint):
+        row["result"] = "refused: farm denylist (§389)"
         _log(row); return row
     try:
         st = curve_state(mint)
