@@ -7245,3 +7245,20 @@ against bridge calls; py_compile clean. Bridge module loads fresh from
 workspace each pass (importlib) — no assets sync needed. Wallet 1.3030 SOL.
 Fresh-cadence record at flip: 4 trades 1W/1T/2L = +1.45%/trade gross;
 FRGi3hXEu (4th qualifier) stopped -8% at 3.6m just before the flip.
+
+## §440 FIRST LIVE TRIAL FIRED — slippage guard refused the fill (system protected us)
+F2VJAXjj qualified fresh (mom 1.057, dd 0.946, bf 0.667, 12.9s lag) ->
+bridge_buy -> curve preflight FAILED: custom 6062 in the buy instruction.
+Root cause: quote-to-send path makes 3+ RPC hops (curve_state, creator
+account, dynamic priority fee); in a coin already +5.7% at +73s, price
+moved >15% past the min_tokens floor before simulation — the 15% adverse-
+move guard REFUSED a bad fill. Zero SOL spent (wallet 1.3030 unchanged).
+Interpretation: guard working as designed; ultra-fast movers will refuse
+rather than chase. BUG FIXED: the bridge opened a phantom position on the
+failed buy (repeat of the §277 5CrfJju ghost class) — open_position now
+runs ONLY on a real sig; phantom removed from live_positions.json (backup
+live_positions.json.bak440), bridge open_mints cleared so max_concurrent
+doesn't block the next trial. Logged action bridge_buy_refused from here.
+If refusals accumulate on hot coins, the queued fix is a one-shot re-quote
+retry inside curve_buy. Shadow still tracking F2VJAXjj's outcome for the
+record. Gate status: LIVE, armed for the next qualifier.

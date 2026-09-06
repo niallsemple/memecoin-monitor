@@ -104,9 +104,18 @@ def run_pass():
                         lt = ilu.module_from_spec(spec)
                         spec.loader.exec_module(lt)
                         sig = lt.curve_buy(mint, SIZE_SOL, reason="e2_trial")
-                        lt.open_position(mint, SIZE_SOL, "e2_trial")
                         rec["sig"] = sig
-                        st["open_mints"].append(mint)
+                        # §440: only register a position on a REAL fill —
+                        # sig=None means the slippage guard rejected the
+                        # preflight (error 6062 on F2VJAXjj); opening anyway
+                        # created a phantom position the exit stack would
+                        # try to sell. No sig -> no position -> no slot held.
+                        if isinstance(sig, dict) and sig.get("sig"):
+                            lt.open_position(mint, SIZE_SOL, "e2_trial")
+                            st["open_mints"].append(mint)
+                        else:
+                            rec["action"] = "bridge_buy_refused"
+                            rec["refused"] = (sig or {}).get("result", "?")[:160]
                     except Exception as e:
                         rec["action"] = "bridge_error"
                         rec["err"] = str(e)[:200]
