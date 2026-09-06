@@ -7208,3 +7208,13 @@ Run history after the manual kick: 19:03Z manual (succeeded 19:21Z);
 fire (18:44Z); the scheduler re-found its grid unaided. Monitoring for
 recurrence. Liveness signal corrected: mfg_trades.jsonl is tracker-only —
 use it, not curves.jsonl (also fed by flow_recorder.py).
+
+## §436 Hg5MeDEX closes +1.83% — first fresh-cadence trade finishes green
+Timeout at 1.0183x after exactly 60.0m. Not the +20% bank, but the FIRST
+trade of the post-§432 era (10.4s detection) finished GREEN — vs the
+backfill batch's three instant -8% stops. Fresh-cadence tally: 1 trade,
++1.8% gross. Full book n=9: -2.27%/trade gross (still backfill-weighted).
+Market flipped COLD (6.7%) right after — the hourly regime wave rolled
+over; expect a qualifier drought until the next HOT phase. The gate metric
+(3-5 fresh would-buys) accumulates only in warm regimes, so calendar time
+to gate depends on regime, not just birth rate. All infra stable.
