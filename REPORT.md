@@ -7106,3 +7106,23 @@ The 2DJ6a732 loss (bf=1.0) is NORMAL variance, not a final-spike signal —
 perfect-flow entries stay net positive historically. No exclusion filter
 warranted; if anything, mild preference for bf 0.7-0.9 when prioritizing
 among simultaneous qualifiers. Bar unchanged: mom>=1.0, dd>=0.90, bf>=0.50.
+
+## §431 Entry-lag robustness: edge SURVIVES realistic fill lag (backtest_lag.py)
+Concern (§430 follow-up): backtest enters at the +60s tick, but pass cadence
+~93s means a live bridge fill lands +90-160s; observed scored_at lags on the
+4 h16e2 opens were 35/57/454/967s, with price at scored_at -13.4% on the win.
+Re-ran the exact §418/§424 pipeline (same files, same bars incl. liveness;
+qualifying window fixed at 60s) with the ENTRY tick moved to last tick <=
+t0+LAG (executable price for a silent coin = last tick, since price can't
+move without trades). Full history, 41,160 seeds, 62 qualifiers:
+  entry +60s:  +7.2%/trade (32W/24L/6T)   <- original backtest
+  entry +90s:  +5.2%/trade (27W/26L/9T)
+  entry +120s: +4.8%/trade (26W/27L/9T)   <- realistic bridge fill
+  entry +150s: +2.8%/trade (20W/27L/15T)  <- marginal after fees
+  entry +180s: +1.6%/trade (17W/29L/16T)  <- dead after ~1-2% fees
+VERDICT: the edge is real but FAST-DECAYING — roughly -0.04%/trade per
+second of entry lag. At the realistic +120s fill it retains ~+4.8% gross
+(~+3% net). The flag flip remains justified. ACTIONABLE: every second of
+scoring latency is money; a dedicated fast file-tail loop for h16_early2
+(no RPC cost) at 10-15s cadence would pull fills toward +75s and recover
+~2%/trade. Queued as the next build before sizing up.
