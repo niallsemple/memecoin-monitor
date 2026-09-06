@@ -7218,3 +7218,11 @@ Market flipped COLD (6.7%) right after — the hourly regime wave rolled
 over; expect a qualifier drought until the next HOT phase. The gate metric
 (3-5 fresh would-buys) accumulates only in warm regimes, so calendar time
 to gate depends on regime, not just birth rate. All infra stable.
+
+## §437 8quDSNDD — second fresh qualifier BANKS +20% in 3.1 minutes
+18.5s scoring lag (fast loop delivering again). mom 1.031, dd 0.970,
+bf 1.00 (perfect buy flow — the §430 "coin-flip" bucket, and it banked).
+WIN 1.2x at 3.1m. Fresh-cadence tally: 2 trades = 1W(+20%)/1T(+1.8%) =
++10.9%/trade gross — right at the backtest profile (+7.2% at +60s fills).
+Gate: 2 fresh would-buys (of 3-5). Market lifted to WARM (11.1%) as the
+qualifier arrived — regime-locked as §421 predicted.
