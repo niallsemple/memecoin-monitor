@@ -7200,3 +7200,11 @@ CeDFmAkP closed during the manual run: TIMEOUT 0.9773x at 65.2m — the
 silent-coin failure mode costing ~2.3% gross as designed. Forward tally
 n=8: 1W/5L/2T = -2.78%/trade gross; fresh-cadence subsample still just
 Hg5MeDEX (open, 1.030x last tick). Gate unchanged: 1 fresh would-buy.
+
+## §435b Scheduler self-recovered — single missed fire, back on grid
+Run history after the manual kick: 19:03Z manual (succeeded 19:21Z);
+19:04Z scheduled fire correctly SKIPPED (manual active — §380 skip design);
+19:24Z scheduled fire RUNNING. The pre-kick gap was one unexplained missed
+fire (18:44Z); the scheduler re-found its grid unaided. Monitoring for
+recurrence. Liveness signal corrected: mfg_trades.jsonl is tracker-only —
+use it, not curves.jsonl (also fed by flow_recorder.py).
