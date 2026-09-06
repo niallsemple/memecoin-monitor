@@ -6996,3 +6996,12 @@ slightly softer hot tail, within noise). The +6%/trade backtest window and
 the present are the same market. Expected h16e2 open rate: ~4.6% of
 scorable -> ~1.6 opens/hour; 0 opens in ~25 scored is P~0.28, unremarkable.
 Discipline holds: no forced trades. Keep watching.
+
+## §421 Cold snap identified; measurement integrity verified
+Shadow-mom == full-file mom on 5/5 audited rejects (0.654/0.828/0.673/
+0.834/0.668 exact) — tick capture is faithful. The open drought is a REAL
+micro-regime: mom60>=1.0 ran 9% in the last 1.5h vs 19% (3h), 21% (6h),
+23% (full history). The market cools in ~hour-scale waves; the edge lives
+in the hot waves. IMPLICATION: a regime gauge (hourly mom60 heat) can
+throttle live size — trade full in hot regimes, stand down in cold ones.
+Backlog item: heat-index gated sizing once forward opens confirm the bar.
