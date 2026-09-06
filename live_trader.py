@@ -761,6 +761,15 @@ def curve_sell(mint, token_amount, min_sol_out=0, reason="exit"):
 POSITIONS = MON / "live_positions.json"
 P_FR_TARGET = 1.5     # freeroll trigger
 P_FR_SELL = 0.75      # sell 75%
+# §399 H15 (DORMANT — awaiting owner promotion): partial bank at 1.2x.
+# §395 counterfactual: 12 pops >= 1.2x on our own book would have grossed
+# +0.2609 SOL vs actual -0.1443 (0.40 SOL swing). Banking 50% at 1.2x
+# converts pops into realized profit before the round-trip. Flip
+# BANK_12X_ENABLED to True on owner sign-off; behavior is unchanged
+# while False (this branch never fires).
+BANK_12X_ENABLED = False
+P_BANK12 = 1.2        # bank trigger multiple
+P_BANK12_SELL = 0.5   # sell 50% of remaining stack
 P_TRAIL_F = 0.5       # trail at 50% of peak
 # §376: abort15 age 15 -> 28 min. Shadow replay of the 0.10-SOL cohort
 # (17 abort15 exits): EVERY position was higher at 30m than at its 15m exit
@@ -1060,6 +1069,12 @@ def exit_watch():
             elif _a3r_exit:
                 # §360: red at the minute-3 check — cut it before the drain.
                 act, sell_tokens = "abort3_red", p["tokens_left"]
+            elif BANK_12X_ENABLED and not p["freerolled"] \
+                    and not p.get("banked_12x") and r >= P_BANK12:
+                # §399 H15: one-shot 50% bank at 1.2x; position stays
+                # open, freeroll/trail stack still governs the rest.
+                act, sell_tokens = "bank12x", max(
+                    1, int(p["tokens_left"] * P_BANK12_SELL))
             elif not p["freerolled"] and r >= P_FR_TARGET:
                 act, sell_tokens = "freeroll", int(p["tokens_left"] * P_FR_SELL)
             elif p["freerolled"] and r <= P_TRAIL_F * p["peak_mult"]:
@@ -1173,6 +1188,10 @@ def exit_watch():
                 p["tokens_left"] -= sell_tokens
                 if act == "freeroll":
                     p["freerolled"] = True
+                elif act == "bank12x":
+                    # §399: partial bank — position stays open, flag
+                    # the one-shot so it never fires twice.
+                    p["banked_12x"] = True
                 else:
                     p["open"] = False
                     p["closed_reason"] = act

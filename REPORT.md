@@ -6748,3 +6748,13 @@ Built h16_shadow.py: every tracker pass tails curves.jsonl + mfg_trades.jsonl vi
 
 ## §398c — Coverage fix for H16: SEED_MIN 5->2, MAX_TRACK 40->100 (2026-09-06 08:50 BST)
 Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-tracked (9%) — the tracker never watched seeds below 5 SOL and capped at 40 concurrent curves. H16's cohort was structurally invisible. Deployed: SEED_MIN 2.0 + MAX_TRACK 100 (tracker redeployed via deploy_tracker.sh). Quota note: est. ~140 ticks per tracked coin-hour; at ~100 concurrent the WSS notification burn rises ~2.5x — watch against the 10M/month Helius tier; throttle MAX_TRACK back if the meter runs hot. Early h16_drop "no ticks" rows were pre-fix queue residue, not the new steady state.
+
+## §399 — H15 bank-at-1.2x implemented, DORMANT pending owner promotion
+- `live_trader.py`: `BANK_12X_ENABLED=False` gate; when flipped, a one-shot
+  `bank12x` exit sells 50% of the stack at r >= 1.2 (`P_BANK12`,
+  `P_BANK12_SELL`). Position stays open; freeroll/trail stack governs the
+  remainder. Bookkeeping mirrors freeroll (partial, `banked_12x` one-shot).
+- Rationale: §395 counterfactual — 12 pops >= 1.2x on our own book grossed
+  +0.2609 SOL vs actual -0.1443 (0.40 SOL swing).
+- Import-checked; live exit pass runs clean with the flag off. Promotion is
+  a one-line config flip on owner sign-off.
