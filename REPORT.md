@@ -6946,3 +6946,13 @@ Same bars (mom 1.1027 / dd 0.5896 / bf 0.5762) and exits (+20%/-8%/1h).
 Hooked into shock_recheck tail (§415b). First pass already tracking 1 seed.
 The §414 replay says +60s entries flip 2W/4L to ~4W/2L IF selection
 survives; this shadow is the honest forward test of exactly that.
+
+## §416 First-minute dippers never recover (4/4)
+Traced all 4 h16e rejects past the 60s window: CUV7B6YK 0.57x flat to +10m,
+8aqYhcYb 0.86x flat, CEN3aGpg 0.86x flat, Djc3LpXM 0.58x flat (224 ticks —
+active coin, still died). The minute-1 dip is NOT the discounted entry the
+"buy the 40% dip" idea hoped for; it is the beginning of death. Combined
+with §414: winners RAMP 60s->180s (mom >= ~1.0 at 60s), losers dip and
+stay. Early-window discriminator candidate: mom >= 1.0 at +60s (not the
+180s-derived 1.1027). h16e's strict bar will likely open rarely — if so,
+that IS the finding; loosen to mom>=1.0 in an h16e2 variant and re-test.
