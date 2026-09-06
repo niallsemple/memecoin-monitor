@@ -4379,3 +4379,9 @@
 | 07:46 | robinhood | `0x58AE34…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$87,902 mc=$1,166,784 | chain:robinhood no-audit-adapter | DONSENSECOINS |
 | 07:46 | solana | `2uykRtjU…` | FAIL | TOP10_HEAVY:55%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$13,652 mc=$22,257 | name=Chrome Dino symbol=DINO; rugcheck_score=12 lpLocked=100%; top10_hold=55.1% |  |
 | 07:46 | solana | `2AiLHx92…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,288 mc=$2,122 | name=Anonnymous Dog symbol=ZDOG; contract:clean; rugcheck_score=33 lpLocked=0%; top10_hold | Anonymous Dog is the masked meme legend, bringing mystery, chaos, and unstoppabl |
+| 08:06 | solana | `GMac52Zp…` | PASS | — | liq=$25,380 mc=$96,469 | name=pipetoad symbol=pipetoad; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 08:06 | solana | `FCpqXfA6…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:36% | liq=$30,420 mc=$109,466 | name=FIGURE 03 symbol=F03; rugcheck_score=12 lpLocked=87.77371815774343%; top10_hold=36.4% | FigureAI's first robot design, Figure 03. |
+| 08:06 | robinhood | `0x199d38…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 08:06 | solana | `7NU4DMAm…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,186 | name=Nuke Inc symbol=NKE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.9% |  |
+| 08:06 | solana | `Bie937Ap…` | FAIL | TOP10_HEAVY:99%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Zerocat symbol=ZEROCAT; rugcheck_score=12 lpLocked=100%; top10_hold=98.9% | Zcash original name was Zerocoin - Zerocat |
+| 08:06 | robinhood | `0x11bdcE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$66,634 mc=$487,079 | chain:robinhood no-audit-adapter | The one candle to pump them all.  We just discovered a new candle: FGOD Candle.  |

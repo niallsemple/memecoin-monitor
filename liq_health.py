@@ -313,6 +313,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         if h < -0.003:  # margin vs conf-band noise; drill re-verifies exactly
             out.append({"pk": a["pk"], "health": round(h, 4),
                         "assets": round(a_new, 2), "liabs": round(l_new, 2)})
+    # §398e: H16 shadow scorer piggybacks on the 90s shock cadence —
+    # byte-bookmark tails only; never raises into the liq path.
+    try:
+        import importlib.util as _iluh
+        _sh = _iluh.spec_from_file_location("h16_shadow", MON / "h16_shadow.py")
+        _h16 = _iluh.module_from_spec(_sh)
+        _sh.loader.exec_module(_h16)
+        _h16.run_pass()
+    except Exception:
+        pass
     return out
 
 
