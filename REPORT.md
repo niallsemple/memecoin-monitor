@@ -7226,3 +7226,11 @@ WIN 1.2x at 3.1m. Fresh-cadence tally: 2 trades = 1W(+20%)/1T(+1.8%) =
 +10.9%/trade gross — right at the backtest profile (+7.2% at +60s fills).
 Gate: 2 fresh would-buys (of 3-5). Market lifted to WARM (11.1%) as the
 qualifier arrived — regime-locked as §421 predicted.
+
+## §438 Fresh-cadence trade #3: 3oK97Aet stops -8% at 9.9m
+bf 0.75 sweet-spot profile, still hit the panic stop — normal variance
+(backtest loss rate at these bars: ~44%). FRESH-CADENCE TALLY (post-§432,
+sub-20s detection): 3 trades = 1W(+20%)/1T(+1.8%)/1L(-8%) = +4.6%/trade
+gross. Drifting toward the realistic band (backtest +7.2%, fees ~1-2%).
+Gate metric complete at minimum: 3 fresh would-buys with sub-20s lags.
+Owner flip decision pending.
