@@ -4403,3 +4403,9 @@
 | 10:06 | solana | `Gta366UP…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:94% | liq=$0 mc=$5,566 | name=Cow Screen symbol=cowscreen; contract:clean; rugcheck_score=67 lpLocked=100%; top10_h | Cow Screen  Absolute Cinema |
 | 10:06 | solana | `EvLzxzJg…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:95% | liq=$7,468 mc=$10,422 | name=Anonymous Trump symbol=ZTRUMP; contract:clean; rugcheck_score=32 lpLocked=100%; top10 | Anonymous Trump brings mystery, chaos, and unstoppable meme energy to Solana, ma |
 | 10:06 | solana | `F1Vxv9wY…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,941 | name=AICOIN symbol=AICOIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=97.8 |  |
+| 10:26 | solana | `4NhsA9e6…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$7,291 | name=Pingu symbol=PINGU; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=73.6% |  |
+| 10:26 | robinhood | `0xEac7cd…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,848 mc=$47,953 | chain:robinhood no-audit-adapter | inside our formula, losses are impossible. |
+| 10:26 | robinhood | `0xD490f8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,748 mc=$78,977 | chain:robinhood no-audit-adapter | blooming finance with u |
+| 10:26 | solana | `CYb2JBo1…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:96%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$18,940 | name=FX Fighter Kurumi-chan symbol=KURUMI; rugcheck_score=35 lpLocked=99.99988669125642%;  | s |
+| 10:26 | solana | `79dojbxW…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:51%; METADATA_MUTABLE; RC_WARN:Low amount of LP Providers | liq=$21,115 mc=$54,592 | name=Solana Stock Index symbol=INDEX; rugcheck_score=52 lpLocked=7.226483014716224e-11%; t | Stock yield protocol for Solana Tokenized Stocks |
+| 10:26 | robinhood | `0x0446a6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
