@@ -7024,3 +7024,14 @@ qualification" — the bar passed on the last gasp of activity. Candidate
 liveness check: require >=1 tick in the final 15s of the 60s window before
 opening. One case; wait for a second before adding the filter.
 Meanwhile: heat gauge reads HOT (20.0%, 15 scorable) — regime lifted.
+
+## §424 Liveness bar added to h16_early2 (backtest-justified)
+Backtest with liveness (last tick within final 15s of the 60s window):
+  no filter:  n=104, +5.9%/trade
+  15s:        n=59,  +7.5%/trade  (skips 45 silent-window coins, 43%!)
+  30s:        n=83,  +6.8%/trade
+Deployed 15s (h16e2_stale logs skips). NOTE: EUxJvNiL would NOT have been
+caught (last tick +48.8s, passed liveness, died after window close) —
+post-window silence is unforecastable at entry; the 1h timeout at ~1.0x
+caps that damage at fees. The bar removes the worse "quiet during window"
+cohort. Forward test continues under the improved bar from here.

@@ -110,6 +110,12 @@ def run_pass():
                                      "t": now, "nticks": len(pre),
                                      "seed": p["seed"]}) + "\n")
                 continue
+            if pre[-1][0] < p["t0"] + ENTRY_DELAY - 15:  # §424 liveness
+                st["pending"].pop(mint)
+                lg.write(json.dumps({"action": "h16e2_stale", "mint": mint,
+                                     "t": now, "last_tick_age": round(pre[-1][0] - p["t0"], 1),
+                                     "seed": p["seed"]}) + "\n")
+                continue
             mom = pre[-1][3] / m0
             peak = max(x[3] for x in pre)
             dd = min(x[3] for x in pre) / peak if peak else 0
