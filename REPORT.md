@@ -7057,3 +7057,12 @@ memecoin birth edge is closest to money (+7.5%/trade backtest, forward test
 running). Queued from the brief: (1) permissionless-reward scanner (small
 uncontended keeper calls) as a parallel ROI surface; (2) "economic surface"
 table as a future Dashboard artifact. Full text in attachments log.
+
+## §425b Rewind repair CONFIRMED firing — late registration is the norm
+7 pending mints currently carry repaired windows with reg_lag 36-56s. Most
+creates surface in curves.jsonl 36-56s AFTER birth, so pre-fix 60s windows
+were routinely truncated to slivers. The "cold" reject distribution (3%
+mom>=1.0 vs 22% file-wide, §421) was PARTLY measurement artifact — the
+genuine cold snap coexisted with corrupted windows. With repairs live,
+expect the forward qualification rate to rise toward the historical ~4.6%.
+h16e2 tally: 2 closes (1W +20%/5.8m, 1 timeout flat), 73 scored.
