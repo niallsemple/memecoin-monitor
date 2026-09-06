@@ -6924,3 +6924,16 @@ then dust by 300s. GD5mHvdr: flat 60s then dust. AGq2KnxF: dust artifact
 ~ages 60-180s; by 300s+ Jupiter routes to dust stubs (migration/abandon).
 A real +15%-in-2min pop exists cross-venue (1/3 ladders) — H16's "+20%
 within minutes" question is not pump.fun-only. n=3; keep accumulating.
+
+## §414 Entry-timing study — +60s entry flips the tally (evidence)
+Reconstructed tick trajectories for all 6 shadow mints from mfg_trades.
+Price gain from +60s mcap to the +180s actual entry: 22.1%, 22.0%, 24.7%
+on three mints; the two winners included. Re-scored with a +60s entry and
+identical exits (+20%/-8%): 7RxHxPxs and 3RfqhAxx flip loss->WIN because
+the +20% bank level was already reached by +180s. Tally would read ~4W/2L
+vs actual 2W/4L. 2K1b58FM's "instant" 0.6m win was the tail of a move that
+started at +60s — entering at 60s captures ~+47% total.
+CAVEAT: this holds selection fixed. Scoring at +60s uses ~3x fewer ticks;
+the §397 tercile bars were derived on 180s windows and may not transfer.
+Next: h16_early shadow clone scoring at +60s (same bars, forward test tells
+us if selection survives) OR derive native 60s thresholds from curves data.
