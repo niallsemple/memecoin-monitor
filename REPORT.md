@@ -6742,3 +6742,6 @@ h16_feature_hunt.py over the organic big-seed cohort (seed 2-10 SOL, n=874 with 
 - Honest caveats: in-sample only, n=88 combo, momentum-chasing entry is PI-hostile, regime-dependent (this tape spans the farm-attack era).
 - Doctrine move: PROMISING but untrusted until forward-tested. Next build: shadow signal — score every 2-10 SOL birth at +180s (mom/dd/buyfrac), shadow-enter the combo, apply the +20/-8 + abort stack, log to shadow ledger for OOS evidence at zero risk.
 - Script: h16_feature_hunt.py; cohort: h16_cohort.json.
+
+## §398 — H16 shadow forward test LIVE (zero risk) (2026-09-06 09:05 BST)
+Built h16_shadow.py: every tracker pass tails curves.jsonl + mfg_trades.jsonl via byte bookmarks, queues 2-10 SOL creates, scores at +180s on mom/dd/buyfrac vs §397 tercile cuts (1.1027 / 0.5896 / 0.5762), shadow-opens combos, closes on +20% (win) / -8% (loss) / 1h (timeout). No orders, no wallet. Hooked into live_trader.exit_watch tail (importlib live-load — no tracker redeploy). Smoke-tested: state primed at EOF (forward-only, no backfill contamination). Digest now shows H16 tally. Evidence accumulates pass-by-pass; verdict after ~30 shadow closes.

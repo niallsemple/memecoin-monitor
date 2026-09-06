@@ -1200,4 +1200,14 @@ def exit_watch():
             actions.append({"mint": mint, "act": "error",
                             "err": str(e)[:100]})
     _save_positions(pos)
+    # §397: H16 shadow forward test — zero-risk OOS evidence for the
+    # mom+dd+buyfrac combo on 2-10 SOL births. Root module, live-loaded.
+    try:
+        import importlib.util as _iluh
+        _sh = _iluh.spec_from_file_location("h16_shadow", MON / "h16_shadow.py")
+        _h16 = _iluh.module_from_spec(_sh)
+        _sh.loader.exec_module(_h16)
+        _h16.run_pass()
+    except Exception:
+        pass
     return actions

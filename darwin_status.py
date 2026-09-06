@@ -79,6 +79,14 @@ if sw:
 sf = rows("liq_shock_fires.jsonl")
 print(f"shock crossings fired: {len(sf)}")
 
+# --- H16 shadow forward test ---
+h16 = rows("h16_shadow.jsonl")
+if h16:
+    opens = [r for r in h16 if r.get("action") == "h16_open"]
+    closes = [r for r in h16 if r.get("action") == "h16_close"]
+    wins = sum(1 for r in closes if r.get("outcome") == "win")
+    print(f"H16 shadow: {len(opens)} opens, {len(closes)} closed, {wins} wins")
+
 # --- wallet ---
 try:
     import urllib.request
