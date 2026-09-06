@@ -7097,3 +7097,12 @@ Fix: _tail_hooks() extracted (h16_shadow, birth_watch, exec_journal,
 dbc_scout, h16_early, h16_early2, heat_gauge, e2_live_bridge), invoked at
 the TOP of shock_recheck; bottom tail left in place (bookmarks make the
 second call a no-op). Verified: heat refreshed immediately after one call.
+
+## §430 bf buckets (liveness-applied backtest): sweet spot is 0.7-0.9
+  bf 0.5-0.7: n=10, +3.4%/trade
+  bf 0.7-0.9: n=38, +9.2%/trade  <- sweet spot (23W/14L/1T)
+  bf >=0.9:   n=13, +5.5%/trade  (6W/6L — coin flip, asymmetry carries it)
+The 2DJ6a732 loss (bf=1.0) is NORMAL variance, not a final-spike signal —
+perfect-flow entries stay net positive historically. No exclusion filter
+warranted; if anything, mild preference for bf 0.7-0.9 when prioritizing
+among simultaneous qualifiers. Bar unchanged: mom>=1.0, dd>=0.90, bf>=0.50.
