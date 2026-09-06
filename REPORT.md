@@ -6832,3 +6832,16 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
 - §401 noise-whip concern WEAKENED: these were genuine fades, not single-
   tick noise. The problem at n=2 is entries, not exits — combo-passing
   coins at +180s still fade in this meta. Keep tallying; no rule change.
+
+## §406 — EXECUTION QUALITY is the biggest measured leak (ChatGPT note validated on our own book)
+- 85 exit_failed events in mfg_live_trades.jsonl. Two positions carry the
+  damage: BXiwvsMt — 24 consecutive failed exits from 1.02x→1.05x while
+  the coin collapsed; final −0.127 SOL vs +0.13 available (~0.26 SOL cost).
+  MBCBuuPC — 10 failures from 1.34x→1.40x; −0.126 vs +0.17 (~0.30 SOL).
+- Combined ~0.55 SOL lost to execution failure vs wallet 1.30 SOL — the
+  leak is bigger than the rug farm bleed we contained. Edge is dying in
+  the scheduler, not in prediction.
+- Plan: execution journal (per-tx: endpoint, submit slot, land slot,
+  failure class) -> landing-probability-per-route; Jito bundles evaluated
+  after measurement. (We do NOT use Jito today; ShredStream shutdown
+  irrelevant to our plain-RPC path.)
