@@ -6916,3 +6916,11 @@ impact >5% are marked dust:true and can never set the baseline.
 Side observation: same coin trading simultaneously on 3 venues with 3x
 price gaps is the newborn-arb thesis in the wild — gaps exist, but the
 dust side had $0.43 depth, i.e. gap != tradeable. Depth gate stays king.
+
+## §413 First 3 clean DBC ladders — the window is real, and short
+CF56M1Ch: +14.9% by age 120s, held at 180s (impact-guarded, real quote),
+then dust by 300s. GD5mHvdr: flat 60s then dust. AGq2KnxF: dust artifact
+(pre-§411d rows). Pattern: the tradeable quote window on DBC births is
+~ages 60-180s; by 300s+ Jupiter routes to dust stubs (migration/abandon).
+A real +15%-in-2min pop exists cross-venue (1/3 ladders) — H16's "+20%
+within minutes" question is not pump.fun-only. n=3; keep accumulating.
