@@ -6988,3 +6988,11 @@ t0+ENTRY_DELAY from STORED ticks (h16_early2.py:106), so a late pass still
 reconstructs the exact 60s window; exits walk stored ticks in order and
 close at the FIRST crossing tick, so resolution timestamps stay accurate.
 Pass lateness costs freshness, never correctness. Forward tests stand.
+
+## §420 Regime check — NO shift; drought is variance, not market change
+Last 6h: 328 seeds in band, 211 scorable at +60s. mom60 deciles match
+history (median 0.83 vs 0.73; >=1.0: 22% vs 23%; >=1.1027: 11% vs 16% —
+slightly softer hot tail, within noise). The +6%/trade backtest window and
+the present are the same market. Expected h16e2 open rate: ~4.6% of
+scorable -> ~1.6 opens/hour; 0 opens in ~25 scored is P~0.28, unremarkable.
+Discipline holds: no forced trades. Keep watching.
