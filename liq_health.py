@@ -365,6 +365,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _hem.run_pass()
     except Exception:
         pass
+    # §417b: h16_early2 — 60s entry with NATIVE 60s bars (mom>=1.0,
+    # dd>=0.90, bf>=0.50; derived from the 6 H16 opens at +60s, §417).
+    try:
+        import importlib.util as _ilh2
+        _h2 = _ilh2.spec_from_file_location("h16_early2", MON / "h16_early2.py")
+        _h2m = _ilh2.module_from_spec(_h2)
+        _h2.loader.exec_module(_h2m)
+        _h2m.run_pass()
+    except Exception:
+        pass
     return out
 
 

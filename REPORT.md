@@ -6956,3 +6956,12 @@ with §414: winners RAMP 60s->180s (mom >= ~1.0 at 60s), losers dip and
 stay. Early-window discriminator candidate: mom >= 1.0 at +60s (not the
 180s-derived 1.1027). h16e's strict bar will likely open rarely — if so,
 that IS the finding; loosen to mom>=1.0 in an h16e2 variant and re-test.
+
+## §417 h16_early2.py live — native 60s bars from the 6 opens
+Measured all 6 H16 opens at +60s: winners had mom 1.04/1.03, dd 0.97/0.97,
+bf 1.00/0.88; losers mom 0.93/1.08/1.03, dd 0.92/0.82/0.95, bf 0.33-0.73.
+Candidate bar mom>=1.0 AND dd>=0.90 AND bf>=0.50 replay-takes 2W/1L
+(+10.7%/trade, n=3, curve-fit risk). Deployed as h16_early2 (h16e2_*,
+own state/log) alongside h16 (180s) and h16e (60s strict). Three-way
+forward test now running: same seed stream, three entry philosophies.
+Hooked §417b. Thin-book logging inherited.
