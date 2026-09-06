@@ -7312,3 +7312,14 @@ fired at r=0.758 (sig AbPT6HPQ… err None, +0.01337 SOL back). Net
 -0.00658 SOL. Running e2 book: +0.00853 / -0.00658 = +0.00195 SOL (2
 trades). Wallet 1.3045. Lesson logged: stop triggers are not stop prices
 on these coins — slippage through the trigger is the cost structure.
+
+§441e (2026-09-06 22:25 BST): trade #3 — 6kpX48Mg…pump. §441d reconcile
+WORKING (record 511465230130 == on-chain ATA exactly). Coin dumped to
+r=0.71 inside a tracker window gap, bounced to 0.854; abort3_red fired on
+a manual pass (window dead, safe), pnl -0.00579. Running e2 book:
++0.00853 / -0.00658 / -0.00579 = -0.00384 SOL (1W/2L). STRUCTURAL COST
+IDENTIFIED: exit management only runs inside tracker windows (~13.5m per
+20m) — up to ~6.5m unmanaged gaps; both losses were gap/race-affected.
+Candidate fix: widen window coverage or a dedicated always-on exit pass
+in the collector loop. Winner (+41%) still outpays both losers combined;
+need the full 10-exit sample before judging.
