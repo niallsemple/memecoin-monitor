@@ -55,6 +55,12 @@ def run_pass():
     now = time.time()
     ticks = {}
 
+    # §425: per-pass trades-byte history for late-registration repair
+    hist = st.get("hist", [])
+    hist.append([now, st["off_trades"]])
+    st["hist"] = hist[-20:]
+
+    new_creates = []
     lines, st["off_curves"] = _tail(CURVES, st["off_curves"])
     for ln in lines:
         try:
@@ -66,6 +72,7 @@ def run_pass():
             if SEED_LO <= s < SEED_HI:
                 st["pending"][d["mint"]] = {"t0": d.get("_ts") or now,
                                             "seed": s, "ticks": []}
+                new_creates.append((d["mint"], d.get("_ts") or now))
 
     lines, st["off_trades"] = _tail(TRADES, st["off_trades"])
     for ln in lines:
@@ -86,6 +93,44 @@ def run_pass():
                 ticks.setdefault(m, []).append((d["t"], d.get("side") or "",
                                                 d.get("sol") or 0.0,
                                                 d["mcap_sol"]))
+
+    # §425: late-registration repair — if a create surfaces >15s after
+    # birth, its early window ticks sit BEHIND the trades bookmark.
+    # Rewind once (byte-rate estimate from hist) and collect the window.
+    if new_creates and len(st["hist"]) >= 2:
+        t_a, off_a = st["hist"][0]
+        dt = now - t_a
+        rate = (st["off_trades"] - off_a) / dt if dt > 1 else 0
+        for mint, t0 in new_creates:
+            lag = now - t0
+            if lag <= 15 or rate <= 0:
+                continue
+            back = int(rate * (lag + 10))
+            rew = max(off_a, st["off_trades"] - back)
+            try:
+                with TRADES.open("rb") as f:
+                    f.seek(rew)
+                    chunk = f.read(st["off_trades"] - rew)
+                for ln2 in chunk.decode("utf-8", "ignore").splitlines():
+                    try:
+                        d2 = json.loads(ln2)
+                    except Exception:
+                        continue
+                    if d2.get("mint") == mint and d2.get("mcap_sol"):
+                        tt = d2["t"]
+                        if t0 <= tt <= t0 + ENTRY_DELAY + 5:
+                            st["pending"][mint]["ticks"].append(
+                                (tt, d2.get("side") or "",
+                                 d2.get("sol") or 0.0, d2["mcap_sol"]))
+                tk = st["pending"][mint]["ticks"]
+                tk.sort(key=lambda x: x[0])
+                # dedupe overlap between tail pass and rewind range
+                seen = set()
+                st["pending"][mint]["ticks"] = [
+                    x for x in tk if not ((x[0], x[3]) in seen or seen.add((x[0], x[3])))]
+                st["pending"][mint]["reg_lag"] = round(lag, 1)
+            except Exception:
+                pass
 
     with LOG.open("a") as lg:
         # score pending

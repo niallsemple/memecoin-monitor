@@ -7035,3 +7035,25 @@ caught (last tick +48.8s, passed liveness, died after window close) —
 post-window silence is unforecastable at entry; the 1h timeout at ~1.0x
 caps that damage at fees. The bar removes the worse "quiet during window"
 cohort. Forward test continues under the improved bar from here.
+
+## §425 Late-registration repair in h16_early2
+Root-caused the 3%-vs-23% drought mismatch: creates can surface in
+curves.jsonl AFTER their window ticks have passed the trades bookmark —
+the shadow then scores a truncated sliver (HMNTAszq: saw ticks to +2.2s,
+full file had them to +62s). The 15s liveness bar (§424) was catching
+these as h16e2_stale — correct defense, wrong root cause. Fix: per-pass
+byte-history ring; on creates with reg_lag >15s, rewind the trades file by
+byte-rate estimate and backfill the true 60s window (deduped, sorted,
+reg_lag recorded). Same bug class affects h16_shadow/h16_early — their
+audits passed on sampled mints, but propagate if forward tallies skew.
+
+## §426 ChatGPT's "Economic Compiler" brief — assessment + queue
+Vision: general-purpose discovery of permissionless economic actions across
+arbitrary Solana programs (claim/crank/settle/redeem/liquidate), EV-ranked
+with contention-aware execution, falsify-first pipeline. Assessment: the
+pipeline they describe (DISCOVER->SIMULATE->SHADOW->FORWARD->SMALL LIVE) is
+EXACTLY our operating loop — architecture validated. Not pivoting: the
+memecoin birth edge is closest to money (+7.5%/trade backtest, forward test
+running). Queued from the brief: (1) permissionless-reward scanner (small
+uncontended keeper calls) as a parallel ROI surface; (2) "economic surface"
+table as a future Dashboard artifact. Full text in attachments log.
