@@ -6824,3 +6824,11 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   birth lands. Cost of a wrong guess: zero (read-only).
 - Hooked into liq_health.shock_recheck tail (90s cadence, exception-
   isolated) — births land in the log without touching the liq path.
+
+## §405 — Shadow trades 1-2: both stopped at 0.92x, and the stop was RIGHT
+- Post-exit path audit on both shadow losers: 9dX78H2w max 1.05x then
+  0.65x at +36m; 7RxHxPxs never above 0.86x, 0.81x at +15m. Neither ever
+  offered the +20% win. The -8% stop cut both before further bleed.
+- §401 noise-whip concern WEAKENED: these were genuine fades, not single-
+  tick noise. The problem at n=2 is entries, not exits — combo-passing
+  coins at +180s still fade in this meta. Keep tallying; no rule change.
