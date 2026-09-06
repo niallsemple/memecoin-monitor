@@ -2399,25 +2399,19 @@
   "actual_fill_note": "write-off: est proceeds 0.000009 SOL below 0.001 floor; no sell submitted, dust tokens kept"
  },
  "5nUeZs7KkqKHNDX47bhgbaAyeNt9hVFT1muFRk8Apump": {
-  "open": false,
+  "open": true,
   "mode": "e2_trial",
   "venue": "curve",
   "entry_t": 1788730659.086226,
   "entry_px": 5.248190001872724e-05,
-  "tokens": 320527580976,
-  "tokens_left": 0,
+  "tokens": 377091271737,
+  "tokens_left": 377091271737,
   "size_sol": 0.02,
-  "peak_mult": 1.713910452406847,
+  "peak_mult": 1.5285648581997697,
   "trough_mult": 0.9994022083682533,
   "freerolled": false,
-  "sol_recovered": 0.028527626,
+  "sol_recovered": 0.0,
   "a3r_logged": true,
-  "nm_touch_t": 1788731026.584193,
-  "actual_fill_note": "reconciled to on-chain ATA balance (quote 377091271737 was stale-min guard; \u00a7441c)",
-  "closed_reason": "bank12x",
-  "exit_reason": "bank12x",
-  "exit_t": 1788731094.96503,
-  "exit_sig": "5TuR418JqDkQ3ojhmqt48G89D9ye3tuXQ8KhSWVQ7g9hbPRVjNDPhEHMAbRrf428mTZoNXDtggb2aQkvzyngLCic",
-  "pnl_sol": 0.00853
+  "nm_touch_t": 1788731026.584193
  }
 }

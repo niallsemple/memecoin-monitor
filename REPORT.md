@@ -7285,3 +7285,18 @@ pump ix throws Custom 3012 (missing account); with it, dry-run sim gives
 structure VALIDATED. buy_v2 dry-run sim: err NONE. Both builders patched
 in live_trader.py (_fee_global/_v2_ctx helpers; _buyback_remaining
 removed). Bridge still armed — next fresh qualifier fires a real 0.02 buy.
+
+§441c (2026-09-06 21:45 BST): FIRST FULL LIVE v2 CYCLE — WIN.
+5nUeZs7KkqKHNDX47bhgbaAyeNt9hVFT1muFRk8Apump: detected 4.6s after birth
+(mom 1.052, dd 0.951, bf 0.783, seed 9.88 SOL, entry mcap 52.6k). buy_v2
+landed (sig 33z6VKo3…, -0.0206 SOL incl fees). Filled at exactly
+min_tokens (320527580976 raw, 15% under the stale quote) — quote-vs-land
+slippage on a fast coin. Exit stack: bank12x sell-all fired at 1.71x peak
+(~7.3 min hold), sell_v2 sig 5TuR418J… err None, +0.0288 SOL gross.
+Net PnL +0.00853 SOL (+41.5% on stake). Wallet 1.3030 -> 1.3112.
+Two fixes shipped mid-trade: (1) open_position now reconciles tokens with
+the actual on-chain ATA balance for non-dry entries (stale-quote records
+block exits with 6023); (2) sell path carries createIdempotent ATA ix
+(v2 3012s without it). Hazard noted: manual exit_watch during a live
+tracker window can double-fire (second submit fails 6023, costs a failed
+-tx fee only) — leave exits to the tracker from here.

@@ -947,6 +947,20 @@ def open_position(mint, size_sol, mode, venue="curve", entry_px=None,
         st = curve_state(mint)
         entry_px = _price_sol_per_token(st)
         tokens = tokens_for_sol(st, int(size_sol * 1e9))
+        # §441c: for real fills, reconcile with the ACTUAL on-chain ATA
+        # balance — the quote overstates when price moves between quote and
+        # landing (5nUeZs7K filled at exactly min_tokens, 15% under quote;
+        # the overstated record then blocked the exit with 6023).
+        if mode != "dry":
+            try:
+                _addr = json.loads(WALLET_F.read_text())["address"]
+                _ata_b = _ata(b58dec(_addr), b58dec(mint), st["token_prog"])
+                _bal = _rpc("getTokenAccountBalance", [b58enc(_ata_b)])
+                _amt = int((_bal or {}).get("value", {}).get("amount", "0"))
+                if _amt > 0:
+                    tokens = _amt
+            except Exception:
+                pass
     pos[mint] = {"open": True, "mode": mode, "venue": venue,
                  "entry_t": time.time(),
                  "entry_px": entry_px, "tokens": tokens,
