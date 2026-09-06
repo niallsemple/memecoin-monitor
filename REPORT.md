@@ -6937,3 +6937,12 @@ CAVEAT: this holds selection fixed. Scoring at +60s uses ~3x fewer ticks;
 the §397 tercile bars were derived on 180s windows and may not transfer.
 Next: h16_early shadow clone scoring at +60s (same bars, forward test tells
 us if selection survives) OR derive native 60s thresholds from curves data.
+
+## §415 h16_early.py live — 60s-entry shadow, parallel forward test
+Clone of h16_shadow with ENTRY_DELAY=60, MAX_PENDING_AGE=300, own state/log
+(h16_early_state.json / h16_early.jsonl), actions h16e_*. Thin books (<3
+ticks by +60s) log h16e_thin — low-activity rejects are signal, not silence.
+Same bars (mom 1.1027 / dd 0.5896 / bf 0.5762) and exits (+20%/-8%/1h).
+Hooked into shock_recheck tail (§415b). First pass already tracking 1 seed.
+The §414 replay says +60s entries flip 2W/4L to ~4W/2L IF selection
+survives; this shadow is the honest forward test of exactly that.

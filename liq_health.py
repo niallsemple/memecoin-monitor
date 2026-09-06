@@ -355,6 +355,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _dsm.run_pass()
     except Exception:
         pass
+    # §415b: h16_early — 60s-entry shadow clone (§414 evidence: the move
+    # starts before +180s). Parallel forward test, own state/log.
+    try:
+        import importlib.util as _ilhe
+        _he = _ilhe.spec_from_file_location("h16_early", MON / "h16_early.py")
+        _hem = _ilhe.module_from_spec(_he)
+        _he.loader.exec_module(_hem)
+        _hem.run_pass()
+    except Exception:
+        pass
     return out
 
 
