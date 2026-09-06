@@ -336,6 +336,15 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _bwm.run_pass()
     except Exception:
         pass
+    # §407b: execution journal resolver — mark submitted txs landed/failed.
+    try:
+        import importlib.util as _ilej2
+        _ej2 = _ilej2.spec_from_file_location("exec_journal", MON / "exec_journal.py")
+        _ejm2 = _ilej2.module_from_spec(_ej2)
+        _ej2.loader.exec_module(_ejm2)
+        _ejm2.run_pass()
+    except Exception:
+        pass
     return out
 
 

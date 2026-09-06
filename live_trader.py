@@ -109,7 +109,20 @@ def _rpc(method, params):
                 _last_rpc["ts"] = time.time()
                 time.sleep(2.0)
                 continue
-            return out.get("result")
+            result = out.get("result")
+            # §407: execution journal — record every submitted tx with the
+            # endpoint that took it. Read-only side effect; never raises.
+            if method == "sendTransaction" and isinstance(result, str):
+                try:
+                    import importlib.util as _ilej
+                    _ej = _ilej.spec_from_file_location(
+                        "exec_journal", MON / "exec_journal.py")
+                    _ejm = _ilej.module_from_spec(_ej)
+                    _ej.loader.exec_module(_ejm)
+                    _ejm.record_submit(result, url)
+                except Exception:
+                    pass
+            return result
         except Exception as e:
             _last_rpc["error"] = f"{type(e).__name__}: {e}"
             _last_rpc["method"] = method
