@@ -6885,3 +6885,15 @@ Hooked into shock_recheck tail (§411b). First pass backfilled 5 DBC births;
 4/5 Jupiter-indexed, DtmdoiMes not (base null). Backfill polls share one
 timestamp (mult=1.0 artifact) — true offsets apply to real-time births only.
 Next: enough real-time births to test whether the H16b entry bar travels.
+
+## §412 H16 shadow @ 6 closes — expectancy positive, H16b too tight
+Tally 2W/4L, expectancy +1.3%/trade. Second win (2K1b58FM, +20% in 0.6 min)
+FAILED the H16b bar (dd 0.771, bf 0.734) — the conjunction would have taken
+1/6 trades and missed a winner. H16b shelved as primary; kept as a passive
+bucket. mom>=1.25 alone: 1W/1L (+4%/trade, n=2). No bar dominates at n=6.
+Notable structure: wins resolve FAST (0.6m, 5.8m); losses bleed to the stop
+(0.1-8.3m). The 0.1m stop (9dX78H2w) smells like entry-tick staleness, not
+a thesis failure — execution timing noise worth its own look at n>=10.
+Verdict: flat H16 bar is mildly positive forward; keep accumulating, no
+code change. dbc_scout: first real-time DBC birth (FjycmKid) indexed at
+first poll; price flat through the backfill ladder.
