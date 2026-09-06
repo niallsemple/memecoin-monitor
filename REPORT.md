@@ -7185,3 +7185,18 @@ bridge_would_buy 0.02 SOL with open_age_s=10.4 — the FIRST fresh dry-run
 event that counts toward the 3-5 flip gate (previous events were stale or
 backfill; the §433 guard now makes staleness structurally impossible).
 Gate tally: 1 fresh would-buy. Shadow outcome resolving on live ticks.
+
+## §435 Scheduler stall + manual kick; CeDFmAkP timeout as designed
+~20:00 BST: mfg_trades/heat/h16e2 state all stale since 19:38 while
+curves.jsonl stayed fresh (curves is ALSO written by the long-running
+flow_recorder.py — NOT tracker-only; use mfg_trades as the tracker-liveness
+signal from here). listRuns showed the collector's interval fires stopped
+after the 19:24 BST run — scheduler stall, cause unknown. Manual
+Automation.run executed a full 18.3-min window with the synced code (15s
+fast loop confirmed throughout), restoring the feed. WATCHING: if the next
+scheduled fire (~20:24 BST) doesn't appear, the stall is persistent and
+the automation needs a disable/enable kick or owner attention.
+CeDFmAkP closed during the manual run: TIMEOUT 0.9773x at 65.2m — the
+silent-coin failure mode costing ~2.3% gross as designed. Forward tally
+n=8: 1W/5L/2T = -2.78%/trade gross; fresh-cadence subsample still just
+Hg5MeDEX (open, 1.030x last tick). Gate unchanged: 1 fresh would-buy.

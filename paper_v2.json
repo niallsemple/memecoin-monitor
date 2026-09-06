@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 349.78613913997265,
+ "cash": 351.9776545990003,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -18,7 +18,7 @@
    "entry_mcap": 360957.0,
    "entry_min": 11.1,
    "size_gbp": 10.5,
-   "peak_mcap": 363541.0,
+   "peak_mcap": 372394.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
@@ -35,17 +35,6 @@
    "realized": 0.0,
    "opened": "2026-08-30T11:27:01.906752+00:00"
   },
-  "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
-   "addr": "DVxaAXi3",
-   "entry_mcap": 522409.0,
-   "entry_min": 7079.9,
-   "size_gbp": 8.14,
-   "peak_mcap": 5992190.0,
-   "stage": 3,
-   "remaining": 0.25,
-   "realized": 34.076075,
-   "opened": "2026-09-01T13:29:04.317705+00:00"
-  },
   "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
    "addr": "CTPoyCwk",
    "entry_mcap": 8738245.0,
@@ -56,6 +45,17 @@
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-04T21:49:22.355824+00:00"
+  },
+  "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
+   "addr": "DVxaAXi3",
+   "entry_mcap": 2471919.0,
+   "entry_min": 14600.4,
+   "size_gbp": 7.19,
+   "peak_mcap": 2530100.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-06T18:49:32.868707+00:00"
   }
  },
  "closed": [
@@ -1766,6 +1766,20 @@
    "closed_at": "2026-09-06T01:07:37.740769+00:00",
    "exit_r": 0.367,
    "pnl_gbp": -4.64
+  },
+  {
+   "addr": "DVxaAXi3",
+   "entry_mcap": 522409.0,
+   "entry_min": 7079.9,
+   "size_gbp": 8.14,
+   "peak_mcap": 5992190.0,
+   "stage": 3,
+   "remaining": 0,
+   "realized": 43.560788773164326,
+   "opened": "2026-09-01T13:29:04.317705+00:00",
+   "closed_at": "2026-09-06T18:48:30.977283+00:00",
+   "exit_r": 4.732,
+   "pnl_gbp": 35.3
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
