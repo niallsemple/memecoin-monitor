@@ -94,7 +94,7 @@ def run_pass():
             age = now - p["t0"]
             if age < ENTRY_DELAY:
                 continue
-            ts = sorted(p["ticks"])
+            ts = sorted(p["ticks"], key=lambda x: x[0])
             if not ts:
                 # ticks may predate this pass's bookmark window; keep waiting
                 if age > MAX_PENDING_AGE:
@@ -131,7 +131,7 @@ def run_pass():
         for mint in list(st["open"]):
             o = st["open"][mint]
             o["ticks"].extend((x[0], x[3]) for x in ticks.get(mint, []))
-            o["ticks"] = sorted(o["ticks"])[-5000:]
+            o["ticks"] = sorted(o["ticks"], key=lambda x: x[0])[-5000:]
             r = [x[1] / o["entry_mcap"] for x in o["ticks"] if x[1] > 0]
             close = None
             for x in o["ticks"]:
