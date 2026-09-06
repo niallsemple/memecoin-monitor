@@ -6706,3 +6706,13 @@ Rebuilt the event study on mfg_trades.jsonl (3.68M curve+pool ticks, 5,331 mints
 - **Verdict: buying at graduation is structurally -EV (median -80% in an hour).** The discontinuity is real but points DOWN. Validates keeping the s60nm5fr hook path tightly gated; the "buy graduates" idea is RETIRED unless restricted to ultra-high-activity curves (and even that cohort is only ~breakeven).
 - H14 status: TESTING -> the discontinuity edge is SHORT-side only, which memecoins can't express. Recorded in HYPOTHESES.md terms as evidence AGAINST post-grad momentum buying. v1's "40-50% runner" reading was an artifact of the 85-SOL fallback denominator; v2's migration-tick basis is the honest one.
 - Scripts: grad_event_study.py (v1), grad_event_study_v2.py; data: grad_event_study.json, grad_event_study_v2.json.
+
+## §394 — H13 first-passage: +20%-first is a TRAP for holders, a SIGNAL for scalpers (2026-09-06 08:00 BST)
+Built first_passage.py over 622,913 curve ticks / 4,399 non-farm mints: at entry delays 1/3/5/10 min, which barrier (+20% / -8%) is hit first, and what happens after.
+- Base rates (entry +3m): 22% up-first, 47% dn-first, 31% neither.
+- **+20%-first does NOT predict winners**: median end 0.50x, and 82% later round-trip below -8%. The pop is the exit-liquidity spike, not the start of a run. (Median MFE 1.48-1.53x across delays.)
+- **-8%-first confirms dead coins**: median MFE 1.05-1.06x — they NEVER recover. Validates abort3_if_red direction: early red exits forfeit nothing.
+- **Choppers win by default**: coins that stay inside the +-8..20% band end at 0.99x median — the only cohort that preserves capital.
+- Raw +20/-8 scalp EV on unfiltered coins: ~+0.6% gross/trade at the observed mix — below the ~3% round-trip friction floor. The edge must come from entry-gate mix-shifting (gates must lift up-first rate from 22% toward ~40%+), NOT from holding.
+- H13 verdict: as an ENTRY target, first-passage direction fails to discriminate final outcomes (0.50x vs 0.51x) — REJECTED as entry signal. As an EXIT framework it's confirmed: take +20% when offered; cut at first red. HYPOTHESES.md updated.
+- Script: first_passage.py; data: first_passage.json.

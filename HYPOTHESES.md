@@ -30,7 +30,7 @@ Status ladder: NEW → TESTING → PROMISING → SURVIVED OOS → FORWARD TEST �
 | H10 | Attention/visibility state (Pump Movers/New rank transitions) precedes volume acceleration — closer to cause | NEW — needs Pump API data source |
 | H11 | Economic-entity PnL (creator fees 0.30%, MEV rebates, cashback) reorders which actors are "smart money" vs swap-PnL | NEW — winner_wallets registry is swap-PnL only |
 | H12 | Value-of-Information ladder: measure incremental OOS net EV per info layer (price → flow → wallets → entity graph → mechanism → visibility → latency → social) | NEW — organizing experiment for research budget |
-| H13 | First-passage formulation P(+20% before −8%) beats raw return prediction as target | NEW — abort3 is already a first-passage discriminator |
+| H13 | First-passage formulation P(+20% before −8%) beats raw return prediction as target | **TESTED §394: REJECTED as entry target (up-first median end 0.50x, 82% round-trip); CONFIRMED as exit framework — take +20% when offered (MFE 1.5x median), cut at first red (dn-first coins never recover, MFE 1.05x)** |
 | H14 | Structural discontinuities (graduation, fee-tier crossing, Mayhem termination, agent buybacks) are easier edges than smooth patterns | **TESTED §393: graduation discontinuity is real but NEGATIVE for buyers (median 0.20x at +60m, 66% husks). Post-grad momentum buying RETIRED; only ultra-high curve-activity cohort approaches breakeven. Short-side edge not expressible on memecoins** |
 
 ## Infra audit note (2026-09-05)
