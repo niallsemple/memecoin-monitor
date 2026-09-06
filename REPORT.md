@@ -6794,3 +6794,21 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   memecoin grads, which is our use case.
 - Next: phase 2 arb scanner (PumpSwap vs Raydium gap logger) + dry-run
   swap builder. Execution stays gated behind live_enabled().
+
+## §403 — Raydium AMM v4 module + arb scanner extended; honest null result
+- raydium_v4.py LIVE (read-only): program verified on-chain; layout offsets
+  EMPIRICALLY corrected (published v4 layout is 16B short post-@312 —
+  vaults @336/368, mints @400/432, verified against the SOL/USDC pool).
+  Parity: SLERF exact match vs Jupiter (0.0%), TRUMP 0.84% — inside bar.
+- arb_scanner.py extended: PumpSwap×(CPMM∪v4) for grads + CPMM-vs-v4
+  "established" track over discovery caches; MIN_DEPTH_SOL=5 dust filter
+  (SLERF's 3061% phantom gap came from a 0-depth 4%-fee clone pool).
+- FINDINGS (honest): (a) pump.fun grads in our 7,173-migration tape window
+  are PumpSwap-ONLY — zero dual-listed, that arb universe is empty;
+  (b) established dual-listed tokens (TRUMP, SLERF) show gaps ~0.11% vs
+  a ~0.6% all-in breakeven — MEV bots close them in-slot. No free lunch
+  here at our speed. Scanner stays as a monitor; gaps are logged if they
+  ever widen (illiquidity events, new-pool launches).
+- Real arb opportunity, if any, is at NEW-pool birth (first minutes before
+  bots anchor prices) — the birth-venue monitors (Meteora DBC, Raydium
+  LaunchLab) in DEX_REGISTRY.md are the upstream of that.

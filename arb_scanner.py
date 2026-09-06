@@ -16,6 +16,7 @@ import time
 from pathlib import Path
 
 import raydium_cpmm as rc
+import raydium_v4 as rv4
 
 MON = Path(__file__).resolve().parent
 LOG = MON / "arb_candidates.jsonl"
@@ -27,6 +28,7 @@ PRIOR_SOL = 0.0002         # priority fee allowance per round trip
 TRADE_SOL = 0.05           # reference size
 GAP_MIN = 0.005            # log when net gap > 0.5%
 MAX_MINTS = 12             # RPC budget per pass
+MIN_DEPTH_SOL = 5.0        # §403: ignore dust/clone pools below this
 
 # PumpSwap Pool layout (Anchor): disc 0-8, bump @8, index @9-11,
 # creator @11-43, base_mint @43-75, quote_mint @75-107, lp_mint @107-139,
@@ -97,10 +99,30 @@ def check_mint(mint):
                 ray = st
                 break
     if not ray:
+        # §403: older pump.fun grads live on Raydium AMM v4, not CPMM.
+        # Normalize v4 pool state to the CPMM-shaped dict below.
+        for p in rv4.find_pools(mint):
+            if rc.WSOL in (p["base_mint"], p["quote_mint"]):
+                st = rv4.pool_state(p)
+                if st:
+                    ray = {"reserve0": st["reserve0"],
+                           "reserve1": st["reserve1"],
+                           "fee_ppm": st["fee_ppm"],
+                           "token_0_mint": st["base_mint"],
+                           "token_1_mint": st["quote_mint"],
+                           "venue": "raydium_v4"}
+                    break
+    if not ray:
         return None
     base_raw, base_dec = _vault_bal(ps["base_vault"])
     quote_raw, _ = _vault_bal(ps["quote_vault"])  # quote = WSOL (9 dec)
     if not base_raw or not quote_raw:
+        return None
+    # §403 dust filter: clone/scam pools with ~0 depth create phantom
+    # 3000% "gaps". Both venues need MIN_DEPTH_SOL real liquidity.
+    wsol0r = ray["token_0_mint"] == rc.WSOL
+    ray_depth = (ray["reserve0"] if wsol0r else ray["reserve1"]) / 1e9
+    if ray_depth < MIN_DEPTH_SOL or quote_raw / 1e9 < MIN_DEPTH_SOL:
         return None
     lamports = int(TRADE_SOL * 1e9)
     # PumpSwap: base = token, quote = WSOL
@@ -146,5 +168,43 @@ def run_pass():
     return {"scanned": len(mints), "both_venues": both, "logged": logged}
 
 
+def established_pass():
+    """§403: CPMM-vs-v4 gaps on tokens dual-listed across Raydium venues
+    (universe = intersection of the two discovery caches). Depth-filtered.
+    Log-only, same discipline as the PumpSwap track."""
+    if not rc.CACHE_F.exists() or not rv4.CACHE_F.exists():
+        return {"dual": 0, "logged": 0}
+    cpmm_c = json.loads(rc.CACHE_F.read_text())
+    v4_c = json.loads(rv4.CACHE_F.read_text())
+    dual = [m for m in cpmm_c if m in v4_c and cpmm_c[m] and v4_c[m]]
+    logged = 0
+    for mint in dual:
+        try:
+            qc = rc.quote_for_mint(mint, sol_in=TRADE_SOL)
+            qv = rv4.quote_for_mint(mint, sol_in=TRADE_SOL)
+            if not qc or not qv:
+                continue
+            if qc["depth_sol"] < MIN_DEPTH_SOL or \
+                    qv["depth_sol"] < MIN_DEPTH_SOL:
+                continue
+            g = (max(qc["tokens_out"], qv["tokens_out"]) /
+                 min(qc["tokens_out"], qv["tokens_out"]) - 1)
+            net = g - (qc["fee_ppm"] + qv["fee_ppm"]) / 1e6 \
+                - PRIOR_SOL / TRADE_SOL
+            if net >= GAP_MIN:
+                with LOG.open("a") as f:
+                    f.write(json.dumps({
+                        "action": "arb_candidate", "kind": "cpmm_vs_v4",
+                        "mint": mint, "t": time.time(),
+                        "cpmm_out": qc["tokens_out"], "v4_out": qv["tokens_out"],
+                        "gap_pct": round(g * 100, 2),
+                        "net_pct": round(net * 100, 2)}) + "\n")
+                logged += 1
+        except Exception:
+            continue
+    return {"dual": len(dual), "logged": logged}
+
+
 if __name__ == "__main__":
-    print(json.dumps(run_pass()))
+    print("pumpswap track:", json.dumps(run_pass()))
+    print("established track:", json.dumps(established_pass()))
