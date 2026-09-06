@@ -55,8 +55,8 @@ WINDOW_S = 13.5 * 60  # §380: 16m -> 13.5m. The interval scheduler skips a
                     # 20m interval — next trigger never skips — while shrinking
                     # the no-watcher gap from ~4-5m to ~1-2m (drain exposure).
                     # §139 history: 19m overran the 22m timeout -> skip -> gap.
-SEED_MIN = 5.0
-MAX_TRACK = 40                          # concurrent curve subscriptions (§66: quota)
+SEED_MIN = 2.0
+MAX_TRACK = 100                          # concurrent curve subscriptions (§66: quota)
 MAX_POOL_TRACK = 30                     # graduated tokens pool-tracked (2 subs each)
 POOL_QUIET_S = 2 * 3600                 # §56g: recycle pool slots after 2h silence
 ARMED = MON / "mfg_armed_births.jsonl"  # §120: armed/instant-grad birth ledger
