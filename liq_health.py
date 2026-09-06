@@ -257,12 +257,29 @@ def fetch_prices_batched(keys, banks: dict) -> dict:
     return px
 
 
+def _tail_hooks():
+    """§429: independent watcher modules — MUST run even when the liq
+    early-returns fire (empty watch list etc.). Byte-bookmarked, each
+    isolated; second invocation per pass is a cheap no-op."""
+    for name in ("h16_shadow", "birth_watch", "exec_journal", "dbc_scout",
+                 "h16_early", "h16_early2", "heat_gauge", "e2_live_bridge"):
+        try:
+            import importlib.util as _ilu
+            _sp = _ilu.spec_from_file_location(name, MON / f"{name}.py")
+            _m = _ilu.module_from_spec(_sp)
+            _sp.loader.exec_module(_m)
+            _m.run_pass()
+        except Exception:
+            pass
+
+
 def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
     """§374 part 2: re-estimate watched accounts' health from FRESH oracle
     prices without a full rescan. Returns [{pk, health, assets, liabs}] for
     accounts estimated to have crossed below health 0 (small margin applied —
     the hunt drill re-verifies exact on-chain state before any sim/fire).
     """
+    _tail_hooks()  # §429: before any early return
     try:
         last = None
         with open(watch_path) as f:

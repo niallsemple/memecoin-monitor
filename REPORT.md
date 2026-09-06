@@ -7088,3 +7088,12 @@ Forward tallies: h16e2 1W/1L/1T = +4.0%/trade gross (n=3). H16 2W/8L =
 late metrics (this one had bf 0.80+ profile and still dumped). NOTE: this
 e2 loss had bf=1.0 — pure buy flow right before a dump; watch for a
 "final-spike" pattern (last-gasp buying before insiders sell).
+
+## §429 Hook-starvation fix — watchers no longer hostaged to liq state
+heat_state went 8.5min stale while shock ran 3m prior: shock_recheck's
+early returns (empty watch list / unreadable file) sat BEFORE the inline
+hook tail, starving all 8 watcher modules whenever the liq book was quiet.
+Fix: _tail_hooks() extracted (h16_shadow, birth_watch, exec_journal,
+dbc_scout, h16_early, h16_early2, heat_gauge, e2_live_bridge), invoked at
+the TOP of shock_recheck; bottom tail left in place (bookmarks make the
+second call a no-op). Verified: heat refreshed immediately after one call.
