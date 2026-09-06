@@ -514,6 +514,12 @@ FEE_CFG_C = bytes([1,86,224,246,147,102,90,207,68,219,21,104,191,23,91,170,
                    81,137,203,151,245,210,255,59,101,93,43,182,253,109,24,176])
 BUY_DISC  = bytes.fromhex("66063d1201daebea")
 SELL_DISC = bytes.fromhex("33e685a4017f83ad")
+# §441b: pump.fun program upgrade (buyback/cashback era) — legacy buy/sell
+# now fail (6062 -> 6074). The live frontend uses buy_v2/sell_v2 with a
+# 27/26-account layout; discs verified against real on-chain txs.
+BUYV2_DISC  = bytes.fromhex("b817ee6167c5d33d")
+SELLV2_DISC = bytes.fromhex("5df6823ce7e940b2")
+WSOL = b58dec("So11111111111111111111111111111111111111112")
 
 G_GLOBAL = pda([b"global"], PUMP_PROG)
 G_EVENT_AUTH = pda([b"__event_authority"], PUMP_PROG)
@@ -641,6 +647,38 @@ def _ata(owner_b, mint_b, token_prog_b):
     return pda([owner_b, token_prog_b, mint_b], ATA_PROG)
 
 
+_FEE_CACHE = {"t": 0.0, "glob": None}
+
+def _fee_global():
+    """§441b: cached Global account bytes (5 min) for fee/buyback picks."""
+    now = time.time()
+    if _FEE_CACHE["glob"] is None or now - _FEE_CACHE["t"] > 300:
+        _FEE_CACHE["glob"] = bytes(_get_account(b58enc(G_GLOBAL))["data"])
+        _FEE_CACHE["t"] = now
+    return _FEE_CACHE["glob"]
+
+
+def _v2_ctx(mint, st, ub):
+    """§441b: shared context for the buy_v2/sell_v2 account layouts.
+    fee_recipient and buyback_fee_recipient ROTATE per tx across the
+    Global arrays (7 fee_recipients @162, 8 buyback_fee_recipients @741 —
+    offsets from the fresh on-chain IDL Global struct); real txs show
+    varying indices, so the program accepts any member of each set."""
+    import random as _rnd
+    mb = b58dec(mint)
+    glob = _fee_global()
+    i_f = _rnd.randrange(7); i_b = _rnd.randrange(8)
+    fee_rec = glob[162 + i_f * 32: 162 + (i_f + 1) * 32]
+    bb_rec = glob[741 + i_b * 32: 741 + (i_b + 1) * 32]
+    cc = _get_account(b58enc(st["curve"]))
+    creator = cc["data"][49:81] if len(cc["data"]) >= 81 else None
+    cv = pda([b"creator-vault", creator], PUMP_PROG) if creator and creator != b"\0" * 32 else None
+    uva = pda([b"user_volume_accumulator", ub], PUMP_PROG)
+    shr = pda([b"sharing-config", mb], FEE_PROG)
+    return {"mb": mb, "fee_rec": fee_rec, "bb_rec": bb_rec, "cv": cv,
+            "uva": uva, "shr": shr, "tp": st["token_prog"], "creator": creator}
+
+
 def curve_buy(mint, sol_amount, reason="signal"):
     """Live/dry-run bonding-curve buy. Same gates as Jupiter path."""
     ok, why = live_enabled()
@@ -680,31 +718,48 @@ def curve_buy(mint, sol_amount, reason="signal"):
         # §409: price blockspace for THIS curve right now (the curve is the
         # account everyone write-locks during a pump/drain).
         _pfee = _dyn_prior_fee([st["curve"]])
+        # §441b: buy_v2 layout (27 accounts, verified against real on-chain
+        # buy txs — fee/buyback recipients rotate across the Global arrays,
+        # quote leg is wSOL handled by the program via CPI).
+        v2 = _v2_ctx(mint, st, ub)
+        tp = v2["tp"]
         ixs = [
             (CMP_PROG, [], struct.pack("<BI", 2, 300_000)),
             (CMP_PROG, [], struct.pack("<BQ", 3, _pfee)),
             (ATA_PROG, [(ub, True, True), (user_ata, True, False),
                         (ub, False, False), (mb, False, False),
-                        (SYS_PROG, False, False), (st["token_prog"], False, False)],
+                        (SYS_PROG, False, False), (tp, False, False)],
              b"\x01"),  # createIdempotent
             (PUMP_PROG, [
                 (G_GLOBAL, False, False),
-                (b58dec(st["fee_recipient"]), True, False),
                 (mb, False, False),
+                (WSOL, False, False),
+                (tp, False, False),
+                (TOKENKEG, False, False),
+                (ATA_PROG, False, False),
+                (v2["fee_rec"], True, False),
+                (_ata(v2["fee_rec"], WSOL, TOKENKEG), True, False),
+                (v2["bb_rec"], True, False),
+                (_ata(v2["bb_rec"], WSOL, TOKENKEG), True, False),
                 (st["curve"], True, False),
-                (_ata(st["curve"], mb, st["token_prog"]), True, False),
-                (user_ata, True, False),
+                (_ata(st["curve"], mb, tp), True, False),
+                (_ata(st["curve"], WSOL, TOKENKEG), True, False),
                 (ub, True, True),
-                (SYS_PROG, False, False),
-                (st["token_prog"], False, False),
-                (creator_vault, True, False),
-                (G_EVENT_AUTH, False, False),
-                (PUMP_PROG, False, False),
+                (user_ata, True, False),
+                (_ata(ub, WSOL, TOKENKEG), True, False),
+                (v2["cv"], True, False),
+                (_ata(v2["cv"], WSOL, TOKENKEG), True, False),
+                (v2["shr"], False, False),
                 (G_GVA, False, False),
-                (pda([b"user_volume_accumulator", ub], PUMP_PROG), True, False),
+                (v2["uva"], True, False),
+                (_ata(v2["uva"], WSOL, TOKENKEG), True, False),
                 (G_FEE_CFG, False, False),
                 (FEE_PROG, False, False),
-            ], BUY_DISC + struct.pack("<QQ", min_tokens, lamports)),
+                (SYS_PROG, False, False),
+                (G_EVENT_AUTH, False, False),
+                (PUMP_PROG, False, False),
+            ],
+            BUYV2_DISC + struct.pack("<QQ", min_tokens, lamports)),
         ]
         tx_b64 = build_legacy_tx(ub, ixs)
         row["expect_tokens"] = expect
@@ -748,29 +803,48 @@ def curve_sell(mint, token_amount, min_sol_out=0, reason="exit"):
         st = curve_state(mint)
         mb = b58dec(mint); ub = b58dec(addr)
         user_ata = _ata(ub, mb, st["token_prog"])
-        cc = _get_account(b58enc(st["curve"]))
-        creator = cc["data"][49:81] if len(cc["data"]) >= 81 else None
-        creator_vault = pda([b"creator-vault", creator], PUMP_PROG)
+        v2 = _v2_ctx(mint, st, ub)
+        if not v2["cv"]:
+            row["result"] = "refused: creator unknown"
+            _log(row); return row
+        tp = v2["tp"]
         _pfee = _dyn_prior_fee([st["curve"]])   # §409 — exits need it most
         ixs = [
             (CMP_PROG, [], struct.pack("<BI", 2, 200_000)),
             (CMP_PROG, [], struct.pack("<BQ", 3, _pfee)),
+            (ATA_PROG, [(ub, True, True), (user_ata, True, False),
+                        (ub, False, False), (mb, False, False),
+                        (SYS_PROG, False, False), (tp, False, False)],
+             b"\x01"),  # §441b: createIdempotent — sell_v2 3012s without it
             (PUMP_PROG, [
                 (G_GLOBAL, False, False),
-                (b58dec(st["fee_recipient"]), True, False),
                 (mb, False, False),
+                (WSOL, False, False),
+                (tp, False, False),
+                (TOKENKEG, False, False),
+                (ATA_PROG, False, False),
+                (v2["fee_rec"], True, False),
+                (_ata(v2["fee_rec"], WSOL, TOKENKEG), True, False),
+                (v2["bb_rec"], True, False),
+                (_ata(v2["bb_rec"], WSOL, TOKENKEG), True, False),
                 (st["curve"], True, False),
-                (_ata(st["curve"], mb, st["token_prog"]), True, False),
-                (user_ata, True, False),
+                (_ata(st["curve"], mb, tp), True, False),
+                (_ata(st["curve"], WSOL, TOKENKEG), True, False),
                 (ub, True, True),
-                (SYS_PROG, False, False),
-                (creator_vault, True, False),
-                (st["token_prog"], False, False),
-                (G_EVENT_AUTH, False, False),
-                (PUMP_PROG, False, False),
+                (user_ata, True, False),
+                (_ata(ub, WSOL, TOKENKEG), True, False),
+                (v2["cv"], True, False),
+                (_ata(v2["cv"], WSOL, TOKENKEG), True, False),
+                (v2["shr"], False, False),
+                (v2["uva"], True, False),
+                (_ata(v2["uva"], WSOL, TOKENKEG), True, False),
                 (G_FEE_CFG, False, False),
                 (FEE_PROG, False, False),
-            ], SELL_DISC + struct.pack("<QQ", token_amount, min_sol_out)),
+                (SYS_PROG, False, False),
+                (G_EVENT_AUTH, False, False),
+                (PUMP_PROG, False, False),
+            ],
+            SELLV2_DISC + struct.pack("<QQ", token_amount, min_sol_out)),
         ]
         tx_b64 = build_legacy_tx(ub, ixs)
         row["expect_sol"] = sol_for_tokens(st, token_amount) / 1e9

@@ -7262,3 +7262,26 @@ doesn't block the next trial. Logged action bridge_buy_refused from here.
 If refusals accumulate on hot coins, the queued fix is a one-shot re-quote
 retry inside curve_buy. Shadow still tracking F2VJAXjj's outcome for the
 record. Gate status: LIVE, armed for the next qualifier.
+
+§441b (2026-09-06 ~21:40 BST): pump.fun program upgrade fully cracked.
+Legacy buy/sell (66063d…/33e685…) are dead — 6062 then 6074 (6074 is past
+the on-chain IDL, i.e. binary newer than IDL). The live frontend now uses
+buy_v2 (b817ee6167c5d33d, 27 accounts) and sell_v2 (5df6823ce7e940b2, 26
+accounts). Layout reverse-engineered from REAL successful on-chain txs and
+cross-checked against the fresh IDL (bought fresh copy pump_idl_fresh.json):
+global, base_mint, wSOL, base_token_program (Token-2022 on new mints),
+Tokenkeg, ATA prog, fee_recipient (ROTATES across Global's 7 @off162),
+its wSOL ATA, buyback_fee_recipient (ROTATES across Global's 8 @off741;
+observed idx 2/3/6 on real txs), its wSOL ATA, curve, curve base ATA,
+curve wSOL ATA, user, user base ATA, user wSOL ATA, creator_vault,
+its wSOL ATA, sharing_config=PDA["sharing-config",mint]@FEE_PROG,
+(global_volume_accumulator on buy only), user_volume_accumulator=
+PDA["user_volume_accumulator",user], its wSOL ATA, fee_config
+(8Wf5TiAh… const), fee_program, system, event_authority, program.
+Every derived address verified byte-equal against real tx accounts.
+sell_v2 additionally needs the user base ATA createIdempotent ix or the
+pump ix throws Custom 3012 (missing account); with it, dry-run sim gives
+6023 NotEnoughTokensToSell — the correct zero-balance refusal, i.e.
+structure VALIDATED. buy_v2 dry-run sim: err NONE. Both builders patched
+in live_trader.py (_fee_global/_v2_ctx helpers; _buyback_remaining
+removed). Bridge still armed — next fresh qualifier fires a real 0.02 buy.
