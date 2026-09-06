@@ -7014,3 +7014,13 @@ writes heat_state.json; darwin_status now prints the reading. Band changes
 log to heat_log.jsonl. This is the throttle for live sizing: full size in
 HOT, reduced in WARM, stand down in COLD. (First reading THIN — forward-
 primed bookmarks; full window populates within ~70min.)
+
+## §423 h16e2 #1: EUxJvNiL — qualified, then went SILENT (failure mode)
+First early-window open: mom 1.001, dd 0.999, bf 0.518 (barely passed all
+three). Entry 28.36 SOL mcap at +60s tick. Then: 83 ticks, none after
++4m; coin froze at exactly 1.000x entry for 20+ minutes. Will timeout at
+~flat (gross) / minus fees (net). New failure mode: "silent after
+qualification" — the bar passed on the last gasp of activity. Candidate
+liveness check: require >=1 tick in the final 15s of the 60s window before
+opening. One case; wait for a second before adding the filter.
+Meanwhile: heat gauge reads HOT (20.0%, 15 scorable) — regime lifted.
