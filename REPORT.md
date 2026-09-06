@@ -6867,3 +6867,11 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   quiet curve and the module passes a live exit_watch pass.
 - Owner's ChatGPT brief #7 (rent recovery) also probed: wallet has ZERO
   token accounts — nothing recoverable, dead ATAs already cleaned.
+
+## §410 H16 shadow @ 5 closes — first win, entry filter emerging
+Tally 1W/4L, expectancy −2.4%/trade. The win (EsWsA6LV, +20% in 5.8m) had the
+highest bf (0.870) and 2nd-highest mom (1.217). Highest-mom entry (1.261) with
+weak dd/bf (0.743/0.600) lost. Pattern: mom alone selects churners; dd+bf carry
+the signal. Candidate H16b bar: mom≥1.20 AND dd≥0.80 AND bf≥0.85 — would have
+taken only the winner (n=5, curve-fit risk high; validate passively from logged
+metrics, no code change, re-score at 10+ closes). Exits remain validated (§405).
