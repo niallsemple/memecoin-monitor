@@ -2419,5 +2419,26 @@
   "exit_t": 1788731094.96503,
   "exit_sig": "5TuR418JqDkQ3ojhmqt48G89D9ye3tuXQ8KhSWVQ7g9hbPRVjNDPhEHMAbRrf428mTZoNXDtggb2aQkvzyngLCic",
   "pnl_sol": 0.00853
+ },
+ "86p2DpnL3ymwaR8MtaSZTg8CeFQwLz42moEANU18pump": {
+  "open": false,
+  "mode": "e2_trial",
+  "venue": "curve",
+  "entry_t": 1788731599.381112,
+  "entry_px": 3.723579108482727e-05,
+  "tokens": 480486873815,
+  "tokens_left": 0,
+  "size_sol": 0.02,
+  "peak_mult": 1.0,
+  "trough_mult": 0.7580331950737162,
+  "freerolled": false,
+  "sol_recovered": 0.013420544,
+  "a3r_logged": true,
+  "actual_fill_note": "reconciled to on-chain ATA 480486873815 (quote 531442522461; balance-read race \u00a7441d)",
+  "closed_reason": "panic",
+  "exit_reason": "panic",
+  "exit_t": 1788732233.6568809,
+  "exit_sig": "AbPT6HPQ9R9zBEAMbM2L65fBhcwhYWza4y2Wb8TKYi1Y6k2zbrFB4mnTxdKCJ6ZpmWZe3w3pCgo7pQ8JXYfHTcs",
+  "pnl_sol": -0.00658
  }
 }

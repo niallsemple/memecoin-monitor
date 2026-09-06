@@ -7300,3 +7300,15 @@ block exits with 6023); (2) sell path carries createIdempotent ATA ix
 (v2 3012s without it). Hazard noted: manual exit_watch during a live
 tracker window can double-fire (second submit fails 6023, costs a failed
 -tx fee only) — leave exits to the tracker from here.
+
+§441d (2026-09-06 22:10 BST): trade #2 — loss, and a second fill-reconcile
+bug found+fixed. 86p2DpnL3y…pump: bought 0.02 (sig 5dpTxiRH…), coin dumped
+through the −8% stop faster than execution; stop sell was BLOCKED because
+open_position's new on-chain reconcile raced the buy landing (balance read
+9s post-submit returned empty -> stale quote 531.4B recorded vs actual
+480.5B -> 6023 refusals x2). Fix: reconcile now polls the ATA balance
+6x/2s before falling back to quote. Position hand-reconciled, panic exit
+fired at r=0.758 (sig AbPT6HPQ… err None, +0.01337 SOL back). Net
+-0.00658 SOL. Running e2 book: +0.00853 / -0.00658 = +0.00195 SOL (2
+trades). Wallet 1.3045. Lesson logged: stop triggers are not stop prices
+on these coins — slippage through the trigger is the cost structure.

@@ -955,8 +955,16 @@ def open_position(mint, size_sol, mode, venue="curve", entry_px=None,
             try:
                 _addr = json.loads(WALLET_F.read_text())["address"]
                 _ata_b = _ata(b58dec(_addr), b58dec(mint), st["token_prog"])
-                _bal = _rpc("getTokenAccountBalance", [b58enc(_ata_b)])
-                _amt = int((_bal or {}).get("value", {}).get("amount", "0"))
+                _amt = 0
+                # §441d: the buy lands seconds before this call — poll until
+                # the fresh ATA balance is visible instead of trusting the
+                # stale quote (86p2DpnL3y recorded 531.4B, held 480.5B).
+                for _try in range(6):
+                    _bal = _rpc("getTokenAccountBalance", [b58enc(_ata_b)])
+                    _amt = int(((_bal or {}).get("value") or {}).get("amount", "0"))
+                    if _amt > 0:
+                        break
+                    time.sleep(2.0)
                 if _amt > 0:
                     tokens = _amt
             except Exception:
