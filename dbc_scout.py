@@ -34,9 +34,12 @@ MAX_TRACKED = 40                            # cap concurrent tracked mints
 
 def _load_state():
     try:
-        return json.loads(STATE.read_text())
+        st = json.loads(STATE.read_text())
+        if "mints" not in st:                 # legacy flat layout
+            st = {"mints": st, "seen": list(st)}
+        return st
     except Exception:
-        return {}
+        return {"mints": {}, "seen": []}
 
 
 def _save_state(st):
@@ -61,8 +64,10 @@ def _quote_sol_to_token(mint):
 def run_pass():
     now = time.time()
     st = _load_state()
+    mints, seen = st["mints"], set(st["seen"])
 
-    # register new births
+    # register new births (§411c: seen-set is permanent — a finished mint
+    # must never re-register, or it re-polls the whole ladder every pass)
     if BIRTHS.exists():
         for line in BIRTHS.read_text().splitlines():
             try:
@@ -70,12 +75,13 @@ def run_pass():
             except Exception:
                 continue
             m = b.get("mint")
-            if m and m not in st and len(st) < MAX_TRACKED:
-                st[m] = {"birth_t": b.get("t", now), "venue": b.get("venue"),
-                         "done": [], "base": None}
+            if m and m not in seen and len(mints) < MAX_TRACKED:
+                mints[m] = {"birth_t": b.get("t", now),
+                            "venue": b.get("venue"), "done": [], "base": None}
+                seen.add(m)
 
     out = []
-    for mint, s in list(st.items()):
+    for mint, s in list(mints.items()):
         age_now = now - s["birth_t"]
         for a in AGES:
             if a in s["done"] or age_now < a:
@@ -91,10 +97,11 @@ def run_pass():
                             "mult": round(px / s["base"], 4)})
             out.append(rec)
             s["done"].append(a)
-        # expire fully-polled mints
-        if len(s["done"]) == len(AGES):
-            del st[mint]
+        # retire (but never forget) fully-polled mints older than 2 days
+        if len(s["done"]) == len(AGES) and age_now > 2 * 86400:
+            del mints[mint]
 
+    st["seen"] = sorted(seen)[-2000:]         # bounded memory
     if out:
         with LOG.open("a") as f:
             for r in out:

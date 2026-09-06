@@ -6897,3 +6897,11 @@ a thesis failure — execution timing noise worth its own look at n>=10.
 Verdict: flat H16 bar is mildly positive forward; keep accumulating, no
 code change. dbc_scout: first real-time DBC birth (FjycmKid) indexed at
 first poll; price flat through the backfill ladder.
+
+## §411c dbc_scout re-register loop fixed
+v1 deleted fully-polled mints from state; next pass saw them as new in
+birth_watch.jsonl and re-polled the entire ladder — every mint logged
+2-3 triplicate ladders (plus a Jupiter rate-limited all-false round).
+Fix: permanent seen-set in dbc_scout_state.json; finished mints retire
+from active tracking after 2d but can never re-register. Polluted log
+archived to dbc_scout.jsonl.bak1; fresh log verified 103 rows, 0 dups.
