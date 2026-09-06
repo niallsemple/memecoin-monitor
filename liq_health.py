@@ -261,8 +261,11 @@ def _tail_hooks():
     """§429: independent watcher modules — MUST run even when the liq
     early-returns fire (empty watch list etc.). Byte-bookmarked, each
     isolated; second invocation per pass is a cheap no-op."""
+    # §432: h16_early2 + e2_live_bridge moved to tracker_live's 15s
+    # e2_fast_loop (single driver — no state-write race; edge decays
+    # ~0.04%/trade per second of entry lag, §431).
     for name in ("h16_shadow", "birth_watch", "exec_journal", "dbc_scout",
-                 "h16_early", "h16_early2", "heat_gauge", "e2_live_bridge"):
+                 "h16_early", "heat_gauge"):
         try:
             import importlib.util as _ilu
             _sp = _ilu.spec_from_file_location(name, MON / f"{name}.py")
@@ -382,16 +385,8 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _hem.run_pass()
     except Exception:
         pass
-    # §417b: h16_early2 — 60s entry with NATIVE 60s bars (mom>=1.0,
-    # dd>=0.90, bf>=0.50; derived from the 6 H16 opens at +60s, §417).
-    try:
-        import importlib.util as _ilh2
-        _h2 = _ilh2.spec_from_file_location("h16_early2", MON / "h16_early2.py")
-        _h2m = _ilh2.module_from_spec(_h2)
-        _h2.loader.exec_module(_h2m)
-        _h2m.run_pass()
-    except Exception:
-        pass
+    # §432: h16_early2 (ex-§417b) now runs ONLY in tracker_live's 15s
+    # e2_fast_loop — removed here to keep a single state driver.
     # §422b: heat_gauge — rolling 60min mom60 heat reading for regime-
     # aware sizing. Log-only; writes heat_state.json for darwin_status.
     try:
@@ -402,16 +397,7 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _hgm.run_pass()
     except Exception:
         pass
-    # §427b: e2_live_bridge — gated live-entry path for h16e2 opens.
-    # Flag OFF: logs bridge_would_buy dry-runs only. Never raises.
-    try:
-        import importlib.util as _ilbr
-        _br = _ilbr.spec_from_file_location("e2_live_bridge", MON / "e2_live_bridge.py")
-        _brm = _ilbr.module_from_spec(_br)
-        _br.loader.exec_module(_brm)
-        _brm.run_pass()
-    except Exception:
-        pass
+    # §432: e2_live_bridge (ex-§427b) also moved to the 15s e2_fast_loop.
     return out
 
 

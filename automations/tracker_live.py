@@ -1869,10 +1869,34 @@ def run(ctx):
             except Exception:
                 pass
 
+    # §432: fast e2 scoring loop — h16_early2 + e2_live_bridge every 15s.
+    # §431: the birth edge decays ~0.04%/trade per SECOND of entry lag;
+    # the 90s shock cadence was costing ~2%/trade on live fills. Both
+    # modules are file-tail only (zero RPC), so 15s is free. Removed from
+    # liq_health's hook paths — this thread is the SINGLE state driver.
+    E2_FAST_S = 15
+
+    def e2_fast_loop():
+        import importlib.util as _ilf
+        while not stop.is_set():
+            stop.wait(E2_FAST_S)
+            if stop.is_set():
+                break
+            for _nm in ("h16_early2", "e2_live_bridge"):
+                try:
+                    _sf = _ilf.spec_from_file_location(
+                        _nm, str(MON / f"{_nm}.py"))
+                    _mf = _ilf.module_from_spec(_sf)
+                    _sf.loader.exec_module(_mf)
+                    _mf.run_pass()
+                except Exception:
+                    pass
+
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
     threading.Thread(target=shock_loop, daemon=True).start()
+    threading.Thread(target=e2_fast_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
     # births for the rest of the run (20-min blind window 17:04-17:24

@@ -7126,3 +7126,16 @@ second of entry lag. At the realistic +120s fill it retains ~+4.8% gross
 scoring latency is money; a dedicated fast file-tail loop for h16_early2
 (no RPC cost) at 10-15s cadence would pull fills toward +75s and recover
 ~2%/trade. Queued as the next build before sizing up.
+
+## §432 Fast e2 scoring loop live — entry lag cut 90s -> ~15s
+§431 quantified the cost of the 90s shock cadence: ~0.04%/trade per second
+of entry lag (~2%/trade at realistic fills). Fix deployed: tracker_live.py
+gains an e2_fast_loop thread running h16_early2 + e2_live_bridge every 15s
+(both are file-tail only, zero RPC; measured 0.00s/pass). Both modules were
+REMOVED from liq_health's two hook paths (_tail_hooks tuple + inline tail)
+so the fast thread is the SINGLE state driver — no h16_early2_state.json
+write races. Expected effect: live bridge fills land ~+70-80s post-birth
+instead of +120-160s, recovering ~2%/trade toward the +60s backtest
+profile (+7.2%). Smoke-tested: py_compile OK on both files, both modules
+run clean standalone, shock_recheck OK. Scoring semantics unchanged —
+same 60s window, same bars, same liveness; only the pass cadence moved.
