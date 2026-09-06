@@ -7346,3 +7346,17 @@ mfg_trades mtime, and ONLY when the tracker window is dead (>90s) runs
 one exit_watch pass. Open positions now unmanaged <= ~10 min worst case,
 ~3 min typical. Double-fire hazard handled by the liveness check
 (second sell would 6023 harmlessly anyway).
+
+§444 (2026-09-07 00:05 BST): SEED FARM EXPOSED. Trades #8/#9 (HXTHzAws
+panic -0.00706 peak 1.0! / 5vjQ6MVd panic -0.00754 peak 1.119). All three
+gated losses (EW4KWShw, HXTHzAws, 5vjQ6MVd) trace to ONE creator wallet
+7umWEB7bNJquvWT2nKTTEntF6vWNWCwbEzNQb2nVcnoL running identical 5.26 SOL
+seeds — a serial deployer farming the exact entry fingerprint
+(mom/dd/bf/seed all pass by construction). The seed floor didn't fail;
+it got reverse-engineered. DEFENSES DEPLOYED: (1) creator_denylist.json
+with the farm wallet; _creator_blocked() wired into curve_buy (covers
+every entry path); (2) serial-deployer gate in e2_live_bridge — any
+creator seen on a prior qualifier within 6h is blocked (first coin may
+fire, repeats refused). Verified: farmer mint blocked=True, our winner
+mint blocked=False. Book: 1W/8L, -0.0455 SOL. The remaining winner
+profile: seed 9.88, mcap 52.6k, creator seen once.

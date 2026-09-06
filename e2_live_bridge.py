@@ -112,6 +112,29 @@ def run_pass():
                             "live_trader", MON / "live_trader.py")
                         lt = ilu.module_from_spec(spec)
                         spec.loader.exec_module(lt)
+                        # §444: serial-deployer gate. Seed-farm creators run
+                        # identical seeds through every gate and dump on the
+                        # momentum buyers. Any creator already seen on a
+                        # qualifier in the last 6h is blocked (first coin
+                        # allowed, repeats refused), and the creator-level
+                        # denylist is enforced in curve_buy itself.
+                        creator = None
+                        try:
+                            creator = lt.curve_creator(mint)
+                        except Exception:
+                            pass
+                        hist = st.setdefault("creator_hist", [])
+                        hist[:] = [h for h in hist
+                                   if now - h[0] < 6 * 3600][-200:]
+                        prior = sum(1 for h in hist if h[1] == creator)
+                        if creator and prior >= 1:
+                            rec["action"] = "bridge_blocked"
+                            rec["reason"] = "serial_deployer"
+                            rec["creator"] = creator[:12]
+                            out.append(rec)
+                            continue
+                        if creator:
+                            hist.append([now, creator])
                         sig = lt.curve_buy(mint, SIZE_SOL, reason="e2_trial")
                         rec["sig"] = sig
                         # §440: only register a position on a REAL fill —

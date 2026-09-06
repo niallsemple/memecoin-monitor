@@ -4456,3 +4456,9 @@
 | 23:06 | solana | `CyNQyyrR…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,361 | name=Memes Into Money symbol=MIM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
 | 23:06 | robinhood | `0x439947…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,458 mc=$24,310 | chain:robinhood no-audit-adapter | Stocks, decomposed on-chain. NVDA → Revenue, EPS, Margins, Guidance. Trade each  |
 | 23:06 | robinhood | `0x69324b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,047 mc=$25,950 | chain:robinhood no-audit-adapter | Ἀρχαία ψυχή. Καινὸς νοῦς. |
+| 23:46 | robinhood | `0x0FC64c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,450 mc=$40,271 | chain:robinhood no-audit-adapter | FLYWHEEL trades against tokenized Tesla stock on Robinhood Chain. Every trade pa |
+| 23:46 | solana | `4gJJADF2…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$0 mc=$29,804 | name=Generational Pair symbol=PAIR; contract:clean; rugcheck_score=1 lpLocked=0%; top10_ho |  |
+| 23:46 | solana | `DqVCyJqV…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$31,264 mc=$143,415 | name=Uber Stonk symbol=USTONK; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=41 | Above the noise. Beyond ordinary stonks. The ultimate upward meme on Solana. $US |
+| 23:46 | solana | `BWwj8gtT…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:33% | liq=$41,372 mc=$200,345 | name=ASSTRA symbol=ASS; rugcheck_score=12 lpLocked=98.78756805787681%; top10_hold=32.6% | Hold $ASS and receive $OpenAI airdrops |
+| 23:46 | robinhood | `0x9f05AC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,703 mc=$71,248 | chain:robinhood no-audit-adapter | Lenny has been tried time and time again on solana, and that’s because he’s lite |
+| 23:46 | robinhood | `0x13c7ff…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The OpenRouter of GPUs. |

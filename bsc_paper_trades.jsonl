@@ -27,3 +27,4 @@
 {"name": "BNB fam / WBNB", "pair": "0x796cb17ab6418d597b131a34e65149f6070223e2", "entry_t": 1788582877.043683, "exit_t": 1788587529.7882218, "ret": 0.1228, "exit": "abort", "entry_flow_usd": 3688.0, "hold_min": 77.5}
 {"name": "Sue / USDT", "pair": "0xeaf5ead02f6c8a21c9ff5e458400bc391ad67065", "entry_t": 1788666759.0512068, "exit_t": 1788667387.1330528, "ret": 1.2763, "exit": "trail", "entry_flow_usd": 9384.0, "hold_min": 10.5}
 {"name": "\u706b\u661f\u4eba\u751f / WBNB", "pair": "0x8c37f4e5d7a01fd373d36aad6e8479b64440715a", "entry_t": 1788681149.595181, "exit_t": 1788682977.2153442, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3172.0, "hold_min": 30.5}
+{"name": "PATLU / WBNB", "pair": "0xffd0901fb65d4021a994a4891eef86c52c44edfc", "entry_t": 1788736317.0188758, "exit_t": 1788737290.04601, "ret": 1.238, "exit": "trail", "entry_flow_usd": 3463.0, "hold_min": 16.2}

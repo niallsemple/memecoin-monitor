@@ -99,6 +99,37 @@ def _log(row):
 
 
 FARM_DENY = MON / "farm_denylist.json"
+CREATOR_DENY = MON / "creator_denylist.json"
+
+
+def curve_creator(mint):
+    """Creator pubkey from the bonding-curve account tail (offset 49)."""
+    st = curve_state(mint)
+    cc = _get_account(b58enc(st["curve"]))
+    if not cc or len(cc["data"]) < 81:
+        return None
+    creator = cc["data"][49:81]
+    if creator == b"\0" * 32:
+        return None
+    return b58enc(creator)
+
+
+def _creator_blocked(mint):
+    """§444: creator-level denylist. The 5.26-SEED FARM (wallet
+    7umWEB7bNJquvWT2nKTTEntF6vWNWCwbEzNQb2nVcnoL) ran identical 5.26 SOL
+    seeds through every entry gate (mom/dd/bf/seed floor) and dumped on
+    us 3x in 40 min (EW4KWShw/HXTHzAws/5vjQ6MVd, -0.023 SOL combined).
+    Mint-level denylists can't catch serial deployers; creator-level can."""
+    try:
+        if not CREATOR_DENY.exists():
+            return False
+        deny = set(json.loads(CREATOR_DENY.read_text()))
+        if not deny:
+            return False
+        c = curve_creator(mint)
+        return c in deny
+    except Exception:
+        return False
 
 
 def _farm_blocked(mint):
@@ -693,6 +724,9 @@ def curve_buy(mint, sol_amount, reason="signal"):
         _log(row); return row
     if _farm_blocked(mint):
         row["result"] = "refused: farm denylist (§389)"
+        _log(row); return row
+    if _creator_blocked(mint):
+        row["result"] = "refused: creator denylist (§444)"
         _log(row); return row
     try:
         st = curve_state(mint)
