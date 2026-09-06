@@ -4397,3 +4397,9 @@
 | 09:26 | robinhood | `0xaD3424…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,032 mc=$85,012 | chain:robinhood no-audit-adapter | Build, trade & explore perpetual ETFs across stocks, RWAs, and crypto—powered by |
 | 09:26 | robinhood | `0xb38e46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,282 mc=$56,051 | chain:robinhood no-audit-adapter | Send USDG & ETH to an @. Payments by X handle, built on Robinhood Chain. |
 | 09:26 | robinhood | `0x06137e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,803 mc=$135,985 | chain:robinhood no-audit-adapter | $5555 -  The Identity Of Pair |
+| 10:06 | robinhood | `0xF4Da86…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$58,373 mc=$137,369 | chain:robinhood no-audit-adapter | A new star enters the Chat. |
+| 10:06 | robinhood | `0xb8578c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Trade the prices nobody else lists. Real-world markets. Live index feeds. Perpet |
+| 10:06 | robinhood | `0xEBa56F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$56 mc=$27,344 | chain:robinhood no-audit-adapter | Block characters on Robinhood |
+| 10:06 | solana | `Gta366UP…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:94% | liq=$0 mc=$5,566 | name=Cow Screen symbol=cowscreen; contract:clean; rugcheck_score=67 lpLocked=100%; top10_h | Cow Screen  Absolute Cinema |
+| 10:06 | solana | `EvLzxzJg…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:95% | liq=$7,468 mc=$10,422 | name=Anonymous Trump symbol=ZTRUMP; contract:clean; rugcheck_score=32 lpLocked=100%; top10 | Anonymous Trump brings mystery, chaos, and unstoppable meme energy to Solana, ma |
+| 10:06 | solana | `F1Vxv9wY…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,941 | name=AICOIN symbol=AICOIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=97.8 |  |

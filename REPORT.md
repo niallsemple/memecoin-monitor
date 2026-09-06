@@ -6778,3 +6778,19 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   comparability — but if forward losses cluster at sub-minute holds, a
   noise-hardened variant (e.g. 2-consecutive-tick stop confirmation) is the
   next experiment. Verdict waits for ~30 shadow closes.
+
+## §402 — Raydium CPMM phase 1 LIVE (read-only venue access)
+- Program ID verified ON-CHAIN: CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C
+  (executable); the SEO-doc variant ...THS4K9uP6eh does not exist.
+- raydium_cpmm.py: pool discovery (gPA memcmp @168/200, cached), PoolState
+  decode, AmmConfig fee decode (trade_fee_rate u32 @12 — verified 2500ppm;
+  offset 11 is the one-byte-shift ghost), vault-reserve reads, pure
+  constant-product quotes, deepest-WSOL-pool selection.
+- PARITY PASSED (TRUMP, 0.05 SOL): Raydium 2.24458 vs Jupiter 2.262 —
+  0.77% gap, inside the 1% acceptance bar. (Raydium slightly worse is
+  expected: Jupiter aggregates across venues; ours is single-pool.)
+- Note: TRUMP has 858 CPMM pools (clone pairs); we always quote the
+  deepest WSOL-paired one. Main CPMM depth is thin vs CLMM — fine for
+  memecoin grads, which is our use case.
+- Next: phase 2 arb scanner (PumpSwap vs Raydium gap logger) + dry-run
+  swap builder. Execution stays gated behind live_enabled().
