@@ -7139,3 +7139,18 @@ instead of +120-160s, recovering ~2%/trade toward the +60s backtest
 profile (+7.2%). Smoke-tested: py_compile OK on both files, both modules
 run clean standalone, shock_recheck OK. Scoring semantics unchanged —
 same 60s window, same bars, same liveness; only the pass cadence moved.
+
+## §432b DEPLOY GOTCHA: automations run EMBEDDED copies, not workspace files
+The 15s fast loop didn't fire after the §432 push: the curve-collector
+Automation executes assets/automation.py (an embedded byte-copy of
+automations/tracker_live.py), while liq_health.py IS loaded fresh from the
+workspace each pass via importlib. Net effect of editing only the workspace
+file: new liq_health (h16_early2 removed) + old tracker (no e2_fast_loop)
+= h16_early2 had NO driver for ~25 min (state frozen 18:08-18:33; shadow-
+only, no positions open, no exposure). Fix: synced workspace tracker_live.py
+over the automation's assets/automation.py; verified 0-diff + py_compile.
+Grepped ALL automation assets: the collector is the only driver of
+h16_early2/e2_live_bridge — single-driver invariant holds. RULE from here:
+any edit to automations/tracker_live.py must be mirrored into the collector
+automation's assets copy; liq_health.py and watcher-module edits go live on
+the next pass automatically.
