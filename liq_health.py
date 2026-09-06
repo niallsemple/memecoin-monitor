@@ -385,6 +385,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _hgm.run_pass()
     except Exception:
         pass
+    # §427b: e2_live_bridge — gated live-entry path for h16e2 opens.
+    # Flag OFF: logs bridge_would_buy dry-runs only. Never raises.
+    try:
+        import importlib.util as _ilbr
+        _br = _ilbr.spec_from_file_location("e2_live_bridge", MON / "e2_live_bridge.py")
+        _brm = _ilbr.module_from_spec(_br)
+        _br.loader.exec_module(_brm)
+        _brm.run_pass()
+    except Exception:
+        pass
     return out
 
 

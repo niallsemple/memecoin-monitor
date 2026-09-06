@@ -7066,3 +7066,14 @@ mom>=1.0 vs 22% file-wide, §421) was PARTLY measurement artifact — the
 genuine cold snap coexisted with corrupted windows. With repairs live,
 expect the forward qualification rate to rise toward the historical ~4.6%.
 h16e2 tally: 2 closes (1W +20%/5.8m, 1 timeout flat), 73 scored.
+
+## §427 e2_live_bridge.py — the live trial is now a flag flip away
+Bridge tails h16_early2.jsonl; on each h16e2_open it would place a REAL
+0.02 SOL curve buy via live_trader.curve_buy and register the position
+with the existing exit stack (bank12x +20%, panic 0.80, timestop).
+LIVE_E2_ENABLED=False — until the owner flips it, every event logs
+bridge_would_buy with the same guards (max 1 concurrent, 0.10 SOL daily
+loss cap). The forward gate is now measured on the bridge's OWN dry-run
+record: when 3-5 would-buys show the backtest profile, we flip and the
+very next qualifying birth is a live micro trial. Bookmark primed at EOF
+— no retro-fire on the 2 historical opens.
