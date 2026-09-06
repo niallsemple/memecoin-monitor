@@ -7160,3 +7160,17 @@ First window with the synced assets copy fired 18:48: h16_early2_state.json
 hist ring shows uniform 15s pass gaps (was 90s + double-invocation pairs).
 Shadow scoring + bridge dry-runs now resolve within ~15s of window close;
 live bridge fills (post-flag-flip) land ~+70-80s post-birth per §431 curve.
+
+## §433 Backfill batch exposed a bridge hole — freshness guard added
+When the fast loop came online at 18:48 it scored a 40-minute backlog in ONE
+pass: 3 opens (3Hn7drXT, CdavmMcG, DDMdYRMn) with scored_at lags of 2135s,
+1858s, 609s — backfill artifacts of the §432b driverless gap, not live
+cadence. Their shadow bookkeeping is valid (entry tick + exit walk over real
+stored ticks), but the bridge treated DDMdYRMn as a live signal 10 min after
+its window — post-flag-flip that would have been a REAL buy at a price far
+from the shadow entry. Fix: STALE_OPEN_S=150 freshness guard in
+e2_live_bridge — opens older than 150s log bridge_skip_stale, never buy.
+Also honest tally: forward book is now n=7, -2.86%/trade gross
+(1W/5L/1T) vs backtest +7.5% — but 3 of 7 are backfill artifacts and n is
+tiny; clean live-cadence record is 0W/2L. No regime call yet; the gate
+needs 3-5 FRESH would-buys, which the guard now guarantees by construction.

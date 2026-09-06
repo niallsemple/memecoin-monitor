@@ -26,6 +26,11 @@ LIVE_E2_ENABLED = False        # THE GATE. Flip only on owner sign-off.
 SIZE_SOL = 0.02                # micro-size trial entries
 MAX_CONCURRENT = 1
 DAILY_LOSS_CAP_SOL = 0.10      # stop for the day if realized losses exceed
+STALE_OPEN_S = 150             # §433: never buy on backfilled opens — after
+                               # any driver outage, batched catch-up scoring
+                               # emits opens whose entry tick is long past;
+                               # a real fill then would be at a different
+                               # price than the shadow booked. Skip them.
 
 
 def _load():
@@ -66,15 +71,21 @@ def run_pass():
             act = d.get("action")
             if act == "h16e2_open":
                 mint = d["mint"]
+                open_age = now - (d.get("t") or now)
                 blocked = None
-                if len(st["open_mints"]) >= MAX_CONCURRENT:
+                if open_age > STALE_OPEN_S:
+                    blocked = "stale_open"
+                elif len(st["open_mints"]) >= MAX_CONCURRENT:
                     blocked = "max_concurrent"
                 elif st["day_pnl"] <= -DAILY_LOSS_CAP_SOL:
                     blocked = "daily_loss_cap"
                 rec = {"t": now, "mint": mint, "mom": d.get("mom"),
                        "dd": d.get("dd"), "bf": d.get("bf"),
-                       "entry_mcap": d.get("entry_mcap"), "seed": d.get("seed")}
-                if blocked:
+                       "entry_mcap": d.get("entry_mcap"), "seed": d.get("seed"),
+                       "open_age_s": round(open_age, 1)}
+                if blocked == "stale_open":
+                    rec["action"] = "bridge_skip_stale"
+                elif blocked:
                     rec["action"] = "bridge_blocked"
                     rec["reason"] = blocked
                 elif not LIVE_E2_ENABLED:
