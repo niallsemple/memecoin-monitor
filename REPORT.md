@@ -7174,3 +7174,14 @@ Also honest tally: forward book is now n=7, -2.86%/trade gross
 (1W/5L/1T) vs backtest +7.5% — but 3 of 7 are backfill artifacts and n is
 tiny; clean live-cadence record is 0W/2L. No regime call yet; the gate
 needs 3-5 FRESH would-buys, which the guard now guarantees by construction.
+
+## §434 FIRST FRESH QUALIFIER under fast loop — 10.4s scoring lag (was 35-967s)
+Hg5MeDEX (seed 8.9 SOL): h16e2_open at the +60s tick, scored_at 10.4s later
+— the §432 fast loop delivered the full latency recovery (backtest +60s
+entry now matches live detection within ~10s; per §431 that's ~+7%/trade
+territory instead of +4.8%). Profile: mom 1.020, dd 0.981, bf 0.833 — inside
+the §430 bf 0.7-0.9 sweet spot (+9.2%/trade historical bucket). Bridge fired
+bridge_would_buy 0.02 SOL with open_age_s=10.4 — the FIRST fresh dry-run
+event that counts toward the 3-5 flip gate (previous events were stale or
+backfill; the §433 guard now makes staleness structurally impossible).
+Gate tally: 1 fresh would-buy. Shadow outcome resolving on live ticks.
