@@ -7323,3 +7323,12 @@ IDENTIFIED: exit management only runs inside tracker windows (~13.5m per
 Candidate fix: widen window coverage or a dedicated always-on exit pass
 in the collector loop. Winner (+41%) still outpays both losers combined;
 need the full 10-exit sample before judging.
+
+§442 (2026-09-06 22:45 BST): trade #4 — 8JrCjNHX…pump panic at 0.78,
+-0.00593 SOL (tracker's own pass handled it). Book: 1W/3L, -0.00977 SOL.
+ENTRY-METRIC AUTOPSY: winner seed 9.88 SOL / mcap 52.6k; all three losers
+seed <3 SOL / mcap 33-37k. Shadow confirms the dose-response (n=21):
+seed 2-4 avg mult 0.958 (3W/14L), 4-7 -> 1.089, 7-10 -> 1.109 (2/2 won).
+ACTION: live bridge seed floor raised 2 -> 4 SOL (SEED_FLOOR_SOL). Shadow
+recorder unchanged (full 2-10 band keeps scoring so the sample builds).
+Expect fewer fires (~15% of qualifiers) at higher quality.

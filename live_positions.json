@@ -2480,5 +2480,38 @@
   "exit_t": 1788733292.0036569,
   "exit_sig": "3kcLVeerL9RrK762Vp3Ei6iyj6F9taaWmDXf9scb2wProa15dYN2KNSFP91FzyvG8p7sM8EyQr3ACsF6FNjRsr2Y",
   "pnl_sol": -0.00579
+ },
+ "8JrCjNHXKcyjtAYxUmagRYygB62ooUZJrYHqR5MQpump": {
+  "open": false,
+  "mode": "e2_trial",
+  "venue": "curve",
+  "entry_t": 1788733827.02969,
+  "entry_px": 3.6407937848301994e-05,
+  "tokens": 500806061462,
+  "tokens_left": 0,
+  "size_sol": 0.02,
+  "peak_mult": 1.0164941342315845,
+  "trough_mult": 0.7795665712910266,
+  "freerolled": false,
+  "sol_recovered": 0.014065327,
+  "closed_reason": "panic",
+  "exit_reason": "panic",
+  "exit_t": 1788734008.762997,
+  "exit_sig": "3JQAgimy1yUDzeWJ42mNdkgzqaMBHYSXJYLuBUDfRWx2Lij7adPNGwQqP7i58gFBCQmCfFx6qkTKKU44PwFcV4DJ",
+  "pnl_sol": -0.00593
+ },
+ "FA9RHGuSnS94TLusAhiuAfDuir3DDGGcatrWoV4Bpump": {
+  "open": true,
+  "mode": "e2_trial",
+  "venue": "curve",
+  "entry_t": 1788734066.245929,
+  "entry_px": 3.467756005313462e-05,
+  "tokens": 476788231492,
+  "tokens_left": 476788231492,
+  "size_sol": 0.02,
+  "peak_mult": 1.0,
+  "trough_mult": 0.8135395226316392,
+  "freerolled": false,
+  "sol_recovered": 0.0
  }
 }

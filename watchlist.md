@@ -4433,3 +4433,9 @@
 | 22:06 | hyperevm | `0xD3a8F4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:hyperevm no-audit-adapter | Charity launchpad on HYPE. Discover verified charities and launch tokens that re |
 | 22:06 | solana | `6UmUmWLv…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$15,894 mc=$42,333 | name=stonkscate symbol=stonkscate; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | invest in stonks... stonks cate! |
 | 22:06 | bsc | `0x564E35…` | PASS | — | liq=$0 mc=$0 | holders=0; buy_tax=0 sell_tax=0; contract:clean | We took SHIT, the only honest word in crypto, and merged it with COIN, the ticke |
+| 22:26 | robinhood | `0xC96379…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,168 mc=$82,881 | chain:robinhood no-audit-adapter | TikTok for Robots, sponsored by NVIDIA |
+| 22:26 | robinhood | `0xc0c03d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Just a chill guy |
+| 22:26 | base | `0xb20000…` | PASS | — | liq=$0 mc=$0 | holders=0; buy_tax= sell_tax=; contract:clean | every coin is shit. one admits it. |
+| 22:26 | robinhood | `0x7cbe49…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Pop a Quaalude, spend a penny. Pink-sheet meme coins meet Stock Tokens on Robinh |
+| 22:26 | bsc | `0x2A2140…` | CAUTION | PROXY | liq=$47,418 mc=$221,096 | holders=0; buy_tax=0 sell_tax=0.01 |  |
+| 22:26 | robinhood | `0xe3dfb8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,018 mc=$135,399 | chain:robinhood no-audit-adapter | NFT piggy banks that collect tokenized stocks and earn staking bonuses. |
