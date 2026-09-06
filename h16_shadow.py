@@ -64,7 +64,8 @@ def run_pass():
         if d.get("txType") == "create" and d.get("mint"):
             s = d.get("solAmount") or 0
             if SEED_LO <= s < SEED_HI:
-                st["pending"][d["mint"]] = {"t0": d.get("_ts") or now, "seed": s}
+                st["pending"][d["mint"]] = {"t0": d.get("_ts") or now,
+                                            "seed": s, "ticks": []}
 
     lines, st["off_trades"] = _tail(TRADES, st["off_trades"])
     for ln in lines:
@@ -73,7 +74,14 @@ def run_pass():
         except Exception:
             continue
         m = d.get("mint")
-        if m in st["pending"] or m in st["open"]:
+        if m in st["pending"]:
+            if d.get("mcap_sol"):
+                st["pending"][m]["ticks"].append(
+                    (d["t"], d.get("side") or "", d.get("sol") or 0.0,
+                     d["mcap_sol"]))
+                if len(st["pending"][m]["ticks"]) > 3000:
+                    st["pending"][m]["ticks"] = st["pending"][m]["ticks"][-3000:]
+        elif m in st["open"]:
             if d.get("mcap_sol"):
                 ticks.setdefault(m, []).append((d["t"], d.get("side") or "",
                                                 d.get("sol") or 0.0,
@@ -86,7 +94,7 @@ def run_pass():
             age = now - p["t0"]
             if age < ENTRY_DELAY:
                 continue
-            ts = sorted(ticks.get(mint, []))
+            ts = sorted(p["ticks"])
             if not ts:
                 # ticks may predate this pass's bookmark window; keep waiting
                 if age > MAX_PENDING_AGE:
