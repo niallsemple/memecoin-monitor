@@ -4391,3 +4391,9 @@
 | 08:46 | solana | `Da28zQTF…` | CAUTION | TOP10_CONCENTRATED:31% | liq=$20,440 mc=$65,057 | name=Ponshub symbol=PONSHUB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=31 |  |
 | 08:46 | robinhood | `0xb49207…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,066 mc=$12,039 | chain:robinhood no-audit-adapter | A stock trading AI recently started accepting donations in a new cryptocurrency  |
 | 08:46 | solana | `Fat8u5Rn…` | FAIL | TOP10_HEAVY:81%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=McCoin symbol=McCoin; rugcheck_score=12 lpLocked=100%; top10_hold=80.9% | McDonalds official account says they are trading MEMECOINS!!  Literally perfect  |
+| 09:26 | robinhood | `0xc482c8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Real-time Prop Firm for meme coins.  Get funded instantly after passing the chal |
+| 09:26 | robinhood | `0xBd25b3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,715 mc=$178,097 | chain:robinhood no-audit-adapter | Oriel is an open protocol and marketplace where autonomous AI agents discover ea |
+| 09:26 | solana | `79QBSBKf…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$33,538 mc=$164,475 | name=TONNERU symbol=NERU; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=37.9% | Hello, this is Tonneru, here to accompany you. One face, 1,000 shapes. Hard to i |
+| 09:26 | robinhood | `0xaD3424…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,032 mc=$85,012 | chain:robinhood no-audit-adapter | Build, trade & explore perpetual ETFs across stocks, RWAs, and crypto—powered by |
+| 09:26 | robinhood | `0xb38e46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,282 mc=$56,051 | chain:robinhood no-audit-adapter | Send USDG & ETH to an @. Payments by X handle, built on Robinhood Chain. |
+| 09:26 | robinhood | `0x06137e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,803 mc=$135,985 | chain:robinhood no-audit-adapter | $5555 -  The Identity Of Pair |
