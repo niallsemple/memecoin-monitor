@@ -6689,3 +6689,12 @@ Fix: persistent farm_denylist.json (backfilled: 1,886 mints all-time with create
 ## §390 — Digest honesty fix: writeoffs count as exits (2026-09-06 02:36 UTC)
 
 darwin_status.py only matched exit_decision records, so both farm-rug writeoffs (exit_writeoff) were invisible in the tally — the §376 forward line read "2 closed +0.0078" while two rugs had already taken −0.171. Fixed: exit_writeoff now counts. Corrected numbers: §376 forward 4 opens / 4 closed / 1 win / −0.1609 SOL est; full book 118 opens / 115 closed / cumPnL(est) −0.7631 — now consistent with wallet ground truth (2.0 funded → 1.3030 liquid). Headline numbers are honest again.
+
+## §392 — H14 graduation event study v1: discontinuity REAL, coarse features don't discriminate (2026-09-06 07:35 BST)
+Owner approved building H14 (docs/DARWIN_OBSERVATORY.md: structural discontinuities as easier edges). Built grad_event_study.py over mfg_tokens.jsonl (7,023 mints / 1,648 graduated / 1,395 with pool data).
+- **The discontinuity is real and violent.** Normal-seed graduates (n=97 with +60m pool data): median +60m return 0.30x (median coin loses ~70% of mcap in the first hour post-graduation), mean 6.3x — extreme right skew; ~40-50% print >=2x.
+- **Farm coins poison naive post-grad signals.** Farm-seed cohort (n=929): median +60m 237x, 67% "runners" — propped fake valuations (8/8 later drained per §391). Any graduation-momentum strategy MUST exclude >=50 SOL seeds first.
+- **Coarse features fail.** unique_buyers / bs_ratio / time-to-graduate terciles show ZERO discrimination (48-50% runners in every bucket) — snapshot schedule quantizes everything to 300s and the grad-row counters are degenerate.
+- **Data gaps found:** only 62/1,648 mints carry pre-grad mcap; g_age quantized to 300s snapshot quantum; post-grad pool coverage good (85%) but event-time alignment needed tol=420s.
+- **Next:** v2 joins curves.jsonl tape (per-tx migrate events, 6,956 total) for exact grad timestamps + minute-resolution pre-grad flow (last-5-min buy SOL, drawdown into migration) vs pool outcomes. Discrimination, if it exists, lives at minute resolution, not snapshot resolution.
+- Status: H14 → TESTING. Script: grad_event_study.py; dataset: grad_event_study.json.

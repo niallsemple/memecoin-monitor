@@ -279,3 +279,4 @@
 | 06:07 | STOP | 9H5xgKFT | £0.09 | trail-stop at 0.01x |
 | 08:06 | STOP | 5761e8gC | £4.60 | trail-stop at 0.85x |
 | 21:47 | BUY | EcZMqqYx | £7.09 | entry mc $381,024 | +21min |
+| 01:07 | STOP | EcZMqqYx | £2.56 | trail-stop at 0.37x |

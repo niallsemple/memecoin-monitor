@@ -4264,3 +4264,112 @@
 | 21:46 | solana | `BRiPubrb…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:83% | liq=$4,984 mc=$5,867 | name=just a normal dude symbol=ELON; contract:clean; rugcheck_score=27 lpLocked=100%; top1 | Affirm's Max Levchin says Elon Musk is "just a normal dude."  His takeaway is si |
 | 21:46 | robinhood | `0xE74159…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,386 mc=$306,420 | chain:robinhood no-audit-adapter | A computer on every desk and in every home |
 | 21:46 | solana | `2e2iYy7G…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$21,992 | name=BILLY symbol=BILLY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=63.9% | Billy |
+| 22:26 | solana | `ACyJHZos…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$0 mc=$29,620 | name=The Fatalist Bison symbol=Bison; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 22:26 | robinhood | `0x7df5da…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$137,662 mc=$2,223,312 | chain:robinhood no-audit-adapter | Unipcs (aka 'Pons Guy') .  Main character arc. |
+| 22:26 | robinhood | `0xB8765a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$52,456 mc=$120,328 | chain:robinhood no-audit-adapter | MAGAslug |
+| 22:26 | robinhood | `0xcBB987…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,664 mc=$21,990 | chain:robinhood no-audit-adapter | The monkeys yearn for the mines. Open a jungle facility, mine $BANANA and earn i |
+| 22:26 | solana | `HLgrjwQt…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,196 | name=water symbol=water; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100.0% |  |
+| 22:26 | robinhood | `0xcc8a7d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,854 mc=$80,709 | chain:robinhood no-audit-adapter | tek spelled backwards is ket |
+| 22:46 | robinhood | `0x601019…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Every 15 minutes, you get paid. Not financial advice. |
+| 22:46 | solana | `63Pu9vaU…` | FAIL | TOP10_HEAVY:55% | liq=$0 mc=$15,841 | name=NADIR symbol=NADIR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=54.7% | "Do you like making things? Being creative? Solving problems? Getting good at so |
+| 22:46 | robinhood | `0x9A881D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,524 mc=$74,629 | chain:robinhood no-audit-adapter | I started with packages. 📦  Then I've found Robinhood. 🟢  Now I'm delivering the |
+| 22:46 | solana | `9vs7z2Fm…` | CAUTION | TOP10_CONCENTRATED:39% | liq=$0 mc=$30,204 | name=Van Diesel symbol=VANDIESEL; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 22:46 | solana | `BLmaMbYN…` | CAUTION | RC_WARN:High holder correlation | liq=$139,516 mc=$2,739,579 | name=PROJECT ONYX symbol=PONYX; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hol | PROJECT ONYX is a movement backed by a rapidly growing community, PROJECT ONYX b |
+| 22:46 | robinhood | `0x290Fc6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,085 mc=$80,602 | chain:robinhood no-audit-adapter |  |
+| 23:06 | robinhood | `0xfb4f04…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Robinhood turned it off on january 28, 2021. The Buy Button is back! Paired w/ $ |
+| 23:06 | robinhood | `0x37Efb9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,282 mc=$40,128 | chain:robinhood no-audit-adapter |  |
+| 23:06 | robinhood | `0x4548ef…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Forensic terminal for Robinhood Chain. Whale tape · wallet x-ray · concentration |
+| 23:06 | robinhood | `0xa98138…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,591 mc=$11,125 | chain:robinhood no-audit-adapter |  |
+| 23:06 | robinhood | `0xec5045…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,657 mc=$28,074 | chain:robinhood no-audit-adapter | Golden Penguin Unicorn |
+| 23:06 | robinhood | `0x1D65b2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,268 mc=$14,932 | chain:robinhood no-audit-adapter | Robin Hoodnik is the dog Robin Hood always needed.  A forgotten Hanna-Barbera ch |
+| 23:26 | solana | `XGaRDEav…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$0 mc=$21,775 | name=blob-shaped bird symbol=ВЕRD; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | $BERD lands on Solana dripping pure nonsense — hunting for a vessel while floodi |
+| 23:26 | robinhood | `0xB1676a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Rocket Strategy is an on-chain financial vehicle that acquires exposure to reusa |
+| 23:26 | robinhood | `0x1eC871…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$114,035 mc=$216,525 | chain:robinhood no-audit-adapter | STONKS on LONG with fees to nate just like Ai. Prophecised in his tweet, now tok |
+| 23:26 | robinhood | `0x8d1612…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$277,595 mc=$8,672,376 | chain:robinhood no-audit-adapter |  |
+| 23:26 | solana | `K3eGUARD…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$12,347 | name=Annie Altman fund symbol=Annie; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 23:26 | robinhood | `0x86202e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,642 mc=$45,360 | chain:robinhood no-audit-adapter | $ONLY is the community token of Only Traits on Robinhood Chain, launched through |
+| 23:56 | robinhood | `0x6102d8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$288,738 mc=$1,289,253 | chain:robinhood no-audit-adapter |  |
+| 23:56 | robinhood | `0x608970…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$60,971 mc=$411,973 | chain:robinhood no-audit-adapter | There's nothing pepastra can't do. Pepe used him wisely to generate a lot of cas |
+| 23:56 | xrpl | `42464F4F…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1,663 mc=$2,197 | chain:xrpl no-audit-adapter | $BFOOT has been lurking around the XRPL since before most wallets existed.   No  |
+| 23:56 | robinhood | `0x8b18C0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,188 mc=$156,054 | chain:robinhood no-audit-adapter | Anyone can ape. The question is: did you ape with size? Paired with Amazon. Buil |
+| 23:56 | solana | `9zgW3XJX…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$18,312 mc=$55,370 | name=Kevin Bacon symbol=KEVINBACON; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | Kevin The Bacon |
+| 23:56 | robinhood | `0x6f0294…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,796 mc=$84,184 | chain:robinhood no-audit-adapter | CATCOIN OG ON BITCOINTALK |
+| 00:06 | solana | `F5PYCFQd…` | FAIL | TOP10_HEAVY:72% | liq=$0 mc=$8,378 | name=The Lindsay Stare symbol=STARE; contract:clean; rugcheck_score=1 lpLocked=100%; top10 | The Lindsay Stare is the BIGGEST TWITTER MEME NOW  The stare Lindsay gave at her |
+| 00:06 | solana | `4ZU8V9sg…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$10,539 | name=Stitches symbol=Stitches; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Official token for the viral rapper Stitches. All fees are being sent to his SOL |
+| 00:06 | solana | `GobuMLzJ…` | PASS | — | liq=$26,529 mc=$106,573 | name=Golden Pons symbol=PONSG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | He wasn’t cast. He was heard. A silent shape tuned to the frequency hiding insid |
+| 00:06 | robinhood | `0x6daefb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The dating app for stocks. Swipe right to open a position, then find out what it |
+| 00:06 | robinhood | `0x1a3876…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,676 mc=$55,258 | chain:robinhood no-audit-adapter | Send creator rewards to any social account out there. Onboard anyone, and everyo |
+| 00:06 | robinhood | `0xce221b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The GOATest black cat on the internet |
+| 00:46 | solana | `HTWnNdKr…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; RC_DANGER:Low Liquidity; TOP10_HEAVY:94%; RC_WARN:Low amount of LP Providers | liq=$524 mc=$413 | name=BroCoin symbol=$BRO; contract:clean; rugcheck_score=55 lpLocked=7.905694150423147e-05 | BRO COIN ($BRO) 🤝🚀  The coin made for the bros, by the bros.  No complicated sto |
+| 00:46 | robinhood | `0xA1C6bD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,555 mc=$11,168 | chain:robinhood no-audit-adapter | The frequent-flyer programme of a Uniswap v4 pool. Miles on every swap, ETH in t |
+| 00:46 | robinhood | `0x2a8ae1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$504 | chain:robinhood no-audit-adapter | Contribute useful code and data for AI & discover RWA rewards and a new way on R |
+| 00:46 | robinhood | `0xBc633d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,710 mc=$40,345 | chain:robinhood no-audit-adapter |  |
+| 00:46 | base | `0x49b6B7…` | PASS | — | liq=$36,992 mc=$101,434 | holders=13; buy_tax=0 sell_tax=0; contract:clean | No dyor   No nfa  Just Blind Ape |
+| 00:46 | solana | `2zb8qWKV…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$10,025 | name=zolana symbol=zolana; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=75.2 | zolana needs a zec runner |
+| 01:06 | solana | `DMZHr3GE…` | FAIL | TOP10_HEAVY:53%; METADATA_MUTABLE; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Jupiter Cat symbol=JUPCAT; rugcheck_score=7 lpLocked=0%; top10_hold=52.7% | Jupiter's official cat mascot paired with JUP |
+| 01:06 | solana | `3hhQv5zn…` | CAUTION | TOP10_CONCENTRATED:30% | liq=$17,882 mc=$51,783 | name=zolana symbol=zolana; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=30.1 |  |
+| 01:06 | robinhood | `0x29551d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,708 mc=$38,146 | chain:robinhood no-audit-adapter | Infinite Money Cheat Code |
+| 01:06 | solana | `C5nG72gU…` | FAIL | TOP10_HEAVY:90%; RC_WARN:Copycat token; RC_WARN:Low Liquidity | liq=$10,190 mc=$11,337 | name=Upside Down Cat symbol=USDC; contract:clean; rugcheck_score=31 lpLocked=99.9996796177 | the cat is upside down , loyalty earns real $USDC |
+| 01:06 | solana | `FbeH9iLg…` | FAIL | TOP10_HEAVY:80% | liq=$0 mc=$9,233 | name=ethereumcash symbol=ECASH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 01:06 | robinhood | `0x59415d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,235 mc=$68,100 | chain:robinhood no-audit-adapter | There is a hidden Easter egg that’s on every Robinhood logo on every RH app: an  |
+| 01:46 | robinhood | `0x2f0c36…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$335 | chain:robinhood no-audit-adapter | $PURR — Pay Users Real RWAs. A multichain swap engine powered by global liquidit |
+| 01:46 | solana | `FQd7FHYj…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:42% | liq=$17,831 mc=$44,543 | name=zolana symbol=ZOLANA; rugcheck_score=52 lpLocked=2.4672306401261043e-08%; top10_hold= |  |
+| 01:46 | solana | `BYstjhZg…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$18,856 mc=$58,140 | name=Baby Anonymous Cat symbol=BABYZCAT; contract:clean; rugcheck_score=1 lpLocked=100%; t | Just a baby zcat paired w zec! |
+| 01:46 | robinhood | `0x7A9215…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$545 | chain:robinhood no-audit-adapter | Pray for our bags |
+| 01:46 | robinhood | `0xEB918e…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$7,029 | chain:robinhood no-audit-adapter | BasicCoin is the forgotten coin buried inside Facebook’s original cryptocurrency |
+| 01:46 | solana | `AqJFLx3T…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,985 | name=all you had to do was wait symbol=wait; contract:clean; rugcheck_score=1 lpLocked=100 |  |
+| 02:06 | robinhood | `0xE77Ed0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,333 mc=$92,939 | chain:robinhood no-audit-adapter | A fraction of the conviction. |
+| 02:06 | robinhood | `0x7161fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,013 mc=$36,719 | chain:robinhood no-audit-adapter | Stripe for building tokenized-stock apps on Robinhood Chain. |
+| 02:06 | robinhood | `0xfa3D63…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$66,620 mc=$515,079 | chain:robinhood no-audit-adapter | A new world is taking shape.. |
+| 02:06 | robinhood | `0x8C8497…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$30,597 mc=$66,771 | chain:robinhood no-audit-adapter | Tracking 500 of America's smallest performers. |
+| 02:26 | robinhood | `0x188F93…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$8,488 mc=$10,755 | chain:robinhood no-audit-adapter |  |
+| 02:26 | base | `0x5a693C…` | PASS | — | liq=$6,475 mc=$6,814 | holders=0; buy_tax= sell_tax=; contract:clean | chip |
+| 02:26 | solana | `9mVixsz1…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; TOP10_HEAVY:53%; METADATA_MUTABLE; RC_WARN:Low amount of LP Providers; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$12,582 mc=$22,209 | name=TESTICLES symbol=TESTICLES; rugcheck_score=52 lpLocked=0%; top10_hold=52.9% | Testicles that reward you in $HYPE |
+| 02:26 | robinhood | `0x893661…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,051 mc=$18,506 | chain:robinhood no-audit-adapter | PIE means Pons Inu Engine. Trading revenue is split 75% to permanent PIE/PONS li |
+| 02:26 | solana | `FEELaSmR…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:69% | liq=$0 mc=$9,228 | name=will save solana symbol=WILL; contract:clean; rugcheck_score=59 lpLocked=100%; top10_ | Will save solana |
+| 02:26 | solana | `2Q4nz6SZ…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$14,250 | name=Rin Tin Tin symbol=JJQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=65 | This sound is going insanely viral and becoming a trend on all social medias. |
+| 02:46 | solana | `93AxzcHF…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$19,426 mc=$59,246 | name=Anonymous Trump symbol=ZTRUMP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | THE FACE IS A DISTRACTION. THE EYES ARE THE MESSAGE. |
+| 02:46 | robinhood | `0x539f46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,836 mc=$41,215 | chain:robinhood no-audit-adapter | Programmable wallet automation & agent execution for Robinhood Chain. Define the |
+| 02:46 | robinhood | `0xfd2108…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,267 mc=$55,742 | chain:robinhood no-audit-adapter | Reddit Doge |
+| 02:56 | robinhood | `0x4A06Ea…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Meme TAO paired with Bittensor wrapped TAO. Made possible by @pardotfamily. |
+| 02:56 | solana | `GrQRjVzw…` | FAIL | TOP10_HEAVY:80%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=おっぱい symbol=OPAI; rugcheck_score=12 lpLocked=100%; top10_hold=80.2% |  |
+| 02:56 | robinhood | `0x9b6f13…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Reads Robinhood Chain and never stops. Whale tape, wallet x-ray, forensics. |
+| 02:56 | robinhood | `0xd704b0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4,835 mc=$4,931 | chain:robinhood no-audit-adapter | There's an official definition for the opposite of Robinhood: Doohnibor  A perso |
+| 02:56 | robinhood | `0xde109A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,036 mc=$68,401 | chain:robinhood no-audit-adapter | Through Coins and Stocks, We Endure the Odyssey. |
+| 03:06 | solana | `GMBd6JCT…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$19,790 mc=$61,576 | name=Anonymous Gooner symbol=ZGOONER; contract:clean; rugcheck_score=1 lpLocked=100%; top1 | NO FACE. NO SLEEP. NO SHAME. |
+| 03:06 | solana | `B8Pejdbb…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:67% | liq=$22,325 mc=$35,579 | name=test symbol=TEST; contract:clean; rugcheck_score=77 lpLocked=99.59679714180166%; top1 | Stonk Fun XYZ Test Token First Token Launched On Their Launchpad After STONK Tok |
+| 03:06 | robinhood | `0x6b488C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,470 mc=$15,075 | chain:robinhood no-audit-adapter | AI Crypto Platform. Pro AI forecasts on the cryptocurrency market. |
+| 03:06 | solana | `6ars8ZWU…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$31,534 mc=$113,076 | name=memestock symbol=memestock; contract:clean; rugcheck_score=1 lpLocked=97.557850451517 | Memestock   The #1 OTC Desk Meme  Desks that hold real tokenised stock, and a la |
+| 03:26 | robinhood | `0x09b3d5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$57,805 mc=$386,979 | chain:robinhood no-audit-adapter | Invest in traders, not companies. Trade shares in the Fomo traders you believe i |
+| 03:26 | solana | `CB1YQfUz…` | FAIL | TOP10_HEAVY:56% | liq=$39,038 mc=$76,503 | name=loom symbol=LOOM; contract:clean; rugcheck_score=1 lpLocked=99.99352623128938%; top10 |  |
+| 03:26 | robinhood | `0x05fa76…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 03:26 | robinhood | `0x352D33…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,735 mc=$77,035 | chain:robinhood no-audit-adapter | Anonymous by nature. Black cat by default. 🐈‍⬛ | ZCAT on Robinhood Chain |
+| 03:46 | robinhood | `0xfa0222…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$5,697 | chain:robinhood no-audit-adapter | AI created me, Humans gave me a basket. The wood knows. Hold $TTTS → Earn $TSLA  |
+| 03:46 | ethereum | `0xc2f83b…` | PASS | — | liq=$100,628 mc=$204,299 | holders=38; buy_tax= sell_tax=; contract:clean | The newest and greatest memecoin- vitalik said it, its tsla! |
+| 03:46 | solana | `9UV4VnRf…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:98% | liq=$2,920 mc=$2,963 | name=Zolana Cat symbol=ZOLCAT; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold | Zolana Cat is Solana’s trench cat, brought to the timeline by Ansem. |
+| 03:46 | bsc | `0xfa6D9B…` | PASS | — | liq=$22,044 mc=$32,304 | holders=0; buy_tax=0 sell_tax=0; contract:clean | launch tokens brewed with your favorite memecoins, coins or stocks on binance ch |
+| 03:46 | solana | `4ytoC4Jh…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:34% | liq=$32,345 mc=$106,432 | name=Paper Bag Cult symbol=BAG; rugcheck_score=12 lpLocked=99.67611044973451%; top10_hold= | Paper Bag Cult |
+| 03:46 | robinhood | `0x9e88da…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,251 mc=$62,373 | chain:robinhood no-audit-adapter | Donate to charities and change the world with crypto, on Robinhood. |
+| 04:26 | robinhood | `0x35900d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:26 | solana | `HFQAo8Bx…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$23,418 mc=$82,048 | name=anonymous wojak symbol=zwojak; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ |  |
+| 04:26 | robinhood | `0x18acb5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:26 | robinhood | `0x47a685…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 04:26 | solana | `h3ARi9pd…` | PASS | — | liq=$35,782 mc=$182,139 | name=Cat in Bags symbol=BAGCAT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | Cat in Bags is stacking memes, catching bags, and turning Solana into one giant  |
+| 04:26 | robinhood | `0xd98d62…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Keep the streets clean |
+| 05:26 | solana | `D34ZQzp7…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$32,468 mc=$155,027 | name=ZolanaBullGirls symbol=ZBULLGIRLS; contract:clean; rugcheck_score=1 lpLocked=100%; to | Two chains. Two forces. One unstoppable vision. ⚡️🐂 |
+| 05:26 | robinhood | `0x62063C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,963 mc=$12,139 | chain:robinhood no-audit-adapter |  |
+| 05:26 | robinhood | `0x65eFE8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,058 mc=$119,832 | chain:robinhood no-audit-adapter |  |
+| 05:26 | robinhood | `0x2Ff153…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,448 mc=$69,580 | chain:robinhood no-audit-adapter | Not financial advice. All views are my own. RTs & QTs do not mean endorsement. |
+| 05:26 | robinhood | `0xD7B553…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,311 mc=$3,730 | chain:robinhood no-audit-adapter | Stank |
+| 05:26 | solana | `CdsL8vHh…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:100% | liq=$2,333 mc=$2,290 | name=Anonymous Trump symbol=ZTRUMP; contract:clean; rugcheck_score=33 lpLocked=100%; top10 | ZTRUMP  is the CEO of Zolana |
+| 05:46 | robinhood | `0xBCD74d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,713 mc=$18,144 | chain:robinhood no-audit-adapter | The original memeStock |
+| 05:46 | robinhood | `0x8416fa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Your identity. Simplified.   One name. One profile. Every chain. Claim your hand |
+| 05:46 | robinhood | `0x249834…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,149 mc=$81,495 | chain:robinhood no-audit-adapter | PonsCat should be paired with Pons.   Now, it is. |
+| 06:06 | solana | `3Dfiey2b…` | FAIL | TOP10_HEAVY:50%; RC_WARN:Copycat token | liq=$0 mc=$27,862 | name=SolanaPonziXtremeSendor69420 symbol=SPX; contract:clean; rugcheck_score=29 lpLocked=1 |  |
+| 06:06 | robinhood | `0xaa91C3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$37,829 mc=$112,304 | chain:robinhood no-audit-adapter | Vlad talked about ''memetic rebellion'', he said he fights the trolls using meme |
+| 06:06 | solana | `BhTAAGQh…` | FAIL | TOP10_HEAVY:88%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; RC_WARN:Low Liquidity | liq=$5,919 mc=$4,951 | name=Buttensor symbol=BUTT; rugcheck_score=14 lpLocked=100%; top10_hold=87.8% |  |
+| 06:26 | pulsechain | `0xeA0B2d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2,328 mc=$13,111 | chain:pulsechain no-audit-adapter | pHOOD is a PulseChain reward token. Every buy and sell carries a 5.5% tax — a po |
+| 06:26 | robinhood | `0x695916…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,652 mc=$13,173 | chain:robinhood no-audit-adapter | TxHash — Built for shielded transactions, backed by transparent onchain accounti |
+| 06:26 | solana | `8RVBk8vx…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:43% | liq=$65,646 mc=$163,746 | name=KNOTS symbol=KNOTS; rugcheck_score=12 lpLocked=100%; top10_hold=43.2% | $STONK <—> $KNOTS |
+| 06:26 | base | `0xffE651…` | PASS | — | liq=$12,603 mc=$16,090 | holders=0; buy_tax=0 sell_tax=0; contract:clean | Base is in Bluescreen |
+| 06:26 | bsc | `0x304541…` | CAUTION | PROXY | liq=$29,768 mc=$100,838 | holders=0; buy_tax=0.01 sell_tax=0.0099 | Dan Xiao Hei (蛋小黑)The black egg with the eyepatch from Eggy Party.  Mischievous. |
