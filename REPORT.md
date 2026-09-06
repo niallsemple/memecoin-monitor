@@ -6766,3 +6766,15 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
   +0.4013 SOL vs actual; sell-half +0.2511 SOL. Only 2/12 poppers ever
   reached 1.5x; the runner option wasn't paying in this meta.
 - First live `bank12x` exit will be ledgered to live_log and tallied here.
+
+## §401 — First H16 shadow trade: LOSS, and a design observation
+- 9dX78H2w…pump: passed combo (mom 1.138 / dd 0.833 / bf 0.818, seed 4.94),
+  entered at 43.40 mcap, stopped at 0.92x within 0.1 min. Shadow tally: 0-1.
+- Timestamp semantics fixed: h16_open now logs entry-tick t (+scored_at) so
+  open/close order reads correctly; no strategy change.
+- Observation: thin-curve mcaps whipsaw ±15% second-to-second on single
+  prints, so the -8% stop sits INSIDE the tick noise band. The in-sample
+  33% win rate used the identical rule, so the bar stays unchanged for OOS
+  comparability — but if forward losses cluster at sub-minute holds, a
+  noise-hardened variant (e.g. 2-consecutive-tick stop confirmation) is the
+  next experiment. Verdict waits for ~30 shadow closes.

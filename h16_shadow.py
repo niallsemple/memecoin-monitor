@@ -118,7 +118,8 @@ def run_pass():
                                     "seed": p["seed"], "mom": round(mom, 3),
                                     "dd": round(dd, 3), "bf": round(bf, 3),
                                     "ticks": [(x[0], x[3]) for x in ts if x[0] > pre[-1][0]]}
-                lg.write(json.dumps({"action": "h16_open", "mint": mint, "t": now,
+                lg.write(json.dumps({"action": "h16_open", "mint": mint,
+                                     "t": pre[-1][0], "scored_at": now,
                                      "entry_mcap": pre[-1][3], "mom": round(mom, 3),
                                      "dd": round(dd, 3), "bf": round(bf, 3),
                                      "seed": p["seed"]}) + "\n")
