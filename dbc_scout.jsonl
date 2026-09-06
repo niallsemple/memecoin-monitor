@@ -130,3 +130,7 @@
 {"t": 1788699972.904208, "mint": "GD5mHvdrjJ5josT3jC2qtUNhbc768fbQiwbcBSjB4K2J", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
 {"t": 1788700065.672229, "mint": "6qKzVCADJThS9omzeLT6XRbdeMfYq7p3c27PFaZf4wBU", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 8.307498526008813e-06, "mult": 1.0, "impact": 0, "amm": "Pump.fun Amm"}
 {"t": 1788700065.672229, "mint": "DHgtTpDwDfrkmBVPjTYeLtiqq5bQsdJudZ1DmUsPajqy", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1788711067.1452491, "mint": "9v8H1kkxahw2pDDXnxkWY2LiBQp1SjWBCcztazrSMCG", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1788711160.045923, "mint": "9v8H1kkxahw2pDDXnxkWY2LiBQp1SjWBCcztazrSMCG", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1788711160.045923, "mint": "9v8H1kkxahw2pDDXnxkWY2LiBQp1SjWBCcztazrSMCG", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1788711345.595994, "mint": "9v8H1kkxahw2pDDXnxkWY2LiBQp1SjWBCcztazrSMCG", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}

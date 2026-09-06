@@ -7077,3 +7077,14 @@ loss cap). The forward gate is now measured on the bridge's OWN dry-run
 record: when 3-5 would-buys show the backtest profile, we flip and the
 very next qualifying birth is a live micro trial. Bookmark primed at EOF
 — no retro-fire on the 2 historical opens.
+
+## §428 Bridge PROVEN end-to-end + H16 hits 10 closes (2W/8L)
+2DJ6a732: h16e2 open (mom 1.023, dd 0.978, bf 1.00 — 100% buy flow) ->
+bridge_would_buy 0.02 SOL logged with guards -> h16e2_close loss 0.92x at
+4.9m -> bridge_note_close. The entire live path fired in dry-run; the flag
+flip is now purely a decision, not a build.
+Forward tallies: h16e2 1W/1L/1T = +4.0%/trade gross (n=3). H16 2W/8L =
+-2.4%/trade (n=10) — 180s entry decisively negative, even with strong
+late metrics (this one had bf 0.80+ profile and still dumped). NOTE: this
+e2 loss had bf=1.0 — pure buy flow right before a dump; watch for a
+"final-spike" pattern (last-gasp buying before insiders sell).
