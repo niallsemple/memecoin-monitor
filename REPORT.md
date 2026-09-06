@@ -7234,3 +7234,14 @@ sub-20s detection): 3 trades = 1W(+20%)/1T(+1.8%)/1L(-8%) = +4.6%/trade
 gross. Drifting toward the realistic band (backtest +7.2%, fees ~1-2%).
 Gate metric complete at minimum: 3 fresh would-buys with sub-20s lags.
 Owner flip decision pending.
+
+## §439 LIVE — owner flipped the gate ("go live", ~21:16 BST)
+LIVE_E2_ENABLED=True. Next fresh qualifying h16e2_open places a REAL 0.02
+SOL curve buy via live_trader.curve_buy -> open_position(mode="e2_trial"),
+exits managed by the existing stack (bank12x +20% sell-all, panic 0.80,
+timestop). Guards live: stale-open 150s, max 1 concurrent, 0.10 SOL daily
+loss cap. Pre-flip checks: curve_buy/open_position signatures verified
+against bridge calls; py_compile clean. Bridge module loads fresh from
+workspace each pass (importlib) — no assets sync needed. Wallet 1.3030 SOL.
+Fresh-cadence record at flip: 4 trades 1W/1T/2L = +1.45%/trade gross;
+FRGi3hXEu (4th qualifier) stopped -8% at 3.6m just before the flip.

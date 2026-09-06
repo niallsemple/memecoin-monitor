@@ -22,7 +22,10 @@ SHADOW_LOG = MON / "h16_early2.jsonl"
 STATE = MON / "e2_bridge_state.json"
 LOG = MON / "e2_bridge.jsonl"
 
-LIVE_E2_ENABLED = False        # THE GATE. Flip only on owner sign-off.
+LIVE_E2_ENABLED = True         # §439: OWNER FLIPPED 2026-09-06 ~21:16 BST
+                               # ("go live"). Gate evidence: 3+ fresh
+                               # would-buys at sub-20s lag, fresh-cadence
+                               # +4.6%/trade gross at flip time.
 SIZE_SOL = 0.02                # micro-size trial entries
 MAX_CONCURRENT = 1
 DAILY_LOSS_CAP_SOL = 0.10      # stop for the day if realized losses exceed

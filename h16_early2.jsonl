@@ -730,3 +730,18 @@
 {"action": "h16e2_close", "mint": "3oK97AetNaJSqzoY6NTbYZUAawqjY8dmyKMWVMfrpump", "t": 1788725116.087292, "outcome": "loss", "mult": 0.92, "mins": 9.9, "mom": 1.002, "dd": 0.998, "bf": 0.75, "seed": 2.967496174}
 {"action": "h16e2_drop", "mint": "8XAnao5nED55So9PyjRvjRUik5QPh2WgFsfKZm3Xpump", "reason": "no ticks", "t": 1788725142.404916}
 {"action": "h16e2_drop", "mint": "88wFPb7KEZQ4WCMs9gbza45GH3hteHQEikeRviXspump", "reason": "no ticks", "t": 1788725157.4105291}
+{"action": "h16e2_thin", "mint": "G39E9YrBTu8osmx9N9hNwjjSmJH8EQBTaEF3VYh4pump", "t": 1788725187.43035, "nticks": 1, "seed": 3.395176252}
+{"action": "h16e2_stale", "mint": "AP6PBcWmZWZWc4FHnFa24a1HDCzQKGkyEts7gFJYpump", "t": 1788725217.452491, "last_tick_age": 2.5, "seed": 2.962962961}
+{"action": "h16e2_drop", "mint": "4jfGLGMJuBM3t86eJfQVbkW1osKteTx49ZsJNqWopump", "reason": "no ticks", "t": 1788725232.470586}
+{"action": "h16e2_reject", "mint": "9XvMtJy6HM6ruKkL9MXGJcuRcYqKmxSw7qsLsofEpump", "t": 1788725232.470586, "mom": 1.639, "dd": 0.468, "bf": 0.642, "seed": 4.938271603}
+{"action": "h16e2_drop", "mint": "HYZqi9aJ4FmgjXZKvP26PK4ANfn3aY9KadCnjhPmpump", "reason": "no ticks", "t": 1788725262.500138}
+{"action": "h16e2_thin", "mint": "4iDuV5YwFkhx88y1HqcyTURb5c9XKTnfSNkfzjphpump", "t": 1788725262.500138, "nticks": 2, "seed": 3.395176252}
+{"action": "h16e2_stale", "mint": "39DM1EL4mMCAzFTqpqgj4eo53JcJuMCeaNzt7jgDpump", "t": 1788725382.5733628, "last_tick_age": 18.1, "seed": 2.024691357}
+{"action": "h16e2_thin", "mint": "AbfCAnyXbCfhEaieWSBZSPQFcC5zFKmYt6MxSqDWpump", "t": 1788725457.64381, "nticks": 0, "seed": 3.955344229}
+{"action": "h16e2_reject", "mint": "7zYHfvzPmRjTNRv4hLCN33a471VYAFgvt2sL18gepump", "t": 1788725502.672179, "mom": 0.825, "dd": 0.825, "bf": 0.333, "seed": 2.962962961}
+{"action": "h16e2_stale", "mint": "Dg8hZurxGjQ9iSLSiuYeuRs8MMMMux2F95SXJpKNpump", "t": 1788725517.687316, "last_tick_age": 13.3, "seed": 3.950617282}
+{"action": "h16e2_stale", "mint": "5czsJrz9Ta14XRzD1XTJw4oyY83pZVMWxToAxyXmpump", "t": 1788725532.70418, "last_tick_age": 11.5, "seed": 5}
+{"action": "h16e2_drop", "mint": "FcrBGdCB6me5bpiL3mv1EcXorKysj3VG7FncsoNWpump", "reason": "no ticks", "t": 1788725547.709297}
+{"action": "h16e2_open", "mint": "FRGi3hXEuQHMokVmaaqmPcVuv43vG3ufdjSjuFcApump", "t": 1788725545.6028311, "scored_at": 1788725562.7235148, "entry_mcap": 32.6512, "mom": 1.015, "dd": 0.985, "bf": 0.75, "seed": 2.176743836}
+{"action": "h16e2_drop", "mint": "DTX8DgX3d1awwx19Qn3bdpJgBaxSAsEuQxMwhr3qpump", "reason": "no ticks", "t": 1788725607.764513}
+{"action": "h16e2_close", "mint": "FRGi3hXEuQHMokVmaaqmPcVuv43vG3ufdjSjuFcApump", "t": 1788725762.669378, "outcome": "loss", "mult": 0.92, "mins": 3.6, "mom": 1.015, "dd": 0.985, "bf": 0.75, "seed": 2.176743836}
