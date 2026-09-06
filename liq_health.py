@@ -375,6 +375,16 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _h2m.run_pass()
     except Exception:
         pass
+    # §422b: heat_gauge — rolling 60min mom60 heat reading for regime-
+    # aware sizing. Log-only; writes heat_state.json for darwin_status.
+    try:
+        import importlib.util as _ilhg
+        _hg = _ilhg.spec_from_file_location("heat_gauge", MON / "heat_gauge.py")
+        _hgm = _ilhg.module_from_spec(_hg)
+        _hg.loader.exec_module(_hgm)
+        _hgm.run_pass()
+    except Exception:
+        pass
     return out
 
 

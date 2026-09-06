@@ -87,6 +87,14 @@ if h16:
     wins = sum(1 for r in closes if r.get("outcome") == "win")
     print(f"H16 shadow: {len(opens)} opens, {len(closes)} closed, {wins} wins")
 
+# --- §422: market heat gauge ---
+try:
+    hg = json.loads((MON / "heat_state.json").read_text())
+    print(f"market heat: {hg['band']} ({hg['hot_pct']}% hot, "
+          f"{hg['scorable']} scorable/{hg['seeds']} seeds, 60min)")
+except Exception:
+    pass
+
 # --- wallet ---
 try:
     import urllib.request

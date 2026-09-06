@@ -7005,3 +7005,12 @@ micro-regime: mom60>=1.0 ran 9% in the last 1.5h vs 19% (3h), 21% (6h),
 in the hot waves. IMPLICATION: a regime gauge (hourly mom60 heat) can
 throttle live size — trade full in hot regimes, stand down in cold ones.
 Backlog item: heat-index gated sizing once forward opens confirm the bar.
+
+## §422 heat_gauge.py live — market temperature in the status readout
+Rolling 60min gauge over the 2-10 SOL seed stream: seeds scorable at +60s
+(>=3 ticks), hot = mom60>=1.0. Bands: >=20% HOT, 10-20% WARM, <10% COLD,
+<8 scorable THIN. Tails curves/trades on the 90s cadence (§422b hook),
+writes heat_state.json; darwin_status now prints the reading. Band changes
+log to heat_log.jsonl. This is the throttle for live sizing: full size in
+HOT, reduced in WARM, stand down in COLD. (First reading THIN — forward-
+primed bookmarks; full window populates within ~70min.)
