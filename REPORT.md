@@ -6724,3 +6724,12 @@ Audited live_positions.json (116 closed with peak_mult) against §394's "+20%-fi
 - Current freeroll (75% at 1.5x) almost never fires — median MFE on the tape is only ~1.5x, so positions sit below the trigger until aborts harvest them.
 - Caveats: peak_mult sampled at tracker cadence (~10-15 min) so true peaks were likely HIGHER (counterfactual conservative); sell execution at the pop carries PI; n=12.
 - New hypothesis H15 added: partial bank at 1.2x (sell ~50%, keep runner under existing trail/abort stack). Needs owner promotion per §360 precedent — replay evidence above is the shadow counterpart (no live shadow needed since it's computable from recorded peaks).
+
+## §396 — Cohort truth audit: our funnel selects flat coins; the pops live elsewhere (2026-09-06 08:35 BST)
+Joined fast_entry gate decisions (591 eval mints) to tape paths (464 covered — earlier "zero overlap" was my venue=='curve' restriction; armed born-terminal coins trade venue=pool).
+- **PASSED-gate cohort (n=54): 4% up-first / 17% dn-first / 79% neither** — identical at entry delays 5s..180s. The outcome is fixed AT BIRTH: for born-terminal ARMED-meta coins the pop happened in the create tx, before any entry is physically possible. The tradeable move is the initialBuy; there is no early-entry edge on this cohort.
+- REJECTED cohort (n=399, farm-dominated): 25% up-first — manufactured propping, untradeable and gated out correctly.
+- Tape-wide big-seed cohort (seed 2-10 SOL, n=886): 20.7% up-first / 46.4% dn-first; seed 10+ (n=608): 25.2% / 46.9%. Still below the friction floor unfiltered (~+0.5% gross vs ~3% round trip) — selectivity is the whole game, now quantified.
+- **Why the book bleeds**: 79% choppers x ~3% round-trip friction = structural ~-2.4%/trade drag, partially offset by abort3 cutting the 17% and the rare pop. Matches the observed -0.65%/trade book average.
+- H16 logged: the entry edge, if any, lives in discriminating WITHIN organic big-seed curve coins (which 2-10 SOL launches pop), not in born-terminal armed meta. Next: feature hunt on the n=886 cohort (tape-resolution flow features vs up-first label).
+- Caveat: PASSED n=54 is small; but the delay-invariance (4% at every entry offset) is structural, not noise.

@@ -20,6 +20,8 @@ Status ladder: NEW → TESTING → PROMISING → SURVIVED OOS → FORWARD TEST �
 
 | H15 | Partial bank at 1.2x (sell ~50% at the +20% pop, runner rides existing trail/abort stack) beats hold-to-1.5x-freeroll on our filtered cohort | **REPLAY EVIDENCE §395: 12 pops >=1.2x, bank-all counterfactual +0.2609 SOL vs actual -0.1443 SOL (0.40 SOL swing). Awaiting owner promotion decision** |
 
+| H16 | The tradeable entry edge lives in discriminating WITHIN organic big-seed curve coins (2-10 SOL seeds: 21% up-first), not in born-terminal ARMED meta (4% up-first, outcome fixed at birth) | **NEW — §396 evidence; feature hunt on n=886 cohort is next** |
+
 ## Current verdict: PROMISING (H2) — system overall in FORWARD TESTING
 
 ## Research-branch hypotheses (from docs/DARWIN_OBSERVATORY.md)
