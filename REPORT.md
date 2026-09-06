@@ -6733,3 +6733,12 @@ Joined fast_entry gate decisions (591 eval mints) to tape paths (464 covered —
 - **Why the book bleeds**: 79% choppers x ~3% round-trip friction = structural ~-2.4%/trade drag, partially offset by abort3 cutting the 17% and the rare pop. Matches the observed -0.65%/trade book average.
 - H16 logged: the entry edge, if any, lives in discriminating WITHIN organic big-seed curve coins (which 2-10 SOL launches pop), not in born-terminal armed meta. Next: feature hunt on the n=886 cohort (tape-resolution flow features vs up-first label).
 - Caveat: PASSED n=54 is small; but the delay-invariance (4% at every entry offset) is structural, not noise.
+
+## §397 — H16 feature hunt: momentum+buyfrac lift the pop rate toward breakeven (2026-09-06 08:50 BST)
+h16_feature_hunt.py over the organic big-seed cohort (seed 2-10 SOL, n=874 with usable paths, 449k ticks). Label: +20% before -8% from a +3min entry, 1h horizon. Features all observable by +3min.
+- Base up-first rate: 20.8% (dn 46%, neither 33%).
+- Lift by feature (top vs bottom tercile): **early momentum 28.4% vs 11.0% (2.58x)**; **buy-fraction 25.0% vs 12.7% (1.97x)**; shallow drawdown 1.25x; trade count 1.29x; buy SOL 1.21x; max single buy ~1.0x (size means nothing, persistence does).
+- **Combo (top-tercile momentum AND shallow drawdown): 33.0% up-first, n=88** — vs the ~40% breakeven threshold for the +20/-8 scalp after ~3% friction. Gap closed by: H15 bank-at-pop, abort3 cutting dn-first earlier than -8%, and entry PI below model.
+- Honest caveats: in-sample only, n=88 combo, momentum-chasing entry is PI-hostile, regime-dependent (this tape spans the farm-attack era).
+- Doctrine move: PROMISING but untrusted until forward-tested. Next build: shadow signal — score every 2-10 SOL birth at +180s (mom/dd/buyfrac), shadow-enter the combo, apply the +20/-8 + abort stack, log to shadow ledger for OOS evidence at zero risk.
+- Script: h16_feature_hunt.py; cohort: h16_cohort.json.
