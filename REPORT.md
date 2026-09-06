@@ -6698,3 +6698,11 @@ Owner approved building H14 (docs/DARWIN_OBSERVATORY.md: structural discontinuit
 - **Data gaps found:** only 62/1,648 mints carry pre-grad mcap; g_age quantized to 300s snapshot quantum; post-grad pool coverage good (85%) but event-time alignment needed tol=420s.
 - **Next:** v2 joins curves.jsonl tape (per-tx migrate events, 6,956 total) for exact grad timestamps + minute-resolution pre-grad flow (last-5-min buy SOL, drawdown into migration) vs pool outcomes. Discrimination, if it exists, lives at minute resolution, not snapshot resolution.
 - Status: H14 → TESTING. Script: grad_event_study.py; dataset: grad_event_study.json.
+
+## §393 — H14 v2 at trade resolution: graduation is a cliff, not a launchpad (2026-09-06 07:50 BST)
+Rebuilt the event study on mfg_trades.jsonl (3.68M curve+pool ticks, 5,331 mints). Event = venue switch curve->pool; outcomes measured vs migration-tick mcap (the actual tradeable entry). Farm-seed mints excluded (1,492).
+- **Non-farm graduations (n=75): median 0.62x at +5m, 0.35x at +15m, 0.20x at +60m.** Husk rate (<=0.5x) climbs 45% -> 66% over the hour. Runner rate (>=2x) only 16% at +60m despite mean ~1.0x (few giants carry it).
+- Feature discrimination (n=44 at +60m): curve trade count is the only separator with any signal — top-tercile activity (med 1,240 curve trades) gives 0.83x median / 20% runners vs bottom-tercile (5 trades) 0.03x / 8%. tot_buy is INVERTED (heavy buy volume into migration = worse: 7% runners, 0.54x median — insiders exit into graduation hype). pre_mult and duration: no signal.
+- **Verdict: buying at graduation is structurally -EV (median -80% in an hour).** The discontinuity is real but points DOWN. Validates keeping the s60nm5fr hook path tightly gated; the "buy graduates" idea is RETIRED unless restricted to ultra-high-activity curves (and even that cohort is only ~breakeven).
+- H14 status: TESTING -> the discontinuity edge is SHORT-side only, which memecoins can't express. Recorded in HYPOTHESES.md terms as evidence AGAINST post-grad momentum buying. v1's "40-50% runner" reading was an artifact of the 85-SOL fallback denominator; v2's migration-tick basis is the honest one.
+- Scripts: grad_event_study.py (v1), grad_event_study_v2.py; data: grad_event_study.json, grad_event_study_v2.json.
