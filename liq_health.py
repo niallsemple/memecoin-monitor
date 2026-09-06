@@ -323,6 +323,19 @@ def shock_recheck(watch_path: str = WATCH_LOG_PATH) -> list:
         _h16.run_pass()
     except Exception:
         pass
+    # §404b: birth-venue watcher (Meteora DBC + Raydium LaunchLab),
+    # same cadence + isolation. Read-only; logs births to
+    # birth_watch.jsonl. Discriminator is standard Anchor sighash of the
+    # documented init method — unproven until first birth lands; benign
+    # if wrong (log-only).
+    try:
+        import importlib.util as _ilub
+        _bw = _ilub.spec_from_file_location("birth_watch", MON / "birth_watch.py")
+        _bwm = _ilub.module_from_spec(_bw)
+        _bw.loader.exec_module(_bwm)
+        _bwm.run_pass()
+    except Exception:
+        pass
     return out
 
 

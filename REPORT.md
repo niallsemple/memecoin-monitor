@@ -6812,3 +6812,15 @@ Coverage audit: 453 births with 2-10 SOL seeds in the last 6h, only 40 tick-trac
 - Real arb opportunity, if any, is at NEW-pool birth (first minutes before
   bots anchor prices) — the birth-venue monitors (Meteora DBC, Raydium
   LaunchLab) in DEX_REGISTRY.md are the upstream of that.
+
+## §404 — Birth-venue monitors LIVE (Meteora DBC + Raydium LaunchLab)
+- birth_watch.py: polls both programs (verified IDs from DEX_REGISTRY),
+  filters to pool-initialize txs via Anchor discriminators (scans outer AND
+  inner/CPI instructions — aggregator UIs CPI into the programs), extracts
+  the newborn mint from postTokenBalances. Log-only -> birth_watch.jsonl.
+- Prefix census on DBC confirmed swap (e445a52e…) dominates recent txs and
+  no init fired in the sample window — births are rare/min here; the init
+  discriminator (standard Anchor sighash) is unproven until the first
+  birth lands. Cost of a wrong guess: zero (read-only).
+- Hooked into liq_health.shock_recheck tail (90s cadence, exception-
+  isolated) — births land in the log without touching the liq path.
