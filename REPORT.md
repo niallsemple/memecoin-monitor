@@ -6965,3 +6965,18 @@ Candidate bar mom>=1.0 AND dd>=0.90 AND bf>=0.50 replay-takes 2W/1L
 own state/log) alongside h16 (180s) and h16e (60s strict). Three-way
 forward test now running: same seed stream, three entry philosophies.
 Hooked §417b. Thin-book logging inherited.
+
+## §418 THE BASE RATE: 60s native bar backtests +6.0%/trade on n=102
+40,740 seeds (2-10 SOL) in log; only 2,216 scorable at +60s (>=3 ticks in
+minute 1 — 95% of seeds are near-dead immediately, which is why shadow
+opens are rare). mom60 deciles: median 0.73 (typical seed DOWN 27% at 60s).
+Backtest (entry at +60s tick, exits +20%/-8%/1h, gross of fees):
+  mom>=1.0 alone (n=515):              +0.7%/trade  <- noise
+  mom>=1.0,dd>=0.90,bf>=0.50 (n=102):  +6.0%/trade  <- h16e2's bar, EDGE
+  strict 180s bars at 60s (n=83):      +2.2%/trade
+  mom>=1.0,dd>=0.90,bf>=0.70 (n=82):   +6.6%/trade  (fewer, cleaner)
+Win/loss at the chosen bar: 47W/45L/10T — asymmetric payoff (+20 vs -8)
+does the work. CAVEATS: gross of ~1-2% fees+slippage; tick-price entries
+assume executable fills; OOS confirmation is h16_early2's job RIGHT NOW.
+Strongest positive-ROI evidence to date. If forward agrees, bf>=0.70 is
+the queued refinement (do NOT change the deployed bar mid-flight).

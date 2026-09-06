@@ -1788,3 +1788,6 @@
 {"action": "fast_entry_eval", "mint": "vGV4Scm4hjzJV5ZesSmHennn3F9Qpr4GomPB41Spump", "t": 1788696662.6983511, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788696662.7020311}
 {"action": "fast_entry_eval", "mint": "qBUFhCcS4VvLB7HUsDJVSFubaPDC9btkxJwCGJNpump", "t": 1788697546.85937, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788697546.895989}
 {"action": "curve_buy", "mint": "DEjoJnyApFFxRdNm36Vskrratz9qyow75U51Anwpump", "reason": "s60nm5fr signal (hook)", "mode": "live", "gate": "live", "result": "refused: farm denylist (\u00a7389)", "ts": 1788698352.278684}
+{"action": "fast_entry_eval", "mint": "rcQtcnzA8qbutdtpggVTHDHZBQUkhcoR5Ubng9Dpump", "t": 1788699951.666788, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788699951.70228}
+{"action": "fast_entry_eval", "mint": "AmVuTL9qEwM5AXDUQgJg8fHc4f3miXzmg3QSnWVopump", "t": 1788700156.6594849, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788700156.662119}
+{"action": "fast_entry_eval", "mint": "km8aerYdohMDAi9vbsyQvkvZoDz7Xg8m8suo1Gmpump", "t": 1788700279.661578, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788700279.667974}
