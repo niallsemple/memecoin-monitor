@@ -6980,3 +6980,11 @@ does the work. CAVEATS: gross of ~1-2% fees+slippage; tick-price entries
 assume executable fills; OOS confirmation is h16_early2's job RIGHT NOW.
 Strongest positive-ROI evidence to date. If forward agrees, bf>=0.70 is
 the queued refinement (do NOT change the deployed bar mid-flight).
+
+## §419 Cadence audit — shadows valid even when passes gap
+Observed pass gaps: steady 93s in current operation (earlier sparse periods
+showed 6-9min gaps). Verified by code inspection: scoring filters ticks to
+t0+ENTRY_DELAY from STORED ticks (h16_early2.py:106), so a late pass still
+reconstructs the exact 60s window; exits walk stored ticks in order and
+close at the FIRST crossing tick, so resolution timestamps stay accurate.
+Pass lateness costs freshness, never correctness. Forward tests stand.
