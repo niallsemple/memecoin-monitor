@@ -47,7 +47,10 @@ def _save_state(st):
 
 
 def _quote_sol_to_token(mint):
-    """Return price in SOL per token, or None if not indexed / no route."""
+    """Return (price SOL per token, impact_pct, amm_label) or (None,...) if
+    not indexed / no route. §411d: quotes routing through dust pools
+    (priceImpact > 5% for 1 SOL) are lies — AGq2KnxF quoted 581x through a
+    $0.43-liq DAMM v2 stub while the active PumpSwap pool sat 3x cheaper."""
     url = QUOTE % (WSOL, mint, 1_000_000_000)
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "darwin"})
@@ -55,10 +58,13 @@ def _quote_sol_to_token(mint):
             d = json.loads(r.read())
         out = int(d.get("outAmount", 0))
         if out <= 0:
-            return None
-        return 1e9 / out                      # lamports per raw token unit
+            return None, None, None
+        impact = float(d.get("priceImpactPct", 0) or 0)
+        amms = [s.get("swapInfo", {}).get("label")
+                for s in d.get("routePlan", [])]
+        return 1e9 / out, impact, ",".join(a for a in amms if a)
     except Exception:
-        return None
+        return None, None, None
 
 
 def run_pass():
@@ -86,15 +92,20 @@ def run_pass():
         for a in AGES:
             if a in s["done"] or age_now < a:
                 continue
-            px = _quote_sol_to_token(mint)
+            px, impact, amms = _quote_sol_to_token(mint)
             rec = {"t": now, "mint": mint, "venue": s["venue"], "age": a}
             if px is None:
                 rec["indexed"] = False
+            elif impact is not None and impact > 0.05:
+                # dust-pool quote: indexed but untrusted — never baseline
+                rec.update({"indexed": True, "dust": True,
+                            "impact": round(impact, 4), "amm": amms})
             else:
                 if s["base"] is None:
                     s["base"] = px
                 rec.update({"indexed": True, "price_sol": px,
-                            "mult": round(px / s["base"], 4)})
+                            "mult": round(px / s["base"], 4),
+                            "impact": round(impact or 0, 5), "amm": amms})
             out.append(rec)
             s["done"].append(a)
         # retire (but never forget) fully-polled mints older than 2 days

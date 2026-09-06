@@ -6905,3 +6905,14 @@ birth_watch.jsonl and re-polled the entire ladder — every mint logged
 Fix: permanent seen-set in dbc_scout_state.json; finished mints retire
 from active tracking after 2d but can never re-register. Polluted log
 archived to dbc_scout.jsonl.bak1; fresh log verified 103 rows, 0 dups.
+
+## §411d dust-pool quote guard (AGq2KnxF 581x artifact)
+First clean real-time ladder showed mult 581x at age 300s — FALSE. Jupiter
+routed through a Meteora DAMM v2 stub with $0.43 liquidity (priceImpact
+99.99%) while the coin's ACTIVE pool (PumpSwap, 323 buys/5m) priced it 3x
+lower. Dexscreener cross-check exposed 3 pools with wildly different prices.
+Fix: dbc_scout now logs priceImpactPct + route AMM labels; quotes with
+impact >5% are marked dust:true and can never set the baseline.
+Side observation: same coin trading simultaneously on 3 venues with 3x
+price gaps is the newborn-arb thesis in the wild — gaps exist, but the
+dust side had $0.43 depth, i.e. gap != tradeable. Depth gate stays king.
