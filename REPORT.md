@@ -6716,3 +6716,11 @@ Built first_passage.py over 622,913 curve ticks / 4,399 non-farm mints: at entry
 - Raw +20/-8 scalp EV on unfiltered coins: ~+0.6% gross/trade at the observed mix — below the ~3% round-trip friction floor. The edge must come from entry-gate mix-shifting (gates must lift up-first rate from 22% toward ~40%+), NOT from holding.
 - H13 verdict: as an ENTRY target, first-passage direction fails to discriminate final outcomes (0.50x vs 0.51x) — REJECTED as entry signal. As an EXIT framework it's confirmed: take +20% when offered; cut at first red. HYPOTHESES.md updated.
 - Script: first_passage.py; data: first_passage.json.
+
+## §395 — The 1.2x bank counterfactual on OUR book: +0.40 SOL swing (2026-09-06 08:10 BST)
+Audited live_positions.json (116 closed with peak_mult) against §394's "+20%-first is a trap" finding.
+- **12 positions reached >=1.2x. Banking everything at 1.2x would have grossed +0.2609 SOL; the actual exits on those same positions netted -0.1443 SOL.** Swing: ~0.40 SOL (~30% of current wallet) left on the table by holding through pops.
+- Exit reasons on the popped set: nm_abort x6, panic/trail writeoffs x4, trail x1, one drain-blocked. Textbook §394: popped >=1.2x, round-tripped into aborts.
+- Current freeroll (75% at 1.5x) almost never fires — median MFE on the tape is only ~1.5x, so positions sit below the trigger until aborts harvest them.
+- Caveats: peak_mult sampled at tracker cadence (~10-15 min) so true peaks were likely HIGHER (counterfactual conservative); sell execution at the pop carries PI; n=12.
+- New hypothesis H15 added: partial bank at 1.2x (sell ~50%, keep runner under existing trail/abort stack). Needs owner promotion per §360 precedent — replay evidence above is the shadow counterpart (no live shadow needed since it's computable from recorded peaks).

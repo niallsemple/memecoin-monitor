@@ -18,6 +18,8 @@ Status ladder: NEW → TESTING → PROMISING → SURVIVED OOS → FORWARD TEST �
 - Regime analysis (Phase 10) = not yet instrumented — candidate next experiment
 - Isolation rule: research-branch discoveries stay shadow/paper until they survive unseen-data forward testing — H2 is the first candidate through this pipeline
 
+| H15 | Partial bank at 1.2x (sell ~50% at the +20% pop, runner rides existing trail/abort stack) beats hold-to-1.5x-freeroll on our filtered cohort | **REPLAY EVIDENCE §395: 12 pops >=1.2x, bank-all counterfactual +0.2609 SOL vs actual -0.1443 SOL (0.40 SOL swing). Awaiting owner promotion decision** |
+
 ## Current verdict: PROMISING (H2) — system overall in FORWARD TESTING
 
 ## Research-branch hypotheses (from docs/DARWIN_OBSERVATORY.md)
