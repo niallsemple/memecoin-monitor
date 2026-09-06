@@ -45,12 +45,12 @@ SNAPS = MON / "mfg_tokens.jsonl"
 STATE = MON / "mfg_state.json"
 KEYFILE = MON / "helius_key.txt"
 PUMP_WSS = "wss://pumpportal.fun/data-api/real-time"
-WINDOW_S = 13.5 * 60  # §380: 16m -> 13.5m. The interval scheduler skips a
-# fire when the previous run is still active; pass total = window + 2-4.7m
-# scan/scorer tail, and at 16m the total crossed 20m on busy passes —
-# producing multi-fire holes (19:25->20:24 UTC, then 20:45->21:12 UTC, live
-# position unmanaged 29 min until manual exit_watch). At 13.5m the total
-# stays ~15.5-18m, safely under the 20m grid.
+WINDOW_S = 15.0 * 60  # §443: 13.5m -> 15m. The 23:14->23:25 blind gap let
+# EW4KWShw peak 1.166 (fade armed at 1.15) then dump to panic unseen —
+# gap blindness is now the #1 loss driver (3 of 4 recent losses). Max
+# observed pass tail is 4.7m, so total <= 19.7m < 20m interval: no skips.
+# (§380 history: 16m crossed 20m on busy passes -> multi-fire holes; 15m
+# keeps 0.3m of headroom over the worst measured tail.)
                     # post-processing (~16.3m max), so 16m finishes ~18.5m <
                     # 20m interval — next trigger never skips — while shrinking
                     # the no-watcher gap from ~4-5m to ~1-2m (drain exposure).

@@ -690,7 +690,16 @@
 {"mint": "DoyDymruvD7sErn8xo4KmmAtJeDkAtxpPb9sZPBpump", "status": "closed", "eval_ts": 1788728699.172506, "entry_t": 1788728808.1209412, "peak": 1.018, "freerolled": false, "exit_reason": "abort15", "ret": -0.0228}
 {"mint": "NPCNX6nYH9FVf7VcrfMTKXHM5bkrxg8j5XhRzSgpump", "status": "closed", "eval_ts": 1788731156.899033, "entry_t": 1788731260.354673, "peak": 1.048, "freerolled": false, "exit_reason": "abort15", "ret": 0.0057}
 {"mint": "CdQSwDJA8X3Uysh1pACSkaAtBuSYkSSieASLAr9upump", "status": "closed", "eval_ts": 1788731716.6406898, "entry_t": 1788731757.630751, "peak": 1.026, "freerolled": false, "exit_reason": "abort15", "ret": -0.0147}
-{"mint": "HnS2afWyj4o2GKKBBshg7e2vCSz5WiKsEGL3SF4pump", "status": "open", "eval_ts": 1788731781.6412978, "entry_t": 1788732280.516416, "peak": 1.001, "freerolled": false, "mark": -0.0389, "ret": null}
-{"mint": "Q4Vtq61NEdLzPpuaU9cLPqkVWEaazTBaerPSLgTpump", "status": "open", "eval_ts": 1788732781.55504, "entry_t": 1788732902.1380732, "peak": 1.009, "freerolled": false, "mark": -0.0306, "ret": null}
-{"mint": "77ehiGC733276HY4gSqRuqwiLdNjA12myG8wNCjpump", "status": "open", "eval_ts": 1788733019.109653, "entry_t": 1788733057.982551, "peak": 1.002, "freerolled": false, "mark": -0.0376, "ret": null}
-{"mint": "HkqXUuBhV77BMENJcVRJgAkQNbuTzft6e5TTim7mpump", "status": "no_data", "ret": null}
+{"mint": "HnS2afWyj4o2GKKBBshg7e2vCSz5WiKsEGL3SF4pump", "status": "closed", "eval_ts": 1788731781.6412978, "entry_t": 1788732280.516416, "peak": 1.001, "freerolled": false, "exit_reason": "abort15", "ret": -0.0389}
+{"mint": "Q4Vtq61NEdLzPpuaU9cLPqkVWEaazTBaerPSLgTpump", "status": "closed", "eval_ts": 1788732781.55504, "entry_t": 1788732902.1380732, "peak": 1.013, "freerolled": false, "exit_reason": "abort15", "ret": -0.0271}
+{"mint": "77ehiGC733276HY4gSqRuqwiLdNjA12myG8wNCjpump", "status": "closed", "eval_ts": 1788733019.109653, "entry_t": 1788733057.982551, "peak": 1.029, "freerolled": false, "exit_reason": "abort15", "ret": -0.0111}
+{"mint": "HkqXUuBhV77BMENJcVRJgAkQNbuTzft6e5TTim7mpump", "status": "closed", "eval_ts": 1788733075.903151, "entry_t": 1788733482.671455, "peak": 1.105, "freerolled": false, "exit_reason": "abort15", "ret": -0.0346}
+{"mint": "HkNxq3Sdh2ReEdWxTdfrvDSJNH9yNshj4rEPuvpepump", "status": "closed", "eval_ts": 1788733657.414757, "entry_t": 1788733669.2574248, "peak": 1.168, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.1203}
+{"mint": "7nYEe8pH3oFeSPp1ZFmCbwW9MB9ApghuUsyRDk9mpump", "status": "closed", "eval_ts": 1788733661.786806, "entry_t": 1788733768.158867, "peak": 1.0, "freerolled": false, "exit_reason": "panic", "ret": -0.2208}
+{"mint": "7oN3CYnvah79yunKfL3FJ8Wo6ny8wHtUMV8SQN3Gpump", "status": "closed", "eval_ts": 1788734720.624743, "entry_t": 1788734827.516032, "peak": 1.056, "freerolled": false, "exit_reason": "panic", "ret": -0.5395}
+{"mint": "mg3ywRvk2kMX6bzDAQWwsmiBsRfgofpqxzm4esepump", "status": "closed", "eval_ts": 1788735056.888982, "entry_t": 1788735158.7887769, "peak": 1.054, "freerolled": false, "exit_reason": "abort15", "ret": 0.0079}
+{"mint": "9Bn1At53AbSoCFmNJ7durkMb4uw9hSsaWZuvWDBkpump", "status": "closed", "eval_ts": 1788735111.751671, "entry_t": 1788735187.054568, "peak": 1.393, "freerolled": false, "exit_reason": "nm_abort", "ret": 0.3222}
+{"mint": "aTj6BvJvFntzXAVKaKPCg2QWdJVYEKgk7waYs9xpump", "status": "open", "eval_ts": 1788735412.599802, "entry_t": 1788735888.251961, "peak": 1.001, "freerolled": false, "mark": -0.0382, "ret": null}
+{"mint": "7UG5uApyMwtzhpHvB8Dk533ZEs8S8pv9hU49V2Gpump", "status": "open", "eval_ts": 1788735910.561867, "entry_t": 1788736017.50331, "peak": 1.029, "freerolled": false, "mark": -0.0118, "ret": null}
+{"mint": "27XEup1ubg926jWh2zZCzLtiTNMzUnQtDdhE5B2npump", "status": "open", "eval_ts": 1788735945.154121, "entry_t": 1788736045.864455, "peak": 1.027, "freerolled": false, "mark": -0.0142, "ret": null}
+{"mint": "Hq3YXw7d6qZecCd1x9JvH8MLTFnAXCtZgZmMH6XXpump", "status": "open", "eval_ts": 1788736039.2809348, "entry_t": 1788736116.439008, "peak": 1.713, "freerolled": true, "mark": 0.517, "ret": null}

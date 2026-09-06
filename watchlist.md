@@ -4439,3 +4439,20 @@
 | 22:26 | robinhood | `0x7cbe49…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Pop a Quaalude, spend a penny. Pink-sheet meme coins meet Stock Tokens on Robinh |
 | 22:26 | bsc | `0x2A2140…` | CAUTION | PROXY | liq=$47,418 mc=$221,096 | holders=0; buy_tax=0 sell_tax=0.01 |  |
 | 22:26 | robinhood | `0xe3dfb8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,018 mc=$135,399 | chain:robinhood no-audit-adapter | NFT piggy banks that collect tokenized stocks and earn staking bonuses. |
+| 22:46 | solana | `4JvV5bGd…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$0 mc=$29,428 | name=Popcash symbol=POPCASH; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=43 | Popcat loves $ZCASH too. |
+| 22:46 | robinhood | `0x16d5f4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The Exchange for Illiquid assets |
+| 22:46 | solana | `8rExs8yy…` | PASS | — | liq=$38,606 mc=$210,054 | name=Memes Into Money symbol=MIM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 22:46 | solana | `2QbdFYSV…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$11,945 | name=ZFROG symbol=ZFROG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67.7% |  |
+| 22:46 | robinhood | `0x0eEd9E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$65,810 mc=$504,269 | chain:robinhood no-audit-adapter |  |
+| 22:46 | solana | `6pkUo5ff…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:59%; RC_WARN:Copycat token | liq=$0 mc=$17,034 | name=Normie symbol=Normie; contract:clean; rugcheck_score=69 lpLocked=100%; top10_hold=58. | The official Normie coin. |
+| 22:56 | robinhood | `0x5a7223…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$52,568 mc=$59,927 | chain:robinhood no-audit-adapter | Axentra Finance is an asset-focused financial infrastructure project built for t |
+| 22:56 | solana | `ES5kVscA…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$0 mc=$33,035 | name=Zwifhat symbol=ZWIF; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=38.3% |  |
+| 22:56 | solana | `9V9uGwRj…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:77% | liq=$0 mc=$14,122 | name=Me As Fuck symbol=Meaf; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=7 |  |
+| 22:56 | bsc | `0x8aC1B2…` | CAUTION | PROXY | liq=$36,563 mc=$130,136 | holders=0; buy_tax= sell_tax= | The launchpad for synthetic microcap stocks on BNB Low-cap public markets, broug |
+| 22:56 | solana | `DCC47d6N…` | PASS | — | liq=$26,958 mc=$106,007 | name=zrobincat symbol=ZROBINCAT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | ZROBINCAT  Steal the Bag. Rule the Forest |
+| 22:56 | bsc | `0x65F540…` | CAUTION | PROXY | liq=$86,330 mc=$725,750 | holders=0; buy_tax=0.01 sell_tax=0.0099 |  |
+| 23:06 | robinhood | `0x03a0e8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,417 mc=$68,229 | chain:robinhood no-audit-adapter | Punz, the other side of Pons |
+| 23:06 | robinhood | `0x38F728…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,575 mc=$36,600 | chain:robinhood no-audit-adapter | Monero $XMR on Robinhood  1:1 backed by 1x long on Hyperliquid Perps |
+| 23:06 | solana | `CyNQyyrR…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,361 | name=Memes Into Money symbol=MIM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 23:06 | robinhood | `0x439947…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,458 mc=$24,310 | chain:robinhood no-audit-adapter | Stocks, decomposed on-chain. NVDA → Revenue, EPS, Margins, Guidance. Trade each  |
+| 23:06 | robinhood | `0x69324b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,047 mc=$25,950 | chain:robinhood no-audit-adapter | Ἀρχαία ψυχή. Καινὸς νοῦς. |

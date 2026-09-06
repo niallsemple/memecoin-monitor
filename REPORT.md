@@ -7332,3 +7332,17 @@ seed 2-4 avg mult 0.958 (3W/14L), 4-7 -> 1.089, 7-10 -> 1.109 (2/2 won).
 ACTION: live bridge seed floor raised 2 -> 4 SOL (SEED_FLOOR_SOL). Shadow
 recorder unchanged (full 2-10 band keeps scoring so the sample builds).
 Expect fewer fires (~15% of qualifiers) at higher quality.
+
+§443 (2026-09-06 23:30 BST): trade #7 (first seed>=4 fire) — EW4KWShw…pump
+seed 5.26 SOL. Peaked 1.166 (fade armed at 1.15, exit level 1.049) then
+dumped UNSEEN through a 10.6-min tracker blind gap (23:14->23:25);
+panic fired late at ~0.60. -0.00806 SOL. Book: 1W/6L, -0.0310 SOL.
+ROOT CAUSE: gap blindness, not the gates. TWO FIXES DEPLOYED:
+(1) tracker WINDOW_S 13.5m -> 15m (max observed tail 4.7m keeps total
+<=19.7m < 20m interval; gap shrinks 2-4.5m -> 0.3-3m), synced to the
+embedded automation copy; (2) new cron Automation "DARWIN exit-watcher
+gap pass" (automation_d0043cac, interval 10m, k2d6-agent) — checks
+mfg_trades mtime, and ONLY when the tracker window is dead (>90s) runs
+one exit_watch pass. Open positions now unmanaged <= ~10 min worst case,
+~3 min typical. Double-fire hazard handled by the liveness check
+(second sell would 6023 harmlessly anyway).
