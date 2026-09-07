@@ -291,20 +291,214 @@ def build_fire_bundle(ob_pk: str, liquidator: str):
 def kh_u128(raw, off):
     return int.from_bytes(raw[off:off+16], "little")
 
-def simulate_fire(ob_pk: str, liquidator: str) -> dict:
-    """Full-bundle paper simulation. On a HEALTHY obligation, expect the
-    liquidate ix to fail with a healthy-obligation program error AFTER all
-    refreshes + flashBorrow succeed — that is the fire-ready signature."""
+def compile_fire_tx(ixs: list, liquidator: str) -> str:
+    """Compile+sign the v0 fire tx via node fire_compile.js (official web3.js
+    compiler — my hand-rolled v0 failed RPC sanitize, §464). Returns tx_b64."""
+    import subprocess
+    def ser(prog, accs, data):
+        return {"programId": b58encode(prog),
+                "accounts": [{"pubkey": b58encode(k), "isWritable": w,
+                              "isSigner": s} for k, w, s in accs],
+                "data": list(data)}
+    payload = json.dumps({"ixs": [ser(*i) for i in ixs],
+                          "walletPath": str(MON / "live_wallet.json"),
+                          "altPath": str(ALT_FILE),
+                          "heliusPath": str(MON / "helius_key.txt")})
+    out = subprocess.run(["node", str(MON / "fire_compile.js")],
+                         input=payload, capture_output=True, text=True,
+                         timeout=60)
+    res = json.loads(out.stdout.strip().splitlines()[-1])
+    if res.get("error"):
+        raise RuntimeError(res["error"])
+    return res["tx_b64"]
+
+def simulate_fire(ob_pk: str, liquidator: str, with_swap: bool = True) -> dict:
+    """Full-bundle paper simulation (incl. Jupiter exit leg when mints differ).
+    On a HEALTHY obligation, expect failure at swap/flashRepay (nothing seized)
+    after all refreshes + flashBorrow + liquidate succeed — the fire-ready
+    signature. Atomic revert means a bad fire costs only the (unsent) sim."""
     import live_trader as lt
     ixs, meta = build_fire_bundle(ob_pk, liquidator)
     if ixs is None:
         return meta
-    tx_b64 = lt.build_legacy_tx(lt.b58dec(liquidator), ixs)
+    if with_swap:
+        r = meta["resolve"]
+        est = estimate_seize(r)
+        in_mint = r["withdraw"]["liq_mint"]
+        out_mint = r["repay"]["liq_mint"]
+        swap_ixs, swap_meta = build_swap_leg(in_mint, out_mint, est, liquidator)
+        meta["swap"] = {"est_seize": est, **swap_meta}
+        if swap_ixs:
+            ixs = ixs[:-1] + swap_ixs + [ixs[-1]]  # before flashRepay
+    # v0 + ALT via official compiler (§464)
+    allkeys = []
+    for prog, accs, _ in ixs:
+        allkeys.append(b58encode(prog))
+        allkeys += [b58encode(k) for k, _, _ in accs]
+    allkeys = [k for k in dict.fromkeys(allkeys) if k != liquidator]
+    ensure_alt(liquidator, allkeys)
+    tx_b64 = compile_fire_tx(ixs, liquidator)
     res = rpc("simulateTransaction",
               [tx_b64, {"encoding": "base64", "sigVerify": False,
                         "replaceRecentBlockhash": True,
                         "commitment": "confirmed"}])
     return {"meta": meta, "sim": res.get("result") or res}
+
+# --- Jupiter exit leg (§464): seized underlying -> repay asset ---
+def build_swap_leg(in_mint: str, out_mint: str, amount: int, wallet: str,
+                   slippage_bps: int = 150):
+    """Jupiter swap-instructions → [(prog, [(k,w,s)], data)]. Any ix with
+    <8 bytes of data would PANIC KLend's flash sysvar scan (data[..8] slice),
+    so those are flagged and must be excluded from the flash tx."""
+    if in_mint == out_mint or amount <= 0:
+        return [], {"skipped": "same_mint_or_zero"}
+    qurl = ("https://lite-api.jup.ag/swap/v1/quote?inputMint=%s&outputMint=%s"
+            "&amount=%d&slippageBps=%d" % (in_mint, out_mint, amount, slippage_bps))
+    q = json.loads(urllib.request.urlopen(qurl, timeout=20).read())
+    body = json.dumps({"quoteResponse": q, "userPublicKey": wallet,
+                       "wrapAndUnwrapSol": False}).encode()  # wSOL ATA pre-staged
+    req = urllib.request.Request("https://lite-api.jup.ag/swap/v1/swap-instructions",
+                                 data=body, headers={"Content-Type": "application/json"})
+    sj = json.loads(urllib.request.urlopen(req, timeout=20).read())
+    ixs, short = [], []
+    for ins in (sj.get("setupInstructions") or []) + [sj["swapInstruction"]] + \
+               (sj.get("cleanupInstructions") or []):
+        data = base64.b64decode(ins["data"])
+        rec = (b58decode(ins["programId"]),
+               [(b58decode(a["pubkey"]), a["isWritable"], a["isSigner"])
+                for a in ins["accounts"]], data)
+        if len(data) < 8:
+            short.append(ins["programId"])  # would panic flash sysvar scan
+        else:
+            ixs.append(rec)
+    return ixs, {"quote_out": int(q.get("outAmount", 0)),
+                 "short_ixs_dropped": short}
+
+def estimate_seize(r: dict) -> int:
+    """Estimated seized underlying (raw units): debt_mv × (1+min bonus) priced
+    into collateral units from the obligation's own stored values, 1% haircut."""
+    ob, wd = r["ob"], r["withdraw"]
+    dep = ob["deposits"][0]
+    brw = ob["borrows"][0]
+    if dep["mv"] <= 0 or dep["amount"] <= 0:
+        return 0
+    wd_raw = acct_raw(wd["reserve"])
+    bonus_bps = int.from_bytes(wd_raw[4874:4876], "little")  # minLiquidationBonusBps
+    seize_mv = min(brw["mv"] * (1 + bonus_bps / 1e4), dep["mv"])
+    px_per_unit = dep["mv"] / dep["amount"]
+    return int(seize_mv / px_per_unit * 0.99)
+
+# --- v0 tx + Address Lookup Table (§464): legacy bundle exceeded 1232B ---
+ALT_PROG = "AddressLookupTab1e1111111111111111111111111"
+ALT_FILE = Path(__file__).parent / "kamino_alt.json"
+
+def _shortvec(n: int) -> bytes:
+    out = bytearray()
+    while True:
+        b = n & 0x7F
+        n >>= 7
+        out.append(b | (0x80 if n else 0))
+        if not n:
+            return bytes(out)
+
+def ensure_alt(liquidator: str, extra_keys: list) -> str:
+    """Create our ALT if missing and extend with any new keys. Returns address."""
+    import live_trader as lt
+    state = json.loads(ALT_FILE.read_text()) if ALT_FILE.exists() else {}
+    payer_b = b58decode(liquidator)
+    if not state.get("address"):
+        base = rpc("getLatestBlockhash", [{"commitment": "finalized"}])["result"]["context"]["slot"]
+        tab = bump = None
+        resp = {}
+        # §464: some slots produce no blockhash — walk down until accepted
+        for slot in range(base, base - 40, -1):
+            for b in range(255, -1, -1):
+                h = hashlib.sha256(payer_b + struct.pack("<Q", slot) +
+                                   bytes([b]) + b58decode(ALT_PROG) +
+                                   b"ProgramDerivedAddress").digest()
+                if not _on_curve(h):
+                    tab, bump = h, b
+                    break
+            data = struct.pack("<IQB", 0, slot, bump)
+            ixs = [(b58decode(ALT_PROG), [(tab, True, False), (payer_b, False, True),
+                    (payer_b, True, True), (b58decode(SYS_PROG), False, False)], data)]
+            tx = lt.build_legacy_tx(payer_b, ixs)
+            resp = rpc("sendTransaction", [tx, {"encoding": "base64"}])
+            if resp.get("result"):
+                break
+            if "recent slot" not in json.dumps(resp.get("error")):
+                break
+        if not resp.get("result"):
+            raise RuntimeError(f"ALT create failed: {resp.get('error')}")
+        state = {"address": b58encode(tab), "keys": []}
+        time.sleep(2)
+    have = set(state["keys"])
+    new = [k for k in dict.fromkeys(extra_keys) if k not in have]
+    while new:
+        chunk, new = new[:20], new[20:]
+        data = struct.pack("<IQ", 2, len(chunk)) + b"".join(b58decode(k) for k in chunk)
+        ixs = [(b58decode(ALT_PROG), [(b58decode(state["address"]), True, False),
+                (payer_b, False, True), (payer_b, True, True),
+                (b58decode(SYS_PROG), False, False)], data)]
+        tx = lt.build_legacy_tx(payer_b, ixs)
+        resp = rpc("sendTransaction", [tx, {"encoding": "base64"}])
+        if not resp.get("result"):
+            raise RuntimeError(f"ALT extend failed: {resp.get('error')}")
+        state["keys"] += chunk
+        time.sleep(1.5)
+    ALT_FILE.write_text(json.dumps(state))
+    return state["address"]
+
+def build_v0_tx(payer_b: bytes, ixs: list, alt_addr: str, alt_keys: list,
+                signers: dict) -> str:
+    """Compile+sign a v0 tx. signers: {pubkey_bytes: Ed25519PrivateKey}.
+    ALT keys usable as non-signer accounts; jupiter/other route keys go static."""
+    alt_b = b58decode(alt_addr)
+    alt_set = {b58decode(k): i for i, k in enumerate(alt_keys)}
+    meta = {payer_b: [True, True]}
+    for prog, accs, _ in ixs:
+        for k, w, s in accs:
+            e = meta.setdefault(k, [w, s]); e[0] |= w; e[1] |= s
+        meta.setdefault(prog, [False, False])
+    static, lookups_w, lookups_r = [], [], []
+    for k, (w, s) in meta.items():
+        if s:
+            static.append((k, w, s))  # signers must be static
+        elif k in alt_set:
+            (lookups_w if w else lookups_r).append(k)
+        else:
+            static.append((k, w, s))
+    lookups_w.sort(key=lambda k: alt_set[k])  # §464: sanitize wants ascending
+    lookups_r.sort(key=lambda k: alt_set[k])
+    sig_w = sorted([x for x in static if x[2] and x[1]], key=lambda x: 0 if x[0] == payer_b else 1)
+    sig_r = [x for x in static if x[2] and not x[1]]
+    nw = [x for x in static if not x[2] and x[1]]
+    nr = [x for x in static if not x[2] and not x[1]]
+    ordered = sig_w + sig_r + nw + nr
+    keys = [x[0] for x in ordered]
+    # index space: static, then writable lookups, then readonly lookups
+    idx = {k: i for i, k in enumerate(keys)}
+    for k in lookups_w:
+        idx[k] = len(idx)
+    for k in lookups_r:
+        idx[k] = len(idx)
+    bh = rpc("getLatestBlockhash", [{"commitment": "finalized"}])["result"]
+    msg = bytearray(b"\x80")
+    msg += bytes([len(sig_w) + len(sig_r), len(sig_r), len(nr)])
+    msg += _shortvec(len(keys)) + b"".join(keys)
+    msg += b58decode(bh["value"]["blockhash"])
+    msg += _shortvec(len(ixs))
+    for prog, accs, data in ixs:
+        msg += bytes([idx[prog]]) + _shortvec(len(accs))
+        msg += bytes(idx[k] for k, _, _ in accs)
+        msg += _shortvec(len(data)) + data
+    msg += _shortvec(1)
+    msg += alt_b
+    msg += _shortvec(len(lookups_w)) + bytes(alt_set[k] for k in lookups_w)
+    msg += _shortvec(len(lookups_r)) + bytes(alt_set[k] for k in lookups_r)
+    sigs = [signers[k].sign(bytes(msg)) for k in keys if meta[k][1]]
+    tx = _shortvec(len(sigs)) + b"".join(sigs) + bytes(msg)
+    return base64.b64encode(tx).decode()
 
 if __name__ == "__main__":
     # paper run against the largest obligation seen by the tail

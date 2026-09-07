@@ -4584,3 +4584,9 @@
 | 09:46 | solana | `ACQxHBwf…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$10,839 | name=haMSTR symbol=haMSTR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67.8 |  |
 | 09:46 | bsc | `0x353366…` | PASS | — | liq=$22,319 mc=$57,627 | holders=215; buy_tax= sell_tax=; contract:clean | Chinese PEPE on chinese chain paired with QQQB |
 | 09:46 | solana | `847y1VzY…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:39% | liq=$16,454 mc=$36,691 | name=Titcoin symbol=TITCOIN; rugcheck_score=12 lpLocked=100%; top10_hold=39.1% | The breast technology.  Hold Titcoin get paid in Bitcoin. |
+| 10:26 | robinhood | `0x0ecF55…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The Social Network for the Trenches. |
+| 10:26 | robinhood | `0x22Ce16…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$51,859 mc=$306,454 | chain:robinhood no-audit-adapter | The wait is over.   Introducing Robinhood Market. Your place for beautifully des |
+| 10:26 | solana | `33xLr1aV…` | FAIL | TOP10_HEAVY:62% | liq=$13,456 mc=$23,781 | name=Havatian Homes symbol=HH; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=62 | I do Real Esate in New Jersey 🏘️👇👉 havatianhomesgroup |
+| 10:26 | solana | `HRdWZwUh…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$4,282 | name=Silk symbol=SILK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.2% |  |
+| 10:26 | solana | `AQVZAvm9…` | PASS | — | liq=$21,592 mc=$71,779 | name=NasDonk symbol=NASDONK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=18 | NasDonk charges into the market with fearless energy, signature goggles, and uns |
+| 10:26 | robinhood | `0x685c14…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,548 mc=$23,485 | chain:robinhood no-audit-adapter | Perpetual markets on Robinhood Chain, Powered by Orderly Network |
