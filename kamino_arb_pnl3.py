@@ -26,6 +26,35 @@ SOLCACHE = MON / "sol_daily_px.json"
 USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 USDT = "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
 WSOL = "So11111111111111111111111111111111111111112"
+KLEND = "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD"
+# verified against 7tUACGesj pure-arb tx (§486)
+FLASH_B = bytes([135, 231, 52, 167, 7, 52, 212, 193])
+FLASH_R = bytes([185, 117, 0, 203, 96, 245, 180, 186])
+REFRESH_RES = bytes([2, 218, 138, 235, 79, 201, 25, 102])
+PURE_ARB_DISCS = {FLASH_B, FLASH_R, REFRESH_RES}
+
+ALPH = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+
+def b58decode(s):
+    n = 0
+    for c in s:
+        n = n * 58 + ALPH.index(c)
+    b = n.to_bytes((n.bit_length() + 7) // 8, "big") if n else b""
+    return b"\0" * (len(s) - len(s.lstrip("1"))) + b
+
+def klend_discs(tx):
+    """Distinct KLend instruction discs, outer + inner."""
+    out = set()
+    ixs = list(tx["transaction"]["message"].get("instructions", []))
+    for inner in (tx.get("meta") or {}).get("innerInstructions") or []:
+        ixs += inner.get("instructions", [])
+    for ix in ixs:
+        if isinstance(ix, dict) and ix.get("programId") == KLEND and ix.get("data"):
+            try:
+                out.add(b58decode(ix["data"])[:8])
+            except Exception:
+                pass
+    return out
 
 
 def transfers(tx):
@@ -169,9 +198,11 @@ def main():
                 unpriced.append(m[:8])
         if seeds.get(WSOL):
             pnl += sol_net * seeds[WSOL]
+        discs = klend_discs(tx)
+        pure = bool(discs) and discs <= PURE_ARB_DISCS
         f.write(json.dumps({"sig": sig, "ts": r["ts"], "payer": r["payer"],
                             "pnl_usd": round(pnl, 5), "n_priced_mints": len(px),
-                            "unpriced": unpriced[:5]}) + "\n")
+                            "pure_arb": pure, "unpriced": unpriced[:5]}) + "\n")
         f.flush()
         n += 1
         time.sleep(0.1)
