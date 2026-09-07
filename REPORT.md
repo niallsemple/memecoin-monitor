@@ -7650,3 +7650,20 @@ v3 (`kamino_arb_pnl3.py`) prices exotic mints from tx-internal swap legs, fixed 
 **Contamination found:** the +$208k "best trade" is a whale borrowing 97k of a stable against existing collateral (flash-repay present, but the tx is balance-sheet loop management, NOT atomic arb). Helius's FLASH_REPAY type scoops these up. **Filter rule for the clean arb set:** pure atomic arb = KLend ixs limited to flashBorrow + flashRepay (+ refreshReserve); any other KLend ix (borrow/deposit/withdraw/liquidate) = balance-sheet management → exclude. Implement as an ix-shape check in the v3 pass (needs the outer+inner KLend disc list per tx; cheap — already fetching full txs).
 
 **Status:** extractor sound; v3 numbers unusable for ranking until the shape filter lands. Next slice: add filter, re-run the 5,638 complex txs, THEN the exotic-frontier read (who wins there, what sizes, what routes).
+
+## §486 — Exotic-frontier verdict: THIN, no repeatable niche (7 Sep 2026)
+
+Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **only 32% (1,802) were true atomic arb** — 68% was whale balance-sheet management (the §485 contamination quantified). Of the pure set, 46 fully priced via implied in-tx prices: **17% green, median −$0.095, 13 searchers, all one-off wins** (top single capture $542.82; no repeat operator). The unpriced remainder (1,756) lacks clean priced legs — itself evidence these routes are messy one-offs, not a systematic game.
+
+**Kamino-rails arb — full-board conclusion (all segments measured):**
+1. Standard 2-hop majors: real money exists (7tUACGesj $635/day, 99% green) but is SLOT-LATENCY gated — killed for our infra class (§484).
+2. Exotic/complex multi-hop: no repeatable winner; sporadic opportunistic captures — no niche to enter (§486).
+3. Liquidations: crash-burst only, zero events in 14 days of normal markets — standby, armed, free (§480).
+
+**Standing lanes for positive ROI, ranked by evidence:**
+1. **BSC memecoin flow** — only live positive distribution (n=30 → 60 accumulating; survives 10%/side cost stress; honeypot gate logging)
+2. **Gate savings** (Solana memecoin filters) — proven +0.095 SOL avoided-loss; passive
+3. **Kamino liquidation standby** — zero-cost option on the next crash
+4. Memecoin confirm-mode — data collection pending owner's sizing decision
+
+**The arb-bot build question is answered: DON'T BUILD with current latency class.** Revisit only if infrastructure changes (validator-adjacent execution) or a crash changes the liquidation picture.
