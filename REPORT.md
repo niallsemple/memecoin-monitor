@@ -7627,3 +7627,18 @@ Full pricing pass done: 12,680/12,684 txs priced (owner-aware v2). Non-complex e
 - This is the frequency model proven in the wild: small, constant, relentless.
 
 **Implication for us (honest):** this bot wins with slot-level latency against Meteora/Raydium price dislocations — our minutes-cadence stack cannot fight it head-on for major pairs. The niche question becomes: which pairs/sizes does the field IGNORE (complex routes, low-cap pairs, multi-hop)? Next: segment the 43 profitable searchers by route complexity and size band to find the under-contested corner — that answer decides build-vs-kill for an arb lane.
+
+## §483-484 — Complexity segmentation + Latency Margin proxy verdict (7 Sep 2026)
+
+**Segmentation (12,680 txs joined P&L×routes):** medium-complexity routes (5–7 transfers = flash+2 swaps+repay) are the positive-sum segment: n=2,017, **57% green**, +$4,975 total, mean +$2.47. Complex (8+) bucket reads −$2.79M but is CONTAMINATED by unpriced exotic-mint legs (same artifact class as §481) — not interpretable without mint pricing. 69% of winner volume touches exotic mints: the interesting frontier, currently unmeasurable.
+
+**Latency Margin proxy (the decisive test):** on the busiest route (SOL/USDC, n=1,066 in the medium segment, **38 distinct bots**), median time between captures is **7.2 minutes** but median capture is **+$0.016**. 63% of pair-windows see a different bot hit the same mint-set within 10 min — dislocations RECUR constantly, but each is eaten at slot speed; what recurs is the opportunity stream, not the opportunity itself.
+
+**Phase 7 verdict for standard 2-hop major-pair arb: KILL for our infra.** Median capture $0.016 vs our realistic per-tx cost ($0.01–0.05 priority+tip) and minutes-cadence detection = negative margin even in the best-case reading. 7tUACGesj's $635/day exists at slot latency we don't have.
+
+**Standing lanes after today:**
+1. Kamino liquidations — STANDBY (crash-burst only; radar armed, fire path proven; §480)
+2. Standard cross-DEX arb — KILLED for our latency class (§484)
+3. Exotic/complex multi-hop arb — OPEN, needs historical mint pricing (implied-price extraction from tx-internal swap legs is the planned method)
+4. BSC memecoin flow — ACCUMULATING (n=30 → 60, survives cost stress §475, honeypot gate live §476)
+5. Memecoin confirm-mode — data collection only (§473)
