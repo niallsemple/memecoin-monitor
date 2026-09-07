@@ -104,6 +104,41 @@ def health_check(obs: list) -> list:
 
 ALERT_PCT = 0.05  # flag when margin < 5% of adjusted debt (or negative)
 
+# stablecoin mints (stable-stable looping pairs only liquidate on depeg;
+# tag them so the radar doesn't cry wolf on a 2% margin that never moves)
+STABLE_MINTS = {
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",   # USDC
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",   # USDT
+    "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",   # PYUSD
+    "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT",   # USDe
+    "USDSwr9ApdHk5bvJKMjzff41FfuX8bSxdKcR81vTwcA",   # USDS
+    "2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMW2j7Whx",   # USDG
+    "9gP5k1KMKQDw1dtFh2naakFY3PLN7HQECCK8Wt7v6FFz",   # FDUSD
+}
+_STABLE_CACHE = {}
+
+def stable_pair_tag(ob_pk: str):
+    """True if biggest deposit AND biggest borrow are both stablecoins.
+    None on any failure. Cached per obligation."""
+    if ob_pk in _STABLE_CACHE:
+        return _STABLE_CACHE[ob_pk]
+    tag = None
+    try:
+        import importlib.util as _il
+        _s = _il.spec_from_file_location("kamino_hunt", str(MON / "kamino_hunt.py"))
+        _kh = _il.module_from_spec(_s)
+        _s.loader.exec_module(_kh)
+        r = _kh.resolve(ob_pk)
+        if r.get("ok"):
+            dep = r["withdraw"]["liq_mint"]
+            bor = r["repay"]["liq_mint"]
+            tag = dep in STABLE_MINTS and bor in STABLE_MINTS
+    except Exception:
+        tag = None
+    _STABLE_CACHE[ob_pk] = tag
+    return tag
+
+
 # §465 auto-fire settings
 MIN_FIRE_DEBT_USD = 50.0     # below this the gas/rent eats the bonus
 FIRE_COOLDOWN_S = 600        # one attempt per obligation per 10 min
@@ -171,7 +206,8 @@ def run_pass():
             return
         rows = health_check(sorted(obs))
         out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
-               "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
+               "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa,
+               "stable_pair": stable_pair_tag(pk)}
                for m, a, u, sa, ow, pk in rows]}
         (MON / "kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
         hits = [r for r in rows if r[0] < max(0.0, ALERT_PCT * r[1])]
@@ -182,6 +218,7 @@ def run_pass():
                         "ts": time.time(), "pubkey": pk, "owner": ow,
                         "adj_debt": a, "unhealthy": u, "margin": m,
                         "slot_age": sa,
+                        "stable_pair": stable_pair_tag(pk),
                         "kind": "liquidatable" if m < 0 else "near_line"}) + "\n")
         # §465 auto-fire: liquidatable rows only, sim-gated, zero-capital flash
         for m, a, u, sa, ow, pk in rows:

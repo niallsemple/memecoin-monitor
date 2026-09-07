@@ -821,3 +821,15 @@
   (gate_reject:true, log-only, wrapped in try/except, cannot affect fills).
 - Replay-verified behavior-neutral: lockgate book reproduces exactly
   (n=4 hist 1.970x, SAL fwd rug, BUILDER reject). Committed.
+- 2026-09-07 20:16Z | ok | cycle done, 6 audited, total tracked=7846 | [v2 EARLY] bank=£397.80 (cash £344.05 + open £53.74) | ROI=-60.22% | open=5 closed=125 realizedPnL=£-603.30 | [v3 STRICT] bank=£725.70 (cash £710.94 + open £14.76) | ROI=-27.43% | open=1 closed=60 realizedPnL=£-274.01 | [v4 MOM1.5] bank=£695.42 (cash £695.42 + open £0.00) | ROI=-30.46% | open=0 closed=154 realizedPnL=£-304.54 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00
+
+## 2026-09-07 20:40 UTC — Kamino radar: stable-pair annotation
+- Tail surfaced 3 near-line accounts. Decoded the big one (2754tvij, $1.70M
+  PYUSD debt vs $1.84M USDe collateral, 2.2% margin): stable-stable yield
+  looper — only liquidates on a ~6% USDe depeg. NOT a near-term candidate.
+- Other two rows are dust ($176 / $3.5k debt).
+- PATCH kamino_tail.py: stable_pair tag on tail rows + alerts (STABLE_MINTS:
+  USDC/USDT/PYUSD/USDe/USDS/USDG/FDUSD; cached per obligation). Auto-fire NOT
+  suppressed: sim-gated fire stays armed — a stable pair crossing the line
+  means a real depeg, exactly the event we want to catch.
+- Tagger verified live: 2754tvij=True, two dust rows=False.

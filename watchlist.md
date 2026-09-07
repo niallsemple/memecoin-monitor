@@ -4602,3 +4602,9 @@
 | 19:16 | robinhood | `0x32a322…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$69,228 mc=$560,150 | chain:robinhood no-audit-adapter |  |
 | 19:16 | solana | `MWEuyvyT…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,987 | name=meme symbol=memecoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100. |  |
 | 19:16 | solana | `HgdGexyn…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$8,227 | name=BNASDUCK symbol=Baby Nasduck; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 20:16 | robinhood | `0x31370E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | visual on-chain intelligence layer |
+| 20:16 | solana | `Hd8mxPqf…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$0 mc=$24,627 | name=67coin symbol=67coin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48.7 | The official 67coin of anthropic mentioned in their official documents. Paired w |
+| 20:16 | robinhood | `0x06ade0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,103 mc=$51,779 | chain:robinhood no-audit-adapter | The onchain prop firm for stock-paired memecoins. Real Stock Token rewards. Buil |
+| 20:16 | robinhood | `0x380cc2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | hedge any position in one click.  stocks, rwa, crypto, and pons markets. |
+| 20:16 | solana | `HcbKRVuL…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$17,206 mc=$49,434 | name=Make Pump Great Again symbol=MPGA; contract:clean; rugcheck_score=1 lpLocked=100%; to | Going Live Doxxed on PumpFun  Introducing $MPGA  it is time to Make PumpFun Grea |
+| 20:16 | solana | `3Sy6qdDu…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:41% | liq=$22,053 mc=$65,397 | name=Corgicoin symbol=CORGI; rugcheck_score=12 lpLocked=98.91296713723156%; top10_hold=40. |  |
