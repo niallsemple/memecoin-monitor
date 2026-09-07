@@ -892,3 +892,18 @@
   ALbiNFuUqV ($695), 38ECW96gk5 ($1.1k), 6zn3UhC8X1 ($23.3k), 3nCpmJf7x2
   ($69.1k margin).
 - base4_scout wired into EVM cron (step 3, one-shot catch-up each fire).
+- 2026-09-07 21:36Z | ok | cycle done, 6 audited, total tracked=7917 | [v2 EARLY] bank=£390.88 (cash £336.95 + open £53.92) | ROI=-60.91% | open=5 closed=127 realizedPnL=£-611.04 | [v3 STRICT] bank=£710.25 (cash £695.67 + open £14.58) | ROI=-28.98% | open=1 closed=62 realizedPnL=£-289.94 | [v4 MOM1.5] bank=£681.38 (cash £681.38 + open £0.00) | ROI=-31.86% | open=0 closed=155 realizedPnL=£-318.59 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00
+
+## 2026-09-07 21:45 UTC — base4_flow.py live: V4 swap-flow tracker
+- Topics identified: Swap=0x40e9cecb..(bytes32,address,int128,int128,uint160,
+  uint128,int24,uint24); ModifyLiquidity=0xf208f491...
+- Sign convention GROUND-TRUTHED on PweaseOG/USDC tx 0xe7be51b8: event
+  amounts are swapper-perspective (a1=+249755 raw while 0.2498 USDC left the
+  PoolManager = SELL). Pool net quote inflow = -(swapper delta). Fixed int128
+  sign-extension (mask to 128 bits first).
+- Currency order: currency0 < currency1 by address (V4 rule) — quote side
+  derivable without extra storage.
+- Live output sane: LAPTOP +0.32 ETH/27 swaps (buy pressure), PweaseOG
+  -0.64 USDC (net selling).
+- Wired into cron after scout. Next: base4_paper.py scorer (entry $3k/30min
+  cum quote inflow, price from sqrtPriceX96, same exit stack, ETH px feed).
