@@ -40,7 +40,12 @@ def load_blocked():
             r = json.loads(l)
         except Exception:
             continue
-        if r.get("action") == "bridge_blocked":
+        # §452: also replay stale-open skips — the ~5-min tracker off-gap
+        # (15m window on a 20-min grid) costs ~3 candidates/24h; we need to
+        # know whether the stale guard is earning or costing before changing it.
+        if r.get("action") in ("bridge_blocked", "bridge_skip_stale"):
+            if r.get("reason") is None:
+                r["reason"] = "stale_open"
             blocked[r["mint"]] = r
     return blocked
 

@@ -4516,3 +4516,9 @@
 | 04:06 | robinhood | `0x6CCe60…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,928 mc=$33,447 | chain:robinhood no-audit-adapter |  |
 | 04:06 | bsc | `0xD840A1…` | PASS | — | liq=$0 mc=$53,797 | holders=0; buy_tax= sell_tax=; contract:clean | The bnb fwog |
 | 04:06 | solana | `pbJFoQ9y…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$18,270 mc=$54,670 | name=Pweg symbol=Pweg; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.1% | Waddling to new heights 🐧 |
+| 04:26 | solana | `Edd4a2XD…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:49% | liq=$27,938 mc=$74,473 | name=LMEOW symbol=LMEOW; rugcheck_score=52 lpLocked=3.503213616905836e-10%; top10_hold=49. | $LMAO is the biggest Solana community by far, and now we have the best derivativ |
+| 04:26 | solana | `6nncJ5yT…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$10,212 | name=Pushing P symbol=P; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=73.7% |  |
+| 04:26 | robinhood | `0x9658e5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,844 mc=$37,444 | chain:robinhood no-audit-adapter | Google Super Model. Paired with $GOOGL. |
+| 04:26 | robinhood | `0xd24F34…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,313 mc=$74,675 | chain:robinhood no-audit-adapter | the new creator market where fans can earn alongside their fav creators |
+| 04:26 | solana | `VikNr6Zh…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:89% | liq=$3,244 mc=$3,476 | name=Infinite Pump Glitch symbol=IPG; contract:clean; rugcheck_score=30 lpLocked=100%; top |  |
+| 04:26 | base | `0x021805…` | PASS | — | liq=$6,658 mc=$7,260 | holders=10; buy_tax=0 sell_tax=0; contract:clean | AI models prefaced their secret messages with "ZZZ." $zzzDRB is a secret message |
