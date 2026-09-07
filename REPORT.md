@@ -7556,3 +7556,13 @@ Stress-tested all 30 BSC paper closes against per-side cost scenarios (applied a
 **Unmodeled killer risk:** honeypots / sell-tax tokens (buy OK, sell reverts or taxed 90%+). BSC-specific, invisible to flow-based paper entries. Any live path needs a pre-entry sell-simulation or tax check (e.g. honeypot-is style call or a local fork sim) before this edge is tradable. Also still n=30 < n=60 bar.
 
 **Verdict:** BSC long side survives fees, slippage, even punitive taxes on paper. Gating items before live consideration: (1) n≥60, (2) honeypot/tax pre-check built, (3) owner's sizing decision. Estimated build for the pre-check: small — one RPC `eth_call` sell-sim per candidate.
+
+## §476 — Honeypot checker v1: built, validated, honestly scoped (7 Sep 2026)
+
+`bsc_honeypot.py` deployed + wired into `bsc_paper.py` entry path as a **log-only shadow annotation** (`bsc_honeypot_log.jsonl` per armed entry; the EVM Flow Watcher automation runs bsc_paper.py from the workspace, so it's live with no asset sync).
+
+**What the RPC layer actually catches (validated on 14 fresh watched pools):** dead pools, missing routes, zero-reserve pairs. Fresh healthy pools cluster at exactly ~0.7% roundtrip (= 0.25%×2 AMM fee + 0.1%-of-reserves sizing slippage) — a clean liveness baseline. **What it cannot catch:** transfer-level honeypots — `getAmountsOut` is pure reserve math and never executes the token transfer, so sell-reverts/transfer-taxes are invisible to it. That layer is covered only when honeypot.is has the token indexed (it 404s on brand-new launches — exactly our entry window). Verdict: v1 = liveness gate + API-when-available; true pre-entry honeypot proof on fresh launches needs `eth_call` state-override simulation, which public BSC RPCs don't offer — parked unless BSC goes live.
+
+**Retro-test correction (supersedes the alarming first read):** the "21/30 rejected incl. 12 winners" result was confounded — those tokens' pools are drained/dead TODAY, so current-state quotes show ~100% roundtrip loss regardless of what was true at trade time. §475's net-of-cost numbers stand as modeled; whether past winners were exitable AT THE TIME can't be settled without archive-state quotes. The prospective log (starting now) resolves this properly on future entries.
+
+**Next (adopted from owner-shared framework):** Kamino liquidation niche study with Latency Margin as the kill/build metric — Phase 1 dataset from our own tail history (known liquidated obligations) + Helius parsed txs, Phase 2 liquidator clustering, Phase 7 counterfactual replay against OUR measured latencies (~240s radar cadence), complexity-over-size niche hypothesis (farmed obligations — our §472 machinery already handles what naive bots may skip).

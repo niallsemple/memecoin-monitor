@@ -125,6 +125,18 @@ def main():
                     if r['price_raw'] / w['px0'] < MIN_ENTRY_MULT:
                         continue   # inflow without price lift: skip (shadow)
                 w['armed'] = True   # fill on the next poll, not this one
+                # §476 shadow honeypot/liveness annotation (log-only, non-blocking)
+                try:
+                    from bsc_honeypot import check as _hp
+                    hp = _hp(pair, is_pair=True)
+                    rec = {'t': r['t'], 'pair': pair, 'name': name,
+                           'ok': hp.get('ok'), 'tax': hp.get('rpc_roundtrip_tax'),
+                           'quote': hp.get('quote'), 'reasons': hp.get('reasons'),
+                           'api': hp.get('api'), 'api_error': hp.get('api_error')}
+                    with open(f'{CHAIN}_honeypot_log.jsonl', 'a') as hf:
+                        hf.write(json.dumps(rec) + '\n')
+                except Exception:
+                    pass
         # manage the remainder of THIS batch after an in-batch fill (replay)
         if filled_at is not None and pair in st['open']:
             _manage(st, trades_f, pair, st['open'][pair], rs[filled_at + 1:])
