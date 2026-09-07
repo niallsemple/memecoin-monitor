@@ -1229,3 +1229,14 @@
 {"action": "h16e2_stale", "mint": "ELrRpDjhGB9RAxXYUVAFTAqPdaRHHexeUQfqqZcJNfsp", "t": 1788742768.902859, "last_tick_age": 13.7, "seed": 3.063999999}
 {"action": "h16e2_stale", "mint": "J6tGHeycCoCtkpwA1SxwpuDgWd5yYBQ8C3DZDP6zpump", "t": 1788742783.918684, "last_tick_age": 4.8, "seed": 3}
 {"action": "h16e2_reject", "mint": "9wQRe1Vn1e17or6dgiBf5gfLJrY9C9NK9Kq1nmD8pump", "t": 1788742798.93171, "mom": 0.996, "dd": 0.996, "bf": 0.4, "seed": 2.473325351}
+{"action": "h16e2_drop", "mint": "EiVg67ziGenpXUrPYqTzGHQVdQM9vRMgB3jNALFPpump", "reason": "no ticks", "t": 1788743114.597939}
+{"action": "h16e2_thin", "mint": "JB4nqGFeepJCFRvYVDRRL4GWfjasg265CcmG1dFPpump", "t": 1788743114.597939, "nticks": 1, "seed": 2.967496174}
+{"action": "h16e2_thin", "mint": "ADvxuCuniXPSgtnpHpgmS5YneYz3EnkU7DNDw9Dmpump", "t": 1788743114.597939, "nticks": 1, "seed": 3}
+{"action": "h16e2_stale", "mint": "3DHyaC4iJqKw51xMZPRJmETVyyfTa7VbfEXpKJu6pump", "t": 1788743114.597939, "last_tick_age": 41.4, "seed": 3}
+{"action": "h16e2_stale", "mint": "ENEzniK3XL9A5qCR8tHtGx8dUWTdtt1sWgVworkapump", "t": 1788743174.650075, "last_tick_age": 22.4, "seed": 2.469135801}
+{"action": "h16e2_reject", "mint": "GaxRLcD7k35D9dAgXjvPQpdFUVV7VSuo1vDE5KMUpump", "t": 1788743189.655848, "mom": 0.928, "dd": 0.922, "bf": 0.333, "seed": 2.473325351}
+{"action": "h16e2_stale", "mint": "A2DtvhNXQF8dqWdWQNpQes4N2MtRxiHxXiJTbRDnpump", "t": 1788743234.679049, "last_tick_age": 3.9, "seed": 3.950617282}
+{"action": "h16e2_stale", "mint": "4JGp7M2YaBsRtgieNrC47tGnhfwonkxm7emDeYE8pump", "t": 1788743324.743191, "last_tick_age": 12.8, "seed": 2.923456788}
+{"action": "h16e2_reject", "mint": "FmMkgtmiaAfL6qonDFKDNmarwBcPmuT3icy5LcQ4pump", "t": 1788743354.756016, "mom": 0.924, "dd": 0.764, "bf": 0.512, "seed": 2}
+{"action": "h16e2_reject", "mint": "i3Fo5Dv3Gjw1pjq8mDGf5wrQivESyiRsKcbNPv5pump", "t": 1788743444.839359, "mom": 0.062, "dd": 0.062, "bf": 0.526, "seed": 2.473325351}
+{"action": "h16e2_stale", "mint": "HBynK6xBD7fGsYhyVcrwQkWoDGpjdRyhTCSnxGrzpump", "t": 1788743444.839359, "last_tick_age": 34.7, "seed": 8}
