@@ -118,3 +118,6 @@
 {"t": 1788793514.83111, "mint": "3AXL9FBT2oCe6rxwNVopwFwCJWjqXTeDR2GR239jpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
 {"t": 1788794896.674222, "mint": "4x3th1b14NUKipXguYezALiXghDbr8GBFDjicXowpump", "mom": 1.066, "dd": 0.92, "bf": 0.625, "entry_mcap": 35.9893, "seed": 2.967496174, "open_age_s": 17.6, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1788794896.674222, "mint": "4x3th1b14NUKipXguYezALiXghDbr8GBFDjicXowpump", "action": "bridge_note_close", "outcome": "win", "mult": 1.2}
+{"t": 1788796158.518114, "mint": "dSX5kft6BNnqcDR8AsEJEBWgaPYfLNFgk8VZncypump", "mom": 1.0, "dd": 0.994, "bf": 0.6, "entry_mcap": 40.3363, "seed": 5.92906828, "open_age_s": 4.1, "action": "bridge_confirm_queued", "size_sol": 0.02}
+{"t": 1788796203.5483022, "mint": "dSX5kft6BNnqcDR8AsEJEBWgaPYfLNFgk8VZncypump", "action": "bridge_buy_refused", "size_sol": 0.02, "confirm_mcap": 41.7877, "entry_mcap": 40.3363, "age_s": 49.2, "sig": {"action": "curve_buy", "mint": "dSX5kft6BNnqcDR8AsEJEBWgaPYfLNFgk8VZncypump", "reason": "e2_confirm", "mode": "live", "gate": "live", "result": "refused: creator denylist (\u00a7444)", "ts": 1788796203.99563}, "refused": "refused: creator denylist (\u00a7444)"}
+{"t": 1788796414.18492, "mint": "dSX5kft6BNnqcDR8AsEJEBWgaPYfLNFgk8VZncypump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
