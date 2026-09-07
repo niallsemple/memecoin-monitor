@@ -7360,3 +7360,16 @@ creator seen on a prior qualifier within 6h is blocked (first coin may
 fire, repeats refused). Verified: farmer mint blocked=True, our winner
 mint blocked=False. Book: 1W/8L, -0.0455 SOL. The remaining winner
 profile: seed 9.88, mcap 52.6k, creator seen once.
+
+§445 (2026-09-07 00:30 BST): serial-farm structure VALIDATED on the full
+shadow sample (31 closes, 14h). First-launch creators: avg mult 1.037,
+7W/14 — the organic edge is real and positive. Repeat creators (2nd+
+launch in-window): avg mult 0.936, 1W/17 — the entire loss tail. FOUR
+farms fingerprinted by identical seed sizes: Au5tKDhCUrN2ijzW49… (8
+launches, 2.97 SOL), 8AqWcCM4CzNBLKK6… (5 launches), 9XZxdeVFjpf4Zdhr…
+(4 launches), 7umWEB7bNJquvWT2… (3 launches, 5.26 SOL). SEVEN of our
+eight live losses were farm coins (mostly repeat launches; the farms'
+first coins got through before the 6h repeat window could know them).
+All four farm wallets added to creator_denylist.json (now 4 entries).
+Post-gate expectancy on shadow: first-launch-only book = +3.7%/trade at
+shadow exit rules — before the live winner's +41% bank12 skew.
