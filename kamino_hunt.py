@@ -58,6 +58,39 @@ ATA_PROG = "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
 IX_SYSVAR = "Sysvar1nstructions1111111111111111111111111"
 SYS_PROG = "11111111111111111111111111111111"
 
+# --- farms (§472: withdraw-side collateral farm required by check_refresh) ---
+FARMS_PROG = "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr"  # verified owner of farm acct
+RES_FARM_COL, RES_FARM_DEBT = 64, 96   # reserve fields (col farm found @64 on-chain)
+RENT_SYSVAR = "SysvarRent111111111111111111111111111111111"
+import hashlib as _hl
+FARMS_REFRESH_DISC = _hl.sha256(
+    b"global:refresh_obligation_farms_for_reserve").digest()[:8]
+
+def _farm_of(res_raw: bytes, off: int):
+    pk = res_raw[off:off+32]
+    return b58encode(pk) if any(pk) else None
+
+def farm_user_state(farm_pk: str, ob_pk: str) -> str:
+    """Verified on-chain: [b'user', farm, obligation] under FARMS_PROG."""
+    return _pda([b"user", b58decode(farm_pk), b58decode(ob_pk)], FARMS_PROG)
+
+def farm_refresh_ix(res_pk: str, farm_pk: str, ob_pk: str, mkt: str,
+                    mkt_auth: str, crank: str, mode: int):
+    """refreshObligationFarmsForReserve: [crank(sig), obligation, lma, reserve,
+    reserveFarmState(mut), obligationFarmUserState(mut), lendingMarket,
+    farmsProgram, rent, systemProgram] + mode u8 (0=collateral, 1=debt)."""
+    accs = [(b58decode(crank), False, True),
+            (b58decode(ob_pk), False, False),
+            (b58decode(mkt_auth), False, False),
+            (b58decode(res_pk), False, False),
+            (b58decode(farm_pk), True, False),
+            (b58decode(farm_user_state(farm_pk, ob_pk)), True, False),
+            (b58decode(mkt), False, False),
+            (b58decode(FARMS_PROG), False, False),
+            (b58decode(RENT_SYSVAR), False, False),
+            (b58decode(SYS_PROG), False, False)]
+    return (b58decode(KLEND), accs, FARMS_REFRESH_DISC + bytes([mode]))
+
 def _on_curve(h: bytes) -> bool:
     """Pure-python ed25519 point-existence check (managed runtime has no nacl).
     Standard recover-x test: x² = (y²−1)/(d·y²+1) must be a quadratic residue."""
@@ -278,15 +311,40 @@ def build_fire_bundle(ob_pk: str, liquidator: str):
     # (it computes the fee itself) and borrowInstructionIndex == borrow's index
     flash_repay = (b58decode(KLEND), flash_ix(FLASH_REPAY_DISC, debt_raw),
                    FLASH_REPAY_DISC + struct.pack("<Q", debt_raw) + bytes([0]))
-    # §463: check_refresh requires refreshes IMMEDIATELY before liquidate
-    # (PreIxs, reversed: current−1=refreshObligation, −2=withdraw reserve,
-    # −3=repay reserve). flashBorrow therefore goes FIRST; flashRepay's
-    # borrowInstructionIndex points back to it (index 0).
+    # §463/§472: constraints proven by on-chain sim errors on BYojGuT5:
+    #  (a) refreshObligation rejects stale reserves (0x1779) -> an early
+    #      [rr_rep, rr_wd, refreshOb] warmup makes the reserve accounts fresh;
+    #  (b) check_refresh at liquidate (0x17a3) requires, immediately before
+    #      liquidate: [RefreshFarmsForObligationForReserve(withdraw) IF the
+    #      withdraw reserve has a collateral farm, RefreshObligation,
+    #      RefreshReserve(repay), RefreshReserve(withdraw)].
+    # flashBorrow stays FIRST; flashRepay's borrowInstructionIndex stays 0.
+    rr_rep = refresh_reserve_ix(rep["reserve"], rep_raw)
+    rr_wd  = refresh_reserve_ix(wd["reserve"], wd_raw)
+    wd_farm = _farm_of(wd_raw, RES_FARM_COL)
+    rep_farm = _farm_of(rep_raw, RES_FARM_DEBT)
+    post = []
+    if wd_farm:
+        post.append(farm_refresh_ix(wd["reserve"], wd_farm, ob_pk, mkt,
+                                    mkt_auth, liquidator, 0))
+    if rep_farm:
+        post.append(farm_refresh_ix(rep["reserve"], rep_farm, ob_pk, mkt,
+                                    mkt_auth, liquidator, 1))
+    # §472 CANONICAL layout, proven against klend master refresh_ix_utils.rs:
+    # required_pre_ixs = [rr(wd), rr(rep), refreshOb, farms...] then REVERSED
+    # and checked backward from liquidate; required_post_ixs = [farms...]
+    # (NOT reversed) checked FORWARD from liquidate. So:
+    #   liq-4=RefreshReserve(WITHDRAW), liq-3=RefreshReserve(REPAY),
+    #   liq-2=RefreshObligation, liq-1=FarmsRefresh, LIQ, liq+1=FarmsRefresh.
+    # (No-farm case collapses to [rr_wd, rr_rep, refreshOb, LIQ] — the §463
+    # layout that passed on 6LTRK3Am.)
     ixs = [flash_borrow,
-           refresh_reserve_ix(wd["reserve"], wd_raw),
-           refresh_reserve_ix(rep["reserve"], rep_raw),
-           refresh_ob_ix, liquidate, flash_repay]
-    return ixs, {"resolve": r, "debt_raw": debt_raw, "repay_with_fee": repay_with_fee}
+           rr_wd, rr_rep, refresh_ob_ix, *post,
+           liquidate, *post,
+           flash_repay]
+    return ixs, {"resolve": r, "debt_raw": debt_raw,
+                 "repay_with_fee": repay_with_fee,
+                 "wd_farm": wd_farm, "rep_farm": rep_farm}
 
 def kh_u128(raw, off):
     return int.from_bytes(raw[off:off+16], "little")
