@@ -4578,3 +4578,9 @@
 | 09:26 | solana | `HbT1PeGb…` | FAIL | TOP10_HEAVY:66%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Blender Benchmark symbol=BLENDER; rugcheck_score=12 lpLocked=100%; top10_hold=65.8% |  |
 | 09:26 | robinhood | `0xe6c03d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,755 mc=$87,298 | chain:robinhood no-audit-adapter |  |
 | 09:26 | solana | `ZesMGYmo…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:36% | liq=$35,587 mc=$147,882 | name=Just a Backpack symbol=🎒; rugcheck_score=12 lpLocked=91.72427650849427%; top10_hold=3 | backpack is the one powering stonk with all the on chain stocks, time we pay hom |
+| 09:46 | solana | `HGMsXyTs…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$15,629 mc=$41,305 | name=onthecomputer symbol=OTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 09:46 | robinhood | `0x9875b2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$73,680 mc=$92,815 | chain:robinhood no-audit-adapter | PonsIndex is a market-focused token built on Robinhood Chain, combining the iden |
+| 09:46 | robinhood | `0xE634d9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,568 mc=$10,597 | chain:robinhood no-audit-adapter | The native ve(3,3) liquidity layer on Robinhood Chain, built on Pons. Launch on  |
+| 09:46 | solana | `ACQxHBwf…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$10,839 | name=haMSTR symbol=haMSTR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=67.8 |  |
+| 09:46 | bsc | `0x353366…` | PASS | — | liq=$22,319 mc=$57,627 | holders=215; buy_tax= sell_tax=; contract:clean | Chinese PEPE on chinese chain paired with QQQB |
+| 09:46 | solana | `847y1VzY…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:39% | liq=$16,454 mc=$36,691 | name=Titcoin symbol=TITCOIN; rugcheck_score=12 lpLocked=100%; top10_hold=39.1% | The breast technology.  Hold Titcoin get paid in Bitcoin. |

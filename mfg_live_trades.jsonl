@@ -2133,3 +2133,7 @@
 {"action": "fast_entry_eval", "mint": "iR4BvHztm6xpyy787sAdwF7EeFz5wwVmv8bH6Mqpump", "t": 1788772630.115405, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788772630.1191192}
 {"action": "curve_buy", "mint": "H6aynTN6Z1gGy8naKmJB4Ty9wSqd7Pog55Ykh5ggpump", "reason": "s60nm5fr signal (hook)", "mode": "live", "gate": "live", "result": "refused: farm denylist (\u00a7389)", "ts": 1788772869.275512}
 {"action": "fast_entry_eval", "mint": "6XAKrzje9H33P5pyzaVxZKMeQBz9VUaeQwumTCripump", "t": 1788773114.276457, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788773114.3165061}
+{"action": "fast_entry_eval", "mint": "cyWaCL4wuXJME77kMiEYrXyFaYyhnn7hBD3TxFopump", "t": 1788773536.827996, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788773536.833015}
+{"action": "curve_buy", "mint": "tiQhucxNsgVEvKU8tbcM2wFpLv61pxKxAcdC2fwpump", "reason": "s60nm5fr signal (hook)", "mode": "live", "gate": "live", "result": "refused: farm denylist (\u00a7389)", "ts": 1788774071.210166}
+{"action": "curve_buy", "mint": "h4c4kkAPfNzcnonAZ72P9UzLctwzxqcz7fz8PD5pump", "reason": "s60nm5fr signal (hook)", "mode": "live", "gate": "live", "result": "refused: farm denylist (\u00a7389)", "ts": 1788774071.273428}
+{"action": "fast_entry_eval", "mint": "DsofPMXx1eRwJmPNy7hNvz9sEQ59kYrpRKTrheGpump", "t": 1788774473.208416, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1788774473.240179}
