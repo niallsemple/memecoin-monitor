@@ -7522,3 +7522,9 @@ srxbT3rU (seed 9.868646486) passed all gates at 07:59, bought 0.02 → abort3_re
 - Safety properties: flash-funded (zero capital at risk beyond ~$0.01 tx fee); atomic revert on any leg failure; sim gate catches stale health races (if another bot took it, obligation refreshes healthy → liquidate/repay fails → no send).
 - kamino_loop importlib-reloads kamino_tail.py each pass, so this is live in the tracker NOW (no sync needed). Tested: run_pass clean, 4 obligations tracked, wallet resolved.
 - All three fronts fully armed. Total watch: memecoin births (15s), marginfi shock (90s), Kamino crank-tail (240s).
+
+### §466 — Confirmation entry pre-wired (dormant, one-flag flip)
+- e2_live_bridge.py now has the full CONFIRM_ENTRY path (default False): qualified opens are queued (`bridge_confirm_queued`) instead of bought; each pass checks h16 state ticks — buy only when last mcap ≥ entry_mcap and age ∈ [45s, 150s] (`bridge_confirm_buy`, full creator gates + slippage guard intact); expired queue entries log `bridge_confirm_expired`.
+- Trigger to flip stays the committed rule: if live organic entries #4–5 also print peak ≈ 1.0, flip CONFIRM_ENTRY=True (§455 shadow: baseline −0.0215 vs confirm +0.2161 on organic n=8).
+- Verified: compiles, run_pass clean with flag off, live path unchanged (no sync needed — bridge is importlib-reloaded each pass).
+- Also this cycle: first Kamino alert landed — 49sZy7S1… $485k debt, near_line at 4.5% margin. Radar works as designed; auto-fire correctly stood down (margin positive).

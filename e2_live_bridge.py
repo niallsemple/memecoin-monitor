@@ -47,6 +47,17 @@ STALE_OPEN_S = 150             # §433: never buy on backfilled opens — after
                                # a real fill then would be at a different
                                # price than the shadow booked. Skip them.
 
+# §466: CONFIRMATION ENTRY (dormant until flipped). Evidence: ALL 4
+# post-fingerprint-gate live entries printed peak_mult <= 1.017 — our fill
+# was the top tick. §455 shadow: organic-only n=8 baseline -0.0215 ret vs
+# confirm-entry +0.2161 ret. Mechanism: queue the qualified mint; buy only
+# when a post-open tick shows mcap >= entry_mcap inside the window (the
+# token proved it can hold the qualifying print). Flip CONFIRM_ENTRY to
+# True the moment live organic entries #4-5 confirm the peak≈1.0 pattern.
+CONFIRM_ENTRY = False
+CONFIRM_MIN_S = 45             # wait at least this long after the open tick
+CONFIRM_MAX_S = 150            # confirm window end (then expire)
+
 
 def _load():
     if STATE.exists():
@@ -92,6 +103,67 @@ def run_pass():
         pass
 
     out = []
+    # §466: process the confirmation queue (only when CONFIRM_ENTRY on).
+    if CONFIRM_ENTRY and st.get("confirm_queue"):
+        h16st = {}
+        try:
+            h16st = json.loads((MON / "h16_early2_state.json").read_text())
+        except Exception:
+            pass
+        still = []
+        for q in st["confirm_queue"]:
+            age = now - q["t"]
+            o = (h16st.get("open") or {}).get(q["mint"])
+            last_mcap = None
+            if o and o.get("ticks"):
+                last_mcap = o["ticks"][-1][1]
+            confirmed = (last_mcap is not None and last_mcap > 0
+                         and last_mcap >= q["entry_mcap"])
+            if age < CONFIRM_MIN_S:
+                still.append(q); continue
+            if age > CONFIRM_MAX_S:
+                out.append({"t": now, "mint": q["mint"],
+                            "action": "bridge_confirm_expired",
+                            "age_s": round(age, 1)})
+                continue
+            if not confirmed:
+                still.append(q); continue
+            rec = {"t": now, "mint": q["mint"], "action": "bridge_confirm_buy",
+                   "size_sol": SIZE_SOL, "confirm_mcap": last_mcap,
+                   "entry_mcap": q["entry_mcap"], "age_s": round(age, 1)}
+            try:
+                import importlib.util as ilu
+                spec = ilu.spec_from_file_location(
+                    "live_trader", MON / "live_trader.py")
+                lt = ilu.module_from_spec(spec)
+                spec.loader.exec_module(lt)
+                creator = None
+                try:
+                    creator = lt.curve_creator(q["mint"])
+                except Exception:
+                    pass
+                hist = st.setdefault("creator_hist", [])
+                hist[:] = [h for h in hist if now - h[0] < 6 * 3600][-200:]
+                if creator and sum(1 for h in hist if h[1] == creator) >= 1:
+                    rec["action"] = "bridge_blocked"
+                    rec["reason"] = "serial_deployer"
+                    out.append(rec); continue
+                if creator:
+                    hist.append([now, creator])
+                sig = lt.curve_buy(q["mint"], SIZE_SOL, reason="e2_confirm")
+                rec["sig"] = sig
+                if isinstance(sig, dict) and sig.get("sig"):
+                    lt.open_position(q["mint"], SIZE_SOL, "e2_confirm")
+                    st["open_mints"].append(q["mint"])
+                else:
+                    rec["action"] = "bridge_buy_refused"
+                    rec["refused"] = (sig or {}).get("result", "?")[:160]
+            except Exception as e:
+                rec["action"] = "bridge_error"
+                rec["err"] = str(e)[:200]
+            out.append(rec)
+        st["confirm_queue"] = still
+
     if SHADOW_LOG.exists():
         lines, st["off"] = _tail(SHADOW_LOG, st["off"])
         for ln in lines:
@@ -134,6 +206,15 @@ def run_pass():
                 elif not LIVE_E2_ENABLED:
                     rec["action"] = "bridge_would_buy"
                     rec["size_sol"] = SIZE_SOL
+                elif CONFIRM_ENTRY:
+                    # §466: queue for confirmation; buy happens on a later
+                    # pass when a post-open tick >= entry_mcap prints.
+                    rec["action"] = "bridge_confirm_queued"
+                    rec["size_sol"] = SIZE_SOL
+                    st.setdefault("confirm_queue", []).append(
+                        {"mint": mint, "t": d.get("t") or now,
+                         "entry_mcap": d.get("entry_mcap"),
+                         "seed": d.get("seed")})
                 else:
                     rec["action"] = "bridge_buy"
                     rec["size_sol"] = SIZE_SOL
