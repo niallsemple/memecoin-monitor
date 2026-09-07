@@ -4620,3 +4620,9 @@
 | 20:56 | robinhood | `0x14b0ed…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,587 mc=$95,510 | chain:robinhood no-audit-adapter | Share your QR. Friends scan it. You both get stock rewards. |
 | 20:56 | solana | `ATDSqisE…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$37,124 mc=$185,978 | name=Caviar Dealer symbol=Caviar; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
 | 20:56 | robinhood | `0x1a7EAE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$96,823 mc=$1,395,047 | chain:robinhood no-audit-adapter | The Lucky Cat of Google |
+| 21:16 | solana | `8F32oW8z…` | FAIL | TOP10_HEAVY:51% | liq=$0 mc=$22,010 | name=NiggaButt symbol=NiggaButt; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Ansem's fatass NiggaButt |
+| 21:16 | robinhood | `0x32E5c6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$68,580 mc=$3,360,825 | chain:robinhood no-audit-adapter | $INC is the token of Spy Inc, an onchain PvP game on Robinhood Chain. Players ow |
+| 21:16 | solana | `BDjUsnMD…` | PASS | — | liq=$30,191 mc=$129,893 | name=Naspepe symbol=Naspepe; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=26 |  |
+| 21:16 | solana | `By2QRK1b…` | CAUTION | TOP10_CONCENTRATED:38% | liq=$0 mc=$37,763 | name=Googull symbol=Googull; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=38 | Paired to Google. Rewards in $GOOGLx dividents. |
+| 21:16 | solana | `DCTmfZU4…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$38,174 mc=$213,988 | name=Leveraged Trump symbol=LEVERTRUMP; contract:clean; rugcheck_score=1 lpLocked=100%; to | Hold $LEVERTRUMP and earn xSOL from every trade. |
+| 21:16 | robinhood | `0x3780bb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The serial number of Hunter's Laptop. |

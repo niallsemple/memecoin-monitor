@@ -882,3 +882,4 @@
 - mainnet.base.org getLogs works for 2k-block filtered scans.
 - Next: persistent scout -> base4_pools.jsonl, then Swap-event flow tracker
   (topics 0x40e9cecb../0xf208f491..) -> scorer variant.
+- 2026-09-07 21:16Z | ok | cycle done, 6 audited, total tracked=7892 | [v2 EARLY] bank=£390.81 (cash £336.95 + open £53.86) | ROI=-60.92% | open=5 closed=127 realizedPnL=£-611.04 | [v3 STRICT] bank=£710.61 (cash £695.67 + open £14.93) | ROI=-28.94% | open=1 closed=62 realizedPnL=£-289.94 | [v4 MOM1.5] bank=£681.38 (cash £681.38 + open £0.00) | ROI=-31.86% | open=0 closed=155 realizedPnL=£-318.59 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00

@@ -143,3 +143,4 @@
 | 20:57 | BUY | J4jBCJgH | £14.22 | entry mc $415,964 | +21min |
 | 20:58 | STOP | CTPoyCwk | £13.50 | trail-stop at 0.92x |
 | 20:59 | BUY | CTPoyCwk | £14.20 | entry mc $8,066,945 | +17091min |
+| 21:17 | STOP | J4jBCJgH | £0.07 | trail-stop at 0.01x |

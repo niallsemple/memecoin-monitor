@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 336.91624187845696,
+ "cash": 336.9522956196461,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -40,29 +40,18 @@
    "entry_mcap": 2471919.0,
    "entry_min": 14600.4,
    "size_gbp": 7.19,
-   "peak_mcap": 2912028.0,
+   "peak_mcap": 2936699.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-06T18:49:32.868707+00:00"
-  },
-  "solana:J4jBCJgHAyskfZXe1LrvK8gBHpVzDqXX8NV7R9ANpump": {
-   "addr": "J4jBCJgH",
-   "entry_mcap": 415964.0,
-   "entry_min": 21.0,
-   "size_gbp": 6.88,
-   "peak_mcap": 415964.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-09-07T20:57:02.064262+00:00"
   },
   "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
    "addr": "CTPoyCwk",
    "entry_mcap": 8066945.0,
    "entry_min": 17090.5,
    "size_gbp": 6.88,
-   "peak_mcap": 8095649.0,
+   "peak_mcap": 8484178.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
@@ -1833,6 +1822,20 @@
    "closed_at": "2026-09-07T20:58:03.986385+00:00",
    "exit_r": 0.923,
    "pnl_gbp": -0.79
+  },
+  {
+   "addr": "J4jBCJgH",
+   "entry_mcap": 415964.0,
+   "entry_min": 21.0,
+   "size_gbp": 6.88,
+   "peak_mcap": 415964.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 0.03605374118914137,
+   "opened": "2026-09-07T20:57:02.064262+00:00",
+   "closed_at": "2026-09-07T21:17:37.032669+00:00",
+   "exit_r": 0.005,
+   "pnl_gbp": -6.95
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",
@@ -2076,6 +2079,7 @@
   "solana:ECJKUJtqQJ1nzMRPkUce6aG4j8fAfNyW65wuM8K6pump": "failed_momentum_floor",
   "solana:5XLc2qsmvRkQ6sXu1BtketaKGnLobEQMMVVmsPr7pump": "failed_momentum_floor",
   "solana:5oR6SgeEJozxBeSRJy5ciszxDRqvExdSmtpVV6agpump": "failed_momentum_floor",
-  "solana:AQVZAvm9VZSFfctKuTKvbnjPNtnYxuDZ2QnkCU4gpump": "failed_momentum_floor"
+  "solana:AQVZAvm9VZSFfctKuTKvbnjPNtnYxuDZ2QnkCU4gpump": "failed_momentum_floor",
+  "solana:J4jBCJgHAyskfZXe1LrvK8gBHpVzDqXX8NV7R9ANpump": "failed_momentum_floor"
  }
 }

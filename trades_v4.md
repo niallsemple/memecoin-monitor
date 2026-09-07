@@ -311,3 +311,4 @@
 | 09:09 | BUY | 5oR6SgeE | £14.04 | entry mc $339,673 | +24min @ 1.66x detect |
 | 09:27 | STOP | 5oR6SgeE | £7.62 | trail-stop at 0.55x |
 | 20:57 | BUY | J4jBCJgH | £13.91 | entry mc $415,964 | +21min @ 1.59x detect |
+| 21:17 | STOP | J4jBCJgH | £0.07 | trail-stop at 0.01x |
