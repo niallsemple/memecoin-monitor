@@ -308,3 +308,4 @@
 | 06:07 | TIME | 5761e8gC | £12.05 | time-stop at 0.86x after 178min |
 | 03:07 | BUY | ERUxAtmg | £14.23 | entry mc $228,412 | +42min @ 2.31x detect |
 | 03:27 | STOP | ERUxAtmg | £4.78 | trail-stop at 0.34x |
+| 09:09 | BUY | 5oR6SgeE | £14.04 | entry mc $339,673 | +24min @ 1.66x detect |

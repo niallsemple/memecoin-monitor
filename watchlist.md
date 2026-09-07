@@ -4560,3 +4560,15 @@
 | 07:06 | solana | `XzENavZ9…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,018 | name=openSPL95 symbol=ospl; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=69. | Scan any pump fun coin. Read-only, nothing to sign, free. |
 | 07:06 | solana | `6FvYsQQ1…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:38% | liq=$23,182 mc=$73,450 | name=Rearcoin symbol=REAR; rugcheck_score=12 lpLocked=97.61560845772182%; top10_hold=38.5% | Near   Rear |
 | 07:06 | solana | `B8CdfhHq…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,419 | name=Drone symbol=Drone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.9% |  |
+| 08:46 | solana | `5oR6SgeE…` | PASS | — | liq=$37,731 mc=$204,226 | name=NVIDOG symbol=NVIDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10.3 | NVIDOG fuses NVIDIA-inspired tech energy with unstoppable dog memes, powering th |
+| 08:46 | robinhood | `0x4bc6c2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Where launches become auctions. |
+| 08:46 | bsc | `0xA52055…` | PASS | — | liq=$17,469 mc=$24,183 | holders=7; buy_tax=0 sell_tax=0; contract:clean |  |
+| 08:46 | solana | `7BtiPa5r…` | CAUTION | TOP10_CONCENTRATED:30% | liq=$21,672 mc=$72,599 | name=Chipmunk symbol=Chipmunk; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Chipmunk Paired to NVDAx |
+| 08:46 | bsc | `0xc255d8…` | CAUTION | PROXY | liq=$28,535 mc=$75,423 | holders=0; buy_tax= sell_tax= | Multi-stablecoin rewards on BNB Chain. Trading taxes fund equal rewards in USDT, |
+| 08:46 | robinhood | `0xf1CF45…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$46,463 mc=$140,820 | chain:robinhood no-audit-adapter | APPLE SURPASSES NVIDIA TO BECOME WORLD'S MOST VALUABLE COMPANY |
+| 09:06 | solana | `6XRziA6J…` | FAIL | TOP10_HEAVY:55% | liq=$0 mc=$13,167 | name=Netcoin symbol=NET; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=54.8% | Netcoin the original Bitcoin |
+| 09:06 | robinhood | `0x7F6197…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$90,062 mc=$184,322 | chain:robinhood no-audit-adapter | I texted someone inside a simulation. |
+| 09:06 | solana | `ECJKUJtq…` | PASS | — | liq=$27,781 mc=$111,184 | name=Baby Anonymous Dog symbol=BABYAN; contract:clean; rugcheck_score=1 lpLocked=100%; top | Its Sooo Cute |
+| 09:06 | robinhood | `0x6c5316…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,520 mc=$164,032 | chain:robinhood no-audit-adapter | Lil Finder Guy |
+| 09:06 | solana | `Aw6fiDPW…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$16,082 mc=$43,429 | name=Anonymouse symbol=Anonymouse; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 09:06 | solana | `5XLc2qsm…` | PASS | — | liq=$63,958 mc=$538,924 | name=Scheming Dog symbol=Norman; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Scheming Dog |
