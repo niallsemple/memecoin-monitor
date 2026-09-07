@@ -7396,3 +7396,11 @@ Action: added the 3 losing slip-through creators to creator_denylist.json
 Full concentration gate NOT wired — marginal EV after creator gates too small
 to justify entry-time RPC latency. Data: birth_concentration_h16.jsonl.
 Seed-floor gate going 4/4 on blocked candidates tonight (all losses).
+
+§447 (Sep 7 ~02:05 UTC) — funding-lineage trace of the 3 new denylisted
+creators: NEGATIVE for pre-launch catching. Funders are one-shot small
+wallets (0.10-0.19 SOL), not the watched 80-95 SOL treasury masters
+(§207 treasury_watch layer). One resolved funder (BLJ5fzFQ…) shows no
+repeat-recipient pattern. Farms have moved to single-use micro-funders;
+the creator_denylist + 6h serial gate remains the right defense layer —
+whack-a-mole at the funder layer is not cost-effective.
