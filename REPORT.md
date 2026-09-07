@@ -7528,3 +7528,13 @@ srxbT3rU (seed 9.868646486) passed all gates at 07:59, bought 0.02 → abort3_re
 - Trigger to flip stays the committed rule: if live organic entries #4–5 also print peak ≈ 1.0, flip CONFIRM_ENTRY=True (§455 shadow: baseline −0.0215 vs confirm +0.2161 on organic n=8).
 - Verified: compiles, run_pass clean with flag off, live path unchanged (no sync needed — bridge is importlib-reloaded each pass).
 - Also this cycle: first Kamino alert landed — 49sZy7S1… $485k debt, near_line at 4.5% margin. Radar works as designed; auto-fire correctly stood down (margin positive).
+
+## §474 — Cross-chain status check: EVM watcher HEALTHY, BSC book still lossless (7 Sep 2026)
+
+Resolved the "are the cross-chain watchers dead?" question: the bounded `bsc_watch_loop.py` process died as designed (72 cycles), but the persistent EVM Flow Watcher automation (`automation_2c4eec3e`) is alive — bsc_flow.jsonl (49MB) and base_flow.jsonl (22MB) both written within the last hour.
+
+**BSC paper book now n=30: 67% green, ZERO losing closes (min +0.0%), mean +76.1%, median +84.1%, max +495.8%.** Newest close <1h old — accumulating toward the n≥60 judgment threshold set earlier. Base book still empty (flow watched, no entries).
+
+**Read:** BSC remains the only market with a positive paper distribution, but (a) n=30 is half the bar, (b) no fee/slippage modeling in the paper book, (c) BSC rug mechanics differ (no pump.fun-style insider drain observed, but sample is small). Action: none — let it accumulate. No daemon restart needed.
+
+Kamino: whales BYojGuT5 (rehearsal ~1h ago) and watch list intact; tail passes healthy (~2min beat). Near-line alerts this session: 49sZy7S1 ($485k, margin far) and CspUGetM ($19 — below the $50 fire floor, watch-only).
