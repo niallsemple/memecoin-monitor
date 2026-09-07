@@ -189,6 +189,123 @@ def simulate(ob_pk: str, liquidator: str, amount: int) -> dict:
                         "commitment": "confirmed"}])
     return {"resolve": r, "sim": res.get("result") or res}
 
+# --- fire bundle (§462): refresh × reserves, refreshObligation, flash wrap ---
+REFRESH_RES_DISC = bytes([2, 218, 138, 235, 79, 201, 25, 102])
+REFRESH_OB_DISC = bytes([33, 132, 147, 228, 151, 192, 72, 89])
+FLASH_BORROW_DISC = bytes([135, 231, 52, 167, 7, 52, 212, 193])
+FLASH_REPAY_DISC = bytes([185, 117, 0, 203, 96, 245, 180, 186])
+# oracle offsets in reserve account (§462): scope@5112 swbAgg@5160 pyth@5224 flashFeeSf@4904
+RES_SCOPE, RES_SWB, RES_PYTH, RES_FLASHFEE = 5112, 5160, 5224, 4904
+NULL_PK = "11111111111111111111111111111111"
+
+def _oracle_slots(reserve_raw: bytes) -> tuple:
+    """(pyth, swbPrice, swbTwap, scope) — unused slots get KLEND placeholder
+    (ground truth from on-chain refreshReserve tx §462)."""
+    def slot(off):
+        v = b58encode(reserve_raw[off:off+32])
+        return KLEND if v == NULL_PK else v
+    return slot(RES_PYTH), slot(RES_SWB), KLEND, slot(RES_SCOPE)
+
+def build_fire_bundle(ob_pk: str, liquidator: str):
+    """[refreshReserve(repay), refreshReserve(withdraw), refreshObligation,
+    flashBorrow, liquidate, flashRepay]. Swap leg (seized→repay) is inserted
+    before flashRepay at fire time from a live Jupiter quote. Returns
+    (ixs, meta) where ixs are (prog_bytes, [(key,w,s)], data)."""
+    import live_trader as lt
+    r = resolve(ob_pk)
+    if not r.get("ok"):
+        return None, r
+    mkt = r["ob"]["lending_market"]
+    mkt_auth = _pda([b"lma", b58decode(mkt)], KLEND)
+    rep, wd = r["repay"], r["withdraw"]
+    rep_raw, wd_raw = acct_raw(rep["reserve"]), acct_raw(wd["reserve"])
+    rep_tp = mint_owner(rep["liq_mint"])
+    wd_liq_tp = mint_owner(wd["liq_mint"])
+    wd_col_tp = mint_owner(wd["col_mint"])
+    # debt amount to repay: min(borrow, close-factor) — use full stored debt
+    debt_raw = kh_u128(acct_raw(ob_pk), BRW_BASE + 88) // 2 ** 60
+    fee_sf = int.from_bytes(rep_raw[RES_FLASHFEE:RES_FLASHFEE+8], "little")
+    repay_with_fee = debt_raw + (debt_raw * fee_sf) // 2 ** 60 + 2
+
+    def refresh_reserve_ix(res_pk, raw):
+        pyth, swb, swb_twap, scope = _oracle_slots(raw)
+        return (b58decode(KLEND), [
+            (b58decode(res_pk), True, False),
+            (b58decode(mkt), False, False),
+            (b58decode(pyth), False, False),
+            (b58decode(swb), False, False),
+            (b58decode(swb_twap), False, False),
+            (b58decode(scope), False, False)], REFRESH_RES_DISC)
+
+    # refreshObligation needs the obligation's reserve accounts as remaining
+    # accounts (deposits in slot order, then borrows — non-empty slots only)
+    ob_raw = acct_raw(ob_pk)
+    rem = []
+    for i in range(8):
+        o = DEP_BASE + i * DEP_STRIDE
+        if int.from_bytes(ob_raw[o+32:o+40], "little"):
+            rem.append((ob_raw[o:o+32], False, False))
+    for i in range(5):
+        o = BRW_BASE + i * BRW_STRIDE
+        if kh_u128(ob_raw, o+88):
+            rem.append((ob_raw[o:o+32], False, False))
+    refresh_ob_ix = (b58decode(KLEND), [
+        (b58decode(mkt), False, False),
+        (b58decode(ob_pk), True, False)] + rem, REFRESH_OB_DISC)
+
+    def flash_ix(disc, amount, extra_idx_data=b""):
+        # accounts identical for borrow/repay except source/dest swap
+        return [
+            (b58decode(liquidator), True, True),            # userTransferAuthority
+            (b58decode(mkt_auth), False, False),
+            (b58decode(mkt), False, False),
+            (b58decode(rep["reserve"]), True, False),
+            (b58decode(rep["liq_mint"]), False, False),
+            (b58decode(rep["liq_supply"]), True, False),    # source(borrow)/dest(repay)
+            (b58decode(ata(liquidator, rep["liq_mint"], rep_tp)), True, False),
+            (b58decode(rep["liq_feevault"]), True, False),
+            (b58decode(KLEND), False, False),               # referrerTokenState placeholder
+            (b58decode(KLEND), False, False),               # referrerAccount placeholder
+            (b58decode(IX_SYSVAR), False, False),
+            (b58decode(rep_tp), False, False)]
+
+    flash_borrow = (b58decode(KLEND), flash_ix(FLASH_BORROW_DISC, debt_raw),
+                    FLASH_BORROW_DISC + struct.pack("<Q", debt_raw))
+    _, liq_accts, liq_data = build_liq_ix(r, liquidator, debt_raw)
+    liquidate = (b58decode(KLEND),
+                 [(b58decode(pk), w, s) for pk, w, s in liq_accts], liq_data)
+    # §462: program checks repay.liquidity_amount == borrow.liquidity_amount
+    # (it computes the fee itself) and borrowInstructionIndex == borrow's index
+    flash_repay = (b58decode(KLEND), flash_ix(FLASH_REPAY_DISC, debt_raw),
+                   FLASH_REPAY_DISC + struct.pack("<Q", debt_raw) + bytes([0]))
+    # §463: check_refresh requires refreshes IMMEDIATELY before liquidate
+    # (PreIxs, reversed: current−1=refreshObligation, −2=withdraw reserve,
+    # −3=repay reserve). flashBorrow therefore goes FIRST; flashRepay's
+    # borrowInstructionIndex points back to it (index 0).
+    ixs = [flash_borrow,
+           refresh_reserve_ix(wd["reserve"], wd_raw),
+           refresh_reserve_ix(rep["reserve"], rep_raw),
+           refresh_ob_ix, liquidate, flash_repay]
+    return ixs, {"resolve": r, "debt_raw": debt_raw, "repay_with_fee": repay_with_fee}
+
+def kh_u128(raw, off):
+    return int.from_bytes(raw[off:off+16], "little")
+
+def simulate_fire(ob_pk: str, liquidator: str) -> dict:
+    """Full-bundle paper simulation. On a HEALTHY obligation, expect the
+    liquidate ix to fail with a healthy-obligation program error AFTER all
+    refreshes + flashBorrow succeed — that is the fire-ready signature."""
+    import live_trader as lt
+    ixs, meta = build_fire_bundle(ob_pk, liquidator)
+    if ixs is None:
+        return meta
+    tx_b64 = lt.build_legacy_tx(lt.b58dec(liquidator), ixs)
+    res = rpc("simulateTransaction",
+              [tx_b64, {"encoding": "base64", "sigVerify": False,
+                        "replaceRecentBlockhash": True,
+                        "commitment": "confirmed"}])
+    return {"meta": meta, "sim": res.get("result") or res}
+
 if __name__ == "__main__":
     # paper run against the largest obligation seen by the tail
     import os

@@ -8,7 +8,8 @@ import json, base64, time, sys
 from pathlib import Path
 import urllib.request
 
-KEY = (Path(__file__).parent / "helius_key.txt").read_text().strip()
+MON = Path(__file__).resolve().parent
+KEY = (MON / "helius_key.txt").read_text().strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
 KLEND = "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD"
 ALPH = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -111,17 +112,17 @@ def run_pass():
     try:
         obs, span = harvest_obligations(limit=60, verbose=False)
         if not obs:
-            Path("kamino_tail_latest.json").write_text(
+            (MON / "kamino_tail_latest.json").write_text(
                 json.dumps({"ts": time.time(), "rows": []}))
             return
         rows = health_check(sorted(obs))
         out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
                "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
                for m, a, u, sa, ow, pk in rows]}
-        Path("kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
+        (MON / "kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
         hits = [r for r in rows if r[0] < max(0.0, ALERT_PCT * r[1])]
         if hits:
-            with open("kamino_alerts.jsonl", "a") as f:
+            with open(MON / "kamino_alerts.jsonl", "a") as f:
                 for m, a, u, sa, ow, pk in hits:
                     f.write(json.dumps({
                         "ts": time.time(), "pubkey": pk, "owner": ow,
@@ -147,7 +148,7 @@ def main():
     out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
            "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
            for m, a, u, sa, ow, pk in rows]}
-    Path("kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
+    (MON / "kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
     print(f"\nwrote {len(out['rows'])} rows to kamino_tail_latest.json")
 
 if __name__ == "__main__":
