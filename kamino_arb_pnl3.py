@@ -54,42 +54,57 @@ def transfers(tx):
     return out
 
 
-def implied_prices(trs, seeds):
-    """Fixpoint price propagation across in-tx swap vaults."""
+def owner_mint_deltas(tx):
+    """owner -> {mint: net delta} from pre/postTokenBalances (vaults incl.)."""
+    pre, post = {}, {}
+    meta = tx.get("meta") or {}
+    for b in meta.get("preTokenBalances") or []:
+        k = (b.get("owner"), b["mint"])
+        pre[k] = pre.get(k, 0) + float(b["uiTokenAmount"].get("uiAmount") or 0)
+    for b in meta.get("postTokenBalances") or []:
+        k = (b.get("owner"), b["mint"])
+        post[k] = post.get(k, 0) + float(b["uiTokenAmount"].get("uiAmount") or 0)
+    out = {}
+    for k in set(pre) | set(post):
+        d = post.get(k, 0) - pre.get(k, 0)
+        if abs(d) > 1e-12 and k[0]:
+            out.setdefault(k[0], {})[k[1]] = out.get(k[0], {}).get(k[1], 0) + d \
+                if k[0] in out else d
+    # fix double-setdefault bug: rebuild cleanly
+    out = {}
+    for k in set(pre) | set(post):
+        d = post.get(k, 0) - pre.get(k, 0)
+        if abs(d) > 1e-12 and k[0]:
+            out.setdefault(k[0], {})
+            out[k[0]][k[1]] = out[k[0]].get(k[1], 0) + d
+    return out
+
+
+def implied_prices(owners, seeds):
+    """Fixpoint: an owner (pool authority) with priced +X and unpriced −Y
+    (or vice versa) is a swap leg: px[Y] = px[X]*|X| / |Y|."""
     px = dict(seeds)
-    flows = {}
-    for s, d, m, a in trs:
-        if not s or not d or a <= 0:
-            continue
-        flows.setdefault(s, {}).setdefault(m, [0, 0])[1] += a   # out
-        flows.setdefault(d, {}).setdefault(m, [0, 0])[0] += a   # in
-    changed = True
-    rounds = 0
-    while changed and rounds < 8:
+    for _ in range(10):
         changed = False
-        rounds += 1
-        for acct, legs in flows.items():
-            priced_in = [(m, v[0]) for m, v in legs.items()
-                         if v[0] > 0 and m in px]
-            unpriced_out = [(m, v[1]) for m, v in legs.items()
-                            if v[1] > 0 and m not in px]
-            priced_out = [(m, v[1]) for m, v in legs.items()
-                          if v[1] > 0 and m in px]
-            unpriced_in = [(m, v[0]) for m, v in legs.items()
-                           if v[0] > 0 and m not in px]
-            # one priced side + one unpriced side -> propagate
-            if priced_in and len(unpriced_out) == 1:
-                m_in, a_in = max(priced_in, key=lambda x: x[1] * px[x[0]])
-                m_out, a_out = unpriced_out[0]
-                if a_out > 0 and a_in > 0:
+        for legs in owners.values():
+            pin = [(m, a) for m, a in legs.items() if a > 0 and m in px]
+            uout = [(m, -a) for m, a in legs.items() if a < 0 and m not in px]
+            pout = [(m, -a) for m, a in legs.items() if a < 0 and m in px]
+            uin = [(m, a) for m, a in legs.items() if a > 0 and m not in px]
+            if pin and len(uout) == 1 and not uin:
+                m_in, a_in = max(pin, key=lambda x: x[1] * px[x[0]])
+                m_out, a_out = uout[0]
+                if a_in > 0 and a_out > 0:
                     px[m_out] = px[m_in] * a_in / a_out
                     changed = True
-            elif priced_out and len(unpriced_in) == 1:
-                m_out, a_out = max(priced_out, key=lambda x: x[1] * px[x[0]])
-                m_in, a_in = unpriced_in[0]
-                if a_in > 0 and a_out > 0:
+            elif pout and len(uin) == 1 and not pin:
+                m_out, a_out = max(pout, key=lambda x: x[1] * px[x[0]])
+                m_in, a_in = uin[0]
+                if a_out > 0 and a_in > 0:
                     px[m_in] = px[m_out] * a_out / a_in
                     changed = True
+        if not changed:
+            break
     return px
 
 
@@ -144,7 +159,7 @@ def main():
         seeds = {USDC: 1.0, USDT: 1.0}
         if pxcache.get(d):
             seeds[WSOL] = pxcache[d]
-        px = implied_prices(transfers(tx), seeds)
+        px = implied_prices(owner_mint_deltas(tx), seeds)
         deltas, sol_net = payer_deltas(tx, r["payer"])
         pnl, unpriced = 0.0, []
         for m, amt in deltas.items():

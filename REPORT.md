@@ -7642,3 +7642,11 @@ Full pricing pass done: 12,680/12,684 txs priced (owner-aware v2). Non-complex e
 3. Exotic/complex multi-hop arb — OPEN, needs historical mint pricing (implied-price extraction from tx-internal swap legs is the planned method)
 4. BSC memecoin flow — ACCUMULATING (n=30 → 60, survives cost stress §475, honeypot gate live §476)
 5. Memecoin confirm-mode — data collection only (§473)
+
+## §485 — Implied-price extractor WORKS; dataset needs an ix-shape filter (7 Sep 2026)
+
+v3 (`kamino_arb_pnl3.py`) prices exotic mints from tx-internal swap legs, fixed by grouping pre/postTokenBalances by OWNER (pool vaults share the pool authority; a vault-authority with +priced/−unpriced legs is a swap; fixpoint chains multi-hop). Result on first chunk: **49% of complex txs now fully priced** (was 0%). Sanity: implied prices land exactly right — e.g. 2u1tsz → $1.0004 (a stable), 5Y8NV3 → $1.1413 (yield-stable), wSOL from Binance daily close.
+
+**Contamination found:** the +$208k "best trade" is a whale borrowing 97k of a stable against existing collateral (flash-repay present, but the tx is balance-sheet loop management, NOT atomic arb). Helius's FLASH_REPAY type scoops these up. **Filter rule for the clean arb set:** pure atomic arb = KLend ixs limited to flashBorrow + flashRepay (+ refreshReserve); any other KLend ix (borrow/deposit/withdraw/liquidate) = balance-sheet management → exclude. Implement as an ix-shape check in the v3 pass (needs the outer+inner KLend disc list per tx; cheap — already fetching full txs).
+
+**Status:** extractor sound; v3 numbers unusable for ranking until the shape filter lands. Next slice: add filter, re-run the 5,638 complex txs, THEN the exotic-frontier read (who wins there, what sizes, what routes).
