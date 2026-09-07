@@ -870,11 +870,14 @@
 {"mint": "AgdEr3eKzqqxEc9im4tbtu4h6BsZYKyq2HPggrdpump", "status": "closed", "eval_ts": 1788795020.605115, "entry_t": 1788795127.3399198, "peak": 1.068, "freerolled": false, "exit_reason": "abort15", "ret": 0.0258}
 {"mint": "FfSYBQANdMXotaES5TjqsjBT5WrdWFPpMRR1H7vxpump", "status": "closed", "eval_ts": 1788795298.449402, "entry_t": 1788795339.126113, "peak": 1.038, "freerolled": false, "exit_reason": "abort15", "ret": -0.0035}
 {"mint": "a2Ts81PMn4nQrzDWQb8o2j1fF4MAdD9eGsKXJbgpump", "status": "closed", "eval_ts": 1788795448.066544, "entry_t": 1788795523.053559, "peak": 1.055, "freerolled": false, "exit_reason": "abort15", "ret": 0.0124}
-{"mint": "xRxqk49mrKfdLP1aqAzr77TPt5gGs8DckX1YG8tpump", "status": "closed", "eval_ts": 1788795502.6448672, "entry_t": 1788795873.320298, "peak": 1.006, "freerolled": false, "exit_reason": "abort15", "ret": -0.0357}
-{"mint": "844iLry58airUV9HCf3hNxzvnZmZL9r9r94SyEopump", "status": "open", "eval_ts": 1788796481.71145, "entry_t": 1788796557.125792, "peak": 1.01, "freerolled": false, "mark": -0.0299, "ret": null}
+{"mint": "xRxqk49mrKfdLP1aqAzr77TPt5gGs8DckX1YG8tpump", "status": "closed", "eval_ts": 1788795502.6448672, "entry_t": 1788795873.320298, "peak": 1.007, "freerolled": false, "exit_reason": "abort15", "ret": -0.0357}
+{"mint": "844iLry58airUV9HCf3hNxzvnZmZL9r9r94SyEopump", "status": "closed", "eval_ts": 1788796481.71145, "entry_t": 1788796557.125792, "peak": 1.015, "freerolled": false, "exit_reason": "abort15", "ret": -0.0248}
 {"mint": "Hq1HxEGAqz1VryPxwbzDCssY54GSzBmkhra8NaURpump", "status": "closed", "eval_ts": 1788796540.378162, "entry_t": 1788796614.070709, "peak": 1.151, "freerolled": false, "exit_reason": "panic", "ret": -0.5062}
-{"mint": "5GSKWojTZikbPK8bW8fAhQoamVFQkqg8SvYLETwvpump", "status": "open", "eval_ts": 1788796568.328789, "entry_t": 1788796642.5162299, "peak": 2.135, "freerolled": true, "mark": 0.9289, "ret": null}
-{"mint": "cckwkk4JMVzkw1fy39vb2sAEQEc4fBq3Xq53x65pump", "status": "open", "eval_ts": 1788796587.6981251, "entry_t": 1788796628.4749389, "peak": 1.008, "freerolled": false, "mark": -0.0319, "ret": null}
-{"mint": "hBdF2WmkRszgwQcQjNTcPh1VzWA6RvkcHkHgEsFpump", "status": "open", "eval_ts": 1788796611.041812, "entry_t": 1788796685.2757099, "peak": 1.014, "freerolled": false, "mark": -0.0257, "ret": null}
-{"mint": "xVHTvDki9GSp3pqg7MR8CdvdgCGYXp2jZjJyWNTpump", "status": "open", "eval_ts": 1788796675.080029, "entry_t": 1788796714.085123, "peak": 1.006, "freerolled": false, "mark": -0.0336, "ret": null}
-{"mint": "HaKjuDVUSk52LQhn74dCLXi6rEWM8yxBDPFXv8v9pump", "status": "no_data", "ret": null}
+{"mint": "5GSKWojTZikbPK8bW8fAhQoamVFQkqg8SvYLETwvpump", "status": "closed", "eval_ts": 1788796568.328789, "entry_t": 1788796642.5162299, "peak": 2.135, "freerolled": true, "exit_reason": "trail", "ret": 0.6048}
+{"mint": "cckwkk4JMVzkw1fy39vb2sAEQEc4fBq3Xq53x65pump", "status": "closed", "eval_ts": 1788796587.6981251, "entry_t": 1788796628.4749389, "peak": 1.018, "freerolled": false, "exit_reason": "abort15", "ret": -0.0219}
+{"mint": "hBdF2WmkRszgwQcQjNTcPh1VzWA6RvkcHkHgEsFpump", "status": "open", "eval_ts": 1788796611.041812, "entry_t": 1788796685.2757099, "peak": 1.108, "freerolled": false, "mark": 0.0646, "ret": null}
+{"mint": "xVHTvDki9GSp3pqg7MR8CdvdgCGYXp2jZjJyWNTpump", "status": "closed", "eval_ts": 1788796675.080029, "entry_t": 1788796714.085123, "peak": 1.033, "freerolled": false, "exit_reason": "abort15", "ret": -0.0076}
+{"mint": "HaKjuDVUSk52LQhn74dCLXi6rEWM8yxBDPFXv8v9pump", "status": "closed", "eval_ts": 1788796763.6446989, "entry_t": 1788797074.896075, "peak": 1.009, "freerolled": false, "exit_reason": "panic", "ret": -1.0}
+{"mint": "tDLWo4ADU5MZBTCz2ZziV7tG6csdBbvbhDL4nE8pump", "status": "open", "eval_ts": 1788797210.598759, "entry_t": 1788797315.392394, "peak": 1.023, "freerolled": false, "mark": -0.0183, "ret": null}
+{"mint": "p6pVPdFhPnGUfn3J4xeA9HTJvsdwg7mDZevWDmcpump", "status": "open", "eval_ts": 1788797533.31217, "entry_t": 1788797640.929664, "peak": 1.045, "freerolled": false, "mark": 0.0003, "ret": null}
+{"mint": "BYC8gDcwQfFNHe7QzBpFKj6EbykgeJqFvjo7qx4pump", "status": "no_data", "ret": null}
