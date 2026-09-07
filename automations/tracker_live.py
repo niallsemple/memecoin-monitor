@@ -1899,18 +1899,31 @@ def run(ctx):
 
     def kamino_loop():
         import importlib.util as _ilk
+        import os as _kos
         while not stop.is_set():
             stop.wait(KAMINO_S)
             if stop.is_set():
                 break
+            # §468 heartbeat: proves the thread fires even when run_pass
+            # throws; tail went silently stale 2026-09-07 (~15 min).
+            try:
+                (MON / "kamino_loop_beat.json").write_text(json.dumps(
+                    {"ts": time.time(), "pid": _kos.getpid()}))
+            except Exception:
+                pass
             try:
                 _sk = _ilk.spec_from_file_location(
                     "kamino_tail", str(MON / "kamino_tail.py"))
                 _mk = _ilk.module_from_spec(_sk)
                 _sk.loader.exec_module(_mk)
                 _mk.run_pass()
-            except Exception:
-                pass
+            except Exception as _ke:
+                try:
+                    with open(MON / "kamino_loop_errors.log", "a") as _kf:
+                        _kf.write(json.dumps({"ts": time.time(),
+                            "err": repr(_ke)[:400]}) + "\n")
+                except Exception:
+                    pass
 
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
