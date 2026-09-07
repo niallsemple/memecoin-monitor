@@ -7614,3 +7614,16 @@ v1 (transfer-attribution) leaderboard was GARBAGE at the tails — Dsg7ZFQz show
 **First chunk (1,284/12,684 priced; 511 fully-priced):** green 41%, median +$0.0001, mean +$30.18 (tail-driven: max +$15.8k, min −$3.4k). Known-bot sanity: Dsg7ZFQz now −$0.0016/tx avg (≈ its flash+gas cost — plausible if its Kamino-flash txs are a funding leg with profit landing elsewhere, or its profit mint sits in complex). v1 top/bottom boards WITHDRAWN; final clustering waits for the full v2 pass (~9 chunks remaining).
 
 **Methodology rule recorded:** never rank searchers on transfer-attributed flows; always owner-aware balance deltas.
+
+## §482 — Phase 2 COMPLETE: searcher leaderboard + the winning playbook decoded (7 Sep 2026)
+
+Full pricing pass done: 12,680/12,684 txs priced (owner-aware v2). Non-complex exact set: 7,042 txs, 402 searchers.
+
+**The field is negative-sum:** total exact P&L = **−$112.8k** (winners +$1.06M, losers −$1.17M — fees/tips bleed the field). Only **43 of 402 searchers (11%)** are net-profitable >$100 over 11.3 days. Arb on Solana is a slaughterhouse for the median participant — matches the "profits highly concentrated" claim from the owner's ChatGPT brief, now proven with our own data.
+
+**THE standout — 7tUACGesjJ8tF32HVS69PWXyXsJpPt3zbpdYhYMjYsVH:**
+- 737 txs in 11 days (34–133/day, all UTC hours), **99% green**, +$6,985 total, median +$1.61/tx, p90 +$19.58, max +$315.63.
+- Playbook (decoded from 3 txs, consistent): **Kamino flash-borrow SOL → Meteora DLMM (LBUZKhRx) swap → Raydium CLMM/CPMM (CAMMCzo5/CPMMoo8L) swap back → repay**. Classic 2-hop cross-DEX atomic arb on SOL/stable pairs (wSOL in 78% of txs).
+- This is the frequency model proven in the wild: small, constant, relentless.
+
+**Implication for us (honest):** this bot wins with slot-level latency against Meteora/Raydium price dislocations — our minutes-cadence stack cannot fight it head-on for major pairs. The niche question becomes: which pairs/sizes does the field IGNORE (complex routes, low-cap pairs, multi-hop)? Next: segment the 43 profitable searchers by route complexity and size band to find the under-contested corner — that answer decides build-vs-kill for an arb lane.
