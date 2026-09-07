@@ -33,7 +33,11 @@ SEED_FLOOR_SOL = 4.0           # §442: live fire only on seed >= 4 SOL
 # 5.264197529: observed 5/5 losses across TWO creator wallets (7umWEB7b
 # denylisted §445; CWeJoMKF §450) — every launch with this exact seed was
 # a manufactured dump. Tolerance covers float fuzz only.
-SEED_DENY = [5.264197529]
+SEED_DENY = [5.264197529, 9.868646486]
+# 9.868646486 (§457): second farm fingerprint — 6 exact-seed launches
+# (4 stale-drops 09-06, then BUsMgA4f open 09-07 07:19 [stale-skipped,
+# replay −0.04] and srxbT3rU 07:59 [LIVE, abort3_red −0.01044]).
+# Creator wallets rotated; seed identical to 9 decimals. Burned once live.
 SEED_DENY_TOL = 0.0005
 MAX_CONCURRENT = 1
 DAILY_LOSS_CAP_SOL = 0.10      # stop for the day if realized losses exceed
