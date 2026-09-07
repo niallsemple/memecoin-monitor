@@ -857,3 +857,14 @@
   "8,28,48 * * * *" Europe/London, offset from EVM watcher (4/24/44) to avoid
   queue collisions. EVM watcher stable under new 9-min format (20:24 run 11m,
   20:44 run 5.8m, both clean).
+
+## 2026-09-07 21:10 UTC — forward-validation ETA calibration
+- Control trigger rate decaying with the market: 9/day (Aug 31) -> 1-3/day now;
+  last 72h = 2.7/day. In-sample gated pass rate 3/33 = 9%.
+- ETA to 10 forward gated entries: ~41 days at current rate, ~25 at the
+  8-day average. Too slow as sole validation path.
+- Funnel constraint is market-wide BSC V2 launch rate, NOT our coverage
+  (119 pools watched, GT discovery live).
+- Lever: Base V4/Clanker watcher (parked) — 1,596 pools/48h measured earlier
+  (~800/day) with structurally un-pullable NFT liquidity. Biggest available
+  funnel expansion. Queued as next build.
