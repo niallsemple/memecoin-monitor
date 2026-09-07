@@ -104,6 +104,60 @@ def health_check(obs: list) -> list:
 
 ALERT_PCT = 0.05  # flag when margin < 5% of adjusted debt (or negative)
 
+# §465 auto-fire settings
+MIN_FIRE_DEBT_USD = 50.0     # below this the gas/rent eats the bonus
+FIRE_COOLDOWN_S = 600        # one attempt per obligation per 10 min
+_FIRED = {}
+_WALLET = None
+
+def _wallet_addr():
+    global _WALLET
+    if _WALLET is None:
+        _WALLET = json.loads((MON / "live_wallet.json").read_text())["address"]
+    return _WALLET
+
+def _try_fire(ob_pk: str, margin: float, adj_debt: float):
+    """Simulate the full bundle; fire only if the sim fully succeeds.
+    Everything logged to kamino_fires.jsonl. Never raises."""
+    rec = {"ts": time.time(), "ob": ob_pk, "margin": margin,
+           "adj_debt": adj_debt, "result": "pending"}
+    try:
+        import importlib.util as _il
+        _s = _il.spec_from_file_location("kamino_hunt", str(MON / "kamino_hunt.py"))
+        _kh = _il.module_from_spec(_s)
+        _s.loader.exec_module(_kh)
+        out = _kh.simulate_fire(ob_pk, _wallet_addr())
+        sim = out.get("sim") or {}
+        val = sim.get("value", {}) if isinstance(sim, dict) else {}
+        rec["sim_err"] = val.get("err")
+        rec["est_seize"] = (out.get("meta") or {}).get("swap", {}).get("est_seize")
+        if val.get("err") is None and val.get("logs"):
+            # sim clean → fire for real
+            ixs, meta = _kh.build_fire_bundle(ob_pk, _wallet_addr())
+            r = meta["resolve"]
+            est = _kh.estimate_seize(r)
+            sw, _sm = _kh.build_swap_leg(r["withdraw"]["liq_mint"],
+                                         r["repay"]["liq_mint"], est,
+                                         _wallet_addr())
+            if sw:
+                ixs = ixs[:-1] + sw + [ixs[-1]]
+            _kh.ensure_alt(_wallet_addr(), [b58encode(p) for p, a, _ in ixs] +
+                           [b58encode(k) for _, a, _ in ixs for k, _, _ in a])
+            tx = _kh.compile_fire_tx(ixs, _wallet_addr())
+            resp = rpc("sendTransaction", [tx, {"encoding": "base64"}])
+            rec["fire_sig"] = resp.get("result")
+            rec["fire_err"] = resp.get("error")
+            rec["result"] = "fired" if resp.get("result") else "fire_rejected"
+        else:
+            rec["result"] = "sim_failed_skip"
+    except Exception as e:
+        rec["result"] = f"error: {e}"[:200]
+    try:
+        with open(MON / "kamino_fires.jsonl", "a") as f:
+            f.write(json.dumps(rec) + "\n")
+    except Exception:
+        pass
+
 
 def run_pass():
     """Single radar sweep for the tracker kamino_loop thread. Appends
@@ -129,6 +183,14 @@ def run_pass():
                         "adj_debt": a, "unhealthy": u, "margin": m,
                         "slot_age": sa,
                         "kind": "liquidatable" if m < 0 else "near_line"}) + "\n")
+        # §465 auto-fire: liquidatable rows only, sim-gated, zero-capital flash
+        for m, a, u, sa, ow, pk in rows:
+            if m >= 0 or a < MIN_FIRE_DEBT_USD:
+                continue
+            if time.time() - _FIRED.get(pk, 0) < FIRE_COOLDOWN_S:
+                continue
+            _FIRED[pk] = time.time()
+            _try_fire(pk, m, a)
     except Exception:
         pass
 

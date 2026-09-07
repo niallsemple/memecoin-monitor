@@ -7516,3 +7516,9 @@ srxbT3rU (seed 9.868646486) passed all gates at 07:59, bought 0.02 → abort3_re
 - Jupiter exit leg added: build_swap_leg (quote → swap-instructions, wrapAndUnwrapSol=false since wSOL ATA pre-staged; <8B-data ixs dropped+flagged since they'd panic KLend's sysvar scan) + estimate_seize (debt_mv × (1+minLiquidationBonusBps) priced into collateral units, 1% haircut).
 - FINAL SIM (healthy test obligation): flashBorrow ✓ refreshReserve ✓×2 refreshObligation ✓ liquidate ✓ Jupiter Route executes (fails 6024 only because a healthy target seizes 0 — swap has no input). On a real underwater target: seize → swap → flashRepay completes and the bonus is profit.
 - Kamino front is now DONE and fire-ready: radar (240s, live) → alert tape → resolve → simulate → fire. Waiting on volatility; nothing left to build except per-alert Jupiter quote at fire time.
+
+### §465 — Kamino auto-fire armed: alert → simulate → fire, zero capital
+- kamino_tail.run_pass now attempts fire on any obligation with margin < 0 and adj_debt ≥ $50 (below that, gas+rent eats the bonus). 10-min cooldown per obligation. Path: simulate_fire full bundle → only if sim completes clean → rebuild with fresh quote → ensure_alt → compile_fire_tx (node, signed) → sendTransaction. Everything logged to kamino_fires.jsonl (result: fired / fire_rejected / sim_failed_skip / error).
+- Safety properties: flash-funded (zero capital at risk beyond ~$0.01 tx fee); atomic revert on any leg failure; sim gate catches stale health races (if another bot took it, obligation refreshes healthy → liquidate/repay fails → no send).
+- kamino_loop importlib-reloads kamino_tail.py each pass, so this is live in the tracker NOW (no sync needed). Tested: run_pass clean, 4 obligations tracked, wallet resolved.
+- All three fronts fully armed. Total watch: memecoin births (15s), marginfi shock (90s), Kamino crank-tail (240s).
