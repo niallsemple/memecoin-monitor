@@ -70,6 +70,77 @@ def lp_lock_fracs(pair):
     return out
 
 
+QUOTE_TOKENS = {'0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',   # WBNB
+                '0x55d398326f99059ff775485246999027b3197955'}   # USDT
+USDT_ADDR = '0x55d398326f99059ff775485246999027b3197955'
+
+
+def _tokens_of(pair):
+    import urllib.request
+    def _call(data):
+        p = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'eth_call',
+                        'params': [{'to': pair, 'data': data}, 'latest']}).encode()
+        req = urllib.request.Request(BSC_RPC, data=p,
+                                     headers={'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            h = json.load(r).get('result', '0x')
+        return '0x' + h[-40:] if h and h != '0x' else None
+    return _call('0x0dfe1681'), _call('0xd21220a7')
+
+
+def base_token_of(pair):
+    """resolve the non-quote side of a V2 pair."""
+    t0, t1 = _tokens_of(pair)
+    if t0 and t0.lower() in QUOTE_TOKENS:
+        return t1
+    return t0
+
+
+def quote_token_of(pair):
+    """resolve the quote side of a V2 pair."""
+    t0, t1 = _tokens_of(pair)
+    if t0 and t0.lower() in QUOTE_TOKENS:
+        return t0
+    if t1 and t1.lower() in QUOTE_TOKENS:
+        return t1
+    return None
+
+
+def goplus_check(token):
+    """GoPlus token_security snapshot (free, no key). Log-only enrichment."""
+    import urllib.request
+    if not token:
+        return {}
+    url = ('https://api.gopluslabs.io/api/v1/token_security/56'
+           f'?contract_addresses={token}')
+    req = urllib.request.Request(url, headers={'User-Agent': 'darwin-labs/1.0'})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        q = json.load(r)
+    res = (q.get('result') or {}).get(token.lower()) or {}
+    if not res:
+        return {}
+    ts_raw = res.get('total_supply')
+    try:
+        ts = float(ts_raw) if ts_raw else 0
+    except Exception:
+        ts = 0
+    tops = []
+    for h in (res.get('holders') or [])[:10]:
+        try:
+            v = float(h.get('percent') or 0)
+        except Exception:
+            v = 0
+        if v > 1.5 and ts:      # some payloads return raw balance, not percent
+            v = v / ts
+        tops.append(round(v, 4))
+    return {'gp_holders': res.get('holder_count'),
+            'gp_honeypot': res.get('is_honeypot'),
+            'gp_open_source': res.get('is_open_source'),
+            'gp_owner_pct': res.get('owner_percent'),
+            'gp_top10': tops,
+            'gp_top10_sum': round(sum(tops), 4)}
+
+
 def load_state():
     if os.path.exists(STATE):
         return json.load(open(STATE))
@@ -157,10 +228,16 @@ def main():
                     locks = lp_lock_fracs(pair)
                 except Exception:
                     locks = {}
-                if VARIANT == 'lockgate':
+                if VARIANT in ('lockgate', 'lockgate_usdt'):
                     if not locks:
                         continue        # RPC failed: retry next batch
-                    if sum(locks.values()) < LOCKGATE_MIN:
+                    gate_ok = sum(locks.values()) >= LOCKGATE_MIN
+                    if gate_ok and VARIANT == 'lockgate_usdt':
+                        try:
+                            gate_ok = (quote_token_of(pair) or '').lower() == USDT_ADDR
+                        except Exception:
+                            continue    # RPC failed: retry next batch
+                    if not gate_ok:
                         st['entered'].append(pair)   # rejected, never retry
                         st['watch'].pop(pair, None)
                         print(f'GATE_REJECT {name} lock={sum(locks.values()):.2f}')
@@ -170,11 +247,15 @@ def main():
                 try:
                     from bsc_honeypot import check as _hp
                     hp = _hp(pair, is_pair=True)
+                    try:
+                        gp = goplus_check(base_token_of(pair))
+                    except Exception:
+                        gp = {}
                     rec = {'t': r['t'], 'pair': pair, 'name': name,
                            'ok': hp.get('ok'), 'tax': hp.get('rpc_roundtrip_tax'),
                            'quote': hp.get('quote'), 'reasons': hp.get('reasons'),
                            'api': hp.get('api'), 'api_error': hp.get('api_error'),
-                           'lp_lock': locks}
+                           'lp_lock': locks, **gp}
                     with open(f'{CHAIN}_honeypot_log.jsonl', 'a') as hf:
                         hf.write(json.dumps(rec) + '\n')
                 except Exception:
