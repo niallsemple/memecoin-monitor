@@ -247,3 +247,4 @@
 [collector] subscribed: newToken + migration
 [collector] error: Connection to remote host was lost.
 [collector] closed after 65 events
+2026-09-07 00:21:15Z hb: age=71s pass_up=True keep_up=False

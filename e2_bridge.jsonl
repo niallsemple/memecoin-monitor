@@ -56,3 +56,11 @@
 {"t": 1788738861.993813, "mint": "G8bB2Fx4ozLMg8dGjk8RJBRuktaQTT9Eyo7sTvFfpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
 {"t": 1788739509.667616, "mint": "8iUM4VATdAruyGsKDp7jfhFPQYr9qWneydqcKzxpump", "mom": 1.041, "dd": 0.961, "bf": 0.875, "entry_mcap": 35.463, "seed": 2.967496174, "open_age_s": 294.2, "action": "bridge_skip_stale"}
 {"t": 1788740020.0351858, "mint": "8iUM4VATdAruyGsKDp7jfhFPQYr9qWneydqcKzxpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1788740230.168402, "mint": "7MrGhKb7nqvRTsMZBxpSj2uugeXBYVHpDa1tMydcpump", "mom": 1.009, "dd": 0.986, "bf": 0.7, "entry_mcap": 36.5604, "seed": 3.955344229, "open_age_s": 8.5, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1788740320.232578, "mint": "8z7L4UHGaJwRcRL3FqRT5TcxfjTMi3N19z2DLxNFpump", "mom": 1.097, "dd": 0.912, "bf": 0.833, "entry_mcap": 39.8471, "seed": 3.955344229, "open_age_s": 5.8, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1788740711.39149, "mint": "8z7L4UHGaJwRcRL3FqRT5TcxfjTMi3N19z2DLxNFpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1788740936.5398982, "mint": "3xbC59W6WBSQ6MtBh2ap2fwetFHR3R6NzEJpv62Hpump", "mom": 1.008, "dd": 0.989, "bf": 0.667, "entry_mcap": 34.1863, "seed": 2.967496174, "open_age_s": 20.4, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1788740996.588311, "mint": "3xbC59W6WBSQ6MtBh2ap2fwetFHR3R6NzEJpv62Hpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1788741431.949724, "mint": "E2mvmTF7cR4mMpLd3PNiq9Yd2HxSQi4w31FHbGyXpump", "mom": 1.023, "dd": 0.94, "bf": 0.714, "entry_mcap": 34.5519, "seed": 2.967496174, "open_age_s": 3.4, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1788741537.027488, "mint": "E2mvmTF7cR4mMpLd3PNiq9Yd2HxSQi4w31FHbGyXpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1788742198.480654, "mint": "7MrGhKb7nqvRTsMZBxpSj2uugeXBYVHpDa1tMydcpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}

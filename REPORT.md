@@ -7373,3 +7373,26 @@ first coins got through before the 6h repeat window could know them).
 All four farm wallets added to creator_denylist.json (now 4 entries).
 Post-gate expectancy on shadow: first-launch-only book = +3.7%/trade at
 shadow exit rules — before the live winner's +41% bank12 skew.
+
+§446 (Sep 7 ~01:50 UTC) — BIRTH-WINDOW CONCENTRATION: validated as exclusion,
+marginal over creator gates; denylist extended 4 → 7.
+Built birth_concentration{,_batch,_h16}.py: RPC pull of first-60s curve txs,
+per-wallet buy attribution (feePayer token+SOL deltas), top1/top3/creator_buy
+shares. Validation on the REAL entry stream — all 35 h16e2 candidates with
+barrier outcomes (6W/26L/3T), not the armed-birth shadow set (those are 100%
+creator-self-seeded 86-SOL instant bleeders, useless for this test).
+Results (decided n=32, base win 18.8%):
+  creator_buy_share>0.5: 11% win (2/18) vs 29% (4/14) without
+  top1_share>0.7:        11% win (2/19) vs 31% (4/13)
+  farm profile (top1=creator & cb>0.5): 11% vs 29%
+  seed>=4:               60% win (3/5)  vs 11% — still the strongest gate
+Concentration gates do NOT pick winners (3 of 6 wins were creator-led) but
+heavy creator self-seeding halves win rate — valid as EXCLUSION only.
+Marginal analysis: 14/18 farm-profile candidates already caught by denylist +
+6h serial-creator gate. Only 4 slipped: FzZmi9as (L, 6SY9yvoV…), 5vjQ6MVd
+(L, DmRhsDGv…), ARt1UNA4 (L, DxtmeJNK…), 8quDSNDD (W, 7f5xJ3tU…).
+Action: added the 3 losing slip-through creators to creator_denylist.json
+(7 total); left 7f5xJ3tU unblocked (sole observed launch was a win).
+Full concentration gate NOT wired — marginal EV after creator gates too small
+to justify entry-time RPC latency. Data: birth_concentration_h16.jsonl.
+Seed-floor gate going 4/4 on blocked candidates tonight (all losses).

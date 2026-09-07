@@ -4462,3 +4462,15 @@
 | 23:46 | solana | `BWwj8gtT…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:33% | liq=$41,372 mc=$200,345 | name=ASSTRA symbol=ASS; rugcheck_score=12 lpLocked=98.78756805787681%; top10_hold=32.6% | Hold $ASS and receive $OpenAI airdrops |
 | 23:46 | robinhood | `0x9f05AC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,703 mc=$71,248 | chain:robinhood no-audit-adapter | Lenny has been tried time and time again on solana, and that’s because he’s lite |
 | 23:46 | robinhood | `0x13c7ff…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The OpenRouter of GPUs. |
+| 00:26 | bsc | `0x918fb5…` | CAUTION | PROXY | liq=$54,246 mc=$356,145 | holders=0; buy_tax= sell_tax= |  |
+| 00:26 | solana | `3FF6iwh2…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$0 mc=$37,817 | name=Zcate symbol=Zcate; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=35.3% | One cate. One paper bag. One dream. |
+| 00:26 | solana | `nasd9ZCa…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$0 mc=$25,973 | name=NASDAQ symbol=NASDAQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=43.6 |  |
+| 00:26 | bsc | `0x99F9a5…` | CAUTION | PROXY | liq=$19,757 mc=$19,090 | holders=0; buy_tax= sell_tax= | Arkham style terminal for onchain trading  Smart wallets, flows, KOLs, supply ev |
+| 00:26 | robinhood | `0x74A470…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Pushin' ✌️ |
+| 00:26 | solana | `DP1Eyr86…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:32% | liq=$46,705 mc=$212,566 | name=Zcash-chan symbol=Zchan; rugcheck_score=12 lpLocked=100%; top10_hold=32.4% | Zcash Foundation's crypto girl Zchan |
+| 00:46 | solana | `7Y7V1a4m…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$31,281 | name=Nasduck symbol=Nasduck; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45 |  |
+| 00:46 | robinhood | `0xC732CC…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2,675 mc=$20,958 | chain:robinhood no-audit-adapter | You buy the product. You use the product. You feed the product. Don't just use t |
+| 00:46 | solana | `399rD5F5…` | FAIL | TOP10_HEAVY:92%; RC_WARN:Low Liquidity | liq=$4,919 mc=$6,153 | name=MADNESS symbol=MAD; contract:clean; rugcheck_score=24 lpLocked=100%; top10_hold=92.2% | The first launchpad that pays you to launch. Earn 2% of your token's bonding-cur |
+| 00:46 | solana | `EEjGMw4X…` | FAIL | TOP10_HEAVY:60%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Encrypted Cat symbol=ECAT; rugcheck_score=12 lpLocked=0%; top10_hold=59.6% |  |
+| 00:46 | solana | `F3hJ64M6…` | PASS | — | liq=$39,574 mc=$216,913 | name=Anonymous Cat Wif Hat symbol=ZCATWIF; contract:clean; rugcheck_score=1 lpLocked=100%; | Anonymous cat. Pink hat. Zero identity. Maximum meme energy on-chain. |
+| 00:46 | robinhood | `0x1ca057…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | A Feline Being |
