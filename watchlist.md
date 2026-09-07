@@ -4644,3 +4644,35 @@
 | 22:56 | robinhood | `0x0d9ccc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Talk to strangers and earn stock |
 | 22:56 | ethereum | `0xa24954…` | PASS | — | liq=$111,864 mc=$111,917 | holders=4; buy_tax=0 sell_tax=0; contract:clean | launch tokens paired with your favorite memecoins, coins or stocks. pick the pai |
 | 22:56 | robinhood | `0x0c142d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,799 mc=$16,826 | chain:robinhood no-audit-adapter | Free same day delivery, now on Robinhood. |
+| 23:06 | robinhood | `0x5A2EF5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,135 mc=$5,524 | chain:robinhood no-audit-adapter | Hold the system. Own the rewards. Turning on-chain activity into MSFT-linked hol |
+| 23:06 | robinhood | `0x0A018B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,926 mc=$253,725 | chain:robinhood no-audit-adapter | First Token launched on the ELA.RIP robinhood launchpad |
+| 23:06 | solana | `5Nxv4xcR…` | CAUTION | TOP10_CONCENTRATED:50% | liq=$12,362 mc=$27,331 | name=A Meme Cat symbol=AMC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=49. |  |
+| 23:06 | solana | `BYbwA5ry…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:49% | liq=$16,228 mc=$36,160 | name=BIC symbol=BIC; rugcheck_score=12 lpLocked=98.02532373741175%; top10_hold=49.2% | hold bic get lit |
+| 23:06 | solana | `8beGVEY2…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$18,313 mc=$55,453 | name=Tom Cruise symbol=TOMCRUISE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | On on Cruise... Tom Cruise! |
+| 23:06 | robinhood | `0xdc1856…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,452 mc=$54,044 | chain:robinhood no-audit-adapter | One token. Trading fees fund charity. The community decides. |
+| 23:16 | robinhood | `0xe01a02…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,248 mc=$32,819 | chain:robinhood no-audit-adapter | hi im jeff the ms paint duck-thingy |
+| 23:16 | solana | `Bmr7pWSL…` | PASS | — | liq=$20,703 mc=$68,655 | name=TeslaCoin symbol=TSLA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=25. |  |
+| 23:16 | robinhood | `0x13F846…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,121 mc=$113,582 | chain:robinhood no-audit-adapter | A unified AI network combining five leading models into one intelligent system |
+| 23:16 | robinhood | `0x258571…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,955 mc=$17,465 | chain:robinhood no-audit-adapter | Enteicoin |
+| 23:16 | solana | `BkzWabBD…` | FAIL | TOP10_HEAVY:62% | liq=$0 mc=$13,915 | name=Dumb Money symbol=DUMB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=62 | Dumb Money |
+| 23:16 | robinhood | `0x31CAe9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,157 mc=$10,567 | chain:robinhood no-audit-adapter |  |
+| 23:26 | solana | `pJc8sGot…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$24,707 | name=SPACEBALLS symbol=SPACEBALLS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Found the PERFCET meme to run for Elon  Elon has posted many times about Spaceba |
+| 23:26 | solana | `D8thZLXa…` | PASS | — | liq=$34,591 mc=$173,588 | name=Meowgan Stanley symbol=MEOWGN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ | He manages nine lives. He has deployed eight. One left, fully hedged. |
+| 23:26 | robinhood | `0x4aCFA8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$49,327 mc=$273,181 | chain:robinhood no-audit-adapter | Some lives changed in the last few days.  They didn’t know it was coming. They j |
+| 23:36 | ethereum | `0xAf62a3…` | CAUTION | PROXY | liq=$5,470 mc=$277,871 | holders=47; buy_tax=0 sell_tax=0 | Clash Arena is a Web3 gaming platform on Ethereum. $CLASH powers a multi-game ec |
+| 23:36 | solana | `FNE2ynWr…` | FAIL | TOP10_HEAVY:66% | liq=$0 mc=$11,852 | name=NOOGLER symbol=NOOGLER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=66 |  |
+| 23:36 | solana | `9NbUfchM…` | FAIL | TOP10_HEAVY:62% | liq=$8,459 mc=$14,469 | name=Tendies symbol=Tendies; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=62 |  |
+| 23:36 | robinhood | `0x173727…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,472 mc=$83,300 | chain:robinhood no-audit-adapter | The official hat of Robinhood.   JOIN THE ORDER. |
+| 23:36 | solana | `5yzwCGEp…` | FAIL | TOP10_HEAVY:75% | liq=$0 mc=$10,896 | name=7 Brew Doh symbol=BrewDoh; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | New 7 Brew Nee Doh being sold for 40x it price in one day! |
+| 23:46 | solana | `Gugyyne4…` | FAIL | TOP10_HEAVY:70% | liq=$0 mc=$10,959 | name=Wendys Pepe symbol=WEPE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=6 |  |
+| 23:46 | solana | `5JDohZNN…` | FAIL | RC_DANGER:Single holder ownership; TOP10_HEAVY:76%; METADATA_MUTABLE; RC_WARN:High holder concentration; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$27,257 mc=$77,586 | name=$500 Magikarp symbol=MAGIKARP; rugcheck_score=42 lpLocked=99.99998688715607%; top10_h | The first ever joke in a Pokemon game |
+| 23:46 | robinhood | `0x7F8538…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,985 mc=$25,171 | chain:robinhood no-audit-adapter |  |
+| 23:46 | solana | `T7NLcpms…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,985 | name=Pepe symbol=Pepe; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100.0% |  |
+| 23:46 | solana | `XxMMgYET…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,941 | name=BLOSSOM symbol=ВLOSSOM; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 | $BLOSSOM floats a rainbow dog over Solana clouds, pure cotton-candy chaos with w |
+| 23:46 | robinhood | `0x34bD73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,768 mc=$41,317 | chain:robinhood no-audit-adapter |  |
+| 23:56 | solana | `DuQgp17C…` | CAUTION | TOP10_CONCENTRATED:43% | liq=$0 mc=$30,100 | name=Satoshinu symbol=Satoshinu; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 23:56 | robinhood | `0x46Aa4E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$3,930 mc=$4,073 | chain:robinhood no-audit-adapter | We are the Equifold family. AI Meme series and characters on Equifold. |
+| 23:56 | solana | `8YrehQpz…` | FAIL | TOP10_HEAVY:61% | liq=$8,757 mc=$14,985 | name=PussyInBio symbol=PIB; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=60. | Alon said Pussyinbio is 1 Billion marketcap potential in 2024. Paired with PUMP. |
+| 23:56 | bsc | `0x48B681…` | CAUTION | PROXY | liq=$8,080 mc=$6,703 | holders=0; buy_tax= sell_tax= | 我是Flapa♡币圈最可爱的小坏蛋📈追绿K、欺负空头、骑牛市。市场慌？我不慌～梗、混沌、收益和冒险，我全都要。芙拉葩最懂✦(≖‿≖)✦ |
+| 23:56 | robinhood | `0x7ccdb5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,949 mc=$56,365 | chain:robinhood no-audit-adapter |  |
+| 23:56 | robinhood | `0xA0ab51…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,245 mc=$153,704 | chain:robinhood no-audit-adapter | The $PIPE team is launching a memecoin via the Robinhood network, allocating 20% |

@@ -1,0 +1,2 @@
+{"name": "REFI / WETH", "pool_id": "0x8e9743c2a5f30965d891e0943c29f9312b1fc08903a2a0b32b9da407244ff327", "entry_t": 1788812637, "exit_t": 1788814637, "ret": 0.5313, "exit": "abort", "entry_flow_usd": 7185.9, "hold_min": 33.3}
+{"name": "GRIFT / WETH", "pool_id": "0xee9302ad407b67047911c4a49b86e6a75cc133f71ebf925581eaee786a833de3", "entry_t": 1788819037, "exit_t": 1788821037, "ret": 0.3195, "exit": "abort", "entry_flow_usd": 8063.7, "hold_min": 33.3}

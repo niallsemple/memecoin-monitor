@@ -328,3 +328,17 @@
 [collector] subscribed: newToken + migration
 [collector] 200 events logged
 [collector] 400 events logged
+[collector] closed after 443 events
+2026-09-07 23:14:23Z SLIP: feed stale 355s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+2026-09-07 23:22:24Z hb: age=2s pass_up=False keep_up=True
+[collector] 200 events logged
+[collector] 400 events logged
+[collector] closed after 475 events
+2026-09-07 23:39:25Z SLIP: feed stale 301s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] error: Connection to remote host was lost.
+[collector] closed after 200 events
+2026-09-07 23:53:26Z SLIP: feed stale 327s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
