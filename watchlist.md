@@ -4528,3 +4528,29 @@
 | 04:56 | solana | `9yuzfTYE…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,073 | name=Gascoin symbol=Gascoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 |  |
 | 04:56 | solana | `5hZkN5aX…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$31,824 mc=$144,881 | name=STONKER symbol=STONKER; rugcheck_score=12 lpLocked=0%; top10_hold=27.9% | STONKERS IS HERE TO TRADE STONKS |
 | 04:56 | solana | `CyfikZJh…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$13,337 | name=SPYDER symbol=SPYDER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=64.2 |  |
+| 05:06 | solana | `4M6WKi1i…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$0 mc=$27,679 | name=Pumployed symbol=Pumployed; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 05:06 | robinhood | `0xEDA418…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,304 mc=$48,103 | chain:robinhood no-audit-adapter | Onchain options layer for Robinhood. |
+| 05:06 | solana | `7QhDwBaE…` | FAIL | TOP10_HEAVY:86% | liq=$0 mc=$4,059 | name=A Good Investment symbol=AGI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 05:06 | robinhood | `0x73408f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,173 mc=$73,852 | chain:robinhood no-audit-adapter | The poorest agent in the world just wants a cyberbeer. 🍺🤖 | Robinhood Chain |
+| 05:26 | robinhood | `0x0569aa…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Tix. A tycoon that pays its players in stock. $TIX on Robinhood Chain. |
+| 05:26 | robinhood | `0xc80D88…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,089 mc=$127,486 | chain:robinhood no-audit-adapter | $GOBA - The utility coin of Gobmarket. |
+| 05:26 | ethereum | `0x41F394…` | PASS | — | liq=$22,001 mc=$41,442 | holders=112; buy_tax=0 sell_tax=0; contract:clean | Huggy meets NVIDIA. Open‑source AI + GPU power + crypto token vibe. |
+| 05:26 | solana | `FsVXgLjm…` | CAUTION | TOP10_CONCENTRATED:41% | liq=$16,031 mc=$42,178 | name=pupfun symbol=pupfun; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=41.3 |  |
+| 05:26 | solana | `fPC9NdPB…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,697 | name=there is no stock ily symbol=ily; contract:clean; rugcheck_score=1 lpLocked=100%; top |  |
+| 05:26 | solana | `88jJragV…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,673 | name=Digital Shekel symbol=שקל; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 05:46 | bsc | `0xB7896F…` | PASS | — | liq=$92,207 mc=$739,415 | holders=0; buy_tax=0.01 sell_tax=0.0099; contract:clean |  |
+| 05:46 | robinhood | `0x5e0DD2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,326 mc=$66,068 | chain:robinhood no-audit-adapter | downer than yuor portfolio |
+| 05:46 | solana | `9zsfUvRp…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; METADATA_MUTABLE; RC_WARN:Low amount of LP Providers; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:41% | liq=$19,483 mc=$51,629 | name=Buck the Bunny symbol=BUCK; rugcheck_score=52 lpLocked=3.2898681966239535e-09%; top10 | Trust in Buck, the GME Mascot |
+| 05:46 | solana | `EDVGxSvT…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:43% | liq=$19,911 mc=$45,927 | name=ZEC CULT symbol=ZECTARDIO; rugcheck_score=12 lpLocked=100%; top10_hold=42.6% | the privacy cult 🤫 |
+| 05:46 | robinhood | `0x88b216…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | A fully on-chain, ownerless, endlessly evolving protocol. Generative worlds Fair |
+| 05:46 | solana | `kZTy6Ruo…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$8,682 | name=bet on this cat symbol=polycat; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 05:56 | robinhood | `0xBe7dc7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,915 mc=$41,565 | chain:robinhood no-audit-adapter | $SHRIMPS is the community coin for retail.   In crypto, small holders are called |
+| 05:56 | solana | `7MHeB5v7…` | FAIL | TOP10_HEAVY:85% | liq=$0 mc=$6,257 | name=Warren Buffet symbol=Buffet; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 05:56 | robinhood | `0xD0dc48…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,207 mc=$32,592 | chain:robinhood no-audit-adapter | cyberbeer |
+| 05:56 | robinhood | `0x240d79…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$43,606 mc=$221,408 | chain:robinhood no-audit-adapter | The stock token social network. |
+| 05:56 | robinhood | `0x0Ad531…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,382 mc=$82,785 | chain:robinhood no-audit-adapter | the first onchain hedge fund powered by  @ponsdotfamily . 10% tax on every tx go |
+| 06:06 | solana | `hHWxHzFk…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$28,505 | name=Birkenstocks symbol=BIRK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 06:06 | solana | `Cwo8S7E1…` | CAUTION | TOP10_CONCENTRATED:37% | liq=$19,243 mc=$53,674 | name=Anthropig symbol=Anthropig; contract:clean; rugcheck_score=1 lpLocked=92.970292371136 |  |
+| 06:06 | robinhood | `0x829B21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$82,232 mc=$883,527 | chain:robinhood no-audit-adapter |  |
+| 06:06 | solana | `EbHx8TVe…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,902 | name=pumptard symbol=pumptard; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 06:06 | robinhood | `0x578153…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,199 mc=$6,228 | chain:robinhood no-audit-adapter | CatGpt paired to OpenAI |
