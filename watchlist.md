@@ -4590,3 +4590,15 @@
 | 10:26 | solana | `HRdWZwUh…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$4,282 | name=Silk symbol=SILK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.2% |  |
 | 10:26 | solana | `AQVZAvm9…` | PASS | — | liq=$21,592 mc=$71,779 | name=NasDonk symbol=NASDONK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=18 | NasDonk charges into the market with fearless energy, signature goggles, and uns |
 | 10:26 | robinhood | `0x685c14…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,548 mc=$23,485 | chain:robinhood no-audit-adapter | Perpetual markets on Robinhood Chain, Powered by Orderly Network |
+| 18:56 | robinhood | `0xF01ab9…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,834 mc=$109,862 | chain:robinhood no-audit-adapter | The smallest dog on Robinhood, paired to AMD. |
+| 18:56 | solana | `6E8dr2at…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:37% | liq=$20,645 mc=$59,638 | name=TeslaCat symbol=TESLACAT; rugcheck_score=12 lpLocked=99.28008664070245%; top10_hold=3 | Elon has confirmed Tesla Logo was cat nose. Distributing TSLAx stock dividends t |
+| 18:56 | robinhood | `0x9D4A92…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,824 mc=$83,044 | chain:robinhood no-audit-adapter | Protocol token of PHERA, the native DEX and launchpad on Robinhood Chain. 0.40%  |
+| 18:56 | robinhood | `0xc89647…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,714 mc=$67,658 | chain:robinhood no-audit-adapter | The markets are closed for Labor Day weekend, but Robinhood Chain remains open |
+| 18:56 | robinhood | `0xe46e85…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$60,111 mc=$423,042 | chain:robinhood no-audit-adapter | bringing the world onto Robinhood. |
+| 18:56 | solana | `6VgqjEn1…` | FAIL | TOP10_HEAVY:51% | liq=$11,885 mc=$25,458 | name=Shitcoin symbol=Shitcoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | Solana, Robinhood, and even BSC are all flooded with stocks. Stocks this stocks  |
+| 19:16 | robinhood | `0xfEaf46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$38,721 mc=$227,107 | chain:robinhood no-audit-adapter | Liquidate the hedge funds steal from the rich and distribute to the trenchoors.  |
+| 19:16 | robinhood | `0x7efa92…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,789 mc=$40,936 | chain:robinhood no-audit-adapter | We love our dividend investors at Robinhood. We call them dividend hounds - Vlad |
+| 19:16 | robinhood | `0x62A819…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,248 mc=$5,915 | chain:robinhood no-audit-adapter | Trade crypto, tokenized equities, ETFs, indices, commodities and FX through one  |
+| 19:16 | robinhood | `0x32a322…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$69,228 mc=$560,150 | chain:robinhood no-audit-adapter |  |
+| 19:16 | solana | `MWEuyvyT…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,987 | name=meme symbol=memecoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=100. |  |
+| 19:16 | solana | `HgdGexyn…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$8,227 | name=BNASDUCK symbol=Baby Nasduck; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
