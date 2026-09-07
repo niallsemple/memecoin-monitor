@@ -230,27 +230,43 @@ def simulate_e2(mint, eval_ts, events):
 
 def main():
     blocked = load_blocked()
-    mints = list(blocked)
-    print(f"replaying {len(mints)} blocked candidates through e2 stack…")
-    ev = load_tape(mints)
-    rows = []
-    for m in mints:
-        r = simulate_e2(m, blocked[m]["t"], ev.get(m, []))
-        r["block_reason"] = blocked[m].get("reason")
-        r["seed"] = blocked[m].get("seed")
-        rows.append(r)
+    out_f = MON / "blocked_shadow_e2.jsonl"
+    prior = {}
+    if out_f.exists():
+        for l in out_f.open():
+            try:
+                r = json.loads(l)
+            except Exception:
+                continue
+            if r.get("status") == "closed":
+                prior[r["mint"]] = r
+    todo = [m for m in blocked if m not in prior]
+    print(f"blocked total={len(blocked)} already replayed={len(prior)} new={len(todo)}")
+    rows_new = []
+    if todo:
+        ev = load_tape(todo)
+        for m in todo:
+            r = simulate_e2(m, blocked[m]["t"], ev.get(m, []))
+            r["block_reason"] = blocked[m].get("reason")
+            r["seed"] = blocked[m].get("seed")
+            rows_new.append(r)
+    rows = list(prior.values()) + rows_new
     tot_sol = 0.0
+    n_closed = 0
     for r in rows:
         if r["status"] == "closed":
+            tot_sol += r["ret"] * SIZE
+            n_closed += 1
+    for r in rows_new:
+        if r["status"] == "closed":
             sol = r["ret"] * SIZE
-            tot_sol += sol
-            print(f"  {r['mint'][:8]} {r['block_reason']:>14} seed={round(r['seed'] or 0,2):>5} "
+            print(f"  NEW {r['mint'][:8]} {r['block_reason']:>14} seed={round(r['seed'] or 0,2):>5} "
                   f"peak={r['peak']:>6} exit={r['exit_reason']:>12} ret={r['ret']:+.4f} pnl={sol:+.5f}")
         else:
-            print(f"  {r['mint'][:8]} {r['block_reason']:>14} NO TAPE")
-    print(f"\ne2-stack shadow PnL on blocked: {tot_sol:+.5f} SOL "
+            print(f"  NEW {r['mint'][:8]} {r['block_reason']:>14} NO TAPE")
+    print(f"\ne2-stack shadow PnL on blocked (n={n_closed}): {tot_sol:+.5f} SOL "
           f"({'gates EARN' if tot_sol < 0 else 'gates COST'} {abs(tot_sol):.5f})")
-    with (MON / "blocked_shadow_e2.jsonl").open("w") as f:
+    with out_f.open("w") as f:
         for r in rows:
             f.write(json.dumps(r) + "\n")
 

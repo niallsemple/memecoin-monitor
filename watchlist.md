@@ -4474,3 +4474,9 @@
 | 00:46 | solana | `EEjGMw4X…` | FAIL | TOP10_HEAVY:60%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Encrypted Cat symbol=ECAT; rugcheck_score=12 lpLocked=0%; top10_hold=59.6% |  |
 | 00:46 | solana | `F3hJ64M6…` | PASS | — | liq=$39,574 mc=$216,913 | name=Anonymous Cat Wif Hat symbol=ZCATWIF; contract:clean; rugcheck_score=1 lpLocked=100%; | Anonymous cat. Pink hat. Zero identity. Maximum meme energy on-chain. |
 | 00:46 | robinhood | `0x1ca057…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | A Feline Being |
+| 01:26 | robinhood | `0xC1aC09…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,677 mc=$59,862 | chain:robinhood no-audit-adapter | Buy, burn, and redirect market buys to any token you want on RH |
+| 01:26 | robinhood | `0x091a18…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$45,344 mc=$123,916 | chain:robinhood no-audit-adapter | MCAT - Monero Cat |
+| 01:26 | bsc | `0xDa045c…` | CAUTION | PROXY | liq=$39,968 mc=$182,993 | holders=0; buy_tax= sell_tax= |  |
+| 01:26 | bsc | `0x5e9276…` | CAUTION | PROXY | liq=$28,319 mc=$76,778 | holders=0; buy_tax= sell_tax= | The father of all memecoins |
+| 01:26 | robinhood | `0xfe1daf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,384 mc=$20,070 | chain:robinhood no-audit-adapter | Nut Vigorously In Dat Insane Ass |
+| 01:26 | solana | `7UAYgD2X…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$15,440 mc=$40,074 | name=just ape it symbol=ape; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=36 |  |
