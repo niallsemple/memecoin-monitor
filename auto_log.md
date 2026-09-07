@@ -907,3 +907,17 @@
   -0.64 USDC (net selling).
 - Wired into cron after scout. Next: base4_paper.py scorer (entry $3k/30min
   cum quote inflow, price from sqrtPriceX96, same exit stack, ETH px feed).
+
+## 2026-09-07 22:05 UTC — base4_paper.py: V4 scorer built and running
+- Entry: cum net quote inflow >= $3k within 30 min of first activity (same
+  trigger as BSC). Fill at next row's price. Price multiples from
+  (sqrt/entry_sqrt)^2 — exact and decimal-free; USD only needed for entry
+  flow (ETH px via evm_watcher.native_usd on Base ref pair, USDC=1).
+- Exit stack: v2 identical (free-roll 75% @1.5x, abort <1.15x/30m, trail 50%
+  of peak, 120m tstop) + heartbeat close for quiet pools at wall clock.
+- No rug guard needed: V4 LP is NFT (un-pullable); supply dumps surface as
+  price collapse caught by trail/abort.
+- First run: 5 pools under watch, 0 entries (largest flow LAPTOP ~$800 life-
+  to-date vs $3k trigger). Ungated control first — measures raw V4 EV;
+  GoPlus gate variant (chain 8453) layers later.
+- Cron update to add scorer PENDING (active run blocks update; retry next).
