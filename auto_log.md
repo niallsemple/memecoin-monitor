@@ -849,3 +849,11 @@
   by GP_REJECT. Funnel widened: WBNB pinklock pairs with real crowds now
   admissible (quote proxy no longer needed in this variant).
 - Cron automation updated: 5th scorer lockgate_gp added.
+- 2026-09-07 20:56Z | ok | cycle done, 6 audited, total tracked=7874 | [v2 EARLY] bank=£395.85 (cash £336.92 + open £58.93) | ROI=-60.41% | open=6 closed=126 realizedPnL=£-604.09 | [v3 STRICT] bank=£720.73 (cash £695.60 + open £25.13) | ROI=-27.93% | open=2 closed=61 realizedPnL=£-275.58 | [v4 MOM1.5] bank=£691.95 (cash £681.31 + open £10.64) | ROI=-30.81% | open=1 closed=154 realizedPnL=£-304.54 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00
+
+## 2026-09-07 21:05 UTC — Solana collector migrated interval -> cron
+- Interval trigger stalled again (50+ min without a fire after the 20:11
+  manual run) — same failure mode that hit the EVM watcher. Migrated to cron
+  "8,28,48 * * * *" Europe/London, offset from EVM watcher (4/24/44) to avoid
+  queue collisions. EVM watcher stable under new 9-min format (20:24 run 11m,
+  20:44 run 5.8m, both clean).
