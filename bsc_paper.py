@@ -252,6 +252,21 @@ def main():
                         st['entered'].append(pair)   # rejected, never retry
                         st['watch'].pop(pair, None)
                         print(f'GATE_REJECT {name} pro_lock={lock_frac:.2f}')
+                        # shadow-annotate rejects too (log-only): builds the
+                        # dataset to test if GoPlus concentration separates
+                        # self-burn winners from mini-dumpers
+                        try:
+                            gp = goplus_check(base_token_of(pair))
+                        except Exception:
+                            gp = {}
+                        try:
+                            rec = {'t': r['t'], 'pair': pair, 'name': name,
+                                   'gate_reject': True, 'variant': VARIANT,
+                                   'pro_lock': lock_frac, 'lp_lock': locks, **gp}
+                            with open(f'{CHAIN}_honeypot_log.jsonl', 'a') as hf:
+                                hf.write(json.dumps(rec) + '\n')
+                        except Exception:
+                            pass
                         break
                 w['armed'] = True   # fill on the next poll, not this one
                 # §476 shadow honeypot/liveness annotation (log-only, non-blocking)

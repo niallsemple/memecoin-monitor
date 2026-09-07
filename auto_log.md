@@ -809,3 +809,15 @@
 - Live sink check at arm+13min: burn_dead=1.00, ALL pro lockers=0.00; quote=WBNB
 - lockgate + lockgate_usdt must REJECT (self-burn excluded from gate). Study class: burn_dead 1.00 = rug-free historically but mean 0.834x (losing) — reject is correct either way.
 - Control book expected to enter: gives clean forward control-vs-gated discrimination data point.
+
+## 2026-09-07 20:10 UTC — self-burn class forensics + reject annotation patch
+- burn_dead>=0.99 class final forensics: n=15, mean 0.784x, 6/15 green.
+  Winners ($3.2k-$6.7k entry flow) and mini-dump losers ($3.5k-$3.7k) share the
+  same flow band; biggest-flow trade (彩礼币 $17.4k) lost 54%. No at-entry
+  flow/size filter rescues the class. Exclusion confirmed correct.
+- Only untested discriminator: LIVE GoPlus top-10 concentration at entry
+  (post-hoc GoPlus on dead tokens is garbage).
+- PATCH bsc_paper.py: GATE_REJECT branch now shadow-logs GoPlus + sink data
+  (gate_reject:true, log-only, wrapped in try/except, cannot affect fills).
+- Replay-verified behavior-neutral: lockgate book reproduces exactly
+  (n=4 hist 1.970x, SAL fwd rug, BUILDER reject). Committed.
