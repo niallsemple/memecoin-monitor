@@ -7538,3 +7538,21 @@ Resolved the "are the cross-chain watchers dead?" question: the bounded `bsc_wat
 **Read:** BSC remains the only market with a positive paper distribution, but (a) n=30 is half the bar, (b) no fee/slippage modeling in the paper book, (c) BSC rug mechanics differ (no pump.fun-style insider drain observed, but sample is small). Action: none — let it accumulate. No daemon restart needed.
 
 Kamino: whales BYojGuT5 (rehearsal ~1h ago) and watch list intact; tail passes healthy (~2min beat). Near-line alerts this session: 49sZy7S1 ($485k, margin far) and CspUGetM ($19 — below the $50 fire floor, watch-only).
+
+## §475 — BSC paper book survives realistic costs (7 Sep 2026)
+
+Stress-tested all 30 BSC paper closes against per-side cost scenarios (applied as `(1+r)*(1-drag)^2 - 1`):
+
+| scenario | mean | median | min | max | green% |
+|---|---|---|---|---|---|
+| gross | +76.1% | +84.1% | +0.0% | +495.8% | 67% |
+| PancakeSwap fees 0.25%/side | +75.2% | +83.2% | −0.5% | +492.8% | 67% |
+| fees + 2% slippage/side | +68.2% | +75.9% | −4.4% | +469.3% | 67% |
+| harsh 5%/side | +58.1% | +65.3% | −10.2% | +434.9% | 60% |
+| tax-token 10%/side | +41.8% | +48.3% | −19.4% | +379.9% | 57% |
+
+**Structural finding:** the book is 20 genuine winners (median +84%) + 10 exact-breakeven aborts (ret=0.0). The "zero losses" headline was partly artifact — those 10 breakevens become small losers under any real cost. But the winners are so large that mean stays strongly positive even at 10%/side. Worst modeled case is −19.4% — a bounded left tail, the opposite shape from Solana memecoins.
+
+**Unmodeled killer risk:** honeypots / sell-tax tokens (buy OK, sell reverts or taxed 90%+). BSC-specific, invisible to flow-based paper entries. Any live path needs a pre-entry sell-simulation or tax check (e.g. honeypot-is style call or a local fork sim) before this edge is tradable. Also still n=30 < n=60 bar.
+
+**Verdict:** BSC long side survives fees, slippage, even punitive taxes on paper. Gating items before live consideration: (1) n≥60, (2) honeypot/tax pre-check built, (3) owner's sizing decision. Estimated build for the pre-check: small — one RPC `eth_call` sell-sim per candidate.
