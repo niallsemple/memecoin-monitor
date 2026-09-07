@@ -54,7 +54,7 @@ STALE_OPEN_S = 150             # §433: never buy on backfilled opens — after
 # when a post-open tick shows mcap >= entry_mcap inside the window (the
 # token proved it can hold the qualifying print). Flip CONFIRM_ENTRY to
 # True the moment live organic entries #4-5 confirm the peak≈1.0 pattern.
-CONFIRM_ENTRY = False
+CONFIRM_ENTRY = True   # §467 flipped: organic #4/#6/#10/#11 printed peak EXACTLY 1.0
 CONFIRM_MIN_S = 45             # wait at least this long after the open tick
 CONFIRM_MAX_S = 150            # confirm window end (then expire)
 
