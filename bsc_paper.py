@@ -47,6 +47,7 @@ RUG_QRES_FRAC = 0.20    # quote reserve <20% of entry -> LP pulled, position ~wo
 LP_LOCKERS = {'pinklock': '0x407993575c91ce7643a4d4cCACc9A98c36eE1BBE',
               'uncx': '0xC765bddB93b0D1c1A88282BA0fa6B2d00E3e0c83'}
 BSC_RPC = os.environ.get('BSC_RPC', 'https://bsc-dataseed.binance.org')
+LOCKGATE_MIN = 0.95     # 'lockgate' variant: require >=95% LP in known lockers
 
 
 def lp_lock_fracs(pair):
@@ -151,6 +152,19 @@ def main():
                 if MIN_ENTRY_MULT > 1.0 and w.get('px0'):
                     if r['price_raw'] / w['px0'] < MIN_ENTRY_MULT:
                         continue   # inflow without price lift: skip (shadow)
+                # LP-lock annotation (+ hard gate for 'lockgate' variant)
+                try:
+                    locks = lp_lock_fracs(pair)
+                except Exception:
+                    locks = {}
+                if VARIANT == 'lockgate':
+                    if not locks:
+                        continue        # RPC failed: retry next batch
+                    if sum(locks.values()) < LOCKGATE_MIN:
+                        st['entered'].append(pair)   # rejected, never retry
+                        st['watch'].pop(pair, None)
+                        print(f'GATE_REJECT {name} lock={sum(locks.values()):.2f}')
+                        break
                 w['armed'] = True   # fill on the next poll, not this one
                 # §476 shadow honeypot/liveness annotation (log-only, non-blocking)
                 try:
@@ -160,7 +174,7 @@ def main():
                            'ok': hp.get('ok'), 'tax': hp.get('rpc_roundtrip_tax'),
                            'quote': hp.get('quote'), 'reasons': hp.get('reasons'),
                            'api': hp.get('api'), 'api_error': hp.get('api_error'),
-                           'lp_lock': lp_lock_fracs(pair)}
+                           'lp_lock': locks}
                     with open(f'{CHAIN}_honeypot_log.jsonl', 'a') as hf:
                         hf.write(json.dumps(rec) + '\n')
                 except Exception:
