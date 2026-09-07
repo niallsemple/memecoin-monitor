@@ -7594,3 +7594,15 @@ Full verification pass complete: all **2,143 flash/arb txs** in the walk window 
 **Harvest pace:** ~21h of history per ~200s run; checkpointed. Late-Aug volatility (~8-9 days back) is ~8-9 runs away. Walk continues incrementally each cycle; arb dataset grows in parallel (now 2,144 rows).
 
 **Interim read for the niche study:** the liquidation lane's opportunity supply is strongly volatility-gated — days of ZERO events, then presumably bursts. Two implications: (1) any GO decision must size against burst economics, not daily averages; (2) the arb-population data (continuous, ~1/min) may end up the denser research vein. Both walks continue; no build work on fire-path changes until the survival-curve data lands.
+
+## §480 — Phase 1 INTERIM VERDICT: 14 full days, 253k txs, ZERO Kamino liquidations (7 Sep 2026)
+
+Timeline correction: the walk is actually back to **24 Aug 14:08 UTC** (my earlier UTC anchors were off by ~3 days; the day-bucketed arb data proves coverage: Aug 24→Sep 7 continuous). So the dataset spans **14 complete days including the Aug 25–27 volatility** (Aug 25 = peak arb day, 1,689 flash txs) — and contains **zero liquidation events**, verified two independent ways (Helius type labels + full inner-instruction RPC re-scan of all 2,143 candidate flash txs).
+
+**What this means for the niche study:**
+- Kamino main-market liquidation supply in normal-to-moderate volatility ≈ **0/day for 14 straight days**. The lane is crash-burst-only in this regime.
+- Our radar's live watch list (BYojGuT5 84.5%, 5h574Sv8 ~83% $1.47M) confirms near-line obligations EXIST — they're just not being pushed over. When a real crash comes, events will cluster; the fire path stays armed at zero daily cost.
+- **Strategy shift:** liquidation front → standby mode (radar + armed fire path, no further build until a burst provides survival-curve data). Research weight pivots to the arb dataset (12.7k txs, daily continuous activity) — Phase 2 clustering and per-tx P&L pricing proceed on THAT data instead.
+- Kill-criteria note: if a crash burst occurs and events get eaten within 1–2 slots, KILL the lane outright (framework Phase 9-10). Until then: armed standby is free.
+
+**Arb activity by UTC day (txs):** 08-24:682 08-25:1689 08-26:1128 08-27:1497 08-28:1295 08-29:633 08-30:811 08-31:911 09-01:837 09-02:784 09-03:1459 09-04:958 — every single day has hundreds of flash-funded arb events; THAT is where observable, continuous, measurable edge-extraction is happening on Kamino rails.
