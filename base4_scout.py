@@ -106,6 +106,11 @@ def scan_once():
         while start <= latest:
             end = min(start + CHUNK - 1, latest)
             try:
+                blk = rpc("eth_getBlockByNumber", [hex(end), False])
+                chunk_t = int(blk["timestamp"], 16) if blk else time.time()
+            except Exception:
+                chunk_t = time.time()
+            try:
                 logs = rpc("eth_getLogs", [{
                     "address": PM, "fromBlock": hex(start),
                     "toBlock": hex(end), "topics": [INIT]}]) or []
@@ -127,7 +132,7 @@ def scan_once():
                 else:
                     base, quote = c0, c1   # unknown quote; log raw
                 rec = {
-                    "t": time.time(),
+                    "t": chunk_t,
                     "block": int(e["blockNumber"], 16),
                     "tx": e["transactionHash"],
                     "pool_id": e["topics"][1],

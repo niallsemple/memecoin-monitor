@@ -101,11 +101,15 @@ def scan_once():
         return 0
     pools = load_pools()
     now = time.time()
-    # per-pool aggregation for this scan
-    agg = {}
     n_logs = 0
+    out = open(OUT, "a")
     while start <= latest:
         end = min(start + CHUNK - 1, latest)
+        try:
+            blk = rpc("eth_getBlockByNumber", [hex(end), False])
+            chunk_t = int(blk["timestamp"], 16) if blk else now
+        except Exception:
+            chunk_t = now
         try:
             logs = rpc("eth_getLogs", [{
                 "address": PM, "fromBlock": hex(start),
@@ -113,6 +117,7 @@ def scan_once():
         except Exception as e:
             print(f"getLogs {start}-{end} failed: {e}")
             break
+        agg = {}
         for e in logs:
             pid = e["topics"][1]
             p = pools.get(pid)
@@ -134,22 +139,23 @@ def scan_once():
             g["n"] += 1
             g["net_q"] += net_quote
             g["sqrt"] = sqrt_price
-        start = end + 1
-        st["last_block"] = end
-    with open(OUT, "a") as out:
         for pid, g in agg.items():
             p = g["p"]
-            age_h = (now - (p.get("birth_t") or now)) / 3600
+            age_h = (chunk_t - (p.get("birth_t") or chunk_t)) / 3600
             if age_h > MAX_AGE_H:
                 continue
             out.write(json.dumps({
-                "t": now, "pool_id": pid, "n_swaps": g["n"],
+                "t": chunk_t, "pool_id": pid, "n_swaps": g["n"],
                 "net_quote_raw": g["net_q"],
                 "sqrt_price_x96": g["sqrt"],
                 "base": p["base"], "quote": p["quote"],
                 "quote_sym": p.get("quote_sym"), "base_sym": p.get("base_sym"),
                 "age_h": round(age_h, 2),
             }) + "\n")
+        start = end + 1
+        st["last_block"] = end
+        json.dump(st, open(STATE, "w"))   # checkpoint per chunk
+    out.close()
     json.dump(st, open(STATE, "w"))
     return n_logs
 

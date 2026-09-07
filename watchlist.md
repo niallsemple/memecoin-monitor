@@ -4632,3 +4632,15 @@
 | 21:36 | solana | `GfWLeKfJ…` | FAIL | TOP10_HEAVY:56% | liq=$40,670 mc=$103,425 | name=Mag 5 Index symbol=MAG5; contract:clean; rugcheck_score=1 lpLocked=99.54185713399616% | Hold MAG5, get paid in NVIDIA, Zcash, Anthropic, SpaceX and OpenAI.  An automate |
 | 21:36 | solana | `84WJHRUs…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:87% | liq=$1,114 mc=$1,064 | name=OTC Cat symbol=OTCC; contract:clean; rugcheck_score=33 lpLocked=100%; top10_hold=87.2 | OTC Cat  All of the supply is paired to OTC  50% of fees go to holders in $OTC   |
 | 21:36 | solana | `BPFAEPCh…` | FAIL | TOP10_HEAVY:91% | liq=$0 mc=$5,994 | name=Never Stop Clicking symbol=CLICKING; contract:clean; rugcheck_score=1 lpLocked=100%;  |  |
+| 22:46 | solana | `GsFwepQU…` | FAIL | TOP10_HEAVY:87% | liq=$0 mc=$8,256 | name=Calico Cat symbol=CALICO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 22:46 | bsc | `0x1b947C…` | PASS | — | liq=$24,655 mc=$62,236 | holders=233; buy_tax=0 sell_tax=0.01; contract:clean | The mascot of BNB chain |
+| 22:46 | solana | `5pPJBUza…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$16,983 mc=$48,579 | name=Anonymoose symbol=Anonymoose; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | Nobody knows who he is. Everybody knows the antlers. |
+| 22:46 | solana | `6wUKJ6zG…` | FAIL | TOP10_HEAVY:58% | liq=$0 mc=$17,149 | name=Manfred symbol=Manfred; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=58 | Th |
+| 22:46 | robinhood | `0x3470f1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,177 mc=$95,406 | chain:robinhood no-audit-adapter |  |
+| 22:46 | robinhood | `0x1b8211…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,067 mc=$30,324 | chain:robinhood no-audit-adapter | 1111 Farmers on Robinhood Chain. Work the land, raid the fields, spend $HARVEST. |
+| 22:56 | robinhood | `0xdC0b85…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,119 mc=$23,364 | chain:robinhood no-audit-adapter | Cosmo is an open compute network built for AI.  It connects AI models with distr |
+| 22:56 | solana | `snftqNQ6…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:75% | liq=$0 mc=$7,111 | name=Stock NFTs symbol=SNFT; contract:clean; rugcheck_score=74 lpLocked=0%; top10_hold=75. |  |
+| 22:56 | solana | `DXozZnWK…` | PASS | — | liq=$22,683 mc=$80,297 | name=A Meme Dog symbol=AMD; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=28. |  |
+| 22:56 | robinhood | `0x0d9ccc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Talk to strangers and earn stock |
+| 22:56 | ethereum | `0xa24954…` | PASS | — | liq=$111,864 mc=$111,917 | holders=4; buy_tax=0 sell_tax=0; contract:clean | launch tokens paired with your favorite memecoins, coins or stocks. pick the pai |
+| 22:56 | robinhood | `0x0c142d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,799 mc=$16,826 | chain:robinhood no-audit-adapter | Free same day delivery, now on Robinhood. |

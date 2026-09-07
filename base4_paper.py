@@ -114,7 +114,7 @@ def main():
     # ---- process new rows in time order
     for r in sorted(rows, key=lambda x: x["t"]):
         pid = r.get("pool_id")
-        if not pid or pid in st["entered"]:
+        if not pid:
             continue
         qs = r.get("quote_sym")
         qu = quote_usd(qs)
@@ -147,6 +147,9 @@ def main():
             if reason:
                 _close(st, trades_f, pid, p, m, reason, r["t"], ret=ret)
             continue
+
+        if pid in st["entered"]:
+            continue                 # closed trade: ignore late rows
 
         # watch / trigger logic
         w = st["watch"].get(pid)
