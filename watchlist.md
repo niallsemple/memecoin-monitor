@@ -4554,3 +4554,9 @@
 | 06:06 | robinhood | `0x829B21…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$82,232 mc=$883,527 | chain:robinhood no-audit-adapter |  |
 | 06:06 | solana | `EbHx8TVe…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$3,902 | name=pumptard symbol=pumptard; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
 | 06:06 | robinhood | `0x578153…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,199 mc=$6,228 | chain:robinhood no-audit-adapter | CatGpt paired to OpenAI |
+| 07:06 | robinhood | `0xCb0D2B…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,893 mc=$185,835 | chain:robinhood no-audit-adapter | The 2021 reflection model, rebuilt properly on Pons. The 10% creator tax gets cl |
+| 07:06 | robinhood | `0xb2a53f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$70,956 mc=$123,152 | chain:robinhood no-audit-adapter |  |
+| 07:06 | solana | `25zgLBeb…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$19,413 mc=$59,953 | name=Chipmunk symbol=Chipmunk; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 07:06 | solana | `XzENavZ9…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$11,018 | name=openSPL95 symbol=ospl; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=69. | Scan any pump fun coin. Read-only, nothing to sign, free. |
+| 07:06 | solana | `6FvYsQQ1…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:38% | liq=$23,182 mc=$73,450 | name=Rearcoin symbol=REAR; rugcheck_score=12 lpLocked=97.61560845772182%; top10_hold=38.5% | Near   Rear |
+| 07:06 | solana | `B8CdfhHq…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,419 | name=Drone symbol=Drone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99.9% |  |

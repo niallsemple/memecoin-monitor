@@ -71,6 +71,22 @@ def run_pass():
     if st["day"] != today:
         st["day"], st["day_pnl"] = today, 0.0
 
+    # §456: the concurrency slot must track the LIVE position, not the
+    # shadow barrier close. The shadow can ride up to 1h after the live
+    # exit stack has already closed the trade, and during that window
+    # MAX_CONCURRENT blocked real candidates (E59sCeKG, 2026-09-07 06:5x,
+    # blocked while the slot was actually free). Reconcile every pass:
+    # drop any mint whose live position is no longer open.
+    try:
+        _lp = MON / "live_positions.json"
+        if _lp.exists():
+            _pos = json.loads(_lp.read_text())
+            st["open_mints"] = [m for m in st["open_mints"]
+                                if isinstance(_pos.get(m), dict)
+                                and _pos[m].get("open")]
+    except Exception:
+        pass
+
     out = []
     if SHADOW_LOG.exists():
         lines, st["off"] = _tail(SHADOW_LOG, st["off"])
