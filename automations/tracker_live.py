@@ -1892,11 +1892,32 @@ def run(ctx):
                 except Exception:
                     pass
 
+    # §459: Kamino crank-tail radar — Helius blocks gPA on KLend, so we
+    # tail refresh_obligation txs (cranks only refresh risky obligations)
+    # and decode stored health fields. Read-only RPC, 240s cadence.
+    KAMINO_S = 240
+
+    def kamino_loop():
+        import importlib.util as _ilk
+        while not stop.is_set():
+            stop.wait(KAMINO_S)
+            if stop.is_set():
+                break
+            try:
+                _sk = _ilk.spec_from_file_location(
+                    "kamino_tail", str(MON / "kamino_tail.py"))
+                _mk = _ilk.module_from_spec(_sk)
+                _sk.loader.exec_module(_mk)
+                _mk.run_pass()
+            except Exception:
+                pass
+
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
     threading.Thread(target=shock_loop, daemon=True).start()
     threading.Thread(target=e2_fast_loop, daemon=True).start()
+    threading.Thread(target=kamino_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
     # births for the rest of the run (20-min blind window 17:04-17:24

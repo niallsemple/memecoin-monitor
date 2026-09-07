@@ -101,6 +101,34 @@ def health_check(obs: list) -> list:
     rows.sort()
     return rows
 
+ALERT_PCT = 0.05  # flag when margin < 5% of adjusted debt (or negative)
+
+
+def run_pass():
+    """Single radar sweep for the tracker kamino_loop thread. Appends
+    near-line / liquidatable rows to kamino_alerts.jsonl; always refreshes
+    kamino_tail_latest.json. Never raises."""
+    try:
+        obs, span = harvest_obligations(limit=60, verbose=False)
+        if not obs:
+            return
+        rows = health_check(sorted(obs))
+        out = [{"pubkey": pk, "owner": ow, "adj_debt": a, "unhealthy": u,
+                "margin": m, "slot_age": sa} for m, a, u, sa, ow, pk in rows]
+        Path("kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
+        hits = [r for r in rows if r[0] < max(0.0, ALERT_PCT * r[1])]
+        if hits:
+            with open("kamino_alerts.jsonl", "a") as f:
+                for m, a, u, sa, ow, pk in hits:
+                    f.write(json.dumps({
+                        "ts": time.time(), "pubkey": pk, "owner": ow,
+                        "adj_debt": a, "unhealthy": u, "margin": m,
+                        "slot_age": sa,
+                        "kind": "liquidatable" if m < 0 else "near_line"}) + "\n")
+    except Exception:
+        pass
+
+
 def main():
     t0 = time.time()
     print("harvesting crank-refreshed obligations...")
