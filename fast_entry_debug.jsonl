@@ -4024,3 +4024,18 @@
 {"t": 1788790275.5534348, "phase": "lt_loaded", "mint": "9JmJTQw1wuNqxeobGZaEdJvmaQoy4HHuMEfmmcEkpump"}
 {"t": 1788790275.553843, "phase": "seed_blocked", "mint": "9JmJTQw1wuNqxeobGZaEdJvmaQoy4HHuMEfmmcEkpump", "seed": 85.005359057}
 {"t": 1788790275.5552151, "phase": "thread_done", "mint": "9JmJTQw1wuNqxeobGZaEdJvmaQoy4HHuMEfmmcEkpump", "result": "skip: oversized unfunded create seed 85.01"}
+{"t": 1788790566.308136, "phase": "spawned", "mint": "RVLcrD9VToQinWPH6nsvUE3G78oiNCJ1PgFtdL2pump", "creator": "HcGJoASvQmRfVzfx5nu4hZpVgSrgwsGpNB8jfh12vkdq"}
+{"t": 1788790566.309313, "phase": "thread_start", "mint": "RVLcrD9VToQinWPH6nsvUE3G78oiNCJ1PgFtdL2pump"}
+{"t": 1788790566.314015, "phase": "lt_loaded", "mint": "RVLcrD9VToQinWPH6nsvUE3G78oiNCJ1PgFtdL2pump"}
+{"t": 1788790566.3150349, "phase": "seed_blocked", "mint": "RVLcrD9VToQinWPH6nsvUE3G78oiNCJ1PgFtdL2pump", "seed": 85.005359057}
+{"t": 1788790566.317137, "phase": "thread_done", "mint": "RVLcrD9VToQinWPH6nsvUE3G78oiNCJ1PgFtdL2pump", "result": "skip: oversized unfunded create seed 85.01"}
+{"t": 1788790673.0576682, "phase": "spawned", "mint": "bFYYLaHySmwEkAx5iELEDe8Ndaq8NEQ91AFGiF7pump", "creator": "AwWShudxF9oiCs58Gj8F86i7xsRrxbuinyoZocpnVpuE"}
+{"t": 1788790673.058542, "phase": "thread_start", "mint": "bFYYLaHySmwEkAx5iELEDe8Ndaq8NEQ91AFGiF7pump"}
+{"t": 1788790673.063123, "phase": "lt_loaded", "mint": "bFYYLaHySmwEkAx5iELEDe8Ndaq8NEQ91AFGiF7pump"}
+{"t": 1788790673.0640059, "phase": "seed_blocked", "mint": "bFYYLaHySmwEkAx5iELEDe8Ndaq8NEQ91AFGiF7pump", "seed": 85.005359057}
+{"t": 1788790673.0652559, "phase": "thread_done", "mint": "bFYYLaHySmwEkAx5iELEDe8Ndaq8NEQ91AFGiF7pump", "result": "skip: oversized unfunded create seed 85.01"}
+{"t": 1788790773.301833, "phase": "spawned", "mint": "XBdTADm5WR8Pb2aZe2gMTfPdUNUGE9YVsgnnBS7pump", "creator": "8CViV9Me2NrTeAzdfsNydUrbLRavF2P6FozU8qmBPKAU"}
+{"t": 1788790773.303176, "phase": "thread_start", "mint": "XBdTADm5WR8Pb2aZe2gMTfPdUNUGE9YVsgnnBS7pump"}
+{"t": 1788790773.311449, "phase": "lt_loaded", "mint": "XBdTADm5WR8Pb2aZe2gMTfPdUNUGE9YVsgnnBS7pump"}
+{"t": 1788790773.312236, "phase": "seed_blocked", "mint": "XBdTADm5WR8Pb2aZe2gMTfPdUNUGE9YVsgnnBS7pump", "seed": 85.005359057}
+{"t": 1788790773.314507, "phase": "thread_done", "mint": "XBdTADm5WR8Pb2aZe2gMTfPdUNUGE9YVsgnnBS7pump", "result": "skip: oversized unfunded create seed 85.01"}

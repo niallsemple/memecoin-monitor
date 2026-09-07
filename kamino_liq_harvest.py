@@ -153,7 +153,7 @@ def main():
             arb_f.flush()
         print(f"scanned {n_scan}, liquidations {n_new}, arb/flash {n_arb}, "
               f"oldest ts {page[-1].get('timestamp')} ({time.time()-t0:.0f}s)")
-        time.sleep(0.15)
+        time.sleep(0.05)
     f.close()
     if arb_f:
         arb_f.close()
