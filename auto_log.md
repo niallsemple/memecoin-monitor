@@ -868,3 +868,17 @@
 - Lever: Base V4/Clanker watcher (parked) — 1,596 pools/48h measured earlier
   (~800/day) with structurally un-pullable NFT liquidity. Biggest available
   funnel expansion. Queued as next build.
+
+## 2026-09-07 21:20 UTC — Base V4 watcher: foundation verified
+- Pure-python keccak (evm_keccak.py) verified against Transfer topic vector.
+- V4 Initialize topic0 = 0xdd466e67...438 (signature includes sqrtPriceX96+tick;
+  the short signature was WRONG — caught by empirical log sampling).
+- PoolManager 0x498581fF718922c3f8e6A244956aF099B2652b2b on Base is live:
+  1,111 logs/50 blocks; 137 launches in ~67 min ≈ 2,900/day (vs BSC's ~3
+  triggers/day — a ~1000x funnel).
+- Hook distribution: 47 hookless + 5 active hook contracts (Clanker among
+  0x0469a4bd.., 0xb429d62f.., 0xbdf93814.., 0x1f91c998.., 0xbb7784a4..);
+  quotes include USDC 0x833589.. and WETH 0x420000..06.
+- mainnet.base.org getLogs works for 2k-block filtered scans.
+- Next: persistent scout -> base4_pools.jsonl, then Swap-event flow tracker
+  (topics 0x40e9cecb../0xf208f491..) -> scorer variant.
