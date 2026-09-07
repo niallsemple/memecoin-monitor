@@ -28,6 +28,13 @@ LIVE_E2_ENABLED = True         # §439: OWNER FLIPPED 2026-09-06 ~21:16 BST
                                # +4.6%/trade gross at flip time.
 SIZE_SOL = 0.02                # micro-size trial entries
 SEED_FLOOR_SOL = 4.0           # §442: live fire only on seed >= 4 SOL
+# §450: seed-fingerprint denylist. Farms rotate creator wallets but keep
+# their fixed playbook seed amounts (create-tx solAmount on a fixed curve).
+# 5.264197529: observed 5/5 losses across TWO creator wallets (7umWEB7b
+# denylisted §445; CWeJoMKF §450) — every launch with this exact seed was
+# a manufactured dump. Tolerance covers float fuzz only.
+SEED_DENY = [5.264197529]
+SEED_DENY_TOL = 0.0005
 MAX_CONCURRENT = 1
 DAILY_LOSS_CAP_SOL = 0.10      # stop for the day if realized losses exceed
 STALE_OPEN_S = 150             # §433: never buy on backfilled opens — after
@@ -91,6 +98,10 @@ def run_pass():
                 # building; only the LIVE fire is gated.
                 elif (d.get("seed") or 0) < SEED_FLOOR_SOL:
                     blocked = "seed_floor"
+                # §450: farm seed fingerprints (creator-rotation-proof)
+                elif any(abs((d.get("seed") or 0) - s) < SEED_DENY_TOL
+                         for s in SEED_DENY):
+                    blocked = "seed_fingerprint"
                 rec = {"t": now, "mint": mint, "mom": d.get("mom"),
                        "dd": d.get("dd"), "bf": d.get("bf"),
                        "entry_mcap": d.get("entry_mcap"), "seed": d.get("seed"),

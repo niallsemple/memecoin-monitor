@@ -4480,3 +4480,9 @@
 | 01:26 | bsc | `0x5e9276…` | CAUTION | PROXY | liq=$28,319 mc=$76,778 | holders=0; buy_tax= sell_tax= | The father of all memecoins |
 | 01:26 | robinhood | `0xfe1daf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$12,384 mc=$20,070 | chain:robinhood no-audit-adapter | Nut Vigorously In Dat Insane Ass |
 | 01:26 | solana | `7UAYgD2X…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$15,440 mc=$40,074 | name=just ape it symbol=ape; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=36 |  |
+| 02:16 | solana | `GzCBuPgG…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$15,448 | name=Nasdick symbol=Nasdick; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=63 |  |
+| 02:16 | solana | `3xNpngAU…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,474 | name=NASDANQ symbol=NASDANQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99 |  |
+| 02:16 | solana | `4io5KiYS…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$28,698 mc=$124,685 | name=Feetcoin symbol=Feetcoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 02:16 | solana | `DpdvsXhf…` | FAIL | TOP10_HEAVY:51%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=PIZZA symbol=PIZZA; rugcheck_score=12 lpLocked=100%; top10_hold=51.3% |  |
+| 02:16 | solana | `Di85N4ji…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$22,507 mc=$76,526 | name=onlypump symbol=onlypump; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 02:16 | solana | `6fbgUAM3…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:41% | liq=$24,111 mc=$73,990 | name=Prime Cat symbol=PRIMECAT; rugcheck_score=12 lpLocked=99.18827728112781%; top10_hold= | Prime cat season |

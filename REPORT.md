@@ -7433,3 +7433,15 @@ scored it -0.0024 — it overstated blocked-candidate wins 17x (e.g. J3zrDaXY
 missed winner: G2k7Nega (bank12x +16.4%, +0.0033). Seed-floor blocks alone:
 -0.034 SOL avoided. GATE VERDICT: seed floor 4.0 + concurrency cap are
 EARNING ~0.0033 SOL per blocked candidate. Do not lower the floor.
+
+§450 (Sep 7 ~02:20 UTC) — FIRST post-gate live entry fired and lost:
+6G55a2me bought 0.02 SOL at 02:10 (seed 5.264197529 — the 7umWEB7b farm
+fingerprint on a ROTATED creator CWeJoMKF…), peaked 1.122, panic exit at
+02:13 (trough 0.656), net -0.00909 SOL (-45%). The first-launch hole in
+the serial gate is confirmed live: farm rotated creator -> first coin
+passes -> serial gate caught its SECOND launch (2AqPsW54 blocked 02:14).
+Countermeasures deployed: (1) seed-fingerprint denylist in e2_live_bridge
+(SEED_DENY=[5.264197529] tol 0.0005 — exact-value farm playbook seeds,
+5/5 observed losses across two creators, zero winners); (2) creator
+CWeJoMKF added to creator_denylist (now 9). Exit stack performed: panic
+saved 55% of stake vs the -100% rug. Live book: 126 trades, net -0.9626.
