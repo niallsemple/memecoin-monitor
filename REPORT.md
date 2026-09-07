@@ -7586,3 +7586,11 @@ Harvester now dual-purpose: liquidations (type=LIQUIDATE) → `kamino_liq_datase
 **Searcher census (20.4h window, calm market):** 958 flash-funded txs, **225 unique searchers**, top-5 = 54% of tx count (ESuvjvsQ 201, Dsg7ZFQz 195). Median USDC-leg net per tx: **+$0.049** — the frequency game is real and per-tx edges are tiny on average. Caveat: single-mint net flows are NOT profit (a +$16k USDC leg can be one side of a multi-asset rebalance); proper P&L needs all legs valued at oracle prices — that's the Phase-7 enricher. What this already proves: the field is crowded at the top but has a long fragmented tail, and Kamino flash loans are the dominant funding rail.
 
 **Near-line survivor datum:** CspUGetM has sat ~$0.39 from its liquidation line for 5h+ untouched (correctly — it's not across yet). If a sub-$50 obligation ever crosses and survives minutes, that's the small-size niche signal; our radar will catch it.
+
+## §479 — Detector ground-truthed the hard way: ZERO liquidations in ~70h (7 Sep 2026)
+
+Full verification pass complete: all **2,143 flash/arb txs** in the walk window re-fetched via RPC jsonParsed (inner instructions visible) and scanned for the proven liquidate discriminator — **zero confirmed**. Combined with 47,800 KLend txs walked (~70h, back to 5 Sep ~05:00 UTC): this is a genuinely liquidation-free stretch, not a detector blind spot. The detector is now trustworthy in both directions (would catch CPI-hidden liquidations; nothing was hiding).
+
+**Harvest pace:** ~21h of history per ~200s run; checkpointed. Late-Aug volatility (~8-9 days back) is ~8-9 runs away. Walk continues incrementally each cycle; arb dataset grows in parallel (now 2,144 rows).
+
+**Interim read for the niche study:** the liquidation lane's opportunity supply is strongly volatility-gated — days of ZERO events, then presumably bursts. Two implications: (1) any GO decision must size against burst economics, not daily averages; (2) the arb-population data (continuous, ~1/min) may end up the denser research vein. Both walks continue; no build work on fire-path changes until the survival-curve data lands.
