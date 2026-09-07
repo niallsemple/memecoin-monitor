@@ -7606,3 +7606,11 @@ Timeline correction: the walk is actually back to **24 Aug 14:08 UTC** (my earli
 - Kill-criteria note: if a crash burst occurs and events get eaten within 1–2 slots, KILL the lane outright (framework Phase 9-10). Until then: armed standby is free.
 
 **Arb activity by UTC day (txs):** 08-24:682 08-25:1689 08-26:1128 08-27:1497 08-28:1295 08-29:633 08-30:811 08-31:911 09-01:837 09-02:784 09-03:1459 09-04:958 — every single day has hundreds of flash-funded arb events; THAT is where observable, continuous, measurable edge-extraction is happening on Kamino rails.
+
+## §481 — Arb P&L v2 (owner-aware pricing): v1 board invalidated, v2 running (7 Sep 2026)
+
+v1 (transfer-attribution) leaderboard was GARBAGE at the tails — Dsg7ZFQz showed −$160k over 3,414 txs with 0% green, economically impossible; cause = Helius null-owner transfer attribution dropping profit legs. v2 (`kamino_arb_pnl_rpc.py`) prices per-tx P&L from RPC meta pre/postTokenBalances for the fee payer (owner-attributed, exact), stables at $1, wSOL at Binance daily close; residuals flagged complex.
+
+**First chunk (1,284/12,684 priced; 511 fully-priced):** green 41%, median +$0.0001, mean +$30.18 (tail-driven: max +$15.8k, min −$3.4k). Known-bot sanity: Dsg7ZFQz now −$0.0016/tx avg (≈ its flash+gas cost — plausible if its Kamino-flash txs are a funding leg with profit landing elsewhere, or its profit mint sits in complex). v1 top/bottom boards WITHDRAWN; final clustering waits for the full v2 pass (~9 chunks remaining).
+
+**Methodology rule recorded:** never rank searchers on transfer-attributed flows; always owner-aware balance deltas.
