@@ -245,7 +245,8 @@ def main():
         print(f"  [{flag:12s}] {pk[:12]}.. adj=${adj:,.0f} unh=${unh:,.0f} "
               f"margin=${margin:,.0f} slot_age={age} owner={owner[:8]}..")
     out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
-           "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
+           "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa,
+           "stable_pair": stable_pair_tag(pk)}
            for m, a, u, sa, ow, pk in rows]}
     (MON / "kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
     print(f"\nwrote {len(out['rows'])} rows to kamino_tail_latest.json")

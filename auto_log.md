@@ -883,3 +883,12 @@
 - Next: persistent scout -> base4_pools.jsonl, then Swap-event flow tracker
   (topics 0x40e9cecb../0xf208f491..) -> scorer variant.
 - 2026-09-07 21:16Z | ok | cycle done, 6 audited, total tracked=7892 | [v2 EARLY] bank=£390.81 (cash £336.95 + open £53.86) | ROI=-60.92% | open=5 closed=127 realizedPnL=£-611.04 | [v3 STRICT] bank=£710.61 (cash £695.67 + open £14.93) | ROI=-28.94% | open=1 closed=62 realizedPnL=£-289.94 | [v4 MOM1.5] bank=£681.38 (cash £681.38 + open £0.00) | ROI=-31.86% | open=0 closed=155 realizedPnL=£-318.59 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00
+
+## 2026-09-07 21:30 UTC — kamino_tail stable_pair live; BYojGuT5 reclassified
+- main() path also tagged (only run_pass had it). Verified live: 6 rows tagged.
+- BYojGuT5 ($155.6k debt, margin $24.5k) = stable_pair TRUE — a stable
+  looper, low priority. Radar value shifts to volatile-collateral (False)
+  rows. 8K82omz6n5 ($16.4k margin) also stable. Volatile-collateral watches:
+  ALbiNFuUqV ($695), 38ECW96gk5 ($1.1k), 6zn3UhC8X1 ($23.3k), 3nCpmJf7x2
+  ($69.1k margin).
+- base4_scout wired into EVM cron (step 3, one-shot catch-up each fire).
