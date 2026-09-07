@@ -111,6 +111,12 @@ def run_pass():
         except Exception:
             pass
         still = []
+        # §469: closed-mint fallback. h16 pops a mint from its "open" map the
+        # moment it trades at +20% / -8% — a fast runner can close BEFORE our
+        # 45-150s confirm window starts, which would silently skip exactly
+        # the strong movers this mode exists to catch. h16e2_close outcomes
+        # are recorded in st["confirm_closed"] by the log tail below.
+        closed_map = st.setdefault("confirm_closed", {})
         for q in st["confirm_queue"]:
             age = now - q["t"]
             o = (h16st.get("open") or {}).get(q["mint"])
@@ -119,6 +125,11 @@ def run_pass():
                 last_mcap = o["ticks"][-1][1]
             confirmed = (last_mcap is not None and last_mcap > 0
                          and last_mcap >= q["entry_mcap"])
+            if not confirmed and o is None:
+                cl = closed_map.get(q["mint"])
+                if cl and cl.get("t", 0) >= q["t"] and cl.get("mult", 0) >= 1.0:
+                    confirmed = True
+                    last_mcap = round(q["entry_mcap"] * cl["mult"], 2)
             if age < CONFIRM_MIN_S:
                 still.append(q); continue
             if age > CONFIRM_MAX_S:
@@ -266,6 +277,13 @@ def run_pass():
                 out.append(rec)
             elif act == "h16e2_close":
                 mint = d["mint"]
+                # §469: record closes so the confirm queue can still validate
+                # a mint that pumped +20% out of h16's open map before our
+                # 45-150s window (fast runners were silently expiring).
+                cc = st.setdefault("confirm_closed", {})
+                cc[mint] = {"t": d.get("t") or now, "mult": d.get("mult") or 0}
+                st["confirm_closed"] = {k: v for k, v in cc.items()
+                                        if now - v["t"] < 3600}
                 if mint in st["open_mints"]:
                     st["open_mints"].remove(mint)
                 out.append({"t": now, "mint": mint, "action": "bridge_note_close",
