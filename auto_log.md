@@ -921,3 +921,13 @@
   to-date vs $3k trigger). Ungated control first — measures raw V4 EV;
   GoPlus gate variant (chain 8453) layers later.
 - Cron update to add scorer PENDING (active run blocks update; retry next).
+
+## 2026-09-07 22:20 UTC — V4 scorer FIRST ENTRIES: 8 triggers in 6h backfill
+- Scout caught up (2,137 pools), flow backfilled (26,662 swaps -> 637 rows).
+- Scorer replay over 6h: 8 entries (LAPTOP $4.7k, MOONBASE x2, Strait of
+  Hormuz $8.5k, INIT, GRIFT $14.2k, MALONE, Basecat) — vs BSC's ~2.7
+  triggers/day. V4 funnel delivers as predicted.
+- CAVEAT: backfill rows are 200-block chunk aggregates (~7-min granularity),
+  so entry timing/fill price is coarse; forward live rows are per-scan fine.
+- Positions resolve via 30m abort / 120m tstop over coming cycles — first
+  raw V4 EV read lands tonight.
