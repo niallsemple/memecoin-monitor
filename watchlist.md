@@ -4522,3 +4522,9 @@
 | 04:26 | robinhood | `0xd24F34…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,313 mc=$74,675 | chain:robinhood no-audit-adapter | the new creator market where fans can earn alongside their fav creators |
 | 04:26 | solana | `VikNr6Zh…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:89% | liq=$3,244 mc=$3,476 | name=Infinite Pump Glitch symbol=IPG; contract:clean; rugcheck_score=30 lpLocked=100%; top |  |
 | 04:26 | base | `0x021805…` | PASS | — | liq=$6,658 mc=$7,260 | holders=10; buy_tax=0 sell_tax=0; contract:clean | AI models prefaced their secret messages with "ZZZ." $zzzDRB is a secret message |
+| 04:56 | robinhood | `0x0305a1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Social Layer for pons Ecosystem  tokenize your profile, tips, boost, feed |
+| 04:56 | solana | `6UtY9iTZ…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:38% | liq=$19,308 mc=$51,168 | name=NearKat symbol=NEARKAT; rugcheck_score=12 lpLocked=99.98202275664353%; top10_hold=38. | Meerkats are small burrowing animals who live in large underground networks. Sim |
+| 04:56 | solana | `9RTSh6Gj…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$13,175 mc=$30,491 | name=peepeepoopoocoin symbol=peepeepoopoo; contract:clean; rugcheck_score=1 lpLocked=100%; |  |
+| 04:56 | solana | `9yuzfTYE…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,073 | name=Gascoin symbol=Gascoin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 |  |
+| 04:56 | solana | `5hZkN5aX…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$31,824 mc=$144,881 | name=STONKER symbol=STONKER; rugcheck_score=12 lpLocked=0%; top10_hold=27.9% | STONKERS IS HERE TO TRADE STONKS |
+| 04:56 | solana | `CyfikZJh…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$13,337 | name=SPYDER symbol=SPYDER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=64.2 |  |

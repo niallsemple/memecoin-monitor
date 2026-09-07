@@ -2053,3 +2053,4 @@
 {"action": "insider_screen", "mint": "3UEaxQUPZGwdXUSQEEvVxHdSkG2iZf5TGnYP1CuQpump", "error": "no pool found", "ts": 1788756862.4504461}
 {"action": "curve_sell", "mint": "3UEaxQUPZGwdXUSQEEvVxHdSkG2iZf5TGnYP1CuQpump", "tokens": 402265551823, "reason": "panic", "mode": "live", "gate": "live", "expect_sol": 0.01243147, "result": "submitted", "sig": "U2UQ3nXYSXJEzqR9h6L91bmeNVVjiq3QwzGau1CTMfEcYQWYnDhVdtS6ZCivGAtmg4NrwoTXytGuR7WDBW93yD6", "ts": 1788756924.35093}
 {"action": "exit_decision", "mint": "3UEaxQUPZGwdXUSQEEvVxHdSkG2iZf5TGnYP1CuQpump", "exit": "panic", "mult": 0.747, "mins_open": 1.0, "est_sol": 0.01243, "realized_sol": null, "result": "submitted", "ts": 1788756935.231651}
+{"action": "curve_buy", "mint": "R8GJAGrZLVM86DSVjY2572waxDDYFYdCFiiEBMKpump", "reason": "s60nm5fr signal (hook)", "mode": "live", "gate": "live", "result": "refused: farm denylist (\u00a7389)", "ts": 1788757255.694786}

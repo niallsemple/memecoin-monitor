@@ -1730,3 +1730,12 @@
 {"action": "h16e_reject", "mint": "3UEaxQUPZGwdXUSQEEvVxHdSkG2iZf5TGnYP1CuQpump", "t": 1788756850.910561, "mom": 1.009, "dd": 0.991, "bf": 0.8, "seed": 6.422088925}
 {"action": "h16e_reject", "mint": "75aEY5y8oyx1rePdXWBEhmGqTFgofyeFeoMjuxmfLRpM", "t": 1788756945.555276, "mom": 0.909, "dd": 0.561, "bf": 0.569, "seed": 3.083247688}
 {"action": "h16e_reject", "mint": "AgemEpehfY39NwkvLYym6K1Lj3bjMjr37brgLWNPpump", "t": 1788756945.555276, "mom": 0.475, "dd": 0.32, "bf": 0.594, "seed": 4.950495048}
+{"action": "h16e_open", "mint": "Fw1MQhY4bjeMpehiateuuDjMv2H4ETTRGcX1gVdhpump", "t": 1788756948.124293, "scored_at": 1788757038.552306, "entry_mcap": 50.6748, "mom": 1.398, "dd": 0.661, "bf": 0.616, "seed": 2.962962961}
+{"action": "h16e_reject", "mint": "835re6htCkXk2bc8vVyrZmQRW7gP7CQCRnSTdZKrpump", "t": 1788757038.552306, "mom": 0.575, "dd": 0.55, "bf": 0.45, "seed": 3.950617282}
+{"action": "h16e_reject", "mint": "7FRAe9WFQp2FNSwB5jZaB6QkrkkS5Dpm2uV81tccpump", "t": 1788757038.552306, "mom": 0.821, "dd": 0.772, "bf": 0.586, "seed": 2.864197529}
+{"action": "h16e_reject", "mint": "8kXKB38UA7ch1SxRe5AKxVx6wnepdvWa3UxKTUDLpump", "t": 1788757038.552306, "mom": 0.996, "dd": 0.995, "bf": 0.6, "seed": 6.422088925}
+{"action": "h16e_close", "mint": "Fw1MQhY4bjeMpehiateuuDjMv2H4ETTRGcX1gVdhpump", "t": 1788756962.400728, "outcome": "loss", "mult": 0.92, "mins": 0.2, "mom": 1.398, "dd": 0.661, "bf": 0.616, "seed": 2.962962961}
+{"action": "h16e_reject", "mint": "ASrWJkyL87REjRYs7DBteuhbhUF7eG4PkXWo9dz8pump", "t": 1788757132.761784, "mom": 0.523, "dd": 0.378, "bf": 0.5, "seed": 5}
+{"action": "h16e_reject", "mint": "HcEjmKqGGJKKjsVUEyDTxM9fDG3bGKXWqfihAjSpump", "t": 1788757132.761784, "mom": 0.504, "dd": 0.481, "bf": 0.4, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "85Bfc54uxrzvnqbcziKnW2xVZBPHivQZsDyeyUbFpump", "t": 1788757132.761784, "mom": 0.824, "dd": 0.813, "bf": 0.4, "seed": 2.962962961}
+{"action": "h16e_reject", "mint": "7L5gk8kbUNJaczGFZqZTc59Jk1vvcRZxqf9c17yvpump", "t": 1788757132.761784, "mom": 0.652, "dd": 0.325, "bf": 0.614, "seed": 3}
