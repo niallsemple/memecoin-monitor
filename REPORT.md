@@ -7578,3 +7578,11 @@ Stress-tested all 30 BSC paper closes against per-side cost scenarios (applied a
 2. **Flash-loan arb runs ~1/min on Kamino alone** (46 FLASH_REPAY in 46 min, calm market, zero liquidations) — multi-mint routes visible in tokenTransfers. These fee payers ARE the searcher population; per-tx net-flow-to-payer = measurable arb P&L. This is the arb reverse-engineering dataset (owner's earlier ChatGPT brief) available for free inside the same walk.
 3. **Whale self-management pattern:** 49sZy7S1's owner runs successful multi-mint flash-loan txs on their own obligation every few hours (leverage looping/deleveraging) — must be excluded from "competitor" clustering; fee_payer ≠ liquidator when fee_payer == obligation owner.
 4. Ground-truth validation of the LIQUIDATE detector still pending — needs a walk back to a volatile window (late-Aug dips). Harvester resumes from checkpoint each turn.
+
+## §478 — Phase 1 walk reaches 64h; searcher census from 958 flash/arb txs (7 Sep 2026)
+
+Harvester now dual-purpose: liquidations (type=LIQUIDATE) → `kamino_liq_dataset.jsonl`; every successful FLASH_REPAY tx → `kamino_arb_dataset.jsonl` with per-mint net flows to fee payer. Walk now covers ~64h back (to 5 Sep ~03:00 UTC), 41,500 KLend txs scanned, **still zero liquidations** — calm-market stretch confirmed. Walk continues toward late-Aug volatility next turns.
+
+**Searcher census (20.4h window, calm market):** 958 flash-funded txs, **225 unique searchers**, top-5 = 54% of tx count (ESuvjvsQ 201, Dsg7ZFQz 195). Median USDC-leg net per tx: **+$0.049** — the frequency game is real and per-tx edges are tiny on average. Caveat: single-mint net flows are NOT profit (a +$16k USDC leg can be one side of a multi-asset rebalance); proper P&L needs all legs valued at oracle prices — that's the Phase-7 enricher. What this already proves: the field is crowded at the top but has a long fragmented tail, and Kamino flash loans are the dominant funding rail.
+
+**Near-line survivor datum:** CspUGetM has sat ~$0.39 from its liquidation line for 5h+ untouched (correctly — it's not across yet). If a sub-$50 obligation ever crosses and survives minutes, that's the small-size niche signal; our radar will catch it.

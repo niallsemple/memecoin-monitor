@@ -88,8 +88,9 @@ def main():
     before = None
     if STATE.exists():
         before = json.load(open(STATE)).get("oldest_sig")
-    n_new = n_scan = 0
+    n_new = n_scan = n_arb = 0
     f = open(OUT, "a")
+    arb_f = open(MON / "kamino_arb_dataset.jsonl", "a")
     while time.time() - t0 < max_s and n_new < target:
         try:
             page = fetch_page(before)
@@ -103,33 +104,59 @@ def main():
             if sig in seen or tx.get("transactionError"):
                 continue
             hit = tx_has_liquidate(tx)
-            if not hit:
-                continue
-            rec = {
-                "sig": sig, "slot": tx.get("slot"), "ts": tx.get("timestamp"),
-                "fee_payer": tx.get("feePayer"),
-                "liquidator_ix": hit["liquidator_ix"],
-                "obligation": hit["obligation"],
-                "fee_lamports": tx.get("fee"),
-                "token_transfers": [
-                    {"mint": t.get("mint"), "from": t.get("fromUserAccount"),
-                     "to": t.get("toUserAccount"),
-                     "amount": t.get("tokenAmount")}
-                    for t in tx.get("tokenTransfers", [])],
-                "native_transfers": [
-                    {"from": t.get("fromUserAccount"), "to": t.get("toUserAccount"),
-                     "amount": t.get("amount")}
-                    for t in tx.get("nativeTransfers", [])],
-            }
-            f.write(json.dumps(rec) + "\n")
-            seen.add(sig)
-            n_new += 1
+            if hit:
+                rec = {
+                    "sig": sig, "slot": tx.get("slot"), "ts": tx.get("timestamp"),
+                    "fee_payer": tx.get("feePayer"),
+                    "liquidator_ix": hit["liquidator_ix"],
+                    "obligation": hit["obligation"],
+                    "fee_lamports": tx.get("fee"),
+                    "token_transfers": [
+                        {"mint": t.get("mint"), "from": t.get("fromUserAccount"),
+                         "to": t.get("toUserAccount"),
+                         "amount": t.get("tokenAmount")}
+                        for t in tx.get("tokenTransfers", [])],
+                    "native_transfers": [
+                        {"from": t.get("fromUserAccount"), "to": t.get("toUserAccount"),
+                         "amount": t.get("amount")}
+                        for t in tx.get("nativeTransfers", [])],
+                }
+                f.write(json.dumps(rec) + "\n")
+                seen.add(sig)
+                n_new += 1
+            elif tx.get("type") == "FLASH_REPAY_RESERVE_LIQUIDITY" and arb_f:
+                # arb/unknown-flash population: net flow per mint to fee payer
+                payer = tx.get("feePayer")
+                net = {}
+                for t in tx.get("tokenTransfers", []):
+                    m = t.get("mint")
+                    if not m:
+                        continue
+                    amt = t.get("tokenAmount") or 0
+                    if t.get("toUserAccount") == payer:
+                        net[m] = net.get(m, 0) + amt
+                    if t.get("fromUserAccount") == payer:
+                        net[m] = net.get(m, 0) - amt
+                sol_net = sum(t.get("amount", 0) for t in tx.get("nativeTransfers", [])
+                              if t.get("toUserAccount") == payer) \
+                        - sum(t.get("amount", 0) for t in tx.get("nativeTransfers", [])
+                              if t.get("fromUserAccount") == payer)
+                arb_f.write(json.dumps({
+                    "sig": sig, "slot": tx.get("slot"), "ts": tx.get("timestamp"),
+                    "payer": payer, "fee_lamports": tx.get("fee"),
+                    "net_by_mint": net, "sol_net_lamports": sol_net,
+                    "n_transfers": len(tx.get("tokenTransfers", []))}) + "\n")
+                n_arb += 1
         before = page[-1].get("signature")
         f.flush()
-        print(f"scanned {n_scan}, liquidations {n_new}, "
+        if arb_f:
+            arb_f.flush()
+        print(f"scanned {n_scan}, liquidations {n_new}, arb/flash {n_arb}, "
               f"oldest ts {page[-1].get('timestamp')} ({time.time()-t0:.0f}s)")
         time.sleep(0.15)
     f.close()
+    if arb_f:
+        arb_f.close()
     json.dump({"oldest_sig": before, "ts": time.time()}, open(STATE, "w"))
     print(f"DONE: {n_new} new liquidations from {n_scan} KLend txs "
           f"(dataset total {len(seen)})")
