@@ -4572,3 +4572,9 @@
 | 09:06 | robinhood | `0x6c5316…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$32,520 mc=$164,032 | chain:robinhood no-audit-adapter | Lil Finder Guy |
 | 09:06 | solana | `Aw6fiDPW…` | CAUTION | TOP10_CONCENTRATED:40% | liq=$16,082 mc=$43,429 | name=Anonymouse symbol=Anonymouse; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
 | 09:06 | solana | `5XLc2qsm…` | PASS | — | liq=$63,958 mc=$538,924 | name=Scheming Dog symbol=Norman; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Scheming Dog |
+| 09:26 | robinhood | `0x37cc62…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 09:26 | robinhood | `0x38ec46…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$3,945 | chain:robinhood no-audit-adapter | this might be something really random but could just run on robinhood.  I was lo |
+| 09:26 | robinhood | `0x0f238c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$57,956 mc=$164,740 | chain:robinhood no-audit-adapter | ARB is not just a ticker. It is Arbitrum's energy on Robinhood Chain: the scalin |
+| 09:26 | solana | `HbT1PeGb…` | FAIL | TOP10_HEAVY:66%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Blender Benchmark symbol=BLENDER; rugcheck_score=12 lpLocked=100%; top10_hold=65.8% |  |
+| 09:26 | robinhood | `0xe6c03d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,755 mc=$87,298 | chain:robinhood no-audit-adapter |  |
+| 09:26 | solana | `ZesMGYmo…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:36% | liq=$35,587 mc=$147,882 | name=Just a Backpack symbol=🎒; rugcheck_score=12 lpLocked=91.72427650849427%; top10_hold=3 | backpack is the one powering stonk with all the on chain stocks, time we pay hom |

@@ -139,3 +139,4 @@
 | 03:07 | BUY | ERUxAtmg | £14.55 | entry mc $228,412 | +42min |
 | 03:27 | STOP | ERUxAtmg | £4.89 | trail-stop at 0.34x |
 | 09:07 | BUY | 5oR6SgeE | £14.35 | entry mc $286,469 | +22min |
+| 09:29 | STOP | 5oR6SgeE | £8.07 | trail-stop at 0.57x |
