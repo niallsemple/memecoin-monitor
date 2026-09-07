@@ -7566,3 +7566,15 @@ Stress-tested all 30 BSC paper closes against per-side cost scenarios (applied a
 **Retro-test correction (supersedes the alarming first read):** the "21/30 rejected incl. 12 winners" result was confounded — those tokens' pools are drained/dead TODAY, so current-state quotes show ~100% roundtrip loss regardless of what was true at trade time. §475's net-of-cost numbers stand as modeled; whether past winners were exitable AT THE TIME can't be settled without archive-state quotes. The prospective log (starting now) resolves this properly on future entries.
 
 **Next (adopted from owner-shared framework):** Kamino liquidation niche study with Latency Margin as the kill/build metric — Phase 1 dataset from our own tail history (known liquidated obligations) + Helius parsed txs, Phase 2 liquidator clustering, Phase 7 counterfactual replay against OUR measured latencies (~240s radar cadence), complexity-over-size niche hypothesis (farmed obligations — our §472 machinery already handles what naive bots may skip).
+
+## §477 — Kamino niche study Phase 1: harvester built + structural findings (7 Sep 2026)
+
+`kamino_liq_harvest.py` deployed: paginates Helius enhanced-tx history for the KLend program backward, detects liquidations via Helius semantic `type=LIQUIDATE` (primary) with our proven raw discriminator [177,71,154,188,226,133,74,55] as fallback on outer ixs. Checkpointed (`kamino_liq_harvest_state.json`), dedups by sig, writes `kamino_liq_dataset.jsonl` with sig/slot/ts/fee_payer/obligation/fee/token+native transfers per liquidation.
+
+**Coverage so far:** 22,500 KLend txs walked back ~21h → **zero liquidations found**. Spot-checks on our own radar obligations (CspUGetM, 49sZy7S1) confirm: calm market, no liquidations in window. This is itself Phase-4 data — opportunity birth rate ≈ 0 in sideways markets; the lane only pays during volatility windows.
+
+**Structural findings (shape the whole study):**
+1. **Liquidations are CPI-invisible on this endpoint** — bot programs call KLend internally and the address-tx endpoint omits innerInstructions, so the raw-disc scan only catches direct callers. Helius's `type` label (decoded with inner visibility) is the reliable detector; it labels the KLend ix vocabulary correctly (REFRESH_*, FLASH_*, WITHDRAW_* all present and correct).
+2. **Flash-loan arb runs ~1/min on Kamino alone** (46 FLASH_REPAY in 46 min, calm market, zero liquidations) — multi-mint routes visible in tokenTransfers. These fee payers ARE the searcher population; per-tx net-flow-to-payer = measurable arb P&L. This is the arb reverse-engineering dataset (owner's earlier ChatGPT brief) available for free inside the same walk.
+3. **Whale self-management pattern:** 49sZy7S1's owner runs successful multi-mint flash-loan txs on their own obligation every few hours (leverage looping/deleveraging) — must be excluded from "competitor" clustering; fee_payer ≠ liquidator when fee_payer == obligation owner.
+4. Ground-truth validation of the LIQUIDATE detector still pending — needs a walk back to a volatile window (late-Aug dips). Harvester resumes from checkpoint each turn.
