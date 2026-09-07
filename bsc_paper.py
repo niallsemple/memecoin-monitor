@@ -41,6 +41,32 @@ ABORT_MULT, ABORT_MIN = 1.15, 30
 TRAIL_PCT = 0.5
 TSTOP_MIN = 120
 MAX_AGE_H = 30          # don't enter pools older than this (first-seen basis)
+RUG_QRES_FRAC = 0.20    # quote reserve <20% of entry -> LP pulled, position ~worthless
+
+# known BSC LP lockers (verified via BscScan Sep-2026) — annotation only
+LP_LOCKERS = {'pinklock': '0x407993575c91ce7643a4d4cCACc9A98c36eE1BBE',
+              'uncx': '0xC765bddB93b0D1c1A88282BA0fa6B2d00E3e0c83'}
+BSC_RPC = os.environ.get('BSC_RPC', 'https://bsc-dataseed.binance.org')
+
+
+def lp_lock_fracs(pair):
+    """fraction of LP totalSupply held in known lockers (latest block)."""
+    import urllib.request
+    def _call(data):
+        p = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'eth_call',
+                        'params': [{'to': pair, 'data': data}, 'latest']}).encode()
+        req = urllib.request.Request(BSC_RPC, data=p,
+                                     headers={'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            h = json.load(r).get('result', '0x')
+        return int(h, 16) if h and h != '0x' else 0
+    ts = _call('0x18160ddd')
+    if not ts:
+        return {}
+    out = {}
+    for nm, lk in LP_LOCKERS.items():
+        out[nm] = round(_call('0x70a08231' + '0' * 24 + lk[2:].lower()) / ts, 4)
+    return out
 
 
 def load_state():
@@ -109,7 +135,8 @@ def main():
                 st['open'][pair] = dict(
                     name=name, entry_t=r['t'], entry_px=r['price_raw'],
                     peak=1.0, freed=False, frac_left=1.0,
-                    entry_flow_usd=w['cum'])
+                    entry_flow_usd=w['cum'],
+                    entry_qres=r.get('quote_res') or 0)
                 st['entered'].append(pair)
                 st['watch'].pop(pair, None)
                 print(f'ENTRY {name} cum_flow=${w["cum"]:,.0f} '
@@ -132,7 +159,8 @@ def main():
                     rec = {'t': r['t'], 'pair': pair, 'name': name,
                            'ok': hp.get('ok'), 'tax': hp.get('rpc_roundtrip_tax'),
                            'quote': hp.get('quote'), 'reasons': hp.get('reasons'),
-                           'api': hp.get('api'), 'api_error': hp.get('api_error')}
+                           'api': hp.get('api'), 'api_error': hp.get('api_error'),
+                           'lp_lock': lp_lock_fracs(pair)}
                     with open(f'{CHAIN}_honeypot_log.jsonl', 'a') as hf:
                         hf.write(json.dumps(rec) + '\n')
                 except Exception:
@@ -165,14 +193,23 @@ def _manage(st, trades_f, pair, pos, rs):
             _close(st, trades_f, pair, pos, mult, r['t'], pos['pend_exit'])
             return
         if pos.get('pend_free'):
-            # free-roll fill at actual next-poll multiple
+            # free-roll fill at actual next-poll multiple; if the LP was pulled
+            # before the fill, the sale executes into dust -> ~0
+            eq = pos.get('entry_qres') or 0
+            pulled = eq and r.get('quote_res') is not None \
+                and r['quote_res'] < eq * RUG_QRES_FRAC
             pos['frac_left'] = 1 - FREE_PCT
             pos['freed'] = True
-            pos['free_mult'] = mult
+            pos['free_mult'] = 0.0 if pulled else mult
             del pos['pend_free']
             continue
         # signal evaluation -> execute next poll
-        if not pos['freed'] and mult >= FREE_MULT:
+        # LP-pull guard: quote reserve collapse vs entry => dust pricing, ~total loss
+        eq = pos.get('entry_qres') or 0
+        if eq and r.get('quote_res') is not None \
+                and r['quote_res'] < eq * RUG_QRES_FRAC:
+            pos['pend_exit'] = 'rug'
+        elif not pos['freed'] and mult >= FREE_MULT:
             pos['pend_free'] = True
         if age_min >= ABORT_MIN and mult < ABORT_MULT and not pos['freed'] and not pos.get('pend_free'):
             pos['pend_exit'] = 'abort'
@@ -184,6 +221,9 @@ def _manage(st, trades_f, pair, pos, rs):
 
 def _close(st, f, pair, pos, mult, t, reason):
     """Close position at price multiple `mult` for remaining fraction."""
+    if reason == 'rug':
+        # LP pulled: remainder exits into dust liquidity, realistically ~0
+        mult = 0.0
     if pos['freed']:
         # booked FREE_PCT at FREE_MULT, remainder exits at mult
         ret = FREE_PCT * pos.get('free_mult', FREE_MULT) + pos['frac_left'] * mult
