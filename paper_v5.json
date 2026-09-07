@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 974.3361126848216,
+ "cash": 961.1102548112752,
  "positions": {},
  "closed": [
   {
@@ -613,6 +613,19 @@
    "closed_at": "2026-08-31T17:08:38.042075+00:00",
    "exit_r": 0.725,
    "pnl_gbp": -5.9
+  },
+  {
+   "addr": "ERUxAtmg",
+   "entry_mcap": 228412.0,
+   "entry_min": 41.8,
+   "size_gbp": 19.49,
+   "peak_mcap": 442750.0,
+   "remaining": 0,
+   "realized": 6.553165213955484,
+   "opened": "2026-09-07T03:07:54.548218+00:00",
+   "closed_at": "2026-09-07T03:27:37.188881+00:00",
+   "exit_r": 0.341,
+   "pnl_gbp": -13.23
   }
  ],
  "started": "2026-08-27T16:29:41.973286+00:00",
@@ -731,6 +744,8 @@
   "solana:GMac52Zpy8KYzyXzRpVyiEwgTSJvidRKv1K1NQEupump": "failed_momentum_floor",
   "solana:8rExs8yy5VMFNpiTj9SaHjaCeWKg4fLYNkjNkYvKpump": "behaviour_risk",
   "solana:DCC47d6NDetKHPyAnAxuAVmMATLiFG8h6FaN3vt6pump": "behaviour_risk",
-  "solana:F3hJ64M6xTmHYGgqkcgVPZx7sVMxb9FqUHBeXby3pump": "behaviour_risk"
+  "solana:F3hJ64M6xTmHYGgqkcgVPZx7sVMxb9FqUHBeXby3pump": "behaviour_risk",
+  "solana:ERUxAtmgigYMwAVXWHxZC32Tw4rkGjQEcPxQBwL1pump": "failed_momentum_floor",
+  "solana:9GGGhze1NnQwcABTzxdxx89BEFLFtDueHhkwh6japump": "failed_momentum_floor"
  }
 }

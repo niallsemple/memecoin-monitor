@@ -7445,3 +7445,6 @@ Countermeasures deployed: (1) seed-fingerprint denylist in e2_live_bridge
 5/5 observed losses across two creators, zero winners); (2) creator
 CWeJoMKF added to creator_denylist (now 9). Exit stack performed: panic
 saved 55% of stake vs the -100% rug. Live book: 126 trades, net -0.9626.
+
+## §451 — Organic-rate contamination check (2026-09-07 ~03:50 UTC)
+h16_early2.jsonl (file covers 09-06→09-07, 44 opens): seed≥4 opens = 9 total, of which 5 carried the farm seed 5.264197529 and 1 more (09-07) also farm-fingerprinted → farm share of the seed≥4 band ≈ 55-67%. TRUE ORGANIC seed≥4 rate ≈ 4 per ~31h ≈ 3/day, NOT the 9/day previously estimated (that figure was farm-contaminated). Both 09-07 seed≥4 opens were farm seed → fingerprint gate blocked them (validated in blocked_shadow replay). Implication: at ~3 organic candidates/day, accumulating 10 post-gate realized exits takes days-to-a-week, not 1-2 days. Drought since 5nUeZs7K (21:37 UTC 09-06) ≈ 6h — consistent with the corrected rate, not an anomaly. No gate changes indicated; expectation reset only.

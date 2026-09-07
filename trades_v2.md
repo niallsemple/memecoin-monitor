@@ -282,3 +282,5 @@
 | 01:07 | STOP | EcZMqqYx | £2.56 | trail-stop at 0.37x |
 | 18:48 | STOP | DVxaAXi3 | £9.48 | trail-stop at 4.73x |
 | 18:49 | BUY | DVxaAXi3 | £7.19 | entry mc $2,471,919 | +14600min |
+| 03:07 | BUY | ERUxAtmg | £7.04 | entry mc $228,412 | +42min |
+| 03:27 | STOP | ERUxAtmg | £2.37 | trail-stop at 0.34x |

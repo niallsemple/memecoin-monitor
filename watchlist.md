@@ -4486,3 +4486,33 @@
 | 02:16 | solana | `DpdvsXhf…` | FAIL | TOP10_HEAVY:51%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=PIZZA symbol=PIZZA; rugcheck_score=12 lpLocked=100%; top10_hold=51.3% |  |
 | 02:16 | solana | `Di85N4ji…` | CAUTION | TOP10_CONCENTRATED:33% | liq=$22,507 mc=$76,526 | name=onlypump symbol=onlypump; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
 | 02:16 | solana | `6fbgUAM3…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:41% | liq=$24,111 mc=$73,990 | name=Prime Cat symbol=PRIMECAT; rugcheck_score=12 lpLocked=99.18827728112781%; top10_hold= | Prime cat season |
+| 02:26 | solana | `ERUxAtmg…` | PASS | — | liq=$26,068 mc=$98,987 | name=robinwojak symbol=robinwojak; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 02:26 | solana | `5ys439eH…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$16,138 | name=Gold symbol=Gold; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=64.6% |  |
+| 02:26 | solana | `9GvEUuoJ…` | FAIL | TOP10_HEAVY:96% | liq=$0 mc=$5,280 | name=X Ray Sprite Creator symbol=Brady; contract:clean; rugcheck_score=1 lpLocked=100%; to |  |
+| 02:26 | robinhood | `0x89dEcc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,889 mc=$20,862 | chain:robinhood no-audit-adapter | Ansem on Robinhood.  1:1 backed by 1x long on Lighter Perps |
+| 02:26 | robinhood | `0x657D61…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$96,752 mc=$164,757 | chain:robinhood no-audit-adapter | LONG500, paired with S&P500 |
+| 02:26 | solana | `9h2mp5Wx…` | FAIL | TOP10_HEAVY:90% | liq=$11,291 mc=$12,705 | name=HarryPotterObamaSonic10Inu symbol=BITCOIN; contract:clean; rugcheck_score=1 lpLocked= | THE TICKER IS $BITCOIN AND GIVES BACK |
+| 03:06 | solana | `F8D7kqXE…` | CAUTION | TOP10_CONCENTRATED:50% | liq=$10,921 mc=$21,343 | name=CTO symbol=CTO; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=49.6% |  |
+| 03:06 | solana | `LUiDvGuu…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,445 | name=amazon box symbol=box; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=99. |  |
+| 03:06 | solana | `5dDLGi6i…` | CAUTION | TOP10_CONCENTRATED:49% | liq=$14,465 mc=$32,062 | name=CatGPT symbol=CatGPT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=48.6 |  |
+| 03:06 | robinhood | `0xf687bb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The product is the market cap. |
+| 03:06 | solana | `9GGGhze1…` | PASS | — | liq=$63,509 mc=$517,874 | name=CatGPT symbol=CatGPT; contract:clean; rugcheck_score=1 lpLocked=93.06465773218716%; t | CatGpt paired to OpenAI |
+| 03:06 | solana | `GxU33mVa…` | FAIL | TOP10_HEAVY:53% | liq=$28,002 mc=$52,426 | name=‎ ‎ ‎ ‎ ‎ symbol=‎; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=53.2% | ‎ |
+| 03:26 | robinhood | `0x41838D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$78,906 mc=$146,597 | chain:robinhood no-audit-adapter | ticker should be Nasduck |
+| 03:26 | solana | `31shMmcF…` | FAIL | TOP10_HEAVY:99% | liq=$0 mc=$3,989 | name=Anime Bitcoin symbol=ABTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold |  |
+| 03:26 | solana | `GScB5mN8…` | CAUTION | TOP10_CONCENTRATED:34% | liq=$23,462 mc=$84,698 | name=Crapcoin symbol=Crap; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=34.1 |  |
+| 03:26 | solana | `Gnbmbzqq…` | FAIL | TOP10_HEAVY:70%; RC_WARN:Low Liquidity | liq=$7,307 mc=$11,002 | name=Anime Bitcoin symbol=ABTC; contract:clean; rugcheck_score=24 lpLocked=100%; top10_hol |  |
+| 03:26 | solana | `K7ipwWcj…` | FAIL | TOP10_HEAVY:53%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=dogwifbag symbol=ZIF; rugcheck_score=12 lpLocked=100%; top10_hold=52.7% |  |
+| 03:26 | robinhood | `0xf3203b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,557 mc=$12,779 | chain:robinhood no-audit-adapter | We made Bitcoin again. BIT + COIN = BITCOIN. Took 17 years to figure this out. H |
+| 03:46 | bsc | `0x653Bf7…` | CAUTION | PROXY | liq=$28,712 mc=$101,363 | holders=0; buy_tax= sell_tax= |  |
+| 03:46 | robinhood | `0xf2B6e1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,673 mc=$36,377 | chain:robinhood no-audit-adapter | -Telegram game in TG link ft. Artificial Inu & NVIDIA CEO.  -5% team supply → Ar |
+| 03:46 | solana | `FFgjwTgf…` | FAIL | TOP10_HEAVY:60%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Stink symbol=STINK; rugcheck_score=12 lpLocked=100%; top10_hold=59.6% | hot air rises, always. |
+| 03:46 | solana | `7ru4jSn2…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:53%; RC_WARN:Copycat token | liq=$13,909 mc=$33,329 | name=smoking chilling hamster symbol=SCH; contract:clean; rugcheck_score=80 lpLocked=0%; t |  |
+| 03:46 | solana | `GbxvXijY…` | CAUTION | TOP10_CONCENTRATED:39% | liq=$0 mc=$28,021 | name=Quantum Inu symbol=QINU; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=3 |  |
+| 03:46 | robinhood | `0x7c2D15…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,865 mc=$79,092 | chain:robinhood no-audit-adapter | Toshi on Robinhood. |
+| 04:06 | solana | `Hb3y2VYv…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$8,433 | name=Starman symbol=Starman; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=80 |  |
+| 04:06 | solana | `2mQNcZMY…` | FAIL | RC_DANGER:Creator history of rugged tokens | liq=$30,846 mc=$141,524 | name=WHIRLPOOL symbol=WHIRL; contract:clean; rugcheck_score=67 lpLocked=100%; top10_hold=1 | Keep Moving. Keep Turning WHIRLPOOL never follows a straight path. It turns, shi |
+| 04:06 | solana | `En3oyupg…` | FAIL | TOP10_HEAVY:59% | liq=$8,195 mc=$13,580 | name=Nvideer symbol=NVIDEER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=59 | Nvideer paired with NVIDIA stocks. |
+| 04:06 | robinhood | `0x6CCe60…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,928 mc=$33,447 | chain:robinhood no-audit-adapter |  |
+| 04:06 | bsc | `0xD840A1…` | PASS | — | liq=$0 mc=$53,797 | holders=0; buy_tax= sell_tax=; contract:clean | The bnb fwog |
+| 04:06 | solana | `pbJFoQ9y…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$18,270 mc=$54,670 | name=Pweg symbol=Pweg; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.1% | Waddling to new heights 🐧 |
