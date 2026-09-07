@@ -1,6 +1,6 @@
 {
  "bank_start": 1000.0,
- "cash": 344.05256343521904,
+ "cash": 336.91624187845696,
  "positions": {
   "solana:HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk": {
    "addr": "HtTYHz1K",
@@ -35,27 +35,38 @@
    "realized": 0.0,
    "opened": "2026-08-30T11:27:01.906752+00:00"
   },
-  "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
-   "addr": "CTPoyCwk",
-   "entry_mcap": 8738245.0,
-   "entry_min": 12820.8,
-   "size_gbp": 7.51,
-   "peak_mcap": 16612659.0,
-   "stage": 0,
-   "remaining": 1.0,
-   "realized": 0.0,
-   "opened": "2026-09-04T21:49:22.355824+00:00"
-  },
   "solana:DVxaAXi3L2NMgqpBqYmuVJkSK4bVJ1JgjvTmQgTpump": {
    "addr": "DVxaAXi3",
    "entry_mcap": 2471919.0,
    "entry_min": 14600.4,
    "size_gbp": 7.19,
-   "peak_mcap": 2805593.0,
+   "peak_mcap": 2912028.0,
    "stage": 0,
    "remaining": 1.0,
    "realized": 0.0,
    "opened": "2026-09-06T18:49:32.868707+00:00"
+  },
+  "solana:J4jBCJgHAyskfZXe1LrvK8gBHpVzDqXX8NV7R9ANpump": {
+   "addr": "J4jBCJgH",
+   "entry_mcap": 415964.0,
+   "entry_min": 21.0,
+   "size_gbp": 6.88,
+   "peak_mcap": 415964.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-07T20:57:02.064262+00:00"
+  },
+  "solana:CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump": {
+   "addr": "CTPoyCwk",
+   "entry_mcap": 8066945.0,
+   "entry_min": 17090.5,
+   "size_gbp": 6.88,
+   "peak_mcap": 8066945.0,
+   "stage": 0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-07T20:59:05.875482+00:00"
   }
  },
  "closed": [
@@ -1808,6 +1819,20 @@
    "closed_at": "2026-09-07T09:29:33.042924+00:00",
    "exit_r": 0.571,
    "pnl_gbp": -3.14
+  },
+  {
+   "addr": "CTPoyCwk",
+   "entry_mcap": 8738245.0,
+   "entry_min": 12820.8,
+   "size_gbp": 7.51,
+   "peak_mcap": 16612659.0,
+   "stage": 0,
+   "remaining": 0,
+   "realized": 6.829061853467143,
+   "opened": "2026-09-04T21:49:22.355824+00:00",
+   "closed_at": "2026-09-07T20:58:03.986385+00:00",
+   "exit_r": 0.923,
+   "pnl_gbp": -0.79
   }
  ],
  "started": "2026-08-26T19:30:06.316074+00:00",

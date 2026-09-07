@@ -1,7 +1,18 @@
 {
  "bank_start": 1000.0,
- "cash": 695.4225802994258,
- "positions": {},
+ "cash": 681.3055019193474,
+ "positions": {
+  "solana:J4jBCJgHAyskfZXe1LrvK8gBHpVzDqXX8NV7R9ANpump": {
+   "addr": "J4jBCJgH",
+   "entry_mcap": 415964.0,
+   "entry_min": 21.0,
+   "size_gbp": 13.91,
+   "peak_mcap": 415964.0,
+   "remaining": 1.0,
+   "realized": 0.0,
+   "opened": "2026-09-07T20:57:02.197055+00:00"
+  }
+ },
  "closed": [
   {
    "addr": "H4deHd4W",

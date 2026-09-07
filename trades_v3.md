@@ -140,3 +140,6 @@
 | 03:27 | STOP | ERUxAtmg | £4.89 | trail-stop at 0.34x |
 | 09:07 | BUY | 5oR6SgeE | £14.35 | entry mc $286,469 | +22min |
 | 09:29 | STOP | 5oR6SgeE | £8.07 | trail-stop at 0.57x |
+| 20:57 | BUY | J4jBCJgH | £14.22 | entry mc $415,964 | +21min |
+| 20:58 | STOP | CTPoyCwk | £13.50 | trail-stop at 0.92x |
+| 20:59 | BUY | CTPoyCwk | £14.20 | entry mc $8,066,945 | +17091min |

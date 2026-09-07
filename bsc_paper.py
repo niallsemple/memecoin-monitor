@@ -146,6 +146,37 @@ def goplus_check(token):
             'gp_top10_sum': round(sum(tops), 4)}
 
 
+GP_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        'bsc_goplus_cache.json')
+
+def goplus_cached(pair, row_t=None):
+    """Cache-first GoPlus snapshot keyed by PAIR. Live: fetch + store with
+    first-seen timestamp. Replay of history reuses the live-captured snapshot
+    (dead-token post-hoc data is garbage, so cache is the source of truth).
+    Returns {} on cache miss without fetching when row_t is clearly
+    historical (>6h old) — gate treats that as reject (conservative)."""
+    try:
+        cache = json.load(open(GP_CACHE))
+    except Exception:
+        cache = {}
+    if pair in cache:
+        return cache[pair]
+    if row_t is not None and (time.time() - row_t) > 6 * 3600:
+        return {}
+    try:
+        gp = goplus_check(base_token_of(pair))
+    except Exception:
+        gp = {}
+    if gp:
+        gp = dict(gp); gp['t'] = row_t or time.time(); gp['src'] = 'live'
+        try:
+            cache[pair] = gp
+            json.dump(cache, open(GP_CACHE, 'w'), indent=1)
+        except Exception:
+            pass
+    return gp
+
+
 def load_state():
     if os.path.exists(STATE):
         return json.load(open(STATE))
@@ -237,7 +268,7 @@ def main():
                     locks = lp_lock_fracs(pair)
                 except Exception:
                     locks = {}
-                if VARIANT in ('lockgate', 'lockgate_usdt'):
+                if VARIANT in ('lockgate', 'lockgate_usdt', 'lockgate_gp'):
                     if not locks:
                         continue        # RPC failed: retry next batch
                     lock_frac = sum(locks.get(k) or 0 for k in
@@ -248,6 +279,19 @@ def main():
                             gate_ok = (quote_token_of(pair) or '').lower() == USDT_ADDR
                         except Exception:
                             continue    # RPC failed: retry next batch
+                    if gate_ok and VARIANT == 'lockgate_gp':
+                        # crowd check (replaces quote proxy): live GoPlus at
+                        # entry showed holders>=200 + not-honeypot separates
+                        # all 3 winners from both supply dumps (28/30 holders)
+                        gp = goplus_cached(pair, r['t'])
+                        try:
+                            nh = int(gp.get('gp_holders') or 0)
+                        except Exception:
+                            nh = 0
+                        hp_flag = str(gp.get('gp_honeypot') or '').lower()
+                        gate_ok = nh >= 200 and hp_flag not in ('1', 'true')
+                        if not gate_ok:
+                            print(f'GP_REJECT {name} holders={nh} hp={hp_flag}')
                     if not gate_ok:
                         st['entered'].append(pair)   # rejected, never retry
                         st['watch'].pop(pair, None)

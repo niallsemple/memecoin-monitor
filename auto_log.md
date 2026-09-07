@@ -833,3 +833,19 @@
   suppressed: sim-gated fire stays armed — a stable pair crossing the line
   means a real depeg, exactly the event we want to catch.
 - Tagger verified live: 2754tvij=True, two dust rows=False.
+- 2026-09-07 20:36Z | ok | cycle done, 6 audited, total tracked=7861 | [v2 EARLY] bank=£397.70 (cash £344.05 + open £53.65) | ROI=-60.23% | open=5 closed=125 realizedPnL=£-603.30 | [v3 STRICT] bank=£725.31 (cash £710.94 + open £14.37) | ROI=-27.47% | open=1 closed=60 realizedPnL=£-274.01 | [v4 MOM1.5] bank=£695.42 (cash £695.42 + open £0.00) | ROI=-30.46% | open=0 closed=154 realizedPnL=£-304.54 | [v5 BEHAV] bank=£961.11 (cash £961.11 + open £0.00) | ROI=-3.89% | open=0 closed=48 realizedPnL=£-38.92 | [v6 CLUSTER] bank=£1,000.00 (cash £1,000.00 + open £0.00) | ROI=+0.00% | open=0 closed=0 realizedPnL=£+0.00
+
+## 2026-09-07 21:00 UTC — DECISIVE: live GoPlus crowd check separates dumps; lockgate_gp deployed
+- All 5 pinklock-class trades have LIVE at-entry GoPlus records:
+  winners 旺财/佛哞/Sue = 1387/1003/1382 holders, honeypot=0|null;
+  dumps wSNDKx/SAL = 28/30 holders, honeypot=1. Perfect separation.
+- Full book (live gp, n=17): holders<200 -> 0/4 green mean 0.402x;
+  holders>=200 -> 6/13 mean 0.926x (LP-pull rugs have real crowds — that's
+  what the pro-lock gate kills; the two gates are COMPLEMENTARY).
+- Deployed variant lockgate_gp: pro-lock>=95% + holders>=200 + not-honeypot,
+  cache-first GoPlus (bsc_goplus_cache.json, backfilled 17 live records;
+  historical replay = cache-only so dead-token garbage never gates).
+- Replay-verified: book = 旺财+佛哞+Sue exactly (n=3, mean 2.627x), SAL killed
+  by GP_REJECT. Funnel widened: WBNB pinklock pairs with real crowds now
+  admissible (quote proxy no longer needed in this variant).
+- Cron automation updated: 5th scorer lockgate_gp added.

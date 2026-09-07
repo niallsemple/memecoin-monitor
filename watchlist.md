@@ -4608,3 +4608,15 @@
 | 20:16 | robinhood | `0x380cc2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | hedge any position in one click.  stocks, rwa, crypto, and pons markets. |
 | 20:16 | solana | `HcbKRVuL…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$17,206 mc=$49,434 | name=Make Pump Great Again symbol=MPGA; contract:clean; rugcheck_score=1 lpLocked=100%; to | Going Live Doxxed on PumpFun  Introducing $MPGA  it is time to Make PumpFun Grea |
 | 20:16 | solana | `3Sy6qdDu…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:41% | liq=$22,053 mc=$65,397 | name=Corgicoin symbol=CORGI; rugcheck_score=12 lpLocked=98.91296713723156%; top10_hold=40. |  |
+| 20:36 | robinhood | `0xb1E38f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,434 mc=$32,794 | chain:robinhood no-audit-adapter | One price per tick, nobody is first. Robinhood Chain, Uniswap v4. $TICK |
+| 20:36 | robinhood | `0xC70F73…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,557 mc=$117,705 | chain:robinhood no-audit-adapter | I'm just chilling in my DOGEHOUSE, paired with pHODO (Premium House of DOGE) |
+| 20:36 | solana | `J4jBCJgH…` | PASS | — | liq=$42,863 mc=$261,631 | name=NVIDOG symbol=NVIDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=8.7% | NVIDOG fuses NVIDIA-inspired tech energy with unstoppable dog memes, powering th |
+| 20:36 | robinhood | `0x23A066…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$16,322 mc=$29,954 | chain:robinhood no-audit-adapter | Maye Musk Meme |
+| 20:36 | solana | `2qtzZRpJ…` | CAUTION | TOP10_CONCENTRATED:39% | liq=$15,332 mc=$39,999 | name=nike tyson symbol=niketyson; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Mike Tyson, but as a nike shoe.  Paired to Nike. Rewards in $NIKE dividents. |
+| 20:36 | bsc | `0x8E7e25…` | PASS | — | liq=$19,780 mc=$45,076 | holders=319; buy_tax=0 sell_tax=0; contract:clean | BREWERS PAIRED WITH BREW LAUNCHED ON BREW |
+| 20:56 | solana | `3cfXUPs2…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$14,389 | name=CATSDAQ symbol=CATSDAQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=60 |  |
+| 20:56 | ethereum | `0x6eC565…` | PASS | — | liq=$0 mc=$54,111 | holders=2; buy_tax=0 sell_tax=0; contract:clean | launch tokens paired with stocks on ethereum. |
+| 20:56 | robinhood | `0x32c4fD…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$131,308 mc=$1,997,595 | chain:robinhood no-audit-adapter | Really Blocky Layered Experience. Built different. Built in blocks. $RBLE paired |
+| 20:56 | robinhood | `0x14b0ed…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,587 mc=$95,510 | chain:robinhood no-audit-adapter | Share your QR. Friends scan it. You both get stock rewards. |
+| 20:56 | solana | `ATDSqisE…` | CAUTION | TOP10_CONCENTRATED:32% | liq=$37,124 mc=$185,978 | name=Caviar Dealer symbol=Caviar; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 20:56 | robinhood | `0x1a7EAE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$96,823 mc=$1,395,047 | chain:robinhood no-audit-adapter | The Lucky Cat of Google |
