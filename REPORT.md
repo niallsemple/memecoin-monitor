@@ -7404,3 +7404,20 @@ wallets (0.10-0.19 SOL), not the watched 80-95 SOL treasury masters
 repeat-recipient pattern. Farms have moved to single-use micro-funders;
 the creator_denylist + 6h serial gate remains the right defense layer —
 whack-a-mole at the funder layer is not cost-effective.
+
+§448 (Sep 7 ~02:30 UTC) — RUG-TAIL AUTOPSY + G2 overhang gate verdict.
+Autopsied all 23 catastrophic losses (-1.41 SOL) against the current gate
+stack: 8 would be caught by the creator denylist (the e2-era farm dumps,
+small); 15 MISSED (-1.36) — but those 15 are pool-era entries via retired
+entry paths (s60nm5fr/conv_override/fast_birth), mostly 85-SOL armed births
+that pass ANY seed floor by construction. The current live system enters
+ONLY via the e2 bridge h16 stream, where losses are small and bounded
+(e2 era: 8 losses avg -0.006, zero full-stake rugs).
+G2 overhang gate (>=30% insider): REJECTED on counterfactual — rug rate
+is 5/43 (11.6%) in overhang>=30 vs 5/35 (14.3%) below; no discriminative
+power, and the blocked cohort carried +0.06 of grind profit. g2_gate.json
+stays inactive. NOTE: 79.31% overhang is a near-universal sniper artifact,
+not a rug signature.
+Serial rug creator D84GJoqi9YDAbmN5xtqXEEK9nkSSQP55Z8e46E4Y5KJh (2 full-stake
+writeoffs, -0.216 SOL) added to creator_denylist.json (now 8 entries).
+Address verified against curves.jsonl create records.

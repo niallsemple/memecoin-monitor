@@ -64,3 +64,5 @@
 {"t": 1788741431.949724, "mint": "E2mvmTF7cR4mMpLd3PNiq9Yd2HxSQi4w31FHbGyXpump", "mom": 1.023, "dd": 0.94, "bf": 0.714, "entry_mcap": 34.5519, "seed": 2.967496174, "open_age_s": 3.4, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1788741537.027488, "mint": "E2mvmTF7cR4mMpLd3PNiq9Yd2HxSQi4w31FHbGyXpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
 {"t": 1788742198.480654, "mint": "7MrGhKb7nqvRTsMZBxpSj2uugeXBYVHpDa1tMydcpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1788743639.987374, "mint": "J3zrDaXYypmziKS4hghYbqFfYxqfsJjBUEjyyzYrpump", "mom": 1.06, "dd": 0.914, "bf": 0.625, "entry_mcap": 35.1633, "seed": 2.671013433, "open_age_s": 14.0, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1788743670.008974, "mint": "J3zrDaXYypmziKS4hghYbqFfYxqfsJjBUEjyyzYrpump", "action": "bridge_note_close", "outcome": "win", "mult": 1.2}
