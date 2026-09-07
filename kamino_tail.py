@@ -111,10 +111,13 @@ def run_pass():
     try:
         obs, span = harvest_obligations(limit=60, verbose=False)
         if not obs:
+            Path("kamino_tail_latest.json").write_text(
+                json.dumps({"ts": time.time(), "rows": []}))
             return
         rows = health_check(sorted(obs))
-        out = [{"pubkey": pk, "owner": ow, "adj_debt": a, "unhealthy": u,
-                "margin": m, "slot_age": sa} for m, a, u, sa, ow, pk in rows]
+        out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
+               "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
+               for m, a, u, sa, ow, pk in rows]}
         Path("kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
         hits = [r for r in rows if r[0] < max(0.0, ALERT_PCT * r[1])]
         if hits:
@@ -141,10 +144,11 @@ def main():
         flag = "LIQUIDATABLE" if margin < 0 else ("NEAR" if margin < 0.05 * adj else "ok")
         print(f"  [{flag:12s}] {pk[:12]}.. adj=${adj:,.0f} unh=${unh:,.0f} "
               f"margin=${margin:,.0f} slot_age={age} owner={owner[:8]}..")
-    out = [{"pubkey": pk, "owner": ow, "adj_debt": a, "unhealthy": u,
-            "margin": m, "slot_age": sa} for m, a, u, sa, ow, pk in rows]
+    out = {"ts": time.time(), "rows": [{"pubkey": pk, "owner": ow,
+           "adj_debt": a, "unhealthy": u, "margin": m, "slot_age": sa}
+           for m, a, u, sa, ow, pk in rows]}
     Path("kamino_tail_latest.json").write_text(json.dumps(out, indent=1))
-    print(f"\nwrote {len(out)} rows to kamino_tail_latest.json")
+    print(f"\nwrote {len(out['rows'])} rows to kamino_tail_latest.json")
 
 if __name__ == "__main__":
     main()

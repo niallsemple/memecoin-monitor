@@ -193,6 +193,7 @@ if __name__ == "__main__":
     # paper run against the largest obligation seen by the tail
     import os
     rows = json.loads((MON / "kamino_tail_latest.json").read_text())
+    rows = rows.get("rows", rows) if isinstance(rows, dict) else rows
     ob = rows[0]["pubkey"]
     wallet = json.loads((MON / "live_positions.json").read_text())  # noqa (unused)
     print("resolving", ob)
