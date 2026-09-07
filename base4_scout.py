@@ -141,7 +141,8 @@ def scan_once():
                 n_new += 1
             start = end + 1
             st["last_block"] = end
-    json.dump(cache, open(TOKS, "w"))
+            json.dump(st, open(STATE, "w"))   # checkpoint per chunk
+        json.dump(cache, open(TOKS, "w"))
     json.dump(st, open(STATE, "w"))
     return n_new, latest
 
