@@ -7421,3 +7421,15 @@ not a rug signature.
 Serial rug creator D84GJoqi9YDAbmN5xtqXEEK9nkSSQP55Z8e46E4Y5KJh (2 full-stake
 writeoffs, -0.216 SOL) added to creator_denylist.json (now 8 entries).
 Address verified against curves.jsonl create records.
+
+§449 (Sep 7 ~02:50 UTC) — blocked-cohort replay under the REAL e2 exit stack
+(blocked_shadow_e2.py; abort3_red@3min -> bank12x@1.2 sell-all -> freeroll@1.5
+-> trail -> panic@0.80 -> nm_abort -> fade -> abort15/30 -> timestop; 2% slip,
+0.001 writeoff floor, next-print fills; entry at first print >= bridge
+decision ts). All 12 bridge-blocked candidates replayed: 11/12 would have
+LOST, cohort PnL -0.0401 SOL at 0.02 size. The barrier model (1.2/0.92)
+scored it -0.0024 — it overstated blocked-candidate wins 17x (e.g. J3zrDaXY
+"win" never actually printed >=1.2; peak 1.097 -> panic -26%). One true
+missed winner: G2k7Nega (bank12x +16.4%, +0.0033). Seed-floor blocks alone:
+-0.034 SOL avoided. GATE VERDICT: seed floor 4.0 + concurrency cap are
+EARNING ~0.0033 SOL per blocked candidate. Do not lower the floor.
