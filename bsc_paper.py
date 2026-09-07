@@ -43,9 +43,14 @@ TSTOP_MIN = 120
 MAX_AGE_H = 30          # don't enter pools older than this (first-seen basis)
 RUG_QRES_FRAC = 0.20    # quote reserve <20% of entry -> LP pulled, position ~worthless
 
-# known BSC LP lockers (verified via BscScan Sep-2026) — annotation only
-LP_LOCKERS = {'pinklock': '0x407993575c91ce7643a4d4cCACc9A98c36eE1BBE',
-              'uncx': '0xC765bddB93b0D1c1A88282BA0fa6B2d00E3e0c83'}
+# LP sinks: burn addresses + known BSC lockers. Burned LP is the strongest
+# sink (unrecoverable); aligned with evm_watcher.py's LP_SINKS set.
+LP_LOCKERS = {'burn_dead': '0x000000000000000000000000000000000000dEaD',
+              'burn_zero': '0x0000000000000000000000000000000000000000',
+              'pinklock': '0x407993575c91ce7643a4d4cCACc9A98c36eE1BBE',
+              'pinklock_v1': '0x7ee058420e5937496F5A2096f04caA7721cf70cc',
+              'uncx': '0xC765bddB93b0D1c1A88282BA0fa6B2d00E3e0c83',
+              'uncx_alt': '0x7229247bd5cf29fa9b0764aa1568732be024084b'}
 BSC_RPC = os.environ.get('BSC_RPC', 'https://bsc-dataseed.binance.org')
 LOCKGATE_MIN = 0.95     # 'lockgate' variant: require >=95% LP in known lockers
 
@@ -223,7 +228,11 @@ def main():
                 if MIN_ENTRY_MULT > 1.0 and w.get('px0'):
                     if r['price_raw'] / w['px0'] < MIN_ENTRY_MULT:
                         continue   # inflow without price lift: skip (shadow)
-                # LP-lock annotation (+ hard gate for 'lockgate' variant)
+                # LP-sink annotation (+ hard gate for lockgate variants).
+                # GATE USES PROFESSIONAL LOCKERS ONLY. Self-burn is excluded:
+                # at-entry data shows burn_dead 0.95-0.96 is a rug-factory
+                # signature (7/8 rugs), while PinkLock separates (3/3 USDT
+                # winners; WBNB-quoted PinkLock pools were supply dumps).
                 try:
                     locks = lp_lock_fracs(pair)
                 except Exception:
@@ -231,7 +240,9 @@ def main():
                 if VARIANT in ('lockgate', 'lockgate_usdt'):
                     if not locks:
                         continue        # RPC failed: retry next batch
-                    gate_ok = sum(locks.values()) >= LOCKGATE_MIN
+                    lock_frac = sum(locks.get(k) or 0 for k in
+                                    ('pinklock', 'pinklock_v1', 'uncx', 'uncx_alt'))
+                    gate_ok = lock_frac >= LOCKGATE_MIN
                     if gate_ok and VARIANT == 'lockgate_usdt':
                         try:
                             gate_ok = (quote_token_of(pair) or '').lower() == USDT_ADDR
@@ -240,7 +251,7 @@ def main():
                     if not gate_ok:
                         st['entered'].append(pair)   # rejected, never retry
                         st['watch'].pop(pair, None)
-                        print(f'GATE_REJECT {name} lock={sum(locks.values()):.2f}')
+                        print(f'GATE_REJECT {name} pro_lock={lock_frac:.2f}')
                         break
                 w['armed'] = True   # fill on the next poll, not this one
                 # §476 shadow honeypot/liveness annotation (log-only, non-blocking)
