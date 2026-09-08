@@ -7946,3 +7946,15 @@ cells positive too: 1h +69.5 (n=18), 2h +103.1 (n=21). Ultra-early steady
 The cross-meta caveat weakens: this sample now spans the morning stock-parody
 meta AND afternoon cohorts, both net positive. Live executor armed in the
 watcher (step 14); first qualifying signal takes the first 0.10 SOL trade.
+
+## 2026-09-08 ~13:50 UTC — Watcher SLIMMED after first armed run hit the 45-min cap
+
+The 16-step pipeline overran: the 13:00 run was killed at the 45-min timeout
+(13:45:53), and interval ticks 13:11/13:31/13:51 skipped while it was active.
+Runs must finish under the 20-min interval or cadence collapses.
+
+Trim (cold lanes compressed, money lane protected): BSC+Base V2 loop 9->4 min,
+fastpoll 6->3, reserve poller 4->2, live executor 5->6 min (its window grew),
+runner timeout 45->30 min hard cap. All 16 steps still mandatory. First armed
+executor window (13:39-13:44) ran correctly: no qualifying pairs existed
+(verified independently — zero pumpswap pairs <36min old), no trade taken.

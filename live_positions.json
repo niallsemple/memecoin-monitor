@@ -2715,5 +2715,24 @@
   "exit_t": 1788835297.870806,
   "exit_sig": "4yAqkP8VuXJ3YKJZhTVpM7W5Rjo9n7SVrhc7ix5nZwMrVs64sGMjcwnDZpjaPXgtUXkFxVNKSEE7BbPRV6176TcJ",
   "pnl_sol": -0.00868
+ },
+ "6R6nWV4H3iomPVRCTHC32FGAvQPifewzWMgVMjTNpump": {
+  "open": false,
+  "mode": "e2_confirm",
+  "venue": "curve",
+  "entry_t": 1788874879.588049,
+  "entry_px": 4.673544419241912e-05,
+  "tokens": 359928384991,
+  "tokens_left": 0,
+  "size_sol": 0.02,
+  "peak_mult": 1.0008679433802632,
+  "trough_mult": 0.5986411514105906,
+  "freerolled": false,
+  "sol_recovered": 0.009965945,
+  "closed_reason": "panic",
+  "exit_reason": "panic",
+  "exit_t": 1788874952.459738,
+  "exit_sig": "5SdQf2jP2k3B5GJbTb5PEmFbmRsUrESdjuX3FpkSznDc2s3G19o92FXcivWRjrHCiPT4k3jHz1ovZviFnztWSPez",
+  "pnl_sol": -0.01003
  }
 }

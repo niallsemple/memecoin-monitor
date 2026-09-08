@@ -4951,3 +4951,9 @@
 | 13:26 | solana | `0x4a87c1…` | UNKNOWN | AUDIT_UNAVAILABLE | liq=$0 mc=$0 | goplus:unavailable; rugcheck:unavailable; top10:pending | Windows was made for humans. WinDogs was made for the internet. |
 | 13:26 | solana | `DZhvxJLo…` | PASS | — | liq=$31,636 mc=$139,466 | name=IDLE symbol=IDLE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=28.5%; b | IDLE is the memecoin for people who looked at the work, looked at the tools, and |
 | 13:26 | robinhood | `0xd15a61…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,790 mc=$108,729 | chain:robinhood no-audit-adapter | OG |
+| 13:46 | bsc | `0x121539…` | PASS | — | liq=$0 mc=$0 | holders=0; buy_tax= sell_tax=; contract:clean | Launch a coin and pair it with everything: toilet paper, funerals, parking, bana |
+| 13:46 | bsc | `0xBe11b6…` | PASS | — | liq=$34,134 mc=$121,974 | holders=0; buy_tax= sell_tax=; contract:clean | Every cow waits for the bull market so you don't have to 🐮 Feed, breed, milk — a |
+| 13:46 | robinhood | `0x152f36…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,133 mc=$4,497 | chain:robinhood no-audit-adapter | GET OUT FROG |
+| 13:46 | robinhood | `0x5B82ad…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,983 mc=$115,818 | chain:robinhood no-audit-adapter | its super bullish, and its called fucking CHAD stock |
+| 13:46 | robinhood | `0xC9322A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2 mc=$3,882 | chain:robinhood no-audit-adapter |  |
+| 13:46 | solana | `4GMJ8ng5…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:54% | liq=$0 mc=$18,812 | name=This Meme Is Stockless symbol=Stockless; contract:clean; rugcheck_score=80 lpLocked=1 | This meme is stockless. |
