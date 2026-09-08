@@ -1913,6 +1913,7 @@ def run(ctx):
         from collections import deque as _dq
         _sol_px = {"v": 0.0, "t": 0.0}
         _hist = {}
+        _tel = {}
         _DSH = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
         def _dsget(url):
@@ -1941,8 +1942,9 @@ def run(ctx):
             if stop.is_set():
                 break
             try:
-                (MON / "psnewborn_beat.json").write_text(json.dumps(
-                    {"ts": time.time(), "pid": _osn.getpid()}))
+                _bt = {"ts": time.time(), "pid": _osn.getpid()}
+                _bt.update(_tel)
+                (MON / "psnewborn_beat.json").write_text(json.dumps(_bt))
             except Exception:
                 pass
             try:
@@ -1986,6 +1988,11 @@ def run(ctx):
                 for m in list(_hist):
                     if _hist[m] and now - _hist[m][-1][0] > 2400:
                         del _hist[m]
+                _tel = {"cands": len(snap), "solusd": round(solusd or 0, 2),
+                        "open_pos": len(positions),
+                        "best_liq": round(max(
+                            (2.0 * (s["q"] / 1e9) * (solusd or 0)
+                             for m, s in snap), default=0), 0)}
                 if len(positions) >= 3 or not solusd:
                     continue
                 best = None
