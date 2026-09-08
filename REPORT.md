@@ -7681,3 +7681,9 @@ Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **
 - **Qualifying pools are rare at any instant:** 7/150 met age≤12h + TVL≥$10k; only 1 met full criteria (ftr≥0.50). Entry selectivity is inherent, not a bug — the sim's job is picking the 1-in-150.
 - **First sim positions (n=2, 10-min windows, data_end exits — NOT a verdict):** LIGER-SOL fees $3.10/$1k in 3min, price +52% → net [−$3.98, +$137.97] across IL bounds. Worst-case-IL-positive: 1/2.
 - **IL is the whole game:** LIGER pays ~4%/hour of position value in fees but moved +52% in 10 min. Fee rate must persist ~24h to cover worst-case IL on a momentum move. Persistence-over-hours is exactly what the overnight span will measure.
+
+### Cross-dataset join: pump.fun curves × Meteora DLMM pools (00:50 UTC)
+
+- Joined 152 tracked DLMM pools (by token mint) against 244,226 pump.fun creates: **only 5 matches (3%)**, and those are old survivors (SOLCAT lifetime fees $135k etc.), not the current hot set.
+- **Reason — launchpad mix shifted:** pools in the entry zone (age≤12h, n=18) are 8 raydium-launchlab + 10 unlabeled, **zero pump.fun**. The pump.fun→DLMM migration path is no longer where young hot pools come from.
+- **Implication for the fee-capture lane:** pump.fun launch-time features cannot gate DLMM entries. If a launch-time signal is wanted, it must come from a **Raydium Launchlab birth feed** (and identifying the unlabeled origin). Candidate build via Helius if the LP verdict is positive.
