@@ -309,9 +309,16 @@ def main():
           f'{len(st["watch"])} watching, {len(rows)} rows consumed')
 
 
+MAX_CREDIBLE_MULT = 500.0  # beyond this the sqrt print is a dust-reserve
+                           # artifact (pool drained to extreme tick), not a
+                           # tradeable exit; book flat + flag, never the print
+
+
 def _close(st, trades_f, pid, p, m, reason, t, ret=None):
     if ret is None:
         ret = m
+    if m and m > MAX_CREDIBLE_MULT:
+        reason, ret = "dustcap", 1.0
     rec = {"name": p["name"], "pool_id": pid, "entry_t": p["entry_t"],
            "exit_t": t, "ret": round(ret, 4), "exit": reason,
            "entry_flow_usd": p.get("entry_flow_usd"),
