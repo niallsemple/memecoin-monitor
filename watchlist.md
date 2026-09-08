@@ -4676,3 +4676,9 @@
 | 23:56 | bsc | `0x48B681…` | CAUTION | PROXY | liq=$8,080 mc=$6,703 | holders=0; buy_tax= sell_tax= | 我是Flapa♡币圈最可爱的小坏蛋📈追绿K、欺负空头、骑牛市。市场慌？我不慌～梗、混沌、收益和冒险，我全都要。芙拉葩最懂✦(≖‿≖)✦ |
 | 23:56 | robinhood | `0x7ccdb5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,949 mc=$56,365 | chain:robinhood no-audit-adapter |  |
 | 23:56 | robinhood | `0xA0ab51…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$36,245 mc=$153,704 | chain:robinhood no-audit-adapter | The $PIPE team is launching a memecoin via the Robinhood network, allocating 20% |
+| 00:06 | robinhood | `0x6eE1D6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,028 mc=$67,619 | chain:robinhood no-audit-adapter | the index to never miss again |
+| 00:06 | robinhood | `0xBE7B87…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,010 mc=$70,508 | chain:robinhood no-audit-adapter | The stock mining protocol on Robinhood Chain. |
+| 00:06 | solana | `Bb6VQ8JJ…` | CAUTION | TOP10_CONCENTRATED:46% | liq=$0 mc=$27,119 | name=67coin symbol=67coin; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=45.5 |  |
+| 00:06 | solana | `63iS82CK…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$8,349 | name=Poopcoin symbol=POOPCOIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 00:06 | solana | `5qSo7Xuu…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$41,928 mc=$233,670 | name=Perpetual Cat symbol=PERPCAT; rugcheck_score=12 lpLocked=84.37614678632187%; top10_ho | The cat lives on perpetually, forever. |
+| 00:06 | solana | `5pgVHigo…` | FAIL | TOP10_HEAVY:70% | liq=$18,781 mc=$57,732 | name=PEAR symbol=PEAR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=69.8% |  |

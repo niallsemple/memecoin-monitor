@@ -54,6 +54,7 @@ def snap(p, now):
         "name": p.get("name"),
         "launchpad": p.get("launchpad"),
         "age_h": round((now - (p.get("created_at") or now * 1000) / 1000) / 3600, 2),
+        "price": p.get("current_price"),
         "tvl": p.get("tvl"),
         "dyn_fee_pct": p.get("dynamic_fee_pct"),
         "base_fee_pct": cfg.get("base_fee_pct"),
