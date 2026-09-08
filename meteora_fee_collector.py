@@ -22,10 +22,14 @@ import json, os, time, urllib.request
 
 MON = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(MON, "meteora_fee_snapshots.jsonl")
+OUT2 = os.path.join(MON, "damm_v2_fee_snapshots.jsonl")
 API = "https://dlmm.datapi.meteora.ag/pools"
+API2 = "https://damm-v2.datapi.meteora.ag/pools"
 UA = {"User-Agent": "darwin-labs/1.0"}
 TOP_PAGES = 15         # 15 x ~10 = ~150 hottest pools (API caps page size at 10)
 YOUNG_H = 48
+DAMM_BIRTH_WINDOW_H = 24   # read births from the last 24h
+DAMM_TRACK_CAP = 300       # per-run per-pool fetches, youngest first
 
 
 def get(url, tries=3):
@@ -154,6 +158,52 @@ def main():
             f.write(json.dumps(snap(p, now)) + "\n")
             n += 1
     print(f"meteora snapshot: {n} pools ({len(young - set(seen))} young tracked, {big} big-capacity)")
+
+    # 4) DAMM v2 births (the live memecoin birth venue, measured 2026-09-08:
+    # ~87 births/hour, all met-dbc graduations, caught at age 5-17min vs
+    # hours on the hot list). Snapshot newborns from damm_v2_births.jsonl
+    # plus keep tracking previously-seen DAMM v2 pools while <24h old.
+    # Youngest-first, capped per run to bound free-API load. Separate file
+    # (OUT2): cp-amm pools have no bins/dyn_fee_pct — those fields stay null.
+    db = {}  # pool -> birth t
+    bf2 = os.path.join(MON, "damm_v2_births.jsonl")
+    if os.path.exists(bf2):
+        cutoff = now - DAMM_BIRTH_WINDOW_H * 3600
+        with open(bf2) as f:
+            for l in f:
+                try:
+                    r = json.loads(l)
+                except Exception:
+                    continue
+                if r.get("t", 0) > cutoff and r.get("pool"):
+                    db[r["pool"]] = r["t"]
+    young2 = {}  # pool -> last snapshot t (from OUT2), still <24h old
+    if os.path.exists(OUT2):
+        cutoff6 = now - 6 * 3600
+        with open(OUT2) as f:
+            for l in f:
+                try:
+                    r = json.loads(l)
+                except Exception:
+                    continue
+                if r.get("t", 0) > cutoff6 and (r.get("age_h") or 1e9) < 24:
+                    young2[r["pool"]] = r["t"]
+    cand = sorted(set(db) | set(young2),
+                  key=lambda a: db.get(a, young2.get(a, 0)),
+                  reverse=True)[:DAMM_TRACK_CAP]
+    n2 = 0
+    if cand:
+        with open(OUT2, "a") as f:
+            for addr in cand:
+                q = get(f"{API2}/{addr}", tries=2)
+                p = q if isinstance(q, dict) and q.get("address") else None
+                if not p and isinstance(q, dict):
+                    p = (q.get("data") or {}) if isinstance(q.get("data"), dict) else None
+                if p and p.get("address"):
+                    f.write(json.dumps(snap(p, now)) + "\n")
+                    n2 += 1
+    print(f"damm-v2 snapshot: {n2} pools ({len(db)} births 24h, "
+          f"{len(young2)} carried, cap {DAMM_TRACK_CAP})")
 
     # ---- Project 0 Orders watch (memo #32 priority 1): feature shipped in
     # mrgn-0.1.8 (mainnet ETA late March 2026) but ZERO Order accounts found
