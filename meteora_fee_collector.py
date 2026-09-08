@@ -126,6 +126,28 @@ def main():
         if isinstance(p, dict) and p.get("address"):
             seen[p["address"]] = p
 
+    # 3) minute-zero births from dlmm_birth_listener (gPA 904-byte diff):
+    # track newborn pools from the moment they appear in the REST API
+    births = set()
+    bf = os.path.join(MON, "dlmm_births.jsonl")
+    if os.path.exists(bf):
+        cutoff = now - 24 * 3600
+        with open(bf) as f:
+            for l in f:
+                try:
+                    r = json.loads(l)
+                except Exception:
+                    continue
+                if r.get("t", 0) > cutoff and r.get("pool"):
+                    births.add(r["pool"])
+    nb = 0
+    for addr in sorted(births - set(seen)):
+        q = get(f"{API}/{addr}")
+        p = (q or {}).get("data") if isinstance(q, dict) else None
+        if isinstance(p, dict) and p.get("address"):
+            seen[p["address"]] = p
+            nb += 1
+
     n = 0
     with open(OUT, "a") as f:
         for p in seen.values():
