@@ -7825,3 +7825,17 @@ Implications:
 3. For live trading, DexScreener lag is a risk: robust exit design should poll
    pool reserves on-chain (getTokenAccountBalance on both pool vaults) at <=15s
    cadence for open positions, not rely on the indexer.
+
+## 2026-09-08 ~11:40 UTC — Leading cell strengthens: resolved n=8, +168.7/1k, stress bound positive
+
+Fresh tracker data (169 pools, was 121) resolved most open trades. Leading
+cell (age<=0.5h, hold<=0.5h, tgt +25%):
+- n=9, resolved n=8, **resolved mean +168.7/$1k**, 2 rugs in sample
+- **stress bound (all open rug) now POSITIVE: +49.9** — the cell is net
+  positive even in the worst case for the one remaining open trade
+- +50% target cell: resolved mean -4.6 — still dead, early profit-taking
+  confirmed as the strategy
+- AAPL rugged from $237k entry liquidity — kills any "big liq = safe" gate
+
+GO bar: resolved n>=10 across cohorts. Currently 8. Two more resolved trades
+away. New targets this cohort: 7Stock +822, SPCX +687, haMSTR +892.
