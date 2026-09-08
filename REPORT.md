@@ -7715,3 +7715,9 @@ Caveats before any GO: (1) all from one 4.4h overnight window — single regime;
 ### Infrastructure note (01:00–04:11 UTC)
 
 Curve-collector automation scheduler wedged platform-side (cron-triggered widget tasks stopped firing after 22:28 UTC; disable/enable and trigger re-registration did not recover it; a fresh cron instance also failed). Fix: recreated as automation_139a9b3e with a 20-minute interval trigger (interval widget tasks and cron job-class automations fire normally), code identical (state in shared repo, history unbroken), widget binding re-pointed (binding_3ca431ff). First self-fire confirmed 04:11 UTC.
+
+### Verdict drift 01:08 → 04:24 UTC (meteora_verdict_diff.py, committed)
+
+Drift DIRECTION is itself evidence:
+- **Mania rows decay with time.** Every young-pool row moved down over 3.3h: LIGER worst case +12.6 → −83.6 as its price faded; age≤12h/ftr≥0.50 row +4.8 → −7.6. Holding young positions longer makes the worst case WORSE (fee decay + price fade). If this class ever goes live, the exit must be much faster — harvest the ~$400/h mania-phase fees and be out inside the first hour, not hold 3.5h.
+- **High-capacity rows improve with sample.** ftr≥0.05: −4.3 → +2.2 as n grew 20→33; ftr≥0.10: −7.1 → +2.0 (n 15→27). The early negative read was small-sample noise. The mature read: steady fee velocity on established $100k+ TVL pools is the positive-expectancy class, not young mania.
