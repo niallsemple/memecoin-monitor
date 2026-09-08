@@ -4848,3 +4848,9 @@
 | 08:06 | robinhood | `0x3bfea8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Index markets for tokenized assets on Robinhood Chain. Fixed-weight baskets, liv |
 | 08:06 | robinhood | `0x5D6591…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,792 mc=$7,671 | chain:robinhood no-audit-adapter | VAULT is a token powered by trading fees. Every trade grows the Vault, building  |
 | 08:06 | robinhood | `0xe3185c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,645 mc=$48,635 | chain:robinhood no-audit-adapter |  |
+| 08:26 | robinhood | `0xC77BcF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$81,806 mc=$732,839 | chain:robinhood no-audit-adapter | Some lives changed in the last few days.  They didn’t know it was coming. They j |
+| 08:26 | robinhood | `0x9a8852…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,735 mc=$20,712 | chain:robinhood no-audit-adapter | Monkey reaction working in an office |
+| 08:26 | robinhood | `0x778c5c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,029 mc=$33,719 | chain:robinhood no-audit-adapter | A Memory Coin  paired with Sandisk |
+| 08:26 | solana | `5HcGvS7U…` | FAIL | TOP10_HEAVY:93% | liq=$0 mc=$4,825 | name=GigachadLeek symbol=GLEEK; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold | The retail revolution has arrived! No more liquidations, no more harvest. $GLEEK |
+| 08:26 | solana | `DLDV3Dkk…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:99%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=まろ symbol=MARO; rugcheck_score=35 lpLocked=99.999999718293%; top10_hold=99.0% |  |
+| 08:26 | solana | `EwAb3fVV…` | CAUTION | RC_WARN:High holder correlation | liq=$46,504 mc=$300,685 | name=I Buy Memes symbol=IBM; contract:clean; rugcheck_score=32 lpLocked=100%; top10_hold=9 | I Buy Memes turns internet chaos into crypto culture, collecting memes, vibes, a |
