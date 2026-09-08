@@ -8012,3 +8012,10 @@ Definitive on-chain total: **2.0000 SOL funded → 1.0708 SOL = −0.9292 SOL** 
 \* e2 curve-sells log quote=0 (logging gap); on-chain spot-checks show partial recovery (e.g. cate: −0.0189 in, +0.0099 out).
 
 **What the ledger proves:** three systems traded live before their edge was measured — all three bled. The one system built evidence-first (pumpswap cell, +136.8/1k sim) is the only one still armed. Retired systems still log dry "would-buys" so research continues at zero cost. Re-enabling any retired system requires a fresh positive dry record at n≥30 + owner sign-off.
+
+## ARCHITECTURE v2 — continuous loop (Sep 8, 16:15 UTC)
+
+Live trading no longer depends on the 20-min agent watcher. The curve collector's code loop (18-min runs, 20s cadence) now owns both sides:
+- **Entries (§470):** graduation seen within seconds via PumpPortal migration push; cell gates (liq≥$25k, 5m vol≥liq, buys>sells) computed from websocket pool counters; earliest entry ~5-6 min post-graduation (was up to ~25 min). Entry px from DexScreener for exit-math consistency.
+- **Exits (§471):** same 20s cadence, reuses pumpswap_live.manage_exits verbatim (+25% target / −40% stop / 35% trail / 30-min max / drain) — positions were previously unmanaged ~75% of their lives.
+Verified: full 18-min run with new threads, heartbeat live, zero errors, no false entries in a quiet window. Inter-run gaps (~2-25 min, platform-scheduled) remain the only uncovered moments.
