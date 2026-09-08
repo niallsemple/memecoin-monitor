@@ -7667,3 +7667,10 @@ Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **
 4. Memecoin confirm-mode — data collection pending owner's sizing decision
 
 **The arb-bot build question is answered: DON'T BUILD with current latency class.** Revisit only if infrastructure changes (validator-adjacent execution) or a crash changes the liquidation picture.
+
+## 2026-09-08 — Protocol-payout lane reconnaissance (memo #32 follow-through)
+
+- **Drift keeper rewards: LANE DEAD.** Drift suffered a $285M exploit 2026-04-01 (social-engineering + fake-token governance attack, attributed to DPRK). V2 program dRiftyHA39... shows 0/100 successful txs in 2 days (all calls fail; protocol suspended pending rebrand/relaunch with USDT settlement). No keeper surface exists to study. Do not build until relaunch completes.
+- **Project 0 Orders: feature shipped (mrgn-0.1.8, mainnet ~Mar 2026) but 0 Order accounts on-chain (2026-09-08).** Tripwire counts accounts each 20-min cron cycle; keeper decode study starts when count > 0.
+- **LST convergence: monitored, no edge in calm market.** JitoSOL NAV 1.300046 vs Jupiter 1.299886 = 1.3bps vs 10bps redemption cost. Watch logs discount_bps; trade opens >20bps (depeg events only).
+- **Meteora DLMM fee-capture: LIVE and promising.** Top-150 hot pools pay ~$20k/30min aggregate; young memecoin pools show 50-500% fee/TVL per 30min with persistence over 22min windows; LP paper simulator (meteora_lp_sim.py) scores exact cum-fee income vs IL bounds. Verdict needs multi-hour spans (collecting).

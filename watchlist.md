@@ -4682,3 +4682,9 @@
 | 00:06 | solana | `63iS82CK…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$8,349 | name=Poopcoin symbol=POOPCOIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
 | 00:06 | solana | `5qSo7Xuu…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$41,928 mc=$233,670 | name=Perpetual Cat symbol=PERPCAT; rugcheck_score=12 lpLocked=84.37614678632187%; top10_ho | The cat lives on perpetually, forever. |
 | 00:06 | solana | `5pgVHigo…` | FAIL | TOP10_HEAVY:70% | liq=$18,781 mc=$57,732 | name=PEAR symbol=PEAR; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=69.8% |  |
+| 00:26 | robinhood | `0x566bb7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | PoW mining through virtual rigs on Robinhood Chain. Block rewards settle every 1 |
+| 00:26 | solana | `F3Wv8sNM…` | CAUTION | TOP10_CONCENTRATED:36% | liq=$15,713 mc=$41,947 | name=50 Cent symbol=50Cent; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=35. | 50Cent to $0.5 |
+| 00:26 | solana | `4Y3KRjrX…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,237 | name=fugazicat symbol=fugazicat; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol |  |
+| 00:26 | solana | `EUdSXHFS…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$22,072 | name=PSA10 Coin symbol=PSA10; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=4 |  |
+| 00:26 | robinhood | `0x54b551…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | do only good every day |
+| 00:26 | robinhood | `0x792ff1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,989 mc=$29,986 | chain:robinhood no-audit-adapter | Sir Bag on Hood ($BAG) is a community-driven meme coin on Robinhood Chain. Built |
