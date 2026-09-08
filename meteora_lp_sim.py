@@ -143,11 +143,15 @@ def main():
 
     if "--grid" in sys.argv:
         print("entry-criteria sensitivity sweep (net per $1000 position):")
-        print(f"{'age<=h':>7s} {'ftr>=':>6s}  summary")
+        print(f"{'age<=h':>7s} {'ftr>=':>6s} {'tvl>=':>7s}  summary")
         for age in (3.0, 6.0, 12.0):
             for ftr in (0.25, 0.50, 1.0):
                 res = run_sim(by, age, ftr)
-                print(f"{age:7.0f} {ftr:6.2f}  {summarize(res)}")
+                print(f"{age:7.0f} {ftr:6.2f} {'10k':>7s}  {summarize(res)}")
+        # high-capacity class: big pools, lower fee rate, any age
+        for ftr in (0.02, 0.05, 0.10):
+            res = run_sim(by, 1e9, ftr, min_tvl=100000.0)
+            print(f"{'any':>7s} {ftr:6.2f} {'100k':>7s}  {summarize(res)}")
         return
 
     results = run_sim(by, ENTRY_AGE_H, ENTRY_FTR)
