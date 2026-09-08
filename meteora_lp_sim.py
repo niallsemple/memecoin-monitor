@@ -40,11 +40,21 @@ MAX_HOLD_H = 24.0
 
 
 def il_full_range(r):
+    """Value multiplier for a full-range (v2-style) position."""
     return 2 * (r ** 0.5) / (1 + r) if r > 0 else 0.0
 
 
 def il_all_token(r):
+    """50/50 entry where the token side rides price all the way."""
     return (1 + r) / 2
+
+
+def il_narrow_worst(r):
+    """Universal worst case for a NARROW DLMM position (range -> 0):
+    instant adverse move. Dump (r<1): fully converted to token at ~entry,
+    multiplier -> r. Pump (r>1): fully converted to SOL at ~entry, misses
+    the pump, multiplier -> 1. So worst = min(1, r)."""
+    return min(1.0, r)
 
 
 def load_pools():
@@ -97,12 +107,15 @@ def run_sim(by, entry_age_h, entry_ftr, lp_usd=LP_USD, min_tvl=MIN_TVL,
                 break
         r_exit = (last.get("price") or p0) / p0
         hold_h = (last["t"] - e["t"]) / 3600
+        # three IL scenarios; net_worst is the decision-grade number
+        narrow = fees + lp_usd * il_narrow_worst(r_exit) - lp_usd
         lo = fees + lp_usd * il_full_range(r_exit) - lp_usd
         hi = fees + lp_usd * il_all_token(r_exit) - lp_usd
         results.append({
             "name": e["name"], "entry_t": e["t"], "hold_h": round(hold_h, 2),
             "fees": round(fees, 2), "r_exit": round(r_exit, 3),
             "exit": exit_reason,
+            "net_narrow": round(narrow, 2),
             "net_lo": round(lo, 2), "net_hi": round(hi, 2),
             "entry_tvl": round(e.get("tvl") or 0),
             "tvl_share": round(lp_usd / ((e.get("tvl") or lp_usd) + lp_usd), 3),
@@ -113,12 +126,13 @@ def run_sim(by, entry_age_h, entry_ftr, lp_usd=LP_USD, min_tvl=MIN_TVL,
 def summarize(results, lp_usd=LP_USD):
     if not results:
         return "n=0"
+    nw = sum(r["net_narrow"] for r in results) / len(results)
     lo = sum(r["net_lo"] for r in results) / len(results)
     hi = sum(r["net_hi"] for r in results) / len(results)
-    pos_lo = sum(1 for r in results if r["net_lo"] > 0)
-    pos_hi = sum(1 for r in results if r["net_hi"] > 0)
-    return (f"n={len(results)} mean_net=[{lo:+.1f}, {hi:+.1f}] "
-            f"pos_lo={pos_lo}/{len(results)} pos_hi={pos_hi}/{len(results)}")
+    pos_nw = sum(1 for r in results if r["net_narrow"] > 0)
+    return (f"n={len(results)} mean_narrow_worst={nw:+.1f} "
+            f"mean_net=[{lo:+.1f}, {hi:+.1f}] "
+            f"pos_narrow_worst={pos_nw}/{len(results)}")
 
 
 def main():
@@ -140,7 +154,8 @@ def main():
     print(f"simulated LP positions: {len(results)}")
     for r in sorted(results, key=lambda x: -x["fees"]):
         print(f"  {r['name'][:20]:<22} hold={r['hold_h']:5.2f}h fees=${r['fees']:7.2f} "
-              f"r_exit={r['r_exit']:6.3f} net=[{r['net_lo']:8.2f}, {r['net_hi']:8.2f}] "
+              f"r_exit={r['r_exit']:6.3f} net_worst={r['net_narrow']:8.2f} "
+              f"net=[{r['net_lo']:8.2f}, {r['net_hi']:8.2f}] "
               f"({r['exit']}) share={r['tvl_share']:.1%}")
     if results:
         print(f"\nmean net per ${LP_USD:.0f} position: {summarize(results)}")
