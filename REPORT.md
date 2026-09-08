@@ -7694,3 +7694,7 @@ Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **
 - **Adjacent launch programs** (from Bitquery migration-tracking docs): Meteora DBC `dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN` (migrate_meteora_damm / migration_damm_v2); Moonshot `MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG` (migrateFunds); boop.fun `boop8hVGQGqehUK2iVEMEnMrL5RbjywRzHKBmBE7ry4` (graduate); letsbonk.fun = LaunchLab + platform config `FfYek5vEz23cMkWsdJwG2oa6EphsvXSHrGpdALN4g6W1` in accounts.
 - **Simpler alternative for the LP lane:** the event we actually trade is DLMM pool creation, so polling Meteora DLMM program `LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo` signatures (1/min via Helius) and decoding pool-initialize txs catches ALL new pools regardless of origin — including the 10/18 unlabeled young pools. Launchlab-specific listening is only needed if pre-pool (bonding-curve phase) signals prove predictive.
 - **Empirical note:** hot mint LIGER accumulated 96k+ mint-referencing txs in <3h (~9/sec) — per-mint backpaging to birth is impractical; program-level polling is the right shape.
+
+### Measurement validation: cum-fee diffs vs rolling fee field (00:57 UTC)
+
+298/298 consecutive-snapshot pairs pass consistency (implied fees from cum_fees diffs never exceed the API's rolling fees_30m beyond 10% slack; zero violations >1.2x). The LP sim's fee accounting rests on validated data. Separately: qualifying-pool flow rate ~3/hour in first collection hour — lane has opportunity flow, capacity is the binding constraint (~$1-2k/pool at <=10% TVL share).
