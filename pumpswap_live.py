@@ -94,7 +94,12 @@ def _drained_mints():
 def _fresh_px(mint):
     """Live DexScreener price/liq for exit decisions (not the 20-min batch)."""
     try:
-        with urllib.request.urlopen(DEX_URL + mint, timeout=15) as r:
+        req = urllib.request.Request(
+            DEX_URL + mint,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                  "Chrome/126.0 Safari/537.36"})
+        with urllib.request.urlopen(req, timeout=15) as r:
             d = json.loads(r.read())
         pairs = [p for p in (d.get("pairs") or []) if p.get("chainId") == "solana"]
         if not pairs:
@@ -187,7 +192,7 @@ def manage_exits(now, positions, drained, dry):
             _log(row)
             print(f"  EXIT-SIGNAL (dry) {pos.get('name')} {reason} ret={ret:.2f}")
             continue
-        sell = lt.pool_sell(mint, pos.get("tokens_raw") or 0,
+        sell = lt.pool_sell(mint, int(pos.get("tokens_raw") or 0),
                             reason=f"pslive_{reason}")
         row["sell_result"] = sell.get("result")
         # SOL-only: close the ATA after the sell regardless of dust
