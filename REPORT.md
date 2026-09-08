@@ -7997,3 +7997,18 @@ Session net: **-0.0856 SOL** on 0.206 deployed. Wallet after: 1.0708 SOL, **zero
 First live rug observed: atomic drain ~15 min post-entry, exactly matching the sim's atomic-rug finding. Loss was capped by 0.10 SOL sizing. One rug + one target is inside the model's expected variance (+136.8/1k over n=14 needs the winners to outnumber rugs ~2:1; this session ran 1:1).
 
 Fixes shipped under fire: DexScreener UA 403 (exit manager was blind), tokens_raw int cast, burn-then-close, legacy tx confirm-retry. All committed.
+
+## FULL LIVE LEDGER — every system since wallet funding (Sep 1 → Sep 8, 15:15 UTC)
+
+Definitive on-chain total: **2.0000 SOL funded → 1.0708 SOL = −0.9292 SOL** all-in (every experiment, fee, and rent reclaim). Turnover: 137 live buys = 12.22 SOL cycled through the 2 SOL stake.
+
+| System | Buys | In (SOL) | Out (SOL) | Net | Verdict |
+|---|---|---|---|---|---|
+| s60nm5fr hook | 65 | 7.683 | 7.278 | **−0.405** | RETIRED (§459) −5.3%/unit |
+| fast_birth §257 | 53 | 4.000 | 3.588 | **−0.412** | RETIRED (§459) −10.3%/unit |
+| e2 bridge (trial+confirm) | 17 | 0.340 | ~0.14* | **~−0.20** | RETIRED (§459) 17/17 panic exits, 72-close record avg 0.969× |
+| **pumpswap_momentum_cell** | 2 | 0.206 | 0.122 | −0.084 | **ONLY LIVE SYSTEM** — evidence-backed edge, n=2 |
+
+\* e2 curve-sells log quote=0 (logging gap); on-chain spot-checks show partial recovery (e.g. cate: −0.0189 in, +0.0099 out).
+
+**What the ledger proves:** three systems traded live before their edge was measured — all three bled. The one system built evidence-first (pumpswap cell, +136.8/1k sim) is the only one still armed. Retired systems still log dry "would-buys" so research continues at zero cost. Re-enabling any retired system requires a fresh positive dry record at n≥30 + owner sign-off.
