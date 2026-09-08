@@ -27,3 +27,6 @@ mfg_liq_fires.jsonl
 # 70MB rotating gPA state — too big for git
 damm_v2_birth_state.json
 damm_v2_births.jsonl
+
+# dexscreener-derived rotating state
+pumpswap_pairs.json
