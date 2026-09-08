@@ -86,6 +86,28 @@ def main():
             if p.get("address"):
                 seen[p["address"]] = p
 
+    # 1b) deep pages: high-CAPACITY pools (big TVL, moderate fee/TVL) rank
+    # below the memecoin mania on fee_tvl_ratio but can carry real size —
+    # e.g. STONK-SOL $2k/30min fees on $730k-$2.1M TVL. API ignores other
+    # sort keys, so page deeper and filter locally.
+    big = 0
+    for pg in range(TOP_PAGES + 1, TOP_PAGES + 41):
+        q = get(f"{API}?page={pg}&limit=50&sort_key=fee_tvl_ratio&order_by=desc")
+        rows = (q or {}).get("data") or []
+        if not rows:
+            break
+        for p in rows:
+            if not p.get("address") or p["address"] in seen:
+                continue
+            fees30 = (p.get("fees") or {}).get("30m") or 0
+            try:
+                tvl = float(p.get("tvl") or 0)
+            except Exception:
+                tvl = 0
+            if fees30 >= 50 and tvl >= 100000:
+                seen[p["address"]] = p
+                big += 1
+
     # 2) keep tracking recently-hot young pools (decay trajectories)
     young = set()
     if os.path.exists(OUT):
@@ -109,7 +131,7 @@ def main():
         for p in seen.values():
             f.write(json.dumps(snap(p, now)) + "\n")
             n += 1
-    print(f"meteora snapshot: {n} pools ({len(young - set(seen))} young tracked)")
+    print(f"meteora snapshot: {n} pools ({len(young - set(seen))} young tracked, {big} big-capacity)")
 
     # ---- Project 0 Orders watch (memo #32 priority 1): feature shipped in
     # mrgn-0.1.8 (mainnet ETA late March 2026) but ZERO Order accounts found
