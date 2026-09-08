@@ -7749,3 +7749,9 @@ Drift DIRECTION is itself evidence:
 **Early cohort read (29 newborns, age 15-30min):** 0 crossed $1k TVL yet; trading activity already visible on several (ZTRUMP ftr30 0.74, NUKE 0.63, ANSEM 0.59 on dust TVL). Ignition-or-death resolves over 1-3h.
 
 **GO bar unchanged:** rotation positive under worst-case netting with n≥10 across BOTH pump and dump tails. The DAMM v2 birth feed is the missing instrument — it supplies the young-pool sample the DLMM hot list never could.
+
+### Venue-truth finding (10:45 UTC): met-dbc births are skeletons — the liquidity is on PumpSwap
+
+DexScreener trace of the first DAMM v2 birth cohort: every met-dbc birth spawns three pools (meteoradbc bonding curve, DAMM v2 skeleton, PumpSwap pair). The DAMM v2 pool holds ~$0-40 and stays dust; the TRADEABLE pool is PumpSwap. LEGO-SOL at 40min old: PumpSwap liq $93,970, vol $9.07M — DAMM v2 liq $1. Dying tokens (ANSEM/NUKE/ZTRUMP) are dust on all venues but even their volume prints on PumpSwap.
+
+Consequence: the DAMM v2 birth listener's value is MINUTE-ZERO TOKEN DETECTION (which tokens exist at age ~5min), not the LP venue. The rotation/LP strategy must resolve each birth's real pool (DexScreener pair address works instantly) and track the PumpSwap pair's liquidity/volume/price curve. DAMM v2 rotation sim stays built but deprioritized until a DAMM v2 cohort shows real TVL (none in first 68 births).
