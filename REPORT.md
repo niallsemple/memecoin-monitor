@@ -7934,3 +7934,15 @@ Done this turn:
 5. Wired into the watcher as step 14 (--minutes 5, 20s cadence). Note: the
    measured edge was computed at 20-min cadence, so cycle-cadence operation
    matches the validated conditions; the 5-min loop adds faster exits.
+
+## 2026-09-08 ~13:40 UTC — Edge STRENGTHENING with n: resolved n=14, +136.8/1k
+
+Leading cell (age<=0.5h, hold<=0.5h, tgt+25%): resolved n=14 (was 10), mean
++136.8 (was +104.2 — mean ROSE as the afternoon cohort resolved, opposite of
+regression), pos 12/15, rugs 2, stress bound positive again (+67.7). Wider
+cells positive too: 1h +69.5 (n=18), 2h +103.1 (n=21). Ultra-early steady
++255.8 (n=4). Pools tracked: 316.
+
+The cross-meta caveat weakens: this sample now spans the morning stock-parody
+meta AND afternoon cohorts, both net positive. Live executor armed in the
+watcher (step 14); first qualifying signal takes the first 0.10 SOL trade.
