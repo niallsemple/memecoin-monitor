@@ -1991,44 +1991,74 @@ def run(ctx):
                                  "sym": t.get("symbol")})
                             for m, t in tokens.items()
                             if t.get("grad_ts")
-                            and 0 <= now - t["grad_ts"] <= PSNB_MAX_AGE_S
-                            and t.get("pool_last_q")]
+                            and 0 <= now - t["grad_ts"] <= PSNB_MAX_AGE_S]
+                # §475: pool subs cap at 30 — waves graduate more than that.
+                # Non-pool-tracked graduates fall back to DexScreener gates
+                # (IDENTICAL fields to the measured sim: liq/vol_5m/txns_m5).
                 for m, s in snap:
-                    h = _hist.setdefault(m, _dq(maxlen=64))
-                    h.append((now, s["pb"], s["ps"]))
+                    if s["q"]:
+                        h = _hist.setdefault(m, _dq(maxlen=64))
+                        h.append((now, s["pb"], s["ps"]))
                 for m in list(_hist):
                     if _hist[m] and now - _hist[m][-1][0] > 2400:
                         del _hist[m]
                 _tel = {"cands": len(snap), "solusd": round(solusd or 0, 2),
                         "open_pos": len(positions),
+                        "pool_tracked": sum(1 for m, s in snap if s["q"]),
                         "best_liq": round(max(
                             (2.0 * (s["q"] / 1e9) * (solusd or 0)
-                             for m, s in snap), default=0), 0)}
+                             for m, s in snap if s["q"]), default=0), 0)}
                 if len(positions) >= 3 or not solusd:
                     continue
                 best = None
                 for m, s in snap:
                     if m in positions:
                         continue
-                    liq_usd = 2.0 * (s["q"] / 1e9) * solusd
-                    if liq_usd < PSNB_MIN_LIQ:
-                        continue
-                    h = _hist.get(m)
-                    if not h or len(h) < 2:
-                        continue
-                    base = None
-                    for ts0, b0, s0 in h:
-                        if now - ts0 >= 280:
-                            base = (b0, s0)
-                        else:
-                            break
-                    if base is None:
-                        continue  # window not built yet; retry next pass
-                    vol5 = (s["pb"] - base[0] + s["ps"] - base[1]) * solusd
-                    if vol5 < liq_usd:
-                        continue
-                    if s["pb"] - base[0] <= s["ps"] - base[1]:
-                        continue
+                    if s["q"]:
+                        # websocket path: real-time pool counters
+                        liq_usd = 2.0 * (s["q"] / 1e9) * solusd
+                        if liq_usd < PSNB_MIN_LIQ:
+                            continue
+                        h = _hist.get(m)
+                        if not h or len(h) < 2:
+                            continue
+                        base = None
+                        for ts0, b0, s0 in h:
+                            if now - ts0 >= 280:
+                                base = (b0, s0)
+                            else:
+                                break
+                        if base is None:
+                            continue  # window not built yet; retry next pass
+                        bd = s["pb"] - base[0]
+                        sd = s["ps"] - base[1]
+                        vol5 = (bd + sd) * solusd
+                        if vol5 < liq_usd or bd <= sd:
+                            continue
+                        px = None  # fetched below for the winner
+                    else:
+                        # DexScreener fallback: sim-identical gates
+                        try:
+                            d = _dsget("https://api.dexscreener.com/latest/"
+                                       "dex/tokens/" + m)
+                            prs = [p for p in (d.get("pairs") or [])
+                                   if p.get("chainId") == "solana"]
+                            if not prs:
+                                continue
+                            bp0 = max(prs, key=lambda x:
+                                      (x.get("liquidity") or {}).get("usd")
+                                      or 0)
+                            liq_usd = (bp0.get("liquidity") or {}).get("usd") or 0
+                            if liq_usd < PSNB_MIN_LIQ:
+                                continue
+                            vol5 = ((bp0.get("volume") or {}).get("m5")) or 0
+                            tx5 = (bp0.get("txns") or {}).get("m5") or {}
+                            if vol5 < liq_usd:
+                                continue
+                            if (tx5.get("buys") or 0) <= (tx5.get("sells") or 0):
+                                continue
+                        except Exception:
+                            continue
                     if best is None or liq_usd > best[1]:
                         best = (m, liq_usd, s)
                 if best is None:
