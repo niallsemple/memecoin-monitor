@@ -4957,3 +4957,21 @@
 | 13:46 | robinhood | `0x5B82ad…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$50,983 mc=$115,818 | chain:robinhood no-audit-adapter | its super bullish, and its called fucking CHAD stock |
 | 13:46 | robinhood | `0xC9322A…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2 mc=$3,882 | chain:robinhood no-audit-adapter |  |
 | 13:46 | solana | `4GMJ8ng5…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:54% | liq=$0 mc=$18,812 | name=This Meme Is Stockless symbol=Stockless; contract:clean; rugcheck_score=80 lpLocked=1 | This meme is stockless. |
+| 14:16 | base | `0x038Ad1…` | PASS | — | liq=$71,863 mc=$318,606 | holders=0; buy_tax= sell_tax=; contract:clean | one Apple a day keeps the Doctor away. |
+| 14:16 | bsc | `0xbeC631…` | PASS | — | liq=$24,456 mc=$57,391 | holders=0; buy_tax= sell_tax=; contract:clean | Build your own memecoin ETF on BSC.  Pick the memes. Set the weights. Trade the  |
+| 14:16 | robinhood | `0x927Bee…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,195 mc=$48,217 | chain:robinhood no-audit-adapter | an autonomous desk trading memecoins on robinhood chain with its own wallet. no  |
+| 14:16 | robinhood | `0xB06aBf…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$14,767 mc=$25,649 | chain:robinhood no-audit-adapter | Spend at a company, own a piece of it. |
+| 14:16 | solana | `C1P5qNnC…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$18,304 | name=Slopcoin symbol=SLOP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=53.6 | Slopcoin - now paired with all the slop stocks. |
+| 14:16 | solana | `Hn2H8XK5…` | CAUTION | TOP10_CONCENTRATED:35% | liq=$25,469 mc=$97,344 | name=long boi symbol=long; contract:clean; rugcheck_score=1 lpLocked=88.65003852717021%; t |  |
+| 14:26 | robinhood | `0xbfd049…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Exploring blockchain infrastructure for multimodal quantum science.  The most in |
+| 14:26 | robinhood | `0x04D6f2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,658 mc=$50,138 | chain:robinhood no-audit-adapter | CHAOS is a staking game on Robinhood Chain with no admin key. Every trade pays a |
+| 14:26 | robinhood | `0xb356b4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$49,130 mc=$283,561 | chain:robinhood no-audit-adapter | The first LLC-registered, on-chain company run by AI agents |
+| 14:26 | robinhood | `0xC06CE5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,920 mc=$41,355 | chain:robinhood no-audit-adapter | $DANBO / AMZN — Amazon Box Man  Danbo is a cardboard character created by Japane |
+| 14:26 | solana | `EXNdunYV…` | FAIL | TOP10_HEAVY:76%; RC_WARN:Low Liquidity | liq=$6,443 mc=$9,342 | name=long boi symbol=long; contract:clean; rugcheck_score=21 lpLocked=100%; top10_hold=76. | long boi / pump |
+| 14:26 | robinhood | `0x77c669…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$5,723 | chain:robinhood no-audit-adapter | Buy discounted AI credits, sell unused ones & access AI models with one key. |
+| 14:46 | robinhood | `0x586E15…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$5,396 | chain:robinhood no-audit-adapter | The first automated on-chain agency;  @bot  agents autonomously building, and bu |
+| 14:46 | solana | `3V6NwDum…` | FAIL | TOP10_HEAVY:51% | liq=$0 mc=$23,264 | name=Pusheen symbol=Pusheen; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=51 |  |
+| 14:46 | robinhood | `0x4b5948…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Just like Bitcoin changed the way we think about money, $BTC means one thing now |
+| 14:46 | solana | `7guzU2Rr…` | CAUTION | RC_WARN:High holder correlation | liq=$36,834 mc=$196,463 | name=Amazon Cat symbol=MEWZ; contract:clean; rugcheck_score=30 lpLocked=100%; top10_hold=1 |  |
+| 14:46 | robinhood | `0x4b42c5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5 mc=$6,197 | chain:robinhood no-audit-adapter | Civara funds public goods after results are proven rather than before work begin |
+| 14:46 | robinhood | `0xF2b8D6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,105 mc=$77,013 | chain:robinhood no-audit-adapter | The refundable launchpad. Tokens & bStocks. Change your mind until it bonds. |

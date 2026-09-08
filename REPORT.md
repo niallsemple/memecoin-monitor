@@ -7984,3 +7984,16 @@ by EXITING BEFORE the mania window closes.
 Operational consequence: the live executor's +25% target + 30-min max hold are
 load-bearing. Do not loosen. The afternoon regime was rougher than the morning
 and the cell held — cross-regime evidence strengthening.
+
+## LIVE SESSION 1 — first real-money trades (Sep 8, ~14:13-14:42 UTC)
+
+| Trade | Entry | Exit | Reason | Held | Net SOL |
+|---|---|---|---|---|---|
+| Pumpcat-SOL | 0.1021 | 0.1196 | **target +26.5%** | 28.1m | **+0.0176** |
+| Stockless-SOL | 0.1040 | 0.0008 | stop (rug, pool drained) | 14.9m | -0.1032 |
+
+Session net: **-0.0856 SOL** on 0.206 deployed. Wallet after: 1.0708 SOL, **zero token accounts** (SOL-only enforced; dust now burned + ATA closed on every exit, 0.5%-of-position ceiling so a failed sell can never be torched).
+
+First live rug observed: atomic drain ~15 min post-entry, exactly matching the sim's atomic-rug finding. Loss was capped by 0.10 SOL sizing. One rug + one target is inside the model's expected variance (+136.8/1k over n=14 needs the winners to outnumber rugs ~2:1; this session ran 1:1).
+
+Fixes shipped under fire: DexScreener UA 403 (exit manager was blind), tokens_raw int cast, burn-then-close, legacy tx confirm-retry. All committed.

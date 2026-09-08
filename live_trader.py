@@ -369,25 +369,39 @@ def _close_ix(acct_b, dest_b, owner_b, token_prog_b):
             bytes([9]))
 
 
-def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only"):
-    """Close token accounts. mints: close the ATA(s) for those mints (must be
-    ~zero balance; post-sell dust only). sweep_empty: close EVERY zero-balance
-    token account in the wallet (rent reclaim). Respects live_enabled()."""
+def _burn_ix(acct_b, mint_b, owner_b, amount, token_prog_b):
+    return (token_prog_b,
+            [(acct_b, True, False), (mint_b, True, False),
+             (owner_b, False, True)],
+            bytes([8]) + int(amount).to_bytes(8, "little"))
+
+
+def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only",
+                         dust_ceiling=None):
+    """Close token accounts. mints: close the ATA(s) for those mints. Post-sell
+    dust above zero is BURNED first (SPL Burn ix 8) but only up to
+    dust_ceiling[mint] raw units (caller passes ~0.5% of the just-sold
+    position); larger balances are left untouched so a failed sell can never
+    be torched. sweep_empty: close EVERY zero-balance account (rent reclaim).
+    Respects live_enabled()."""
     ok, why = live_enabled()
     key, address = _load_key()
     owner_b = b58dec(address)
     accs = (_rpc("getTokenAccountsByOwner",
                  [address, {"programId": b58enc(TOKENKEG)},
                   {"encoding": "jsonParsed"}]) or {}).get("value", [])
-    targets = []
+    targets = []  # (pubkey, mint, amt, burn?)
     for a in accs:
         info = a["account"]["data"]["parsed"]["info"]
         amt = int(info["tokenAmount"]["amount"])
         if sweep_empty and amt == 0:
-            targets.append(a["pubkey"])
-        elif mints and info["mint"] in mints and amt <= 1000:
-            # post-sell dust tolerance: <=1000 raw units
-            targets.append(a["pubkey"])
+            targets.append((a["pubkey"], info["mint"], amt, False))
+        elif mints and info["mint"] in mints:
+            ceil = int((dust_ceiling or {}).get(info["mint"], 1000))
+            if amt == 0:
+                targets.append((a["pubkey"], info["mint"], amt, False))
+            elif amt <= ceil:
+                targets.append((a["pubkey"], info["mint"], amt, True))
     row = {"action": "close_token_accounts", "targets": len(targets),
            "reason": reason, "mode": "live" if ok else "dry-run",
            "gate": why, "sigs": []}
@@ -402,8 +416,12 @@ def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only"):
     closed = 0
     for i in range(0, len(targets), 6):
         batch = targets[i:i + 6]
-        ixs = [_close_ix(b58dec(p), owner_b, owner_b, TOKENKEG)
-               for p in batch]
+        ixs = []
+        for p, mint, amt, burn in batch:
+            if burn:
+                ixs.append(_burn_ix(b58dec(p), b58dec(mint), owner_b, amt,
+                                    TOKENKEG))
+            ixs.append(_close_ix(b58dec(p), owner_b, owner_b, TOKENKEG))
         try:
             tx = build_legacy_tx(owner_b, ixs)
             sig = _rpc("sendTransaction", [tx, {"encoding": "base64"}])

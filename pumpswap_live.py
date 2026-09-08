@@ -195,8 +195,10 @@ def manage_exits(now, positions, drained, dry):
         sell = lt.pool_sell(mint, int(pos.get("tokens_raw") or 0),
                             reason=f"pslive_{reason}")
         row["sell_result"] = sell.get("result")
-        # SOL-only: close the ATA after the sell regardless of dust
-        close = lt.close_token_accounts(mints=[mint], reason="post_exit")
+        # SOL-only: burn post-sell dust (<=0.5% of position) + close the ATA
+        ceiling = {mint: int(int(pos.get("tokens_raw") or 0) * 0.005)}
+        close = lt.close_token_accounts(mints=[mint], dust_ceiling=ceiling,
+                                        reason="post_exit")
         row["close_result"] = close.get("result")
         _log(row)
         print(f"  EXIT {pos.get('name')} {reason}: sell={sell.get('result')} "

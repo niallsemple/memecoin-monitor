@@ -1,0 +1,5 @@
+{"action": "entry_signal", "mint": "FsPbTkUPN7PNYmVJvFLche7iE1DgtTGiiJbtpCE4Tn2t", "name": "Pumpcat-SOL", "age_h": 0.326, "liq": 75903.35, "entry_px": 3.366e-06, "result": "dry-run: would buy 0.10 SOL"}
+{"action": "entry_signal", "mint": "FsPbTkUPN7PNYmVJvFLche7iE1DgtTGiiJbtpCE4Tn2t", "name": "Pumpcat-SOL", "age_h": 0.366, "liq": 75903.35, "entry_px": 3.366e-06, "buy_result": "submitted", "mode": "live"}
+{"action": "entry_signal", "mint": "An475JNgDdjt5C5BmGagUPBj64fzpLwajtPVrAivuH9s", "name": "Stockless-SOL", "age_h": 0.37, "liq": 43501.49, "entry_px": 0.0002341, "buy_result": "submitted", "mode": "live"}
+{"action": "exit_signal", "mint": "An475JNgDdjt5C5BmGagUPBj64fzpLwajtPVrAivuH9s", "name": "Stockless-SOL", "reason": "stop", "ret": 0.139, "held_min": 14.9, "sell_result": "submitted", "close_result": "nothing to close"}
+{"action": "exit_signal", "mint": "FsPbTkUPN7PNYmVJvFLche7iE1DgtTGiiJbtpCE4Tn2t", "name": "Pumpcat-SOL", "reason": "target", "ret": 1.265, "held_min": 28.1, "sell_result": "submitted", "close_result": "nothing to close"}
