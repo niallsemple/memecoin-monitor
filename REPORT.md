@@ -7674,3 +7674,10 @@ Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **
 - **Project 0 Orders: feature shipped (mrgn-0.1.8, mainnet ~Mar 2026) but 0 Order accounts on-chain (2026-09-08).** Tripwire counts accounts each 20-min cron cycle; keeper decode study starts when count > 0.
 - **LST convergence: monitored, no edge in calm market.** JitoSOL NAV 1.300046 vs Jupiter 1.299886 = 1.3bps vs 10bps redemption cost. Watch logs discount_bps; trade opens >20bps (depeg events only).
 - **Meteora DLMM fee-capture: LIVE and promising.** Top-150 hot pools pay ~$20k/30min aggregate; young memecoin pools show 50-500% fee/TVL per 30min with persistence over 22min windows; LP paper simulator (meteora_lp_sim.py) scores exact cum-fee income vs IL bounds. Verdict needs multi-hour spans (collecting).
+
+### Meteora early read (00:40 UTC, 36-min span, n=150 pools with cum-fee diffs)
+
+- **Fee decay curve (fee/TVL per 30min, median by age):** <3h = **4.76** (mania) → 6-12h = 0.20 → 12-24h = 0.53 (survivorship-noisy) → 24-72h = 0.16 → >72h = **0.007 (dead)**. Fee harvest is a first-few-hours game; after 72h pools are fee-inert. Exit logic should target fee-death, not the 24h cap.
+- **Qualifying pools are rare at any instant:** 7/150 met age≤12h + TVL≥$10k; only 1 met full criteria (ftr≥0.50). Entry selectivity is inherent, not a bug — the sim's job is picking the 1-in-150.
+- **First sim positions (n=2, 10-min windows, data_end exits — NOT a verdict):** LIGER-SOL fees $3.10/$1k in 3min, price +52% → net [−$3.98, +$137.97] across IL bounds. Worst-case-IL-positive: 1/2.
+- **IL is the whole game:** LIGER pays ~4%/hour of position value in fees but moved +52% in 10 min. Fee rate must persist ~24h to cover worst-case IL on a momentum move. Persistence-over-hours is exactly what the overnight span will measure.
