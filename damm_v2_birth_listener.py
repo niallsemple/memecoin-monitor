@@ -1,31 +1,39 @@
 #!/usr/bin/env python3
 """
-dlmm_birth_listener.py — minute-zero Meteora DLMM pool-birth detection.
+damm_v2_birth_listener.py — minute-zero Meteora DAMM v2 (cp-amm) pool-birth
+detection.
 
-Why: the REST hot-list collector discovers pools at age 1-6h, too late for
-the fast-exit/rotation mania window. Decoding every DLMM program tx is
-impossible (~4.3k sigs/min >> Helius quota). Instead: LbPair accounts are
-exactly 904 bytes owned by the DLMM program, so ONE getProgramAccounts call
-(dataSize=904, dataSlice=0) returns all pool pubkeys in <1s; diffing against
-the previous run yields births.
+Why: DAMM v2 is where new memecoin pools are actually born now (measured
+2026-09-08: 41/80 sampled DAMM v2 pools created in the last 7 days vs 0/80
+on DLMM). Pool-sized accounts are uniformly 1112 bytes owned by the cp-amm
+program, so ONE getProgramAccounts call (dataSize=1112, dataSlice=0)
+returns all of them; diffing against the previous run yields births.
 
-First run baselines silently (all existing pools marked seen, no births).
-Each birth is appended to dlmm_births.jsonl {t, pool} and immediately
-resolved against the Meteora REST API for name/mints/tvl/age when present
-(new pools may take minutes to appear in the API).
+Caveat measured 2026-09-08: the 1112-byte class holds ~1.46M accounts while
+the datapi only tracks ~137k pools, and the pool discriminator memcmp is
+silently ignored by the RPC (same count with/without), so this class likely
+includes position accounts. Births that do not resolve against the REST API
+are still recorded (resolved=false); the resolved subset is the
+high-signal one.
+
+First run baselines silently. Each birth is appended to
+damm_v2_births.jsonl {t, pool, name?, x_addr?, y_addr?, tvl?, age_h?,
+launchpad?} resolved against the DAMM v2 REST API (new pools may take
+minutes to appear; unresolved fields stay null and the collector's births
+pass picks the pool up later).
 
 Runs as a mandatory step in the EVM watcher interval automation (~20min
-cadence => pools caught at age ~0-20min instead of 1-6h).
+cadence => pools caught at age ~0-20min instead of hours).
 """
 import json, os, time, urllib.request
 
 MON = os.path.dirname(os.path.abspath(__file__))
 KEY = open(os.path.join(MON, "helius_key.txt")).read().strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
-DLMM = "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo"
-STATE = os.path.join(MON, "dlmm_birth_state.json")
-OUT = os.path.join(MON, "dlmm_births.jsonl")
-API = "https://dlmm.datapi.meteora.ag/pools"
+CPAMM = "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG"
+STATE = os.path.join(MON, "damm_v2_birth_state.json")
+OUT = os.path.join(MON, "damm_v2_births.jsonl")
+API = "https://damm-v2.datapi.meteora.ag/pools"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
 
@@ -48,7 +56,10 @@ def resolve(pool):
         return {"name": d.get("name"),
                 "x_addr": tx.get("address"), "y_addr": ty.get("address"),
                 "tvl": d.get("tvl"), "age_h": age_h,
-                "launchpad": d.get("launchpad")}
+                "launchpad": d.get("launchpad"),
+                "x_verified": tx.get("is_verified"),
+                "freeze_disabled": tx.get("freeze_authority_disabled"),
+                "x_holders": tx.get("holders"), "x_mc": tx.get("market_cap")}
     except Exception:
         return {}
 
@@ -61,9 +72,9 @@ def main():
         except Exception:
             pass
     r = rpc("getProgramAccounts",
-            [DLMM, {"encoding": "base64",
-                    "dataSlice": {"offset": 0, "length": 0},
-                    "filters": [{"dataSize": 904}]}])
+            [CPAMM, {"encoding": "base64",
+                     "dataSlice": {"offset": 0, "length": 0},
+                     "filters": [{"dataSize": 1112}]}])
     accts = r.get("result") or []
     now = set(a["pubkey"] for a in accts)
     baseline = not seen
@@ -74,11 +85,12 @@ def main():
             for pool in births:
                 rec = {"t": time.time(), "pool": pool}
                 rec.update(resolve(pool))
+                rec["resolved"] = bool(rec.get("name"))
                 f.write(json.dumps(rec) + "\n")
                 n_written += 1
     json.dump({"seen": sorted(now), "updated": time.time()},
               open(STATE, "w"))
-    print(f"dlmm births: {len(now)} pools known, "
+    print(f"damm-v2 births: {len(now)} pools known, "
           f"{'baseline set' if baseline else f'{n_written} new'}")
 
 
