@@ -106,6 +106,32 @@ def main():
             n += 1
     print(f"meteora snapshot: {n} pools ({len(young - set(seen))} young tracked)")
 
+    # ---- Project 0 Orders watch (memo #32 priority 1): feature shipped in
+    # mrgn-0.1.8 (mainnet ETA late March 2026) but ZERO Order accounts found
+    # on mainnet 2026-09-08. Count each cycle; when >0, build the keeper
+    # economics decode (surplus + rent + execution_max_fee per execution).
+    try:
+        key = open(os.path.join(MON, "helius_key.txt")).read().strip()
+        url = f"https://mainnet.helius-rpc.com/?api-key={key}"
+        body = json.dumps({"jsonrpc": "2.0", "id": 1,
+                           "method": "getProgramAccounts",
+                           "params": ["MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA",
+                                      {"filters": [{"memcmp": {"offset": 0,
+                                       "bytes": "PXZJQQ2HEmx"}}],   # account:Order
+                                       "dataSlice": {"offset": 0, "length": 0},
+                                       "encoding": "base64"}]}).encode()
+        req = urllib.request.Request(url, data=body,
+                                     headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            q = json.load(r)
+        cnt = len(q.get("result") or [])
+        with open(os.path.join(MON, "p0_orders_watch.jsonl"), "a") as f:
+            f.write(json.dumps({"t": now, "order_accounts": cnt}) + "\n")
+        print(f"p0 orders watch: {cnt} Order accounts on mainnet"
+              + ("  *** FEATURE LIVE — START KEEPER DECODE ***" if cnt else ""))
+    except Exception as e:
+        print(f"p0 orders watch failed: {str(e)[:80]}")
+
     # quick leaderboard for logs
     top = sorted(seen.values(),
                  key=lambda p: (p.get("fee_tvl_ratio") or {}).get("30m") or 0,
