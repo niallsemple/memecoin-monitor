@@ -52,12 +52,15 @@ def snap(p, now):
     fees = p.get("fees") or {}
     cfg = p.get("pool_config") or {}
     tx = p.get("token_x") or {}
+    ca = p.get("created_at")
     return {
         "t": now,
         "pool": p.get("address"),
         "name": p.get("name"),
         "launchpad": p.get("launchpad"),
-        "age_h": round((now - (p.get("created_at") or now * 1000) / 1000) / 3600, 2),
+        # None when created_at missing — never fake age 0 (0.0 passes young-
+        # pool gates in the sims and would contaminate the mania class)
+        "age_h": round((now - ca / 1000) / 3600, 2) if ca else None,
         "price": p.get("current_price"),
         "tvl": p.get("tvl"),
         "x_addr": tx.get("address"),
