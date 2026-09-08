@@ -1,0 +1,9 @@
+{
+  "0x0000000000000000000000000000000000000000": {"label": "no_hook", "note": "raw V4 pools; 41 trades n=41 mean 0.991x — farm spam cluster"},
+  "0xb429d62f8f3bffb98cdb9569533ea23bf0ba28cc": {"label": "clanker_static_fee_v2_4.1.0", "note": "verified BaseScan: Clanker Hook Static Fee V2; 289/2026 pools (14.3%)"},
+  "0xd60d6b218116cfd801e28f78d011a203d2b068cc": {"label": "clanker_dynamic_fee_v2_4.1.0", "note": "verified BaseScan: ClankerHookDynamicFeeV2"},
+  "0x1f91c998e7c2f4b690d75bdbf6502bdcd6e02acc": {"label": "unknown_launcher_A", "note": "177 pools, fee=0 hook-managed; BOTH biggest replay winners (Baser 2.30x, home 3.32x) — n=2, watch forward"},
+  "0x0469a4bd3724dc86c9": {"label": "unknown_B", "note": "353 pools (17.4%) — needs full address + identity"},
+  "0xbdf938149ac6a781f9": {"label": "unknown_C", "note": "220 pools (10.9%)"},
+  "0xbb7784a4d481184283": {"label": "unknown_D", "note": "116 pools (5.7%)"}
+}
