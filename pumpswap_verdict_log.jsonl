@@ -1,1 +1,2 @@
 {"ts": "2026-09-08 11:04 UTC", "cell": "age<=0.5h hold<=0.5h tgt=+25%", "n": 8, "mean_mark": 106.4, "pos": "7/8", "rugs": 1, "resolved_n": 4, "resolved_mean": 130.7, "stress_open_rug_mean": -384.7, "note": "edge survives resolved-only split but open trades unresolved; stress bound deeply negative until cohorts resolve"}
+{"ts": "2026-09-08 11:09 UTC", "type": "hypothesis", "n": 11, "note": "rug entries had vol5m/liq 2.8-5.5x + weak pc5m; +25% hitters had ~1.0x + strong pc5m. Test at n>=20 resolved before gating."}

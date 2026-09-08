@@ -7786,3 +7786,24 @@ Current read on the leading cell (age<=0.5h, hold<=0.5h, tgt +25%):
 GO bar restated honestly: **resolved n>=10 across multiple cohorts, mean
 positive with rugs in sample.** Currently resolved n=4. Verdicts now appended
 to `pumpswap_verdict_log.jsonl` each run for drift tracking.
+
+## 2026-09-08 ~11:10 UTC — Exploratory: entry-feature rug hypothesis (n=11, NOT a gate yet)
+
+Compared entry-time features of resolved rugs vs +25% hitters among momentum
+entries (age<=2h, liq>=$25k, turnover>=1x, buys>sells):
+
+- Rugs (LEGO $96k, SPCX $280k, Anthropic $363k): vol_5m/liq 2.8-5.5x,
+  pc_5m only +1.3% to +5.3% — high churn, weak price response.
+- +25% hitters (haMSTR, PUGCOIN): vol_5m/liq ~1.0x with pc_5m +65.8% / +8.5%
+  — moderate turnover, strong price response.
+
+HYPOTHESIS to test as n grows (deliberately NOT applied to sim gates, n=2 per
+class): entry quality may separate on (a) turnover >= ~3x liq = distribution/
+churn → rug-prone, and/or (b) pc_5m >= ~5% momentum confirmation. If it holds
+at n>=20 resolved, it becomes a candidate gate; applying it now would be
+overfitting.
+
+Open trades at 11:03 all still at/near peak liq (SPCX $304k, 7Stock $209k,
+AAPL $260k, LEGO $73k, GOOGL $292k); LUNA bleeding (liq 74% of peak). This
+meta's mania window is running longer than the SPCX/Anthropic 30-60min cliff
+(HOOD 5h old, $509k, at peak) — regime note for the multi-cohort read.

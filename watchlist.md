@@ -4892,3 +4892,9 @@
 | 10:46 | robinhood | `0xbee455…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$25,948 mc=$79,102 | chain:robinhood no-audit-adapter | Launch tokens paired with any Fortune 500 company. |
 | 10:46 | robinhood | `0x435376…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$86,746 mc=$820,585 | chain:robinhood no-audit-adapter | The first green dog on hood - built for the people, by the people. By $BONK Devs |
 | 10:46 | robinhood | `0x33F592…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9,474 mc=$10,362 | chain:robinhood no-audit-adapter |  |
+| 11:06 | solana | `CQTnoQGp…` | FAIL | TOP10_HEAVY:56% | liq=$0 mc=$13,757 | name=commotitty symbol=commotitty; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | PUMPFUN HAS JUST ADDED DIRECT OTC SUPPORT AND THIS IS INSANE,  Pumpfun volume ha |
+| 11:06 | robinhood | `0x476453…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,621 mc=$54,959 | chain:robinhood no-audit-adapter |  |
+| 11:06 | solana | `7oaVv9ff…` | FAIL | TOP10_HEAVY:59% | liq=$0 mc=$17,436 | name=おっぱい symbol=OPPAI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=58.9% |  |
+| 11:06 | robinhood | `0x435502…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$66,656 mc=$490,360 | chain:robinhood no-audit-adapter | Pepacman -  A maze full of money. Don't let the bears ruin your run. Play now |
+| 11:06 | solana | `2A6sLqrw…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$0 mc=$20,737 | name=FigureAppleRobinhoodTesla symbol=FART; contract:clean; rugcheck_score=1 lpLocked=100% | F.A.R.T |
+| 11:06 | robinhood | `0xF93beb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The #1 Wood Coin.   RobinWood ($ROBINWOOD) was born from a real Australian firew |
