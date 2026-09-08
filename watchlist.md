@@ -4916,3 +4916,38 @@
 | 12:16 | robinhood | `0x4C21df…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$6,794 | chain:robinhood no-audit-adapter | Every market. One floor. Trade beyond the limits of traditional markets. From cr |
 | 12:16 | solana | `7qugk9ZX…` | FAIL | TOP10_HEAVY:83% | liq=$0 mc=$6,646 | name=Sonera symbol=Sonera; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=82.6 |  |
 | 12:16 | bsc | `0x490C20…` | CAUTION | PROXY | liq=$45,753 mc=$214,772 | holders=0; buy_tax=0.03 sell_tax=0.0681 | 错过来了牛来，错过了Four 的4Stock 多少人拍断大腿，懊悔没有在黎明前上车。现在，命运重来，且剧本升级！蝴蝶平台的7Stock强势来袭，携百倍千倍的成功 |
+| 12:26 | robinhood | `0xac9265…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$51,490 mc=$58,592 | chain:robinhood no-audit-adapter | GIGA NARRATIVE?!?!??!?!?!?  TRUTH TERMINAL literally wanted to launch TREECOIN t |
+| 12:26 | solana | `GycVSSTK…` | PASS | — | liq=$34,675 mc=$163,137 | name=SOLTOP symbol=SOLTOP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=20.5 | SOLTOP |
+| 12:26 | solana | `C8mR9NJA…` | FAIL | TOP10_HEAVY:91% | liq=$0 mc=$5,983 | name=SONERA symbol=SONERA; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=90.8 |  |
+| 12:26 | robinhood | `0x7A0207…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$60,031 mc=$69,623 | chain:robinhood no-audit-adapter | VaultLeap is built around one powerful idea: unlock what’s stored and turn it in |
+| 12:26 | bsc | `0x79E82e…` | PASS | — | liq=$71,651 mc=$686,678 | holders=1443; buy_tax= sell_tax=; contract:clean |  |
+| 12:26 | robinhood | `0x886cc5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,273 mc=$38,062 | chain:robinhood no-audit-adapter |  |
+| 12:46 | solana | `AXEkHEqb…` | FAIL | TOP10_HEAVY:52% | liq=$0 mc=$19,594 | name=NIGGERCOIN symbol=NIGGER; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | $Nigger by Grok |
+| 12:46 | solana | `ELYfhvSg…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_CONCENTRATED:41% | liq=$75,032 mc=$178,663 | name=Pump Cat Coin symbol=PUMPCAT; contract:clean; rugcheck_score=78 lpLocked=95.311092714 | PUMPCAT is the sleepy cat with sharp claws. Born on Solana, powered by memes, mo |
+| 12:46 | robinhood | `0xb4C3b4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$2 mc=$8,513 | chain:robinhood no-audit-adapter |  |
+| 12:46 | bsc | `0x6fa7F7…` | CAUTION | PROXY | liq=$39,150 mc=$158,041 | holders=0; buy_tax= sell_tax= | 简介Binance baby |
+| 12:46 | robinhood | `0x1d91b7…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,736 mc=$5,239 | chain:robinhood no-audit-adapter | anything, on chain, on a link. mint it, text the link, whoever opens it owns it. |
+| 12:46 | robinhood | `0x53cE38…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,128 mc=$129,490 | chain:robinhood no-audit-adapter | ?? time for quantum inu |
+| 12:56 | solana | `vbXoE2GB…` | FAIL | TOP10_HEAVY:65% | liq=$0 mc=$13,027 | name=Unity Coin symbol=UNITY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=6 | Last month there was PVP on every chain  Robinhood, Solana, Base, ETH  runners e |
+| 12:56 | robinhood | `0x91D300…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,167 mc=$154,564 | chain:robinhood no-audit-adapter | Born from quantum curiosity, Quantum Inu brings a cosmic blue Inu into the Robin |
+| 12:56 | solana | `DFUkRaae…` | CAUTION | TOP10_CONCENTRATED:45% | liq=$0 mc=$22,849 | name=Nobrainer symbol=Nobrainer; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | no brainer |
+| 12:56 | base | `0xC083E4…` | PASS | — | liq=$16,277 mc=$27,786 | holders=85; buy_tax= sell_tax=; contract:clean | Jesse said keep building. So we did. Unofficial community meme built on Base. |
+| 12:56 | robinhood | `0x3acdde…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,842 mc=$61,283 | chain:robinhood no-audit-adapter | Contra is a non-custodial protocol for shorting tokenized equities on Robinhood  |
+| 12:56 | robinhood | `0x3A2922…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,969 mc=$48,871 | chain:robinhood no-audit-adapter | Meet BOMB, a character trying to get his financial life together. Rent, bills, s |
+| 13:06 | robinhood | `0x7fCa47…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$3,703 | chain:robinhood no-audit-adapter | Robinhood was built around a simple idea: give everyone the power to participate |
+| 13:06 | solana | `G6PbsfbQ…` | FAIL | TOP10_HEAVY:85% | liq=$0 mc=$5,666 | name=AMAZONCOIN symbol=AMAZONCOIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h | I FOUND AMAZON’S ACTUAL COIN AND SOMEHOW NOBODY DID IT AND PAIRED IT WITH AMZN   |
+| 13:06 | solana | `3MimQAU3…` | PASS | — | liq=$32,440 mc=$152,995 | name=Meme Strategy symbol=MSTR; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=1 |  |
+| 13:06 | robinhood | `0xD2E80E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$10,095 mc=$11,733 | chain:robinhood no-audit-adapter | 🚨🔥 THIS IS NOT JUST ANOTHER TOKEN! 🔥🚨  💰 70% OF FEES GO BACK TO HOLDERS! ⚡ ONLY  |
+| 13:06 | solana | `EHpaxqVV…` | FAIL | RC_DANGER:Creator history of rugged tokens | liq=$28,386 mc=$94,385 | name=WHEEL SMITH symbol=wheelsmith; contract:clean; rugcheck_score=71 lpLocked=99.97480138 | At first, people invented the WHEEL. Wheel Smith |
+| 13:16 | solana | `4fFtGKVq…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:89% | liq=$6,142 mc=$8,666 | name=CHAD symbol=CHAD; contract:clean; rugcheck_score=28 lpLocked=100%; top10_hold=88.9% |  |
+| 13:16 | bsc | `0x88ECDD…` | FAIL | MINTABLE; WHITELIST_FUNC | liq=$15,001,876 mc=$15,001,856 | holders=0; buy_tax= sell_tax= | rmb |
+| 13:16 | solana | `F6gHSUPA…` | FAIL | TOP10_HEAVY:56% | liq=$0 mc=$21,106 | name=Ozempig symbol=Ozempig; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=56 |  |
+| 13:16 | robinhood | `0xcb347c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1 mc=$2,690 | chain:robinhood no-audit-adapter | See it first. |
+| 13:16 | solana | `3K7Dos9d…` | FAIL | TOP10_HEAVY:54%; RC_WARN:Copycat token | liq=$9,457 mc=$17,468 | name=SPY Mascot symbol=SPDR; contract:clean; rugcheck_score=29 lpLocked=0%; top10_hold=53. |  |
+| 13:16 | solana | `FTew9pVW…` | FAIL | TOP10_HEAVY:98% | liq=$0 mc=$4,053 | name=Calvin symbol=CALVIN; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=98.4 | Calvin - the first ever crypto mascot paired with Gold. |
+| 13:26 | robinhood | `0xc9fc70…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Dog that inspired Zynga Inc. |
+| 13:26 | robinhood | `0xA01A78…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,990 mc=$149,834 | chain:robinhood no-audit-adapter | We need Signal on RH |
+| 13:26 | bsc | `0x123694…` | CAUTION | PROXY | liq=$16,918 mc=$13,935 | holders=0; buy_tax= sell_tax= | 浏览器格斗对战 · BSC 链上排位 真人 PvP，打开就能玩，无需下载 交易税注入赛季奖池,排位玩家赛季结算领取 |
+| 13:26 | solana | `0x4a87c1…` | UNKNOWN | AUDIT_UNAVAILABLE | liq=$0 mc=$0 | goplus:unavailable; rugcheck:unavailable; top10:pending | Windows was made for humans. WinDogs was made for the internet. |
+| 13:26 | solana | `DZhvxJLo…` | PASS | — | liq=$31,636 mc=$139,466 | name=IDLE symbol=IDLE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=28.5%; b | IDLE is the memecoin for people who looked at the work, looked at the tools, and |
+| 13:26 | robinhood | `0xd15a61…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,790 mc=$108,729 | chain:robinhood no-audit-adapter | OG |

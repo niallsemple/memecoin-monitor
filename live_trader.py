@@ -355,6 +355,68 @@ def pool_sell(mint, token_amount_raw, reason="exit", slippage_bps=None):
     return row
 
 
+# --- SOL-only exits (owner directive 2026-09-08) ---------------------------
+# After every exit the wallet must hold ONLY SOL: sell 100% (99.9% cap per
+# §136) then CLOSE the token account to reclaim rent (~0.00204 SOL each).
+# SPL Token CloseAccount = instruction 9: [account(w), destination(w),
+# owner(s)], data = b"\x09". Batched 6 per legacy tx to stay under the
+# 1232-byte wire limit.
+
+def _close_ix(acct_b, dest_b, owner_b, token_prog_b):
+    return (token_prog_b,
+            [(acct_b, True, False), (dest_b, True, False),
+             (owner_b, False, True)],
+            bytes([9]))
+
+
+def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only"):
+    """Close token accounts. mints: close the ATA(s) for those mints (must be
+    ~zero balance; post-sell dust only). sweep_empty: close EVERY zero-balance
+    token account in the wallet (rent reclaim). Respects live_enabled()."""
+    ok, why = live_enabled()
+    key, address = _load_key()
+    owner_b = b58dec(address)
+    accs = (_rpc("getTokenAccountsByOwner",
+                 [address, {"programId": b58enc(TOKENKEG)},
+                  {"encoding": "jsonParsed"}]) or {}).get("value", [])
+    targets = []
+    for a in accs:
+        info = a["account"]["data"]["parsed"]["info"]
+        amt = int(info["tokenAmount"]["amount"])
+        if sweep_empty and amt == 0:
+            targets.append(a["pubkey"])
+        elif mints and info["mint"] in mints and amt <= 1000:
+            # post-sell dust tolerance: <=1000 raw units
+            targets.append(a["pubkey"])
+    row = {"action": "close_token_accounts", "targets": len(targets),
+           "reason": reason, "mode": "live" if ok else "dry-run",
+           "gate": why, "sigs": []}
+    if not targets:
+        row["result"] = "nothing to close"
+        _log(row)
+        return row
+    if not ok:
+        row["result"] = f"dry-run ({why})"
+        _log(row)
+        return row
+    closed = 0
+    for i in range(0, len(targets), 6):
+        batch = targets[i:i + 6]
+        ixs = [_close_ix(b58dec(p), owner_b, owner_b, TOKENKEG)
+               for p in batch]
+        try:
+            tx = build_legacy_tx(owner_b, ixs)
+            sig = _rpc("sendTransaction", [tx, {"encoding": "base64"}])
+            row["sigs"].append(sig)
+            if sig:
+                closed += len(batch)
+        except Exception as e:
+            row.setdefault("errors", []).append(str(e))
+    row["result"] = f"closed {closed}/{len(targets)}"
+    _log(row)
+    return row
+
+
 def _sign_versioned_tx(tx_b64, key):
     """Sign a Jupiter v0 transaction locally. Jupiter txs need exactly one
     signature (the fee payer = us) at signatures[0]."""
@@ -381,10 +443,14 @@ def _sign_versioned_tx(tx_b64, key):
     return base64.b64encode(bytes(out)).decode()
 
 
-def buy(mint, reason="signal"):
-    """One live (or dry-run) entry. Returns the ledger row."""
+def buy(mint, reason="signal", size_sol=None):
+    """One live (or dry-run) entry. Returns the ledger row.
+    size_sol: optional fixed size override (owner directive 2026-09-08:
+    0.10 SOL per test trade); default keeps fraction-of-balance sizing."""
     ok, why = live_enabled()
     size, bal = position_size_sol(json.loads(WALLET_F.read_text())["address"])
+    if size_sol is not None:
+        size = max(0.0, round(min(size_sol, bal - MIN_BAL_KEEP), 4))
     row = {"action": "buy", "mint": mint, "reason": reason,
            "size_sol": size, "balance_sol": round(bal, 4),
            "mode": "live" if ok else "dry-run", "gate": why}

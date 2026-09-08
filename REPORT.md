@@ -7910,3 +7910,27 @@ concentration EXCLUDING the pool vault. First hot-list run (14 mints):
 
 Note: our rugs are deployer DUMPS (supply concentration), not LP pulls —
 PumpSwap LP is program-held/burned. The gate targets the right mechanism.
+
+## 2026-09-08 ~13:00 UTC — OWNER GO: live executor built, wallet SOL-only, wired into watcher
+
+Owner directives: test with the real wallet; exits must leave ONLY SOL;
+0.10 SOL per trade (standing sizing), review after 10 trades.
+
+Done this turn:
+1. `close_token_accounts()` added to live_trader (SPL CloseAccount via the
+   battle-tested build_legacy_tx path, batched 6/tx).
+2. Baseline sweep executed LIVE (owner-authorized SOL-only directive): closed
+   20/20 empty legacy ATAs, +0.037 SOL rent reclaimed. Wallet now
+   1.1636 SOL, 0 token accounts — clean SOL-only baseline.
+3. `pumpswap_live.py` built: entries = the measured winning cell (pumpswap,
+   age<=0.5h, liq>=$25k, vol5m>=1x liq, buys>sells, max 3 concurrent);
+   exits = +25% target / -40% stop / 35% trail / 30min max hold / reserve
+   drain30 emergency; every exit sells 100% then closes the ATA (SOL-only).
+   Mechanics reuse live_trader (Jupiter pool path, local signing, dynamic
+   priority fees, farm + repeat-offender-deployer + bundle blocking gates,
+   one-trade-per-mint). Dry-run default; live only via owner signoff.
+4. Dry-run validation pass: clean, gates verified correct against live data
+   (Taraxacum $41k liq correctly REJECTED on sells>buys — dump in progress).
+5. Wired into the watcher as step 14 (--minutes 5, 20s cadence). Note: the
+   measured edge was computed at 20-min cadence, so cycle-cadence operation
+   matches the validated conditions; the 5-min loop adds faster exits.

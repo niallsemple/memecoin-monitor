@@ -152,3 +152,4 @@
 | 09:18 | STOP | 8RDq8d3u | £8.26 | trail-stop at 0.80x |
 | 09:19 | BUY | 8RDq8d3u | £14.02 | entry mc $715,144 | +503min |
 | 10:08 | STOP | 8RDq8d3u | £5.92 | trail-stop at 0.43x |
+| 13:17 | BUY | 3MimQAU3 | £13.85 | entry mc $246,664 | +11min |
