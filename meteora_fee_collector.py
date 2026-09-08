@@ -62,6 +62,8 @@ def snap(p, now):
         "ftr_30m": ftr.get("30m"), "ftr_1h": ftr.get("1h"), "ftr_24h": ftr.get("24h"),
         "vol_30m": vol.get("30m"), "vol_1h": vol.get("1h"),
         "fees_30m": fees.get("30m"), "fees_24h": fees.get("24h"),
+        "cum_fees": (p.get("cumulative_metrics") or {}).get("fees"),
+        "cum_volume": (p.get("cumulative_metrics") or {}).get("volume"),
         "x_holders": tx.get("holders"),
         "x_mc": tx.get("market_cap"),
         "x_verified": tx.get("is_verified"),
