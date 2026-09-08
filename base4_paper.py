@@ -167,9 +167,14 @@ def main():
         m = mult(p["last_sqrt"], p["entry_sqrt"])
         age_min = (now - p["entry_t"]) / 60
         reason = None
-        if age_min >= ABORT_MIN and m < ABORT_MULT:
+        if p.get("updated") is False and age_min >= ABORT_MIN:
+            # never saw a post-entry swap: no observable exit liquidity.
+            # Book at last price but tag 'illiquid' so stats can split
+            # genuine resolution from optimistic flat closes.
+            reason = "illiquid"
+        elif age_min >= ABORT_MIN and m < ABORT_MULT:
             reason = "abort"
-        if age_min >= TIMESTOP_MIN:
+        if age_min >= TIMESTOP_MIN and reason is None:
             reason = "tstop"
         if reason:
             _close(st, trades_f, pid, p, m, reason, now)
@@ -190,6 +195,8 @@ def main():
         # manage open position first
         if pid in st["open"]:
             p = st["open"][pid]
+            if sqrt and sqrt != p["last_sqrt"]:
+                p["updated"] = True
             p["last_sqrt"] = sqrt or p["last_sqrt"]
             m = mult(p["last_sqrt"], p["entry_sqrt"])
             p["peak"] = max(p["peak"], m)
@@ -230,6 +237,7 @@ def main():
             st["open"][pid] = {
                 "entry_t": r["t"], "entry_sqrt": sqrt, "last_sqrt": sqrt,
                 "peak": 1.0, "freerolled": False, "banked": 0.0,
+                "updated": False,
                 "name": name, "entry_flow_usd": round(w["cum"], 1),
             }
             st["entered"].append(pid)
