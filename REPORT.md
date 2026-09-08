@@ -7895,3 +7895,18 @@ Two honest caveats before any GO:
 
 Reserve poller now LIVE in the watcher (step 12): first wired run produced
 233 on-chain rows across 13 mints at 15s cadence, zero drain flags.
+
+## 2026-09-08 ~12:35 UTC — Deployer-safety gate v1 built; first data: concentration is the signal
+
+`deployer_safety.py` (2 RPC calls per mint): mint/freeze authority + holder
+concentration EXCLUDING the pool vault. First hot-list run (14 mints):
+- ALL mints have authorities revoked (mint=n, freeze=n) — standard for
+  pump.fun/met-dbc graduations, so authority checks do NOT discriminate.
+- The discriminative signal is top1 non-vault share: LUNA 23.1% (the known
+  bleeder, liq 74% of peak), HOOD 19.6%, WHUF 16.8% elevated; the healthy
+  runners sit at 6-15%.
+- GATE HYPOTHESIS (to test as cohorts resolve): top1_share > ~20% = dump
+  risk. n=1 suggestive so far — deliberately not gating yet.
+
+Note: our rugs are deployer DUMPS (supply concentration), not LP pulls —
+PumpSwap LP is program-held/burned. The gate targets the right mechanism.
