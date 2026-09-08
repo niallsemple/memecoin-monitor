@@ -162,14 +162,14 @@ def main():
 
     if "--grid" in sys.argv:
         print(f"{'variant':<9}" + "grid (mean net per $1000, worst-case):")
-        for liq in (10000.0, 25000.0, 50000.0):
-            for to in (0.5, 1.0, 2.0):
+        for age in (0.5, 1.0, 2.0):
+            for hold in (0.5, 1.0, 3.0):
                 for tgt in (0.25, 0.50):
-                    tr = run(by, dip, min_liq=liq, turnover=to, target=tgt,
-                             max_age=MAX_AGE_H, need_bp=NEED_BUY_PRESSURE,
-                             stop=STOP_PCT, trail=TRAIL_PCT,
-                             max_hold_h=MAX_HOLD_H)
-                    print(f"liq>={liq / 1000:4.0f}k turn>={to:3.1f} "
+                    tr = run(by, dip, max_age=age, max_hold_h=hold, target=tgt,
+                             min_liq=MIN_LIQ, turnover=TURNOVER,
+                             need_bp=NEED_BUY_PRESSURE,
+                             stop=STOP_PCT, trail=TRAIL_PCT)
+                    print(f"age<={age:3.1f}h hold<={hold:3.1f}h "
                           f"tgt=+{int(tgt * 100)}%  " + summarize(tr))
         return
 
