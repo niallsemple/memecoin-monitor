@@ -195,6 +195,15 @@ def manage_exits(now, positions, drained, dry):
         sell = lt.pool_sell(mint, int(pos.get("tokens_raw") or 0),
                             reason=f"pslive_{reason}")
         row["sell_result"] = sell.get("result")
+        if sell.get("result") != "submitted":
+            # §474: never drop a position whose sell did not fire — keep it
+            # under management and retry next pass (20s). Closing the ATA
+            # here would strand the whole holding.
+            row["result"] = "sell failed; position retained, retry next pass"
+            _log(row)
+            print(f"  EXIT-RETRY {pos.get('name')} {reason}: "
+                  f"sell={sell.get('result')}")
+            continue
         # SOL-only: burn post-sell dust (<=0.5% of position) + close the ATA
         ceiling = {mint: int(int(pos.get("tokens_raw") or 0) * 0.005)}
         close = lt.close_token_accounts(mints=[mint], dust_ceiling=ceiling,
