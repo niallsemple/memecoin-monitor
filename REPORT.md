@@ -7755,3 +7755,12 @@ Drift DIRECTION is itself evidence:
 DexScreener trace of the first DAMM v2 birth cohort: every met-dbc birth spawns three pools (meteoradbc bonding curve, DAMM v2 skeleton, PumpSwap pair). The DAMM v2 pool holds ~$0-40 and stays dust; the TRADEABLE pool is PumpSwap. LEGO-SOL at 40min old: PumpSwap liq $93,970, vol $9.07M — DAMM v2 liq $1. Dying tokens (ANSEM/NUKE/ZTRUMP) are dust on all venues but even their volume prints on PumpSwap.
 
 Consequence: the DAMM v2 birth listener's value is MINUTE-ZERO TOKEN DETECTION (which tokens exist at age ~5min), not the LP venue. The rotation/LP strategy must resolve each birth's real pool (DexScreener pair address works instantly) and track the PumpSwap pair's liquidity/volume/price curve. DAMM v2 rotation sim stays built but deprioritized until a DAMM v2 cohort shows real TVL (none in first 68 births).
+
+### First rug captures (11:43 UTC): the dump tail is a CLIFF, not a fade
+
+Two of today's three biggest igniters rugged within ~1h of birth, caught by the tracker:
+- SPCX-SOL: $327k liq / $1.58M vol-5m at 11:24 → liq $0 by 11:43 (PumpSwap pair GONE from DexScreener). ~60 min from ignition to rug.
+- Anthropic-SOL: $363k liq / $1.0M vol-5m at 11:24 → liq $0 by 11:43 (pair listed, zero liquidity, zero trades). ~30 min from ignition to rug.
+Signature: price quote persists (stale) while liq=0, vol_5m=0, pc_5m=null — distinguishable from API glitches because glitches zero the price too.
+
+Strategy consequence: in this meta (stock-parody tokens) the mania phase lasts <1h and ENDS IN A RUG. Holding past ~40-60min ≈ 100% loss. Validates: (1) the sim's rug override (liq<30% => 10% recovery) is realistic, maybe generous; (2) fast-harvest entries must be out inside the first ~30-40min; (3) the 45s fast poller is not optional — at 20-min cadence the rug is binary, at 45s the drain may be visible before liq hits 0. Survivors still standing: HOOD $468k, GOOGL $271k, LUNA $110k.
