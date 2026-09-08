@@ -7807,3 +7807,21 @@ Open trades at 11:03 all still at/near peak liq (SPCX $304k, 7Stock $209k,
 AAPL $260k, LEGO $73k, GOOGL $292k); LUNA bleeding (liq 74% of peak). This
 meta's mania window is running longer than the SPCX/Anthropic 30-60min cliff
 (HOOD 5h old, $509k, at peak) — regime note for the multi-cohort read.
+
+## 2026-09-08 ~11:20 UTC — Rug pre-signature study: no warning at 20-min cadence
+
+Examined both captured rug series snapshot-by-snapshot:
+- SPCX: $327k (100% peak) at 10:24 with pc_5m +5.7% → $0 at 10:43. Price was
+  RISING 19 min before the pool hit zero.
+- LEGO: $95k (99.8%) at 09:50 → $0 at 10:24. No staircase, no drift.
+
+Implications:
+1. Price-based exits (trailing stop, pc_5m deterioration) CANNOT save you from
+   the rug cliff — the price feed shows green until the pool is empty. Only
+   liquidity-based exits work.
+2. 20-min batch cadence is blind to the drain. Whether the 45s fast-poll
+   catches a drain mid-flight is UNTESTED — both rugs predate fastpoll. Need a
+   rug to occur inside a fast-poll window to validate.
+3. For live trading, DexScreener lag is a risk: robust exit design should poll
+   pool reserves on-chain (getTokenAccountBalance on both pool vaults) at <=15s
+   cadence for open positions, not rely on the indexer.
