@@ -142,16 +142,26 @@ def main():
     by = load_pools()
 
     if "--grid" in sys.argv:
+        import time as _t
         print("entry-criteria sensitivity sweep (net per $1000 position):")
         print(f"{'age<=h':>7s} {'ftr>=':>6s} {'tvl>=':>7s}  summary")
+        log_rows = []
         for age in (3.0, 6.0, 12.0):
             for ftr in (0.25, 0.50, 1.0):
                 res = run_sim(by, age, ftr)
                 print(f"{age:7.0f} {ftr:6.2f} {'10k':>7s}  {summarize(res)}")
+                log_rows.append({"age": age, "ftr": ftr, "tvl": 10000,
+                                 "summary": summarize(res), "n": len(res)})
         # high-capacity class: big pools, lower fee rate, any age
         for ftr in (0.02, 0.05, 0.10):
             res = run_sim(by, 1e9, ftr, min_tvl=100000.0)
             print(f"{'any':>7s} {ftr:6.2f} {'100k':>7s}  {summarize(res)}")
+            log_rows.append({"age": None, "ftr": ftr, "tvl": 100000,
+                             "summary": summarize(res), "n": len(res)})
+        # persist every grid run so verdicts are comparable over time
+        log_path = os.path.join(MON, "meteora_verdict_log.jsonl")
+        with open(log_path, "a") as f:
+            f.write(json.dumps({"t": _t.time(), "rows": log_rows}) + "\n")
         return
 
     results = run_sim(by, ENTRY_AGE_H, ENTRY_FTR)
