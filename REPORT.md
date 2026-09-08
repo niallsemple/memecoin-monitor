@@ -7876,3 +7876,22 @@ scoping as a future filter.
 Data hygiene note: name-keyed grouping mixes clone tickers (two HOOD mints
 fast-polled in different windows looked like a $495k→$320k bleed; per-mint
 check showed two separate tokens). All analysis must key on mint.
+
+## 2026-09-08 ~12:15 UTC — Numeric GO bar HIT: resolved n=10, +104.2/1k — with a caveat
+
+Leading cell (age<=0.5h, hold<=0.5h, tgt +25%): n=13, **resolved n=10**,
+resolved mean **+104.2/$1k**, 2 rugs in sample, pos 8/13. The numeric bar
+(resolved n>=10 with rugs in sample) is met. Ultra-early cell (<=15min)
+steady at +255.8 (n=4, all resolved).
+
+Two honest caveats before any GO:
+1. Mean regressed +168.7 -> +104.2 as the marginal 2 trades resolved weaker
+   — expect further drift toward the true mean as n grows.
+2. All 10 resolved trades are from ONE morning's stock-parody meta. The GO
+   bar's "multiple cohorts/metas" intent is not yet proven — a quiet or
+   hostile meta could behave differently.
+3. Stress bound back to -127.6 with 3 open trades (they resolve within the
+   hour).
+
+Reserve poller now LIVE in the watcher (step 12): first wired run produced
+233 on-chain rows across 13 mints at 15s cadence, zero drain flags.

@@ -98,3 +98,5 @@
 {"name": "NASDUQ / ETH", "pool_id": "0x2482dd2d0a7cd124a0696a7923e6116752a7c654d2d23ec3e73416596839d513", "entry_t": 1788864103, "exit_t": 1788867192.8531861, "ret": 0.5559, "exit": "abort", "entry_flow_usd": 11075.4, "hold_min": 51.5}
 {"name": "NOJEANS / ETH", "pool_id": "0x88a79cfefcea35dc9f2272ecce060fe9b2325e0ce1d3775a7d1ada3564a6a4f5", "entry_t": 1788864783, "exit_t": 1788867192.8531861, "ret": 1.0, "exit": "illiquid", "entry_flow_usd": 11120.9, "hold_min": 40.2}
 {"name": "IM / ETH", "pool_id": "0x6df35950fdf28a8daf4c559a71a22719afbb847251954bd4cd2793761c5fe102", "entry_t": 1788864783, "exit_t": 1788867192.8531861, "ret": 1.0, "exit": "illiquid", "entry_flow_usd": 9479.0, "hold_min": 40.2}
+{"name": "NOVA / WETH", "pool_id": "0x4494222384531a8ef3eb9afca54854dacdcf30b34da04dad3892d7b5b286990f", "entry_t": 1788865583, "exit_t": 1788868732.2330492, "ret": 0.669, "exit": "abort", "entry_flow_usd": 6493.4, "hold_min": 52.5}
+{"name": "AGI / WETH", "pool_id": "0x392a9631ce3d89095eed13737795ee8daa18a97eb026004b1903515c278b9b2d", "entry_t": 1788866783, "exit_t": 1788868732.2330492, "ret": 0.6403, "exit": "abort", "entry_flow_usd": 24370.9, "hold_min": 32.5}

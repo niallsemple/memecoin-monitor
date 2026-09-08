@@ -4898,3 +4898,15 @@
 | 11:06 | robinhood | `0x435502…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$66,656 mc=$490,360 | chain:robinhood no-audit-adapter | Pepacman -  A maze full of money. Don't let the bears ruin your run. Play now |
 | 11:06 | solana | `2A6sLqrw…` | CAUTION | TOP10_CONCENTRATED:48% | liq=$0 mc=$20,737 | name=FigureAppleRobinhoodTesla symbol=FART; contract:clean; rugcheck_score=1 lpLocked=100% | F.A.R.T |
 | 11:06 | robinhood | `0xF93beb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The #1 Wood Coin.   RobinWood ($ROBINWOOD) was born from a real Australian firew |
+| 11:56 | robinhood | `0x808d28…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,090 mc=$102,767 | chain:robinhood no-audit-adapter |  |
+| 11:56 | robinhood | `0x08019f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$31,741 mc=$100,733 | chain:robinhood no-audit-adapter | Launch tokens paired with any Fortune 500 company. |
+| 11:56 | solana | `8nHVp96f…` | FAIL | TOP10_HEAVY:65%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=BOBBLEHEADS symbol=BOBBLEHEAD; rugcheck_score=12 lpLocked=0%; top10_hold=65.3% |  |
+| 11:56 | robinhood | `0xa0b205…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,160 mc=$19,008 | chain:robinhood no-audit-adapter | Built around the idea that holders should become shareholders and earn passive i |
+| 11:56 | bsc | `0xd5EeB6…` | PASS | — | liq=$21,338 mc=$59,179 | holders=0; buy_tax= sell_tax=; contract:clean | （企飞）企鹅原创 IP。专注 IP 内容打造，输出趣味表情包，未来会拓展IP的多元化发展！ |
+| 11:56 | solana | `5wVy5n7q…` | FAIL | TOP10_HEAVY:83% | liq=$0 mc=$7,323 | name=Spy cat symbol=SPY; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=83.2% |  |
+| 12:06 | robinhood | `0x0853F6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$41,782 mc=$199,477 | chain:robinhood no-audit-adapter | Welcome to Scamnance. More money. Less rules. Infinite BRRR. 🖨💸 $SNC |
+| 12:06 | bsc | `0x69A542…` | CAUTION | PROXY | liq=$58,358 mc=$295,113 | holders=1158; buy_tax=0.03 sell_tax=0.03 | BSC链新的发射台，COSM宇宙发射台，发射台官方代币，手续费全部回购进行销毁，发射台营收全部回购代币进行销毁，无限通缩 |
+| 12:06 | robinhood | `0x6c8554…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$19,975 mc=$47,056 | chain:robinhood no-audit-adapter |  |
+| 12:06 | robinhood | `0xcb9389…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Buy a pack. Keep what falls out. 16 weird things, three to a pack. |
+| 12:06 | solana | `5U2K8v86…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$11,972 | name=Gooner Procressic Unit symbol=GPU; contract:clean; rugcheck_score=1 lpLocked=100%; to | Meet $GPU, the Gooner Processing Unit |
+| 12:06 | bsc | `0x670256…` | PASS | — | liq=$29,910 mc=$129,742 | holders=0; buy_tax=0.01 sell_tax=; contract:clean | Built and Code |
