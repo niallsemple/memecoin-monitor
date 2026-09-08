@@ -4910,3 +4910,9 @@
 | 12:06 | robinhood | `0xcb9389…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Buy a pack. Keep what falls out. 16 weird things, three to a pack. |
 | 12:06 | solana | `5U2K8v86…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$11,972 | name=Gooner Procressic Unit symbol=GPU; contract:clean; rugcheck_score=1 lpLocked=100%; to | Meet $GPU, the Gooner Processing Unit |
 | 12:06 | bsc | `0x670256…` | PASS | — | liq=$29,910 mc=$129,742 | holders=0; buy_tax=0.01 sell_tax=; contract:clean | Built and Code |
+| 12:16 | solana | `HtGPStyt…` | FAIL | TOP10_HEAVY:60% | liq=$0 mc=$24,900 | name=Big Mac Index symbol=BMI; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= | The Big Mac Index |
+| 12:16 | solana | `B8iv48vo…` | FAIL | TOP10_HEAVY:61% | liq=$20,380 mc=$67,846 | name=UNBAGME symbol=UNBAG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=61.0 | The multi-chain token intelligence layer.  Scan any CA in seconds: contract hygi |
+| 12:16 | solana | `4bC8T3hv…` | CAUTION | TOP10_CONCENTRATED:50% | liq=$0 mc=$25,476 | name=Most Valueable Pair symbol=MVP; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 12:16 | robinhood | `0x4C21df…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$6,794 | chain:robinhood no-audit-adapter | Every market. One floor. Trade beyond the limits of traditional markets. From cr |
+| 12:16 | solana | `7qugk9ZX…` | FAIL | TOP10_HEAVY:83% | liq=$0 mc=$6,646 | name=Sonera symbol=Sonera; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=82.6 |  |
+| 12:16 | bsc | `0x490C20…` | CAUTION | PROXY | liq=$45,753 mc=$214,772 | holders=0; buy_tax=0.03 sell_tax=0.0681 | 错过来了牛来，错过了Four 的4Stock 多少人拍断大腿，懊悔没有在黎明前上车。现在，命运重来，且剧本升级！蝴蝶平台的7Stock强势来袭，携百倍千倍的成功 |
