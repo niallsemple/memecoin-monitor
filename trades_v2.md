@@ -306,3 +306,5 @@
 | 13:46 | STOP | 3MimQAU3 | £0.05 | trail-stop at 0.01x |
 | 13:47 | STOP | FjhTgMeD | £7.37 | trail-stop at 1.48x |
 | 13:48 | BUY | FjhTgMeD | £6.55 | entry mc $679,323 | +793min |
+| 17:47 | SELL 2x | FjhTgMeD | £3.23 | ladder stage 1 |
+| 18:18 | STOP | FjhTgMeD | £1.01 | trail-stop at 0.21x |

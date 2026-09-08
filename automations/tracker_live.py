@@ -55,6 +55,12 @@ WINDOW_S = 16.5 * 60  # §443: 13.5m -> 15m. The 23:14->23:25 blind gap let
 # window slightly under the interval near-eliminates inter-run gaps:
 # typical total ~19.2m, busy worst ~21.2m < 22m timeout. The 20s psnewborn
 # entry/exit loop makes every uncovered minute tradable-risk time.
+# §476 (same day ~19:00 UTC): §472's "fires AT completion" premise FAILED —
+# the platform skip-and-LOSES a tick that lands during an active run beyond
+# a ~2-3s grace (17:11 run recorded "skipped"; 18:51:4x tick lost when the
+# run ended 18:52:29). With durations at 20m49s the 20m interval degraded
+# to 40m cadence / ~19m dead windows. Trigger raised to 22m (> worst
+# measured total ~21.7m) so ticks stop being lost; typical gap now ~1-3m.
 # keeps 0.3m of headroom over the worst measured tail.)
                     # post-processing (~16.3m max), so 16m finishes ~18.5m <
                     # 20m interval — next trigger never skips — while shrinking

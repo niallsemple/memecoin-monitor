@@ -5033,3 +5033,27 @@
 | 17:36 | robinhood | `0xFb6229…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,326 mc=$59,035 | chain:robinhood no-audit-adapter | OG Chedda on RH. Paired with GLD, your chedda is liquid gold. |
 | 17:36 | solana | `5gq1m1mr…` | FAIL | RC_DANGER:Large Amount of LP Unlocked; RC_DANGER:Low Liquidity; TOP10_HEAVY:59%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$28 mc=$68,224 | name=MoneroChan symbol=MONEROCHAN; rugcheck_score=55 lpLocked=0%; top10_hold=58.9% |  |
 | 17:36 | robinhood | `0x32821d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter |  |
+| 17:46 | robinhood | `0x167ed0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$23,244 mc=$63,231 | chain:robinhood no-audit-adapter | Best cat meme shared by both Robinhood founder Vlad and Pons founder Ozzy |
+| 17:46 | robinhood | `0xc9CD23…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$42,171 mc=$159,536 | chain:robinhood no-audit-adapter | RECEIPT turns everyday spending into an onchain story. Snap a real receipt, veri |
+| 17:46 | solana | `9TMyme7A…` | FAIL | TOP10_HEAVY:88% | liq=$0 mc=$6,567 | name=Cheems symbol=CHEEMS; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=88.5 |  |
+| 17:46 | robinhood | `0xe2e3bE…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$13,380 mc=$27,526 | chain:robinhood no-audit-adapter | Your old desktop friends got into onchain stocks. |
+| 17:46 | robinhood | `0x0c5442…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The house token of Hood Arena on Robinhood Chain. Play various games, in HP, USD |
+| 17:46 | solana | `DAdGtBQS…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:39% | liq=$20,402 mc=$52,565 | name=robo stonks symbol=robostonks; rugcheck_score=12 lpLocked=98.76157865734105%; top10_h |  |
+| 18:16 | solana | `9dvwpE8X…` | FAIL | TOP10_HEAVY:88% | liq=$0 mc=$4,836 | name=iPhold symbol=iPhold; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=88.4 |  |
+| 18:16 | solana | `7P8vfrUZ…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:57% | liq=$0 mc=$14,913 | name=First Neuralink Cat symbol=ZOE; contract:clean; rugcheck_score=65 lpLocked=100%; top1 | Neuralink just put the first neuralink device into a cat called $ZOE. Elon will  |
+| 18:16 | solana | `F6cmnymU…` | FAIL | TOP10_HEAVY:84%; RC_WARN:Low Liquidity | liq=$4,758 mc=$5,910 | name=Sender symbol=Sender; contract:clean; rugcheck_score=25 lpLocked=100%; top10_hold=84. |  |
+| 18:16 | solana | `GV3uwbj4…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,990 | name=Nasdick symbol=Nasdick; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10 |  |
+| 18:16 | robinhood | `0x5e31A2…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,907 mc=$37,445 | chain:robinhood no-audit-adapter | Grand Exchange on Runescape |
+| 18:16 | solana | `BDbS4nVY…` | CAUTION | TOP10_CONCENTRATED:50% | liq=$15,747 mc=$41,119 | name=Corine symbol=CORINE; contract:clean; rugcheck_score=1 lpLocked=0%; top10_hold=49.9% | Autonomous infra on SOL |
+| 18:26 | robinhood | `0x20628a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Say NO to being poor. |
+| 18:26 | solana | `4kU4an5E…` | FAIL | TOP10_HEAVY:54% | liq=$0 mc=$22,967 | name=Aw Dude symbol=AwDude; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=54. | Aw dude |
+| 18:26 | xrpl | `45415441…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$1,532 mc=$2,125 | chain:xrpl no-audit-adapter | About EATASS  $EATASS is a hyper-deflationary meme coin on the XRP Ledger built  |
+| 18:26 | solana | `FWJoGKny…` | FAIL | TOP10_HEAVY:71%; METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$0 mc=$0 | name=Grok 5 symbol=GROK5; rugcheck_score=12 lpLocked=100%; top10_hold=71.2% | Grok 5 on StonkFun, with SpaceX rewards paid directly to holders. |
+| 18:26 | solana | `7aLLQRBp…` | FAIL | TOP10_HEAVY:57% | liq=$0 mc=$20,980 | name=A Safe Investment symbol=CONDOM; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 18:26 | solana | `3FJHkGkS…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:47% | liq=$13,136 mc=$22,221 | name=fih symbol=FIH; rugcheck_score=12 lpLocked=99.56385205760206%; top10_hold=47.4% |  |
+| 18:56 | robinhood | `0x91f9fc…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$17,668 mc=$36,629 | chain:robinhood no-audit-adapter | Private aggregator on RobinHood. |
+| 18:56 | robinhood | `0x74ea12…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Player Versus Environment. |
+| 18:56 | robinhood | `0x88d28f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$26,894 mc=$109,549 | chain:robinhood no-audit-adapter | Blocks on the Robinhood chain are called UNCLES. |
+| 18:56 | solana | `GacYdYJi…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:38% | liq=$28,413 mc=$97,583 | name=unicorn symbol=UNICORN; rugcheck_score=12 lpLocked=99.27734132880906%; top10_hold=38. |  |
+| 18:56 | robinhood | `0xa84482…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$29,491 mc=$70,968 | chain:robinhood no-audit-adapter | Earn MSCI India ETF shares by holding a jeet |
+| 18:56 | bsc | `0x1C1a85…` | CAUTION | PROXY | liq=$44,463 mc=$176,673 | holders=0; buy_tax= sell_tax= | A bionic cat giving out $MarsCoin rewards |
