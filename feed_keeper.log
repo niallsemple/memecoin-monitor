@@ -426,3 +426,5 @@
 [collector] closed after 342 events
 2026-09-08 11:35:04Z SLIP: feed stale 355s, no pass — spawning collector for 20 min
 [collector] subscribed: newToken + migration
+[collector] error: Connection to remote host was lost.
+[collector] closed after 185 events

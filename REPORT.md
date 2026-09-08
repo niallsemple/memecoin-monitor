@@ -7839,3 +7839,17 @@ cell (age<=0.5h, hold<=0.5h, tgt +25%):
 
 GO bar: resolved n>=10 across cohorts. Currently 8. Two more resolved trades
 away. New targets this cohort: 7Stock +822, SPCX +687, haMSTR +892.
+
+## 2026-09-08 ~11:45 UTC — Ultra-early entry cell (<=15 min): +255.8/1k, n=4, all resolved
+
+Detection-latency measurement: first snapshot median 26 min post-birth (p25
+15m, best 1m); first gate-pass median 25 min (min 10m). The pipeline already
+sees pools at gate-pass moment for the median case — the owner's "5-10 min
+earlier" is reachable with no new infrastructure for the fastest quartile.
+
+Added age<=0.25h cell to the grid: n=4, all resolved, mean +255.8/$1k, 1 rug
+in sample, pos 3/4. Beats the 0.5h cell (+168.7). Pattern is monotone: earlier
+entry captures more of the pump before the cliff. +50% target negative here
+too (-72.9) — take-profit-early holds across every age cell.
+
+Caveat: n=4. Watch both cells as cohorts resolve.
