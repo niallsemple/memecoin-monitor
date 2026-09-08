@@ -4793,3 +4793,58 @@
 | 04:16 | bsc | `0x5E029F…` | CAUTION | PROXY | liq=$28,571 mc=$71,052 | holders=0; buy_tax= sell_tax= |  |
 | 04:16 | robinhood | `0x080Ad0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$39,373 mc=$43,437 | chain:robinhood no-audit-adapter | Data center paired with Bloom Energy stock. Bloom Energy Corporation is an Ameri |
 | 04:16 | solana | `5pN31v6a…` | FAIL | TOP10_HEAVY:64% | liq=$0 mc=$17,165 | name=Chrome Dino symbol=Dino; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=6 | First chrome dino on OTC paired with google. |
+| 05:16 | solana | `14tb5QiD…` | CAUTION | TOP10_CONCENTRATED:31% | liq=$0 mc=$18,326 | name=Stock Dog symbol=sDOG; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=31. |  |
+| 05:16 | solana | `EN1UjNu7…` | FAIL | RC_DANGER:Low Liquidity; TOP10_HEAVY:77% | liq=$5,095 mc=$6,483 | name=Soly symbol=Soly; contract:clean; rugcheck_score=27 lpLocked=99.93269084305216%; top1 |  |
+| 05:16 | solana | `BKMX8hRn…` | FAIL | TOP10_HEAVY:58% | liq=$9,466 mc=$17,437 | name=Q Q Q Sahur symbol=TripleQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Since we cant run meme without pairs.. 🍐🍐  Lets just send an already coded meme. |
+| 05:16 | solana | `GLRyB95L…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata | liq=$40,646 mc=$230,565 | name=MuchWow symbol=MUCHWOW; rugcheck_score=12 lpLocked=94.36483103810762%; top10_hold=29. | Much Wow paired with Doge now on Stonk Fun. |
+| 05:16 | solana | `G3a1RzPu…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$2,909 | name=BRIDGLET symbol=BRIDGLET; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 05:16 | bsc | `0xd270D4…` | PASS | — | liq=$833,402 mc=$636,170 | holders=4764; buy_tax=0 sell_tax=0; contract:clean |  |
+| 05:36 | robinhood | `0x8BD04D…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$72,602 mc=$145,516 | chain:robinhood no-audit-adapter | Fartcoin + Bitcoin |
+| 05:36 | solana | `PHgCReUn…` | CAUTION | TOP10_CONCENTRATED:42% | liq=$0 mc=$34,796 | name=UTC symbol=UTC; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=42.4% | Under The Counter |
+| 05:36 | solana | `21J5UBb7…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:47% | liq=$12,282 mc=$21,063 | name=Money Monkey symbol=ALBERT; rugcheck_score=12 lpLocked=0%; top10_hold=46.9% | BUY ALBERT. HOLD ALBERT. EARN USDC. |
+| 05:36 | robinhood | `0x5CF9fA…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$43,743 mc=$111,604 | chain:robinhood no-audit-adapter | "like buying Bitcoin in 2009" meme is a viral joke format expressing massive reg |
+| 05:56 | robinhood | `0x6add5b…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | One Token, Access to 400+ AI models |
+| 05:56 | solana | `B5EJZyaG…` | FAIL | TOP10_HEAVY:96% | liq=$0 mc=$5,217 | name=Mysterious Source of Income symbol=income; contract:clean; rugcheck_score=1 lpLocked= |  |
+| 05:56 | robinhood | `0x0898d1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$92,964 mc=$155,062 | chain:robinhood no-audit-adapter | Everyone is calling Hunter Biden's $LAPTOP launch an IQ test.  The sentiment is  |
+| 05:56 | solana | `BvAN885q…` | FAIL | TOP10_HEAVY:61% | liq=$0 mc=$21,175 | name=Mysterious Source of Income symbol=income; contract:clean; rugcheck_score=1 lpLocked= |  |
+| 05:56 | robinhood | `0x0531d4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$4 mc=$6,676 | chain:robinhood no-audit-adapter | A fat cat is a derogatory slang term for a wealthy, powerful, and privileged per |
+| 05:56 | robinhood | `0x203453…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,498 mc=$95,537 | chain:robinhood no-audit-adapter |  |
+| 06:26 | solana | `4FWtsF7N…` | FAIL | TOP10_HEAVY:79% | liq=$0 mc=$10,453 | name=cat fone symbol=fone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=79.0 |  |
+| 06:26 | solana | `K2RceVRG…` | FAIL | TOP10_HEAVY:100% | liq=$0 mc=$3,357 | name=Zoinbase symbol=Zoinbase; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold= |  |
+| 06:26 | solana | `F4fUjZ3U…` | CAUTION | METADATA_MUTABLE; RC_WARN:Fee config enabled; RC_WARN:Mutable metadata; TOP10_CONCENTRATED:44% | liq=$16,526 mc=$37,370 | name=589 symbol=589; rugcheck_score=12 lpLocked=100%; top10_hold=44.3% | buy $589, get paid out $XRP rewards, hold $XRP until $589. |
+| 06:26 | robinhood | `0xF4684d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$35,770 mc=$151,069 | chain:robinhood no-audit-adapter |  |
+| 06:26 | solana | `ArQEfE3R…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$15,600 mc=$41,126 | name=PFP symbol=PFP; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=43.7% |  |
+| 06:26 | solana | `GzuqQBme…` | FAIL | TOP10_HEAVY:88% | liq=$0 mc=$5,466 | name=A Safe Investment symbol=CONDOM; contract:clean; rugcheck_score=1 lpLocked=100%; top1 |  |
+| 06:36 | solana | `7ufZzGGK…` | FAIL | TOP10_HEAVY:74% | liq=$0 mc=$10,143 | name=Chief Executive Officer symbol=CEO; contract:clean; rugcheck_score=1 lpLocked=100%; t |  |
+| 06:36 | solana | `tjruqWY4…` | CAUTION | RC_WARN:Copycat token | liq=$33,867 mc=$152,109 | name=ANONIMUSCOIN symbol=ANONCOIN; contract:clean; rugcheck_score=29 lpLocked=100%; top10_ | 100% CAT. 0% FACE. |
+| 06:36 | solana | `HDP9UNbW…` | FAIL | TOP10_HEAVY:81% | liq=$0 mc=$7,354 | name=Barkshire Hathaway symbol=BARK; contract:clean; rugcheck_score=1 lpLocked=100%; top10 |  |
+| 06:36 | bsc | `0xe76602…` | PASS | — | liq=$48,387,196 mc=$74,286,595 | holders=18534; buy_tax=0 sell_tax=0; contract:clean | AGX is the core asset of the AEGIS X protocol.  Generated through a 150% overcol |
+| 06:36 | solana | `GSSaTKf7…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_CONCENTRATED:39% | liq=$15,070 mc=$39,074 | name=xStonk symbol=xStonk; contract:clean; rugcheck_score=80 lpLocked=100%; top10_hold=38. |  |
+| 06:36 | bsc | `0x489cE5…` | PASS | — | liq=$509,637 mc=$23,060,610 | holders=3040; buy_tax=0 sell_tax=0; contract:clean |  |
+| 07:06 | bsc | `0xcfa101…` | PASS | — | liq=$102,705 mc=$560,420 | holders=3030; buy_tax=0 sell_tax=0.0099; contract:clean | 7Stock Dividend 4Stock |
+| 07:06 | solana | `Gvxt6Kad…` | PASS | — | liq=$47,221 mc=$317,822 | name=ASSDAQ symbol=ASSDAQ; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=10.3 | $ASSDAQ - World's Best Asset. |
+| 07:06 | robinhood | `0x4A4168…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$33,226 mc=$69,126 | chain:robinhood no-audit-adapter | Elon Musk posted about Universal High Income, the background is global financial |
+| 07:06 | robinhood | `0x40F42C…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$11,352 mc=$11,340 | chain:robinhood no-audit-adapter | ELONCOIN, Only if necessary |
+| 07:06 | solana | `pBjE5Ldu…` | CAUTION | TOP10_CONCENTRATED:47% | liq=$15,810 mc=$42,130 | name=Navier-Stokes symbol=Navier; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho | Its made by the same guy that solved jacobian conjecture (5M+ runner)  He said:  |
+| 07:06 | solana | `8F53NbgU…` | CAUTION | TOP10_CONCENTRATED:44% | liq=$0 mc=$27,903 | name=fone symbol=fone; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=44.5% | We have not had a runner paired to APPLE  one of the only pairs left untouched   |
+| 07:26 | robinhood | `0x86149a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Phase Engine turns the coin's volume into a flywheel. It reinvests 50% of the fe |
+| 07:26 | robinhood | `0x5963D3…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$21,604 mc=$55,004 | chain:robinhood no-audit-adapter |  |
+| 07:26 | hyperevm | `0xfe88bb…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5,529 mc=$4,542 | chain:hyperevm no-audit-adapter | ¥EN to ¥AN. |
+| 07:26 | solana | `7NACVp3q…` | FAIL | TOP10_HEAVY:68% | liq=$0 mc=$13,143 | name=StoxVault symbol=STOXVAULT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hol | Choose the stocks you believe in. Your memecoin buys you Wall Street. |
+| 07:26 | robinhood | `0xc29ff4…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Every trade on Kumo generates a small fee, and The Kumo Vault puts it to work: i |
+| 07:26 | robinhood | `0xe65C40…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$82,872 mc=$183,187 | chain:robinhood no-audit-adapter | Every AI company like OpenAI, Anthropic, Meta, etc. needs massive amounts of RAM |
+| 07:46 | solana | `CGyHuPbN…` | FAIL | TOP10_HEAVY:59%; RC_WARN:Copycat token | liq=$0 mc=$14,378 | name=HarryPotterTrumpSonic69Inu symbol=SOLANA; contract:clean; rugcheck_score=29 lpLocked= |  |
+| 07:46 | solana | `Ex6XQdVn…` | FAIL | TOP10_HEAVY:56% | liq=$0 mc=$18,681 | name=Navier-Stokes symbol=Navier; contract:clean; rugcheck_score=1 lpLocked=100%; top10_ho |  |
+| 07:46 | robinhood | `0xE890C0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$28,106 mc=$72,462 | chain:robinhood no-audit-adapter | Scarcity is the feature.   Never more. Only less. 🔥 10% tax → Buyback → Burn |
+| 07:46 | bsc | `0x40bdDF…` | PASS | — | liq=$19,507 mc=$18,382 | holders=0; buy_tax= sell_tax=; contract:clean | The bnb frog |
+| 07:46 | robinhood | `0x116550…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$18,599 mc=$39,757 | chain:robinhood no-audit-adapter |  |
+| 07:46 | solana | `ExSjQUNr…` | FAIL | TOP10_HEAVY:63% | liq=$0 mc=$14,884 | name=High Earner Not Rich Yet symbol=HENRY; contract:clean; rugcheck_score=1 lpLocked=100% |  |
+| 07:56 | bsc | `0x8FFdcd…` | PASS | — | liq=$3,152,677 mc=$30,081,901 | holders=1227; buy_tax=0 sell_tax=0; contract:clean | U HAVE MAIL. |
+| 07:56 | solana | `F95cKNVA…` | FAIL | TOP10_HEAVY:69% | liq=$0 mc=$7,044 | name=OTC Cat symbol=OTCAT; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=69.1 | The first OTC cat paired with OTC Desk native token . |
+| 07:56 | robinhood | `0x84131d…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$34,824 mc=$138,582 | chain:robinhood no-audit-adapter | Sora checks market data and helps you make sense of a trade before you take it.  |
+| 07:56 | robinhood | `0x5d6095…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$81,622 mc=$156,745 | chain:robinhood no-audit-adapter | UBS expects Micron to generate over $400,000,000,000.00 in free cash flow throug |
+| 08:06 | bsc | `0xd2c76c…` | CAUTION | PROXY | liq=$0 mc=$0 | holders=0; buy_tax=0 sell_tax=0 | THE FINAL BIAO |
+| 08:06 | robinhood | `0x771f96…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$42,021 mc=$146,528 | chain:robinhood no-audit-adapter | Flash AI is the marketplace where AI agents hire other AI agents — discover by r |
+| 08:06 | robinhood | `0x3bfea8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Index markets for tokenized assets on Robinhood Chain. Fixed-weight baskets, liv |
+| 08:06 | robinhood | `0x5D6591…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$6,792 mc=$7,671 | chain:robinhood no-audit-adapter | VAULT is a token powered by trading fees. Every trade grows the Vault, building  |
+| 08:06 | robinhood | `0xe3185c…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$20,645 mc=$48,635 | chain:robinhood no-audit-adapter |  |

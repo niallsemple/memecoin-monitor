@@ -296,3 +296,5 @@
 | 01:57 | SELL 2x | FjhTgMeD | £3.32 | ladder stage 1 |
 | 02:37 | STOP | 8RDq8d3u | £5.43 | trail-stop at 1.11x |
 | 02:38 | BUY | 8RDq8d3u | £6.71 | entry mc $848,724 | +102min |
+| 07:27 | BUY | Gvxt6Kad | £6.57 | entry mc $338,136 | +21min |
+| 08:06 | STOP | Gvxt6Kad | £1.50 | trail-stop at 0.23x |

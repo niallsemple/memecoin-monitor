@@ -7721,3 +7721,13 @@ Curve-collector automation scheduler wedged platform-side (cron-triggered widget
 Drift DIRECTION is itself evidence:
 - **Mania rows decay with time.** Every young-pool row moved down over 3.3h: LIGER worst case +12.6 → −83.6 as its price faded; age≤12h/ftr≥0.50 row +4.8 → −7.6. Holding young positions longer makes the worst case WORSE (fee decay + price fade). If this class ever goes live, the exit must be much faster — harvest the ~$400/h mania-phase fees and be out inside the first hour, not hold 3.5h.
 - **High-capacity rows improve with sample.** ftr≥0.05: −4.3 → +2.2 as n grew 20→33; ftr≥0.10: −7.1 → +2.0 (n 15→27). The early negative read was small-sample noise. The mature read: steady fee velocity on established $100k+ TVL pools is the positive-expectancy class, not young mania.
+
+### Verdict rerun 08:15 UTC + rotation simulator first blood
+
+**Long-hold mania LP: decisively dead.** Third consecutive drift down (LIGER worst case now −520.9, hit the 0.50 dump stop). No parameter row saves it.
+
+**High-capacity class: stable positive, third run.** ftr≥0.05/30min @ $100k+ TVL: +$2.4/$1k worst-case, n=34, 15/34 positive. Drift +0.4 — the edge is small but consistent and regime-stable so far.
+
+**Rotation simulator (meteora_rotation_sim.py) — owner's 15-min rotation strategy, first run:** $1000 → $1071 (+7.1% in ~8h), 2/2 positions green, both exits fee_dead via the new RELATIVE decay exit (exit when ftr < 25% of entry ftr). $30/net per hour of capital at risk. Two bug-class fixes from the naive version: hold-time exit (was pool-age, caused churn), no-reentry (was re-buying the same dying pool 4x — −41% before fix). CAVEATS: n=2, both pumps (r 1.37/1.47) — the dump tail is NOT exercised in this sample; rotation never triggered (no challenger pools yet).
+
+**Structural bottleneck identified:** fast-exit/rotation rows sit at n=1-2 because the REST collector catches pools ~1-6h old — too late for the mania window. The minute-zero DLMM pool-creation listener (Helius polling of program LBUZK…wxo sigs, decode pool-init txs) moves from conditional build to REQUIRED — it is the only way to get fast-exit n to decision grade.
