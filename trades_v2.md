@@ -290,3 +290,9 @@
 | 20:58 | STOP | CTPoyCwk | £6.83 | trail-stop at 0.92x |
 | 20:59 | BUY | CTPoyCwk | £6.88 | entry mc $8,066,945 | +17091min |
 | 21:17 | STOP | J4jBCJgH | £0.04 | trail-stop at 0.01x |
+| 00:47 | BUY | FjhTgMeD | £6.74 | entry mc $458,859 | +11min |
+| 01:07 | BUY | 8RDq8d3u | £6.60 | entry mc $761,928 | +11min |
+| 01:38 | SELL 2x | 8RDq8d3u | £3.25 | ladder stage 1 |
+| 01:57 | SELL 2x | FjhTgMeD | £3.32 | ladder stage 1 |
+| 02:37 | STOP | 8RDq8d3u | £5.43 | trail-stop at 1.11x |
+| 02:38 | BUY | 8RDq8d3u | £6.71 | entry mc $848,724 | +102min |

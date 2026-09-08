@@ -7698,3 +7698,20 @@ Full complex-set repricing complete (5,638/5,638) with pure-arb shape filter: **
 ### Measurement validation: cum-fee diffs vs rolling fee field (00:57 UTC)
 
 298/298 consecutive-snapshot pairs pass consistency (implied fees from cum_fees diffs never exceed the API's rolling fees_30m beyond 10% slack; zero violations >1.2x). The LP sim's fee accounting rests on validated data. Separately: qualifying-pool flow rate ~3/hour in first collection hour — lane has opportunity flow, capacity is the binding constraint (~$1-2k/pool at <=10% TVL share).
+
+### First verdict-grid run — 04:24 UTC Sep 8 (4.4h span, 2,439+ snapshots)
+
+**Result: NOT a GO yet — but the high-capacity class flipped positive.**
+
+Mania class (young pools, TVL≥$10k): sample still too small (n=1–6 per row). Best row (age≤12h, ftr≥0.50): n=5, mean_narrow_worst −$7.6/$1k, 3/5 positive. Fee decay bites: LIGER paid $392/h in its mania phase but decayed to ~$20/h, and a −15.6% price fade makes worst case −$83.6. LEVERHEDGE ($84.63 fees, r=0.887 → worst −$27.9) same story: once the fee rate falls to $20–26/h, a 10–16% adverse drift overwhelms it. Pump case (LEVERCAT r=1.645): worst +$25.5 — fees are pure profit on pumps.
+
+High-capacity class (any age, TVL≥$100k) — earlier negative read (n=26, −3.8) has REVERSED with more data:
+- ftr≥0.05: n=33, **mean_narrow_worst +$2.2/$1k**, 15/33 positive, net range [+5.1, +20.6]
+- ftr≥0.10: n=27, mean_narrow_worst +$2.0/$1k, 12/27 positive
+- ftr≥0.02: n=45, −1.1 — the 0.05 floor matters
+
+Caveats before any GO: (1) all from one 4.4h overnight window — single regime; (2) narrow-worst is a modeled bound — real exits can gap worse than r=0.50 dump_stop; (3) 4/5 mania positions still open at data_end — no full lifecycle observed; (4) +0.22%/position worst-case edge is thin and regime-fragile. GO criterion unchanged: mania rows positive under narrow-worst with n≥10. Next verdict check ~08:30 UTC (8h+ span); verdict log appends every run for time-series drift detection.
+
+### Infrastructure note (01:00–04:11 UTC)
+
+Curve-collector automation scheduler wedged platform-side (cron-triggered widget tasks stopped firing after 22:28 UTC; disable/enable and trigger re-registration did not recover it; a fresh cron instance also failed). Fix: recreated as automation_139a9b3e with a 20-minute interval trigger (interval widget tasks and cron job-class automations fire normally), code identical (state in shared repo, history unbroken), widget binding re-pointed (binding_3ca431ff). First self-fire confirmed 04:11 UTC.

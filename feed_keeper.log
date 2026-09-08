@@ -350,3 +350,40 @@
 2026-09-08 00:22:28Z hb: age=2s pass_up=False keep_up=True
 [collector] 200 events logged
 [collector] 400 events logged
+[collector] closed after 487 events
+2026-09-08 00:43:29Z SLIP: feed stale 301s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 346 events
+2026-09-08 01:08:30Z SLIP: feed stale 300s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+2026-09-08 01:22:31Z hb: age=1s pass_up=True keep_up=True
+[collector] closed after 386 events
+2026-09-08 01:34:32Z SLIP: feed stale 359s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 395 events
+2026-09-08 01:59:33Z SLIP: feed stale 301s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 372 events
+2026-09-08 02:22:34Z hb: age=178s pass_up=False keep_up=False
+2026-09-08 02:25:34Z SLIP: feed stale 359s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 301 events
+2026-09-08 02:51:36Z SLIP: feed stale 326s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 320 events
+2026-09-08 03:17:37Z SLIP: feed stale 357s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+2026-09-08 03:22:38Z hb: age=7s pass_up=False keep_up=True
+[collector] 200 events logged
+[collector] closed after 287 events
+2026-09-08 03:51:39Z SLIP: feed stale 338s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 353 events
+2026-09-08 04:22:41Z hb: age=6s pass_up=False keep_up=False

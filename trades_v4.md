@@ -312,3 +312,8 @@
 | 09:27 | STOP | 5oR6SgeE | £7.62 | trail-stop at 0.55x |
 | 20:57 | BUY | J4jBCJgH | £13.91 | entry mc $415,964 | +21min @ 1.59x detect |
 | 21:17 | STOP | J4jBCJgH | £0.07 | trail-stop at 0.01x |
+| 01:07 | BUY | 8RDq8d3u | £13.63 | entry mc $761,928 | +11min @ 1.70x detect |
+| 01:38 | SELL 2x | 8RDq8d3u | £26.85 | take-profit 100% @2x |
+| 01:39 | BUY | 8RDq8d3u | £13.89 | entry mc $1,773,487 | +43min @ 3.96x detect |
+| 02:37 | STOP | 8RDq8d3u | £6.55 | trail-stop at 0.48x |
+| 02:38 | BUY | 8RDq8d3u | £13.74 | entry mc $848,724 | +102min @ 1.90x detect |
