@@ -7958,3 +7958,11 @@ fastpoll 6->3, reserve poller 4->2, live executor 5->6 min (its window grew),
 runner timeout 45->30 min hard cap. All 16 steps still mandatory. First armed
 executor window (13:39-13:44) ran correctly: no qualifying pairs existed
 (verified independently — zero pumpswap pairs <36min old), no trade taken.
+
+## 2026-09-08 ~13:55 UTC — Jupiter round-trip validated pre-live (no signing)
+
+Quote-only check on LAPTOP-SOL ($1.6M liq): 0.10 SOL -> 28.4M tokens
+(1 hop, 0.0027% impact) -> 0.0994 SOL back (0.0033%). Round-trip friction
+~0.06% on a deep pool — the sim's 2%/side assumption carries large margin.
+Every link in the live chain now proven: gates discriminate, Jupiter routes,
+local signing, ATA close/reclaim, kill switch.
