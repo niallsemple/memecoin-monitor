@@ -1892,6 +1892,160 @@ def run(ctx):
                 except Exception:
                     pass
 
+    # §470: PumpSwap newborn FAST-ENTRY loop (owner ask 2026-09-04/08:
+    # "see coins 5-10 min earlier"). Graduations are visible here within
+    # seconds via PumpPortal migrations + curve-complete flags, and pool
+    # subs give real-time WSOL legs — but the 20-min watcher batch was the
+    # only entry path. Gates mirror pumpswap_live.scan_entries EXACTLY
+    # (liq>=$25k, vol_5m>=liq, buys>sells, age<=30min) computed from the
+    # websocket pool counters on a 5-min rolling window; entry fires
+    # through live_trader.buy (§267 one-trade-per-mint dedupes vs the
+    # watcher path; §459 retirement list respected). entry_px comes from
+    # DexScreener so pumpswap_live.manage_exits math stays consistent.
+    # Earliest possible entry = ~5-6min post-graduation (window build-up).
+    PSNB_S = 20
+    PSNB_MAX_AGE_S = 1800
+    PSNB_MIN_LIQ = 25000.0
+
+    def psnewborn_loop():
+        import importlib.util as _iln
+        import os as _osn
+        from collections import deque as _dq
+        _sol_px = {"v": 0.0, "t": 0.0}
+        _hist = {}
+        _DSH = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
+
+        def _dsget(url):
+            _rq = urllib.request.Request(url, headers=_DSH)
+            return json.loads(urllib.request.urlopen(_rq, timeout=12).read())
+
+        def _sol_usd():
+            _n = time.time()
+            if _n - _sol_px["t"] > 120:
+                try:
+                    _d = _dsget("https://api.dexscreener.com/latest/dex/tokens/"
+                                "So11111111111111111111111111111111111111112")
+                    _prs = [p for p in (_d.get("pairs") or [])
+                            if p.get("chainId") == "solana"]
+                    if _prs:
+                        _b = max(_prs, key=lambda x:
+                                 (x.get("liquidity") or {}).get("usd") or 0)
+                        _sol_px["v"] = float(_b.get("priceUsd") or 0)
+                        _sol_px["t"] = _n
+                except Exception:
+                    pass
+            return _sol_px["v"]
+
+        while not stop.is_set():
+            stop.wait(PSNB_S)
+            if stop.is_set():
+                break
+            try:
+                (MON / "psnewborn_beat.json").write_text(json.dumps(
+                    {"ts": time.time(), "pid": _osn.getpid()}))
+            except Exception:
+                pass
+            try:
+                now = time.time()
+                pos_f = MON / "pumpswap_live_positions.json"
+                try:
+                    positions = json.loads(pos_f.read_text())
+                except Exception:
+                    positions = {}
+                solusd = _sol_usd()
+                with LK:
+                    snap = [(m, {"grad_ts": t.get("grad_ts"),
+                                 "q": t.get("pool_last_q"),
+                                 "pb": t.get("pool_buy_sol", 0.0),
+                                 "ps": t.get("pool_sell_sol", 0.0),
+                                 "sym": t.get("symbol")})
+                            for m, t in tokens.items()
+                            if t.get("grad_ts")
+                            and 0 <= now - t["grad_ts"] <= PSNB_MAX_AGE_S
+                            and t.get("pool_last_q")]
+                for m, s in snap:
+                    h = _hist.setdefault(m, _dq(maxlen=64))
+                    h.append((now, s["pb"], s["ps"]))
+                for m in list(_hist):
+                    if _hist[m] and now - _hist[m][-1][0] > 2400:
+                        del _hist[m]
+                if len(positions) >= 3 or not solusd:
+                    continue
+                best = None
+                for m, s in snap:
+                    if m in positions:
+                        continue
+                    liq_usd = 2.0 * (s["q"] / 1e9) * solusd
+                    if liq_usd < PSNB_MIN_LIQ:
+                        continue
+                    h = _hist.get(m)
+                    if not h or len(h) < 2:
+                        continue
+                    base = None
+                    for ts0, b0, s0 in h:
+                        if now - ts0 >= 280:
+                            base = (b0, s0)
+                        else:
+                            break
+                    if base is None:
+                        continue  # window not built yet; retry next pass
+                    vol5 = (s["pb"] - base[0] + s["ps"] - base[1]) * solusd
+                    if vol5 < liq_usd:
+                        continue
+                    if s["pb"] - base[0] <= s["ps"] - base[1]:
+                        continue
+                    if best is None or liq_usd > best[1]:
+                        best = (m, liq_usd, s)
+                if best is None:
+                    continue
+                mint, liq_usd, s = best
+                try:
+                    d = _dsget("https://api.dexscreener.com/latest/dex/tokens/"
+                               + mint)
+                    prs = [p for p in (d.get("pairs") or [])
+                           if p.get("chainId") == "solana"]
+                    if not prs:
+                        continue
+                    bp = max(prs, key=lambda x:
+                             (x.get("liquidity") or {}).get("usd") or 0)
+                    px = float(bp.get("priceUsd") or 0)
+                    if not px:
+                        continue
+                except Exception:
+                    continue
+                _sl = _iln.spec_from_file_location(
+                    "live_trader", str(MON / "live_trader.py"))
+                _ltn = _iln.module_from_spec(_sl)
+                _sl.loader.exec_module(_ltn)
+                res = _ltn.buy(mint, reason="pumpswap_momentum_cell",
+                               size_sol=0.10)
+                row = {"action": "entry_signal", "mint": mint,
+                       "name": s.get("sym"),
+                       "age_h": round((now - s["grad_ts"]) / 3600, 3),
+                       "liq": round(liq_usd, 2), "entry_px": px,
+                       "buy_result": res.get("result"),
+                       "mode": res.get("mode"), "via": "psnewborn_fast"}
+                with (MON / "pumpswap_live_trades.jsonl").open("a") as f:
+                    f.write(json.dumps(row) + "\n")
+                if res.get("result") == "submitted" and res.get("mode") == "live":
+                    try:
+                        positions = json.loads(pos_f.read_text())
+                    except Exception:
+                        positions = {}
+                    positions[mint] = {"name": s.get("sym"), "entry_t": now,
+                                       "entry_px": px, "peak_px": px,
+                                       "size_sol": 0.10,
+                                       "tokens_raw": res.get("tokens_raw"),
+                                       "sig": res.get("sig")}
+                    pos_f.write_text(json.dumps(positions))
+            except Exception as _ne:
+                try:
+                    with open(MON / "psnewborn_errors.log", "a") as _ef:
+                        _ef.write(json.dumps({"ts": time.time(),
+                                  "err": repr(_ne)[:400]}) + "\n")
+                except Exception:
+                    pass
+
     # §459: Kamino crank-tail radar — Helius blocks gPA on KLend, so we
     # tail refresh_obligation txs (cranks only refresh risky obligations)
     # and decode stored health fields. Read-only RPC, 240s cadence.
@@ -1930,6 +2084,7 @@ def run(ctx):
     threading.Thread(target=snapshot_loop, daemon=True).start()
     threading.Thread(target=shock_loop, daemon=True).start()
     threading.Thread(target=e2_fast_loop, daemon=True).start()
+    threading.Thread(target=psnewborn_loop, daemon=True).start()
     threading.Thread(target=kamino_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
