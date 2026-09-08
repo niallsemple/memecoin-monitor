@@ -4975,3 +4975,13 @@
 | 14:46 | solana | `7guzU2Rr…` | CAUTION | RC_WARN:High holder correlation | liq=$36,834 mc=$196,463 | name=Amazon Cat symbol=MEWZ; contract:clean; rugcheck_score=30 lpLocked=100%; top10_hold=1 |  |
 | 14:46 | robinhood | `0x4b42c5…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$5 mc=$6,197 | chain:robinhood no-audit-adapter | Civara funds public goods after results are proven rather than before work begin |
 | 14:46 | robinhood | `0xF2b8D6…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$27,105 mc=$77,013 | chain:robinhood no-audit-adapter | The refundable launchpad. Tokens & bStocks. Change your mind until it bonds. |
+| 14:56 | robinhood | `0x24bAA0…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,090 mc=$24,260 | chain:robinhood no-audit-adapter | The only tracker that reads memecoins and tokenized stocks on the same chain, in |
+| 14:56 | robinhood | `0x09c61a…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | The Intelligence Singularity. Advanced neural modeling and AI app creation. Excl |
+| 14:56 | bsc | `0xB78D6b…` | PASS | — | liq=$58,716 mc=$42,342 | holders=0; buy_tax=0 sell_tax=0; contract:clean |  |
+| 14:56 | robinhood | `0x7bf5Ce…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$44,974 mc=$197,484 | chain:robinhood no-audit-adapter | Every move matters. Every step is calculated. ♞ |
+| 15:06 | robinhood | `0x5a78c8…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$22,511 mc=$59,346 | chain:robinhood no-audit-adapter |  |
+| 15:06 | robinhood | `0x5ca835…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,682 mc=$71,449 | chain:robinhood no-audit-adapter |  |
+| 15:06 | robinhood | `0x961871…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$0 mc=$0 | chain:robinhood no-audit-adapter | Put a down payment before you launch. T-bills or tokenized stocks, locked. Deliv |
+| 15:06 | solana | `3B1LJacs…` | PASS | — | liq=$23,126 mc=$82,796 | name= Solana nike symbol=SOL NIKE; contract:clean; rugcheck_score=1 lpLocked=100%; top10_h |  |
+| 15:06 | robinhood | `0x01307E…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$24,916 mc=$72,730 | chain:robinhood no-audit-adapter | Meet merlotto — born from chaos, fueled by memes, and here to turn every market  |
+| 15:06 | robinhood | `0x17c3EF…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$7,775 mc=$6,241 | chain:robinhood no-audit-adapter | Hooddit is where builders, traders, and onchain communities meet to discover pro |

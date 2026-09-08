@@ -258,6 +258,25 @@ def live_enabled():
     return True, "live"
 
 
+# §459 (2026-09-08): retired signal systems. Their LIVE records resolved
+# decisively negative across 137+ real buys since 2026-09-01:
+#   fast_birth  §257: 53 buys, book net -0.412 SOL (-10.3% per unit)
+#   s60nm5fr hook   : 65 buys, book net -0.405 SOL (-5.3% per unit)
+#   e2_trial/confirm: 17 buys, 17/17 panic/abort exits, bridge record
+#                     72 closes avg mult 0.969
+# Entries from these reasons are forced to dry-run (research logging
+# continues; nothing submits). Only evidence-backed systems — currently
+# pumpswap_momentum_cell — may fire live. Re-enable requires a fresh
+# positive dry record at n>=30 AND explicit owner sign-off.
+RETIRED_LIVE_REASONS = ("fast_birth", "s60nm5fr", "e2_trial", "e2_confirm")
+
+
+def reason_live_ok(reason):
+    """False -> caller must run dry regardless of signoff state."""
+    r = (reason or "").lower()
+    return not any(r.startswith(p) for p in RETIRED_LIVE_REASONS)
+
+
 def balance_sol(address):
     # §164b: Helius can serve stale finalized balances (~3 min observed);
     # "confirmed" tracks the tip much closer for sizing decisions.
@@ -466,6 +485,8 @@ def buy(mint, reason="signal", size_sol=None):
     size_sol: optional fixed size override (owner directive 2026-09-08:
     0.10 SOL per test trade); default keeps fraction-of-balance sizing."""
     ok, why = live_enabled()
+    if ok and not reason_live_ok(reason):
+        ok, why = False, "system retired: negative live expectancy (§459)"
     size, bal = position_size_sol(json.loads(WALLET_F.read_text())["address"])
     if size_sol is not None:
         size = max(0.0, round(min(size_sol, bal - MIN_BAL_KEEP), 4))
@@ -797,6 +818,8 @@ def _v2_ctx(mint, st, ub):
 def curve_buy(mint, sol_amount, reason="signal"):
     """Live/dry-run bonding-curve buy. Same gates as Jupiter path."""
     ok, why = live_enabled()
+    if ok and not reason_live_ok(reason):
+        ok, why = False, "system retired: negative live expectancy (§459)"
     addr = json.loads(WALLET_F.read_text())["address"]
     row = {"action": "curve_buy", "mint": mint, "reason": reason,
            "mode": "live" if ok else "dry-run", "gate": why}

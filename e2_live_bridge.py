@@ -22,10 +22,14 @@ SHADOW_LOG = MON / "h16_early2.jsonl"
 STATE = MON / "e2_bridge_state.json"
 LOG = MON / "e2_bridge.jsonl"
 
-LIVE_E2_ENABLED = True         # §439: OWNER FLIPPED 2026-09-06 ~21:16 BST
-                               # ("go live"). Gate evidence: 3+ fresh
-                               # would-buys at sub-20s lag, fresh-cadence
-                               # +4.6%/trade gross at flip time.
+LIVE_E2_ENABLED = False        # §439: owner flipped ON 2026-09-06 ("go live").
+                               # §458: flipped OFF 2026-09-08 ~15:10 UTC after the
+                               # bridge's own record resolved decisively negative:
+                               # 72 tracked closes avg mult 0.969 (10 wins/72),
+                               # 17/17 live buys exited via panic/abort3_red,
+                               # system net ≈ -0.2 SOL at 0.02 sizing. Shadow
+                               # scoring keeps running (dry); re-enable only if
+                               # the dry record turns positive at n>=30 fresh.
 SIZE_SOL = 0.02                # micro-size trial entries
 SEED_FLOOR_SOL = 4.0           # §442: live fire only on seed >= 4 SOL
 # §450: seed-fingerprint denylist. Farms rotate creator wallets but keep
