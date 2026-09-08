@@ -1947,6 +1947,23 @@ def run(ctx):
                 pass
             try:
                 now = time.time()
+                # §471: exits FIRST at the same 20s cadence — reuses
+                # pumpswap_live.manage_exits (same target/stop/trail/max_hold
+                # rules, same book, same SOL-only close). dry mirrors the
+                # signoff gate so a closed gate never deletes positions.
+                _sl2 = _iln.spec_from_file_location(
+                    "pumpswap_live", str(MON / "pumpswap_live.py"))
+                _pl2 = _iln.module_from_spec(_sl2)
+                _sl2.loader.exec_module(_pl2)
+                _slt = _iln.spec_from_file_location(
+                    "live_trader", str(MON / "live_trader.py"))
+                _ltn = _iln.module_from_spec(_slt)
+                _slt.loader.exec_module(_ltn)
+                _okx, _whyx = _ltn.live_enabled()
+                _posx = _pl2._load(_pl2.POS_F, {})
+                if _posx:
+                    _pl2.manage_exits(now, _posx, _pl2._drained_mints(),
+                                      not _okx)
                 pos_f = MON / "pumpswap_live_positions.json"
                 try:
                     positions = json.loads(pos_f.read_text())
