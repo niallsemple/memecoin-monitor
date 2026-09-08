@@ -7966,3 +7966,21 @@ Quote-only check on LAPTOP-SOL ($1.6M liq): 0.10 SOL -> 28.4M tokens
 ~0.06% on a deep pool — the sim's 2%/side assumption carries large margin.
 Every link in the live chain now proven: gates discriminate, Jupiter routes,
 local signing, ATA close/reclaim, kill switch.
+
+## 2026-09-08 ~14:05 UTC — Wide-book rug pile vs tight-cell survival: the discipline IS the edge
+
+Afternoon cohort rugged hard: the wide default book (age<=2h, +50% tgt, 3h
+hold) now shows 9 rugs in 25 trades, resolved mean -124.8 — dead, confirmed
+for the third time. New rugs: HOOD(2nd), PUGCOIN(2nd), AAPL(2nd), NASALON,
+MVP.
+
+But the tight cell (age<=0.5h, +25% tgt, 30min hold) is UNCHANGED: resolved
+n=14, +136.8/1k, rugs=2. Same tokens, different exits: the tight cell left
+PUGCOIN/AAPL before their cliffs; the wide book got caught. Hold 1h instead of
+0.5h and rugs rise 2->3 with mean dropping to +85.3. Rug rate among all gated
+entries is ~36% — the strategy doesn't avoid rugs by selection, it avoids them
+by EXITING BEFORE the mania window closes.
+
+Operational consequence: the live executor's +25% target + 30-min max hold are
+load-bearing. Do not loosen. The afternoon regime was rougher than the morning
+and the cell held — cross-regime evidence strengthening.
