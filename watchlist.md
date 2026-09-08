@@ -5003,3 +5003,9 @@
 | 16:16 | bsc | `0x86dC91…` | CAUTION | PROXY | liq=$25,734 mc=$74,234 | holders=0; buy_tax= sell_tax= | Microcap layer built on top of 4Stock Create tokens for smaller public companies |
 | 16:16 | robinhood | `0xaa86c1…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$15,698 mc=$28,855 | chain:robinhood no-audit-adapter | an MMO where you explore, trade, take on quests across the city, With RWA reward |
 | 16:16 | base | `0xb20000…` | PASS | — | liq=$21,544 mc=$46,278 | holders=0; buy_tax= sell_tax=; contract:clean |  |
+| 16:26 | solana | `2jsGrZqQ…` | PASS | — | liq=$0 mc=$14,761 | name=Retards Outperforming Investors symbol=ROI; contract:clean; rugcheck:unavailable; top |  |
+| 16:26 | solana | `Cn1ntAiY…` | FAIL | RC_DANGER:Creator history of rugged tokens; TOP10_HEAVY:108% | liq=$0 mc=$5,581 | name=The Million Dollar Body symbol=BODY; contract:clean; rugcheck_score=65 lpLocked=100%; | The Million Dollar Body |
+| 16:26 | robinhood | `0xCD162f…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$75 mc=$9,086,588 | chain:robinhood no-audit-adapter |  |
+| 16:26 | solana | `B16n7x6y…` | FAIL | TOP10_HEAVY:97% | liq=$0 mc=$7,075 | name=FUZED symbol=FUZED; contract:clean; rugcheck_score=1 lpLocked=100%; top10_hold=96.8% | Deploy Pumpfun coins paired with Leveraged positions, Stocks or Mixed. |
+| 16:26 | robinhood | `0x6120ad…` | NO_AUDIT | NO_AUDIT_ADAPTER | liq=$9 mc=$20,810 | chain:robinhood no-audit-adapter | Explore a 3D town, complete quests, practice stock trading & collect onchain ite |
+| 16:26 | ethereum | `0x423A63…` | CAUTION | PROXY | liq=$4,574 mc=$821,996 | holders=363; buy_tax=0 sell_tax=0 | Copper goes purr. 🐈 Hold $COPPURR. Earn $COPX. Copper miners pay the cat. |

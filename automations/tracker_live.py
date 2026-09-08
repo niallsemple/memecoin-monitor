@@ -45,11 +45,16 @@ SNAPS = MON / "mfg_tokens.jsonl"
 STATE = MON / "mfg_state.json"
 KEYFILE = MON / "helius_key.txt"
 PUMP_WSS = "wss://pumpportal.fun/data-api/real-time"
-WINDOW_S = 15.0 * 60  # §443: 13.5m -> 15m. The 23:14->23:25 blind gap let
+WINDOW_S = 16.5 * 60  # §443: 13.5m -> 15m. The 23:14->23:25 blind gap let
 # EW4KWShw peak 1.166 (fade armed at 1.15) then dump to panic unseen —
 # gap blindness is now the #1 loss driver (3 of 4 recent losses). Max
 # observed pass tail is 4.7m, so total <= 19.7m < 20m interval: no skips.
 # (§380 history: 16m crossed 20m on busy passes -> multi-fire holes; 15m
+# §472 (2026-09-08): 15m -> 16.5m. Interval trigger skips while a run is
+# active then fires AT completion (observed 14:51->15:11 chaining), so a
+# window slightly under the interval near-eliminates inter-run gaps:
+# typical total ~19.2m, busy worst ~21.2m < 22m timeout. The 20s psnewborn
+# entry/exit loop makes every uncovered minute tradable-risk time.
 # keeps 0.3m of headroom over the worst measured tail.)
                     # post-processing (~16.3m max), so 16m finishes ~18.5m <
                     # 20m interval — next trigger never skips — while shrinking
