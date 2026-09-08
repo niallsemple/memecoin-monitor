@@ -345,3 +345,5 @@
 [collector] 200 events logged
 [collector] 400 events logged
 [collector] closed after 455 events
+2026-09-08 00:18:27Z SLIP: feed stale 301s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration

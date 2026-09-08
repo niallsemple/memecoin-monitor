@@ -133,6 +133,39 @@ def main():
     except Exception as e:
         print(f"p0 orders watch failed: {str(e)[:80]}")
 
+    # ---- LST convergence watch (memo #32 priority 5): JitoSOL market price
+    # vs protocol NAV (stake-pool totalLamports/poolTokenSupply). Redemption
+    # costs 10bps + 1 epoch; slow convergence trade opens when discount
+    # > ~20bps (depeg events). Baseline 2026-09-08: 1.2bps = no edge.
+    try:
+        import struct, base64
+        key = open(os.path.join(MON, "helius_key.txt")).read().strip()
+        body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getAccountInfo",
+                           "params": ["Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
+                                      {"encoding": "base64"}]}).encode()
+        req = urllib.request.Request(
+            f"https://mainnet.helius-rpc.com/?api-key={key}", data=body,
+            headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = base64.b64decode(json.load(r)["result"]["value"]["data"][0])
+        nav = struct.unpack("<Q", raw[258:266])[0] / struct.unpack("<Q", raw[266:274])[0]
+        with urllib.request.urlopen(
+                "https://lite-api.jup.ag/swap/v1/quote"
+                "?inputMint=J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+                "&outputMint=So11111111111111111111111111111111111111112"
+                "&amount=10000000000&slippageBps=1", timeout=30) as r:
+            q = json.load(r)
+        mkt = int(q["outAmount"]) / 1e9 / 10
+        disc_bps = (nav - mkt) / nav * 10000
+        with open(os.path.join(MON, "lst_discount.jsonl"), "a") as f:
+            f.write(json.dumps({"t": now, "symbol": "JitoSOL", "nav": round(nav, 6),
+                                "mkt": round(mkt, 6),
+                                "discount_bps": round(disc_bps, 2)}) + "\n")
+        print(f"lst watch: JitoSOL discount {disc_bps:+.1f}bps"
+              + ("  *** DEPEG — CONVERGENCE TRADE WINDOW ***" if disc_bps > 20 else ""))
+    except Exception as e:
+        print(f"lst watch failed: {str(e)[:80]}")
+
     # quick leaderboard for logs
     top = sorted(seen.values(),
                  key=lambda p: (p.get("fee_tvl_ratio") or {}).get("30m") or 0,
