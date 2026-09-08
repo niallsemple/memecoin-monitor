@@ -23,7 +23,7 @@ def parse(summary):
 
 
 def key(row):
-    return (row.get("age"), row.get("ftr"), row.get("tvl"))
+    return (row.get("age"), row.get("ftr"), row.get("tvl"), row.get("max_hold_h"))
 
 
 def main():
@@ -44,6 +44,8 @@ def main():
         pa = amap.get(k)
         age_s = f"{k[0]:g}" if k[0] is not None else "any"
         label = f"age<={age_s} ftr>={k[1]:g} tvl>={k[2]/1000:g}k"
+        if k[3] is not None:
+            label += f" hold<={k[3]:g}h"
         if not pb:
             continue
         n_s = f"{pa['n']}->{pb['n']}" if pa else f"->{pb['n']}"

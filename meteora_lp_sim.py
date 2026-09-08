@@ -158,6 +158,15 @@ def main():
             print(f"{'any':>7s} {ftr:6.2f} {'100k':>7s}  {summarize(res)}")
             log_rows.append({"age": None, "ftr": ftr, "tvl": 100000,
                              "summary": summarize(res), "n": len(res)})
+        # fast-exit class: drift evidence says young positions decay with
+        # hold time — test harvesting the mania-phase fee burst and leaving
+        for hold in (1.0, 2.0):
+            for ftr in (0.50, 1.0):
+                res = run_sim(by, 6.0, ftr, max_hold_h=hold)
+                print(f"{f'<=6/{hold:g}h':>7s} {ftr:6.2f} {'10k':>7s}  {summarize(res)}")
+                log_rows.append({"age": 6.0, "ftr": ftr, "tvl": 10000,
+                                 "max_hold_h": hold,
+                                 "summary": summarize(res), "n": len(res)})
         # persist every grid run so verdicts are comparable over time
         log_path = os.path.join(MON, "meteora_verdict_log.jsonl")
         with open(log_path, "a") as f:
