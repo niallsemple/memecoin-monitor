@@ -149,3 +149,6 @@
 | 02:37 | STOP | 8RDq8d3u | £11.45 | trail-stop at 1.11x |
 | 02:38 | BUY | 8RDq8d3u | £14.00 | entry mc $848,724 | +102min |
 | 08:28 | SELL 2x | 8RDq8d3u | £6.89 | ladder stage 1 |
+| 09:18 | STOP | 8RDq8d3u | £8.26 | trail-stop at 0.80x |
+| 09:19 | BUY | 8RDq8d3u | £14.02 | entry mc $715,144 | +503min |
+| 10:08 | STOP | 8RDq8d3u | £5.92 | trail-stop at 0.43x |

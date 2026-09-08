@@ -31,3 +31,4 @@
 {"name": "AFB / WBNB", "pair": "0x81888af0ef2b14f08813c5584fdb89b2b3b0cdb6", "entry_t": 1788775766.515119, "exit_t": 1788800591.368962, "ret": 0.0, "exit": "rug", "entry_flow_usd": 3526.0, "hold_min": 413.7, "note": "retro-fix: LP pull; dust-price artifact ret=780937.3029 (tstop) corrected to 0"}
 {"name": "SAL / WBNB", "pair": "0x7467320655d5a26df87cd6fc6bfe0ce4719695a0", "entry_t": 1788805485.7475479, "exit_t": 1788805624.045162, "ret": 0.0, "exit": "rug", "entry_flow_usd": 3263.0, "hold_min": 2.3}
 {"name": "BUILDER / WBNB", "pair": "0x4686368fdea0cdcfa07aec749fddada9b2c5ed95", "entry_t": 1788805524.6216938, "exit_t": 1788807895.519697, "ret": 0.7473, "exit": "abort", "entry_flow_usd": 4540.0, "hold_min": 39.5}
+{"name": "Motoswap / WBNB", "pair": "0xbeb40a642552edb472a3d94ca10ebabf99d9338c", "entry_t": 1788856481.699617, "exit_t": 1788856877.2155619, "ret": 0.0, "exit": "rug", "entry_flow_usd": 3334.0, "hold_min": 6.6}

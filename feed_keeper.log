@@ -399,3 +399,23 @@
 [collector] closed after 333 events
 2026-09-08 07:22:49Z hb: age=4s pass_up=False keep_up=False
 2026-09-08 08:22:52Z hb: age=7s pass_up=False keep_up=False
+2026-09-08 08:51:54Z SLIP: feed stale 318s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 242 events
+2026-09-08 09:22:56Z hb: age=1s pass_up=False keep_up=False
+2026-09-08 09:51:57Z SLIP: feed stale 319s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] closed after 309 events
+2026-09-08 10:16:59Z SLIP: feed stale 301s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+2026-09-08 10:22:59Z hb: age=3s pass_up=False keep_up=True
+[collector] 200 events logged
+[collector] 400 events logged
+[collector] closed after 452 events
+2026-09-08 10:43:00Z SLIP: feed stale 352s, no pass — spawning collector for 20 min
+[collector] subscribed: newToken + migration
+[collector] 200 events logged
+[collector] 400 events logged
+[collector] closed after 436 events

@@ -7764,3 +7764,25 @@ Two of today's three biggest igniters rugged within ~1h of birth, caught by the 
 Signature: price quote persists (stale) while liq=0, vol_5m=0, pc_5m=null — distinguishable from API glitches because glitches zero the price too.
 
 Strategy consequence: in this meta (stock-parody tokens) the mania phase lasts <1h and ENDS IN A RUG. Holding past ~40-60min ≈ 100% loss. Validates: (1) the sim's rug override (liq<30% => 10% recovery) is realistic, maybe generous; (2) fast-harvest entries must be out inside the first ~30-40min; (3) the 45s fast poller is not optional — at 20-min cadence the rug is binary, at 45s the drain may be visible before liq hits 0. Survivors still standing: HOOD $468k, GOOGL $271k, LUNA $110k.
+
+## 2026-09-08 ~11:15 UTC — Sim honesty split: the +106 read needed a caveat
+
+Fast-poll verified working: exact 45s cadence, 8 hot pairs, 10:55-11:00 UTC
+window (80 fast rows). Birth pipeline flowing at 127 births/hr.
+
+Patched `pumpswap_trade_sim.py` `summarize()` to report per grid cell:
+resolved-only mean (excludes `data_end` trades marked at last-seen price) and
+an "if open rug" stress bound (every still-open trade assumed to rug at 10%
+recovery). Motivation: 5 of 8 trades in the leading cell were unresolved and
+marked to last price — the rug-cliff evidence says many will go to ~0.
+
+Current read on the leading cell (age<=0.5h, hold<=0.5h, tgt +25%):
+- n=8, mark-to-last mean +106.4/1k, pos 7/8, rugs 1
+- **resolved n=4, resolved mean +130.7/1k** — edge survives the honest split
+- stress bound (all open trades rug): -384.7/1k
+- +50% target: resolved mean -302.6 — confirmed dead
+- age<=1.0h cell: resolved mean -75.5 — edge is concentrated in the first 30 min
+
+GO bar restated honestly: **resolved n>=10 across multiple cohorts, mean
+positive with rugs in sample.** Currently resolved n=4. Verdicts now appended
+to `pumpswap_verdict_log.jsonl` each run for drift tracking.

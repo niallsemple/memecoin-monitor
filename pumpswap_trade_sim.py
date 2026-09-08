@@ -137,8 +137,23 @@ def summarize(trades):
     tot = sum(t["net"] for t in trades)
     pos = sum(1 for t in trades if t["net"] > 0)
     rugs = sum(1 for t in trades if t["exit"] == "rug")
-    return (f"n={n} total={tot:+.0f} mean={tot / n:+.1f} "
+    base = (f"n={n} total={tot:+.0f} mean={tot / n:+.1f} "
             f"pos={pos}/{n} rugs={rugs}")
+    # Honesty split: data_end trades are marked at last-seen price, but the
+    # rug-cliff evidence says many will go to ~0. Show resolved-only mean
+    # and a stress bound where EVERY still-open trade rugs.
+    res = [t for t in trades if t["exit"] != "data_end"]
+    open_ = [t for t in trades if t["exit"] == "data_end"]
+    if res:
+        rtot = sum(t["net"] for t in res)
+        base += f" | resolved n={len(res)} mean={rtot / len(res):+.1f}"
+    else:
+        base += " | resolved n=0"
+    if open_:
+        worst = (tot - sum(t["net"] for t in open_)
+                 + len(open_) * TRADE_USD * (RUG_RECOVERY - 1))
+        base += f" | if open rug: {worst / n:+.1f}"
+    return base
 
 
 def run(by, dip, **kw):

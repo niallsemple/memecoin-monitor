@@ -321,3 +321,8 @@
 | 05:38 | BUY | 8RDq8d3u | £13.74 | entry mc $854,416 | +282min @ 1.91x detect |
 | 07:47 | TIME | 8RDq8d3u | £19.50 | time-stop at 1.44x after 129min |
 | 07:48 | BUY | 8RDq8d3u | £13.85 | entry mc $1,183,592 | +412min @ 2.64x detect |
+| 08:59 | STOP | 8RDq8d3u | £12.04 | trail-stop at 0.88x |
+| 09:00 | BUY | 8RDq8d3u | £13.81 | entry mc $1,110,144 | +484min @ 2.48x detect |
+| 09:27 | STOP | 8RDq8d3u | £8.12 | trail-stop at 0.60x |
+| 09:28 | BUY | 8RDq8d3u | £13.69 | entry mc $688,671 | +513min @ 1.54x detect |
+| 10:08 | STOP | 8RDq8d3u | £6.00 | trail-stop at 0.45x |
