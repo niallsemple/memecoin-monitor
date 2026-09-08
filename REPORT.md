@@ -7853,3 +7853,26 @@ entry captures more of the pump before the cliff. +50% target negative here
 too (-72.9) — take-profit-early holds across every age cell.
 
 Caveat: n=4. Watch both cells as cohorts resolve.
+
+## 2026-09-08 ~11:50 UTC — Rugs are ATOMIC: 45s indexer polling is still blind
+
+First rugs captured inside 45s fast-poll windows, frame by frame:
+- USELESS: $36,756 → $0 in ONE 45s interval. pc_5m still +7.7% after zero.
+- build: $67,811 → $0 in ONE 45s interval while pc_5m printed +279%/+352%.
+  The indexer price feed is green DURING the drain.
+
+Consequence: a rug pull is a single atomic transaction (~400ms slot). NO
+polling cadence on ANY indexer catches it mid-flight — not 20min, not 45s,
+not 15s. The reserve poller's real value is therefore NOT exit timing:
+1. instant death confirmation (know within 15s the position is gone → frees
+   capital, clean book-keeping), and
+2. catching NON-atomic drains (slow LP bleeds), which do exist.
+The only defenses against the atomic cliff are the ones the data already
+supports: take-profit EARLY (+25% target before the 40-60min mania window
+closes) and sizing for a ~30-40% rug rate. Optional pre-entry gate candidate:
+on-chain deployer checks (LP burned/locked, mint authority revoked) — worth
+scoping as a future filter.
+
+Data hygiene note: name-keyed grouping mixes clone tickers (two HOOD mints
+fast-polled in different windows looked like a $495k→$320k bleed; per-mint
+check showed two separate tokens). All analysis must key on mint.
