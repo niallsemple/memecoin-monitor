@@ -1915,7 +1915,12 @@ def run(ctx):
     def psnewborn_loop():
         import importlib.util as _iln
         import os as _osn
+        import sys as _sysn
         from collections import deque as _dq
+        if str(MON) not in _sysn.path:
+            _sysn.path.insert(0, str(MON))  # §473: pumpswap_live does a plain
+            # `import live_trader`; the collector process never had MON on
+            # sys.path -> ModuleNotFoundError killed early passes 2026-09-08.
         _sol_px = {"v": 0.0, "t": 0.0}
         _hist = {}
         _tel = {}
@@ -1966,6 +1971,7 @@ def run(ctx):
                     "live_trader", str(MON / "live_trader.py"))
                 _ltn = _iln.module_from_spec(_slt)
                 _slt.loader.exec_module(_ltn)
+                _sysn.modules.setdefault("live_trader", _ltn)  # §473
                 _okx, _whyx = _ltn.live_enabled()
                 _posx = _pl2._load(_pl2.POS_F, {})
                 if _posx:
