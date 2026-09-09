@@ -230,8 +230,19 @@ def simulate(liquidatee_pk: str, asset_bank: str, liab_bank: str, asset_amount: 
         # crossbar signs at the tip; finalized sims falsely reject (InvalidSlot
         # 6039). Real txs also execute at the tip, so processed is honest here.
         cfg["commitment"] = "processed"
-    tx_b64 = lt.build_legacy_tx(payer, ixs)
+    # §400: compile as v0 with our ALTs — the legacy compile of a real
+    # liquidation exceeds the 1232B packet and the RPC returns an RPC-level
+    # error, which the old code misread as err=None ("PASS"). Every historical
+    # "liquidatable" verdict from this gate was a non-executing tx.
+    import liq_flash as lf
+    tx_b64 = lf.build_v0_tx(payer, ixs, lf.our_alts())
     res = rpc("simulateTransaction", [tx_b64, cfg])
+    if res.get("error"):
+        return {"result": {"value": {"err": {"rpc": str(res["error"])[:200]}}}}
+    val = (res.get("result") or {}).get("value") or {}
+    if val.get("err") is None and not val.get("unitsConsumed"):
+        # defensive: err=None with zero units means the tx never executed
+        return {"result": {"value": {"err": {"no_exec": True}}}}
     return res
 
 

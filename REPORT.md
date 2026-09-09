@@ -8175,3 +8175,38 @@ bank keys).
 **Status:** armed and unattended. Watch liq_split_fires.jsonl for
 result=confirmed (net_sol) vs abort cost accumulation; if aborts exceed
 ~5 per confirmed fire, add a 2-consecutive-crossing flicker guard.
+
+## §400 — HONESTY FIX: the "unclaimed whale" was never liquidatable (2026-09-09 ~20:45 UTC)
+
+Triggered by the first automated split fires repeatedly aborting with
+HealthyAccount 6068 at the tx2 re-sim. Root-cause chain:
+
+1. **liq_sim.simulate compiled the probe tx as LEGACY.** A real liquidation
+   ix list (35+ accounts) exceeds the 1232B packet in legacy form; the RPC
+   returns an RPC-LEVEL error, which the gate misread as err=None = "PASS".
+   Verified empirically: legacy sim returned err=None with ZERO units and
+   ZERO logs — it never executed. Every "liquidatable" verdict since §357 was
+   a non-executing transaction. The 370 "actionable" flags on 83UzL8xX were
+   all false positives.
+2. **The program's truth:** with the probe compiled as v0+ALTs (which fits),
+   the sim executes (266k units) and reports pre_liquidation_health =
+   **+$10,982** (assets $316.6k vs weighted liabs $305.6k). The account is
+   healthy by 3.6%. Incumbent bots ignore it because it is healthy.
+3. Fix shipped: liq_sim.simulate now compiles v0 via liq_flash.build_v0_tx,
+   maps RPC-level errors to err, and treats err=None+zero-units as failure.
+   Re-test on the whale: 6068, correctly NOT actionable. The shock loop now
+   stands down automatically.
+4. **What protected the wallet:** the split path's tx2 real-balance sim gate
+   + auto-unwind. 7 aborts total (1 manual + 6 automated) x ~0.45%
+   round-trip + fees. Wallet drift today: 7.6823 -> 7.6417 SOL (-0.0406,
+   incl. ALT/ATA setup rent). One unwind left 3.9M liab tokens in the ATA;
+   swept to SOL (5WhwMwJN…), SOL-only restored.
+5. **Open calibration gap:** our scanner health math reads this account at
+   -0.026 while the program says +3.6% — conf-band/emode corrections still
+   incomplete (likely the 5 memecoin-liab oracles' conf bands). The honest
+   executed-sim gate now bounds the blast radius of any residual scanner
+   error to zero trades. Scanner recall stays limited until the math closes;
+   do NOT trust raw scanner "liquidatable" flags without the executed sim.
+
+Lesson pinned: any sim gate must verify unitsConsumed > 0 before treating
+err=None as a pass, and must fail closed on RPC-level errors.

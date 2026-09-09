@@ -357,3 +357,5 @@
 {"name": "Laptop / ETH", "pool_id": "0xa7010fe80f7cb8cb00229934d21dfaa8c9320d1ee5be3914153eb91cf75b3234", "entry_t": 1788974781, "exit_t": 1788980308.934906, "ret": 0.9823, "exit": "abort", "entry_flow_usd": 4533.2, "hold_min": 92.1}
 {"name": "STONKIT / ETH", "pool_id": "0x11a4171e03d62c28ea0068b74ab03a430a87c0eef2c0c40d389fa87c713ace65", "entry_t": 1788976381, "exit_t": 1788980308.934906, "ret": 0.8502, "exit": "abort", "entry_flow_usd": 4207.4, "hold_min": 65.5}
 {"name": "ROBOTO / ETH", "pool_id": "0xe2508aa9fab8b8abff62344198f4524aed775f8ec56696a1edffab2650d3c3b4", "entry_t": 1788976781, "exit_t": 1788980308.934906, "ret": 1.0014, "exit": "abort", "entry_flow_usd": 5826.5, "hold_min": 58.8}
+{"name": "PAINTING / WETH", "pool_id": "0x2b271e6d6f88de58d5bd9f65f7f056493356ac1aeb03d304b4c69bbd9607e5ff", "entry_t": 1788978705, "exit_t": 1788984061.33893, "ret": 0.2032, "exit": "abort", "entry_flow_usd": 4771.7, "hold_min": 89.3}
+{"name": "Ultra / ETH", "pool_id": "0x3a92ee8ec15e2db755143591d420f0430bbf7bd1a465c1f7bee6955c2038a5cc", "entry_t": 1788980289, "exit_t": 1788984061.33893, "ret": 1.0, "exit": "illiquid", "entry_flow_usd": 4059.9, "hold_min": 62.9}
