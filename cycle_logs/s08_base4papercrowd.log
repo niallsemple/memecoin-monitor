@@ -1,0 +1,7 @@
+EXIT  LAPTOP / USDC ret=1.046x (abort, 88.5m)
+EXIT  LAPTOP / USDC ret=1.001x (abort, 88.5m)
+ENTRY LARPTOP / ETH cum_flow=$7,435 (next-poll fill)
+CROWD_REJECT LAPTOP / ETH holders=14
+CROWD_REJECT LAPTOP / ETH holders=33
+CROWD_REJECT LAPTOP / ETH holders=23
+base4 paper [crowd]: 694 entered, 3 open, 29 watching, 526 rows consumed

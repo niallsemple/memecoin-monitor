@@ -1,0 +1,3 @@
+getLogs 51084518-51084717 failed: rpc eth_getLogs failed: HTTP Error 408: Request Timeout
+flow scan: 16334 swaps in tracked pools
+flow done: 16334 tracked swaps, 95s

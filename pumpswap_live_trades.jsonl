@@ -3,3 +3,4 @@
 {"action": "entry_signal", "mint": "An475JNgDdjt5C5BmGagUPBj64fzpLwajtPVrAivuH9s", "name": "Stockless-SOL", "age_h": 0.37, "liq": 43501.49, "entry_px": 0.0002341, "buy_result": "submitted", "mode": "live"}
 {"action": "exit_signal", "mint": "An475JNgDdjt5C5BmGagUPBj64fzpLwajtPVrAivuH9s", "name": "Stockless-SOL", "reason": "stop", "ret": 0.139, "held_min": 14.9, "sell_result": "submitted", "close_result": "nothing to close"}
 {"action": "exit_signal", "mint": "FsPbTkUPN7PNYmVJvFLche7iE1DgtTGiiJbtpCE4Tn2t", "name": "Pumpcat-SOL", "reason": "target", "ret": 1.265, "held_min": 28.1, "sell_result": "submitted", "close_result": "nothing to close"}
+{"action": "entry_signal", "mint": "AVvb6RHMN58MrC7vp17qDjKs9EMGUwXZtU3uuJ3cpump", "name": "Cobie", "age_h": 0.02, "liq": 33880.16, "entry_px": 0.0001732, "buy_result": "refused: farm denylist (\u00a7389)", "mode": "live", "via": "psnewborn_fast"}

@@ -34,3 +34,4 @@
 {"name": "Motoswap / WBNB", "pair": "0xbeb40a642552edb472a3d94ca10ebabf99d9338c", "entry_t": 1788856481.699617, "exit_t": 1788856877.2155619, "ret": 0.0, "exit": "rug", "entry_flow_usd": 3334.0, "hold_min": 6.6}
 {"name": "Willow / WBNB", "pair": "0xd77ee1cb7351f2689d4db6f72ecc985d3209f423", "entry_t": 1788868434.258938, "exit_t": 1788875655.406581, "ret": 1.7287, "exit": "tstop", "entry_flow_usd": 7800.0, "hold_min": 120.4}
 {"name": "LAPTOP / USDT", "pair": "0xb0703013a2029f5f7504768eb009cbf7dd260caa", "entry_t": 1788923763.011899, "exit_t": 1788926119.201515, "ret": 6.9016, "exit": "trail", "entry_flow_usd": 42165.0, "hold_min": 39.3}
+{"name": "4STOCK / WBNB", "pair": "0x63c0e6e92126b83d2673c99d9ea79c4c79cbb75f", "entry_t": 1788960880.390029, "exit_t": 1788963272.996944, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3439.0, "hold_min": 39.9}
