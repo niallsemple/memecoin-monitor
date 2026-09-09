@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { Connection, Keypair, PublicKey, LAMPORTS_PER_SOL, sendAndConfirmTransaction } from '@solana/web3.js';
+import { Connection, Keypair, PublicKey, LAMPORTS_PER_SOL, sendAndConfirmTransaction, ComputeBudgetProgram } from '@solana/web3.js';
 import { DLMM, StrategyType } from './vendor/dlmm.patched.mjs';
 import BN from 'bn.js';
 
@@ -145,9 +145,15 @@ async function cmdClaim(conn, wallet, poolAddr) {
   for (const pos of userPositions) {
     const rec = st.positions.find(x => x.position === pos.publicKey.toBase58() && x.pool === poolAddr);
     if (!rec || rec.status !== 'open') continue;
-    const tx = await pool.claimSwapFee({ owner: wallet.publicKey, position: pos });
-    const sig = await sendTx(conn, tx, [], wallet);
-    console.log(`CLAIMED ${rec.position} sig=${sig}`);
+    // bypass claimSwapFee: its compute-unit estimator is broken in the bundle
+    // ("Function.prototype.apply on undefined"). Use the raw method instead.
+    const txs = await pool.createClaimSwapFeeMethod({ owner: wallet.publicKey, position: pos });
+    const list = Array.isArray(txs) ? txs : [txs];
+    for (const tx of list) {
+      tx.instructions.unshift(ComputeBudgetProgram.setComputeUnitLimit({ units: 400000 }));
+      const sig = await sendTx(conn, tx, [], wallet);
+      console.log(`CLAIMED ${rec.position} sig=${sig}`);
+    }
   }
 }
 

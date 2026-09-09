@@ -5,3 +5,5 @@
 {"t": 1788962654.6805089, "kind": "back_in_range", "name": "KNOTS-SOL", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "active": -171, "range": [-197, -169], "feeY": 1101951}
 {"t": 1788965345.845689, "kind": "out_of_range", "name": "KNOTS-SOL", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "active": -141, "range": [-197, -169], "side": "above"}
 {"t": 1788965496.8259358, "kind": "emergency_exit", "name": "CTO-SOL", "pool": "FkmoQ9BFwqPHKXeiqkP316BdRm6oWbokwBNkTUgTpWz6", "reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X", "out": "EXITED 825MpzPNNxc5jJ7KJNnwp3riQsHB24eMRPok875RtNnk sigs=2GHh6MssyToi31Vq5Kxvp12pFGNHfFWjy1sM91hYvxFjz6F3MSKvWkrFhnBQQvMWwAUGpfyuESnDv8AYa9BxZa6H"}
+{"t": 1788967615.975698, "kind": "claim", "name": "MUCHWOW-SOL", "feeY": 3038473, "feeX": 313332823, "out": "ERROR: Function.prototype.apply was called on undefined, which is a undefined and not a function"}
+{"t": 1788967616.592569, "kind": "out_of_range", "name": "Pumpcat-SOL", "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR", "active": -416, "range": [-468, -440], "side": "above"}

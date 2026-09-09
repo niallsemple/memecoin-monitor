@@ -30043,7 +30043,7 @@ Message: ${transactionMessage}.
        * @internal
        */
       static checkProgramId(programId) {
-        if (!programId.equals(ComputeBudgetProgram4.programId)) {
+        if (!programId.equals(ComputeBudgetProgram5.programId)) {
           throw new Error("invalid instruction; programId is not ComputeBudgetProgram");
         }
       }
@@ -30066,7 +30066,7 @@ Message: ${transactionMessage}.
         layout: BufferLayout__namespace.struct([BufferLayout__namespace.u8("instruction"), u643("microLamports")])
       }
     });
-    var ComputeBudgetProgram4 = class {
+    var ComputeBudgetProgram5 = class {
       /**
        * @internal
        */
@@ -30117,7 +30117,7 @@ Message: ${transactionMessage}.
         });
       }
     };
-    ComputeBudgetProgram4.programId = new PublicKey11("ComputeBudget111111111111111111111111111111");
+    ComputeBudgetProgram5.programId = new PublicKey11("ComputeBudget111111111111111111111111111111");
     var PRIVATE_KEY_BYTES$1 = 64;
     var PUBLIC_KEY_BYTES$1 = 32;
     var SIGNATURE_BYTES = 64;
@@ -31617,7 +31617,7 @@ Message: ${transactionMessage}.
     exports2.BpfLoader = BpfLoader;
     exports2.COMPUTE_BUDGET_INSTRUCTION_LAYOUTS = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS;
     exports2.ComputeBudgetInstruction = ComputeBudgetInstruction;
-    exports2.ComputeBudgetProgram = ComputeBudgetProgram4;
+    exports2.ComputeBudgetProgram = ComputeBudgetProgram5;
     exports2.Connection = Connection2;
     exports2.Ed25519Program = Ed25519Program;
     exports2.Enum = Enum;
@@ -74343,9 +74343,13 @@ async function cmdClaim(conn, wallet, poolAddr) {
   for (const pos of userPositions) {
     const rec = st.positions.find((x) => x.position === pos.publicKey.toBase58() && x.pool === poolAddr);
     if (!rec || rec.status !== "open") continue;
-    const tx = await pool.claimSwapFee({ owner: wallet.publicKey, position: pos });
-    const sig = await sendTx(conn, tx, [], wallet);
-    console.log(`CLAIMED ${rec.position} sig=${sig}`);
+    const txs = await pool.createClaimSwapFeeMethod({ owner: wallet.publicKey, position: pos });
+    const list = Array.isArray(txs) ? txs : [txs];
+    for (const tx of list) {
+      tx.instructions.unshift(import_web321.ComputeBudgetProgram.setComputeUnitLimit({ units: 4e5 }));
+      const sig = await sendTx(conn, tx, [], wallet);
+      console.log(`CLAIMED ${rec.position} sig=${sig}`);
+    }
   }
 }
 async function main() {

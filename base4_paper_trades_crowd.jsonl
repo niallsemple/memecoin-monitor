@@ -334,3 +334,4 @@
 {"name": "LAPTOP / USDC", "pool_id": "0xeca643c8c475053d97499371e34c0332ca57f0f5367b73834f4adc78801d2ad1", "entry_t": 1788955981, "exit_t": 1788963672.531168, "ret": 13.4498, "exit": "tstop", "entry_flow_usd": 42727.9, "hold_min": 128.2}
 {"name": "BIDENGATE / USDC", "pool_id": "0xf8832feed40089a1ed0da376651c7b148de06d5060e2ce55253431a2ee105536", "entry_t": 1788956381, "exit_t": 1788963672.531168, "ret": 1.6291, "exit": "tstop", "entry_flow_usd": 3446.3, "hold_min": 121.5}
 {"name": "LARPTOP / ETH", "pool_id": "0x2dc799e64239b07e56d13e8ddf85ecb295372d9d602afc0f272490857751293d", "entry_t": 1788957981, "exit_t": 1788963672.531168, "ret": 1.0743, "exit": "abort", "entry_flow_usd": 7435.3, "hold_min": 94.9}
+{"name": "BSTONK / USDC", "pool_id": "0x53e375f380a908537fe9a6e95639013bb3811bd3f8174d744d9a4873dc9bfd80", "entry_t": 1788958781, "exit_t": 1788966278.574968, "ret": 1.0, "exit": "illiquid", "entry_flow_usd": 3423.0, "hold_min": 125.0}
