@@ -2084,6 +2084,41 @@ def run(ctx):
                         continue
                 except Exception:
                     continue
+                # §391: farm gates at the pool-entry path. (a) persistent
+                # denylist written by the birth-window seed gate; (b) birth-
+                # curve ancestry — pump.fun curve complete with <120s between
+                # first and last signature = instant self-funded graduation
+                # (the 85.01 SOL spoof farm). Catches the farm even if it
+                # changes its seed value. Checker failure must NOT block.
+                try:
+                    _dl = MON / "farm_denylist.json"
+                    if _dl.exists() and mint in json.loads(_dl.read_text()):
+                        _fe_debug("denylist_blocked", mint)
+                        continue
+                except Exception:
+                    pass
+                try:
+                    import subprocess as _sp
+                    _r = _sp.run(["node", str(MON / "lp_exec" /
+                                            "pump_curve_check.cjs"), mint],
+                                 capture_output=True, text=True, timeout=30)
+                    _anc = json.loads((_r.stdout or "").strip()
+                                      .splitlines()[-1])
+                    if _anc.get("complete") and _anc.get("span_s") is not None \
+                            and _anc["span_s"] < 120:
+                        _fe_debug("ancestry_blocked", mint,
+                                  span=_anc.get("span_s"))
+                        try:
+                            _lst = json.loads(_dl.read_text()) \
+                                if _dl.exists() else []
+                            if mint not in _lst:
+                                _lst.append(mint)
+                                _dl.write_text(json.dumps(_lst, indent=1))
+                        except Exception:
+                            pass
+                        continue
+                except Exception:
+                    pass
                 _sl = _iln.spec_from_file_location(
                     "live_trader", str(MON / "live_trader.py"))
                 _ltn = _iln.module_from_spec(_sl)
