@@ -111,7 +111,22 @@ def main():
                 log(f"{name}: EXIT FAILED rc={rc2}: {out2[:300]}")
             continue
 
-        if not c["inRange"] and active > hi:
+        # back-in-range / drifted-out transition alerts
+        in_rng = bool(c["inRange"])
+        was = p.get("was_in_range")
+        if was is not None and in_rng != was:
+            if in_rng:
+                log(f"{name}: BACK IN RANGE — fee accrual resumed")
+                action("back_in_range", name=name, pool=p["pool"], active=active,
+                       range=[lo, hi], feeY=fee_y)
+            else:
+                log(f"{name}: drifted out of range — fee accrual paused")
+                action("out_of_range", name=name, pool=p["pool"], active=active,
+                       range=[lo, hi], side="above" if active > hi else "below")
+        p["was_in_range"] = in_rng
+        json.dump(st, open(STATE_F, "w"), indent=1)
+
+        if not in_rng and active > hi:
             log(f"{name}: idle above range (pure SOL, no fees) — watching")
 
         if fee_y >= CLAIM_MIN_SOL * 1e9:

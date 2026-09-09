@@ -10,7 +10,10 @@
    "minBinId": -2756,
    "maxBinId": -2688,
    "status": "open",
-   "add_sig": "G9hk8Segtkh7AiSrRZACi2d1zFdurvaMoA3UB83MQgCJmKXA2m5fVuawsKd2urfdVPr3T18nhEBorJxWTQw26VG"
+   "add_sig": "G9hk8Segtkh7AiSrRZACi2d1zFdurvaMoA3UB83MQgCJmKXA2m5fVuawsKd2urfdVPr3T18nhEBorJxWTQw26VG",
+   "base_tvl": 122846.89926801278,
+   "base_vol24": 6419013.98684509,
+   "was_in_range": false
   },
   {
    "pool": "FQ12kpWM9FhQKW6XBsMbTpuHesQgWT1TzS6WS9d8Z14T",
@@ -22,7 +25,10 @@
    "minBinId": -223,
    "maxBinId": -209,
    "status": "open",
-   "add_sig": "63zNJr23LbePVJ1cWj6G1DhSK46rgRcq2MCa3pf24m55Fs9oTEkm2xZyBGexffCVXoPwo17WMyNUCTf3YkHG3JEn"
+   "add_sig": "63zNJr23LbePVJ1cWj6G1DhSK46rgRcq2MCa3pf24m55Fs9oTEkm2xZyBGexffCVXoPwo17WMyNUCTf3YkHG3JEn",
+   "base_tvl": 42552.590639014714,
+   "base_vol24": 345240.43055072665,
+   "was_in_range": false
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -34,7 +40,10 @@
    "minBinId": -197,
    "maxBinId": -169,
    "status": "open",
-   "add_sig": "2foNbxeu73TUUEJ9qhvHbL5RvqV1nHBETfNFFRP1oGhRnJrwCpBQTZHjHnrAhLWHR69X7enw4D7tJV8aezoMfWB4"
+   "add_sig": "2foNbxeu73TUUEJ9qhvHbL5RvqV1nHBETfNFFRP1oGhRnJrwCpBQTZHjHnrAhLWHR69X7enw4D7tJV8aezoMfWB4",
+   "base_tvl": 157961.61712993582,
+   "base_vol24": 861304.9114775569,
+   "was_in_range": false
   },
   {
    "pool": "FkmoQ9BFwqPHKXeiqkP316BdRm6oWbokwBNkTUgTpWz6",
@@ -46,7 +55,10 @@
    "minBinId": -2052,
    "maxBinId": -1996,
    "status": "open",
-   "add_sig": "49anJM3iPKmS11YbTVkgt7rBZ4osoigwzTt1yhABNALgS4XfhzTPJsm1jKDkz9nrUXgVnBZaaAvDfrYhS4S6t5Un"
+   "add_sig": "49anJM3iPKmS11YbTVkgt7rBZ4osoigwzTt1yhABNALgS4XfhzTPJsm1jKDkz9nrUXgVnBZaaAvDfrYhS4S6t5Un",
+   "base_tvl": 156386.26847949892,
+   "base_vol24": 2602653.2416695743,
+   "was_in_range": true
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -58,7 +70,10 @@
    "minBinId": -468,
    "maxBinId": -440,
    "status": "open",
-   "add_sig": "3RomHJXVzvee7Ay1grh53rdQnL2xEyZX9r5ndzXC3znV2zyHdoAkWkkmFtRQwsig8khuT7yrNQAjcAQyyQvrnW5Q"
+   "add_sig": "3RomHJXVzvee7Ay1grh53rdQnL2xEyZX9r5ndzXC3znV2zyHdoAkWkkmFtRQwsig8khuT7yrNQAjcAQyyQvrnW5Q",
+   "base_tvl": 62344.906100303895,
+   "base_vol24": 418318.0146276492,
+   "was_in_range": true
   },
   {
    "pool": "GNyg8nJxDrzzKFUni7yvDzkPv1yJRFBnSMsydotsDwN2",
@@ -70,7 +85,10 @@
    "minBinId": -235,
    "maxBinId": -221,
    "status": "open",
-   "add_sig": "5wy3RQ9Q2xYci3PpLML3G9GodC1tNGkvL9HPiq8Xc8HWXFkMHqga1o6qxZ132a9vqHMWnN8mfsZJNajZnAqVG4tw"
+   "add_sig": "5wy3RQ9Q2xYci3PpLML3G9GodC1tNGkvL9HPiq8Xc8HWXFkMHqga1o6qxZ132a9vqHMWnN8mfsZJNajZnAqVG4tw",
+   "base_tvl": 28939.31362658084,
+   "base_vol24": 305299.5687824667,
+   "was_in_range": true
   }
  ]
 }

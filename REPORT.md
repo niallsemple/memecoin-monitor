@@ -8019,3 +8019,57 @@ Live trading no longer depends on the 20-min agent watcher. The curve collector'
 - **Entries (§470):** graduation seen within seconds via PumpPortal migration push; cell gates (liq≥$25k, 5m vol≥liq, buys>sells) computed from websocket pool counters; earliest entry ~5-6 min post-graduation (was up to ~25 min). Entry px from DexScreener for exit-math consistency.
 - **Exits (§471):** same 20s cadence, reuses pumpswap_live.manage_exits verbatim (+25% target / −40% stop / 35% trail / 30-min max / drain) — positions were previously unmanaged ~75% of their lives.
 Verified: full 18-min run with new threads, heartbeat live, zero errors, no false entries in a quiet window. Inter-run gaps (~2-25 min, platform-scheduled) remain the only uncovered moments.
+
+## §DAILY — 2026-09-09T06:25Z daily forward-test review
+
+**Cycle health:** 83 cycles on 2026-09-08, all `ok`, zero error statuses in the last 24h of auto_log.md. ⚠️ **ANOMALY: the paper cycle loop has been DOWN since 2026-09-09 ~00:00Z** — last cycle line 23:56Z Sep 8, auto_log.md / paper_v*.json / state.json all stale since 01:00 BST, no papertrader process running (~6.3h gap at time of writing). Feeds (curves, mfg, birth-watch, fastpoll) are all live; only the v2–v6 book loop is dead. Needs a restart — no entries/exits have been managed overnight.
+
+**Book states (last cycle 2026-09-08 23:56Z):**
+| Book | Bank | ROI | Open | Closed | Realized PnL | 24h closes |
+|---|---|---|---|---|---|---|
+| v2 (floor 1.0) | £376.74 | −62.3% | 6 | 134 | −£622.84 | +7 |
+| v3 (floor 1.25) | £689.29 | −31.1% | 1 | 66 | −£307.07 | +4 |
+| v4 (floor 1.5) | £663.20 | −33.7% | 0 | 163 | −£336.76 | +8 |
+| v5 (+behaviour) | £961.11 | −3.9% | 0 | 48 | −£38.92 | **+0** |
+| v6 (cluster+1.5) | £1,000.00 | 0.0% | 0 | 0 | £0.00 | 0 |
+
+v3's single open position is still the rule-violating `CTPoyCwk` re-entry (entry mc $8.07M, +17,091 min old at entry). v2 also holds a CTPoyCwk position plus 5 others.
+
+**State.json signal layer (last 24h):**
+- Cluster tags with non-empty hit: **0** (all-time 37). The cluster wallets were entirely silent.
+- Behaviour verdicts on record: PASS 72 / RISK 73 / SKIP 56 (cumulative).
+- v5 seen_done (cumulative): 71 `behaviour_risk` | 62 `failed_momentum_floor` | 3 `thin_liquidity` → lifetime admission ≈ 26% — but **zero admissions since 2026-09-07 03:27**.
+- v6 seen_done (cumulative): 1,466 `no_cluster_hit` | 16 `failed_momentum_floor` | 2 `thin_liquidity` → **0 admissions in ~13 days of forward test**.
+
+**GO-LIVE GATE SCORECARD (gate_check.py, run 2026-09-09T06:18Z) — v3 NOT qualified, data_pass FALSE:**
+| Gate | Value | Threshold | Status |
+|---|---|---|---|
+| sample_size_100 | 66 closed | ≥100 | FAIL |
+| pnl_7d_nonneg | −£53.34 | ≥£0 trailing 7d | FAIL |
+| drawdown_le_10pct | 32.1% | ≤10% cash drawdown | FAIL |
+| profit_factor_1_3 | 0.47 | ≥1.3 | FAIL |
+| no_late_reentries | 11 late entries (last 50 + open) | 0 | FAIL |
+| manual: exit_rule_upgraded | false | — | PENDING |
+| manual: slippage_proof_20 | false | — | PENDING |
+| manual: ops_configured | false | — | PENDING |
+
+v3 `qualified=false`, `data_pass=false` — the manual sign-offs (exit-rule upgrade, 20-trade slippage proof, ops config) remain open but are moot until the data gates move. **v6 CLUSTER: all 3 gates FAIL** — labelled sample 2 runners / 3 husks (need ≥20 each), 0 fired signals (need ≥1; §19's ≥30-entry criterion is at 0/30), PF n/a. `qualified=false`.
+
+**E25 FORWARD-VALIDATION (forward_scorecard.py, s60nm5fr, post-§66b-fix only — the 13 pre-outage positions remain VOID):**
+- Post-fix: 761 entries, 755 closes, 6 open (2 freerolled), win rate **89.7%**, expectancy **+1.161%** vs frozen backtest **+5.75%**.
+- Expectancy by chronological third: **+2.34% → +2.76% → −1.62%**; last 200 closes **−2.88%** (win 84.5%). The edge is decaying as n grows, not converging to the backtest line.
+- Exit mix: abort15 513 | nm_abort 115 | trail 93 | abort 28 | timestop 6. Shape is sane (abort15 scratch-losses dominate; nm_abort carries the +33–42% winners), but **66 post-fix closes were full-loss (≤−50%)** — 8.7% of closes, worth a dedicated review.
+- n=30 gate: **757/30 — passed many times over** on sample size alone.
+- Shadows: h108 +0.08%, a15 −0.39%, plain base −5.07%, s60 committed −2.23% — s60nm5fr is the only positive variant and its margin is thinning.
+- Helius: **recovered/healthy.** feed_keeper heartbeat 05:23Z today, pump.fun curve stream live (curves.jsonl current to ~06:00Z), no Helius 429s anywhere in recent logs; curve trades and per-tx granularity are restored. E25 pool flow is nonetheless still on public-RPC fallback polling (base/bsc loops: 31 cycles, 0 errors). The only 429s seen are geckoterminal (Base/BSC metadata), unrelated to Solana flow.
+
+**Assessment:**
+(a) **First v6 admissions? Still none — and the signal layer went fully dark** (0 cluster hits in 24h vs 37 all-time). The §19 pre-registered criterion (≥30 entries beating 66% ≥2×) is at 0/30 after ~13 days and is not measurable at current signal rates.
+(b) **Wedge, not convergence.** Live v2 −62% / v4 −34% / v3 −31% keep grinding toward the base rate; the reconstruction-to-live gap from the Aug reviews persists unchanged. Fast-watch granularity fixed measurement, not edge.
+(c) **v5 behavioural gate is drifting toward never-opening** — silent for ~2 days after a lifetime ~26% admission rate — and the trades it did take (e.g. TRUEq13u at +1,083–2,502 min, 1.8–19.5× detect mcap) violate the go-live age/mcap rules. Calibration is wrong in both directions: too rare, and too loose on age when it fires.
+(d) **E25 is NOT tracking the backtest** — recent-third expectancy is negative (−1.6%, last 200 −2.9%) even though the full-post-fix average stays +1.16% on early-trade carry. Treat the +5.75% backtest as not replicated forward; the n=30 sample gate passed but the expectancy gate vs backtest is failing in the recent regime.
+(e) **Anomalies:** (1) paper cycle loop DOWN ~6.3h — restart needed, overnight price moves unmanaged; (2) v3 still holding the CTPoyCwk re-entry bug-trade, 11 late reentries in the last 50 v3 trades; (3) v5 trade silence; (4) 66 E25 full-loss bleeders (8.7% of post-fix closes) despite abort15-first exits — check fast-crash gap-through fills.
+
+**Verdict:** No live-stake case today. v3 fails all five data gates (worst: PF 0.47, 7d PnL −£53); v6 remains a null signal forward. E25 is the only positive-expectancy lane and it is fading (−2.9% last 200). Master question — "is there a real, executable edge?" — remains **unanswered-to-negative** on every lane currently measuring; the Sep-8 live-session cell (reported separately above) is the only area showing positive resolved n.
+
+**Next checkpoint:** 2026-09-10 06:00Z (confirm paper loop restart; re-score E25 last-200 trend).

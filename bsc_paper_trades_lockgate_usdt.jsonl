@@ -1,3 +1,4 @@
 {"name": "\u65fa\u8d22 / USDT", "pair": "0x8d3b00b5972d755ee8d7b9faeeed4f9c19e40275", "entry_t": 1788148345.020832, "exit_t": 1788156723.688687, "ret": 4.958, "exit": "tstop", "entry_flow_usd": 3384.0, "hold_min": 139.6}
 {"name": "\u4f5b\u54de / USDT", "pair": "0xfc58e665997431a0d8dfef4e07b8e3af46711332", "entry_t": 1788182402.917738, "exit_t": 1788191532.691831, "ret": 1.6455, "exit": "tstop", "entry_flow_usd": 3280.0, "hold_min": 152.2}
 {"name": "Sue / USDT", "pair": "0xeaf5ead02f6c8a21c9ff5e458400bc391ad67065", "entry_t": 1788666759.0512068, "exit_t": 1788667387.1330528, "ret": 1.2763, "exit": "trail", "entry_flow_usd": 9384.0, "hold_min": 10.5}
+{"name": "LAPTOP / USDT", "pair": "0xb0703013a2029f5f7504768eb009cbf7dd260caa", "entry_t": 1788923763.011899, "exit_t": 1788926119.201515, "ret": 6.9016, "exit": "trail", "entry_flow_usd": 42165.0, "hold_min": 39.3}

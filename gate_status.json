@@ -1,30 +1,30 @@
 {
- "computed_at": "2026-08-29T15:13:38.359137+00:00",
+ "computed_at": "2026-09-09T06:18:21.687008+00:00",
  "v3": {
   "gates": {
    "sample_size_100": {
     "pass": false,
-    "value": 31,
+    "value": 66,
     "need": ">=100 closed"
    },
    "pnl_7d_nonneg": {
     "pass": false,
-    "value": -59.62,
+    "value": -53.34,
     "need": ">= \u00a30 trailing 7d"
    },
    "drawdown_le_10pct": {
-    "pass": true,
-    "value": 7.9,
+    "pass": false,
+    "value": 32.1,
     "need": "<=10% cash drawdown"
    },
    "profit_factor_1_3": {
     "pass": false,
-    "value": 0.78,
+    "value": 0.47,
     "need": ">=1.3"
    },
    "no_late_reentries": {
     "pass": false,
-    "value": 1,
+    "value": 11,
     "need": "0 entries with age>6h in last 50 trades + open"
    }
   },
@@ -36,7 +36,7 @@
   "data_pass": false,
   "qualified": false,
   "open_positions": 1,
-  "closed_trades": 31
+  "closed_trades": 66
  },
  "v6": {
   "gates": {
