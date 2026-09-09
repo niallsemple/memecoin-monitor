@@ -2244,6 +2244,83 @@ def run(ctx):
                 except Exception:
                     pass
 
+    # §470: daily LP scan fallback. The 09:47Z scan+deploy cron
+    # (automation_e58c519b…) already missed one morning (2026-09-09, app
+    # asleep) and the guardian cron proved ticks get skipped. If it is
+    # past 10:05 UTC and lp_watchlist.json was not regenerated today,
+    # the tracker runs the full chain itself: survivor scan -> ranker ->
+    # gated AUTO deploy (all of lp_deploy_watchlist.py's own refusals
+    # still apply: stale data / pool already held / balance gates), then
+    # commits + pushes. Once per UTC day via marker file. First check
+    # runs at pass start so the chain (~<=12 min worst case) fits the
+    # 16.5-min window.
+    DAILY_LP_S = 600
+
+    def daily_lp_loop():
+        import datetime as _dt
+        while not stop.is_set():
+            try:
+                _today = _dt.datetime.utcnow().strftime("%Y-%m-%d")
+                _now_utc = _dt.datetime.utcnow()
+                _mark = MON / "lp_daily_fallback_done.json"
+                _done = (json.loads(_mark.read_text()).get("date")
+                         if _mark.exists() else None)
+                _wf = MON / "lp_watchlist.json"
+                _wdate = None
+                if _wf.exists():
+                    try:
+                        _wdate = json.loads(_wf.read_text())[
+                            "generated_utc"][:10]
+                    except Exception:
+                        _wdate = None
+                if (_now_utc.hour > 10 or
+                        (_now_utc.hour == 10 and _now_utc.minute >= 5)) \
+                        and _wdate != _today and _done != _today:
+                    _mark.write_text(json.dumps(
+                        {"date": _today, "ts": time.time()}))
+                    with open(MON / "lp_daily_fallback.log", "a") as _lf:
+                        _lf.write(json.dumps({"ts": time.time(),
+                            "msg": "cron missed; running chain"}) + "\n")
+                    for _script, _to in (("meteora_survivor.py", 280),
+                                         ("meteora_lp_ranker.py", 280),
+                                         ("lp_deploy_watchlist.py", 280)):
+                        _cmd = ["python3", str(MON / _script)]
+                        if _script == "lp_deploy_watchlist.py":
+                            _cmd.append("AUTO")
+                        _r = subprocess.run(_cmd, capture_output=True,
+                                            text=True, timeout=_to)
+                        with open(MON / "lp_daily_fallback.log", "a") as _lf:
+                            _lf.write(json.dumps({"ts": time.time(),
+                                "script": _script,
+                                "rc": _r.returncode,
+                                "out": (_r.stdout or "")[-300:],
+                                "err": (_r.stderr or "")[-300:]}) + "\n")
+                        if _script != "lp_deploy_watchlist.py" \
+                                and _r.returncode != 0:
+                            break  # no deploy attempt on stale/failed scan
+                    subprocess.run(
+                        ["git", "add", "meteora_survivor_report.json",
+                         "meteora_lp_ranker_report.json",
+                         "lp_watchlist.json", "lp_watchlist.jsonl",
+                         "lp_positions.json", "lp_guardian_actions.jsonl",
+                         "lp_daily_fallback.log"],
+                        cwd=str(MON), capture_output=True, timeout=60)
+                    subprocess.run(
+                        ["git", "commit", "-q", "-m",
+                         "Daily LP chain via tracker fallback (cron missed)"],
+                        cwd=str(MON), capture_output=True, timeout=60)
+                    subprocess.run(["git", "push", "origin", "main", "-q"],
+                                   cwd=str(MON), capture_output=True,
+                                   timeout=120)
+            except Exception as _de:
+                try:
+                    with open(MON / "lp_daily_fallback.log", "a") as _lf:
+                        _lf.write(json.dumps({"ts": time.time(),
+                            "err": repr(_de)[:400]}) + "\n")
+                except Exception:
+                    pass
+            stop.wait(DAILY_LP_S)
+
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
@@ -2251,6 +2328,7 @@ def run(ctx):
     threading.Thread(target=e2_fast_loop, daemon=True).start()
     threading.Thread(target=psnewborn_loop, daemon=True).start()
     threading.Thread(target=guardian_loop, daemon=True).start()
+    threading.Thread(target=daily_lp_loop, daemon=True).start()
     threading.Thread(target=kamino_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
