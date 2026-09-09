@@ -99,10 +99,11 @@ def main():
             p["days"] = len(cs)
             p["vol_alive_ratio"] = round(vols[-1] / peak, 4) if peak else 0
             p["dd_from_ath"] = round(cs[-1]["close"] / hi - 1, 4) if hi else 0
+            p["_candles"] = cs
         else:
             p["days"] = len(cs); p["vol_alive_ratio"] = None; p["dd_from_ath"] = None
 
-    # rank: fee yield with death-risk penalty
+    # rank: fee yield with death-risk penalty, net of estimated IL drag
     for p in pools:
         y = p["daily_fee_yield"]
         pen = 1.0
@@ -114,26 +115,66 @@ def main():
             pen *= 0.5   # freeze authority live = dev can freeze
         p["risk_adj_yield"] = y * pen
 
-    ranked = sorted(pools, key=lambda p: -p["risk_adj_yield"])
+        # IL drag from daily candles: constant-product IL per day, 2*sqrt(k)/(1+k)-1.
+        # DLMM concentrated positions suffer >= this; treat as a lower bound.
+        drags = []
+        cs = p.get("_candles") or []
+        for i in range(1, len(cs)):
+            c0, c1 = cs[i-1]["close"], cs[i]["close"]
+            if c0 and c1 and c0 > 0:
+                k = c1 / c0
+                drags.append(2 * (k ** 0.5) / (1 + k) - 1)
+        if drags:
+            recent = drags[-7:]
+            p["il_daily_avg7"] = round(sum(recent) / len(recent), 5)
+            p["il_worst_day"] = round(min(drags), 5)
+            p["net_daily_lp"] = round(p["risk_adj_yield"] + p["il_daily_avg7"], 5)
+        else:
+            p["il_daily_avg7"] = None; p["il_worst_day"] = None
+            p["net_daily_lp"] = None
+
+    ranked = sorted(pools, key=lambda p: -(p["net_daily_lp"] if p["net_daily_lp"] is not None else p["risk_adj_yield"]))
+    for p in ranked:
+        p.pop("_candles", None)
+
+    # forward ledger: daily snapshot of top ranks to measure yield decay
+    with open("meteora_lp_track.jsonl", "a") as f:
+        for p in ranked[:25]:
+            f.write(json.dumps({
+                "t": now_ms / 1000, "address": p["address"], "name": p["name"],
+                "tvl": p["tvl"], "fees24": p["fees24"],
+                "daily_fee_yield": round(p["daily_fee_yield"], 5),
+                "risk_adj_yield": round(p["risk_adj_yield"], 5),
+                "il_daily_avg7": p["il_daily_avg7"], "il_worst_day": p["il_worst_day"],
+                "net_daily_lp": p["net_daily_lp"],
+                "vol_alive_ratio": p.get("vol_alive_ratio"), "dd_from_ath": p.get("dd_from_ath"),
+            }) + "\n")
+
     rep = {"generated_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime()),
-           "note": ("daily_fee_yield = trailing 24h fees / TVL. Trailing, not forward; "
-                    "volume-alive and ATH-drawdown penalties discount pools whose fee "
-                    "stream is decaying. IL risk not included."),
+           "note": ("daily_fee_yield = trailing 24h fees / TVL (trailing, not forward). "
+                    "net_daily_lp = risk-adjusted yield + avg daily IL drag (last 7d, "
+                    "constant-product lower bound; DLMM concentration makes real IL worse). "
+                    "Penalties discount decaying volume, post-collapse pools, live freeze authority."),
            "pools": ranked}
     with open("meteora_lp_ranker_report.json", "w") as f:
         json.dump(rep, f, indent=1)
 
-    print(f"\n{'pool':22s} {'tvl':>10s} {'fees24':>9s} {'yield/d':>8s} {'APR':>7s} {'volAlive':>8s} {'ddATH':>7s} {'age':>6s} {'hold':>7s}")
+    print(f"\n{'pool':22s} {'tvl':>10s} {'fees24':>9s} {'yield/d':>8s} {'IL/d7':>8s} {'ILworst':>8s} {'net/d':>8s} {'volAlive':>8s} {'ddATH':>7s} {'age':>6s}")
     for p in ranked[:20]:
         va = f"{p['vol_alive_ratio']:.2f}" if p.get("vol_alive_ratio") is not None else "  -"
         dd = f"{p['dd_from_ath']:+.0%}" if p.get("dd_from_ath") is not None else "  -"
-        apr = f"{p['apr_api']:.0f}%" if p.get("apr_api") else "  -"
+        il = f"{p['il_daily_avg7']:+.2%}" if p.get("il_daily_avg7") is not None else "  -"
+        ilw = f"{p['il_worst_day']:+.1%}" if p.get("il_worst_day") is not None else "  -"
+        net = f"{p['net_daily_lp']:+.2%}" if p.get("net_daily_lp") is not None else "  -"
         print(f"{p['name'][:22]:22s} ${p['tvl']:>9,.0f} ${p['fees24']:>8,.0f} "
-              f"{p['daily_fee_yield']:>7.2%} {apr:>7s} {va:>8s} {dd:>7s} {p['age_h']/24:>5.1f}d {p.get('holders_x') or 0:>7}")
+              f"{p['daily_fee_yield']:>7.2%} {il:>8s} {ilw:>8s} {net:>8s} {va:>8s} {dd:>7s} {p['age_h']/24:>5.1f}d")
 
-    tot_tvl = sum(p["tvl"] for p in ranked[:20])
-    wavg = sum(p["risk_adj_yield"] * p["tvl"] for p in ranked[:20]) / tot_tvl if tot_tvl else 0
-    print(f"\ntop-20 TVL-weighted risk-adj daily yield: {wavg:.3%}  (~{wavg*365:.0%} annualized)")
+    netted = [p for p in ranked[:20] if p["net_daily_lp"] is not None]
+    if netted:
+        pos = [p for p in netted if p["net_daily_lp"] > 0]
+        tot_tvl = sum(p["tvl"] for p in netted)
+        wavg = sum(p["net_daily_lp"] * p["tvl"] for p in netted) / tot_tvl if tot_tvl else 0
+        print(f"\ntop-20 net-of-IL: {len(pos)}/{len(netted)} positive; TVL-weighted net {wavg:+.3%}/day")
     return rep
 
 
