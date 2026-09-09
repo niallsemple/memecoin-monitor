@@ -396,18 +396,20 @@ def _burn_ix(acct_b, mint_b, owner_b, amount, token_prog_b):
 
 
 def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only",
-                         dust_ceiling=None):
+                         dust_ceiling=None, prog=None):
     """Close token accounts. mints: close the ATA(s) for those mints. Post-sell
     dust above zero is BURNED first (SPL Burn ix 8) but only up to
     dust_ceiling[mint] raw units (caller passes ~0.5% of the just-sold
     position); larger balances are left untouched so a failed sell can never
     be torched. sweep_empty: close EVERY zero-balance account (rent reclaim).
+    prog: token program (default legacy TOKENKEG; pass TOKEN2022 for pump.fun).
     Respects live_enabled()."""
     ok, why = live_enabled()
     key, address = _load_key()
     owner_b = b58dec(address)
+    tprog = prog or TOKENKEG
     accs = (_rpc("getTokenAccountsByOwner",
-                 [address, {"programId": b58enc(TOKENKEG)},
+                 [address, {"programId": b58enc(tprog)},
                   {"encoding": "jsonParsed"}]) or {}).get("value", [])
     targets = []  # (pubkey, mint, amt, burn?)
     for a in accs:
@@ -439,8 +441,8 @@ def close_token_accounts(mints=None, sweep_empty=False, reason="sol_only",
         for p, mint, amt, burn in batch:
             if burn:
                 ixs.append(_burn_ix(b58dec(p), b58dec(mint), owner_b, amt,
-                                    TOKENKEG))
-            ixs.append(_close_ix(b58dec(p), owner_b, owner_b, TOKENKEG))
+                                    tprog))
+            ixs.append(_close_ix(b58dec(p), owner_b, owner_b, tprog))
         try:
             tx = build_legacy_tx(owner_b, ixs)
             sig = _rpc("sendTransaction", [tx, {"encoding": "base64"}])
