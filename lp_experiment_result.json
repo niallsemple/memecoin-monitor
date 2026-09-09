@@ -1,0 +1,22 @@
+{
+ "closed_early_at_owner_request": "2026-09-09T16:25:28Z",
+ "deploy_cost_per_position_sol": 0.1041,
+ "positions": 6,
+ "liquidity_sol": 0.3,
+ "rent_and_fees_sol": 0.3249,
+ "total_deployed_sol": 0.6249,
+ "pre_deploy_wallet_sol": 1.0707,
+ "final_wallet_sol": 0.965573,
+ "net_pnl_sol": -0.1051,
+ "net_pnl_pct_of_deployed": -16.8,
+ "fees_earned_sol_approx": 0.0092,
+ "il_and_exit_losses_sol_approx": -0.114,
+ "notes": [
+  "3 floor exits (tip, MUCHWOW, CTO) realized IL losses that overwhelmed ~0.009 SOL of fees",
+  "3 idle-above-range positions (XMR, KNOTS, Pumpcat) returned deposit+rent intact plus fees",
+  "single-sided-below structure: upside pumps earned nothing; downside breaches cost IL",
+  "earlier per-arm 'gains' reported during the day included rent refunds \u2014 corrected here",
+  "Pumpcat token-side fee dust (147M raw) forfeited: below ATA rent value"
+ ],
+ "final_state": "wallet SOL-only, 0 token accounts, verified on-chain"
+}
