@@ -8287,3 +8287,21 @@ gates (stale data / position open / balance) still apply — the fallback
 changes WHO runs the chain, not WHEN deploy is allowed. Gate logic
 verified against the live watchlist: correctly evaluates no-fire when the
 watchlist is current.
+
+## §489 — Ledger correction: true liq-cycle cost −0.0442 SOL (2026-09-09 ~22:15 UTC)
+
+Full re-derivation from raw getTransaction balance deltas over all 25 txs
+since the LP pull-out (loadedAddresses-aware, so v0/ALT txs are correct):
+
+- Pre-cycle balance (post owner funding +6.4873 at 16:59Z + three small
+  sweep remnants +0.0250): 7.6823 — matches §402's stated start exactly.
+- Authoritative current balance (Helius getBalance): 7.63806.
+- TRUE total cost of the §399/§400/§401 validation cycle: **−0.0442 SOL**
+  (19 txs: 7 buy/unwind abort cycles + ALT extend + ATA creates + final
+  token sweep). §402's −0.0406 was computed before the final 21:13Z sweep
+  pair landed and estimated it at +0.4795; it actually landed +0.4746.
+
+Correction is small and changes no conclusions: the honest executed-sim
+gate vetoes phantom crossings at ~0.003 SOL per protected abort, and the
+whale was never liquidatable. Wallet now 7.6381 SOL, SOL-only (JitoSOL +
+liab ATAs exist, 0 tokens, retained for the fire path).
