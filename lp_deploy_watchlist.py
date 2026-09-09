@@ -40,9 +40,23 @@ def sol_balance() -> float:
     return r["result"]["value"] / 1e9
 
 
+def size_arm(hit, bal, explicit=None):
+    """Data-driven arm size. Explicit CLI size always wins (manual runs).
+    Baseline 0.5 SOL (owner-approved). Upgrade to 1.0 SOL when the pool's
+    net-of-IL daily yield >= 20%/d (pays the ~0.057 SOL position rent back in
+    under a day even after exit costs). Hard cap 12% of free balance so one
+    arm can never dominate the wallet; hard reserve 0.10 SOL on top."""
+    if explicit is not None:
+        return explicit
+    net = hit.get("net_daily_lp") or 0
+    arm = 1.0 if net >= 0.20 else 0.5
+    cap = max(0.0, (bal - 0.15) * 0.12)
+    return round(max(0.0, min(arm, cap)), 3)
+
+
 def main():
     target = sys.argv[1] if len(sys.argv) > 1 else "XMR-SOL"
-    sol = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+    sol_arg = float(sys.argv[2]) if len(sys.argv) > 2 else None
     width = float(sys.argv[3]) if len(sys.argv) > 3 else 0.56
 
     wl = json.loads(WATCHLIST.read_text())
@@ -79,10 +93,12 @@ def main():
         sys.exit(3)
 
     bal = sol_balance()
+    sol = size_arm(hit, bal, sol_arg)
     need = sol + 0.10  # rent + tx fee reserve
-    print(f"wallet {wallet_pubkey()} balance {bal:.4f} SOL; need {need:.2f}")
-    if bal < need:
-        print("REFUSED: insufficient balance.")
+    print(f"wallet {wallet_pubkey()} balance {bal:.4f} SOL; arm {sol} SOL"
+          f"{' (CLI override)' if sol_arg is not None else ' (auto-sized)'}; need {need:.2f}")
+    if sol <= 0 or bal < need:
+        print("REFUSED: insufficient balance for the sized arm.")
         sys.exit(3)
 
     print(f"QUALIFIED: {hit.get('name')} net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
