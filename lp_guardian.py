@@ -65,6 +65,9 @@ def main():
         log("no open positions"); return
 
     rc, out = run_lp("statusjson")
+    fake = os.environ.get("GUARDIAN_FAKE_STATUS")  # test hook: path to JSON file
+    if fake:
+        rc, out = 0, open(fake).read()
     try:
         chain = json.loads(out[out.index("["):])
     except Exception:
