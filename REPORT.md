@@ -8113,3 +8113,20 @@ Multi-day block-rate audit of the PumpSwap newborn cell's entry stream (fast_ent
 **Pattern lesson (add to farm anatomy):** memecoin seasons produce resurrected pools — dead for months, revived by a pump. Any "aged + high-yield + calm" pool reading is suspect until the calm is proven on RECENT candles. Deploy-grade = continuously alive, not historically old.
 
 **Status:** 0/134 pools qualify post-hardening. The auto-deploy chain (daily scan -> gated driver -> guardian) remains armed; it now cannot fire on stale-history pools.
+
+---
+
+## 2026-09-09 19:55Z — Sell-path execution quality: MEASURED (not simulated)
+
+Question: does Jupiter execution match quotes during stressed exits (drains, aborts)?
+Method: 25 largest live pool_sell executions (quote > 0.0005 SOL) reconstructed on-chain
+via getTransaction wallet-balance deltas vs the quote recorded in mfg_live_trades.jsonl.
+
+Result: executed/quote mean +0.02%, median +0.01%, worst -0.05% — includes nm_abort and
+abort15 exits. **Jupiter quotes are honored essentially exactly even during abort
+exits.** The exit path is no longer an assumption; it is measured. Combined with the
+min-proceeds floor (§235) and farm_trip (§392), the sell side is closed.
+
+Also live-verified today: farm denylist refusing pool-path entries in production
+(PICKLES refused 2x via §389, 19:4xZ); §396 Token-2022 extension gate deployed to buy();
+two-tier LP watchlist armed for 09:47Z auto-deploy (top: TOAD-SOL, tier A, ~0.9 SOL).
