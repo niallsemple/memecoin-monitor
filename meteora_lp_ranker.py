@@ -137,6 +137,27 @@ def main():
     for p in ranked:
         p.pop("_candles", None)
 
+    # Deployment-grade watchlist (lesson from the 2026-09-09 live experiment):
+    # aged (30d+), near-zero IL (<1%/day), volume alive, freeze authority off,
+    # net yield >= 2%/day. Only these are eligible for 0.5 SOL wide-range arms.
+    deploy_grade = [p for p in ranked
+                    if p.get("days", 0) >= 30
+                    and p.get("il_daily_avg7") is not None and p["il_daily_avg7"] > -0.01
+                    and p.get("vol_alive_ratio") is not None and p["vol_alive_ratio"] >= 0.5
+                    and p.get("fa_disabled")
+                    and p.get("net_daily_lp") is not None and p["net_daily_lp"] >= 0.02]
+    with open("lp_watchlist.json", "w") as f:
+        json.dump({"generated_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime()),
+                   "criteria": "age>=30d, IL<1%/d, vol_alive>=0.5, fa_disabled, net>=2%/d",
+                   "pools": deploy_grade}, f, indent=1)
+    with open("lp_watchlist.jsonl", "a") as f:
+        f.write(json.dumps({"t": now_ms / 1000, "n": len(deploy_grade),
+                            "pools": [p["name"] for p in deploy_grade[:10]]}) + "\n")
+    print(f"\n[deploy-grade] {len(deploy_grade)} pools qualify:")
+    for p in deploy_grade[:10]:
+        print(f"  {p['name'][:24]:24s} ${p['tvl']:>9,.0f} net {p['net_daily_lp']:+.2%}/d "
+              f"IL {p['il_daily_avg7']:+.3%}/d age {p['days']}d")
+
     # forward ledger: daily snapshot of top ranks to measure yield decay
     with open("meteora_lp_track.jsonl", "a") as f:
         for p in ranked[:25]:
