@@ -29,6 +29,25 @@ def main():
         except Exception as e:
             print(f"[sweep] sell FAILED {mint[:8]}: {e}")
         time.sleep(1)
+        # §223's 99.9% sell cap leaves geometric dust; burn+close any
+        # residual <=1% of the original balance so we end SOL-only in
+        # one pass instead of chasing dust with fee-burning re-sells.
+        try:
+            left = 0
+            for a in (lt._rpc("getTokenAccountsByOwner",
+                              [addr, {"programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"},
+                               {"encoding": "jsonParsed"}]) or {}).get("value", []):
+                i = a["account"]["data"]["parsed"]["info"]
+                if i["mint"] == mint:
+                    left += int(i["tokenAmount"]["amount"])
+            if 0 < left <= max(int(raw * 0.01), 1000):
+                bc = lt.close_token_accounts(mints={mint}, dust_ceiling={mint: left},
+                                             reason="lp_sweep_dust")
+                print(f"[sweep] dust burn {mint[:8]} raw={left}: {bc.get('result')}")
+            elif left > 0:
+                print(f"[sweep] WARNING {mint[:8]} residual {left} raw exceeds dust floor — left in wallet")
+        except Exception as e:
+            print(f"[sweep] dust burn FAILED {mint[:8]}: {e}")
     try:
         close = lt.close_token_accounts(sweep_empty=True, reason="lp_sweep")
         print(f"[sweep] close: {close.get('result')}")
