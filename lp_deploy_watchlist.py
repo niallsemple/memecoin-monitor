@@ -48,13 +48,27 @@ def main():
     wl = json.loads(WATCHLIST.read_text())
     pools = wl.get("pools", [])
     print(f"watchlist generated {wl.get('generated_utc')} — {len(pools)} qualified")
-    hit = next((p for p in pools
-                if target.lower() in (p.get("name", "") + p.get("address", "")).lower()), None)
+    if target.upper() == "AUTO":
+        if not pools:
+            print("REFUSED: AUTO mode, 0 pools qualified. Data does not say go.")
+            sys.exit(3)
+        hit = pools[0]  # ranker writes deploy-grade list in net-yield order
+        print(f"AUTO selected top-qualified pool: {hit.get('name')}")
+    else:
+        hit = next((p for p in pools
+                    if target.lower() in (p.get("name", "") + p.get("address", "")).lower()), None)
     if not hit:
         names = [p.get("name") for p in pools]
         print(f"REFUSED: '{target}' not in qualified watchlist {names}. "
               f"Data does not say go. Run meteora_lp_ranker.py for a fresh scan.")
         sys.exit(3)
+
+    # duplicate protection: never stack a second position on a pool we already hold
+    pos_state = json.loads((MON / "lp_positions.json").read_text())
+    if any(p.get("pool") == hit["address"] and p.get("status") == "open"
+           for p in pos_state.get("positions", [])):
+        print(f"REFUSED: already holding an open position on {hit.get('name')}.")
+        sys.exit(4)
 
     # freshness gate: watchlist must be < 26h old
     gen = time.strptime(wl["generated_utc"], "%Y-%m-%d %H:%M")
