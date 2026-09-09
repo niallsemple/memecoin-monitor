@@ -91,6 +91,34 @@ def main():
     if n >= 10:
         print("\n*** 10-TRADE GATE REACHED — owner review required before "
               "scaling (standing instruction) ***")
+        # §397: PRE-REGISTERED verdict rules (registered 2026-09-09, before
+        # trades 3-10 exist). Thresholds derive from the ≤30min/+25% cell sim
+        # (+13.7%/trade expectancy, ~36% rug rate) and the 0.10 SOL size:
+        #   STOP     — net <= -0.30 SOL (30% of total staked) or rugs >= 6/10
+        #   SCALE    — net > 0 AND rugs <= 4/10 AND >=3 target hits
+        #   CONTINUE — anything in between (10 more trades at 0.10 SOL)
+        net = tot_out - tot_in
+        targets = sum(1 for m, e in entries.items()
+                      if (exits.get(m) or {}).get("reason") == "target")
+        wins = [e for m, e in entries.items()
+                if (exits.get(m) or {}).get("reason") == "target"]
+        print("\n--- PRE-REGISTERED VERDICT (§397) ---")
+        print(f"net {net:+.4f} SOL on {tot_in:.2f} staked ({net/tot_in*100:+.1f}%) | "
+              f"rugs {rugs}/10 | target hits {targets}/10")
+        if net <= -0.30 or rugs >= 6:
+            verdict = "STOP"
+            why = ("expectancy broken: losses or rug rate beyond the model's "
+                   "tolerance; retire the cell, keep the data")
+        elif net > 0 and rugs <= 4 and targets >= 3:
+            verdict = "SCALE CANDIDATE"
+            why = ("live performance consistent with the sim; propose next "
+                   "size step (owner decides: 0.10 -> 0.20 SOL or LP-arm "
+                   "diversification)")
+        else:
+            verdict = "CONTINUE SAMPLING"
+            why = ("inside tolerance but not convincingly positive; 10 more "
+                   "trades at 0.10 SOL, same gates")
+        print(f"VERDICT: {verdict} — {why}")
 
 
 if __name__ == "__main__":
