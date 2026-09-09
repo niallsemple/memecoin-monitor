@@ -99,6 +99,18 @@ def main():
             p["days"] = len(cs)
             p["vol_alive_ratio"] = round(vols[-1] / peak, 4) if peak else 0
             p["dd_from_ath"] = round(cs[-1]["close"] / hi - 1, 4) if hi else 0
+            # §393: recency metrics — the datapi returns a pool's EARLIEST
+            # candles; a resurrected pool (dead Jun-Jul, alive Sep) showed
+            # "28d age, IL~0, vol_alive 1.0" on dead history (XMR-SOL, found
+            # 2026-09-09). All deployment gates must use RECENT candles only.
+            now_s = now_ms / 1000
+            recent21 = [c for c in cs if now_s - c["timestamp"] <= 21 * 86400]
+            p["recent_days_21"] = len(recent21)
+            p["live_days_21"] = sum(1 for c in recent21 if (c.get("volume") or 0) > 0)
+            recent10 = [c for c in cs if now_s - c["timestamp"] <= 10 * 86400]
+            p["max_hl_range_10d"] = round(
+                max((c["high"] / c["low"] for c in recent10
+                     if c.get("high") and c.get("low")), default=0), 3)
             p["_candles"] = cs
         else:
             p["days"] = len(cs); p["vol_alive_ratio"] = None; p["dd_from_ath"] = None
@@ -117,14 +129,17 @@ def main():
 
         # IL drag from daily candles: constant-product IL per day, 2*sqrt(k)/(1+k)-1.
         # DLMM concentrated positions suffer >= this; treat as a lower bound.
+        # §393: RECENT candles only (last 10d) — dead-history candles hide real IL.
         drags = []
         cs = p.get("_candles") or []
-        for i in range(1, len(cs)):
-            c0, c1 = cs[i-1]["close"], cs[i]["close"]
+        now_s = now_ms / 1000
+        cs_recent = [c for c in cs if now_s - c["timestamp"] <= 10 * 86400]
+        for i in range(1, len(cs_recent)):
+            c0, c1 = cs_recent[i-1]["close"], cs_recent[i]["close"]
             if c0 and c1 and c0 > 0:
                 k = c1 / c0
                 drags.append(2 * (k ** 0.5) / (1 + k) - 1)
-        if drags:
+        if len(cs_recent) >= 5 and drags:
             recent = drags[-7:]
             p["il_daily_avg7"] = round(sum(recent) / len(recent), 5)
             p["il_worst_day"] = round(min(drags), 5)
@@ -138,17 +153,21 @@ def main():
         p.pop("_candles", None)
 
     # Deployment-grade watchlist (lesson from the 2026-09-09 live experiment):
-    # aged (30d+), near-zero IL (<1%/day), volume alive, freeze authority off,
-    # net yield >= 2%/day. Only these are eligible for 0.5 SOL wide-range arms.
+    # aged (30d+), near-zero IL (<1%/day on RECENT candles), volume alive,
+    # freeze authority off, net yield >= 2%/day. §393 adds: majority of the
+    # last 21 days actually traded (kills resurrected-dead pools like XMR-SOL),
+    # and no intraday sweep >2x high/low in the last 10d (kills violent pumps).
     deploy_grade = [p for p in ranked
                     if p.get("days", 0) >= 30
                     and p.get("il_daily_avg7") is not None and p["il_daily_avg7"] > -0.01
                     and p.get("vol_alive_ratio") is not None and p["vol_alive_ratio"] >= 0.5
                     and p.get("fa_disabled")
-                    and p.get("net_daily_lp") is not None and p["net_daily_lp"] >= 0.02]
+                    and p.get("net_daily_lp") is not None and p["net_daily_lp"] >= 0.02
+                    and p.get("live_days_21", 0) >= 10
+                    and p.get("max_hl_range_10d") and p["max_hl_range_10d"] < 2.0]
     with open("lp_watchlist.json", "w") as f:
         json.dump({"generated_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime()),
-                   "criteria": "age>=30d, IL<1%/d, vol_alive>=0.5, fa_disabled, net>=2%/d",
+                   "criteria": "age>=30d, IL<1%/d(10d-recent), vol_alive>=0.5, fa_disabled, net>=2%/d, live_days_21>=10, max_hl_10d<2x",
                    "pools": deploy_grade}, f, indent=1)
     with open("lp_watchlist.jsonl", "a") as f:
         f.write(json.dumps({"t": now_ms / 1000, "n": len(deploy_grade),

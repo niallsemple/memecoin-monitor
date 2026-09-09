@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-09 17:57",
- "criteria": "age>=30d, IL<1%/d, vol_alive>=0.5, fa_disabled, net>=2%/d",
+ "generated_utc": "2026-09-09 18:33",
+ "criteria": "age>=30d, IL<1%/d(10d-recent), vol_alive>=0.5, fa_disabled, net>=2%/d, live_days_21>=10, max_hl_10d<2x",
  "pools": []
 }
