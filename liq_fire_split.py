@@ -183,7 +183,15 @@ def fire_split(tee_pk, asset_bank, liab_bank, seize_usd, dry_run=True):
         row["result"] = f"tx1_unconfirmed: {errc}"; _log(row); return row
 
     liab_ata_s = lt.b58enc(lf.ata(payer_b, lt.b58dec(bb["mint"])))
-    dep_amt = _ata_balance(liab_ata_s)
+    # §402: tx1 can confirm before this RPC node sees the token balance —
+    # retry briefly before declaring the fill short (false short caused an
+    # unnecessary unwind + resweep on the 20:38Z fire).
+    dep_amt = 0
+    for _ in range(4):
+        dep_amt = _ata_balance(liab_ata_s)
+        if dep_amt >= liab_needed_raw:
+            break
+        time.sleep(3)
     row["liab_ata_balance"] = dep_amt
     if dep_amt < liab_needed_raw:
         # unwind: swap whatever arrived back to SOL

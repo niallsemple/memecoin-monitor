@@ -8239,3 +8239,20 @@ whale reads healthy/no-actionable.
 4. Production state: split-fire cell armed with the honest executed-sim
    gate; liq_hunt/liq_fire_split reload liq_sim from disk each call so
    mid-pass fixes take effect (sandbox module-cache defeat).
+
+## §402 — Liq experiment exact ledger + fill-read fix (2026-09-09 ~21:10 UTC)
+
+On-chain reconciliation of all 19 fire-related txs (getTransaction balance
+deltas): 7 buy/unwind cycles + ALT extend (−0.0026) + ATA create (−0.0037)
++ manual sweep (+0.4795 recovering accumulated tokens). Net matches the
+wallet exactly: 7.6823 -> 7.6417 = **−0.0406 SOL total cost** for the entire
+§399/§400 validation cycle (infrastructure + 7 protected aborts + one
+leftover-token sweep). No unexplained drift.
+
+Fix: fire_split now retries the post-tx1 ATA balance read 4x3s before
+declaring tx1_fill_short (RPC propagation lag caused a false short + extra
+unwind round-trip on the 20:38Z fire).
+
+Observation for sizing later: several $50 abort cycles unwound at
+near-breakeven or slightly positive (price drift during the ~45s hold) —
+the churn cost is small enough that aggressive gating is cheap insurance.
