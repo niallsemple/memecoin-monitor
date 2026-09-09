@@ -74269,17 +74269,18 @@ async function cmdStatusJson(conn, wallet) {
   }
   console.log(JSON.stringify(out));
 }
-async function cmdAdd(conn, wallet, poolAddr, solAmt) {
+async function cmdAdd(conn, wallet, poolAddr, solAmt, widthPct, tag2) {
   const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
   await pool.refetchStates();
   const ab = await pool.getActiveBin();
   const binStep = pool.lbPair.binStep;
-  const nBins = Math.min(Math.max(Math.round(0.28 / (binStep / 1e4)), 5), MAX_BINS_PER_TX);
+  const wp = widthPct && widthPct > 0 ? widthPct : 0.28;
+  const nBins = Math.min(Math.max(Math.round(wp / (binStep / 1e4)), 5), MAX_BINS_PER_TX);
   const minBinId = ab.binId - nBins;
   const maxBinId = ab.binId;
   const lamports = Math.round(solAmt * import_web321.LAMPORTS_PER_SOL);
   const posKp = import_web321.Keypair.generate();
-  console.log(`pool ${poolAddr} binStep=${binStep} active=${ab.binId} range=[${minBinId},${maxBinId}] deposit=${solAmt} SOL (single-sided Y)`);
+  console.log(`pool ${poolAddr} binStep=${binStep} active=${ab.binId} range=[${minBinId},${maxBinId}] width=${(wp * 100).toFixed(0)}% deposit=${solAmt} SOL (single-sided Y)`);
   const tx = await pool.initializePositionAndAddLiquidityByStrategy({
     positionPubKey: posKp.publicKey,
     totalXAmount: new import_bn15.default(0),
@@ -74300,7 +74301,9 @@ async function cmdAdd(conn, wallet, poolAddr, solAmt) {
     minBinId,
     maxBinId,
     status: "open",
-    add_sig: sig
+    add_sig: sig,
+    width_pct: wp,
+    strategy_tag: tag2 || "narrow_v1"
   });
   saveState(st);
   console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
@@ -74353,17 +74356,17 @@ async function cmdClaim(conn, wallet, poolAddr) {
   }
 }
 async function main() {
-  const [cmd, poolAddr, solAmt] = process.argv.slice(2);
+  const [cmd, poolAddr, solAmt, widthPct, tag2] = process.argv.slice(2);
   const wallet = loadWallet();
   const conn = rpc();
   try {
     if (cmd === "status") await cmdStatus(conn, wallet);
     else if (cmd === "statusjson") await cmdStatusJson(conn, wallet);
-    else if (cmd === "add") await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt));
+    else if (cmd === "add") await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
     else if (cmd === "exit") await cmdExit(conn, wallet, poolAddr);
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
     else {
-      console.log("usage: status | add <pool> <sol> | exit <pool> | claim <pool>");
+      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | exit <pool> | claim <pool>");
       process.exit(1);
     }
   } catch (e) {

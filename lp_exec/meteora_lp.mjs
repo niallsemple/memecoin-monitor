@@ -80,18 +80,19 @@ async function cmdStatusJson(conn, wallet) {
   console.log(JSON.stringify(out));
 }
 
-async function cmdAdd(conn, wallet, poolAddr, solAmt) {
+async function cmdAdd(conn, wallet, poolAddr, solAmt, widthPct, tag) {
   const pool = await DLMM.create(conn, new PublicKey(poolAddr));
   await pool.refetchStates();
   const ab = await pool.getActiveBin();
   const binStep = pool.lbPair.binStep;
-  // scale width: aim ~25-30% below active regardless of binStep
-  const nBins = Math.min(Math.max(Math.round(0.28 / (binStep / 10000)), 5), MAX_BINS_PER_TX);
+  // scale width: default ~28% below active regardless of binStep; wide arms pass widthPct=0.56
+  const wp = (widthPct && widthPct > 0) ? widthPct : 0.28;
+  const nBins = Math.min(Math.max(Math.round(wp / (binStep / 10000)), 5), MAX_BINS_PER_TX);
   const minBinId = ab.binId - nBins;
   const maxBinId = ab.binId;         // quote-only (SOL) sits at/below active
   const lamports = Math.round(solAmt * LAMPORTS_PER_SOL);
   const posKp = Keypair.generate();
-  console.log(`pool ${poolAddr} binStep=${binStep} active=${ab.binId} range=[${minBinId},${maxBinId}] deposit=${solAmt} SOL (single-sided Y)`);
+  console.log(`pool ${poolAddr} binStep=${binStep} active=${ab.binId} range=[${minBinId},${maxBinId}] width=${(wp*100).toFixed(0)}% deposit=${solAmt} SOL (single-sided Y)`);
   const tx = await pool.initializePositionAndAddLiquidityByStrategy({
     positionPubKey: posKp.publicKey,
     totalXAmount: new BN(0),
@@ -106,6 +107,7 @@ async function cmdAdd(conn, wallet, poolAddr, solAmt) {
     pool: poolAddr, position: posKp.publicKey.toBase58(),
     name: null, sol_in: solAmt, ts: Date.now() / 1000,
     entry_active_bin: ab.binId, minBinId, maxBinId, status: 'open', add_sig: sig,
+    width_pct: wp, strategy_tag: tag || 'narrow_v1',
   });
   saveState(st);
   console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
@@ -158,16 +160,16 @@ async function cmdClaim(conn, wallet, poolAddr) {
 }
 
 async function main() {
-  const [cmd, poolAddr, solAmt] = process.argv.slice(2);
+  const [cmd, poolAddr, solAmt, widthPct, tag] = process.argv.slice(2);
   const wallet = loadWallet();
   const conn = rpc();
   try {
     if (cmd === 'status') await cmdStatus(conn, wallet);
     else if (cmd === 'statusjson') await cmdStatusJson(conn, wallet);
-    else if (cmd === 'add') await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt));
+    else if (cmd === 'add') await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag);
     else if (cmd === 'exit') await cmdExit(conn, wallet, poolAddr);
     else if (cmd === 'claim') await cmdClaim(conn, wallet, poolAddr);
-    else { console.log('usage: status | add <pool> <sol> | exit <pool> | claim <pool>'); process.exit(1); }
+    else { console.log('usage: status | add <pool> <sol> [widthPct] [tag] | exit <pool> | claim <pool>'); process.exit(1); }
   } catch (e) {
     console.error('ERROR:', e.message || e);
     process.exit(2);

@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+"""Gated LP deploy driver — deploys ONLY when lp_watchlist.json qualifies the pool.
+
+Owner rule: take action only when the data says. This script refuses to deploy
+unless the target pool is in the deploy-grade watchlist written by
+meteora_lp_ranker.py (age>=30d candles, IL<1%/d, vol_alive>=0.5, fa_disabled,
+net>=2%/d). No override flag exists — if the data doesn't qualify, it exits.
+
+Usage: python3 lp_deploy_watchlist.py <pool-name-or-address> [sol] [widthPct]
+Default: XMR-SOL, 0.5 SOL, 0.56 width (wide arm, 2x the v1 narrow range).
+"""
+import json, subprocess, sys, time
+from pathlib import Path
+
+MON = Path(__file__).resolve().parent
+WATCHLIST = MON / "lp_watchlist.json"
+RANKER_REPORT = MON / "meteora_lp_ranker_report.json"
+BUNDLE = MON / "lp_exec" / "meteora_lp.bundle.cjs"
+HELIUS_KEY = (MON / "helius_key.txt").read_text().strip()
+WALLET = json.loads((MON / "live_wallet.json").read_text())
+
+
+def wallet_pubkey() -> str:
+    try:
+        from solders.keypair import Keypair  # type: ignore
+        return str(Keypair.from_bytes(bytes(WALLET["keypair_bytes"])).pubkey())
+    except Exception:
+        # fall back to last known address file
+        return "CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K"
+
+
+def sol_balance() -> float:
+    import urllib.request
+    req = urllib.request.Request(
+        f"https://mainnet.helius-rpc.com/?api-key={HELIUS_KEY}",
+        data=json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getBalance",
+                         "params": [wallet_pubkey()]}).encode(),
+        headers={"Content-Type": "application/json"})
+    r = json.loads(urllib.request.urlopen(req, timeout=20).read())
+    return r["result"]["value"] / 1e9
+
+
+def main():
+    target = sys.argv[1] if len(sys.argv) > 1 else "XMR-SOL"
+    sol = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+    width = float(sys.argv[3]) if len(sys.argv) > 3 else 0.56
+
+    wl = json.loads(WATCHLIST.read_text())
+    pools = wl.get("pools", [])
+    print(f"watchlist generated {wl.get('generated_utc')} — {len(pools)} qualified")
+    hit = next((p for p in pools
+                if target.lower() in (p.get("name", "") + p.get("address", "")).lower()), None)
+    if not hit:
+        names = [p.get("name") for p in pools]
+        print(f"REFUSED: '{target}' not in qualified watchlist {names}. "
+              f"Data does not say go. Run meteora_lp_ranker.py for a fresh scan.")
+        sys.exit(3)
+
+    # freshness gate: watchlist must be < 26h old
+    gen = time.strptime(wl["generated_utc"], "%Y-%m-%d %H:%M")
+    import calendar
+    age_h = (time.time() - calendar.timegm(gen)) / 3600
+    if age_h > 26:
+        print(f"REFUSED: watchlist is {age_h:.1f}h old — rerun ranker first.")
+        sys.exit(3)
+
+    bal = sol_balance()
+    need = sol + 0.10  # rent + tx fee reserve
+    print(f"wallet {wallet_pubkey()} balance {bal:.4f} SOL; need {need:.2f}")
+    if bal < need:
+        print("REFUSED: insufficient balance.")
+        sys.exit(3)
+
+    print(f"QUALIFIED: {hit.get('name')} net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
+          f"il={hit.get('il_daily_avg7', 0)*100:.3f}%/d days={hit.get('days')} — deploying "
+          f"{sol} SOL at {width*100:.0f}% width (tag wide_arm_v2)")
+    r = subprocess.run(["node", str(BUNDLE), "add", hit["address"], str(sol), str(width),
+                        "wide_arm_v2"], capture_output=True, text=True, timeout=180)
+    print(r.stdout.strip())
+    if r.returncode != 0:
+        print("DEPLOY FAILED:", r.stderr.strip()[:500])
+        sys.exit(2)
+    print("DEPLOYED. Next: re-enable guardian with wide-range floor params and verify "
+          "position appears in lp_positions.json.")
+
+
+if __name__ == "__main__":
+    main()
