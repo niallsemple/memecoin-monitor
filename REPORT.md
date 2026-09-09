@@ -8219,3 +8219,23 @@ unwound correctly). LIQ_SPLIT_FIRE_OK removed to stand the cell down
 immediately (verified: next attempt logged not_armed, no capital moved).
 Re-arm only after a pass started after the 20:34Z gate fix confirms the
 whale reads healthy/no-actionable.
+
+## §401 — Phantom-crossing root cause + calibration verified (2026-09-09 ~21:01 UTC)
+
+1. **Calibration verdict:** with the executed v0 sim as ground truth, our
+   scanner math matches the program to 0.04% on assets and 0.21% on liabs
+   (whale: ours $316,809/$306,218 vs program $316,924/$306,854). The formula
+   was never the problem.
+2. **The real upstream rot:** the §380b tail-budget guard deferred the full
+   liq scan on EVERY pass for ~28h (liq_deferred=true in every run artifact).
+   shock_recheck then re-estimated health from a 28h-stale watch record
+   (stale base prices + positions), producing the phantom crossing stream.
+   Fixed: defer only if the last full scan is <45 min old; a stale scan
+   forces the run (liq_forced_stale stat). Synced to the live asset.
+3. **Fresh full scan (165,554 accounts):** 20 health=-1.0 accounts are all
+   pure bad debt ($0 assets, nothing to seize — correctly skipped by hunt).
+   The whale is confirmed absent (healthy). Watch record rebuilt: 0 accounts
+   near the edge. Phantom crossings are dead at the source.
+4. Production state: split-fire cell armed with the honest executed-sim
+   gate; liq_hunt/liq_fire_split reload liq_sim from disk each call so
+   mid-pass fixes take effect (sandbox module-cache defeat).

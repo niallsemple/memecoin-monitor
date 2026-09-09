@@ -2712,9 +2712,18 @@ def run(ctx):
         # can otherwise push the run past the 20-min grid and trigger a
         # scheduler overlap-skip (§380). The 90s shock_loop still covers
         # mid-pass crossings, so deferring one full scan is low-risk.
+        # §401: UNLESS the last full scan is stale >45 min — the shock_loop's
+        # watch record comes from this scan, and a perpetually-deferred scan
+        # left it 28h stale, producing phantom crossings from dead prices.
         if (time.time() - now0) / 60 > 17.5:
-            stats["liq_deferred"] = True
-            raise RuntimeError("liq scan deferred: tail budget")
+            try:
+                _scan_age = time.time() - (MON / "liq_health_log.jsonl").stat().st_mtime
+            except Exception:
+                _scan_age = 99999
+            if _scan_age < 2700:
+                stats["liq_deferred"] = True
+                raise RuntimeError("liq scan deferred: tail budget")
+            stats["liq_forced_stale"] = round(_scan_age / 60)
         import importlib.util as _ilu7
         _s7 = _ilu7.spec_from_file_location(
             "liq_health", str(MON / "liq_health.py"))
