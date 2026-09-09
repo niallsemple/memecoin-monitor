@@ -152,7 +152,12 @@ def hunt(record: dict) -> list:
             if (not rec.get("skipped") and best_asset and best_liab
                     and best_asset[0] >= MIN_SEIZE_USD and sims_left > 0):
                 sims_left -= 1
+                # §400: reload liq_sim from disk each call — the tracker
+                # process caches plain imports, so a mid-pass fix would
+                # otherwise never take effect until the next pass.
+                import importlib
                 import liq_sim
+                importlib.reload(liq_sim)
                 seize_usd = min(best_asset[0], best_liab[0] * SEIZE_FRACTION,
                                 50.0)  # own-capital envelope until flash ships
                 rec["asset_bank"] = best_asset[1]

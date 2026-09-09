@@ -146,7 +146,10 @@ def fire_split(tee_pk, asset_bank, liab_bank, seize_usd, dry_run=True):
         row["result"] = "over_spend_cap"; _log(row); return row
 
     # Gate 1: full liquidation simulation (health-math true) before capital moves
+    # §400: reload from disk — the tracker process caches plain imports.
+    import importlib
     import liq_sim
+    importlib.reload(liq_sim)
     res = liq_sim.simulate(tee_pk, asset_bank, liab_bank, asset_amount)
     err = res.get("result", {}).get("value", {}).get("err")
     row["sim_err"] = err
