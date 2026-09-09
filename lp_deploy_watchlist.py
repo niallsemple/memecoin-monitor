@@ -9,7 +9,7 @@ net>=2%/d). No override flag exists — if the data doesn't qualify, it exits.
 Usage: python3 lp_deploy_watchlist.py <pool-name-or-address> [sol] [widthPct]
 Default: XMR-SOL, 0.5 SOL, 0.56 width (wide arm, 2x the v1 narrow range).
 """
-import json, subprocess, sys, time
+import json, os, subprocess, sys, time
 from pathlib import Path
 
 MON = Path(__file__).resolve().parent
@@ -104,8 +104,12 @@ def main():
     print(f"QUALIFIED: {hit.get('name')} net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
           f"il={hit.get('il_daily_avg7', 0)*100:.3f}%/d days={hit.get('days')} — deploying "
           f"{sol} SOL at {width*100:.0f}% width (tag wide_arm_v2)")
-    r = subprocess.run(["node", str(BUNDLE), "add", hit["address"], str(sol), str(width),
-                        "wide_arm_v2"], capture_output=True, text=True, timeout=180)
+    cmd = ["node", str(BUNDLE), "add", hit["address"], str(sol), str(width), "wide_arm_v2"]
+    if os.environ.get("LP_DRY_RUN") == "1":
+        print(f"DRY RUN — would execute: {' '.join(cmd)}")
+        print("DRY RUN OK: all gates passed, sizing done, command assembled. No tx sent.")
+        sys.exit(0)
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
     print(r.stdout.strip())
     if r.returncode != 0:
         print("DEPLOY FAILED:", r.stderr.strip()[:500])
