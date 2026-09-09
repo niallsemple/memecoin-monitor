@@ -1,0 +1,3 @@
+{"t": 1788960379.592392, "kind": "back_in_range", "name": "MUCHWOW-SOL", "pool": "FQ12kpWM9FhQKW6XBsMbTpuHesQgWT1TzS6WS9d8Z14T", "active": -213, "range": [-223, -209], "feeY": 1115301}
+{"t": 1788960379.9969358, "kind": "back_in_range", "name": "KNOTS-SOL", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "active": -174, "range": [-197, -169], "feeY": 844261}
+{"t": 1788960382.491135, "kind": "emergency_exit", "name": "tip-SOL", "pool": "GNyg8nJxDrzzKFUni7yvDzkPv1yJRFBnSMsydotsDwN2", "reason": "price fell through range (active -239 < -235) \u2014 position is all token-X", "out": "EXITED GToxYg1ws2AFvi4rLjoZoTp2uhsSf27rxB86M2W5tZUk sigs=5WcmYVdQKv3f8cTshzraL8Dy5Lvv3Ws7poeRQAQUKxu6WKvpJip5YhWE6i9dDym4VpFgKLDHfTguDYzeyc79QtZA"}

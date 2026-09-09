@@ -52,3 +52,15 @@
 13:55:23 Pumpcat-SOL: active=-441 range=[-468,-440] tvl=$45,380 vol24=$401,105 feeY=0.000050SOL feeX=4593819
 13:55:23 tip-SOL: active=-227 range=[-235,-221] tvl=$21,798 vol24=$342,899 feeY=0.000776SOL feeX=106259143
 13:55:23 guardian pass complete
+14:26:19 XMR-SOL: active=-2686 range=[-2756,-2688] tvl=$108,022 vol24=$6,717,893 feeY=0.000011SOL feeX=0
+14:26:19 XMR-SOL: idle above range (pure SOL, no fees) — watching
+14:26:19 MUCHWOW-SOL: active=-213 range=[-223,-209] tvl=$38,996 vol24=$369,778 feeY=0.001115SOL feeX=148772472
+14:26:19 MUCHWOW-SOL: BACK IN RANGE — fee accrual resumed
+14:26:19 KNOTS-SOL: active=-174 range=[-197,-169] tvl=$153,723 vol24=$937,534 feeY=0.000844SOL feeX=0
+14:26:19 KNOTS-SOL: BACK IN RANGE — fee accrual resumed
+14:26:20 CTO-SOL: active=-2016 range=[-2052,-1996] tvl=$156,754 vol24=$2,461,519 feeY=0.000711SOL feeX=0
+14:26:20 Pumpcat-SOL: active=-449 range=[-468,-440] tvl=$44,456 vol24=$391,256 feeY=0.000050SOL feeX=41106533
+14:26:20 tip-SOL: active=-239 range=[-235,-221] tvl=$22,120 vol24=$356,873 feeY=0.001110SOL feeX=175890868
+14:26:20 tip-SOL: EMERGENCY EXIT — price fell through range (active -239 < -235) — position is all token-X
+14:26:22 tip-SOL: exited ok
+14:26:22 guardian pass complete

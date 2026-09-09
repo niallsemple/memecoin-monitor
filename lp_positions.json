@@ -28,7 +28,7 @@
    "add_sig": "63zNJr23LbePVJ1cWj6G1DhSK46rgRcq2MCa3pf24m55Fs9oTEkm2xZyBGexffCVXoPwo17WMyNUCTf3YkHG3JEn",
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
-   "was_in_range": false
+   "was_in_range": true
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -43,7 +43,7 @@
    "add_sig": "2foNbxeu73TUUEJ9qhvHbL5RvqV1nHBETfNFFRP1oGhRnJrwCpBQTZHjHnrAhLWHR69X7enw4D7tJV8aezoMfWB4",
    "base_tvl": 157961.61712993582,
    "base_vol24": 861304.9114775569,
-   "was_in_range": false
+   "was_in_range": true
   },
   {
    "pool": "FkmoQ9BFwqPHKXeiqkP316BdRm6oWbokwBNkTUgTpWz6",
@@ -84,11 +84,12 @@
    "entry_active_bin": -221,
    "minBinId": -235,
    "maxBinId": -221,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5wy3RQ9Q2xYci3PpLML3G9GodC1tNGkvL9HPiq8Xc8HWXFkMHqga1o6qxZ132a9vqHMWnN8mfsZJNajZnAqVG4tw",
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
-   "was_in_range": true
+   "was_in_range": true,
+   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
   }
  ]
 }
