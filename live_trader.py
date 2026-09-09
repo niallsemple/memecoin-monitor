@@ -1335,6 +1335,13 @@ def exit_watch():
                 p["nm_touch_t"] = time.time()
             act = None
             sell_tokens = 0
+            # §392: farm tripwire (ACTIVE) — if this mint landed on the farm
+            # denylist after entry (seed-gate write, ancestry check, or manual
+            # add), exit everything immediately. A flagged mint's remaining
+            # liquidity is the farm's exit liquidity; holding is -EV at any
+            # price. Cheapest check first, outranks every profit rule.
+            if _farm_blocked(mint):
+                act, sell_tokens = "farm_trip", p["tokens_left"]
             # §210B: G2 crew tripwire (INACTIVE until g2_gate.json) —
             # swarm-shaped drains arrive within 120s of entry; an
             # immediate market sell near breakeven beats the drain.
