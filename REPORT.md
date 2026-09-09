@@ -8305,3 +8305,15 @@ Correction is small and changes no conclusions: the honest executed-sim
 gate vetoes phantom crossings at ~0.003 SOL per protected abort, and the
 whale was never liquidatable. Wallet now 7.6381 SOL, SOL-only (JitoSOL +
 liab ATAs exist, 0 tokens, retained for the fire path).
+
+## §490 — §401 force-path verified live + timeout note (2026-09-09 ~22:25 UTC)
+
+Both branches of the stale-scan fix now observed in production:
+- 21:35Z pass: record stale -> forced full tier-2 scan (165,554 accounts,
+  28.5s, logged 21:57Z mid-pass). The extra 28.5s pushed this pass into the
+  22-min run timeout — expected, recoverable (interval trigger, incremental
+  state writes); next pass ran clean.
+- 21:57Z pass: record fresh -> liq_deferred=true (legitimate defer).
+Forced scans landing in a pass will occasionally cost that pass's tail;
+acceptable. Fresh scan top-20: all health=-1.0 / ~$0-asset bad debt —
+the radar is idle because there is genuinely nothing to seize.
