@@ -8210,3 +8210,12 @@ HealthyAccount 6068 at the tx2 re-sim. Root-cause chain:
 
 Lesson pinned: any sim gate must verify unitsConsumed > 0 before treating
 err=None as a pass, and must fail closed on RPC-level errors.
+
+Post-§400 ops note (20:42 UTC): the in-flight automation pass (started
+20:07Z) holds the pre-fix liq_sim in its module cache, so it kept firing on
+the stale verdict (~3 min cadence, each safely unwound; new failure mode
+observed: tx1_fill_short — Jupiter fill landed under the repay need,
+unwound correctly). LIQ_SPLIT_FIRE_OK removed to stand the cell down
+immediately (verified: next attempt logged not_armed, no capital moved).
+Re-arm only after a pass started after the 20:34Z gate fix confirms the
+whale reads healthy/no-actionable.
