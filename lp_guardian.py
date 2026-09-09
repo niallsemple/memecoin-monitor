@@ -134,6 +134,13 @@ def main():
             rc3, out3 = run_lp("claim", p["pool"])
             action("claim", name=name, feeY=fee_y, feeX=fee_x, out=out3[:300])
             log(f"{name}: claim rc={rc3}")
+            if rc3 == 0:
+                # SOL-only rule: convert any token-side fees the claim dropped in wallet
+                rc4 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                     capture_output=True, text=True, timeout=280)
+                action("post_claim_sweep", name=name, rc=rc4.returncode,
+                       out=(rc4.stdout or "")[-400:])
+                log(f"{name}: post-claim sweep rc={rc4.returncode}")
 
     log("guardian pass complete")
 
