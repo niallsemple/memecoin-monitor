@@ -40,6 +40,42 @@ def sol_balance() -> float:
     return r["result"]["value"] / 1e9
 
 
+def token2022_safe(mint_addr: str) -> tuple:
+    """§395: Token-2022 extension audit. fa_disabled only covers the BASE
+    freeze authority; extensions can still rug you: permanent_delegate (claw
+    back), transfer_hook (block sells), non_transferable, default_account_state
+    frozen, transfer_fee up to 100%. Called at deploy time on the one selected
+    pool (too slow for the ranker's full scan)."""
+    import urllib.request
+    DANGER = {"permanentDelegate", "transferHook", "nonTransferable",
+              "nonTransferableAccount", "transferFeeConfig"}
+    req = urllib.request.Request(
+        f"https://mainnet.helius-rpc.com/?api-key={HELIUS_KEY}",
+        data=json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getAccountInfo",
+                         "params": [mint_addr, {"encoding": "jsonParsed"}]}).encode(),
+        headers={"Content-Type": "application/json"})
+    info = json.loads(urllib.request.urlopen(req, timeout=20).read())[
+        "result"]["value"]["data"]["parsed"]["info"]
+    if info.get("freezeAuthority") or info.get("mintAuthority"):
+        return False, "base mint/freeze authority still set"
+    for ext in info.get("extensions") or []:
+        name = ext.get("extension")
+        if name in DANGER:
+            return False, f"dangerous extension: {name}"
+        if name == "defaultAccountState" and (ext.get("state") or {}).get("state") == "frozen":
+            return False, "default account state = frozen"
+    return True, "clean"
+
+
+def datapi_token_x(pool_addr: str) -> str:
+    import urllib.request
+    req = urllib.request.Request(
+        f"https://dlmm.datapi.meteora.ag/pools/{pool_addr}",
+        headers={"User-Agent": "curl/8.0"})
+    d = json.loads(urllib.request.urlopen(req, timeout=20).read())
+    return (d.get("token_x") or {}).get("address")
+
+
 def size_arm(hit, bal, explicit=None):
     """Data-driven arm size. Explicit CLI size always wins (manual runs).
     Tier S (spicy, net>=2%/d): 0.5 SOL baseline, 1.0 SOL when net >= 20%/d.
@@ -103,6 +139,20 @@ def main():
           f"{' (CLI override)' if sol_arg is not None else ' (auto-sized)'}; need {need:.2f}")
     if sol <= 0 or bal < need:
         print("REFUSED: insufficient balance for the sized arm.")
+        sys.exit(3)
+
+    # §395: on-chain Token-2022 extension audit of the pool's token-X mint
+    try:
+        mint_x = datapi_token_x(hit["address"])
+        safe, why = token2022_safe(mint_x) if mint_x else (False, "no mint_x from datapi")
+        print(f"token-X audit ({(mint_x or '?')[:12]}…): {'CLEAN' if safe else 'DANGER'} — {why}")
+        if not safe:
+            print("REFUSED: token-X failed on-chain extension audit.")
+            sys.exit(3)
+    except SystemExit:
+        raise
+    except Exception as e:
+        print(f"REFUSED: token-X audit errored ({e}) — fail closed.")
         sys.exit(3)
 
     print(f"QUALIFIED: {hit.get('name')} [tier {hit.get('tier','S')}] net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
