@@ -1,0 +1,76 @@
+{
+ "positions": [
+  {
+   "pool": "D5ozarJBkGKRw7ceuftyS31cqrjooTnKyvDhNeME79bE",
+   "position": "GifWK7fZ7uUnqUYTWeZC31RB2jBp5BAfKe2Q8hTkAnAp",
+   "name": "XMR-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952664.259,
+   "entry_active_bin": -2688,
+   "minBinId": -2756,
+   "maxBinId": -2688,
+   "status": "open",
+   "add_sig": "G9hk8Segtkh7AiSrRZACi2d1zFdurvaMoA3UB83MQgCJmKXA2m5fVuawsKd2urfdVPr3T18nhEBorJxWTQw26VG"
+  },
+  {
+   "pool": "FQ12kpWM9FhQKW6XBsMbTpuHesQgWT1TzS6WS9d8Z14T",
+   "position": "2FUJ8GpmwKywhnngDPq3TntRoEXMNR1qJUh3qx6yVKJq",
+   "name": "MUCHWOW-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952747.68,
+   "entry_active_bin": -209,
+   "minBinId": -223,
+   "maxBinId": -209,
+   "status": "open",
+   "add_sig": "63zNJr23LbePVJ1cWj6G1DhSK46rgRcq2MCa3pf24m55Fs9oTEkm2xZyBGexffCVXoPwo17WMyNUCTf3YkHG3JEn"
+  },
+  {
+   "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
+   "position": "5TFtL3iaAYtuigbusXWWovCMwTafc5Sxp78hqCthMdWL",
+   "name": "KNOTS-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952792.249,
+   "entry_active_bin": -169,
+   "minBinId": -197,
+   "maxBinId": -169,
+   "status": "open",
+   "add_sig": "2foNbxeu73TUUEJ9qhvHbL5RvqV1nHBETfNFFRP1oGhRnJrwCpBQTZHjHnrAhLWHR69X7enw4D7tJV8aezoMfWB4"
+  },
+  {
+   "pool": "FkmoQ9BFwqPHKXeiqkP316BdRm6oWbokwBNkTUgTpWz6",
+   "position": "825MpzPNNxc5jJ7KJNnwp3riQsHB24eMRPok875RtNnk",
+   "name": "CTO-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952834.368,
+   "entry_active_bin": -1996,
+   "minBinId": -2052,
+   "maxBinId": -1996,
+   "status": "open",
+   "add_sig": "49anJM3iPKmS11YbTVkgt7rBZ4osoigwzTt1yhABNALgS4XfhzTPJsm1jKDkz9nrUXgVnBZaaAvDfrYhS4S6t5Un"
+  },
+  {
+   "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
+   "position": "E2MhHta88fxzxJyyvi8y6GVN236NHYaRNQoezJgzm4WG",
+   "name": "Pumpcat-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952872.976,
+   "entry_active_bin": -440,
+   "minBinId": -468,
+   "maxBinId": -440,
+   "status": "open",
+   "add_sig": "3RomHJXVzvee7Ay1grh53rdQnL2xEyZX9r5ndzXC3znV2zyHdoAkWkkmFtRQwsig8khuT7yrNQAjcAQyyQvrnW5Q"
+  },
+  {
+   "pool": "GNyg8nJxDrzzKFUni7yvDzkPv1yJRFBnSMsydotsDwN2",
+   "position": "GToxYg1ws2AFvi4rLjoZoTp2uhsSf27rxB86M2W5tZUk",
+   "name": "tip-SOL",
+   "sol_in": 0.05,
+   "ts": 1788952920.412,
+   "entry_active_bin": -221,
+   "minBinId": -235,
+   "maxBinId": -221,
+   "status": "open",
+   "add_sig": "5wy3RQ9Q2xYci3PpLML3G9GodC1tNGkvL9HPiq8Xc8HWXFkMHqga1o6qxZ132a9vqHMWnN8mfsZJNajZnAqVG4tw"
+  }
+ ]
+}
