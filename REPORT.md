@@ -8256,3 +8256,34 @@ unwind round-trip on the 20:38Z fire).
 Observation for sizing later: several $50 abort cycles unwound at
 near-breakeven or slightly positive (price drift during the ~45s hold) —
 the churn cost is small enough that aggressive gating is cheap insurance.
+
+## §487 — Guardian reliability: cron skip + dual-layer fix (2026-09-09 ~21:55 UTC)
+
+The 15-min LP guardian cron (automation_770a2f0d, marks 7/22/37/52) was
+silently skipping 3 of 4 ticks while the app was awake (20:22Z tick, then
+nothing until 21:22Z). Run history showed an effective ~hourly cadence.
+With 18/20 cron slots enabled, scheduler congestion is the likely cause.
+
+Fix in two layers, both verified live:
+1. disable/enable reset on the automation — bought exactly one tick
+   (21:22Z), then skipping resumed (no 21:37Z tick). Cron layer is now
+   treated as best-effort bonus only.
+2. §469 guardian_loop: tracker daemon thread runs lp_guardian.main()
+   every 900s in-process (beat lp_guardian_loop_beat.json, errors to
+   lp_guardian_loop_errors.log). Verified firing 21:50:39Z — guardian
+   pass executed and logged. This is now the reliable layer.
+
+## §488 — Daily LP scan fallback in tracker (2026-09-09 ~22:00 UTC)
+
+The 09:47Z daily scan+deploy cron (automation_e58c519b) already missed one
+morning (2026-09-09, app asleep). §470 daily_lp_loop closes the hole:
+every 600s the tracker checks (past 10:05 UTC) AND (lp_watchlist.json
+generated_utc != today) AND (not already done today); if all true it runs
+meteora_survivor.py -> meteora_lp_ranker.py -> lp_deploy_watchlist.py AUTO
+(280s timeout each, chain aborts before deploy on any scan failure), then
+git add/commit/push. Marker lp_daily_fallback_done.json caps at one run
+per UTC day; log lp_daily_fallback.log. All lp_deploy_watchlist.py refusal
+gates (stale data / position open / balance) still apply — the fallback
+changes WHO runs the chain, not WHEN deploy is allowed. Gate logic
+verified against the live watchlist: correctly evaluates no-fire when the
+watchlist is current.
