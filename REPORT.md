@@ -8073,3 +8073,24 @@ v3 `qualified=false`, `data_pass=false` — the manual sign-offs (exit-rule upgr
 **Verdict:** No live-stake case today. v3 fails all five data gates (worst: PF 0.47, 7d PnL −£53); v6 remains a null signal forward. E25 is the only positive-expectancy lane and it is fading (−2.9% last 200). Master question — "is there a real, executable edge?" — remains **unanswered-to-negative** on every lane currently measuring; the Sep-8 live-session cell (reported separately above) is the only area showing positive resolved n.
 
 **Next checkpoint:** 2026-09-10 06:00Z (confirm paper loop restart; re-score E25 last-200 trend).
+
+---
+
+## 2026-09-09 18:15Z — Birth-feed regime measurement (why the live sample is stalled)
+
+Multi-day block-rate audit of the PumpSwap newborn cell's entry stream (fast_entry_debug.jsonl):
+
+| Day | spawned | seed-blocked | block rate |
+|-----|---------|--------------|------------|
+| Sep 5 | 274 | 0 | 0% |
+| Sep 6 | 231 | 199 | 86% |
+| Sep 7 | 256 | 256 | 100% |
+| Sep 8 | 163 | 163 | 100% |
+| Sep 9 (to 18:12Z) | 283 | 283 | 100% |
+
+- Last-24h seed distribution: 279x literally "85.01 SOL", 3x 83.95, 1x 84.64 — one farm family with cosmetic variation. **Filter is discriminating correctly, not over-blocking** (zero false-positive signature: no sub-80 SOL or genuinely funded creates are being blocked).
+- 0 candidates passed the seed filter in 24h. Live sample frozen at 2/10 (Pumpcat +0.0176, Stockless -0.1032; net -0.0856 SOL) since Sep 8 14:09Z.
+- Steady ~12 spawns/hour around the clock — the farm runs 24/7; this is not a time-of-day effect.
+- Implication: the 10-trade review gate is market-stalled, not system-stalled. The cell's selectivity is the correct behavior; forcing entries into this flow would mean buying farm inventory.
+
+**LP redeploy pipeline (armed, awaiting data):** watchlist gates 0/134 pools today; XMR-SOL passes all gates except candle-age (28d vs 30d required, crosses ~Sep 11-12). Gated deploy driver (AUTO mode, sizing rule 0.5/1.0 SOL, 12% wallet cap, duplicate protection, LP_DRY_RUN) committed and dry-fired end-to-end; guardian re-armed with wide-arm re-center rule (smoke-tested). Daily 09:47Z scan now auto-attempts the deploy on qualification.
