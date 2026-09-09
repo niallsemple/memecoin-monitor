@@ -8094,3 +8094,22 @@ Multi-day block-rate audit of the PumpSwap newborn cell's entry stream (fast_ent
 - Implication: the 10-trade review gate is market-stalled, not system-stalled. The cell's selectivity is the correct behavior; forcing entries into this flow would mean buying farm inventory.
 
 **LP redeploy pipeline (armed, awaiting data):** watchlist gates 0/134 pools today; XMR-SOL passes all gates except candle-age (28d vs 30d required, crosses ~Sep 11-12). Gated deploy driver (AUTO mode, sizing rule 0.5/1.0 SOL, 12% wallet cap, duplicate protection, LP_DRY_RUN) committed and dry-fired end-to-end; guardian re-armed with wide-arm re-center rule (smoke-tested). Daily 09:47Z scan now auto-attempts the deploy on qualification.
+
+---
+
+## 2026-09-09 18:45Z — POST-MORTEM: the resurrected-pool trap (XMR-SOL near-miss)
+
+**What almost happened:** the deploy-grade watchlist was on track to qualify XMR-SOL at Sep 11-12 (candle-age 28d -> 30d), which would have auto-deployed a 0.5 SOL wide-range LP arm into it.
+
+**What the candles actually showed (§393):** the datapi returns a pool's EARLIEST candles first. XMR-SOL's "28 days of history" = 26 dead days (Jun 18 - Jul 13, price pinned 4.66, volume exactly 0) + 2 live days (Sep 8-9). Sep 8 opened 39.61, wicked to 4.78 — an 8.8x intraday sweep. The pool is not "82d old and stable"; it is a corpse that resurrected violently 2 days ago ($7.1M vol vs $117k TVL today = the +13%/d "yield" is spike fees, not stable income).
+
+**Why the old gates passed it:** `days` counted dead candles; `il_daily_avg7` averaged 5 flat dead candles + 2 live ones (~-0.006%/d, fake); `vol_alive_ratio` compared today's spike to peak (1.0). Every gate read stale history.
+
+**New deploy gates (all recent-data only):**
+- live_days_21 >= 10 — majority of last 21 days must have volume (XMR: 2/21, FAIL)
+- il_daily_avg7 from last-10d candles only, >=5 recent candles required else unrated (unrated cannot qualify)
+- max_hl_range_10d < 2.0 — any intraday sweep >2x in 10d disqualifies (XMR: 8.79x, FAIL)
+
+**Pattern lesson (add to farm anatomy):** memecoin seasons produce resurrected pools — dead for months, revived by a pump. Any "aged + high-yield + calm" pool reading is suspect until the calm is proven on RECENT candles. Deploy-grade = continuously alive, not historically old.
+
+**Status:** 0/134 pools qualify post-hardening. The auto-deploy chain (daily scan -> gated driver -> guardian) remains armed; it now cannot fire on stale-history pools.
