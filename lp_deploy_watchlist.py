@@ -42,14 +42,18 @@ def sol_balance() -> float:
 
 def size_arm(hit, bal, explicit=None):
     """Data-driven arm size. Explicit CLI size always wins (manual runs).
-    Baseline 0.5 SOL (owner-approved). Upgrade to 1.0 SOL when the pool's
-    net-of-IL daily yield >= 20%/d (pays the ~0.057 SOL position rent back in
-    under a day even after exit costs). Hard cap 12% of free balance so one
-    arm can never dominate the wallet; hard reserve 0.10 SOL on top."""
+    Tier S (spicy, net>=2%/d): 0.5 SOL baseline, 1.0 SOL when net >= 20%/d.
+    Tier A (safe majors, net 0.15-2%/d, IL~0): 1.0 SOL baseline — the tier-A
+    model (tier_a_lp_model.py) showed rent economics only work with size;
+    1.0 SOL on a 0.2%/d pool breaks even in ~1.4 days vs 2.9 days at 0.5.
+    Hard cap 12% of free balance; hard reserve 0.15 SOL."""
     if explicit is not None:
         return explicit
     net = hit.get("net_daily_lp") or 0
-    arm = 1.0 if net >= 0.20 else 0.5
+    if hit.get("tier") == "A":
+        arm = 1.0
+    else:
+        arm = 1.0 if net >= 0.20 else 0.5
     cap = max(0.0, (bal - 0.15) * 0.12)
     return round(max(0.0, min(arm, cap)), 3)
 
@@ -101,7 +105,7 @@ def main():
         print("REFUSED: insufficient balance for the sized arm.")
         sys.exit(3)
 
-    print(f"QUALIFIED: {hit.get('name')} net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
+    print(f"QUALIFIED: {hit.get('name')} [tier {hit.get('tier','S')}] net={hit.get('net_daily_lp', 0)*100:.2f}%/d "
           f"il={hit.get('il_daily_avg7', 0)*100:.3f}%/d days={hit.get('days')} — deploying "
           f"{sol} SOL at {width*100:.0f}% width (tag wide_arm_v2)")
     cmd = ["node", str(BUNDLE), "add", hit["address"], str(sol), str(width), "wide_arm_v2"]

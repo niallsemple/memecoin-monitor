@@ -152,22 +152,33 @@ def main():
     for p in ranked:
         p.pop("_candles", None)
 
-    # Deployment-grade watchlist (lesson from the 2026-09-09 live experiment):
-    # aged (30d+), near-zero IL (<1%/day on RECENT candles), volume alive,
-    # freeze authority off, net yield >= 2%/day. §393 adds: majority of the
-    # last 21 days actually traded (kills resurrected-dead pools like XMR-SOL),
-    # and no intraday sweep >2x high/low in the last 10d (kills violent pumps).
-    deploy_grade = [p for p in ranked
-                    if p.get("days", 0) >= 30
-                    and p.get("il_daily_avg7") is not None and p["il_daily_avg7"] > -0.01
-                    and p.get("vol_alive_ratio") is not None and p["vol_alive_ratio"] >= 0.5
-                    and p.get("fa_disabled")
-                    and p.get("net_daily_lp") is not None and p["net_daily_lp"] >= 0.02
-                    and p.get("live_days_21", 0) >= 10
-                    and p.get("max_hl_range_10d") and p["max_hl_range_10d"] < 2.0]
+    # Deployment-grade watchlist — two tiers (§394, 2026-09-09):
+    # Tier S "spicy": the original §393 bar — net >= 2%/d, vol_alive >= 0.5.
+    # Tier A "safe majors": same IL/recency/FA/calm gates, but yield gate
+    # lowered to >= 0.15%/d net and vol_alive >= 0.05, plus TVL >= $100k.
+    # Rationale: the 7-gate audit found safety and yield are mutually exclusive
+    # in this market; tier A trades yield for stability and is deployed with
+    # larger arms (rent economics fixed by size, see tier_a_lp_model.py).
+    base_safe = [p for p in ranked
+                 if p.get("days", 0) >= 30
+                 and p.get("il_daily_avg7") is not None and p["il_daily_avg7"] > -0.01
+                 and p.get("fa_disabled")
+                 and p.get("net_daily_lp") is not None
+                 and p.get("live_days_21", 0) >= 10
+                 and p.get("max_hl_range_10d") and p["max_hl_range_10d"] < 2.0]
+    tier_s = [dict(p, tier="S") for p in base_safe
+              if p.get("vol_alive_ratio") is not None and p["vol_alive_ratio"] >= 0.5
+              and p["net_daily_lp"] >= 0.02]
+    tier_a = [dict(p, tier="A") for p in base_safe
+              if p.get("vol_alive_ratio") is not None and p["vol_alive_ratio"] >= 0.05
+              and p["net_daily_lp"] >= 0.0015
+              and p.get("tvl", 0) >= 100000
+              and p["net_daily_lp"] < 0.02]
+    deploy_grade = sorted(tier_s + tier_a,
+                          key=lambda p: -p["net_daily_lp"])
     with open("lp_watchlist.json", "w") as f:
         json.dump({"generated_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime()),
-                   "criteria": "age>=30d, IL<1%/d(10d-recent), vol_alive>=0.5, fa_disabled, net>=2%/d, live_days_21>=10, max_hl_10d<2x",
+                   "criteria": "S: age>=30d, IL<1%/d(10d), volA>=0.5, fa_off, net>=2%/d, live21>=10, hl10<2x | A: same but volA>=0.05, net>=0.15%/d, tvl>=$100k",
                    "pools": deploy_grade}, f, indent=1)
     with open("lp_watchlist.jsonl", "a") as f:
         f.write(json.dumps({"t": now_ms / 1000, "n": len(deploy_grade),
