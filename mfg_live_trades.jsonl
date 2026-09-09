@@ -2818,3 +2818,4 @@
 {"action": "curve_buy", "mint": "VykmjYYk8xXGXpq6gXoFgi2g34aKRh2RFkjtJSGpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1788968386.695123}
 {"action": "curve_buy", "mint": "mUKeCyrnWVejnDmSoP44Yee64Bs25mxAWuHd3JHpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1788968386.736011}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1788968605.23742}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1788968953.1036}

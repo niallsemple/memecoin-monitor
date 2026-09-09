@@ -24,11 +24,12 @@
    "entry_active_bin": -209,
    "minBinId": -223,
    "maxBinId": -209,
-   "status": "open",
+   "status": "exited",
    "add_sig": "63zNJr23LbePVJ1cWj6G1DhSK46rgRcq2MCa3pf24m55Fs9oTEkm2xZyBGexffCVXoPwo17WMyNUCTf3YkHG3JEn",
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
-   "was_in_range": true
+   "was_in_range": true,
+   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",

@@ -111,3 +111,13 @@
 16:26:56 Pumpcat-SOL: drifted out of range — fee accrual paused
 16:26:56 Pumpcat-SOL: idle above range (pure SOL, no fees) — watching
 16:26:56 guardian pass complete
+16:48:16 XMR-SOL: active=-2656 range=[-2756,-2688] tvl=$113,971 vol24=$7,237,281 feeY=0.000011SOL feeX=0
+16:48:16 XMR-SOL: idle above range (pure SOL, no fees) — watching
+16:48:16 MUCHWOW-SOL: active=-227 range=[-223,-209] tvl=$34,911 vol24=$395,356 feeY=0.000000SOL feeX=0
+16:48:16 MUCHWOW-SOL: EMERGENCY EXIT — price fell through range (active -227 < -223) — position is all token-X
+16:48:17 MUCHWOW-SOL: exited ok
+16:48:18 KNOTS-SOL: active=-158 range=[-197,-169] tvl=$171,044 vol24=$1,038,834 feeY=0.001172SOL feeX=0
+16:48:18 KNOTS-SOL: idle above range (pure SOL, no fees) — watching
+16:48:18 Pumpcat-SOL: active=-426 range=[-468,-440] tvl=$34,538 vol24=$376,229 feeY=0.001867SOL feeX=147582797
+16:48:18 Pumpcat-SOL: idle above range (pure SOL, no fees) — watching
+16:48:18 guardian pass complete
