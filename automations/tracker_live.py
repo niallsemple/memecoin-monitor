@@ -2210,12 +2210,47 @@ def run(ctx):
                 except Exception:
                     pass
 
+    # §469: in-process LP guardian fallback. The 15-min guardian cron
+    # (automation_770a2f0d…) was silently skipping 3 of 4 ticks on
+    # 2026-09-09 (last tick 20:22Z, next 21:22Z while app awake). Before
+    # real capital sits in a DLMM position the guardian cannot depend on
+    # scheduler goodwill, so the tracker now calls lp_guardian.main()
+    # itself every 900s. Beat file + error log mirror kamino_loop.
+    GUARD_S = 900
+
+    def guardian_loop():
+        import importlib.util as _ilg
+        import os as _gos
+        while not stop.is_set():
+            stop.wait(GUARD_S)
+            if stop.is_set():
+                break
+            try:
+                (MON / "lp_guardian_loop_beat.json").write_text(json.dumps(
+                    {"ts": time.time(), "pid": _gos.getpid()}))
+            except Exception:
+                pass
+            try:
+                _sg = _ilg.spec_from_file_location(
+                    "lp_guardian", str(MON / "lp_guardian.py"))
+                _mg = _ilg.module_from_spec(_sg)
+                _sg.loader.exec_module(_mg)
+                _mg.main()
+            except Exception as _ge:
+                try:
+                    with open(MON / "lp_guardian_loop_errors.log", "a") as _gf:
+                        _gf.write(json.dumps({"ts": time.time(),
+                            "err": repr(_ge)[:400]}) + "\n")
+                except Exception:
+                    pass
+
     threading.Thread(target=killer, daemon=True).start()
     threading.Thread(target=helius_loop, daemon=True).start()
     threading.Thread(target=snapshot_loop, daemon=True).start()
     threading.Thread(target=shock_loop, daemon=True).start()
     threading.Thread(target=e2_fast_loop, daemon=True).start()
     threading.Thread(target=psnewborn_loop, daemon=True).start()
+    threading.Thread(target=guardian_loop, daemon=True).start()
     threading.Thread(target=kamino_loop, daemon=True).start()
 
     # §114: reconnect loop — a dropped PumpPortal ws previously ended
