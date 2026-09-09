@@ -80,8 +80,8 @@ def main():
     if r.returncode != 0:
         print("DEPLOY FAILED:", r.stderr.strip()[:500])
         sys.exit(2)
-    print("DEPLOYED. Next: re-enable guardian with wide-range floor params and verify "
-          "position appears in lp_positions.json.")
+    print("DEPLOYED. Guardian automation is already armed (no-op until a position is open); "
+          "it will watch floor/blacklist/TVL, compound fees, and re-center if price runs above range.")
 
 
 if __name__ == "__main__":

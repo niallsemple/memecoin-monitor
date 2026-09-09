@@ -128,6 +128,34 @@ def main():
 
         if not in_rng and active > hi:
             log(f"{name}: idle above range (pure SOL, no fees) — watching")
+            # wide-arm re-center: price ran up through the range; position is pure
+            # SOL earning nothing. After 2 consecutive passes above range, exit
+            # (claim+close refunds rent) and attempt a gated re-deploy at the new
+            # price. Re-deploy refuses unless the watchlist still qualifies.
+            if p.get("strategy_tag") == "wide_arm_v2":
+                p["above_range_passes"] = p.get("above_range_passes", 0) + 1
+                json.dump(st, open(STATE_F, "w"), indent=1)
+                if p["above_range_passes"] >= 2:
+                    log(f"{name}: RE-CENTER — above range {p['above_range_passes']} passes; exit + gated redeploy")
+                    rc2, out2 = run_lp("exit", p["pool"])
+                    action("recenter_exit", name=name, pool=p["pool"], out=out2[:400])
+                    if "EXITED" in out2:
+                        p["status"] = "exited"; p["exit_reason"] = "recenter_above_range"
+                        json.dump(st, open(STATE_F, "w"), indent=1)
+                        rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                             capture_output=True, text=True, timeout=280)
+                        action("recenter_sweep", name=name, rc=rc5.returncode)
+                        rc6 = subprocess.run([sys.executable, os.path.join(MON, "lp_deploy_watchlist.py"), name],
+                                             capture_output=True, text=True, timeout=280)
+                        action("recenter_redeploy", name=name, rc=rc6.returncode,
+                               out=(rc6.stdout or "")[-400:])
+                        log(f"{name}: redeploy rc={rc6.returncode} (refusal = data no longer qualifies)")
+                    else:
+                        log(f"{name}: RE-CENTER EXIT FAILED rc={rc2}: {out2[:300]}")
+        else:
+            if p.get("above_range_passes"):
+                p["above_range_passes"] = 0
+                json.dump(st, open(STATE_F, "w"), indent=1)
 
         if fee_y >= CLAIM_MIN_SOL * 1e9:
             log(f"{name}: claiming fees ({fee_y/1e9:.6f} SOL side)")
