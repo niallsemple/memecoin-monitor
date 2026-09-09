@@ -146,6 +146,43 @@ def _farm_blocked(mint):
         return False
 
 
+_T2022_SAFE_CACHE = {}
+
+
+def _t2022_blocked(mint):
+    """§396: Token-2022 extension audit for the fast buy path. Blocks mints
+    with live mint/freeze authority or dangerous extensions (permanent
+    delegate, transfer hook, non-transferable, frozen default state,
+    transfer fee). Fail-OPEN on RPC error (logged) — the birth window is
+    seconds wide and §389/§391 already cover the known farm; this gate
+    catches extension rugs. Results cached per mint (immutable on-chain)."""
+    if mint in _T2022_SAFE_CACHE:
+        return _T2022_SAFE_CACHE[mint]
+    blocked = False
+    try:
+        r = _rpc("getAccountInfo", [mint, {"encoding": "jsonParsed"}])
+        info = (((r or {}).get("result") or {}).get("value") or {}) \
+            .get("data", {}).get("parsed", {}).get("info") or {}
+        if info.get("freezeAuthority") or info.get("mintAuthority"):
+            blocked = True
+        else:
+            for ext in info.get("extensions") or []:
+                n = ext.get("extension")
+                if n in ("permanentDelegate", "transferHook",
+                         "nonTransferable", "nonTransferableAccount",
+                         "transferFeeConfig"):
+                    blocked = True
+                    break
+                if n == "defaultAccountState" and \
+                        (ext.get("state") or {}).get("state") == "frozen":
+                    blocked = True
+                    break
+    except Exception:
+        return False  # fail open on RPC error; do not cache
+    _T2022_SAFE_CACHE[mint] = blocked
+    return blocked
+
+
 def _rpc(method, params):
     for attempt in range(4):
         # §164: ordered fallback — Helius first on every call, public only
@@ -511,6 +548,10 @@ def buy(mint, reason="signal", size_sol=None):
         return row
     if _farm_blocked(mint):
         row["result"] = "refused: farm denylist (§389)"
+        _log(row)
+        return row
+    if _t2022_blocked(mint):
+        row["result"] = "refused: Token-2022 dangerous extension/authority (§396)"
         _log(row)
         return row
     # §246: deployer scorecard — repeat-offender rug crews from our own
