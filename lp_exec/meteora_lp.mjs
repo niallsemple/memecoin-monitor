@@ -56,6 +56,30 @@ async function cmdStatus(conn, wallet) {
   }
 }
 
+async function cmdStatusJson(conn, wallet) {
+  const st = loadState();
+  const out = [];
+  for (const p of st.positions.filter(x => x.status === 'open')) {
+    try {
+      const pool = await DLMM.create(conn, new PublicKey(p.pool));
+      const ab = await pool.getActiveBin();
+      const { userPositions } = await pool.getPositionsByUserAndLbPair(wallet.publicKey);
+      const mine = userPositions.find(u => u.publicKey.toBase58() === p.position);
+      if (!mine) { out.push({ position: p.position, pool: p.pool, name: p.name, error: 'not_onchain' }); continue; }
+      const d = mine.positionData;
+      out.push({
+        position: p.position, pool: p.pool, name: p.name,
+        activeBin: ab.binId, lowerBinId: d.lowerBinId, upperBinId: d.upperBinId,
+        inRange: ab.binId >= d.lowerBinId && ab.binId <= d.upperBinId,
+        feeX_lamports: d.feeX?.toString(), feeY_lamports: d.feeY?.toString(),
+      });
+    } catch (e) {
+      out.push({ position: p.position, pool: p.pool, name: p.name, error: String(e.message || e) });
+    }
+  }
+  console.log(JSON.stringify(out));
+}
+
 async function cmdAdd(conn, wallet, poolAddr, solAmt) {
   const pool = await DLMM.create(conn, new PublicKey(poolAddr));
   await pool.refetchStates();
@@ -133,6 +157,7 @@ async function main() {
   const conn = rpc();
   try {
     if (cmd === 'status') await cmdStatus(conn, wallet);
+    else if (cmd === 'statusjson') await cmdStatusJson(conn, wallet);
     else if (cmd === 'add') await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt));
     else if (cmd === 'exit') await cmdExit(conn, wallet, poolAddr);
     else if (cmd === 'claim') await cmdClaim(conn, wallet, poolAddr);
