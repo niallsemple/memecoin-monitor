@@ -8130,3 +8130,48 @@ min-proceeds floor (§235) and farm_trip (§392), the sell side is closed.
 Also live-verified today: farm denylist refusing pool-path entries in production
 (PICKLES refused 2x via §389, 19:4xZ); §396 Token-2022 extension gate deployed to buy();
 two-tier LP watchlist armed for 09:47Z auto-deploy (top: TOAD-SOL, tier A, ~0.9 SOL).
+
+## §399 — Split-tx liquidation fire path live-armed (2026-09-09 ~21:10 UTC)
+
+**Problem found:** the standing marginfi radar's only persistent actionable
+account (83UzL8xX, ~$359k memecoin debt vs $80k JitoSOL + $233k cbBTC +
+$56k SOL collateral, 370 sightings over ~4 days) could never fire: the atomic
+flash recipe blew the 1232-byte packet (1748-1776B), and after fixing that,
+the 64-account lock limit (TooManyAccountLocks) — the liquidatee's
+health-check accounts (35) + a memecoin-liab Jupiter route (+47) cannot share
+one tx. Every incumbent liquidator using the standard flash recipe hits the
+same wall — the likely reason the account sits unclaimed.
+
+**Fixes shipped:**
+1. liq_alt_extend.py: extended ALT #4 with the 13 uncovered reusable keys
+   (tx 5nAaLmcT…, ~0 SOL) — packet now fits.
+2. liq_flash.py: skip ATA-create ixs when the ATA is verified on-chain
+   (fail-closed `_ata_verified`); created the JitoSOL + liab ATAs
+   (tx 3kTB4QbQ…). Saves ~9 locks but the swap leg still overflows.
+3. **liq_fire_split.py — the working path:** 3-tx split with own capital,
+   no flash loan: tx1 Jupiter SOL->liab, tx2 deposit+refreshes+liquidate+
+   withdraw_all (591B, ~50 locks — fits), tx3 seized->SOL. Gates: liq_sim
+   health-true sim before capital moves, tx2 re-sim with real balances
+   post-tx1, automatic unwind swap on any tx2 failure, MIN_EDGE_USD 1.0,
+   MAX_SOL_PER_FIRE 1.25, arming file LIQ_SPLIT_FIRE_OK.
+
+**Measured economics (quotes, not guesses):** round-trip swap cost ~0.45%
+(measured live on the abort below); price impact 0.00% at $50-$1000 sizes —
+the liab token is deep. Net edge ~ seize x (2.5% - ~0.5%): $50 -> ~$1.0,
+$500 -> ~$11. Program sim passes at every size up to $10k seize (no partial
+cap binds). Constraint is OUR capital: SOL is $103 (wallet 7.68 SOL ~ $790),
+so auto-fires capped at $50-100 until sample validates.
+
+**First live fire (instrumented, $100 seize):** tx1 bought liab (3iQs1gZC…,
+0.956 SOL), tx2 sim rejected HealthyAccount 6068 — the account's health
+flickers around 0 and had recovered in the ~2 min between manual scan and
+fire — unwind sold back (22dhYkE2…). Measured abort cost: 0.0043 SOL (~$0.44).
+Safety path worked end-to-end on mainnet. Fix: wired fire_split into the
+90-second shock loop in tracker_live.py so fires land in the SAME window as
+the crossing detection (flash path still preferred when it fits; split fires
+only when flash fails, one hit per pass, liq_hunt now records asset/liab
+bank keys).
+
+**Status:** armed and unattended. Watch liq_split_fires.jsonl for
+result=confirmed (net_sol) vs abort cost accumulation; if aborts exceed
+~5 per confirmed fire, add a 2-consecutive-crossing flicker guard.

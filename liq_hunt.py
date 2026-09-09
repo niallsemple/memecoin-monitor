@@ -155,6 +155,8 @@ def hunt(record: dict) -> list:
                 import liq_sim
                 seize_usd = min(best_asset[0], best_liab[0] * SEIZE_FRACTION,
                                 50.0)  # own-capital envelope until flash ships
+                rec["asset_bank"] = best_asset[1]
+                rec["liab_bank"] = best_liab[1]
                 amount = int(seize_usd / best_asset[4] * (10 ** best_asset[3]))
                 res = liq_sim.simulate(pk, best_asset[1], best_liab[1], amount)
                 err = res.get("result", {}).get("value", {}).get("err")

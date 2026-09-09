@@ -1877,6 +1877,31 @@ def run(ctx):
                                       "actionable": h.get("actionable"),
                                       "skipped": h.get("skipped")}
                                      for h in _hits]}) + "\n")
+                    # §399: split-tx fire fallback — the atomic flash recipe
+                    # exceeds the 64-account lock limit on multi-bank
+                    # liquidatees (TooManyAccountLocks); the 3-tx split path
+                    # (buy liab -> deposit+liquidate+withdraw -> exit) fits.
+                    # Fire only when the flash path failed, one hit per pass;
+                    # fire_split's own gates (sim, arming file, spend cap,
+                    # tx2 re-sim + unwind) apply.
+                    for _h in _hits:
+                        if not (_h.get("actionable") and _h.get("asset_bank")
+                                and _h.get("liab_bank")):
+                            continue
+                        if _h.get("fire_result") in ("confirmed", "dry_run_sim_ok"):
+                            continue
+                        try:
+                            _s11 = _ilu9.spec_from_file_location(
+                                "liq_fire_split", str(MON / "liq_fire_split.py"))
+                            _lfs = _ilu9.module_from_spec(_s11)
+                            _s11.loader.exec_module(_lfs)
+                            _lfs.fire_split(_h["pk"], _h["asset_bank"],
+                                            _h["liab_bank"],
+                                            min(float(_h.get("sim_seize_usd") or 50.0), 100.0),
+                                            dry_run=False)
+                        except Exception:
+                            pass
+                        break
             except Exception:
                 pass
 

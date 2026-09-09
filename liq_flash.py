@@ -54,6 +54,22 @@ def ata(owner_b: bytes, mint_b: bytes) -> bytes:
     return pda([owner_b, TOK, mint_b], ATA_PROG)
 
 
+def _ata_verified(ata_b: bytes, owner_b: bytes, mint_b: bytes) -> bool:
+    """§399: True only if the ATA exists on-chain AND is a token-program
+    account with exactly this mint+owner. Fail-closed: any doubt -> False,
+    caller keeps the create_idempotent ix."""
+    try:
+        v = lh.rpc("getAccountInfo", [lt.b58enc(ata_b),
+                                      {"encoding": "base64"}])["result"]["value"]
+        if not v:
+            return False
+        raw = base64.b64decode(v["data"][0])
+        return (v["owner"] == lt.b58enc(TOK) and len(raw) >= 64
+                and raw[0:32] == mint_b and raw[32:64] == owner_b)
+    except Exception:
+        return False
+
+
 def create_ata_idempotent(payer_b: bytes, ata_b: bytes, owner_b: bytes, mint_b: bytes):
     # CreateIdempotent: discriminator 1
     return (ATA_PROG, [
@@ -312,9 +328,14 @@ def build_recipe(tee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int
     liab_ata = ata(auth_b, lb_raw[8:40])
 
     obs = recipe_obs(asset_bank, liab_bank)
-    pre = [cu_price_ix(50_000), cu_limit_ix(cu_limit),
-           create_ata_idempotent(payer_b, asset_ata, auth_b, ab_raw[8:40]),
-           create_ata_idempotent(payer_b, liab_ata, auth_b, lb_raw[8:40])]
+    pre = [cu_price_ix(50_000), cu_limit_ix(cu_limit)]
+    # §399: skip ATA-creation ixs when the ATA already exists on-chain —
+    # each create ix costs ~6 account locks and pushed the recipe past the
+    # 64-lock limit (TooManyAccountLocks) on multi-bank liquidatees.
+    if not _ata_verified(asset_ata, auth_b, ab_raw[8:40]):
+        pre.append(create_ata_idempotent(payer_b, asset_ata, auth_b, ab_raw[8:40]))
+    if not _ata_verified(liab_ata, auth_b, lb_raw[8:40]):
+        pre.append(create_ata_idempotent(payer_b, liab_ata, auth_b, lb_raw[8:40]))
     liq_ixs = build_liq_ix(tee_pk, asset_bank, liab_bank, asset_amount,
                            payer_b=payer_b)
     wd = build_withdraw_ix(asset_bank, obs)
