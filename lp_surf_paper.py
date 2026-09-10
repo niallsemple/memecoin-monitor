@@ -274,13 +274,31 @@ def main():
         print('[skip] no price for top candidate')
         save_state(st)
         return
+    entry_mom_wait_s = 20
+    entry_mom_min = -0.005      # do not chase a top candidate still falling >0.5%/20s
+    time.sleep(entry_mom_wait_s)
+    price2 = current_price(c)
+    mom = (price2 / price - 1) if (price and price2) else 0.0
+    if mom < entry_mom_min:
+        log({'kind': 'skip', 'reason': 'entry_momentum', 'pair': c['pair'],
+             'provider': c['provider'], 'pool': c['pool'],
+             'mom_pct': round(mom * 100, 3), 'wait_s': entry_mom_wait_s,
+             'fee_day': round(c['fee_day'], 5)})
+        print(f"[skip] entry momentum {mom*100:+.2f}%/{entry_mom_wait_s}s on "
+              f"{c['pair']} ..{c['pool'][-6:]}")
+        save_state(st)
+        return
+    if price2:
+        price = price2
+    entry_ts = time.time()
     deposit = st['bankroll']                      # compound: full stack
     st['open'] = {'provider': c['provider'], 'pool': c['pool'], 'pair': c['pair'],
-                  'entry_ts': now, 'entry_price': price, 'deposit': deposit,
+                  'entry_ts': entry_ts, 'entry_price': price, 'deposit': deposit,
                   'fees_est': 0.0, 'fee_day_at_entry': c['fee_day']}
     log({'kind': 'enter', 'pair': c['pair'], 'provider': c['provider'],
          'pool': c['pool'], 'price': price, 'deposit': round(deposit, 6),
-         'age_h': round(c['age_h'], 1), 'fee_day': round(c['fee_day'], 5)})
+         'age_h': round(c['age_h'], 1), 'fee_day': round(c['fee_day'], 5),
+         'entry_mom_pct': round(mom * 100, 3)})
     print(f"[enter] {c['pair']} ({c['provider']}) @ {price} deposit {deposit:.4f} SOL (paper)")
     save_state(st)
 
