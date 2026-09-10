@@ -153,9 +153,12 @@ def fetch_alt(alt_pk: str):
     return [body[i:i + 32] for i in range(0, len(body), 32)]
 
 
-def jup_quote(input_mint: str, output_mint: str, amount_raw: int, slippage_bps=300):
+def jup_quote(input_mint: str, output_mint: str, amount_raw: int, slippage_bps=300,
+              max_accounts=None):
     q = (f"inputMint={input_mint}&outputMint={output_mint}"
          f"&amount={int(amount_raw)}&slippageBps={slippage_bps}")
+    if max_accounts:  # §403: honored ONLY on the quote call — forces fewer legs
+        q += f"&maxAccounts={int(max_accounts)}"
     with urllib.request.urlopen(f"{lt.JUP_Q}?{q}", timeout=20) as r:
         return json.loads(r.read())
 
@@ -310,12 +313,21 @@ def our_alts():
 
 def build_recipe(tee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int,
                  swap_in_raw: int, payer_b: bytes, slippage_bps=300,
-                 cu_limit=1_200_000):
+                 cu_limit=1_200_000, quote_max_accounts=None,
+                 skip_withdraw=False):
     """§337 full flash-liquidation recipe:
       compute budget -> create ATAs -> start_flashloan -> [oracle refreshes]
       -> liquidate -> withdraw_all(seized) -> Jupiter swap asset->liab
       -> repay_all(liab) -> end_flashloan.
-    Returns (instructions, alt_pk_strs)."""
+    Returns (instructions, alt_pk_strs).
+
+    §403: quote_max_accounts passes maxAccounts to the QUOTE call (the only
+    place Jupiter honors it) — forces fewer route legs, which is the only
+    real way to cut the 64-lock TooManyAccountLocks wall (ALT-loaded
+    accounts still count). skip_withdraw drops the withdraw_all leg from the
+    atomic tx (seized collateral stays on our mfi account; a later tx sweeps
+    it) — saves its bank/vault/dest unique accounts when a liquidatee's
+    observation set pushes the recipe over the lock limit."""
     from liq_sim import build_liq_ix
     ab_raw = acct_raw(asset_bank)
     lb_raw = acct_raw(liab_bank)
@@ -338,8 +350,9 @@ def build_recipe(tee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int
         pre.append(create_ata_idempotent(payer_b, liab_ata, auth_b, lb_raw[8:40]))
     liq_ixs = build_liq_ix(tee_pk, asset_bank, liab_bank, asset_amount,
                            payer_b=payer_b)
-    wd = build_withdraw_ix(asset_bank, obs)
-    quote = jup_quote(asset_mint, liab_mint, swap_in_raw, slippage_bps)
+    wd = None if skip_withdraw else build_withdraw_ix(asset_bank, obs)
+    quote = jup_quote(asset_mint, liab_mint, swap_in_raw, slippage_bps,
+                      max_accounts=quote_max_accounts)
     swap_ixs, jup_alts = jup_swap_ixs(quote, LIQ_AUTH)
     alts = our_alts() + jup_alts
 
@@ -353,12 +366,47 @@ def build_recipe(tee_pk: str, asset_bank: str, liab_bank: str, asset_amount: int
     end = (PROG, [(mfi_b, True, False), (group, False, False),
                   (auth_b, False, True)] + obs, END_DISC)
 
-    mid = liq_ixs + [wd] + swap_ixs + [repay]
+    mid = liq_ixs + ([wd] if wd else []) + swap_ixs + [repay]
     end_index = len(pre) + 1 + len(mid)  # index of `end` in the final list
     start = (PROG, [(mfi_b, True, False), (auth_b, False, True),
                     (IXS_SYSVAR, False, False)],
              START_DISC + struct.pack("<Q", end_index))
     return pre + [start] + mid + [end], alts
+
+
+def ensure_atas(asset_bank: str, liab_bank: str, payer_b: bytes,
+                timeout_s: int = 45) -> dict:
+    """§403: tx0 — create the asset/liab ATAs in a standalone tx so the
+    atomic flash recipe can omit its create legs (each costs ~6 unique
+    account locks; on fat liquidatees that is what pushes the recipe past
+    the 64-lock TooManyAccountLocks wall). Idempotent: sends only for ATAs
+    that do not verify on-chain."""
+    import time as _t
+    auth_b = lt.b58dec(LIQ_AUTH)
+    creates = []
+    for raw in (acct_raw(asset_bank), acct_raw(liab_bank)):
+        a = ata(auth_b, raw[8:40])
+        if not _ata_verified(a, auth_b, raw[8:40]):
+            creates.append(create_ata_idempotent(payer_b, a, auth_b, raw[8:40]))
+    if not creates:
+        return {"result": "atas_present"}
+    tx = build_v0_tx(payer_b,
+                     [cu_price_ix(50_000), cu_limit_ix(200_000)] + creates)
+    sig = (lh.rpc("sendTransaction", [tx, {"encoding": "base64"}])
+           or {}).get("result")
+    if not sig:
+        return {"result": "send_fail"}
+    deadline = _t.time() + timeout_s
+    while _t.time() < deadline:
+        st = lh.rpc("getSignatureStatuses",
+                    [[sig], {"searchTransactionHistory": True}])
+        v = ((st.get("result") or {}).get("value") or [None])[0]
+        if v and v.get("confirmationStatus") in ("confirmed", "finalized"):
+            if v.get("err"):
+                return {"result": "tx0_failed", "sig": sig, "err": v["err"]}
+            return {"result": "tx0_ok", "sig": sig}
+        _t.sleep(2)
+    return {"result": "tx0_unconfirmed", "sig": sig}
 
 
 if __name__ == "__main__":

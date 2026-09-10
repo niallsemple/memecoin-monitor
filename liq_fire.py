@@ -240,29 +240,52 @@ def fire_flash(liquidatee: str, asset_bank: str, liab_bank: str, amount: int,
     import liq_flash
     wallet_key, wallet_addr = lt._load_key()
     wallet_b = lt.b58dec(wallet_addr)
-    try:
-        ixs, alts = liq_flash.build_recipe(
-            liquidatee, asset_bank, liab_bank, amount,
-            swap_in, wallet_b)
-        tx = liq_flash.build_v0_tx(wallet_b, ixs, alts)
-    except Exception as e:
-        row["result"] = "build_error"
-        row["error"] = str(e)[:300]
-        _log_fire(row); return row
-    sim = lh.rpc("simulateTransaction", [tx, {"encoding": "base64",
-                 "sigVerify": False, "replaceRecentBlockhash": True,
-                 "commitment": "processed"}])
-    if sim.get("error"):
-        row["result"] = "sim_rpc_error"
-        row["rpc_error"] = json.dumps(sim["error"])[:300]
-        _log_fire(row); return row
-    val = sim["result"]["value"]
-    row["sim_err"] = val.get("err")
-    row["sim_units"] = val.get("unitsConsumed")
-    if val.get("err"):
-        row["result"] = "sim_failed"
-        row["logs_tail"] = [l for l in (val.get("logs") or []) if "rror" in l or "health" in l][-4:]
-        _log_fire(row); return row
+    # §403: two variants — full recipe first (withdraw inside); if the sim
+    # hits TooManyAccountLocks (fat liquidatee observation set), fall back to
+    # the compact recipe: tx0 pre-creates ATAs, withdraw leg dropped (seized
+    # collateral swept later via exit_seized), Jupiter quote capped at 24
+    # accounts (fewer route legs — ALT-loaded accounts still count toward
+    # the 64-lock wall, so only fewer legs helps).
+    variants = [dict(), dict(quote_max_accounts=24, skip_withdraw=True)]
+    tx = None
+    for vi, kw in enumerate(variants):
+        if vi == 1:
+            row["compact_retry"] = True
+            row["needs_sweep"] = True
+            if not dry_run:
+                r0 = liq_flash.ensure_atas(asset_bank, liab_bank, wallet_b)
+                row["ata_tx0"] = r0
+                if r0.get("result") not in ("atas_present", "tx0_ok"):
+                    row["result"] = "ata_tx0_" + r0.get("result", "fail")
+                    _log_fire(row); return row
+        try:
+            ixs, alts = liq_flash.build_recipe(
+                liquidatee, asset_bank, liab_bank, amount,
+                swap_in, wallet_b, **kw)
+            tx = liq_flash.build_v0_tx(wallet_b, ixs, alts)
+        except Exception as e:
+            if vi == 0:
+                continue  # e.g. quote route failure — try compact variant
+            row["result"] = "build_error"
+            row["error"] = str(e)[:300]
+            _log_fire(row); return row
+        sim = lh.rpc("simulateTransaction", [tx, {"encoding": "base64",
+                     "sigVerify": False, "replaceRecentBlockhash": True,
+                     "commitment": "processed"}])
+        if sim.get("error"):
+            row["result"] = "sim_rpc_error"
+            row["rpc_error"] = json.dumps(sim["error"])[:300]
+            _log_fire(row); return row
+        val = sim["result"]["value"]
+        row["sim_err"] = val.get("err")
+        row["sim_units"] = val.get("unitsConsumed")
+        if val.get("err") == "TooManyAccountLocks" and vi == 0:
+            continue  # compact fallback
+        if val.get("err"):
+            row["result"] = "sim_failed"
+            row["logs_tail"] = [l for l in (val.get("logs") or []) if "rror" in l or "health" in l][-4:]
+            _log_fire(row); return row
+        break
     if dry_run:
         row["result"] = "dry_run_sim_ok"
         _log_fire(row); return row
