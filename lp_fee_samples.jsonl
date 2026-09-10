@@ -24,3 +24,5 @@
 {"ts": 1789046966.549236, "utc": "2026-09-10T13:29:26Z", "lo": 306, "hi": 374, "active": 373, "in_range": true, "fee_x": 565681, "fee_y_lamports": 1163539}
 {"ts": 1789049148.637457, "utc": "2026-09-10T14:05:48Z", "lo": 312, "hi": 380, "active": 389, "in_range": false, "fee_x": 0, "fee_y_lamports": 0}
 {"ts": 1789051648.382205, "utc": "2026-09-10T14:47:28Z", "lo": 319, "hi": 387, "active": 385, "in_range": true, "fee_x": 33969, "fee_y_lamports": 42699}
+{"ts": 1789054496.473946, "utc": "2026-09-10T15:34:56Z", "lo": 322, "hi": 390, "active": 389, "in_range": true, "fee_x": 20590, "fee_y_lamports": 36445}
+{"ts": 1789057027.425897, "utc": "2026-09-10T16:17:07Z", "lo": 322, "hi": 390, "active": 391, "in_range": false, "fee_x": 73401, "fee_y_lamports": 179378}
