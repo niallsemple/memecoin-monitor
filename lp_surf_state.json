@@ -1,14 +1,5 @@
 {
- "bankroll": 1.1793235894856964,
- "open": {
-  "provider": "meteora",
-  "pool": "H4Erwxo6h8EmLBGdfGdPNY6bSU3evYBirrhEA8FuByCT",
-  "pair": "PENIS-SOL",
-  "entry_ts": 1789079753.1110232,
-  "entry_price": 1.6746165359994e-05,
-  "deposit": 1.1793235894856964,
-  "fees_est": 0.006487304771065754,
-  "fee_day_at_entry": 0.8612013439746804
- },
- "cycles": 13
+ "bankroll": 1.1159527400140488,
+ "open": null,
+ "cycles": 14
 }
