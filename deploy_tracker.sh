@@ -5,7 +5,10 @@
 # do NOT — run this after every tracker_live.py change.
 set -e
 MON="/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor"
-A="/Users/niallsemple/Library/Application Support/kimi-desktop/daimon-share/daimon/agents/main/blueprint/automations/automation_3840d0e4-ec6c-4ed2-97e6-781059fe4095/assets"
+# 2026-09-10: retargeted from automation_3840d0e4 (DISABLED duplicate) to the
+# live curve-collector automation_139a9b3e (22m interval). Deploying to the
+# disabled copy would silently leave the live tracker unpatched.
+A="/Users/niallsemple/Library/Application Support/kimi-desktop/daimon-share/daimon/agents/main/blueprint/automations/automation_139a9b3e-89e1-4ba0-aa6d-ddebe2b896c9/assets"
 python3 -m py_compile "$MON/automations/tracker_live.py"
 cp "$MON/automations/tracker_live.py" "$A/automation.py"
 rm -rf "$A/__pycache__"
