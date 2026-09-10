@@ -15,9 +15,13 @@ Exit rules (first hit wins):
 Costs: measured fixed 0.002 SOL per full cycle (today's 4 verified re-centers).
 
 Honesty labels: fee accrual is estimated from the pool's trailing fee24h/TVL
-rate (not per-bin truth); IL uses the classic 2*sqrt(r)/(1+r) approximation for
-a 50/50-equivalent position. Real DLMM single-sided-Y behaves differently —
-this is deliberately conservative-ish. Paper only. PAPER ONLY.
+rate (not per-bin truth). IL model is provider-specific:
+  meteora -> 'ssy_v1' single-sided-Y (SOL-only, wide_arm_v2 shape): upside
+             moves cost 0 (position stays pure SOL, just stops earning);
+             downside converts Y->X bin-by-bin across the range, value factor
+             (1-f) + f*(1-r)/ln(1/r) with f = ln(1/r)/ln(1/RANGE_R_LO).
+  raydium -> classic 2*sqrt(r)/(1+r) 50/50 CLMM approximation.
+Paper only. PAPER ONLY.
 
 Run: python3 lp_surf_paper.py     (one poll cycle per run)
 State: lp_surf_state.json   Log: lp_surf_paper.jsonl
@@ -38,6 +42,10 @@ HARVEST_PCT = 0.02
 TRIPWIRE_PCT = -0.03
 TIMESTOP_MIN = 90
 CYCLE_COST_SOL = 0.002      # measured 2026-09-10
+# wide_arm_v2 canonical shape: ~68 bins x 0.8% step => range bottom ratio 0.58
+# (matches the live MET-SOL position [322..390]); single-sided-Y deposits sit
+# below the active bin and convert to X only as price descends through range.
+RANGE_R_LO = 0.58
 UA = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'}
 
 
@@ -71,6 +79,38 @@ def load_state():
 
 def save_state(s):
     json.dump(s, open(STATE_F, 'w'), indent=1)
+
+
+# ---------- IL models ----------
+
+def il_classic(r):
+    """50/50-equivalent CLMM: 2*sqrt(r)/(1+r) - 1. Loses in both directions."""
+    return 2 * (r ** 0.5) / (1 + r) - 1 if r > 0 else -1
+
+
+def il_ssy(r, r_lo=RANGE_R_LO):
+    """Single-sided-Y (SOL-only) DLMM value factor minus 1, in SOL terms.
+
+    r >= 1 (token up vs SOL): position stays pure SOL below the range ->
+    no IL (it stops earning fees, which the fee estimate does not capture —
+    noted in header). r < 1: price descends through the range converting
+    Y->X bin by bin; converted fraction f = ln(1/r)/ln(1/r_lo) (uniform
+    liquidity in ln-price), average execution factor (1-r)/ln(1/r).
+    """
+    import math
+    if r <= 0:
+        return -1
+    if r >= 1:
+        return 0.0
+    f = min(1.0, math.log(1 / r) / math.log(1 / r_lo))
+    avg = (1 - r) / math.log(1 / r)
+    return (1 - f) + f * avg - 1
+
+
+def il_for(provider, r):
+    if provider == 'meteora':
+        return il_ssy(r), 'ssy_v1'
+    return il_classic(r), 'classic'
 
 
 # ---------- candidate scans ----------
@@ -174,11 +214,12 @@ def main():
         dt_day = (now - o['entry_ts']) / 86400
         o['fees_est'] = fee_day * dt_day                      # fraction of deposit
         r = (price / o['entry_price']) if (price and o['entry_price']) else 1.0
-        il = 2 * (r ** 0.5) / (1 + r) - 1 if r > 0 else -1  # classic approx
+        il, il_model = il_for(o['provider'], r)
         age_min = (now - o['entry_ts']) / 60
         gross = (1 + o['fees_est']) * (1 + il) - 1
         print(f"[open] {o['pair']} ({o['provider']}) {age_min:.0f}min "
-              f"r={r:.3f} fees={o['fees_est']*100:+.2f}% il={il*100:+.2f}% gross={gross*100:+.2f}%")
+              f"r={r:.3f} fees={o['fees_est']*100:+.2f}% il={il*100:+.2f}% "
+              f"({il_model}) gross={gross*100:+.2f}%")
 
         reason = None
         if o['fees_est'] >= HARVEST_PCT:
@@ -195,6 +236,7 @@ def main():
                  'provider': o['provider'], 'pool': o['pool'],
                  'age_min': round(age_min, 1), 'r': round(r, 4),
                  'fees_est': round(o['fees_est'], 5), 'il_est': round(il, 5),
+                 'il_model': il_model,
                  'gross_pct': round(gross * 100, 3),
                  'net_sol': round(net_sol, 6), 'bankroll': round(st['bankroll'], 6)})
             print(f"[exit:{reason}] net {net_sol:+.6f} SOL -> bankroll {st['bankroll']:.6f}")
