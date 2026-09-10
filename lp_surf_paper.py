@@ -249,7 +249,7 @@ def main():
     cands.sort(key=lambda c: -c['fee_day'])
     print(f"[scan] {len(cands)} qualifiers")
     for c in cands[:8]:
-        print(f"  {c['provider']:8s} {str(c['pair'])[:22]:22s} age {c['age_h']:5.1f}h "
+        print(f"  {c['provider']:8s} {str(c['pair'])[:22]:22s} ..{c['pool'][-6:]} age {c['age_h']:5.1f}h "
               f"tvl ${c['tvl']/1000:6.0f}k fee/day {c['fee_day']*100:6.2f}% v/t {c['vol_tvl']:.1f}")
     if not cands:
         save_state(st)
