@@ -42,6 +42,7 @@ HARVEST_PCT = 0.02
 TRIPWIRE_PCT = -0.03
 TIMESTOP_MIN = 90
 CYCLE_COST_SOL = 0.002      # measured 2026-09-10
+TRIPWIRE_COOLDOWN_H = 6.0   # same-pool re-entry block after an IL tripwire
 # wide_arm_v2 canonical shape: ~68 bins x 0.8% step => range bottom ratio 0.58
 # (matches the live MET-SOL position [322..390]); single-sided-Y deposits sit
 # below the active bin and convert to X only as price descends through range.
@@ -72,9 +73,11 @@ def log(ev):
 
 def load_state():
     try:
-        return json.load(open(STATE_F))
+        s = json.load(open(STATE_F))
+        s.setdefault('cooldowns', {})
+        return s
     except Exception:
-        return {'bankroll': 1.0, 'open': None, 'cycles': 0}
+        return {'bankroll': 1.0, 'open': None, 'cycles': 0, 'cooldowns': {}}
 
 
 def save_state(s):
@@ -206,6 +209,7 @@ def current_fee_day(cand):
 def main():
     st = load_state()
     now = time.time()
+    st['cooldowns'] = {p: u for p, u in st.get('cooldowns', {}).items() if u > now}
 
     if st['open']:
         o = st['open']
@@ -232,22 +236,32 @@ def main():
             net_sol = o['deposit'] * gross - CYCLE_COST_SOL
             st['bankroll'] += net_sol
             st['cycles'] += 1
+            cooldown_until = None
+            if reason == 'tripwire':
+                cooldown_until = now + TRIPWIRE_COOLDOWN_H * 3600
+                st['cooldowns'][o['pool']] = cooldown_until
             log({'kind': 'exit', 'reason': reason, 'pair': o['pair'],
                  'provider': o['provider'], 'pool': o['pool'],
                  'age_min': round(age_min, 1), 'r': round(r, 4),
                  'fees_est': round(o['fees_est'], 5), 'il_est': round(il, 5),
                  'il_model': il_model,
                  'gross_pct': round(gross * 100, 3),
-                 'net_sol': round(net_sol, 6), 'bankroll': round(st['bankroll'], 6)})
+                 'net_sol': round(net_sol, 6), 'bankroll': round(st['bankroll'], 6),
+                 'cooldown_until': cooldown_until})
             print(f"[exit:{reason}] net {net_sol:+.6f} SOL -> bankroll {st['bankroll']:.6f}")
+            if cooldown_until:
+                print(f"[cooldown] ..{o['pool'][-6:]} blocked {TRIPWIRE_COOLDOWN_H:.0f}h after tripwire")
             st['open'] = None
         save_state(st)
         return
 
     # flat — scan for entry
-    cands = scan_meteora() + scan_raydium()
-    cands.sort(key=lambda c: -c['fee_day'])
-    print(f"[scan] {len(cands)} qualifiers")
+    raw = scan_meteora() + scan_raydium()
+    raw.sort(key=lambda c: -c['fee_day'])
+    blocked = st.get('cooldowns', {})
+    cands = [c for c in raw if c['pool'] not in blocked]
+    skipped = len(raw) - len(cands)
+    print(f"[scan] {len(cands)} qualifiers ({skipped} cooldown-skipped)")
     for c in cands[:8]:
         print(f"  {c['provider']:8s} {str(c['pair'])[:22]:22s} ..{c['pool'][-6:]} age {c['age_h']:5.1f}h "
               f"tvl ${c['tvl']/1000:6.0f}k fee/day {c['fee_day']*100:6.2f}% v/t {c['vol_tvl']:.1f}")
