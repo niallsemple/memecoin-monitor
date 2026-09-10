@@ -104,6 +104,20 @@
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
    "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "EihyZBjy4b7qgHkCvKnzGhfahTYhox8AkCyySFAozBK",
+   "name": null,
+   "sol_in": 0.897,
+   "ts": 1789034025.15,
+   "entry_active_bin": 364,
+   "minBinId": 296,
+   "maxBinId": 364,
+   "status": "open",
+   "add_sig": "3S5cwznWfZ4pCBn2TvuH39KqBEZTabU6rMjRddTctYTpSceMUxegTiTgk78DoaUApSLbR4sk5USfKFM9ePk6ph9L",
+   "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2"
   }
  ]
 }
