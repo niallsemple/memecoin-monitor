@@ -8317,3 +8317,59 @@ Both branches of the stale-scan fix now observed in production:
 Forced scans landing in a pass will occasionally cost that pass's tail;
 acceptable. Fresh scan top-20: all health=-1.0 / ~$0-asset bad debt —
 the radar is idle because there is genuinely nothing to seize.
+
+---
+
+## §DAILY — 2026-09-10T06:25Z daily forward-test review
+
+**Cycle health:** auto_log.md last line **2026-09-08 23:56Z** — the v2–v6 paper cycle loop remains DOWN, now **~30h** (flagged yesterday at ~6h; no restart happened). Zero new cycle lines and zero error statuses in the last 24h of the log (the only error lines anywhere are the Aug 27–29 rc=124 TIMEOUTs); state.json `first_seen` frozen at 2026-09-08 23:56:17Z. Feeds are healthy — mfg_trades.jsonl / curves.jsonl / mfg_state.json all written 07:18 local, E25 entries continuing (last entry 06:01Z today). Only the paper-book loop is dead; overnight moves in its 7 open positions are unmanaged. **Restart still outstanding.**
+
+**Book states (unchanged since last cycle 2026-09-08 23:56Z):**
+| Book | Bank | ROI | Open | Closed | Realized PnL | New trades 24h |
+|---|---|---|---|---|---|---|
+| v2 (floor 1.0) | £376.33 | −62.4% | 6 | 134 | −£622.84 | 0 |
+| v3 (floor 1.25) | £692.75 | −30.7% | 1 | 66 | −£307.07 | 0 |
+| v4 (floor 1.5) | £663.20 | −33.7% | 0 | 163 | −£336.76 | 0 |
+| v5 (+behaviour) | £961.11 | −3.9% | 0 | 48 | −£38.92 | 0 |
+| v6 (cluster+1.5) | £1,000.00 | 0.0% | 0 | 0 | £0.00 | 0 |
+
+v3's lone open is still the rule-violating `CTPoyCwk` re-entry (opened at entry_min=17,090, mc $8.07M). v2 also holds CTPoyCwk plus 5 others, incl. `DVxaAXi3` opened at entry_min=14,600 — more late re-entries of the same class.
+
+**State.json signal layer (last 24h):**
+- Cluster tags with non-empty hit: **0** (all-time 37; nothing new since the Sep-8 stand-down).
+- Behaviour verdicts last 24h: **none** (cumulative PASS 72 / RISK 73 / SKIP 56).
+- v5 last admission 2026-09-07 03:27 (3+ days silent); v6: **0 admissions in ~14 days** of forward test. trades_v4.md last close 3MimQAU3 13:46Z Sep 8 (trail-stop 0.01x, −99%); no trades_v6.md exists (never fired).
+
+**GO-LIVE GATE SCORECARD (gate_check.py, run 2026-09-10T06:18Z) — v3 NOT qualified, data_pass FALSE:**
+| Gate | Value | Threshold | Status |
+|---|---|---|---|
+| sample_size_100 | 66 closed | ≥100 | FAIL |
+| pnl_7d_nonneg | −£53.34 | ≥£0 trailing 7d | FAIL |
+| drawdown_le_10pct | 32.1% | ≤10% cash drawdown | FAIL |
+| profit_factor_1_3 | 0.47 | ≥1.3 | FAIL |
+| no_late_reentries | 11 late entries (last 50 + open) | 0 | FAIL |
+| manual: exit_rule_upgraded | false | — | PENDING |
+| manual: slippage_proof_20 | false | — | PENDING |
+| manual: ops_configured | false | — | PENDING |
+
+v3 `qualified=false`, `data_pass=false` — all three manual sign-offs (exit-rule upgrade, 20-trade slippage proof, ops config) remain open and are moot while every data gate fails. **v6 CLUSTER: all 3 gates FAIL** — labelled sample 2 runners / 3 husks (need ≥20 each), 0 fired (§19's ≥30-entry criterion at 0/30), PF n/a. `qualified=false`. No live-stake criteria met on any lane.
+
+**E25 FORWARD-VALIDATION (forward_scorecard.py, s60nm5fr, run 06:19Z; 13 pre-outage positions remain VOID):**
+- Post-fix: **915 entries, 912 closes** (3 freerolled open), win rate **89.5%**, expectancy **+2.10%** (committed +2.14%) vs frozen backtest **+5.75%**.
+- Recency: chronological thirds **+2.83% → +2.66% → +0.83%**; last 200 closes **+4.11%** (win 86.5%) — a clear rebound from yesterday's −2.88%; the last 24h of closes were strongly positive.
+- Exit mix: abort15 609 | nm_abort 143 | trail 124 | abort 32 | timestop 12 — abort-first shape intact; nm_abort still carries the big winners.
+- Full-loss (≤−50%) bleeders: 81 of 912 post-fix closes (8.8%), 21 of the last 200 — unchanged problem, worth the dedicated review.
+- n=30 gate: **915/30 — passed on sample size many times over**; the live question is expectancy vs the +5.75% line, not n.
+- Shadows: h108 +0.52% | a15 +0.18% | plain base −4.80% | s60 committed −1.26% — s60nm5fr remains the only positive lane and its recent window improved.
+- Helius: **getHealth 200, quota recovered**; feed_keeper heartbeat current, curves.jsonl and mfg_trades.jsonl live (last write 07:18 local). Curve trades and per-tx pool granularity are restored; E25 pool flow nonetheless still runs on the public-RPC fallback poller (working, zero-error).
+
+**Assessment:**
+(a) **First v6 admissions: still zero — 0/30 on the §19 criterion after ~14 days**, and now compounded by the signal layer being dark 30h. Not measurable at current rates.
+(b) **Wedge persists.** Books frozen at v2 −62% / v4 −34% / v3 −31%; no new live data to test convergence, and the reconstruction-to-live gap from August stands unchallenged.
+(c) **v5 behavioural gate: now 3+ days silent** after a lifetime ~26% admission rate — drifting from "calibrated-rare" to "never-opening". When it did fire, its TRUEq13u entries (up to +2,502 min, 2.96× detect) violated the age/mcap rules — wrong in both directions.
+(d) **E25 rebounded**: last-200 swung −2.88% → **+4.11%** in 24h; full-window +2.10% still well under the +5.75% backtest, so "tracking" is only true in the recent window. Abort/trail mix sane; 8.8% full-loss bleeders unchanged.
+(e) **Anomalies:** (1) paper loop down ~30h — restart outstanding, 7 open positions unmanaged; (2) v3 CTPoyCwk bug-trade still open (now 2+ days); (3) v2's DVxaAXi3 is another entry_min>10,000 re-entry the no_late_reentries gate counts; (4) E25 full-loss count creeping (81, +15 since yesterday's 66).
+
+**Verdict:** No live-stake case. v3 fails all five data gates; v6 is a null signal; the paper loop outage freezes any fresh evidence on the v2–v6 lanes. E25 is the sole positive-expectancy lane — its recent window (+4.1% last 200) is encouraging but one day of closes is not convergence to +5.75%. Master question remains **unanswered-to-negative** on every measurable lane; the live pumpswap cell (n=2) stays the only positive resolved evidence.
+
+**Next checkpoint:** 2026-09-11 06:00Z (paper loop restart? E25 last-200 follow-through; E25 bleeder review).

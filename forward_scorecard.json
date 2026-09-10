@@ -1,26 +1,26 @@
 {
- "updated": "2026-09-09T06:18:31Z",
+ "updated": "2026-09-10T06:19:47Z",
  "cutoff": 1788060000,
- "post_fix_entries": 761,
- "open": 6,
- "closed": 755,
- "wins": 677,
- "win_rate": 0.8967,
- "expectancy": 0.01161,
+ "post_fix_entries": 915,
+ "open": 3,
+ "closed": 912,
+ "wins": 816,
+ "win_rate": 0.8947,
+ "expectancy": 0.02101,
  "backtest_exp": 0.0575,
  "exit_reasons": {
-  "abort15": 513,
-  "abort": 28,
-  "nm_abort": 115,
-  "trail": 93,
-  "timestop": 6
+  "abort15": 603,
+  "abort": 32,
+  "nm_abort": 142,
+  "trail": 123,
+  "timestop": 12
  },
  "gate_n": 30,
- "gate_progress": "757/30",
+ "gate_progress": "915/30",
  "gate_pass": true,
- "committed_n": 757,
- "committed_exp": 0.01191,
- "freerolled_open": 2,
+ "committed_n": 915,
+ "committed_exp": 0.02135,
+ "freerolled_open": 3,
  "trades": [
   {
    "mint": "nmEbbehHkkUygKs3fMmmQgo2qpTXxWCnHQ8jiSMpump",
@@ -4860,6 +4860,13 @@
    "status": "closed"
   },
   {
+   "mint": "uYuoqDw9v4UsNb45D24ZZCicoMi8bw6aTMwmtmPpump",
+   "entry_t": 1788943193.376956,
+   "ret": 0.04,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
    "mint": "NKuaDGa9ipuUmpTLgpnJuxKxqetQydLKNEtRDEqpump",
    "entry_t": 1788896268.245426,
    "ret": 0.0844,
@@ -5294,11 +5301,18 @@
    "status": "closed"
   },
   {
+   "mint": "CmDyxQAf3zgR2shLxXtUwVgD1Yo4waNnpoyA1khUpump",
+   "entry_t": 1788938259.334935,
+   "ret": 0.0114,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
    "mint": "cGLvJDLpdYNKk11hSNBz1w6LW42CNViznGsmEFDpump",
    "entry_t": 1788932632.784807,
    "ret": 0.1765,
-   "exit": null,
-   "status": "open"
+   "exit": "timestop",
+   "status": "closed"
   },
   {
    "mint": "dSdmcH8UibGrorEqzE34e5ADkcrxMQVLYKL6sQMpump",
@@ -5310,9 +5324,9 @@
   {
    "mint": "Z8QCkiU6HtP3QogBokiTSyvHRVwR4UvTxbpZdNWpump",
    "entry_t": 1788930685.3966022,
-   "ret": 0.9195,
-   "exit": null,
-   "status": "open"
+   "ret": 0.2124,
+   "exit": "trail",
+   "status": "closed"
   },
   {
    "mint": "k5WU8sF21muJgUrs3DuXe2runSzVabTqsRZKSHopump",
@@ -5331,48 +5345,1124 @@
   {
    "mint": "YBDC1KobXdz1ZF5iRLmDoNT5SKXNfeSnXtVHVg8pump",
    "entry_t": 1788933567.850702,
-   "ret": 0.0795,
-   "exit": null,
-   "status": "open"
+   "ret": 0.3778,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "QdBJf7R8MMZDz3LMif6WyvH9yd2Vpcnc8WHjrAGpump",
+   "entry_t": 1788934334.5228539,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
   },
   {
    "mint": "WVizRPXGrhNsajeurNuaGDGSG7XVmG64d1xgiSKpump",
    "entry_t": 1788933625.07493,
-   "ret": 0.2053,
-   "exit": null,
-   "status": "open"
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "n5ZjMfE1MmZaVsHkU7qtAbK5bSU5VGiJXYGHigGpump",
+   "entry_t": 1788934771.982774,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
   },
   {
    "mint": "qnK7z6jXgSNgWep3VPrQ8i55JSV722ZEZkgD6FMpump",
    "entry_t": 1788933640.548511,
-   "ret": 0.0069,
+   "ret": 0.0357,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "QC25NWPeSy5BaVSdcRZpje91SvNw9wJMeR1fYEYpump",
+   "entry_t": 1788937226.050953,
+   "ret": 0.457,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "UVtseunu32tFdupxqJzzdTn6jzREkqk6Vb99ZCNpump",
+   "entry_t": 1788937636.9190779,
+   "ret": 0.1392,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "eRqhowzUbT8pG8t8XUBur7EbhTVpt5iJt19QBKZpump",
+   "entry_t": 1788937490.435484,
+   "ret": 0.0323,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "huzVDHsBoageEmoYWGauPoyMuEVjxNDwxWRJMnHpump",
+   "entry_t": 1788939150.574143,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "QVHkB7KZmKwP7hRmwvCFBaeiyNhAMG3MXZ17Geqpump",
+   "entry_t": 1788940931.551748,
+   "ret": 1.363,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "SeMdjTPZBZDVU6Tty7Dc1uVPAPNRqSs92b2n9Qcpump",
+   "entry_t": 1788940235.650367,
+   "ret": 0.0508,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "eZDFNTLFesogsiHtfoNMjvK5kwJsifbXfnSTeFapump",
+   "entry_t": 1788942429.580768,
+   "ret": 0.139,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "hrkrVg4vtFAAQCzBAhLvitE6Nrw8R3LV6bcPU7Jpump",
+   "entry_t": 1788951623.88346,
+   "ret": 0.1279,
+   "exit": "abort",
+   "status": "closed"
+  },
+  {
+   "mint": "BSNp55FbJKEB68kvJj9KwXLtGW7BiTz6M76StB9pump",
+   "entry_t": 1788943805.305303,
+   "ret": 0.4397,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "9zrvd2wt4bDN64My6fDjDGAQbLzRrB85nx6yefrApump",
+   "entry_t": 1788950150.28738,
+   "ret": 0.1657,
+   "exit": "timestop",
+   "status": "closed"
+  },
+  {
+   "mint": "ba4Vwga33emyReUUvH6gBHyReAJBgwy9UrmSo2Gpump",
+   "entry_t": 1788944230.076139,
+   "ret": 0.4415,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "Rgu8GgCmP7Te5xGz8dRqye7efPifSWfe8vSiVYZpump",
+   "entry_t": 1788943155.3922648,
+   "ret": 0.0446,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "T2rXVt8X8jM9hNnrQyZcKYaE73CJNeVGvmRZWncpump",
+   "entry_t": 1788946494.166369,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "ywmKAiXRpqRuY6agu4TZvoWC2eEPtQhyxYPoesCpump",
+   "entry_t": 1788946522.95595,
+   "ret": 0.2449,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "HhidY958CWazuDMFagsTgCwdaJxWin9DMozvtaVMpump",
+   "entry_t": 1788943574.901085,
+   "ret": 0.0269,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "WhXipNnbLcd1WWzXj19GCAqhiKJJAKUZ1JS5mnzpump",
+   "entry_t": 1788944449.299604,
+   "ret": 0.024,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "D5r2ernTfciNPp7VsZEb69fB436z6wguu32hWxipump",
+   "entry_t": 1788955492.079217,
+   "ret": 0.3935,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "7wPyWuD88gvXaAgE1TfN5ivGuXbiyKXy7fhJdPapump",
+   "entry_t": 1788948129.091599,
+   "ret": 0.1433,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "7kcVCQmjXZS37fvAeaxKprFpUEDARvzFiieHEkGpump",
+   "entry_t": 1788947511.8858109,
+   "ret": 0.3183,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "rNVDa1UC4VTVbfmNShoMA4ZD5RQXCvkedWsCUbNpump",
+   "entry_t": 1788947828.1721,
+   "ret": 0.0283,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "7w4Ls1KBfwhBpkoRrJtgibgR21SWvwUiSdtwoJiXpump",
+   "entry_t": 1788948272.105906,
+   "ret": 0.0263,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "cHASQjYcXF28tsWbkxZgfcogPn16XcVbap61hgfpump",
+   "entry_t": 1788960196.8650749,
+   "ret": 0.0471,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "qY2V4udsrBFw4KRvHpxm1n4kxhRyB7k77C8spaYpump",
+   "entry_t": 1788951975.801097,
+   "ret": 0.0,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "s5ZVNqn6vU9gbcKKhU33FK9DiVDpqqQ4zu9iWwnpump",
+   "entry_t": 1788952003.97569,
+   "ret": 0.032,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "KjqQyPuErBrcDMuiHNd8K6DwNJxzfom9BusjmCwpump",
+   "entry_t": 1788953070.474229,
+   "ret": 0.139,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "evdMH2rEH6BtQ8NScshesJwDw4B73Qwu6H6PuAhpump",
+   "entry_t": 1788951078.519281,
+   "ret": 0.0481,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "SsRmMFejxMktqw9WodetR33pi6dCFRQFZx1HESVpump",
+   "entry_t": 1788952872.332236,
+   "ret": 0.4572,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "AJUnj3s8hPKkkevtxrmemF1NjuPegWd7V4EAELPWpump",
+   "entry_t": 1788956326.399841,
+   "ret": 0.0707,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "65336yUJhs7jPvjEyFD7TkutvMKb4hC7uJ8171Kpump",
+   "entry_t": 1788956142.227859,
+   "ret": 0.4018,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "7Hav7MrPXw4acESsAZxxf47b6Lmgm4aQvk8XtrVpump",
+   "entry_t": 1788955446.6445901,
+   "ret": 0.0418,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "cCNPb3cu4riwuXZHRCmmKtY1h1vUpdkQpdpNBF9pump",
+   "entry_t": 1788956768.59853,
+   "ret": 0.0476,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "KYVRz5nWkUmjmrcm8EdDhCDGBpyvSP7tiBviwANpump",
+   "entry_t": 1788955672.7126741,
+   "ret": 0.0278,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "pgQwTLpsYNcpaKp4rGHgyhGsv4VuBgRDbWVpSmnpump",
+   "entry_t": 1788959442.852127,
+   "ret": 1.8645,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "FX1CKnXoTF9NvYHu2EyMaBTNmEiZfWHDJ9JNmMCpump",
+   "entry_t": 1788958590.414158,
+   "ret": 0.0435,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "mHUgwVVUVGVknC7Xx7x9j2TjhgifWAtwJvNzWmJpump",
+   "entry_t": 1788967297.4780931,
+   "ret": 0.0111,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "VykmjYYk8xXGXpq6gXoFgi2g34aKRh2RFkjtJSGpump",
+   "entry_t": 1788967287.788523,
+   "ret": 0.1738,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "4wmh5FjQCAC5G8BYyjQWHas2JgEZoBXzn34PH1Rpump",
+   "entry_t": 1788962070.942569,
+   "ret": 0.0509,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "DoiDmTARKwqsxdDVngWe2NEevBUAGz1h3k9F9iApump",
+   "entry_t": 1788958774.5244968,
+   "ret": 0.0522,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6ZuGc3gw5ERcDJeCa3yycnjjo1vSXKwpb5Q8Nr4epump",
+   "entry_t": 1788959828.040083,
+   "ret": 0.0202,
+   "exit": "abort",
+   "status": "closed"
+  },
+  {
+   "mint": "GWrzfGMuPpaV31Jkb9vfnxHE9uN3QUWfBemVFzBpump",
+   "entry_t": 1788962070.942569,
+   "ret": 1.3672,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "X8irq3zVZf2s5PCMBrya1nCu6qqiZhT3ThGfE3jpump",
+   "entry_t": 1788962897.422963,
+   "ret": 0.3598,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "1kqsDDEBxudDLsDYAB6CsBJn3Q5s7ewFVZBEeA8pump",
+   "entry_t": 1788963349.808581,
+   "ret": 0.2572,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "fKjtvtLgLqXARY7yok3ahiWFKKDUjZkFDkTJQeTpump",
+   "entry_t": 1788962070.942569,
+   "ret": 0.0353,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "xV4Mitd2zbPfWL3wRVKqvq6iQyTz7SCjXWm4xPwpump",
+   "entry_t": 1788963648.437075,
+   "ret": 0.1424,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "Kr9LUdQQQPgTo8BeLVt3hszsNBsEcUcSuFtE4wvpump",
+   "entry_t": 1788963876.1604302,
+   "ret": 0.13,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "HHR5C1q2Q42dM1NzL7KHZGAobjrx68whduNyp4Lpump",
+   "entry_t": 1788963363.935997,
+   "ret": 0.1631,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "FGPYDznUgjGAytRdQE9XV1QpEgDtykT281bkSUNpump",
+   "entry_t": 1788963705.5981598,
+   "ret": 0.193,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "dsHXWJrDzTd9BHZ7iJmpmFd5zskv8WeCwb4GmqBpump",
+   "entry_t": 1788962511.288227,
+   "ret": 0.0488,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "xth5Sm5f2UVmtTD7mBSeGyCMABXXVQk6f3MXPwtpump",
+   "entry_t": 1788965493.260905,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "5cxJmwtoXqozSCBHcn9QoPhuedM1bv1sB45S5Eb1pump",
+   "entry_t": 1788963449.416606,
+   "ret": -0.5136,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "jb9VKJGbV62Toed2dP3Zu3RuDz1jf4pMo1PPikrpump",
+   "entry_t": 1788966009.750675,
+   "ret": 0.0327,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "mUKeCyrnWVejnDmSoP44Yee64Bs25mxAWuHd3JHpump",
+   "entry_t": 1788967715.836873,
+   "ret": 0.2194,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "HSNn8ighR64zE4TJCBRpA1wQkoYDRZ1b3vA2Dh8pump",
+   "entry_t": 1788966549.6887722,
+   "ret": 0.0257,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Ftf4g5Yp95DpVgdPUJ627RWa6fp2DBuLjRqEArdDpump",
+   "entry_t": 1788966807.480963,
+   "ret": 0.0772,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "uod41xhwqdWwdxRA1SGGfkYAxmdPuY9c3Wxxungpump",
+   "entry_t": 1788966836.123939,
+   "ret": 0.0401,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "BHnsBYhzNrsEowdAt2QQ7Z39bi4qNhKS54xDBvyApump",
+   "entry_t": 1788966535.169825,
+   "ret": 0.0202,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "auqsuXNh1aqRVonE2X5oMMnx99GHmzFZp2EVkNVpump",
+   "entry_t": 1788976562.5733771,
+   "ret": 0.0163,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "WDpJ9cGD7Kd3ACR6GHRWix45rH3fuBxXimXSdzZpump",
+   "entry_t": 1788970414.345686,
+   "ret": 0.1163,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "RpFDvB7DwDG53uFrAutVmvcGjW5d1h78uXZZbvhpump",
+   "entry_t": 1788970584.3937018,
+   "ret": 1.4005,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "AFPKgDT4F8ZccGrsbpSwiiyp7ocusyGf45muYvvpump",
+   "entry_t": 1788970499.250973,
+   "ret": 0.1389,
+   "exit": "abort",
+   "status": "closed"
+  },
+  {
+   "mint": "Hi4AAwQbSWo4pXqvGQeSSYAoo7RG4cswRPLA7vZrpump",
+   "entry_t": 1788970414.345686,
+   "ret": 0.0453,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "3bJpyMyDB2DJm1BBtvmKRUeVJyXFx3UMpRmm4ggZpump",
+   "entry_t": 1788971932.872023,
+   "ret": 0.0365,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "FwC1oVksMdnZUoK8o3g8zpRiqvSnnZdRjxtuZttpump",
+   "entry_t": 1788971960.915756,
+   "ret": 0.3985,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "DimdLargrZMbcsEXyi12dfGX9AUNkwKR8djNiXGvpump",
+   "entry_t": 1788972620.3569589,
+   "ret": 0.0123,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "ozuUP6r26BjZkgv8eGDR6ZPVLGqfDGvKF5MGKq4pump",
+   "entry_t": 1788975230.566585,
+   "ret": 0.3253,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "jLMCBuwcYo6TXvSwxw2zVCjxYCgCxM3G2FKAqeMpump",
+   "entry_t": 1788975230.566585,
+   "ret": 0.4685,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "AKDPFbi8ETz2W5PQ6FGGR12XALhdQtxs7iUFagXpump",
+   "entry_t": 1788975230.566585,
+   "ret": -0.966,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "rQikgEi33uUjdE1WwJ59CAR4WCgEtAXAmhnNFnnpump",
+   "entry_t": 1788975244.65131,
+   "ret": 0.0135,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "4NDWWpBKyEwQC5HbZ5w33wbujdWftcJapCqhJuyqpump",
+   "entry_t": 1788975244.65131,
+   "ret": 0.0264,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "uuXtYBscfqqBTWfnd6Uv5mztTcCU4qwLWSi61R6pump",
+   "entry_t": 1788975329.6053371,
+   "ret": 0.0334,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6Vqm6Dim1PT5Qp3621kusRW6YLyNoCqToh4eCGjdpump",
+   "entry_t": 1788991063.588649,
+   "ret": 0.0481,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "H46YKDLMiVVVfZxQLbMfDLFktcxb4GWDo7zmYAA3pump",
+   "entry_t": 1788975443.4429939,
+   "ret": 0.074,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "D7g8PanoGEZnTrGVgWaf2MeBuaGpHzv7LxnudVYpump",
+   "entry_t": 1788975895.52767,
+   "ret": 0.0486,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "fyT26xUZvC6hZTbgGLQ9QNQKMWVGyXwmN6u8Ngppump",
+   "entry_t": 1788979231.819251,
+   "ret": 0.0151,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "h7ZmUsruyXjXYCTYpHGb62a4ntqYuw3hsDxNN1jpump",
+   "entry_t": 1788979430.530978,
+   "ret": 0.1006,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "t85LdDw4jGrxWxkJ7722Aqh3yXwNyn89hZwQcGEpump",
+   "entry_t": 1788979474.432895,
+   "ret": 0.1782,
+   "exit": "timestop",
+   "status": "closed"
+  },
+  {
+   "mint": "2NJ8fdSUvXjHFn31pyGMSXTY36x5TBEHCJAPdh1Jpump",
+   "entry_t": 1788977311.24788,
+   "ret": 0.0479,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Uqi3QGx4PzqW6ghG5HFb88A8snCAuMQbXj7c54Epump",
+   "entry_t": 1788981084.419435,
+   "ret": 0.4503,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "bvt5cw18JyRxVi8uxZyGx5yZrBXGLbsLBHwc3Fgpump",
+   "entry_t": 1788979274.517973,
+   "ret": 0.0347,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "8YMsXfv4Tkf6eeC1H5CvCqs218pDLF1nQeJGdS8Kpump",
+   "entry_t": 1788978694.258892,
+   "ret": 0.3589,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "hffq9VDFmmLazxdsj2xVVLnBS1F4F4ZwBb2UUR7pump",
+   "entry_t": 1788981834.238045,
+   "ret": 0.3649,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "aWxkLkvFV2VwX21idsdmzz1WkidfrdkvBn3ZYVZpump",
+   "entry_t": 1788981341.211352,
+   "ret": 0.004,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Mc49xogeiNFyk7mtwVNCBTVh3FZ4eDi4Po4Rtxbpump",
+   "entry_t": 1788980511.886461,
+   "ret": 0.0459,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "LiQGy5qmqx5tuzeh1osZHsT6DRcQEyUTsGFkGKVpump",
+   "entry_t": 1788989740.0391161,
+   "ret": 0.1644,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "gXnpCDZ8M6vbDP8tfKW9FbesXsVE94owajBVpZ8pump",
+   "entry_t": 1788985771.460469,
+   "ret": 0.0839,
+   "exit": "abort",
+   "status": "closed"
+  },
+  {
+   "mint": "TEQpj3YYK5ZDF2dEdji6yPLwDMHmtXQuUTqys8jpump",
+   "entry_t": 1788984029.3664188,
+   "ret": 0.0212,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "GBx1R3UmroCpnPgUohCwTdG2ebU26wuEbikTBztmpump",
+   "entry_t": 1788982650.794656,
+   "ret": 0.016,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "F3XGghSJnTU4YSFC3eXNMyTGFZQgLqDDCxJedCZupump",
+   "entry_t": 1788984043.499841,
+   "ret": 0.3819,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "2YKhbSSAwyy7CHmKR7nvPviQe8voXYKoMKQekPwHpump",
+   "entry_t": 1788985843.982189,
+   "ret": 0.0086,
+   "exit": "timestop",
+   "status": "closed"
+  },
+  {
+   "mint": "SRvkjHW5EMfV8RBu8BfvUERb2UknFK2dUNCPUTRpump",
+   "entry_t": 1788985930.034004,
+   "ret": 0.0477,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "J6AmsiDWbKhYQNN1r4eb96d46UxeYJDQxqjM4sKHpump",
+   "entry_t": 1788988445.291402,
+   "ret": -0.98,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "3hJ3oSpjGwnfc7dmMqWz2GxiMQQVytyegiQ4DtLipump",
+   "entry_t": 1788987457.475471,
+   "ret": 0.0232,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "7qsbX98BaFLRaZaUVQrWmJdUB7LRpdJ317ETw4d1pump",
+   "entry_t": 1788986366.3009338,
+   "ret": 0.0877,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "DZ3xftZn66za7dk2r98PwGx3vj8rqNSbrfBoNhGKpump",
+   "entry_t": 1788987341.482783,
+   "ret": 0.0255,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "RgMm3puR9RrreszmzSuU9L9czkPA4RSeqychArfpump",
+   "entry_t": 1788987615.969267,
+   "ret": 0.0265,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "DzsFUkdTQvgbmmFhw94DX1Y6w2zqdBBoCaDNqHkGpump",
+   "entry_t": 1788989081.6913888,
+   "ret": 0.3247,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "Js1qAhKZjyJq2pCYbrtjxCPdFP8zSmZHSy8ZvaKpump",
+   "entry_t": 1788990667.378165,
+   "ret": 0.325,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "S5Ndcd7cW51V2vypn7ZNsGCUmG9etDBpTxV8AAapump",
+   "entry_t": 1788992444.314917,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "YCqknvpN38YRtfbVsmsRTMDBdyXVvh6feEiasnJpump",
+   "entry_t": 1788991661.9910011,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "EXKnZz9mK5UBjnRHf8Q4gmSokRcqxj3VDkrW7mPKpump",
+   "entry_t": 1788992956.914603,
+   "ret": 0.3391,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "VUq8c3HRQABKPWpmQCdHYRob2Es6hSPpAvuYBGGpump",
+   "entry_t": 1788995058.4714088,
+   "ret": 0.0402,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Am1oQqCPHaUwR4vkTxZMZmAm8vvhtQRoqtWeaFipump",
+   "entry_t": 1788995129.602436,
+   "ret": 0.0228,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6h4ue58D2QvcWQysCSPDu5ZhD12GoHxL2JzRC8xpump",
+   "entry_t": 1789004471.7684832,
+   "ret": 0.0497,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "pz5MVEQBj8J9xuDdashxhP3jPrni9YqqPWQHC2Hpump",
+   "entry_t": 1788995931.635084,
+   "ret": 0.0406,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6XbvLs2eJcLcnv7KHU6bg5QGBsotMq4Fo3VUDnXpump",
+   "entry_t": 1788997251.455557,
+   "ret": 0.0149,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "HFki35TvehwWfriemFM5bFU3veTpRmAXjBDZycdpump",
+   "entry_t": 1788996364.81993,
+   "ret": 0.0407,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "rnFZUpuTEJsVUruSHNTXy8mjShjeSbYHeFqMrVmpump",
+   "entry_t": 1788998544.569876,
+   "ret": 0.3087,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "12M2rjmnnb8gFegfdhDZmiRgtxNFoLETGXXPTF35pump",
+   "entry_t": 1788999864.852183,
+   "ret": 0.0289,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "CyUZHCkUvZ5a7QbycPZ31Vx1Q1TpqzBJpeScoiKpump",
+   "entry_t": 1789004274.745047,
+   "ret": 0.005,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Es3qeAQVBw6KTsHUkbDfs1gryJ4dEh4TpNwPwb7pump",
+   "entry_t": 1788999483.911833,
+   "ret": 0.1544,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "7gKDraXJgcB1khvw87mmeYrR1uo5bsDYSUKxXyHhpump",
+   "entry_t": 1788998355.661435,
+   "ret": 0.3325,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "SYUmdqnKWYM1ZKQxatC7cwoBy5umPXYve2NaL3apump",
+   "entry_t": 1789001990.167365,
+   "ret": 0.0,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "RHgBL6JoHdaqwQfMgrrK4V5K9Bw63dEddsKMW5Kpump",
+   "entry_t": 1789001030.0848498,
+   "ret": 0.0182,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "BY3TSJFCqkmLuKB8ZkQubQnb4vHaZ9MhrLj4pzepump",
+   "entry_t": 1788999892.8854778,
+   "ret": 0.0018,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "iwSAmsgjc13qmH3MN3utsWqp4Gtau8Rav57eNiGpump",
+   "entry_t": 1789001116.243794,
+   "ret": 0.0328,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "U99Bq8SfD8PafaVQ3xQoPrRKBv1bBBpbQR6VNvEpump",
+   "entry_t": 1789003555.2403562,
+   "ret": 0.551,
    "exit": null,
    "status": "open"
+  },
+  {
+   "mint": "8xG2ybmjSmZnndb6PeerVgzCAGKfUR9oLijvT5a8pump",
+   "entry_t": 1789003699.519754,
+   "ret": 0.0371,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Ytn8MsLcGwerRhBiw6a2yRKY2gfdnrbwuRmVNKepump",
+   "entry_t": 1789006930.814952,
+   "ret": 0.1304,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "ka7BSGS6shfwVwXAJZ4Qd4M26reaiujVSGLEppLpump",
+   "entry_t": 1789013485.539326,
+   "ret": 0.4128,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "4MRZS1amt6FnebW6ZZP35a2TREj7FB6h8yScbDngpump",
+   "entry_t": 1789006198.38356,
+   "ret": 0.0043,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "X4cB31D6x391jzEsiB6acX993xG8c39L233igdzpump",
+   "entry_t": 1789005608.742333,
+   "ret": 0.0459,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "6gyVqmxS21SBpFe8qv8Ajt6SyVcYyDRo6PnR8SWvpump",
+   "entry_t": 1789004658.1423192,
+   "ret": 0.306,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "7SAamFVnFDz8UxgzsFnAnoP6rYk73wCmnDk4wgVpump",
+   "entry_t": 1789006069.707118,
+   "ret": 0.0436,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "dWqPtQt2MHmAN2yA48jp8EdAQA6z6P1jVoiWMHSpump",
+   "entry_t": 1789006155.851985,
+   "ret": 0.0683,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "HLAWrmE9KZrTHnSd4GZ6P5sx5P8g2d94ewCwCoapump",
+   "entry_t": 1789016158.170753,
+   "ret": 0.008,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "EgzNoiMiLZgRi9ne6wUbxMs5nFuDt1fWbUw3CESjpump",
+   "entry_t": 1789007543.439594,
+   "ret": 0.0311,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "nL4L8CSLbb5VJu1awhyRFm4TBh3L6D3HnQnZueMpump",
+   "entry_t": 1789009197.617697,
+   "ret": 0.0,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "eBWFxND9rCp6HMYCA15KmY8TXqFNYDa5FULYt1xpump",
+   "entry_t": 1789007644.0334232,
+   "ret": 0.032,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "avGHqZ5zSfKYWBbgAwvuc2ZaAHjpNPwr7dHbdLipump",
+   "entry_t": 1789017458.545046,
+   "ret": 0.0038,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "bWpgwBAdGhG8AMFYgiq3Yc43UFaz2Qy5RLynfAJpump",
+   "entry_t": 1789008510.828272,
+   "ret": 0.0529,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "tJGrLBf9SyiRi3RXgWstk9ycKdFMhjQLoAsTYsVpump",
+   "entry_t": 1789009934.583118,
+   "ret": 0.0267,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "GpDCaRqoDqZgzozLZ1nbvnTip6kTFPwFXmXtpCMwpump",
+   "entry_t": 1789009648.465941,
+   "ret": 0.3541,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "EA33cLE2oP2dvfsuUf7cKBSKUeeaoJzqy1ZkaQZpump",
+   "entry_t": 1789009126.133201,
+   "ret": 0.4157,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "hKZ1c42mEFRKJ4PL81wvpeGJM9kvZcReyPZiv8spump",
+   "entry_t": 1789020094.552191,
+   "ret": -0.9711,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "ebsEowsUb8UrhtmkpYxSZ5easzdMF7ZgyhAv97Xpump",
+   "entry_t": 1789012567.1982532,
+   "ret": 0.1833,
+   "exit": "timestop",
+   "status": "closed"
+  },
+  {
+   "mint": "sDFrs1JncAUAQM81E2JGvsW1vbi38fzNWmkwWxNpump",
+   "entry_t": 1789010900.02914,
+   "ret": 0.0429,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "R6Mgzs5FrqQFN1Jg9gfffyHtQLq7pJ1b5W4bJdspump",
+   "entry_t": 1789012724.561686,
+   "ret": 0.4157,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "CvT17CJxZn4YU7DXUejiY7FAZVp5zoxhzrteYcywpump",
+   "entry_t": 1789011571.395991,
+   "ret": 0.0223,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "wx8wPyz17jxH1xvtGJ8spsNrv36Qv1ZSCSsfmxcpump",
+   "entry_t": 1789011571.395991,
+   "ret": 0.0323,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "n2RadUS4gX7e1NvNprKnUdJye99Yx74DRwWSYLJpump",
+   "entry_t": 1789013642.040013,
+   "ret": 0.1592,
+   "exit": "timestop",
+   "status": "closed"
+  },
+  {
+   "mint": "4ugSxK36T34PvGBU7woE2jRK8opyNYp4iLE4kaUpump",
+   "entry_t": 1789014328.7177138,
+   "ret": 0.0337,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "EcoETnWAg3JyJTMvaR1ndwyswSDyW26wvxAvDUctpump",
+   "entry_t": 1789012781.616929,
+   "ret": 1.2822,
+   "exit": null,
+   "status": "open"
+  },
+  {
+   "mint": "AgbvmC9qR6KRZFq85MnKjyXunA1xhWCKy74xwZ9hpump",
+   "entry_t": 1789013570.976607,
+   "ret": 0.1368,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "6eo3eNxMuSNyBgQNcm3dHi8wsxX17FYMYgGUyieLpump",
+   "entry_t": 1789013855.366949,
+   "ret": -0.0924,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "SjtgfNstkPujEjRSi3jkyJ7wCFZJuT9ZWyDLDhmpump",
+   "entry_t": 1789016271.9053519,
+   "ret": 0.0355,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "rvJqidvs67NVxKueR51X5pcrzUsk475eC6RgBe8pump",
+   "entry_t": 1789017779.060865,
+   "ret": 0.4184,
+   "exit": "nm_abort",
+   "status": "closed"
+  },
+  {
+   "mint": "vHb46VMf13vsEnSG1oECs4VZi7ULXvgAEa13pj7pump",
+   "entry_t": 1789019172.823402,
+   "ret": 0.2646,
+   "exit": "abort15",
+   "status": "closed"
+  },
+  {
+   "mint": "Hmjjw7DtDVFd6h4bEWJJFXyR8sRNhLepsiujf8rcpump",
+   "entry_t": 1789016890.903411,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "Gy1GUMV4r73qsSCPSmwg3pLkw9K2PJ6TmTNAgNPpump",
+   "entry_t": 1789019457.492137,
+   "ret": -1.0,
+   "exit": "trail",
+   "status": "closed"
+  },
+  {
+   "mint": "BcVHxevTLNh7zK3zAHj36ScQiVFE5KqVYCezEtFQpump",
+   "entry_t": 1789017998.581598,
+   "ret": 0.332,
+   "exit": "nm_abort",
+   "status": "closed"
   }
  ],
- "universe_triggerable": 1001,
- "universe_runners_1p5x": 324,
+ "universe_triggerable": 1208,
+ "universe_runners_1p5x": 402,
  "gate_scorer": "mfg_paper_trades_s60nm5fr.jsonl",
  "shadows": {
   "mfg_paper_trades_h108.jsonl": {
-   "closed": 902,
-   "exp": 0.00083
+   "closed": 1093,
+   "exp": 0.00524
   },
   "mfg_paper_trades_a15.jsonl": {
-   "closed": 906,
-   "exp": -0.0039
+   "closed": 1097,
+   "exp": 0.00177
   },
   "mfg_paper_trades.jsonl": {
-   "closed": 900,
-   "exp": -0.0507
+   "closed": 1091,
+   "exp": -0.04803
   },
   "mfg_paper_trades_s60.jsonl": {
-   "committed_n": 761,
-   "committed_exp": -0.02228,
-   "closed": 754
+   "committed_n": 918,
+   "committed_exp": -0.01261,
+   "closed": 910
   }
  },
  "universe": [
+  {
+   "mint": "5cxJmwtoXqozSCBHcn9QoPhuedM1bv1sB45S5Eb1pump",
+   "n_trades": 7900,
+   "entry_mcap": 464.9,
+   "post_trigger_peak": 11.859
+  },
+  {
+   "mint": "1tBycoAQYYLxLY9kLcyPNYkvwxzMjrQJE7rbEDEpump",
+   "n_trades": 31297,
+   "entry_mcap": 554043.8,
+   "post_trigger_peak": 9.388
+  },
   {
    "mint": "E1iQX1xKyg3u6PsWyfBVULktn18k2WR2w36meAbppump",
    "n_trades": 57433,
@@ -5386,10 +6476,10 @@
    "post_trigger_peak": 8.346
   },
   {
-   "mint": "1tBycoAQYYLxLY9kLcyPNYkvwxzMjrQJE7rbEDEpump",
-   "n_trades": 20258,
-   "entry_mcap": 554043.8,
-   "post_trigger_peak": 7.432
+   "mint": "7kcVCQmjXZS37fvAeaxKprFpUEDARvzFiieHEkGpump",
+   "n_trades": 274,
+   "entry_mcap": 51580.5,
+   "post_trigger_peak": 6.52
   },
   {
    "mint": "HLmvuVm85Qm9mEQSh4gPHVbuhRLS5DJsiS8eWpsFpump",
@@ -5398,10 +6488,64 @@
    "post_trigger_peak": 6.289
   },
   {
+   "mint": "EcoETnWAg3JyJTMvaR1ndwyswSDyW26wvxAvDUctpump",
+   "n_trades": 247,
+   "entry_mcap": 3848.7,
+   "post_trigger_peak": 6.107
+  },
+  {
+   "mint": "R6Mgzs5FrqQFN1Jg9gfffyHtQLq7pJ1b5W4bJdspump",
+   "n_trades": 311,
+   "entry_mcap": 144815.6,
+   "post_trigger_peak": 5.998
+  },
+  {
    "mint": "3t5HU8Xfy8Pn7Wvd9LCKyaVLTuK4zcm1gspfJxb1pump",
    "n_trades": 141,
    "entry_mcap": 9480.7,
    "post_trigger_peak": 5.961
+  },
+  {
+   "mint": "Ytn8MsLcGwerRhBiw6a2yRKY2gfdnrbwuRmVNKepump",
+   "n_trades": 204,
+   "entry_mcap": 37156.5,
+   "post_trigger_peak": 5.605
+  },
+  {
+   "mint": "GWrzfGMuPpaV31Jkb9vfnxHE9uN3QUWfBemVFzBpump",
+   "n_trades": 34957,
+   "entry_mcap": 102750.8,
+   "post_trigger_peak": 5.358
+  },
+  {
+   "mint": "pgQwTLpsYNcpaKp4rGHgyhGsv4VuBgRDbWVpSmnpump",
+   "n_trades": 24318,
+   "entry_mcap": 110339.2,
+   "post_trigger_peak": 5.354
+  },
+  {
+   "mint": "YrwSVmcUeKo6BsiwqKyD2xVCuHFwkUnb8XigrbLpump",
+   "n_trades": 28422,
+   "entry_mcap": 1460202.5,
+   "post_trigger_peak": 5.188
+  },
+  {
+   "mint": "hKZ1c42mEFRKJ4PL81wvpeGJM9kvZcReyPZiv8spump",
+   "n_trades": 2156,
+   "entry_mcap": 56637.4,
+   "post_trigger_peak": 5.038
+  },
+  {
+   "mint": "ka7BSGS6shfwVwXAJZ4Qd4M26reaiujVSGLEppLpump",
+   "n_trades": 46218,
+   "entry_mcap": 53882.1,
+   "post_trigger_peak": 5.018
+  },
+  {
+   "mint": "jLMCBuwcYo6TXvSwxw2zVCjxYCgCxM3G2FKAqeMpump",
+   "n_trades": 174,
+   "entry_mcap": 48200.8,
+   "post_trigger_peak": 4.946
   },
   {
    "mint": "9qVbd6ZLoJi6daRYtBiKgAKmmbuT5GQ36ATHY4K4pump",
@@ -5416,82 +6560,16 @@
    "post_trigger_peak": 4.807
   },
   {
-   "mint": "YrwSVmcUeKo6BsiwqKyD2xVCuHFwkUnb8XigrbLpump",
-   "n_trades": 21940,
-   "entry_mcap": 1460202.5,
-   "post_trigger_peak": 4.654
-  },
-  {
    "mint": "4wguFYki6HK3eiKc8vHTFqBLpg198Fk1tg4FUrfJpump",
    "n_trades": 922,
    "entry_mcap": 108312.3,
    "post_trigger_peak": 4.621
   },
   {
-   "mint": "ECGNShoLBXSzut43MwerXPj1kZtpX4qwn8SVSfVMpump",
-   "n_trades": 50641,
-   "entry_mcap": 2084986.1,
-   "post_trigger_peak": 4.443
-  },
-  {
-   "mint": "jY2MMAkjEKZ8cNLeJwe3efDwTL16TdEHWY7QhCCpump",
-   "n_trades": 7355,
-   "entry_mcap": 64561.6,
-   "post_trigger_peak": 4.334
-  },
-  {
-   "mint": "ASWpdof1y9cba6vPB6TJwA9gbBcffFqRyosxnaunpump",
-   "n_trades": 31390,
-   "entry_mcap": 35712.4,
-   "post_trigger_peak": 4.241
-  },
-  {
-   "mint": "GonqZpYyparYcJBxbWHuJiGcPcNJDoZgxGNptLGxpump",
-   "n_trades": 25,
-   "entry_mcap": 919.8,
-   "post_trigger_peak": 4.183
-  },
-  {
-   "mint": "2eQKEMLPDLEkeCgXNvZg918UYC1Nky3myAAbQfGopump",
-   "n_trades": 386,
-   "entry_mcap": 45486.3,
-   "post_trigger_peak": 4.119
-  },
-  {
-   "mint": "9LgitvmJbQTRZrxVKhWXiAVbBvYdrFpH623u35EZpump",
-   "n_trades": 50182,
-   "entry_mcap": 56348.2,
-   "post_trigger_peak": 3.962
-  },
-  {
-   "mint": "13wP5YNMTJMPciXiV2ZtYvZkx78JcU4zh6tkuyzYpump",
-   "n_trades": 16870,
-   "entry_mcap": 1472326.1,
-   "post_trigger_peak": 3.949
-  },
-  {
-   "mint": "aRBUPKhSbGVxhzRvC5Tk1fVNokuDYpz3UtUGb3Xpump",
-   "n_trades": 22314,
-   "entry_mcap": 545467.5,
-   "post_trigger_peak": 3.916
-  },
-  {
-   "mint": "KMumQnwZ4ZGPpJgqjaqbxpZRXRiSuMofSjMYJwApump",
-   "n_trades": 25150,
-   "entry_mcap": 6400.3,
-   "post_trigger_peak": 3.825
-  },
-  {
-   "mint": "LWtnACFPXpkdr3BfvEzZTfZZXgj6FdafJSRgU9ipump",
-   "n_trades": 8322,
-   "entry_mcap": 5188.8,
-   "post_trigger_peak": 3.779
-  },
-  {
-   "mint": "d34Dh94MTuA7BDuiHxoswWbxAdSSs4r3vSAYovBpump",
-   "n_trades": 20481,
-   "entry_mcap": 555441.0,
-   "post_trigger_peak": 3.713
+   "mint": "ozuUP6r26BjZkgv8eGDR6ZPVLGqfDGvKF5MGKq4pump",
+   "n_trades": 195,
+   "entry_mcap": 36430.3,
+   "post_trigger_peak": 4.572
   }
  ]
 }

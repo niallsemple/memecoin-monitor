@@ -152,3 +152,145 @@
 19:48:58 no open positions
 20:22:30 no open positions
 21:22:36 no open positions
+22:22:25 no open positions
+22:50:39 no open positions
+23:07:19 no open positions
+23:12:41 no open positions
+23:35:15 no open positions
+23:56:47 no open positions
+00:18:49 no open positions
+00:22:57 no open positions
+00:40:21 no open positions
+01:02:23 no open positions
+01:07:37 no open positions
+01:24:27 no open positions
+01:52:41 no open positions
+01:58:20 no open positions
+02:07:46 no open positions
+02:22:46 no open positions
+02:30:36 no open positions
+02:52:38 no open positions
+03:14:40 no open positions
+03:22:54 no open positions
+03:36:41 no open positions
+03:58:43 no open positions
+04:08:01 no open positions
+04:20:47 no open positions
+04:38:04 no open positions
+04:42:50 no open positions
+05:04:23 no open positions
+05:22:37 no open positions
+05:26:25 no open positions
+05:48:28 no open positions
+06:10:29 no open positions
+06:22:49 no open positions
+06:32:30 no open positions
+06:54:31 no open positions
+07:16:33 no open positions
+07:38:35 no open positions
+08:00:38 no open positions
+08:07:36 no open positions
+08:22:42 no open positions
+08:44:44 no open positions
+09:06:46 no open positions
+09:28:48 no open positions
+09:50:51 no open positions
+10:08:25 no open positions
+10:12:23 no open positions
+10:34:27 no open positions
+10:56:30 AsSyvUnb: active=368 range=[296,364] tvl=$1,032,894 vol24=$6,814,872 feeY=0.000046SOL feeX=16753
+10:56:30 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+10:56:30 guardian pass complete
+11:18:33 AsSyvUnb: active=374 range=[296,364] tvl=$1,041,115 vol24=$6,825,536 feeY=0.000046SOL feeX=16753
+11:18:33 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+11:18:33 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+11:18:37 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+11:18:37 guardian pass complete
+11:40:36 AsSyvUnb: active=372 range=[306,374] tvl=$1,036,982 vol24=$6,834,169 feeY=0.000112SOL feeX=66035
+11:40:36 guardian pass complete
+12:02:38 AsSyvUnb: active=367 range=[306,374] tvl=$1,026,275 vol24=$6,878,745 feeY=0.000172SOL feeX=150798
+12:02:38 guardian pass complete
+12:24:41 AsSyvUnb: active=358 range=[306,374] tvl=$1,022,866 vol24=$6,998,941 feeY=0.000332SOL feeX=315081
+12:24:41 guardian pass complete
+12:52:57 AsSyvUnb: active=358 range=[306,374] tvl=$1,020,526 vol24=$7,013,804 feeY=0.000427SOL feeX=357837
+12:52:57 guardian pass complete
+13:08:45 AsSyvUnb: active=363 range=[306,374] tvl=$1,025,539 vol24=$7,039,025 feeY=0.000550SOL feeX=371905
+13:08:45 guardian pass complete
+13:30:51 AsSyvUnb: active=358 range=[306,374] tvl=$1,022,576 vol24=$7,094,143 feeY=0.000622SOL feeX=452601
+13:30:51 guardian pass complete
+13:52:22 AsSyvUnb: active=366 range=[306,374] tvl=$1,012,905 vol24=$7,171,073 feeY=0.000857SOL feeX=493124
+13:52:22 guardian pass complete
+14:14:24 AsSyvUnb: active=371 range=[306,374] tvl=$1,009,456 vol24=$7,193,418 feeY=0.001015SOL feeX=518151
+14:14:24 guardian pass complete
+14:23:28 AsSyvUnb: active=369 range=[306,374] tvl=$990,286 vol24=$7,152,730 feeY=0.001058SOL feeX=563993
+14:23:28 guardian pass complete
+14:36:27 AsSyvUnb: active=378 range=[306,374] tvl=$999,194 vol24=$7,216,939 feeY=0.001225SOL feeX=585121
+14:36:27 AsSyvUnb: drifted out of range — fee accrual paused
+14:36:27 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+14:36:27 guardian pass complete
+14:58:29 AsSyvUnb: active=380 range=[306,374] tvl=$983,835 vol24=$7,309,623 feeY=0.001225SOL feeX=585121
+14:58:29 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+14:58:29 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+14:58:32 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+14:58:32 guardian pass complete
+15:20:34 AsSyvUnb: active=391 range=[312,380] tvl=$995,101 vol24=$7,390,682 feeY=0.000000SOL feeX=0
+15:20:34 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+15:20:34 guardian pass complete
+15:42:35 AsSyvUnb: active=387 range=[312,380] tvl=$995,371 vol24=$7,432,223 feeY=0.000000SOL feeX=0
+15:42:35 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+15:42:35 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+15:42:39 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+15:42:39 guardian pass complete
+16:04:37 AsSyvUnb: active=390 range=[319,387] tvl=$994,900 vol24=$7,518,847 feeY=0.000100SOL feeX=38947
+16:04:37 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+16:04:37 guardian pass complete
+16:26:39 AsSyvUnb: active=390 range=[319,387] tvl=$993,027 vol24=$7,587,647 feeY=0.000100SOL feeX=38947
+16:26:39 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+16:26:39 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+16:26:43 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+16:26:43 guardian pass complete
+16:48:41 AsSyvUnb: active=390 range=[322,390] tvl=$971,227 vol24=$7,639,190 feeY=0.000116SOL feeX=45498
+16:48:41 guardian pass complete
+17:10:44 AsSyvUnb: active=389 range=[322,390] tvl=$966,971 vol24=$7,666,001 feeY=0.000134SOL feeX=65029
+17:10:44 guardian pass complete
+17:32:48 AsSyvUnb: active=391 range=[322,390] tvl=$967,622 vol24=$7,714,258 feeY=0.000179SOL feeX=73401
+17:32:48 AsSyvUnb: drifted out of range — fee accrual paused
+17:32:48 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+17:32:48 guardian pass complete
+17:54:49 AsSyvUnb: active=390 range=[322,390] tvl=$968,915 vol24=$7,739,672 feeY=0.000196SOL feeX=81278
+17:54:49 AsSyvUnb: BACK IN RANGE — fee accrual resumed
+17:54:49 guardian pass complete
+18:16:23 AsSyvUnb: active=391 range=[322,390] tvl=$975,627 vol24=$7,768,329 feeY=0.000260SOL feeX=110645
+18:16:23 AsSyvUnb: drifted out of range — fee accrual paused
+18:16:23 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+18:16:23 guardian pass complete
+18:23:00 AsSyvUnb: active=390 range=[322,390] tvl=$976,199 vol24=$7,773,775 feeY=0.000265SOL feeX=120144
+18:23:00 AsSyvUnb: BACK IN RANGE — fee accrual resumed
+18:23:00 guardian pass complete
+18:38:24 AsSyvUnb: active=398 range=[322,390] tvl=$986,670 vol24=$7,812,673 feeY=0.000285SOL feeX=122074
+18:38:24 AsSyvUnb: drifted out of range — fee accrual paused
+18:38:24 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+18:38:24 guardian pass complete
+19:00:26 AsSyvUnb: active=388 range=[322,390] tvl=$974,526 vol24=$7,879,050 feeY=0.000327SOL feeX=163055
+19:00:26 AsSyvUnb: BACK IN RANGE — fee accrual resumed
+19:00:26 guardian pass complete
+19:08:15 AsSyvUnb: active=389 range=[322,390] tvl=$971,490 vol24=$7,885,980 feeY=0.000346SOL feeX=169418
+19:08:15 guardian pass complete
+19:22:30 AsSyvUnb: active=385 range=[322,390] tvl=$966,606 vol24=$7,912,878 feeY=0.000357SOL feeX=214838
+19:22:30 guardian pass complete
+19:44:32 AsSyvUnb: active=384 range=[322,390] tvl=$965,141 vol24=$7,899,604 feeY=0.000391SOL feeX=231930
+19:44:32 guardian pass complete
+20:06:35 AsSyvUnb: active=385 range=[322,390] tvl=$969,331 vol24=$7,958,581 feeY=0.000521SOL feeX=283514
+20:06:35 guardian pass complete
+20:22:50 AsSyvUnb: active=388 range=[322,390] tvl=$972,194 vol24=$7,985,595 feeY=0.000596SOL feeX=297677
+20:22:50 guardian pass complete
+20:28:36 AsSyvUnb: active=387 range=[322,390] tvl=$973,678 vol24=$7,988,010 feeY=0.000601SOL feeX=303059
+20:28:36 guardian pass complete
+20:50:38 AsSyvUnb: active=388 range=[322,390] tvl=$988,478 vol24=$8,014,049 feeY=0.000677SOL feeX=328139
+20:50:38 guardian pass complete
+21:12:40 AsSyvUnb: active=386 range=[322,390] tvl=$988,667 vol24=$8,028,108 feeY=0.000731SOL feeX=378062
+21:12:40 guardian pass complete
+21:22:51 AsSyvUnb: active=385 range=[322,390] tvl=$989,214 vol24=$8,035,596 feeY=0.000744SOL feeX=385785
+21:22:51 guardian pass complete
+21:34:42 AsSyvUnb: active=386 range=[322,390] tvl=$989,571 vol24=$8,061,273 feeY=0.000819SOL feeX=410726
+21:34:42 guardian pass complete
