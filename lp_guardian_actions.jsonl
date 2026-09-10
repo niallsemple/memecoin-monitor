@@ -25,3 +25,4 @@
 {"t": 1789059289.800061, "kind": "back_in_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 390, "range": [322, 390], "feeY": 196016}
 {"t": 1789060583.010752, "kind": "out_of_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 391, "range": [322, 390], "side": "above"}
 {"t": 1789060980.7883751, "kind": "back_in_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 390, "range": [322, 390], "feeY": 264520}
+{"t": 1789061904.360907, "kind": "out_of_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 398, "range": [322, 390], "side": "above"}
