@@ -8373,3 +8373,10 @@ v3 `qualified=false`, `data_pass=false` — all three manual sign-offs (exit-rul
 **Verdict:** No live-stake case. v3 fails all five data gates; v6 is a null signal; the paper loop outage freezes any fresh evidence on the v2–v6 lanes. E25 is the sole positive-expectancy lane — its recent window (+4.1% last 200) is encouraging but one day of closes is not convergence to +5.75%. Master question remains **unanswered-to-negative** on every measurable lane; the live pumpswap cell (n=2) stays the only positive resolved evidence.
 
 **Next checkpoint:** 2026-09-11 06:00Z (paper loop restart? E25 last-200 follow-through; E25 bleeder review).
+
+## LP-SURF GO/NO-GO SCORECARD (after cycle 20, final rules)
+
+- All cycles: n=20, 14W/6L, sum +0.002221 SOL, expectancy +0.000111 SOL/cycle, PF 1.009, avg win +0.017633 / avg loss -0.040774, max loss -0.068403
+- Last 8 cycles (ssy_v1 + cooldowns + momentum guard era): 4W/4L, sum -0.159760, expectancy -0.019970/cycle, PF 0.262, 4 tripwires
+- Clean final-rules sample (c18-20): 2W/1L, sum -0.010580, expectancy -0.003527/cycle
+- VERDICT: NO-GO for real-SOL LP-surf. 70% lifetime win rate only breaks even because tripwire losses are ~2.3x harvest wins; recent tripwire rate (4 of last 8) makes expectancy negative. Momentum guard + down-r cooldown helped but insufficient. Keep paper-running to accumulate n; do not deploy real SOL.
