@@ -237,7 +237,7 @@ def main():
             st['bankroll'] += net_sol
             st['cycles'] += 1
             cooldown_until = None
-            if reason == 'tripwire':
+            if reason == 'tripwire' or r < 1:
                 cooldown_until = now + TRIPWIRE_COOLDOWN_H * 3600
                 st['cooldowns'][o['pool']] = cooldown_until
             log({'kind': 'exit', 'reason': reason, 'pair': o['pair'],
@@ -250,7 +250,8 @@ def main():
                  'cooldown_until': cooldown_until})
             print(f"[exit:{reason}] net {net_sol:+.6f} SOL -> bankroll {st['bankroll']:.6f}")
             if cooldown_until:
-                print(f"[cooldown] ..{o['pool'][-6:]} blocked {TRIPWIRE_COOLDOWN_H:.0f}h after tripwire")
+                why = 'tripwire' if reason == 'tripwire' else 'down-r exit'
+                print(f"[cooldown] ..{o['pool'][-6:]} blocked {TRIPWIRE_COOLDOWN_H:.0f}h after {why}")
             st['open'] = None
         save_state(st)
         return
