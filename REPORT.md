@@ -8388,3 +8388,22 @@ v3 `qualified=false`, `data_pass=false` — all three manual sign-offs (exit-rul
 - Last 10: 9W/1L, tripwire rate 10%; last 12: 10W/2L, tripwire rate 16.7% — both under the informal 20% re-test trigger
 - Driver: RUSH-SOL pool (..P58rdh) fee/day accelerating 128→165%/day with price pinned near entry (r≈1.00-1.03); single-pool concentration is the caveat — streak is one hot pool, not broad edge
 - VERDICT: RE-TEST PENDING OWNER REVIEW. Numbers now clear the informal trigger, but the streak is concentrated in one pool; a single tripwire (-0.04 avg) erases ~2 harvests. Proposal for owner: tiny fixed-size real-SOL pilot (0.05 SOL/cycle, no compounding, 10-cycle cap, hard stop at 2 tripwires) gated behind explicit acceptance. PAPER-ONLY until then.
+
+## LP-SURF LIVE PILOT — CYCLES 1-4 (real SOL, on-chain reconciled)
+
+Owner-approved pilot: 0.5 SOL compounding, Meteora-only, harvest +2.0% real fees, IL tripwire -3%, time-stop 90min, kill switch + 6.2 SOL reserve.
+
+| # | Pool | Exit | True net (SOL) | Note |
+|---|------|------|----------------|------|
+| 1 | baton-SOL | timestop (parked above range 91min) | -0.003274 | fees +0.26% vs costs |
+| 2 | LOOP-SOL | above_range_abort @ r=1.13, 35min | +0.001531 | new rule's first win |
+| 3 | LOOP-SOL | tripwire, -24% dump in 12min | -0.239816 | position 100% X + exit slippage |
+| 4 | LOOP-SOL | harvest label @ r=0.887 | -0.059027 | +2.17% fees but -19% position loss |
+
+**Live tally: 1W/3L, bankroll 0.199414 (-60.1%).** All exits reconciled from on-chain add/exit tx deltas (wallet before/after reads proved unreliable — guardian races produced phantom -0.5 and phantom +0.169).
+
+**Findings vs paper model:**
+1. Real down-move losses are 5-10x the paper IL model: paper trips at ~-3%; live exits at r=0.76-0.89 realized -19% to -44% because single-sided-Y positions convert to 100% token-X on the way down and exit swaps pay memecoin-crash slippage.
+2. The paper streak (30W/6L, +44.5%) is partly estimator bias: paper keeps accruing fee credit above range (live truth: fees stall ~+0.3%) and under-prices down-exits.
+3. Fixes shipped live: above-range abort (r>1.10 x3 polls), hard price stop DOWN_ABORT_R=0.90 (outranks harvest), 45s danger-loop polling below r=0.97, momentum guard (refused 3 knife entries), on-chain exit reconciliation as primary accounting.
+4. Open question: can the 0.90 stop cap real losses near -8-10%? If the next down-cycle still loses >15%, surf economics do not close at this size and effort pivots to aged-pool/skim lines.
