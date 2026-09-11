@@ -3845,3 +3845,5 @@
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789167091.7941508}
 {"action": "fast_entry_eval", "mint": "tu6N7SmgGvVEGAwVJAFtZTBRbXJXmf13wANdMeEpump", "t": 1789167112.368412, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789167112.3750248}
 {"action": "fast_entry_eval", "mint": "Hg8nQ7JfZAtojKzBk8q3XLej9wJntYKjsoaSv1f2pump", "t": 1789167416.981654, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789167416.985585}
+{"action": "curve_buy", "mint": "wEcST4bnx6yxqn3Eb9Nmu7u8vrHYVaYY3GP31Tjpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789167739.1447449}
+{"action": "curve_buy", "mint": "AmLUsT8gk4dPeaEYqkimj8THyrv9p6a1G8HCm75ypump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789167739.1897678}
