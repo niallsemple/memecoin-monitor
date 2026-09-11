@@ -1,23 +1,10 @@
 {
- "bankroll": 0.496726,
+ "bankroll": 0.49825743199999994,
  "started_with": 0.5,
- "open": {
-  "provider": "meteora",
-  "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i",
-  "pair": "LOOP-SOL",
-  "entry_ts": 1789131589.13969,
-  "entry_price": 4.3527854227173e-05,
-  "deposit": 0.4967,
-  "fee_day_at_entry": 0.43977620639074066,
-  "last_r": 1.1961474756866626,
-  "fee_sol_last": 0.0018854386280784297,
-  "x_decimals": 6,
-  "entry_cost": 0.550908,
-  "above_streak": 2
- },
+ "open": null,
  "cooldowns": {},
- "cycles": 1,
- "wins": 0,
+ "cycles": 2,
+ "wins": 1,
  "losses": 1,
  "entry_fails": 0,
  "halted": false
