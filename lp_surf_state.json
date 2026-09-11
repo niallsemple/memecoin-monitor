@@ -1,16 +1,16 @@
 {
- "bankroll": 1.021320321163654,
+ "bankroll": 1.045259056032953,
  "open": {
   "provider": "meteora",
-  "pool": "BfDKyqvmwF7zi9pRVc7iKJDxCgxub44a6aEnEb4sst62",
-  "pair": "PENIS-SOL",
-  "entry_ts": 1789098704.8114638,
-  "entry_price": 1.3078633931914e-05,
-  "deposit": 1.021320321163654,
+  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+  "pair": "EMBER-SOL",
+  "entry_ts": 1789101465.336606,
+  "entry_price": 2.7497931047429e-05,
+  "deposit": 1.045259056032953,
   "fees_est": 0.0,
-  "fee_day_at_entry": 0.7999853232885531
+  "fee_day_at_entry": 0.37961534457638935
  },
- "cycles": 21,
+ "cycles": 22,
  "cooldowns": {
   "H4Erwxo6h8EmLBGdfGdPNY6bSU3evYBirrhEA8FuByCT": 1789102192.936256,
   "G6eJgyVdupYx23TD3auEr9PFtv2q98jk3pbg5nP58rdh": 1789103020.3301299,
