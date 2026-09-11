@@ -8,3 +8,4 @@
 {"kind": "exit", "why": "tripwire", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "pair": "LOOP-SOL", "mins": 12.8, "deposit": 0.4983, "returned": 0.310729, "net": -0.239816, "bankroll": 0.258441, "r": 0.7568, "sweep_rc": 1, "ts": 1789134899.627004}
 {"kind": "cooldown", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "hours": 6.0, "why": "tripwire", "ts": 1789134899.627462}
 {"kind": "skip_momentum", "pair": "LOOP-SOL", "mom": -0.0099, "ts": 1789135180.813629}
+{"kind": "skip_momentum", "pair": "LOOP-SOL", "mom": -0.0197, "ts": 1789135574.845078}

@@ -1,6 +1,15 @@
 {
  "bankroll": 1.3354816146471453,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk",
+  "pair": "LOOP-SOL",
+  "entry_ts": 1789135553.377426,
+  "entry_price": 3.4623874224646e-05,
+  "deposit": 1.3354816146471453,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 0.4977440464814169
+ },
  "cycles": 38,
  "cooldowns": {
   "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789148740.978952,
