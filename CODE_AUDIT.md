@@ -68,3 +68,16 @@ pairs (launch sniping protection). Watch item, not a lane.
 - The durable edge remains where the data already points: aged-pool wide-band LP
   (KNOTS live), fee-density window prediction (skim_lab PASS), and cross-DEX arb
   (arb_scanner). Code audit continues on Raydium CLMM + Orca next pass.
+
+## F1 RESULT — FALSIFIED (2026-09-11, one simulation, zero cost)
+
+Population measured: **100,047 empty DLMM positions chain-wide ≈ 4,192 SOL locked rent**
+(filter: dataSize 8120 + liquidity_shares[0..32]==0, Helius gPA).
+
+Probe: non-owner `close_position_if_empty` with rent to our wallet, simulated on a live
+foreign empty position (JEKNUXAy…Wmnma). Program rejected: AnchorError 2003 ConstraintRaw
+on `position` — the deployed program enforces position.owner == sender even though the IDL
+doesn't show it. **Lane dead. IDL account lists are not authority proofs — simulate first.**
+
+Lesson banked for the code-audit programme: instruction *surface* enumeration finds
+candidates; only simulation/on-chain probe settles authority. Cost per falsification: ~0 SOL.
