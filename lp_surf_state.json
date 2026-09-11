@@ -1,18 +1,17 @@
 {
- "bankroll": 1.0636215770222226,
+ "bankroll": 1.08776785866988,
  "open": {
   "provider": "meteora",
   "pool": "G6eJgyVdupYx23TD3auEr9PFtv2q98jk3pbg5nP58rdh",
   "pair": "RUSH-SOL",
-  "entry_ts": 1789107151.627915,
+  "entry_ts": 1789108778.199886,
   "entry_price": 0.5237339223210912,
-  "deposit": 1.0636215770222226,
+  "deposit": 1.08776785866988,
   "fees_est": 0.0,
-  "fee_day_at_entry": 1.2793185830736855
+  "fee_day_at_entry": 1.3247281527149173
  },
- "cycles": 23,
+ "cycles": 24,
  "cooldowns": {
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789107968.321899,
   "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6": 1789114933.889216
  }
 }
