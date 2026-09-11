@@ -323,8 +323,27 @@
    "entry_active_bin": 446,
    "minBinId": 378,
    "maxBinId": 446,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5MQa1KFVtq6b12z7eqQF5bbpQtpK6cBmgm2avkXSLLcge3H8p1UBboEmXntBgFAQTqoWAy2itJZfSyHnKiBHH48D",
+   "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2",
+   "base_tvl": 1031599.7715933472,
+   "base_vol24": 4988783.300620934,
+   "was_in_range": false,
+   "above_range_passes": 2,
+   "exit_reason": "recenter_above_range"
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "DfnXwqpkQc5ztQq9d5oJq3oyG2JteWnp9ZPEceyiURWs",
+   "name": null,
+   "sol_in": 0.795,
+   "ts": 1789115429.902,
+   "entry_active_bin": 455,
+   "minBinId": 387,
+   "maxBinId": 455,
+   "status": "open",
+   "add_sig": "WQrmjZczNWLfxxSV2oPax5UjGskn8SYruBrHovj3JPLPQ1oUPJ5UF1wW9Q6iGqoPo5Tsd3dioE25Z4uDMny71Lo",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2"
   }
