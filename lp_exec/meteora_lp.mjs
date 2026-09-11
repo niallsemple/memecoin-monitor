@@ -182,6 +182,7 @@ async function cmdBinsJson(conn, poolAddr) {
     varFeeCtl: (pr.variableFeeControl || pr.variable_fee_control || '0').toString(),
     baseFactor: (pr.baseFactor || pr.base_factor || '0').toString(),
     baseFeeBps: (pool.lbPair.baseFeeRateFactor || '').toString(),
+    collectFeeMode: (pool.lbPair.collectFeeMode ?? pool.lbPair.collect_fee_mode ?? -1).toString(),
   }));
 }
 
