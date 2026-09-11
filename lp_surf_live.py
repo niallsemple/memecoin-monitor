@@ -56,6 +56,9 @@ DANGER_POLL_S = 45         # tight-loop cadence
 DANGER_MAX_ITER = 5        # ~4 min per invocation — must fit the 300s Bash window
 DOWN_ABORT_R = 0.97        # hard stop: cycles 3/4/6 show exits below ~0.97 realize -10%+;
                            # only r>=~0.97 exits land near cost. Hold zone = in-band only.
+STAGNATION_MIN = 20        # in band, price flat, but no fees after 20min = dead tape
+STAGNATION_FEE_PCT = 0.001 # (cycle 12 RUSH: 205%/day was stale trailing, tape silent)
+STAGNATION_COOLDOWN_H = 1  # short — pool didn't fail, just dead right now
 
 
 def log(ev):
@@ -227,6 +230,9 @@ def do_exit(st, why, gross_hint=None):
     if why == 'tripwire' or o.get('last_r', 1) < 1:
         st['cooldowns'][o['pool']] = time.time() + TRIPWIRE_COOLDOWN_H * 3600
         log({'kind': 'cooldown', 'pool': o['pool'], 'hours': TRIPWIRE_COOLDOWN_H, 'why': why})
+    elif why == 'stagnation':
+        st['cooldowns'][o['pool']] = time.time() + STAGNATION_COOLDOWN_H * 3600
+        log({'kind': 'cooldown', 'pool': o['pool'], 'hours': STAGNATION_COOLDOWN_H, 'why': why})
     st['open'] = None
     save_state(st)
     return True
@@ -272,6 +278,8 @@ def check_open(st, now):
         do_exit(st, 'tripwire'); return 'exited', r
     if o['above_streak'] >= 2 and age_min >= 8:
         do_exit(st, 'above_range_abort'); return 'exited', r
+    if age_min >= STAGNATION_MIN and fee_pct < STAGNATION_FEE_PCT and abs(r - 1.0) < 0.02:
+        do_exit(st, 'stagnation'); return 'exited', r
     if age_min >= TIME_STOP_MIN:
         do_exit(st, 'timestop'); return 'exited', r
     return 'open', r
