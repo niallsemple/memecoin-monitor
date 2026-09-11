@@ -8407,3 +8407,37 @@ Owner-approved pilot: 0.5 SOL compounding, Meteora-only, harvest +2.0% real fees
 2. The paper streak (30W/6L, +44.5%) is partly estimator bias: paper keeps accruing fee credit above range (live truth: fees stall ~+0.3%) and under-prices down-exits.
 3. Fixes shipped live: above-range abort (r>1.10 x3 polls), hard price stop DOWN_ABORT_R=0.90 (outranks harvest), 45s danger-loop polling below r=0.97, momentum guard (refused 3 knife entries), on-chain exit reconciliation as primary accounting.
 4. Open question: can the 0.90 stop cap real losses near -8-10%? If the next down-cycle still loses >15%, surf economics do not close at this size and effort pivots to aged-pool/skim lines.
+
+## LP-SURF LIVE PILOT — CYCLES 5-13 (calibration era)
+
+Rules evolved live as failure modes appeared. All exits reconciled from on-chain tx deltas.
+
+| # | Pool | Exit | r at exit | True net (SOL) |
+|---|------|------|-----------|----------------|
+| 5 | FLAME-SOL | above_range_abort 20min | 1.100 | -0.001871 |
+| 6 | FLAME-SOL | harvest label @ r=0.938 | 0.938 | -0.028360 |
+| 7 | EMBER-SOL (thin) | down_abort 26min | 0.961 | -0.013889 |
+| 8 | baton-SOL | down_abort 7min (gap -19%) | 0.811 | -0.057564 |
+| 9 | EMBER-SOL (deep $1.7M) | down_abort 13min | 0.969 | -0.005655 |
+| 10 | baton-SOL | **harvest 8min** | 1.513 | **+0.000715** |
+| 11 | baton-SOL | **above_range_abort 12min** | 1.322 | **+0.000176** |
+| 12 | RUSH-SOL | stagnation abort 24min | 1.000 | -0.002674 |
+| 13 | baton-SOL | down_abort 23min | 0.953 | -0.009871 |
+
+**Tally: 13 cycles, 3W/9L(+1 stag), bankroll 0.08042 (-83.9% from 0.5).**
+
+**Calibration shipped during pilot:**
+- above-band abort: r>1.10 -> inRange-based (2 polls, age>=8min) — kills dead SOL-parked windows
+- down_abort hard stop: 0.90 -> 0.97 — loss curve -44%/-19%/-14%/-27% -> -6.8%/-3.8%
+- stagnation abort: 20min in-band zero-fee -> exit, 1h cooldown — recycles dead tape
+- on-chain exit reconciliation as PRIMARY accounting (guardian races polluted wallet deltas both directions)
+- danger-zone tight polling 45s below r=0.97 (capped 5 iters to fit exec window)
+
+**Structural findings:**
+1. Single-sided-Y DLMM entry is a leveraged LONG the token: every dip converts to 100% X; realized loss at exit >> ssy IL estimate (~10x).
+2. Gap risk between entry and first poll is unmanageable in thin pools (cycle 8: -19% in 7min).
+3. Deep pools ($1M+) cut down-exit cost to ~-4%; friction floor ~1%/cycle (tx+priority+ATA).
+4. Wins require pump-through-band (fees + zero-IL SOL exit) or long in-band oscillation. Frequency observed ~25% — below the ~60-70% needed at current win/loss sizes.
+5. Cooldown system prevents revenge re-entries but creates 2-6h flat windows after volatile sessions.
+
+**Interim verdict:** not economically closed at 0.05-0.5 SOL scale. The strategy's remaining hopes: (a) much wider bands + deeper pools to raise in-band persistence; (b) entry only on post-dump stabilization with 15min price-history gate; (c) pivot to aged-pool skim / arb lanes where the same infra applies.
