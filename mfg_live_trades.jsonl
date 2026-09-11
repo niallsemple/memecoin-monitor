@@ -3812,3 +3812,6 @@
 {"action": "fast_entry_eval", "mint": "p8kWQ9vUywYAdMU1rmdtAXg9YfD5Ruz4x5ZDEA2pump", "t": 1789163621.417273, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789163621.420483}
 {"action": "fast_entry_eval", "mint": "EkdRa85vVMxHUcFXnNzZkLXt9dY25Rn2eNDND3Zkpump", "t": 1789163635.2397828, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789163635.2450502}
 {"action": "curve_buy", "mint": "RFGkQxMHbNw7nmG4x6euoCmkxQXh3TovGa32F7xpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789163800.601255}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789163987.198591}
+{"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep_dust", "mode": "live", "gate": "live", "sigs": [null], "result": "closed 0/1", "ts": 1789163996.432893}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789163997.030904}

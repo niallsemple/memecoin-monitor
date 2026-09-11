@@ -1,6 +1,15 @@
 {
  "bankroll": 1.2256987131270614,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+  "pair": "EMBER-SOL",
+  "entry_ts": 1789163984.774972,
+  "entry_price": 0.000129015903427103,
+  "deposit": 1.2256987131270614,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 0.4552075077115864
+ },
  "cycles": 46,
  "cooldowns": {
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789164418.990043,
