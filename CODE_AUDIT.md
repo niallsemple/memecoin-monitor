@@ -92,3 +92,15 @@ Findings:
 3. **Cost-model consequence for us:** on Raydium CLMM, prefer ranges whose tick arrays already exist (established pools) — entering a fresh range on a 0.1–0.8 SOL position with multi-array span could cost 0.07–0.22 SOL in unrecoverable rent, dwarfing fee income. Meteora DLMM has the same first-touch pattern (bin arrays), so the rule generalizes: *never be the first LP into a range*.
 
 Verdict: no extractable edge, one durable cost rule banked. Orca Whirlpools next pass.
+
+## Orca Whirlpools audit (2026-09-12, source read, no tx)
+
+Source: orca-so/whirlpools @ main (programs/whirlpool/src/instructions/). No checked-in IDL.
+
+Findings:
+1. **close_position**: rent receiver is a free parameter, BUT `verify_position_authority` requires the position-token owner/delegate to sign. Same owner-gate as Meteora F1 — no third-party rent sweeping. Lane dead here too, confirmed by source without needing a probe.
+2. **initialize_tick_array is permissionless**: any `funder` can pre-create tick arrays for any pool, paying ~rent that is locked forever (no close_tick_array instruction exists). Same first-touch-pays / never-recoverable pattern as Raydium CLMM and Meteora DLMM bin arrays. Rule holds across all three Solana CLMMs: **never be first LP into a fresh range.**
+3. **reset_position_range exists**: an emptied position NFT can be re-ranged without closing/reopening — position rent paid once, reusable across ranges. If we ever LP on Orca, one persistent position per pool cuts rent overhead vs Meteora's open/close-per-position model.
+4. **lock_position exists**: whirlpool liquidity can be provably, permanently locked on-chain. For pool-safety scoring, locked-position supply is a verifiable anti-rug signal — stronger than Meteora's (where burned positions must be inferred). Worth adding to the ranker if we add Orca coverage.
+
+Verdict: no extractable edge; one cost rule reinforced (3/3 CLMMs), two operational notes banked (position reuse, lock signal). Code-audit lane on Solana CLMMs complete.
