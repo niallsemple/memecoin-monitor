@@ -620,8 +620,29 @@
    "entry_active_bin": -374,
    "minBinId": -442,
    "maxBinId": -374,
-   "status": "open",
+   "status": "exited",
    "add_sig": "3sJs7yhWwUxG9aceGWorLjDgHqw7JVWJiBqiGA1DYn1VrBw5ocxZia7Wt93nqqkpW4LRaZ91BqKMEWwvFCbqtJjo",
+   "width_pct": 0.56,
+   "strategy_tag": "lp_surf",
+   "base_tvl": 151710.09382451358,
+   "base_vol24": 1540330.1922006104,
+   "was_in_range": false,
+   "exit_sigs": [
+    "3e4EffibxFhTmaQuET19wdSniZthnXdE9CE7ai37DFoKwLvefTwJTGs7QU45QHu3ttxcsTnvVw2ohLfuWUjskX7W"
+   ],
+   "exit_ts": 1789145515.158
+  },
+  {
+   "pool": "G6eJgyVdupYx23TD3auEr9PFtv2q98jk3pbg5nP58rdh",
+   "position": "3mTgBX8AYhnt9ZFF6WTgwVwVzkxLMt3D33XAN1W2yzsP",
+   "name": null,
+   "sol_in": 0.093,
+   "ts": 1789145612.087,
+   "entry_active_bin": -53,
+   "minBinId": -109,
+   "maxBinId": -53,
+   "status": "open",
+   "add_sig": "5MvWgsghSYsN4brgWSxu9FZvcEsiP3fauKGnko8r4wuYwkzjNTvJkxrfcmRtVzUDX6dtyrTE4LqABx9cjE7MpyME",
    "width_pct": 0.56,
    "strategy_tag": "lp_surf"
   }
