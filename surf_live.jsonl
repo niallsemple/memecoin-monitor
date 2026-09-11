@@ -15,3 +15,6 @@
 {"kind": "reconcile", "note": "cycle4 harvest exit polluted upward by concurrent tx; on-chain truth: add -0.310645 exit +0.251617 net -0.059027; bankroll corrected 0.368577->0.199414", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "pair": "LOOP-SOL", "net": -0.059027, "bankroll": 0.199414, "ts": 1789136889.261158}
 {"kind": "skip_momentum", "pair": "FLAME-SOL", "mom": -0.02362, "ts": 1789136944.888126}
 {"kind": "enter", "pair": "FLAME-SOL", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "price": 2.3261024799562e-05, "deposit": 0.1994, "fee_day": 0.2676, "mom": 0.0, "ts": 1789137436.077441}
+{"kind": "exit_reconciled", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "returned": 0.197529, "net": -0.001871, "ts": 1789138629.8747652}
+{"kind": "exit", "why": "above_range_abort", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "pair": "FLAME-SOL", "mins": 20.0, "deposit": 0.1994, "returned": 0.197529, "net": -0.001871, "bankroll": 0.197543, "r": 1.1003, "sweep_rc": 1, "ts": 1789138629.875087}
+{"kind": "enter", "pair": "FLAME-SOL", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "price": 2.5391870677033e-05, "deposit": 0.1975, "fee_day": 0.2881, "mom": 0.0, "ts": 1789138695.069029}

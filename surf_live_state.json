@@ -1,27 +1,26 @@
 {
- "bankroll": 0.199414,
+ "bankroll": 0.19754343000000005,
  "started_with": 0.5,
  "open": {
   "provider": "meteora",
   "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
   "pair": "FLAME-SOL",
-  "entry_ts": 1789137430.775192,
-  "entry_price": 2.3261024799562e-05,
-  "deposit": 0.1994,
-  "fee_day_at_entry": 0.2676299112967353,
-  "last_r": 1.1180145344919923,
-  "fee_sol_last": 1.1e-08,
+  "entry_ts": 1789138689.706367,
+  "entry_price": 2.5391870677033e-05,
+  "deposit": 0.1975,
+  "fee_day_at_entry": 0.28805395692700586,
+  "last_r": 1.0,
+  "fee_sol_last": 0.0,
   "x_decimals": 6,
-  "entry_cost": 0.2535,
-  "above_streak": 2
+  "entry_cost": 0.2516
  },
  "cooldowns": {
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789156499.6274571,
   "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602
  },
- "cycles": 4,
+ "cycles": 5,
  "wins": 1,
- "losses": 3,
+ "losses": 4,
  "entry_fails": 0,
  "halted": false
 }
