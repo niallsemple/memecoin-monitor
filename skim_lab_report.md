@@ -31,3 +31,24 @@ Implications:
   just as much as tight ones — width buys IL protection, not fee-share protection.
 - Series is young (2.6h, liquidity-only). Next: join with fee-velocity spikes once the
   collector has more hours, to confirm inflows actually chase bursts (vs random drift).
+
+## vacuum_lab — post-sweep liquidity vacuums (memo #37 idea 7), first cut (2026-09-12)
+
+Signal: liq_active <= 60% of 5min-ago value. **136 events across 8 pools in 2.6h** — vacuums are frequent, not rare.
+
+| Metric | Value |
+|---|---|
+| Depth | median collapse to **21%** of prior active liquidity |
+| Refill (crowding half-life) | median **140s** to double from trough |
+| Failure to refill | 15/136 (11%) never doubled within window |
+| Post-vacuum price | active bin drifts median 22 bins over next 5 min — price still moving |
+
+Caveat: liq_active conflates LP exits with price crossing into naturally thin bins —
+but for fee-per-unit-liquidity the distinction doesn't matter: thin active liquidity
+is thin, and swaps crossing it pay the same elevated per-unit fee either way.
+
+Strategy consequence (memo #37's HFNA window): the vacuum is real and lasts minutes,
+but bin drift shows price is usually still moving when it forms. Entry must wait for
+bin drift to flatten (price convergence) — exactly the memo's "do nothing during the
+move" rule. A live implementation needs: vacuum trigger + bin-drift-flat gate +
+dynamic-fee-elevated check, then seconds-scale entry/exit.
