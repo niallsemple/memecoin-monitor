@@ -760,6 +760,20 @@
     "LCUKR18Wa5XvhJrEXc62bUosRxrHDZ2t5Zpaofztkq4X7J5q9NyhBbXRVuE3ZJgqvGHaFthGWZgNTg5Ti692Zx7"
    ],
    "exit_ts": 1789158049.591
+  },
+  {
+   "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk",
+   "position": "BwAAKEPrikL5WCj8e5a1jr8PyFMSsNhn8C2rKkNBddyL",
+   "name": null,
+   "sol_in": 0.0556,
+   "ts": 1789158543.783,
+   "entry_active_bin": -354,
+   "minBinId": -410,
+   "maxBinId": -354,
+   "status": "open",
+   "add_sig": "3ijSzbgVfPtvEEwRTgftje2tv6C6s7i3BzXoAWZwVs1xzfKVdhvq8RzmkTS1aATHUqb5FX5hfQgDv7UY5UB7Xq1q",
+   "width_pct": 0.56,
+   "strategy_tag": "lp_surf"
   }
  ]
 }
