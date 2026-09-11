@@ -74365,12 +74365,19 @@ async function cmdBinsJson(conn, poolAddr) {
     price: parseFloat(b.pricePerToken),
     liqY: parseFloat(b.yAmount?.toString() || "0") + parseFloat(b.xAmount?.toString() || "0") * parseFloat(b.pricePerToken)
   }));
+  const vp = pool.lbPair.vParameters || {};
+  const pr = pool.lbPair.parameters || pool.lbPair.staticParameters || {};
   console.log(JSON.stringify({
     pool: poolAddr,
     t: Date.now() / 1e3,
     activeBin: ab.binId,
     binStep: pool.lbPair.binStep,
-    bins
+    bins,
+    volAccum: (vp.volatilityAccumulator || vp.volatility_accumulator || "0").toString(),
+    volRef: (vp.volatilityReference || vp.volatility_reference || "0").toString(),
+    varFeeCtl: (pr.variableFeeControl || pr.variable_fee_control || "0").toString(),
+    baseFactor: (pr.baseFactor || pr.base_factor || "0").toString(),
+    baseFeeBps: (pool.lbPair.baseFeeRateFactor || "").toString()
   }));
 }
 async function main() {

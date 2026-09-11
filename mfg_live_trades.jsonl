@@ -3832,3 +3832,5 @@
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789165485.488226}
 {"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep_dust", "mode": "live", "gate": "live", "sigs": [null], "result": "closed 0/1", "ts": 1789165494.1356642}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789165494.730183}
+{"action": "fast_entry_eval", "mint": "AmLUsT8gk4dPeaEYqkimj8THyrv9p6a1G8HCm75ypump", "t": 1789165732.184392, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789165732.187387}
+{"action": "fast_entry_eval", "mint": "pqHhuLCcDqNcN3h4TQVwWrJHGH5Vt67t7YQdp5upump", "t": 1789165820.5908659, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789165820.5937102}

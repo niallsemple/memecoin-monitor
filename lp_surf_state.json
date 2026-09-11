@@ -1,19 +1,11 @@
 {
- "bankroll": 1.2256987131270614,
- "open": {
-  "provider": "meteora",
-  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
-  "pair": "EMBER-SOL",
-  "entry_ts": 1789163984.774972,
-  "entry_price": 0.000129015903427103,
-  "deposit": 1.2256987131270614,
-  "fees_est": 0.008231131019065778,
-  "fee_day_at_entry": 0.4552075077115864
- },
- "cycles": 46,
+ "bankroll": 0.9599044922433535,
+ "open": null,
+ "cycles": 47,
  "cooldowns": {
   "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom": 1789174784.9640179,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789181817.195461,
-  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789185337.583859
+  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789185337.583859,
+  "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789187440.866828
  }
 }
