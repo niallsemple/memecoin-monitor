@@ -53,7 +53,7 @@ POS_FILE = os.path.join(MON, 'lp_positions.json')
 # cost -0.24 SOL; IL-tripwire at r~0.58 is far too deep to be the first exit).
 DANGER_R = 0.97            # below this: switch to tight loop polling
 DANGER_POLL_S = 45         # tight-loop cadence
-DANGER_MAX_ITER = 30       # ~22 min max per invocation, then hand back
+DANGER_MAX_ITER = 5        # ~4 min per invocation — must fit the 300s Bash window
 DOWN_ABORT_R = 0.90        # hard exit on price ratio — cut before X-conversion deepens
 
 
