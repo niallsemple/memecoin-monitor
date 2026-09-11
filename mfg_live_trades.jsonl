@@ -3850,3 +3850,7 @@
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789167903.2350001}
 {"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep_dust", "mode": "live", "gate": "live", "sigs": [null], "result": "closed 0/1", "ts": 1789167911.96506}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789167912.523467}
+{"action": "fast_entry_eval", "mint": "yJBw4Z7Cj9TVydWLpQrE9cYBEUvbW4Ru7NbCHdbpump", "t": 1789168006.541943, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789168006.545293}
+{"action": "fast_entry_eval", "mint": "UUGekirtmPh838YGWPD2rzzyJZzBc1LKgGSoXpbpump", "t": 1789168043.640379, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789168043.64405}
+{"action": "fast_entry_eval", "mint": "vRx8mJhSvkPDVxmeMWetCM3aNK6sa3TreAB1mCjpump", "t": 1789168069.6704562, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789168069.672736}
+{"action": "fast_entry_eval", "mint": "QB4EQ8mTF1vt84whWSnjfFim5Khex4JdY6XjZ5cpump", "t": 1789168150.7008069, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789168150.704042}

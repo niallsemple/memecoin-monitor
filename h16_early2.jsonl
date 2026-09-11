@@ -20045,3 +20045,15 @@
 {"action": "h16e2_drop", "mint": "5DEVvpPsb7XAYZsrgKQotqNPwxHMDSoR87gKc2Fopump", "reason": "no ticks", "t": 1789167939.5675251}
 {"action": "h16e2_drop", "mint": "ELWQooUCYgb9Tzj9kPZFvw1aoreiqtW6JMVJP8DTpump", "reason": "no ticks", "t": 1789167939.5675251}
 {"action": "h16e2_drop", "mint": "5LahLq4ZW4qLDDBNFQJTjsq7JafTX7CYQhHrMgywpump", "reason": "no ticks", "t": 1789167939.5675251}
+{"action": "h16e2_stale", "mint": "Bt7V1doRhat8DVhWUmwD1aUCW7iEgFuo49tyi6tmpump", "t": 1789167999.623672, "last_tick_age": 12.8, "seed": 4.938271603}
+{"action": "h16e2_reject", "mint": "3vhm46rMH3RQeggPpojfEnhJHGaKF1TCZjEXo7Vvpump", "t": 1789167999.623672, "mom": 0.595, "dd": 0.311, "bf": 0.519, "seed": 2}
+{"action": "h16e2_thin", "mint": "C2utPmZGe4uXLzHZMj9L19fUGxAURbS9j2rkhumKpump", "t": 1789167999.623672, "nticks": 2, "seed": 4.938271603}
+{"action": "h16e2_stale", "mint": "27NqQJ4cP5H2b9Wh1xMzu22WuE1TvtAP8UTNgzUopump", "t": 1789167999.623672, "last_tick_age": 13.3, "seed": 2.962962961}
+{"action": "h16e2_reject", "mint": "3AGaHPeipUUnphPfLzdD5f1gMv1JNy9yG9w48PXDpump", "t": 1789167999.623672, "mom": 1.144, "dd": 0.573, "bf": 0.643, "seed": 2.5}
+{"action": "h16e2_stale", "mint": "DJbFsSb36UHjMKucHNjw3aZ6sV7eViTzh1Y1ofpkpump", "t": 1789168059.6680949, "last_tick_age": 4.5, "seed": 3.955344229}
+{"action": "h16e2_stale", "mint": "738vHLrLTWotLLvAWbpqRsziQmSof7XWegSAwLy5Gxqr", "t": 1789168089.68975, "last_tick_age": 23.4, "seed": 5.925925924}
+{"action": "h16e2_stale", "mint": "CPEXMHfa59QCuV4hyk1h14gnGPio8NV7gjFSktKKpump", "t": 1789168134.733748, "last_tick_age": 13.9, "seed": 4.938271603}
+{"action": "h16e2_reject", "mint": "AxvtJgedc75TdfSwEzdnkjBvSdM7BWWm3F23rxHtpump", "t": 1789168134.733748, "mom": 0.595, "dd": 0.445, "bf": 0.443, "seed": 2}
+{"action": "h16e2_reject", "mint": "8mLtR7Q4eXhtMzAAUD8Za3qRK3KzT7mQ278RVzfwpump", "t": 1789168134.733748, "mom": 1.734, "dd": 0.469, "bf": 0.299, "seed": 2}
+{"action": "h16e2_stale", "mint": "EGnwgy9xCZzNXAPJZ6oqK5EmBcUoYznt1PV9ocnWpump", "t": 1789168179.766783, "last_tick_age": 42.9, "seed": 2.216291463}
+{"action": "h16e2_stale", "mint": "7BsQqR7uwattcb522Y3MvBeH16Xwp3NgXBe2acCrpump", "t": 1789168209.797537, "last_tick_age": 12.7, "seed": 4.938271603}
