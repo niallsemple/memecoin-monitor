@@ -33,7 +33,7 @@
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -227 < -223) — position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -68,7 +68,7 @@
    "base_tvl": 156386.26847949892,
    "base_vol24": 2602653.2416695743,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -2053 < -2052) — position is all token-X"
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -103,7 +103,7 @@
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
   },
   {
    "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
@@ -190,14 +190,48 @@
    "entry_active_bin": 390,
    "minBinId": 322,
    "maxBinId": 390,
-   "status": "open",
+   "status": "exited",
    "add_sig": "51k25zpQxHGTNaeGp1VP1ybpWTsnHCY37CrfpC8vX4nsdj5qyVbhb4nKnaRewATyWJZqLoQF9CfS1L5R2Lx5BJKR",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2",
    "base_tvl": 971226.5633655998,
    "base_vol24": 7639189.854052532,
-   "was_in_range": true,
-   "above_range_passes": 0
+   "was_in_range": false,
+   "above_range_passes": 2,
+   "exit_reason": "recenter_above_range"
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "6qx59kEyWkpYKkCp1YaAJKgoCdCrRxPem4dwTTudALdz",
+   "name": null,
+   "sol_in": 0.794,
+   "ts": 1789099689.001,
+   "entry_active_bin": 399,
+   "minBinId": 331,
+   "maxBinId": 399,
+   "status": "exited",
+   "add_sig": "3dqSi8R12DEfRZXLELhMpa71ZvmVWjPBwNzH7rW2rShbQPe8GCYeZg8QMwLaeqBBkzwHEvkfDQouTJeEkWN9mhvb",
+   "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2",
+   "base_tvl": 1002208.475544346,
+   "base_vol24": 4626734.132790483,
+   "was_in_range": false,
+   "above_range_passes": 2,
+   "exit_reason": "recenter_above_range"
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "7fwpycbCk1vhz5r8iBUAFMuRXkRPXtkPzY9pnLJ7J4NM",
+   "name": null,
+   "sol_in": 0.795,
+   "ts": 1789100698.444,
+   "entry_active_bin": 410,
+   "minBinId": 342,
+   "maxBinId": 410,
+   "status": "open",
+   "add_sig": "4Y43xsU7unEgLtT4PegeidpCDV4G6hkyyeza84vLpCLAUBwrnZ5vWV6hqatvGtqtVi7oDBQZxdDCvpmDZ3nYcxw4",
+   "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2"
   }
  ]
 }
