@@ -260,13 +260,14 @@ def check_open(st, now):
     print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} fees={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
           f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} "
           f"above_streak={o['above_streak']} bankroll={st['bankroll']:.4f}")
+    if r <= DOWN_ABORT_R:
+        # hard price stop FIRST: at r<=0.90 realized loss only deepens while
+        # we wait — outrank harvest (cycle 4: harvest label at r=0.887 = -19%)
+        do_exit(st, 'down_abort'); return 'exited', r
     if fee_pct >= HARVEST_PCT:
         do_exit(st, 'harvest'); return 'exited', r
     if il <= TRIPWIRE_PCT:
         do_exit(st, 'tripwire'); return 'exited', r
-    if r <= DOWN_ABORT_R:
-        # hard price stop: get out before X-conversion + exit slippage deepens
-        do_exit(st, 'down_abort'); return 'exited', r
     if o['above_streak'] >= 3 and age_min >= 10:
         do_exit(st, 'above_range_abort'); return 'exited', r
     if age_min >= TIME_STOP_MIN:
