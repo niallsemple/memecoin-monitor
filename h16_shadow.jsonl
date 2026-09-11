@@ -19911,3 +19911,5 @@
 {"action": "h16_reject", "mint": "bVHGNRgyZfKJBMHoEvL8nmKvkpmxMD3xVVR4EMVpump", "t": 1789168772.116998, "mom": 1.035, "dd": 0.503, "bf": 0.579, "seed": 3.955344229}
 {"action": "h16_reject", "mint": "434QyqE1bqxBZdq3v42MoufqUspsfKijX6BVc9VXpump", "t": 1789168772.116998, "mom": 1.034, "dd": 0.96, "bf": 0.769, "seed": 2.216291463}
 {"action": "h16_close", "mint": "3qm37g2vju6uUMk7AxemJcNpq9n9PJMBHe4t64GVpump", "t": 1789168754.3729799, "outcome": "loss", "mult": 0.92, "mins": 5.8, "mom": 1.103, "dd": 0.905, "bf": 0.643, "seed": 2.967496174}
+{"action": "h16_reject", "mint": "7pZU2LaQkt13T6CX2tfoLRcwcoHZKuXgBmESgEgupump", "t": 1789168866.466217, "mom": 0.874, "dd": 0.874, "bf": 0.25, "seed": 2}
+{"action": "h16_reject", "mint": "4sTj1Lwqg9zuVcHwKiFZ7wZFCnBaad6jDz2h3woApump", "t": 1789168866.466217, "mom": 1.397, "dd": 0.505, "bf": 0.667, "seed": 2.967496174}
