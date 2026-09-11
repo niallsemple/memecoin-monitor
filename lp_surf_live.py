@@ -187,13 +187,22 @@ def do_exit(st, why, gross_hint=None):
             returned = after2 - before
             if returned > 0: break
     reconciled = False
-    if returned <= 0:
-        rec = reconcile_exit_onchain(o)
-        if rec:
-            returned, net_onchain = rec
-            reconciled = True
-            log({'kind': 'exit_reconciled', 'pool': o['pool'], 'returned': round(returned, 6), 'net': round(net_onchain, 6)})
-        else:
+    # PRIMARY: on-chain reconciliation from the position's own add/exit txs.
+    # Wallet before/after deltas get polluted by concurrent guardian flows in
+    # BOTH directions (cycle 1: -0.5 phantom; cycle 4: +0.169 phantom).
+    rec = reconcile_exit_onchain(o)
+    if rec:
+        returned, net_onchain = rec
+        reconciled = True
+        log({'kind': 'exit_reconciled', 'pool': o['pool'], 'returned': round(returned, 6), 'net': round(net_onchain, 6)})
+    else:
+        if returned <= 0:
+            for _ in range(3):
+                time.sleep(10)
+                after2 = wallet_sol()
+                returned = after2 - before
+                if returned > 0: break
+        if returned <= 0:
             log({'kind': 'exit_measure_fail', 'pool': o['pool'], 'why': why,
                  'note': 'EXITED but wallet delta unreadable; bankroll preserved, halting for manual review'})
             st['open'] = None

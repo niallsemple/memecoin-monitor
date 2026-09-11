@@ -10,3 +10,6 @@
 {"kind": "skip_momentum", "pair": "LOOP-SOL", "mom": -0.0099, "ts": 1789135180.813629}
 {"kind": "skip_momentum", "pair": "LOOP-SOL", "mom": -0.0197, "ts": 1789135574.845078}
 {"kind": "enter", "pair": "LOOP-SOL", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "price": 3.4623874224646e-05, "deposit": 0.2584, "fee_day": 0.5645, "mom": 0.0, "ts": 1789135937.665992}
+{"kind": "exit", "why": "harvest", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "pair": "LOOP-SOL", "mins": 13.8, "deposit": 0.2584, "returned": 0.420781, "net": 0.110136, "bankroll": 0.368577, "r": 0.8874, "sweep_rc": 1, "ts": 1789136758.4594471}
+{"kind": "cooldown", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "hours": 6.0, "why": "harvest", "ts": 1789136758.459764}
+{"kind": "reconcile", "note": "cycle4 harvest exit polluted upward by concurrent tx; on-chain truth: add -0.310645 exit +0.251617 net -0.059027; bankroll corrected 0.368577->0.199414", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "pair": "LOOP-SOL", "net": -0.059027, "bankroll": 0.199414, "ts": 1789136889.261158}
