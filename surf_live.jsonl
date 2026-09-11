@@ -1,1 +1,2 @@
 {"kind": "enter", "pair": "baton-SOL", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "price": 3.2506573480951e-05, "deposit": 0.5, "fee_day": 0.3413, "mom": 0.0, "ts": 1789125199.766508}
+{"kind": "exit", "why": "timestop", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "pair": "baton-SOL", "mins": 91.0, "deposit": 0.5, "returned": 0.0, "net": -0.5, "bankroll": 0.0, "r": 1.6002, "sweep_rc": 1, "ts": 1789130662.587407}
