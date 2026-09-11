@@ -98,6 +98,17 @@ def position_status(pool):
     return None
 
 
+def pool_x_decimals(pool):
+    import urllib.request
+    try:
+        req = urllib.request.Request(f'https://dlmm.datapi.meteora.ag/pools/{pool}',
+                                     headers={'User-Agent': 'curl/8.0'})
+        d = json.load(urllib.request.urlopen(req, timeout=20))
+        return int((d.get('token_x') or {}).get('decimals'))
+    except Exception:
+        return None
+
+
 def sweep():
     r = subprocess.run([sys.executable, SWEEP], capture_output=True, text=True, timeout=300)
     return r.returncode
@@ -146,14 +157,20 @@ def main():
         r = (price / o['entry_price']) if (price and o['entry_price']) else o.get('last_r', 1.0)
         o['last_r'] = r
         il = il_ssy(r)
-        fee_sol = (int(ps['feeY_lamports']) / 1e9) if ps else o.get('fee_sol_last', 0.0)
+        fee_y_sol = (int(ps['feeY_lamports']) / 1e9) if ps else o.get('fee_sol_last', 0.0)
+        # X-side (token) fees, valued at current pool price — baton-type pools
+        # accrue mostly in X when price rides the top of the band
+        fee_x_sol = 0.0
+        if ps and int(ps.get('feeX_lamports') or 0) > 0 and o.get('x_decimals') and price:
+            fee_x_sol = int(ps['feeX_lamports']) / (10 ** o['x_decimals']) * price
+        fee_sol = fee_y_sol + fee_x_sol
         if ps: o['fee_sol_last'] = fee_sol
         fee_pct = fee_sol / o['deposit'] if o['deposit'] else 0
         age_min = (now - o['entry_ts']) / 60
         in_range = ps.get('inRange') if ps else None
         save_state(st)
-        print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} feeY={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
-              f"il={il*100:+.2f}% inRange={in_range} bankroll={st['bankroll']:.4f}")
+        print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} fees={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
+              f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} bankroll={st['bankroll']:.4f}")
         if fee_pct >= HARVEST_PCT:
             do_exit(st, 'harvest')
         elif il <= TRIPWIRE_PCT:
@@ -217,7 +234,8 @@ def main():
     st['entry_fails'] = 0
     st['open'] = {'provider': 'meteora', 'pool': c['pool'], 'pair': c['pair'],
                   'entry_ts': time.time(), 'entry_price': p2, 'deposit': deposit,
-                  'fee_day_at_entry': fee_day, 'last_r': 1.0, 'fee_sol_last': 0.0}
+                  'fee_day_at_entry': fee_day, 'last_r': 1.0, 'fee_sol_last': 0.0,
+                  'x_decimals': pool_x_decimals(c['pool'])}
     save_state(st)
     log({'kind': 'enter', 'pair': c['pair'], 'pool': c['pool'], 'price': p2,
          'deposit': deposit, 'fee_day': round(fee_day, 4), 'mom': round(mom, 5)})
