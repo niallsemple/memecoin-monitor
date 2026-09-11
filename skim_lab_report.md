@@ -12,3 +12,22 @@
 ## Verdict (hourly scale)
 PASS: fee windows systematically outlive LP crowding — a skim window exists at hourly scale.
 Note: pool-level TVL is a coarse proxy for active-bin liquidity; ~2h median cadence cannot see 30s-5min windows. A dense bin-level collector is the next build if this passes.
+
+## v2 — burst-triggered crowding, first cut (2026-09-12, bin_snapshots 2.6h, 11 pools)
+
+Method: inflow event = liq within ±10 bins grows ≥25% vs 5min earlier. 17 events found.
+
+| Metric | Value |
+|---|---|
+| Inflow size | median **+43%** in 5 min, p90 +95% |
+| Incumbent dilution | median fee share drops to **70%** within 5 min of event |
+| Persistence | 68% of inflow remains at 30 min; **97% at 60 min** — crowding is sticky |
+| Concentration | active-bin liq growth +39% ≈ pm10 growth — inflow spreads across range, not sniping the active bin |
+
+Implications:
+- Quoted fee yields overstate realizable yield during hot windows: an incumbent should
+  haircut quotes by ~30% for crowding, and the crowd does NOT leave within the hour.
+- Inflows being range-wide (not active-bin snipes) means wide-band positions get diluted
+  just as much as tight ones — width buys IL protection, not fee-share protection.
+- Series is young (2.6h, liquidity-only). Next: join with fee-velocity spikes once the
+  collector has more hours, to confirm inflows actually chase bursts (vs random drift).
