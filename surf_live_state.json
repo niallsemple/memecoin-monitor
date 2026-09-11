@@ -1,20 +1,7 @@
 {
- "bankroll": 0.06303443600000005,
+ "bankroll": 0.061163811000000054,
  "started_with": 0.5,
- "open": {
-  "provider": "meteora",
-  "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
-  "pair": "STONK-SOL",
-  "entry_ts": 1789155651.247523,
-  "entry_price": 0.002906387985686888,
-  "deposit": 0.063,
-  "fee_day_at_entry": 0.030201791716800604,
-  "last_r": 1.0099999999999998,
-  "fee_sol_last": 0.0,
-  "x_decimals": 9,
-  "entry_cost": 0.1171,
-  "above_streak": 2
- },
+ "open": null,
  "cooldowns": {
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789156499.6274571,
   "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602,
@@ -25,9 +12,9 @@
   "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789170091.836137,
   "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f": 1789173921.927681
  },
- "cycles": 14,
+ "cycles": 15,
  "wins": 3,
- "losses": 11,
+ "losses": 12,
  "entry_fails": 0,
  "halted": false
 }

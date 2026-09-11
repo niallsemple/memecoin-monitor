@@ -51,3 +51,6 @@
 {"kind": "exit_reconciled", "pool": "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f", "returned": 0.063014, "net": -0.017386, "ts": 1789152321.92724}
 {"kind": "exit", "why": "down_abort", "pool": "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f", "pair": "EMBERCAT-SOL", "mins": 12.0, "deposit": 0.0804, "returned": 0.063014, "net": -0.017386, "bankroll": 0.063034, "r": 0.9053, "sweep_rc": 1, "ts": 1789152321.927608}
 {"kind": "cooldown", "pool": "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f", "hours": 6.0, "why": "down_abort", "ts": 1789152321.9276822}
+{"kind": "enter", "pair": "STONK-SOL", "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy", "price": 0.002906387985686888, "deposit": 0.063, "fee_day": 0.0302, "mom": 0.0, "ts": 1789155656.5311391}
+{"kind": "exit_reconciled", "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy", "returned": 0.061129, "net": -0.001871, "ts": 1789156354.5841029}
+{"kind": "exit", "why": "above_range_abort", "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy", "pair": "STONK-SOL", "mins": 11.7, "deposit": 0.063, "returned": 0.061129, "net": -0.001871, "bankroll": 0.061164, "r": 1.01, "sweep_rc": 1, "ts": 1789156354.584495}
