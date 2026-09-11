@@ -8380,3 +8380,11 @@ v3 `qualified=false`, `data_pass=false` — all three manual sign-offs (exit-rul
 - Last 8 cycles (ssy_v1 + cooldowns + momentum guard era): 4W/4L, sum -0.159760, expectancy -0.019970/cycle, PF 0.262, 4 tripwires
 - Clean final-rules sample (c18-20): 2W/1L, sum -0.010580, expectancy -0.003527/cycle
 - VERDICT: NO-GO for real-SOL LP-surf. 70% lifetime win rate only breaks even because tripwire losses are ~2.3x harvest wins; recent tripwire rate (4 of last 8) makes expectancy negative. Momentum guard + down-r cooldown helped but insufficient. Keep paper-running to accumulate n; do not deploy real SOL.
+
+## LP-SURF SCORECARD RE-TEST (after cycle 27)
+
+- All cycles: n=27, 21W/6L, sum +0.159579 SOL, expectancy +0.005910 SOL/cycle, PF 1.652, avg win +0.019249 / avg loss -0.040774, max loss -0.068403
+- Last 8 cycles: 8W/0L, sum +0.175786, expectancy +0.021973/cycle, 0 tripwires (7-harvest + 1-timestop streak, cycles 20-27)
+- Last 10: 9W/1L, tripwire rate 10%; last 12: 10W/2L, tripwire rate 16.7% — both under the informal 20% re-test trigger
+- Driver: RUSH-SOL pool (..P58rdh) fee/day accelerating 128→165%/day with price pinned near entry (r≈1.00-1.03); single-pool concentration is the caveat — streak is one hot pool, not broad edge
+- VERDICT: RE-TEST PENDING OWNER REVIEW. Numbers now clear the informal trigger, but the streak is concentrated in one pool; a single tripwire (-0.04 avg) erases ~2 harvests. Proposal for owner: tiny fixed-size real-SOL pilot (0.05 SOL/cycle, no compounding, 10-cycle cap, hard stop at 2 tripwires) gated behind explicit acceptance. PAPER-ONLY until then.
