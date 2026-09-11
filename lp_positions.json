@@ -380,14 +380,15 @@
    "entry_active_bin": 476,
    "minBinId": 408,
    "maxBinId": 476,
-   "status": "open",
+   "status": "exited",
    "add_sig": "3dReFLbxJX1jVb79dj8xy8Ta6gYdapYTEvFRWvsqEadRB3TU61T1bjkEYzKRprfgDtwgHxi5XNAU51vuVtZC5Umr",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2",
    "base_tvl": 1081977.4936852737,
    "base_vol24": 8904382.33476846,
    "was_in_range": false,
-   "above_range_passes": 1
+   "above_range_passes": 2,
+   "exit_reason": "recenter_above_range"
   },
   {
    "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf",

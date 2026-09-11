@@ -460,3 +460,23 @@
 11:08:38 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
 11:08:41 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
 11:08:41 guardian pass complete
+11:30:43 AsSyvUnb: active=469 range=[393,461] tvl=$1,106,774 vol24=$6,658,609 feeY=0.000567SOL feeX=220612
+11:30:43 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+11:30:43 guardian pass complete
+11:52:44 AsSyvUnb: active=475 range=[393,461] tvl=$1,114,202 vol24=$7,272,673 feeY=0.000567SOL feeX=220612
+11:52:44 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+11:52:44 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+11:52:48 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+11:52:48 guardian pass complete
+12:14:47 AsSyvUnb: active=505 range=[408,476] tvl=$1,081,977 vol24=$8,904,382 feeY=0.000173SOL feeX=64398
+12:14:47 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+12:14:47 BN7CfsGm: active=-419 range=[-494,-426] tvl=$44,369 vol24=$956,821 feeY=0.000000SOL feeX=0
+12:14:47 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+12:14:47 guardian pass complete
+12:34:15 AsSyvUnb: active=486 range=[408,476] tvl=$1,114,786 vol24=$10,257,040 feeY=0.000173SOL feeX=64398
+12:34:15 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+12:34:15 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+12:34:21 AsSyvUnb: redeploy rc=0 (refusal = data no longer qualifies)
+12:34:22 BN7CfsGm: active=-420 range=[-494,-426] tvl=$41,400 vol24=$946,277 feeY=0.000288SOL feeX=8638430
+12:34:22 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+12:34:22 guardian pass complete
