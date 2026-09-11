@@ -1,16 +1,7 @@
 {
- "bankroll": 0.8089512484690367,
- "open": {
-  "provider": "meteora",
-  "pool": "4iVHkn5WhmGwrKb2fYFNPnTkqhwYTEEezvsju9YEBY76",
-  "pair": "ALLINU-SOL",
-  "entry_ts": 1789168814.279577,
-  "entry_price": 5.4327526735854e-05,
-  "deposit": 0.8089512484690367,
-  "fees_est": 0.0030045402232057538,
-  "fee_day_at_entry": 0.8774780755808818
- },
- "cycles": 50,
+ "bankroll": 0.7714004348260298,
+ "open": null,
+ "cycles": 51,
  "cooldowns": {
   "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom": 1789174784.9640179,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789181817.195461,
@@ -18,6 +9,7 @@
   "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789187440.866828,
   "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ": 1789188322.471638,
   "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789189500.387541,
-  "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789190189.541153
+  "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789190189.541153,
+  "4iVHkn5WhmGwrKb2fYFNPnTkqhwYTEEezvsju9YEBY76": 1789190909.550694
  }
 }
