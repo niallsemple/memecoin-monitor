@@ -3859,3 +3859,4 @@
 {"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep_dust", "mode": "live", "gate": "live", "sigs": [null], "result": "closed 0/1", "ts": 1789168602.019257}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789168602.621525}
 {"action": "fast_entry_eval", "mint": "UDjQhxeBvaefDbjke2fLCzgXcD3mXkF341LuW67pump", "t": 1789168775.98338, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789168775.985604}
+{"action": "curve_buy", "mint": "ZyNRXJfwNWUJCTZU9c2XU6Zdrg2k96pWY8tv7gHpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789169060.684582}
