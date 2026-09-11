@@ -1588,3 +1588,777 @@
 {"t": 1789093469.189873, "mint": "3RXLV9xeE1gFs5KNLBmaziufxMRdcPwAHz4HzoD2Ygan", "venue": "meteora_dbc", "age": 300, "indexed": false}
 {"t": 1789093469.189873, "mint": "3RXLV9xeE1gFs5KNLBmaziufxMRdcPwAHz4HzoD2Ygan", "venue": "meteora_dbc", "age": 600, "indexed": false}
 {"t": 1789093469.189873, "mint": "3RXLV9xeE1gFs5KNLBmaziufxMRdcPwAHz4HzoD2Ygan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095515.0127418, "mint": "AGY96Vh9YBB1w7HpCV2VC5royhQAik7LsuT15G3rbAgS", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095803.4075809, "mint": "FxgrkQCGSTW8aNQGcjHuzY1mpen9P51HjoXFhcAxtET", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789095898.491832, "mint": "DnLrHAmZRxspTSHhu4XmmsHCQZCk63NPXGu9Y2qw7TMg", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789096741.572622, "mint": "AQbo1Dejmynvsjr8WDP9hu7PzpsRUkkKwHwdx4dGzord", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "J8GHhZNevUqMAsaVuchABAEFKpUzvWgGawrmkqMbBtoU", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 2.894493892814817e-05, "mult": 1.0, "impact": 0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789097123.377694, "mint": "84zF1BeY96udo3RkN2UG3p7YbNHR8g9fF1YrxZZAvm61", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098255.7843578, "mint": "4TKDjHhVC2gseNVKdJWhxvUtR8pZafCK61ZALXUvEgbc", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789098446.692023, "mint": "BFtqQG76vF7A41g7i2vXVBnTsdaESvnothZtXDBB2gan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098542.220515, "mint": "GbwcASD6ZC3bPBXrNMFHHx6D8PenUvogCewoPniCu6QH", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.0418, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.04188, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.04188, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.04188, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.04188, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "B8nQtca4HQsDN36k8HU3rxN6XWTCkX5n15dggmoExnk7", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 3.056594190090021e-05, "mult": 1.0, "impact": 0.04188, "amm": "Dynamic Bonding Curve"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789098637.749196, "mint": "jqPUcH8SBYr35vKMwxCstEPp2TwJGPRVDtU5k6jT6Jm", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789099955.769187, "mint": "JBo6ycGpWSfTucY3znXG2NqHVNuiqA1UV1sMk6Y8DFWY", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100711.0024, "mint": "3e2GKUQDkZJf2bMGLgLRHUBaa6er9jdSk7fL5iGVZKh4", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789100900.9329531, "mint": "Hdxrpg3S1nEHG6WD2aivHGHaE3fXbNFnf9dy99KLusir", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.1369, "amm": "HumidiFi,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.1369, "amm": "HumidiFi,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.1368, "amm": "Quantum,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.1368, "amm": "Quantum,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.1369, "amm": "Quantum,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101187.362368, "mint": "MD1FboTWxwTXgXuXJ43GvZ2ySFxvsF12R25UFJYQDaJ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.1369, "amm": "Quantum,Meteora DAMM v2,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.0646, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.0647, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.0647, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.0647, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.0647, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101282.9253619, "mint": "62M6nEynjqfWssxzmFmUAurPnzN7MWjpmWg2zT1GVUk9", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.0647, "amm": "Quantum,Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789101473.81229, "mint": "8RyMTi8brZtuSYJX5HAHwzkR5qgYKA4emEJvR4fapLDD", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 5.1753628204558316e-05, "mult": 1.0, "impact": 0.03049, "amm": "Flux,Dynamic Bonding Curve"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 5.175295997572964e-05, "mult": 1.0, "impact": 0.03048, "amm": "BisonFi,Dynamic Bonding Curve"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 5.175295997572964e-05, "mult": 1.0, "impact": 0.03048, "amm": "BisonFi,Dynamic Bonding Curve"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 5.1753628204558316e-05, "mult": 1.0, "impact": 0.03049, "amm": "Flux,Dynamic Bonding Curve"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 5.1753628204558316e-05, "mult": 1.0, "impact": 0.03052, "amm": "Flux,Dynamic Bonding Curve"}
+{"t": 1789102032.9192069, "mint": "DTDbXzJaHFginSTg7ApydVtLL6gracBAMrP1CYxChere", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 5.175276475445282e-05, "mult": 1.0, "impact": 0.0305, "amm": "BisonFi,Dynamic Bonding Curve"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102319.6925461, "mint": "7t5hrrLCDJhLJW2oMSBB4118rCU8bwChuvMU5nUrddsZ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "3beRwPmNzSws1ALRd5Po7uR88iygzWKoEuRw3NZjQ5x5", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102510.832818, "mint": "yVYPbEQVRmAPnyJHXX4N3YU54hCKuQwF8f2XcsLva9K", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789102606.9252841, "mint": "DmGAZfv97YS6qUqTA8QhXhT4CaDS17nLyTTnLQHBC18L", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "F6VwUxcEhJXvSUzNoLfxA1FcVDGwKT53SVW2M66xhB7F", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103354.0179908, "mint": "J8zPrGvGNAK58RvTry9ScZ7yBc1fx89FvFK5a7YCMZkw", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789103832.491539, "mint": "Bjgg5NjbrJfEJjtBg67mmsJubA4CFEV6rUuZcMs45VR8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "BL8UWm2fPAdV1ER68qzkHhrWATwdYxwEF1vCHg8u44uw", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.1748, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.1748, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.1748, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.1748, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.1748, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104767.9275572, "mint": "4Gm6ijFya6ufw7X27DwxuPfbcj8YMkGsz32QRfSyJ6mg", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.1749, "amm": "Dynamic Bonding Curve"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104770.978239, "mint": "8irJ7kQ2xmz2kAgMkEmTZxXn63fgQkFoTcouzdRQ8uot", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "4Tb7b1sp4CdYxh152mq3dFqWy9Bgw5JoB2hhE2eAD9jw", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789104961.221473, "mint": "HEedLK1BAXGEHF5iZdzpmkowmCd6XgSA6Vwe1FLmBKk9", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "FEpQGp52cfuRbpJTdHEP3icfxgDZzLwtqbYDjCoohA82", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106282.688719, "mint": "AnDLWPm9uChdsxout1hWEGC4BzyexVWpExDZFQ4Vf2UQ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789106756.5561202, "mint": "AzNCvCJ9WmbSGTQt3cgE9DMMR34DFDxRxvMdr8UYkCxV", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "9tRTYJM6ncACwC3uXjKw2SmZV3seThqyoxSqLUUw3oRt", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "7mPBdH3SRZgYCzM4F944NpEd6EjVRhUwrNFLdP3rLQTG", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107347.625551, "mint": "6EWZTZk8b2JgTxLdM5Myve3MLrdreBPC1RqEoATsBdmA", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9928, "amm": "Meteora DAMM v2"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789107823.830291, "mint": "G5HdF4sudrALosmh1wrVPnEQBaFg122FXtDyMCyBfgan", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 1.6724721228726018e-05, "mult": 1.0, "impact": 0.0286, "amm": "Dynamic Bonding Curve"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789108014.905045, "mint": "2pGHYozDdhU4fiDHze9sDw5Rb5gmaKhYsjFAsohLFJaP", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "DQanhfHdiRtKa9n9XrgdKo86zyfhbwW7vQhonkWDienw", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789109962.4158468, "mint": "Es93AQGhuubGMbUv4apvP8Ait7f99He4dLmBX45zYL6R", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110247.292518, "mint": "5txyszbx6kaQf31mQYUbqtjK7q7rQ1i7umxwBGEYo2fm", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789110436.886533, "mint": "4TKM36wSpdn9JDoes39PFb68RZGp5euVTTB271Kj8xUQ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112045.322763, "mint": "CLVhvYU54N3rbh1AQdXqLeXHBrVGZeKrLAkthC9MTXi8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.1531, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789112956.722063, "mint": "C5cAT8GyDoj1c9m1TqEo2kixmpF2HLNKPWsargQsMWkX", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.174, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789113996.357476, "mint": "213yaszTnoxyUHBGAVKgvG6p78FKBhLUU3eP7gcB37Uq", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114282.984097, "mint": "Av7FvkV14dCVFcayDHUguNc2hjp4RYz3jaBrETRtKzEL", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789114377.5505779, "mint": "8LsLBVKJ3KJUXWrKxSdNLyt3WdUpNaGvxr1T2arb8Jm8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 0.006422256042200169, "mult": 1.0, "impact": 0.00143, "amm": "Meteora"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115412.3573089, "mint": "DKp5qnkZ35EPrNh4Lq9NGERVYWmUBCogFT8pvBBV4d29", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "4yL2cz9TcwTrjrneDn2Bs1NZWNvtWPCfz7C2KLJsAAyr", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789115602.2497, "mint": "EThRhv88TLXufK9UKtTrYpDitvkZHXs1VmNDkDks8gan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789115982.256618, "mint": "5MG5jFpd2Fzr5H9K1AhrdzzMv9JBWhHHSz6X97J2JQf5", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116545.6939058, "mint": "FZqSbjvjfBbhLEqnjKskTtdTtgsQBxLNanDq14N2mFsd", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9953, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789116923.0925062, "mint": "5TJFgbVZix58Bnmn9oh1cksDxN9XAEzgZc5CYCH9GHb9", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789117017.894696, "mint": "3LgrDREMTtQb1aNRKKNG59sFiNWvnZwRhRJBxFKENFuf", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789120511.879352, "mint": "B4LN7mJiakap3uDKWk5vsm8wLhPsZL6U9TaATdgfMU1v", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123442.308576, "mint": "AMtpWHJEukGwXxsWUMx6zAfUZGZRawW1CG14vTeyJKHt", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9969, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789123916.060322, "mint": "2UPktEg4PfHc9EYaF1CmqxrgmoTMfukjs7vxZXxa7i9Y", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125803.857362, "mint": "4NGLRbbRWod1qDbWJXXnWnM3PSBK4JeYg7FD5wTLa5Gk", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789125994.6126342, "mint": "FLsw62FtdGW8YaBgkkxKWc1qoyTUFpRBukDpUUo9xmWC", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9976, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127569.044672, "mint": "E6cGN9msY4ck3Dx4K7NVKVzZzxg9JP61LpxJZ2H275Vc", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04544, "amm": "Dynamic Bonding Curve"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04544, "amm": "Dynamic Bonding Curve"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04544, "amm": "Dynamic Bonding Curve"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04543, "amm": "Dynamic Bonding Curve"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04543, "amm": "Dynamic Bonding Curve"}
+{"t": 1789127758.131116, "mint": "A1QF9vzoc3StziuC4Mtq3xjYJ38rPS6b1hQiMp85EDTY", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 3.050893485239524e-05, "mult": 1.0, "impact": 0.04543, "amm": "Dynamic Bonding Curve"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789128416.66097, "mint": "27f79o6324JxF2SMZRu7GPmgSeYkszB8qNZciQwoVNzR", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "EkquoQ9LBgR3fQ9Hzz6Eb1LD9oNxAKorSKTryooFnxU", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9975, "amm": "Meteora DAMM v2"}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789129174.7182899, "mint": "48n5p7z84EEBGehuFppChCzPgtoiaJs65XYbokVREgan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130116.361395, "mint": "2pBMbK32GnVjWz8fMjRgj3RRVgCmbp8nadh96xcCAFSH", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "3EmuL256aCrZYqXmDfLmSp3e1N6vMksa9JSwtnkLwEm3", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9981, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "GkGkYvtFmABeKgbH85oBoYkPmrauBkAvht3MrkqtSdnL", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789130497.722856, "mint": "6YHUGgrva4pTEueWTXkNiSdXtrTLcWkVS3MQFMoXvf7", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9961, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131156.3632078, "mint": "FccgaCYoccWePwrs7WVgsNoqivAwi2wGVbbtPEReGyEL", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9987, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131251.517507, "mint": "CfLLMvV9E9gUNp5tRNkvFfUEsvLyFZru9Hn52DidHqJZ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.998, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789131819.998878, "mint": "9bkr3wRndUnHUTnsBvQ8Y4z2dLjMaeZBMstUUfFmfAzb", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135123.99946, "mint": "CEiASbqexjHxDrF1JobCCJPQQN9RufZfPdhKU69kKnzA", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135409.280855, "mint": "2FdNRuE6koarajXjuYmDnHEGxkyo7dnMs3o3dsY4cTS8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9929, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "GnJYZzdpkxtEcoNAHeQxcAg8pRCeS1cMRfCgnxBQvgj1", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789135504.577157, "mint": "BxfRem94rksrd3CpTYPJysinR5pvKvg7hRz3J4WXWgan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789136348.5887418, "mint": "A3XJ32k2r7wNULc8UitPGaPWri7FwbxoSbWSNcmUbic", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2mzSSMWgrdygHu1TAH2bwZYtMv1pTm5dKVJVAWLioApk", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "6AP6cHXjKUumnS9zb5Ntto2wApr8UZPTvBvR22Jcd461", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137671.46961, "mint": "2jEZxMCyynZSa796TxfWcMY8vMXehSPLDv8ngMdtTAMu", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.979, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789137861.281627, "mint": "GHhdHZ18H7RPNzTk2Esr4356dk8TpbASK3fhB5BoCCRC", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138243.598814, "mint": "4wdaGC1s4LqNZiaH2aAbYZopeurGveHg1g3z3YN6h4pg", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9945, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789138339.356338, "mint": "FHuUVTCZyZtSRGGpgYsgau7oUZxg2jCgxF7ytKcqVW7J", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "HQ8R6MP647ES5FVcHRJc6vi2kTTSLotYGjRgBVdNLAg5", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9984, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "3daQBAdxdkPQgb7gj7vYa7Wqtf4D7myhCDkFDfNysvKQ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789140881.584805, "mint": "6P6giNn4rbdhT5g3Xiw9i2hLhqZnoCijAtPGD9ZZ1EB5", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789141923.0670679, "mint": "6GQVhG9D9gNGpTtwQ3rcWmK7AhECRonSmvW2JTPYbi2V", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142207.53566, "mint": "BC4iG9NJ2U56j7GxtMSYYNX1DMT5YBqXMPNHr7YFh2eS", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9986, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789142957.886913, "mint": "ER1xzTu7XQjhxmktF3tx7XLZkdNxX7WkT7B9zfH4qzCk", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9991, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "6NYojG8a5U66uMVtmxavcQHjRdoFJxdXm6n8rNshj29t", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9941, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789143148.4352891, "mint": "EFY8B4nwjbxKpRzCHi5UaDMAWurTZwGz5ASiUrm4qEBE", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9983, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789144883.095558, "mint": "56LRtR4HsFi1gCLpDfUF6RJDmMMFF2sJW3QrXpSv4dWa", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "E6NDF2BQei1hEvWiQZPHu6kieT8pH78Ub7RqvabqcAbP", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 0.0007815910207105356, "mult": 1.0, "impact": 0.03255, "amm": "Quantum,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 0.000781598243966309, "mult": 1.0, "impact": 0.0147, "amm": "Quantum,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 0.000781598243966309, "mult": 1.0, "impact": 0.0147, "amm": "Quantum,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 0.0007815988651720954, "mult": 1.0, "impact": 0.01465, "amm": "Flux,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 0.0007816158135483372, "mult": 1.0, "impact": 0.01467, "amm": "Flux,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9uHVufcAPmqVcgSyYHLnKDwUxbJ6cNznrT8wFYxkFGXX", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 0.0007816158135483372, "mult": 1.0, "impact": 0.01464, "amm": "Flux,Meteora DLMM,Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "GqJy9RjcotWAZ9NQvuRQbTCJpoWEaaNmDMit8wFMfMUu", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9cFsF71ZXmfkMzVuKAFiyX6GomtwrDYdnvpeqRnNayUt", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 5.893398015376281e-05, "mult": 1.0, "impact": 0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789152186.4083729, "mint": "CMAMEnDk4NAuzsSpcbP41AcmmAB2c518F7WYp9r9zitN", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 4.472024757003125e-05, "mult": 1.0, "impact": 0.01086, "amm": "Quantum,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 4.4719417375470675e-05, "mult": 1.0, "impact": 0.01084, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 4.4719417375470675e-05, "mult": 1.0, "impact": 0.01084, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 4.471926948986346e-05, "mult": 1.0, "impact": 0.01084, "amm": "Quantum,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 4.471926948986346e-05, "mult": 1.0, "impact": 0.01084, "amm": "Quantum,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9YUBuVhNiRdwLNLaQJtYc4orfeMhYodx17AMMAjBjK2h", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 4.471926948986346e-05, "mult": 1.0, "impact": 0.01084, "amm": "Quantum,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "9FVUaCtjZAbtUZEsj6q2yjTkZKUv8HwdjB4CYus7rnU8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9985, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "BwJvjDs4sHm26rDw8WkEAa1xaVQqERecqZUUpd943HW8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.7519, "amm": "Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "5aB5TSH1FErXQzaUtYs3i1XN4ifGLnKC6aWmVJEwnd6H", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9883, "amm": "Meteora DAMM v2"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 21.73134919450907, "mult": 1.0, "impact": 0.00016, "amm": "Quantum,Riptide"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 21.73134919450907, "mult": 1.0, "impact": 0.00016, "amm": "Quantum,Riptide"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 21.731377529638284, "mult": 1.0, "impact": 0.00016, "amm": "Flux,Riptide"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 21.73194991507045, "mult": 1.0, "impact": 0.00019, "amm": "TesseraV,Riptide"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 21.73191543885691, "mult": 1.0, "impact": 0, "amm": "BisonFi,Riptide"}
+{"t": 1789152186.4083729, "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 21.73191543885691, "mult": 1.0, "impact": 0, "amm": "BisonFi,Riptide"}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789152186.4083729, "mint": "2yjUU7MwohTT195NQoXGsyRsFqxgB1KeDNCFfBcPPgan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 4.088279569184295e-05, "mult": 1.0, "impact": 0.02342, "amm": "Quantum,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 4.088167709129989e-05, "mult": 1.0, "impact": 0.02339, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 4.088167709129989e-05, "mult": 1.0, "impact": 0.02339, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 4.087121014240902e-05, "mult": 0.9997, "impact": 0.02313, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 4.087121014240902e-05, "mult": 0.9997, "impact": 0.02313, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152186.4083729, "mint": "G9f4Rg1W8sipi8YVoWVsPrPdKmxG95tAqUCzEKbgGrG2", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 4.087121014240902e-05, "mult": 0.9997, "impact": 0.02313, "amm": "BisonFi,AlphaQ,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "2zQACAbNa8Vdbyff4DD1b3mbV6C58pouAyM2BmGfK4Di", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152381.40113, "mint": "AcULkagUnwY1QivkLgV3V8eV6HytAuUq4D5sz7V1Gsah", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 76.29386964261586, "mult": 1.0, "impact": 0, "amm": "BisonFi,Byreal"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 76.29477769113234, "mult": 1.0, "impact": 0, "amm": "Quantum,Byreal"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 76.29477769113234, "mult": 1.0, "impact": 0, "amm": "Quantum,Byreal"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 76.29477769113234, "mult": 1.0, "impact": 6e-05, "amm": "Quantum,Byreal"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 76.27763901180182, "mult": 0.9998, "impact": 0, "amm": "Whirlpool,AlphaQ,Byreal"}
+{"t": 1789152954.588555, "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 76.29439933495698, "mult": 1.0, "impact": 6e-05, "amm": "Quantum,Byreal"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153507.5825229, "mint": "5UZ2w3XCr85mP48btyDt7Cp4eCTkUSWzeLJ4AibuYKsW", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9973, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153699.136472, "mint": "39uA2AWyY4Ln9phfd58MXSZ9KFnKw8csP48ZVzmd9Ccn", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9497, "amm": "Meteora DAMM v2"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 3.8508457948426004e-05, "mult": 1.0, "impact": 0, "amm": "BisonFi,ZeroFi,Dynamic Bonding Curve"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 3.8508457948426004e-05, "mult": 1.0, "impact": 0, "amm": "BisonFi,ZeroFi,Dynamic Bonding Curve"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 3.8508457948426004e-05, "mult": 1.0, "impact": 0, "amm": "BisonFi,ZeroFi,Dynamic Bonding Curve"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 3.850785500107661e-05, "mult": 1.0, "impact": 0, "amm": "BisonFi,ZeroFi,Dynamic Bonding Curve"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 3.849877351657539e-05, "mult": 0.9997, "impact": 0, "amm": "TesseraV,GoonFi V2,Dynamic Bonding Curve"}
+{"t": 1789153985.3424902, "mint": "HNyGMURNy9ug42N8f1fAmpzY6gUWj5U6cUw6UCUxLjNG", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 3.849877351657539e-05, "mult": 0.9997, "impact": 0, "amm": "TesseraV,GoonFi V2,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789154924.556298, "mint": "A1iRJxsdu7BAf3VtiH6sw1DQZDnz9QVLZRNrZNeNcfNV", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Meteora DLMM,Dynamic Bonding Curve"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "AXaz6TAHBjwXUX9SMQucpTwEsmZGhELVReEM562xdDJB", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 70.71440643387956, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 70.71440643387956, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 70.71440643387956, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 70.71456145056497, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 70.71456145056497, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 70.71456145056497, "mult": 1.0, "impact": 2e-05, "amm": "Scorch,Deriverse,Riptide"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155116.974598, "mint": "8k3EsrpZUy4N6yVuJ9KUpQWdebQEFa5Mvi8zZq3rd3v8", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789155308.783, "mint": "7yZES7ETPEMbZ6jhpc8eJS5uc6kHmrZ2L8x1XQoz7Cj6", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.999, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789156627.603488, "mint": "7FrhuGpearZuX1ph5zAdKozSetm1jQAiyVHz4zDt5igU", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9943, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789158890.196243, "mint": "7B6YRJGpXAcqikWokJwh19GyvLuRMSJ8hvKJ7UCugQoG", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9971, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159081.331745, "mint": "CeRimQkKp7Lqejok5evtLgybP2j71XDGg5eFs37Spwpt", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789159465.7411149, "mint": "F43LKc33JzoEXrroSboyd8WbUV3RyHMtwWRX6GDoa5UR", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9989, "amm": "Meteora DAMM v2"}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789160401.509446, "mint": "96qG7C4eW2HypXjiwvqWYyUYaYAMk3P2SJXeQcA7Wgan", "venue": "meteora_dbc", "age": 1800, "indexed": false}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.1754, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.1754, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.1754, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.1755, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.1754, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "Ec3G1sF6Rct65PnjjWy1JgVPFYJcwKeXtX6oaFULDnuZ", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.1754, "amm": "WhaleStreet,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "4PzsgXi7UDizGhQVUqBF588e3zU6rLL1MceMZsHMSomC", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9462, "amm": "Dynamic Bonding Curve"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789160879.19116, "mint": "CQrrJDdR124AzwzZmWiuTWA66nFeU3g4L83JUSQB2zUR", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Pump.fun Amm"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161532.764024, "mint": "FWS4rEjUujqEnK6HARjA9nvNArz6AaDNcoGNA6uBsN8D", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Raydium,Raydium CLMM,Dynamic Bonding Curve"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161724.297099, "mint": "9hbtRJQojGhk8EDnq7KqZB6YauSHGd5yfixzFvs88tvS", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "GHBZbDV4j9f2CFFtCvbDbRAYEA2om2CcvZ6WSnFhvdNt", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Scorch,Dynamic Bonding Curve"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "BB5neUSMiwozHk5azjW33f3w3ixVBu4VkGGiZUYxfJYp", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9934, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}
+{"t": 1789161915.788251, "mint": "3HPA7K8codTXtUkMAPdpRxfyL1YBzvhdb6SFazouA6iw", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9999, "amm": "Meteora DAMM v2"}

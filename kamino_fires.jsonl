@@ -3,3 +3,4 @@
 {"ts": 1789043538.030602, "ob": "DXqvvNyL7wzMpmWGotTrF91zh8VN1to7Yzh4DUqQVpz3", "margin": -7.004955365309797, "adj_debt": 12695.333118489001, "result": "error: encoding overruns Uint8Array"}
 {"ts": 1789044089.338051, "ob": "EG28AdfTf2WjTbtkUNMEtK9E9s3uvUfwqGh1iaVHLU9V", "margin": -2.0232634431845327, "adj_debt": 1801.4948530824486, "result": "error: encoding overruns Uint8Array"}
 {"ts": 1789044093.9337978, "ob": "5d8HNtBhSk73j91LmB6Eca8KNRqwEmwPGDzjAYw6ru3J", "margin": -1.934531073899052, "adj_debt": 1276.8636867527998, "result": "error: encoding overruns Uint8Array"}
+{"ts": 1789142035.676631, "ob": "CZdDf2UWsw61LfYS96DDWYGAjKDFStSpN4UuBchwKfCT", "margin": -0.5271130485980393, "adj_debt": 11544.842168912017, "result": "sim_failed_skip", "sim_err": null, "est_seize": 36513526002}
