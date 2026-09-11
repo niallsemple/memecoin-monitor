@@ -74355,6 +74355,24 @@ async function cmdClaim(conn, wallet, poolAddr) {
     }
   }
 }
+async function cmdBinsJson(conn, poolAddr) {
+  const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
+  await pool.refetchStates();
+  const ab = await pool.getActiveBin();
+  const around = await pool.getBinsAroundActiveBin(10, 10);
+  const bins = (around.bins || []).map((b) => ({
+    binId: b.binId,
+    price: parseFloat(b.pricePerToken),
+    liqY: parseFloat(b.yAmount?.toString() || "0") + parseFloat(b.xAmount?.toString() || "0") * parseFloat(b.pricePerToken)
+  }));
+  console.log(JSON.stringify({
+    pool: poolAddr,
+    t: Date.now() / 1e3,
+    activeBin: ab.binId,
+    binStep: pool.lbPair.binStep,
+    bins
+  }));
+}
 async function main() {
   const [cmd, poolAddr, solAmt, widthPct, tag2] = process.argv.slice(2);
   const wallet = loadWallet();
@@ -74365,8 +74383,9 @@ async function main() {
     else if (cmd === "add") await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
     else if (cmd === "exit") await cmdExit(conn, wallet, poolAddr);
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
+    else if (cmd === "binsjson") await cmdBinsJson(conn, poolAddr);
     else {
-      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | exit <pool> | claim <pool>");
+      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | exit <pool> | claim <pool> | binsjson <pool>");
       process.exit(1);
     }
   } catch (e) {

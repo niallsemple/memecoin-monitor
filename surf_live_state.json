@@ -1,7 +1,18 @@
 {
  "bankroll": 0.06303443600000005,
  "started_with": 0.5,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
+  "pair": "STONK-SOL",
+  "entry_ts": 1789155651.247523,
+  "entry_price": 0.002906387985686888,
+  "deposit": 0.063,
+  "fee_day_at_entry": 0.030201791716800604,
+  "last_r": 1.0,
+  "fee_sol_last": 0.0,
+  "x_decimals": 9
+ },
  "cooldowns": {
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789156499.6274571,
   "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602,
