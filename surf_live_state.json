@@ -1,27 +1,26 @@
 {
- "bankroll": 0.19754343000000005,
+ "bankroll": 0.16918356200000004,
  "started_with": 0.5,
  "open": {
   "provider": "meteora",
-  "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
-  "pair": "FLAME-SOL",
-  "entry_ts": 1789138689.706367,
-  "entry_price": 2.5391870677033e-05,
-  "deposit": 0.1975,
-  "fee_day_at_entry": 0.28805395692700586,
-  "last_r": 0.9234102243268734,
-  "fee_sol_last": 0.0031717855772838846,
-  "x_decimals": 6,
-  "entry_cost": 0.2516,
-  "above_streak": 0
+  "pool": "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom",
+  "pair": "EMBER-SOL",
+  "entry_ts": 1789141243.103275,
+  "entry_price": 0.000298806143587323,
+  "deposit": 0.1692,
+  "fee_day_at_entry": 0.27655746378032414,
+  "last_r": 1.0,
+  "fee_sol_last": 0.0,
+  "x_decimals": 6
  },
  "cooldowns": {
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789156499.6274571,
-  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602
+  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602,
+  "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789162688.509297
  },
- "cycles": 5,
+ "cycles": 6,
  "wins": 1,
- "losses": 4,
+ "losses": 5,
  "entry_fails": 0,
  "halted": false
 }

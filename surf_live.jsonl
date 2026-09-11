@@ -18,3 +18,7 @@
 {"kind": "exit_reconciled", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "returned": 0.197529, "net": -0.001871, "ts": 1789138629.8747652}
 {"kind": "exit", "why": "above_range_abort", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "pair": "FLAME-SOL", "mins": 20.0, "deposit": 0.1994, "returned": 0.197529, "net": -0.001871, "bankroll": 0.197543, "r": 1.1003, "sweep_rc": 1, "ts": 1789138629.875087}
 {"kind": "enter", "pair": "FLAME-SOL", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "price": 2.5391870677033e-05, "deposit": 0.1975, "fee_day": 0.2881, "mom": 0.0, "ts": 1789138695.069029}
+{"kind": "exit_reconciled", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "returned": 0.16914, "net": -0.02836, "ts": 1789141088.50835}
+{"kind": "exit", "why": "harvest", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "pair": "FLAME-SOL", "mins": 40.0, "deposit": 0.1975, "returned": 0.16914, "net": -0.02836, "bankroll": 0.169184, "r": 0.9382, "sweep_rc": 1, "ts": 1789141088.5089211}
+{"kind": "cooldown", "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD", "hours": 6.0, "why": "harvest", "ts": 1789141088.509301}
+{"kind": "enter", "pair": "EMBER-SOL", "pool": "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom", "price": 0.000298806143587323, "deposit": 0.1692, "fee_day": 0.2766, "mom": 0.0, "ts": 1789141248.3664021}

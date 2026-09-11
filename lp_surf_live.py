@@ -54,7 +54,8 @@ POS_FILE = os.path.join(MON, 'lp_positions.json')
 DANGER_R = 0.97            # below this: switch to tight loop polling
 DANGER_POLL_S = 45         # tight-loop cadence
 DANGER_MAX_ITER = 5        # ~4 min per invocation — must fit the 300s Bash window
-DOWN_ABORT_R = 0.90        # hard exit on price ratio — cut before X-conversion deepens
+DOWN_ABORT_R = 0.97        # hard stop: cycles 3/4/6 show exits below ~0.97 realize -10%+;
+                           # only r>=~0.97 exits land near cost. Hold zone = in-band only.
 
 
 def log(ev):
