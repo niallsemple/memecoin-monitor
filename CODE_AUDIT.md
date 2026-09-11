@@ -81,3 +81,14 @@ doesn't show it. **Lane dead. IDL account lists are not authority proofs — sim
 
 Lesson banked for the code-audit programme: instruction *surface* enumeration finds
 candidates; only simulation/on-chain probe settles authority. Cost per falsification: ~0 SOL.
+
+## Raydium CLMM audit — tick-array rent asymmetry (2026-09-12, source read, no tx)
+
+Source: raydium-io/raydium-clmm @ master (programs/amm/src/instructions/). No published IDL in repo.
+
+Findings:
+1. **First-touch pays tick-array rent.** `open_position` calls `TickArrayState::get_or_create_tick_array(payer=position opener)`. `increase_liquidity_v2` never creates arrays; `swap_v2` only checks `data_len == TickArrayState::LEN` and skips uninitialized arrays. So the first LP to open a position spanning a fresh tick array pays ~0.0745 SOL rent per array (~60 ticks/array). Everyone who LPs that range afterwards free-rides.
+2. **Rent is permanently locked.** No `close_tick_array` instruction exists anywhere in the program. `close_position` refunds only the position state account to `nft_owner`. Tick-array rent can never be recovered — by anyone. No sweeper edge here (consistent with the F1 DLMM falsification).
+3. **Cost-model consequence for us:** on Raydium CLMM, prefer ranges whose tick arrays already exist (established pools) — entering a fresh range on a 0.1–0.8 SOL position with multi-array span could cost 0.07–0.22 SOL in unrecoverable rent, dwarfing fee income. Meteora DLMM has the same first-touch pattern (bin arrays), so the rule generalizes: *never be the first LP into a range*.
+
+Verdict: no extractable edge, one durable cost rule banked. Orca Whirlpools next pass.
