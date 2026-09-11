@@ -1,6 +1,15 @@
 {
  "bankroll": 1.0127998683277895,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6",
+  "pair": "baton-SOL",
+  "entry_ts": 1789086492.287211,
+  "entry_price": 2.190748219836e-05,
+  "deposit": 1.0127998683277895,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 0.5476745480662781
+ },
  "cycles": 17,
  "cooldowns": {
   "H4Erwxo6h8EmLBGdfGdPNY6bSU3evYBirrhEA8FuByCT": 1789102192.936256,
