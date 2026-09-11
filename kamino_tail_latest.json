@@ -1,13 +1,22 @@
 {
- "ts": 1789169984.0338979,
+ "ts": 1789170229.837358,
  "rows": [
   {
-   "pubkey": "76VWY5FL2DukxnmS5XaJqap51BMWBkXYfmxEGKWr9RHZ",
-   "owner": "ADjkTxH5qtGHkU6L4yYgyZmaWkpyAeTavqWEwrMxDSD4",
-   "adj_debt": 4.18202060027205,
-   "unhealthy": 5.571272386979863,
-   "margin": 1.3892517867078125,
-   "slot_age": 116,
+   "pubkey": "Bbar7NKAvPQpdkghhtqUepL6KC8fXa5URXKAhPQWeZVN",
+   "owner": "3KgfCwhtV2JKhWB7XRrGg6sbXNYkn7R3icYduJWv4xr2",
+   "adj_debt": 6899.559049677609,
+   "unhealthy": 7425.87327058465,
+   "margin": 526.3142209070402,
+   "slot_age": 234,
+   "stable_pair": false
+  },
+  {
+   "pubkey": "4TQ2Wc4PTRbPunUepdnygUHzAizJLtRUJc3CzNEJT4Q6",
+   "owner": "AYZxBPpJmmtnHi28nearxw5wFWVHgD63ZRtp6SkrtHD",
+   "adj_debt": 1520.7524731753524,
+   "unhealthy": 6282.203574912206,
+   "margin": 4761.451101736853,
+   "slot_age": 274,
    "stable_pair": false
   }
  ]
