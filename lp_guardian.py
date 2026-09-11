@@ -153,6 +153,9 @@ def main():
                         action("recenter_redeploy", name=name, rc=rc6.returncode,
                                out=(rc6.stdout or "")[-400:])
                         log(f"{name}: redeploy rc={rc6.returncode} (refusal = data no longer qualifies)")
+                        # bundle wrote the new position record to disk; reload so the
+                        # next save doesn't clobber it with this stale snapshot
+                        st = json.load(open(STATE_F))
                     else:
                         log(f"{name}: RE-CENTER EXIT FAILED rc={rc2}: {out2[:300]}")
         else:

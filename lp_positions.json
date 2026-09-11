@@ -406,6 +406,21 @@
    "base_tvl": 44368.937510256466,
    "base_vol24": 956821.1335627504,
    "was_in_range": false
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "EsWGm3KBTiEjXs2vCupe5LpDadELmGKfLvhX5gqfji3W",
+   "name": null,
+   "sol_in": 0.729,
+   "ts": 1789126461.93,
+   "entry_active_bin": 486,
+   "minBinId": 418,
+   "maxBinId": 486,
+   "status": "open",
+   "add_sig": "eNqVbfmqhuztfZxp6KiMS94qHs1iVSz4ZBvL4ieMD2zighk2SynHWvUgMe9ms9EMgVWjZ9wZhVGyFY7ys7nUp66",
+   "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2",
+   "restored_after_race": true
   }
  ]
 }
