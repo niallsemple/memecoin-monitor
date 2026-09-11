@@ -74360,10 +74360,13 @@ async function cmdBinsJson(conn, poolAddr) {
   await pool.refetchStates();
   const ab = await pool.getActiveBin();
   const around = await pool.getBinsAroundActiveBin(10, 10);
+  const xDec = pool.tokenX?.decimal ?? 9, yDec = pool.tokenY?.decimal ?? 9;
+  const decScale = Math.pow(10, yDec - xDec);
   const bins = (around.bins || []).map((b) => ({
     binId: b.binId,
     price: parseFloat(b.pricePerToken),
-    liqY: parseFloat(b.yAmount?.toString() || "0") + parseFloat(b.xAmount?.toString() || "0") * parseFloat(b.pricePerToken)
+    // raw-Y units: yRaw + xRaw * pricePerToken * 10^(yDec-xDec)
+    liqY: parseFloat(b.yAmount?.toString() || "0") + parseFloat(b.xAmount?.toString() || "0") * parseFloat(b.pricePerToken) * decScale
   }));
   const vp = pool.lbPair.vParameters || {};
   const pr = pool.lbPair.parameters || pool.lbPair.staticParameters || {};
@@ -74373,6 +74376,8 @@ async function cmdBinsJson(conn, poolAddr) {
     activeBin: ab.binId,
     binStep: pool.lbPair.binStep,
     bins,
+    xDec,
+    yDec,
     volAccum: (vp.volatilityAccumulator || vp.volatility_accumulator || "0").toString(),
     volRef: (vp.volatilityReference || vp.volatility_reference || "0").toString(),
     varFeeCtl: (pr.variableFeeControl || pr.variable_fee_control || "0").toString(),
