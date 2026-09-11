@@ -681,6 +681,20 @@
    "add_sig": "tpNQUxyzRsUMbM6wr8TJmvNKwcjp491VY6zaNyprHRPbaj4GtAhaZttWFTo1hU2fKaWW6TQzQrkUk62EgBqDDNx",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2"
+  },
+  {
+   "pool": "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f",
+   "position": "7fzGWfcQ7ZnattnoPG4UqutfVSRRBEed74o8iy8KUip1",
+   "name": null,
+   "sol_in": 0.0804,
+   "ts": 1789151600.168,
+   "entry_active_bin": -454,
+   "minBinId": -510,
+   "maxBinId": -454,
+   "status": "open",
+   "add_sig": "3KCUizEh4qwDEDEB4qFL5j6ow7818ktmKdd52iGFpXVNo4e9cCcwZo2vEtknBhRzu3Y23PGiTcY82ZdVskL9skA7",
+   "width_pct": 0.56,
+   "strategy_tag": "lp_surf"
   }
  ]
 }

@@ -47,3 +47,4 @@
 {"kind": "exit_reconciled", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "returned": 0.080429, "net": -0.009871, "ts": 1789148491.835728}
 {"kind": "exit", "why": "down_abort", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "pair": "baton-SOL", "mins": 23.1, "deposit": 0.0903, "returned": 0.080429, "net": -0.009871, "bankroll": 0.08042, "r": 0.9533, "sweep_rc": 1, "ts": 1789148491.8360682}
 {"kind": "cooldown", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "hours": 6.0, "why": "down_abort", "ts": 1789148491.836139}
+{"kind": "enter", "pair": "EMBERCAT-SOL", "pool": "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f", "price": 1.0916823848483e-05, "deposit": 0.0804, "fee_day": 0.4058, "mom": 0.0, "ts": 1789151606.150157}
