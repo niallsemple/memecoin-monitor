@@ -81,3 +81,5 @@
 {"ts":1789108102,"utc":"06:28","lo":351,"hi":419,"active":417,"in_range":true,"fee_x":354128,"fee_y_lamports":728583}
 {"ts":1789109102,"utc":"06:45","lo":351,"hi":419,"active":422,"in_range":false,"fee_x":360836,"fee_y_lamports":802179}
 {"ts":1789110123,"utc":"07:02","lo":351,"hi":419,"active":434,"in_range":false,"fee_x":360836,"fee_y_lamports":802179}
+{"ts":1789111223,"utc":"07:20","lo":372,"hi":440,"active":443,"in_range":false,"fee_x":76377,"fee_y_lamports":201368}
+{"ts":1789112438,"utc":"07:40","lo":374,"hi":442,"active":442,"in_range":true,"fee_x":15625,"fee_y_lamports":33037}
