@@ -239,13 +239,21 @@ def main():
         fee_pct = fee_sol / o['deposit'] if o['deposit'] else 0
         age_min = (now - o['entry_ts']) / 60
         in_range = ps.get('inRange') if ps else None
+        # above-range abort: r>1.10 for 3 consecutive polls means the position
+        # is pure SOL earning ~nothing (cycles 1-2 evidence: fees stall ~+0.3%).
+        # Exit early, free the bankroll for a working pool. No cooldown — the
+        # pool didn't fail, price just ran through the top of the band.
+        o['above_streak'] = (o.get('above_streak', 0) + 1) if r > 1.10 else 0
         save_state(st)
         print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} fees={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
-              f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} bankroll={st['bankroll']:.4f}")
+              f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} "
+              f"above_streak={o['above_streak']} bankroll={st['bankroll']:.4f}")
         if fee_pct >= HARVEST_PCT:
             do_exit(st, 'harvest')
         elif il <= TRIPWIRE_PCT:
             do_exit(st, 'tripwire')
+        elif o['above_streak'] >= 3 and age_min >= 10:
+            do_exit(st, 'above_range_abort')
         elif age_min >= TIME_STOP_MIN:
             do_exit(st, 'timestop')
         return
