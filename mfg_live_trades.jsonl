@@ -3878,3 +3878,5 @@
 {"action": "curve_buy", "mint": "vRx8mJhSvkPDVxmeMWetCM3aNK6sa3TreAB1mCjpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789170385.923342}
 {"action": "fast_entry_eval", "mint": "PodiTg991v5QhpX5B9Soh6GhMAXznM1K3Auty5kpump", "t": 1789170576.163528, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789170576.1972759}
 {"action": "fast_entry_eval", "mint": "mr6T4sSRFXzYWZ1j4iVJuz9L36KvEN98STx9NFppump", "t": 1789170582.737198, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789170582.741351}
+{"action": "fast_entry_eval", "mint": "jBMg8xKF8TM2FgFDNge1e3Fs1fWzmuUpz2oqy8Wpump", "t": 1789170803.6079822, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789170803.612232}
+{"action": "fast_entry_eval", "mint": "BigHpoQHAYUPbTgWrjhoj5PR7iH4k8mnuVJ15Pm4pump", "t": 1789170809.38599, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789170809.3880792}
