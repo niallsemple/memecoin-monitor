@@ -1,2 +1,4 @@
 {"kind": "enter", "pair": "baton-SOL", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "price": 3.2506573480951e-05, "deposit": 0.5, "fee_day": 0.3413, "mom": 0.0, "ts": 1789125199.766508}
 {"kind": "exit", "why": "timestop", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "pair": "baton-SOL", "mins": 91.0, "deposit": 0.5, "returned": 0.0, "net": -0.5, "bankroll": 0.0, "r": 1.6002, "sweep_rc": 1, "ts": 1789130662.587407}
+{"kind": "reconcile", "note": "cycle1 exit tx on-chain: add -0.554131762, exit +0.550858203 -> net -0.003273559; bankroll restored (was zeroed by guardian-race wallet read)", "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf", "pair": "baton-SOL", "net": -0.003273559, "bankroll": 0.496726, "ts": 1789131485.566232}
+{"kind": "enter", "pair": "LOOP-SOL", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "price": 4.3527854227173e-05, "deposit": 0.4967, "fee_day": 0.4398, "mom": 0.0, "ts": 1789131594.397303}

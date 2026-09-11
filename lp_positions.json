@@ -430,6 +430,20 @@
    "was_in_range": false,
    "above_range_passes": 2,
    "exit_reason": "recenter_above_range"
+  },
+  {
+   "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i",
+   "position": "DigWLWdMMQi1ishfmvvRdu4ShNtfA6nURA7mhzwSEP2Z",
+   "name": null,
+   "sol_in": 0.4967,
+   "ts": 1789131588.558,
+   "entry_active_bin": -316,
+   "minBinId": -372,
+   "maxBinId": -316,
+   "status": "open",
+   "add_sig": "2pRfD1tkdnwgUFt8R3zRh3tLaoW8mR2jbXiGuqoWW2JkhQ5gn7sa16VwnFxq56sqX6i59TYkvBKxmteY93bEocQk",
+   "width_pct": 0.56,
+   "strategy_tag": "lp_surf"
   }
  ]
 }

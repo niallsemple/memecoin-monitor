@@ -48,6 +48,7 @@ START_BANKROLL = 0.5
 RESERVE_SOL = 6.2          # never touch: MET-SOL cell + rent + gas cushion
 MIN_DEPOSIT = 0.05
 MAX_ENTRY_FAILS = 3
+POS_FILE = os.path.join(MON, 'lp_positions.json')
 
 
 def log(ev):
@@ -114,6 +115,50 @@ def sweep():
     return r.returncode
 
 
+def tx_sol_delta(sig):
+    """Wallet SOL delta for one confirmed tx via Helius getTransaction."""
+    try:
+        import urllib.request
+        rpc_url = f'https://mainnet.helius-rpc.com/?api-key={HELIUS_KEY}'
+        req = urllib.request.Request(rpc_url, data=json.dumps({
+            "jsonrpc": "2.0", "id": 1, "method": "getTransaction",
+            "params": [sig, {"encoding": "json", "maxSupportedTransactionVersion": 0}]
+        }).encode(), headers={'Content-Type': 'application/json'})
+        res = json.load(urllib.request.urlopen(req, timeout=30)).get('result')
+        if not res: return None
+        keys = [k if isinstance(k, str) else k['pubkey'] for k in res['transaction']['message']['accountKeys']]
+        i = keys.index(WALLET)
+        return (res['meta']['postBalances'][i] - res['meta']['preBalances'][i]) / 1e9
+    except Exception as e:
+        print(f"tx_sol_delta err {sig[:12]}: {e}")
+        return None
+
+
+def reconcile_exit_onchain(o):
+    """Sum wallet SOL deltas across this position's exit + add txs.
+    Returns (returned, net) or None. Ground truth when wallet before/after
+    measurement is polluted by concurrent guardian flows."""
+    try:
+        pos = json.load(open(POS_FILE))['positions']
+    except Exception:
+        return None
+    rec = None
+    for p in pos:
+        if p.get('pool') == o['pool'] and p.get('status') == 'exited' and p.get('exit_sigs'):
+            if rec is None or p.get('exit_ts', 0) > rec.get('exit_ts', 0):
+                rec = p
+    if not rec: return None
+    total = 0.0
+    for s in rec['exit_sigs'] + [rec.get('add_sig')]:
+        if not s: return None
+        d = tx_sol_delta(s)
+        if d is None: return None
+        total += d
+    net = total  # exit deltas + add delta (add delta includes the liquidity deposit)
+    returned = o['deposit'] + net
+    return returned, net
+
+
 def do_exit(st, why, gross_hint=None):
     o = st['open']
     before = wallet_sol()
@@ -126,8 +171,34 @@ def do_exit(st, why, gross_hint=None):
     time.sleep(2)
     after = wallet_sol()
     returned = after - before
-    net = returned - o['deposit']
-    st['bankroll'] = st['bankroll'] - o['deposit'] + returned
+    # sanity: a successful EXIT can lose to fees/IL but never returns <= 0
+    # (position is >= mostly SOL). <=0 means the wallet read was polluted by
+    # concurrent guardian/sweep flows -> retry, then reconcile on-chain.
+    if returned <= 0:
+        for _ in range(3):
+            time.sleep(10)
+            after2 = wallet_sol()
+            returned = after2 - before
+            if returned > 0: break
+    reconciled = False
+    if returned <= 0:
+        rec = reconcile_exit_onchain(o)
+        if rec:
+            returned, net_onchain = rec
+            reconciled = True
+            log({'kind': 'exit_reconciled', 'pool': o['pool'], 'returned': round(returned, 6), 'net': round(net_onchain, 6)})
+        else:
+            log({'kind': 'exit_measure_fail', 'pool': o['pool'], 'why': why,
+                 'note': 'EXITED but wallet delta unreadable; bankroll preserved, halting for manual review'})
+            st['open'] = None
+            st['halted'] = True
+            save_state(st)
+            return True
+    # reconciled net already includes entry rent/fees via the add-tx delta;
+    # the wallet-delta path needs entry_cost (rent+fees) as the true basis.
+    cost = o['deposit'] if reconciled else o.get('entry_cost', o['deposit'])
+    net = returned - cost
+    st['bankroll'] = st['bankroll'] - cost + returned
     st['cycles'] += 1
     if net > 0: st['wins'] += 1
     else: st['losses'] += 1
@@ -236,6 +307,18 @@ def main():
                   'entry_ts': time.time(), 'entry_price': p2, 'deposit': deposit,
                   'fee_day_at_entry': fee_day, 'last_r': 1.0, 'fee_sol_last': 0.0,
                   'x_decimals': pool_x_decimals(c['pool'])}
+    # true entry cost incl. position rent + tx fees, from the add tx itself
+    try:
+        time.sleep(5)
+        pos = json.load(open(POS_FILE))['positions']
+        rec = max((p for p in pos if p.get('pool') == c['pool'] and p.get('add_sig')),
+                  key=lambda p: p.get('ts', 0), default=None)
+        if rec:
+            d = tx_sol_delta(rec['add_sig'])
+            if d is not None and d < 0:
+                st['open']['entry_cost'] = round(-d, 6)
+    except Exception as e:
+        print(f'[warn] entry_cost read failed: {e}')
     save_state(st)
     log({'kind': 'enter', 'pair': c['pair'], 'pool': c['pool'], 'price': p2,
          'deposit': deposit, 'fee_day': round(fee_day, 4), 'mom': round(mom, 5)})
