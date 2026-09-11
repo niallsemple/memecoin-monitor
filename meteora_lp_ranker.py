@@ -72,11 +72,18 @@ def main():
                 tvl = p.get("tvl") or 0
                 if age_h < MIN_AGE_H or tvl < MIN_TVL:
                     continue
+                # wide-arm gate (ANSEM post-mortem): DLMM positions cap at ~68
+                # bins/tx, so effective width = 68 * binStep bps. Require binStep
+                # >= 50 (0.5%/bin -> ~34% floor) so a wide arm is actually wide.
+                bs = ((p.get("pool_config") or {}).get("bin_step")) or 0
+                if bs < 50:
+                    continue
                 fees = p.get("fees") or {}
                 f24 = fees.get("24h") or 0
                 pools.append({
                     "address": p["address"], "name": p.get("name"),
                     "age_h": round(age_h, 1), "tvl": tvl,
+                    "bin_step": bs,
                     "vol24": ((p.get("volume") or {}).get("24h")) or 0,
                     "fees24": f24,
                     "daily_fee_yield": f24 / tvl if tvl else 0,

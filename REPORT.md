@@ -8498,3 +8498,19 @@ Guardian worked exactly as designed: detected the range break within one pass, e
 converted everything back to SOL (wallet SOL-only at 7.5202 SOL). The -4.1% crystallized loss
 is the wide-band aged-pool equivalent of the surf lane's cheap deep-pool exits. ANSEM needs a
 fresh audit (price health, why it slid through a 56% band) before this lane re-enters it.
+
+## ANSEM POST-MORTEM — the band was never wide
+
+Root cause found: `cmdAdd` computes nBins = width_pct / (binStep/10000), capped at
+MAX_BINS_PER_TX=68 (DLMM position width limit). ANSEM has binStep=10 (0.1%/bin), so the
+"56% wide" arm was silently capped to 68 bins = **-6.6% below entry**. ANSEM then did
+perfectly normal memecoin chop (-6-8% over 3h: 0.001647 -> 0.001490) and walked through
+the floor. No rug, no event — just a band 8x narrower than intended.
+
+Fix for the wide arm (pick one before redeploy):
+  (a) SIMPLE: only deploy wide arms on pools with binStep >= 50 (0.5%/bin -> 68 bins = 34%
+      width; binStep 100 -> 68%). Ranker must record binStep and gate on it.
+  (b) COMPLEX: multi-position spanning (N positions x 68 bins) — more rent, more failure
+      modes; only if (a) leaves no candidates.
+
+Guardian behavior itself was correct: detected break in one pass, exited, swept SOL-only.
