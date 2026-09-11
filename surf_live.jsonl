@@ -59,3 +59,7 @@
 {"kind": "exit_reconciled", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "returned": 0.055646, "net": -0.005554, "ts": 1789158066.678232}
 {"kind": "exit", "why": "down_abort", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "pair": "LOOP-SOL", "mins": 24.3, "deposit": 0.0612, "returned": 0.055646, "net": -0.005554, "bankroll": 0.055609, "r": 0.961, "sweep_rc": 1, "ts": 1789158066.6793191}
 {"kind": "cooldown", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "hours": 6.0, "why": "down_abort", "ts": 1789158066.679732}
+{"kind": "enter", "pair": "LOOP-SOL", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "price": 2.8946158336178e-05, "deposit": 0.0556, "fee_day": 0.6486, "mom": 0.0, "ts": 1789158549.627421}
+{"kind": "exit_reconciled", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "returned": 0.047531, "net": -0.008069, "ts": 1789159286.085836}
+{"kind": "exit", "why": "down_abort", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "pair": "LOOP-SOL", "mins": 12.4, "deposit": 0.0556, "returned": 0.047531, "net": -0.008069, "bankroll": 0.04754, "r": 0.942, "sweep_rc": 1, "ts": 1789159286.0861928}
+{"kind": "cooldown", "pool": "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk", "hours": 6.0, "why": "down_abort", "ts": 1789159286.086302}

@@ -8441,3 +8441,45 @@ Rules evolved live as failure modes appeared. All exits reconciled from on-chain
 5. Cooldown system prevents revenge re-entries but creates 2-6h flat windows after volatile sessions.
 
 **Interim verdict:** not economically closed at 0.05-0.5 SOL scale. The strategy's remaining hopes: (a) much wider bands + deeper pools to raise in-band persistence; (b) entry only on post-dump stabilization with 15min price-history gate; (c) pivot to aged-pool skim / arb lanes where the same infra applies.
+
+## LP-SURF LIVE PILOT — FINAL VERDICT (cycles 14-17 + game over)
+
+Pilot self-terminated as designed: bankroll 0.0475 < MIN_DEPOSIT 0.05 after cycle 17.
+
+| # | Pool | Exit | r at exit | True net (SOL) | Pool depth |
+|---|------|------|-----------|----------------|------------|
+| 14 | EMBERCAT-SOL | down_abort 12min | 0.905 | -0.017386 | thin |
+| 15 | STONK-SOL | above_range_abort 11.7min | 1.010 | -0.001871 | deep $218k |
+| 16 | LOOP-SOL (F9ts5i) | down_abort 24.3min | 0.961 | -0.005554 | mid $127k |
+| 17 | LOOP-SOL (rytgbk) | down_abort 12.4min | 0.942 | -0.008069 | thin $57k |
+
+**FINAL TALLY: 17 cycles, 3W / 12L / 1 stagnation / 1 data-artifact (c1 phantom -0.5, true ~-0.003).
+0.500 SOL in -> 0.0475 SOL out = -90.5%.**
+(Note: c1 baton "timestop net -0.5" was a guardian-race measurement artifact; bankroll chain
+0.500 -> c2 deposit 0.4967 shows the true c1 cost was ~-0.0033. All c5+ exits are on-chain reconciled.)
+
+**What the final cycles added:**
+1. **The fee thesis is real but doesn't save you.** c16/c17 LOOP accrued +0.60%/+1.01% true fees in
+   12-24 min — the fastest of the pilot — and both still closed red because price slid through the
+   band faster than fees accumulated. Fees are the coupon; direction is the principal.
+2. **Deep pools make exits cheap, not profitable.** Down-exit cost by depth: thin -22%/-44% (early),
+   mid -9% (c16), deep -4% to -6% (c9, c15 above-band -0.3%). The rule set successfully compressed
+   losses 5-10x from pilot start; win frequency never moved.
+3. **Above-band drift is the mirror failure.** c15/c17 price ran UP out of the quote-only band:
+   zero-IL, zero-fee, tiny net loss. Single-sided-Y below active only earns while price chops in-band.
+4. **Execution hardened:** one expired-blockhash exit tx (c16) recovered cleanly on retry;
+   entry_cost backfilled from add-tx deltas for every cycle.
+5. **Win math stayed broken to the end:** 3/17 = 18% win rate vs ~65% needed at observed sizes.
+
+**VERDICT: NEGATIVE. LP-surf on fresh memecoin pools does not close at this capital scale.**
+The instrument (single-sided DLMM LP) is a disguised leveraged long with a fee coupon; on fresh
+memecoins the coupon never covers the directional losses often enough. No further capital to this lane.
+
+**Where the same infrastructure pivots (all evidence-backed):**
+- **Aged-pool skim (slow lane):** ANSEM-SOL guardian cell (0.888 SOL, 73d pool) is the live test —
+  aged pools showed +8-16%/day NET of IL in the LP audit. This is now the primary ROI candidate.
+- **Skim-window research (memo #35):** skim_lab PASS at hourly scale — 96% of fee bursts outlive LP
+  crowding, median markout 0%. bin_collector now gathering minute-scale bin data to size the window.
+- **Paper engine divergence:** paper bankroll 1.349 (+34.9% on 1.0 start) vs live -90.5% — the gap
+  IS the measurement of execution reality (drift out of band, exit slippage, rent). Any future live
+  strategy must first show its edge survives this live-vs-paper gap.
