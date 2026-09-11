@@ -9,10 +9,11 @@
   "entry_price": 5.0384906727798e-05,
   "deposit": 0.0928,
   "fee_day_at_entry": 0.33731405162668743,
-  "last_r": 1.0,
-  "fee_sol_last": 0.0,
+  "last_r": 1.1821461558283426,
+  "fee_sol_last": 0.00044430479345503786,
   "x_decimals": 6,
-  "entry_cost": 0.145045
+  "entry_cost": 0.145045,
+  "above_streak": 1
  },
  "cooldowns": {
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789156499.6274571,
