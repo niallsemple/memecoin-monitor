@@ -10,9 +10,10 @@
   "deposit": 0.0612,
   "fee_day_at_entry": 0.9188571680430804,
   "last_r": 1.0,
-  "fee_sol_last": 0.0,
+  "fee_sol_last": 2.3484e-05,
   "x_decimals": 6,
-  "entry_cost": 0.115408
+  "entry_cost": 0.115408,
+  "above_streak": 0
  },
  "cooldowns": {
   "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789158358.4597602,
