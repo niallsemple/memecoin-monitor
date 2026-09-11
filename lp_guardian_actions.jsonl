@@ -27,3 +27,7 @@
 {"t": 1789060980.7883751, "kind": "back_in_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 390, "range": [322, 390], "feeY": 264520}
 {"t": 1789061904.360907, "kind": "out_of_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 398, "range": [322, 390], "side": "above"}
 {"t": 1789063226.4502988, "kind": "back_in_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 388, "range": [322, 390], "feeY": 326740}
+{"t": 1789099663.350347, "kind": "out_of_range", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "active": 399, "range": [322, 390], "side": "above"}
+{"t": 1789099686.80958, "kind": "recenter_exit", "name": "AsSyvUnb", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "out": "EXITED 7zdDTsCWoi7DJ2ecEBZ55piUj8rJJJC3Ca1PZGSMEzFX sigs=2wn97NhTc2Dhi5fMpc33LCVUgurAtuRG7dhg5fY7V2eQscr4c7ctpQqw1yWrx2XyCnyaa7EBehV3fqRDMCFcS9wG"}
+{"t": 1789099687.459486, "kind": "recenter_sweep", "name": "AsSyvUnb", "rc": 0}
+{"t": 1789099689.5417228, "kind": "recenter_redeploy", "name": "AsSyvUnb", "rc": 0, "out": "20 active=399 range=[331,399] width=56% deposit=0.794 SOL (single-sided Y)\nADDED position 6qx59kEyWkpYKkCp1YaAJKgoCdCrRxPem4dwTTudALdz sig=3dqSi8R12DEfRZXLELhMpa71ZvmVWjPBwNzH7rW2rShbQPe8GCYeZg8QMwLaeqBBkzwHEvkfDQouTJeEkWN9mhvb\nDEPLOYED. Guardian automation is already armed (no-op until a position is open); it will watch floor/blacklist/TVL, compound fees, and re-center if price runs above range.\n"}
