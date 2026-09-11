@@ -483,3 +483,66 @@
 12:36:48 BN7CfsGm: active=-418 range=[-494,-426] tvl=$29,441 vol24=$945,093 feeY=0.000288SOL feeX=8638430
 12:36:48 BN7CfsGm: idle above range (pure SOL, no fees) — watching
 12:36:48 guardian pass complete
+12:58:21 BN7CfsGm: active=-416 range=[-494,-426] tvl=$36,667 vol24=$933,933 feeY=0.000515SOL feeX=15456229
+12:58:21 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+12:58:21 AsSyvUnb: active=509 range=[418,486] tvl=$1,172,300 vol24=$12,503,037 feeY=0.000431SOL feeX=162830
+12:58:21 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+12:58:21 guardian pass complete
+13:20:23 BN7CfsGm: active=-389 range=[-494,-426] tvl=$44,569 vol24=$911,775 feeY=0.000515SOL feeX=15456229
+13:20:23 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+13:20:23 AsSyvUnb: active=501 range=[418,486] tvl=$1,173,775 vol24=$13,394,316 feeY=0.000431SOL feeX=162830
+13:20:23 AsSyvUnb: idle above range (pure SOL, no fees) — watching
+13:20:23 AsSyvUnb: RE-CENTER — above range 2 passes; exit + gated redeploy
+13:20:25 AsSyvUnb: redeploy rc=3 (refusal = data no longer qualifies)
+13:20:25 guardian pass complete
+13:42:25 BN7CfsGm: active=-389 range=[-494,-426] tvl=$47,058 vol24=$880,556 feeY=0.000515SOL feeX=15456229
+13:42:25 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+13:42:25 guardian pass complete
+14:04:27 6gQTdHry: active=-310 range=[-372,-316] tvl=$177,796 vol24=$2,832,741 feeY=0.000864SOL feeX=19614698
+14:04:27 6gQTdHry: idle above range (pure SOL, no fees) — watching
+14:04:27 guardian pass complete
+14:26:28 6gQTdHry: active=-298 range=[-372,-316] tvl=$160,399 vol24=$2,869,838 feeY=0.000864SOL feeX=19614698
+14:26:28 6gQTdHry: idle above range (pure SOL, no fees) — watching
+14:26:28 guardian pass complete
+14:48:31 6gQTdHry: active=-316 range=[-362,-306] tvl=$186,495 vol24=$2,916,052 feeY=0.001087SOL feeX=87878281
+14:48:31 guardian pass complete
+15:10:32 no open positions
+15:32:34 no open positions
+15:54:37 JBGqmRZB: active=-463 range=[-541,-473] tvl=$110,821 vol24=$1,318,401 feeY=0.000000SOL feeX=0
+15:54:37 JBGqmRZB: idle above range (pure SOL, no fees) — watching
+15:54:37 guardian pass complete
+16:16:38 JBGqmRZB: active=-455 range=[-529,-461] tvl=$116,348 vol24=$1,346,636 feeY=0.001218SOL feeX=47028504
+16:16:38 JBGqmRZB: idle above range (pure SOL, no fees) — watching
+16:16:38 guardian pass complete
+16:38:40 no open positions
+17:00:42 HdyjL5pE: active=-61 range=[-89,-61] tvl=$161,023 vol24=$3,576,939 feeY=0.000136SOL feeX=643439
+17:00:42 guardian pass complete
+17:22:44 GbrDAq3R: active=-161 range=[-228,-160] tvl=$1,698,379 vol24=$26,772,721 feeY=0.000012SOL feeX=95334
+17:22:44 guardian pass complete
+17:45:16 BN7CfsGm: active=-357 range=[-442,-374] tvl=$151,710 vol24=$1,540,330 feeY=0.000215SOL feeX=3855605
+17:45:16 BN7CfsGm: idle above range (pure SOL, no fees) — watching
+17:45:16 guardian pass complete
+19:08:15 no open positions
+19:56:30 4pANrqEv: active=488 range=[392,460] tvl=$290,711 vol24=$1,795,301 feeY=0.000032SOL feeX=19217
+19:56:30 4pANrqEv: idle above range (pure SOL, no fees) — watching
+19:56:30 guardian pass complete
+20:18:32 4pANrqEv: active=475 range=[392,460] tvl=$280,418 vol24=$1,783,859 feeY=0.000032SOL feeX=19217
+20:18:32 4pANrqEv: idle above range (pure SOL, no fees) — watching
+20:18:32 4pANrqEv: RE-CENTER — above range 2 passes; exit + gated redeploy
+20:18:36 4pANrqEv: redeploy rc=0 (refusal = data no longer qualifies)
+20:18:36 guardian pass complete
+20:40:34 4pANrqEv: active=471 range=[407,475] tvl=$280,895 vol24=$1,775,457 feeY=0.000071SOL feeX=72805
+20:40:34 guardian pass complete
+21:02:36 4pANrqEv: active=464 range=[407,475] tvl=$280,546 vol24=$1,764,324 feeY=0.000172SOL feeX=174002
+21:02:36 6gQTdHry: active=-360 range=[-415,-359] tvl=$127,006 vol24=$3,797,212 feeY=0.000023SOL feeX=2305062
+21:02:36 guardian pass complete
+21:24:38 4pANrqEv: active=451 range=[407,475] tvl=$279,741 vol24=$1,757,185 feeY=0.000384SOL feeX=406206
+21:24:38 guardian pass complete
+21:46:39 4pANrqEv: active=441 range=[407,475] tvl=$275,663 vol24=$1,757,739 feeY=0.000535SOL feeX=564605
+21:46:39 guardian pass complete
+22:08:41 4pANrqEv: active=421 range=[407,475] tvl=$272,150 vol24=$1,787,202 feeY=0.001129SOL feeX=1104485
+22:08:41 guardian pass complete
+22:18:10 4pANrqEv: active=396 range=[407,475] tvl=$266,169 vol24=$1,808,298 feeY=0.001314SOL feeX=1330868
+22:18:10 4pANrqEv: EMERGENCY EXIT — price fell through range (active 396 < 407) — position is all token-X
+22:18:12 4pANrqEv: exited ok
+22:18:12 guardian pass complete

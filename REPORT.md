@@ -8483,3 +8483,18 @@ memecoins the coupon never covers the directional losses often enough. No furthe
 - **Paper engine divergence:** paper bankroll 1.349 (+34.9% on 1.0 start) vs live -90.5% — the gap
   IS the measurement of execution reality (drift out of band, exit slippage, rent). Any future live
   strategy must first show its edge survives this live-vs-paper gap.
+
+## AGED-POOL LANE — FIRST LIVE CYCLE (ANSEM-SOL, 73d pool)
+
+Deployed 2026-09-11 ~19:18, emergency-exited ~22:18 by guardian (active bin 396 < floor 407).
+On-chain reconciled (add / exit / token sales):
+  add        -0.826245 SOL  (0.774 deposit + rent/ATA)
+  exit       +0.052030 SOL  + 499.52 ANSEM
+  sale        +0.739640 SOL + 0.000540 (dust)
+  fees claimed in exit tx (feeY 0.001314 SOL + feeX 1.33M ANSEM-lamports included above)
+  **NET: -0.034035 SOL (-4.1% of cost), ~3h hold**
+
+Guardian worked exactly as designed: detected the range break within one pass, exited, sweep
+converted everything back to SOL (wallet SOL-only at 7.5202 SOL). The -4.1% crystallized loss
+is the wide-band aged-pool equivalent of the surf lane's cheap deep-pool exits. ANSEM needs a
+fresh audit (price health, why it slid through a 56% band) before this lane re-enters it.

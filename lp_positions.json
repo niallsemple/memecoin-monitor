@@ -33,7 +33,7 @@
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -227 < -223) — position is all token-X"
+   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -68,7 +68,7 @@
    "base_tvl": 156386.26847949892,
    "base_vol24": 2602653.2416695743,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -2053 < -2052) — position is all token-X"
+   "exit_reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X"
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -103,7 +103,7 @@
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
+   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
   },
   {
    "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
@@ -714,13 +714,14 @@
    "entry_active_bin": 475,
    "minBinId": 407,
    "maxBinId": 475,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5ibG99W5Dv3KVogK5RPsyFmgMdG4HVq2fRQZvRpvGTLwXcFv5j1z7vedYndvTkvv8HC6gYSKwcGxCme1xavy67cP",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2",
    "base_tvl": 280894.5671214633,
    "base_vol24": 1775456.5106263277,
-   "was_in_range": true
+   "was_in_range": true,
+   "exit_reason": "price fell through range (active 396 < 407) \u2014 position is all token-X"
   },
   {
    "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
