@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""lp_surf_live.py — REAL-SOL compounding LP-surf engine (Meteora DLMM only).
+
+Owner directive 2026-09-11: 0.5 SOL starting bankroll, compounding,
+"see how long it can go". Paper-proven ruleset from lp_surf_paper.py:
+
+  scan    : Meteora DLMM pools, age 2-48h, TVL >= $25k, vol24h/TVL >= 0.5,
+            fee24h/TVL >= 3%/day, not blacklisted, not on cooldown
+  enter   : top candidate by fee_day; momentum guard (wait 20s, skip if
+            price drops > 0.5%); single-sided Y (SOL) at 56% width below active
+  exits   : harvest  feeY_accrued/deposit >= +2.0%   (feeY = real SOL fees)
+            tripwire est. IL (ssy_v1) <= -3.0% on live price ratio
+            timestop 90 min
+  after   : exit -> sweep_to_sol -> measure wallet delta -> compound bankroll
+
+Safety rails:
+  - STOP_LIVE_TRADING file: no new entries (open position still managed)
+  - bankroll cap: deposit = min(bankroll, wallet_SOL - RESERVE_SOL);
+    RESERVE protects the MET-SOL cell + rent + gas
+  - cooldown 6h per pool after tripwire or any exit with r < 1
+  - 3 consecutive entry failures -> halt entries until state file cleared
+  - strategy_tag 'lp_surf': guardian will NOT re-center these (its emergency
+    exit on blacklist/TVL-collapse still applies — wanted)
+"""
+import json, os, subprocess, sys, time
+
+MON = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, MON)
+from lp_surf_paper import (scan_meteora, current_price, current_fee_day,
+                           il_ssy, MIN_AGE_H, MAX_AGE_H, MIN_TVL,
+                           MIN_VOL_TVL, MIN_FEE_DAY)
+
+STATE_F = os.path.join(MON, 'surf_live_state.json')
+LOG_F = os.path.join(MON, 'surf_live.jsonl')
+KILL_F = os.path.join(MON, 'STOP_LIVE_TRADING')
+BUNDLE = os.path.join(MON, 'lp_exec', 'meteora_lp.bundle.cjs')
+SWEEP = os.path.join(MON, 'sweep_to_sol.py')
+WALLET = 'CQcKkSee9bdHZ1bejYFDUXVtodbfKHe2KSx6AaAnTW2K'
+HELIUS_KEY = open(os.path.join(MON, 'helius_key.txt')).read().strip()
+RPC = f'https://mainnet.helius-rpc.com/?api-key={HELIUS_KEY}'
+
+HARVEST_PCT = 0.02
+TRIPWIRE_PCT = -0.03
+TIME_STOP_MIN = 90
+TRIPWIRE_COOLDOWN_H = 6.0
+WIDTH_PCT = 0.56
+START_BANKROLL = 0.5
+RESERVE_SOL = 6.2          # never touch: MET-SOL cell + rent + gas cushion
+MIN_DEPOSIT = 0.05
+MAX_ENTRY_FAILS = 3
+
+
+def log(ev):
+    ev = dict(ev); ev['ts'] = time.time()
+    with open(LOG_F, 'a') as f:
+        f.write(json.dumps(ev) + '\n')
+    print(f"[{ev.get('kind')}] {json.dumps({k: v for k, v in ev.items() if k not in ('kind', 'ts')})[:300]}")
+
+
+def load_state():
+    if os.path.exists(STATE_F):
+        return json.load(open(STATE_F))
+    return {'bankroll': START_BANKROLL, 'started_with': START_BANKROLL,
+            'open': None, 'cooldowns': {}, 'cycles': 0, 'wins': 0, 'losses': 0,
+            'entry_fails': 0, 'halted': False}
+
+
+def save_state(s):
+    json.dump(s, open(STATE_F, 'w'), indent=1)
+
+
+def wallet_sol():
+    import urllib.request
+    body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'getBalance',
+                       'params': [WALLET]}).encode()
+    req = urllib.request.Request(RPC, data=body, headers={'Content-Type': 'application/json'})
+    d = json.load(urllib.request.urlopen(req, timeout=20))
+    return d['result']['value'] / 1e9
+
+
+def run_bundle(*args, timeout=180):
+    r = subprocess.run(['node', BUNDLE, *args], capture_output=True, text=True, timeout=timeout)
+    return r.returncode, (r.stdout + r.stderr)
+
+
+def position_status(pool):
+    """Ground-truth fee/bin read for our open position in `pool`."""
+    rc, out = run_bundle('statusjson')
+    if rc != 0:
+        return None
+    try:
+        arr = json.loads([l for l in out.splitlines() if l.strip().startswith('[')][-1])
+    except Exception:
+        return None
+    for p in arr:
+        if p.get('pool') == pool and not p.get('error'):
+            return p
+    return None
+
+
+def sweep():
+    r = subprocess.run([sys.executable, SWEEP], capture_output=True, text=True, timeout=300)
+    return r.returncode
+
+
+def do_exit(st, why, gross_hint=None):
+    o = st['open']
+    before = wallet_sol()
+    rc, out = run_bundle('exit', o['pool'])
+    if rc != 0 or 'EXITED' not in out:
+        log({'kind': 'exit_fail', 'pool': o['pool'], 'why': why, 'rc': rc, 'out': out[-200:]})
+        return False
+    time.sleep(3)
+    sweep_rc = sweep()
+    time.sleep(2)
+    after = wallet_sol()
+    returned = after - before
+    net = returned - o['deposit']
+    st['bankroll'] = st['bankroll'] - o['deposit'] + returned
+    st['cycles'] += 1
+    if net > 0: st['wins'] += 1
+    else: st['losses'] += 1
+    log({'kind': 'exit', 'why': why, 'pool': o['pool'], 'pair': o['pair'],
+         'mins': round((time.time() - o['entry_ts']) / 60, 1),
+         'deposit': round(o['deposit'], 4), 'returned': round(returned, 6),
+         'net': round(net, 6), 'bankroll': round(st['bankroll'], 6),
+         'r': round(o.get('last_r', 1), 4), 'sweep_rc': sweep_rc})
+    # cooldown on tripwire or any down-r exit (pool-specific)
+    if why == 'tripwire' or o.get('last_r', 1) < 1:
+        st['cooldowns'][o['pool']] = time.time() + TRIPWIRE_COOLDOWN_H * 3600
+        log({'kind': 'cooldown', 'pool': o['pool'], 'hours': TRIPWIRE_COOLDOWN_H, 'why': why})
+    st['open'] = None
+    save_state(st)
+    return True
+
+
+def main():
+    st = load_state()
+    now = time.time()
+
+    # --- manage open position ---
+    if st.get('open'):
+        o = st['open']
+        ps = position_status(o['pool'])
+        price = current_price(o)
+        r = (price / o['entry_price']) if (price and o['entry_price']) else o.get('last_r', 1.0)
+        o['last_r'] = r
+        il = il_ssy(r)
+        fee_sol = (int(ps['feeY_lamports']) / 1e9) if ps else o.get('fee_sol_last', 0.0)
+        if ps: o['fee_sol_last'] = fee_sol
+        fee_pct = fee_sol / o['deposit'] if o['deposit'] else 0
+        age_min = (now - o['entry_ts']) / 60
+        in_range = ps.get('inRange') if ps else None
+        save_state(st)
+        print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} feeY={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
+              f"il={il*100:+.2f}% inRange={in_range} bankroll={st['bankroll']:.4f}")
+        if fee_pct >= HARVEST_PCT:
+            do_exit(st, 'harvest')
+        elif il <= TRIPWIRE_PCT:
+            do_exit(st, 'tripwire')
+        elif age_min >= TIME_STOP_MIN:
+            do_exit(st, 'timestop')
+        return
+
+    # --- flat: consider a new entry ---
+    if os.path.exists(KILL_F):
+        print('[flat] STOP_LIVE_TRADING present — no entries'); return
+    if st.get('halted'):
+        print('[flat] halted (entry failures) — clear state to resume'); return
+    if st['bankroll'] < MIN_DEPOSIT:
+        print(f"[flat] bankroll {st['bankroll']:.4f} < min deposit — game over"); return
+
+    cands = scan_meteora()
+    st['cooldowns'] = {k: v for k, v in st.get('cooldowns', {}).items() if v > now}
+    cands = [c for c in cands if c['pool'] not in st['cooldowns']]
+    if not cands:
+        print('[scan] no live qualifiers'); save_state(st); return
+    cands.sort(key=lambda c: -c['fee_day'])
+    c = cands[0]
+    print(f"[scan] top: {c['pair']} ..{c['pool'][-6:]} age {c['age_h']:.1f}h "
+          f"tvl ${c['tvl']/1e3:.0f}k fee/day {c['fee_day']*100:.1f}% v/t {c['vol_tvl']:.1f}")
+
+    # momentum guard
+    p1 = current_price(c)
+    if not p1:
+        print('[skip] no price'); return
+    time.sleep(20)
+    p2 = current_price(c)
+    if not p2:
+        print('[skip] no price re-read'); return
+    mom = p2 / p1 - 1
+    if mom < -0.005:
+        log({'kind': 'skip_momentum', 'pair': c['pair'], 'mom': round(mom, 5)})
+        save_state(st); return
+
+    # sizing: compound bankroll, capped by wallet minus reserve
+    try:
+        ws = wallet_sol()
+    except Exception as e:
+        print(f'[skip] wallet read failed: {e}'); return
+    deposit = round(min(st['bankroll'], ws - RESERVE_SOL), 4)
+    if deposit < MIN_DEPOSIT:
+        print(f'[skip] deposit {deposit} < min (wallet {ws:.4f}, reserve {RESERVE_SOL})'); return
+
+    fee_day = current_fee_day(c)
+    if os.environ.get('SURF_DRYRUN'):
+        print(f"[dryrun] WOULD add {c['pair']} ..{c['pool'][-6:]} deposit={deposit} width={WIDTH_PCT} "
+              f"price={p2} fee_day={fee_day:.4f} mom={mom:+.5f}")
+        return
+    rc, out = run_bundle('add', c['pool'], str(deposit), str(WIDTH_PCT), 'lp_surf')
+    if rc != 0 or 'ADDED' not in out:
+        st['entry_fails'] = st.get('entry_fails', 0) + 1
+        if st['entry_fails'] >= MAX_ENTRY_FAILS: st['halted'] = True
+        log({'kind': 'enter_fail', 'pair': c['pair'], 'rc': rc, 'out': out[-200:],
+             'fails': st['entry_fails']})
+        save_state(st); return
+    st['entry_fails'] = 0
+    st['open'] = {'provider': 'meteora', 'pool': c['pool'], 'pair': c['pair'],
+                  'entry_ts': time.time(), 'entry_price': p2, 'deposit': deposit,
+                  'fee_day_at_entry': fee_day, 'last_r': 1.0, 'fee_sol_last': 0.0}
+    save_state(st)
+    log({'kind': 'enter', 'pair': c['pair'], 'pool': c['pool'], 'price': p2,
+         'deposit': deposit, 'fee_day': round(fee_day, 4), 'mom': round(mom, 5)})
+
+
+if __name__ == '__main__':
+    main()

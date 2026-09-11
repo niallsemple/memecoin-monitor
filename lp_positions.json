@@ -361,10 +361,43 @@
    "entry_active_bin": 461,
    "minBinId": 393,
    "maxBinId": 461,
-   "status": "open",
+   "status": "exited",
    "add_sig": "2K63yvKHWNKRyxbi94sRvBrQY2uEYW49WMmtVcDCC9EFcRDNFg3ZaTzqpFfW23HRByctiZ76YnF13UP9jhkFdeR5",
    "width_pct": 0.56,
+   "strategy_tag": "wide_arm_v2",
+   "base_tvl": 1106774.3673199026,
+   "base_vol24": 6658609.190008797,
+   "was_in_range": false,
+   "above_range_passes": 2,
+   "exit_reason": "recenter_above_range"
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "VNagHX5Ryy6i8qoDNSR17X7xFsKkypYK5j6LcyoG7vD",
+   "name": null,
+   "sol_in": 0.796,
+   "ts": 1789123967.744,
+   "entry_active_bin": 476,
+   "minBinId": 408,
+   "maxBinId": 476,
+   "status": "open",
+   "add_sig": "3dReFLbxJX1jVb79dj8xy8Ta6gYdapYTEvFRWvsqEadRB3TU61T1bjkEYzKRprfgDtwgHxi5XNAU51vuVtZC5Umr",
+   "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2"
+  },
+  {
+   "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf",
+   "position": "FtzABNudzrsDM8fpdUbRdwzr5DddbQ7X3mop4RMi9Dj1",
+   "name": null,
+   "sol_in": 0.5,
+   "ts": 1789125199.135,
+   "entry_active_bin": -426,
+   "minBinId": -494,
+   "maxBinId": -426,
+   "status": "open",
+   "add_sig": "4hvJuzPPKWsbvzsNfPGeZSoNXSwfwJuwPK1vhCNVtwyiwe5rXYwLuW8b1mJ3f36CVL71u2x4D2Vo1T4tB2M7WhSF",
+   "width_pct": 0.56,
+   "strategy_tag": "lp_surf"
   }
  ]
 }
