@@ -52,3 +52,22 @@ but bin drift shows price is usually still moving when it forms. Entry must wait
 bin drift to flatten (price convergence) — exactly the memo's "do nothing during the
 move" rule. A live implementation needs: vacuum trigger + bin-drift-flat gate +
 dynamic-fee-elevated check, then seconds-scale entry/exit.
+
+## hfna_scan — full HFNA state (vacuum + price settled), first measurement (2026-09-12)
+
+Gate: vacuum (liq_active <= 60% of 5min ago) then settlement (active bin within +-5
+over an adaptive ~8min window; per-pool sampling is ~155s so fixed 60s was sub-cadence).
+
+| Metric | Value |
+|---|---|
+| Vacuums that settle into HFNA windows | **134/140 (96%)** |
+| Settle lag | median **0s** (flat under the wider gate), p90 238s |
+| Window duration | median **757s (~12.6 min)**, max 3627s |
+| Frequency | **~51 windows/hour across just 11 tracked pools** |
+
+Read: HFNA windows are abundant and long enough for unhurried entry/exit — scarcity
+was never the constraint. The unmeasured third leg is **fee elevation at window open**
+(dynamic fee still high when price settles?). Next: bin_collector records pool dynamic
+fee per snapshot (volatility accumulator / variable-fee rate from LbPair) so hfna_scan
+can score windows by fee level, and the strategy question becomes which windows pay
+enough per capital-second to clear tx+rent costs.
