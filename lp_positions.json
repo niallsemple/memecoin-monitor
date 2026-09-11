@@ -420,7 +420,11 @@
    "add_sig": "eNqVbfmqhuztfZxp6KiMS94qHs1iVSz4ZBvL4ieMD2zighk2SynHWvUgMe9ms9EMgVWjZ9wZhVGyFY7ys7nUp66",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v2",
-   "restored_after_race": true
+   "restored_after_race": true,
+   "base_tvl": 1172299.87492085,
+   "base_vol24": 12503036.5022419,
+   "was_in_range": false,
+   "above_range_passes": 1
   }
  ]
 }
