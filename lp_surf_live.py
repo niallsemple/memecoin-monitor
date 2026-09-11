@@ -49,6 +49,12 @@ RESERVE_SOL = 6.2          # never touch: MET-SOL cell + rent + gas cushion
 MIN_DEPOSIT = 0.05
 MAX_ENTRY_FAILS = 3
 POS_FILE = os.path.join(MON, 'lp_positions.json')
+# Down-side protection (cycle-3 lesson: -24% price dump between 4-min polls
+# cost -0.24 SOL; IL-tripwire at r~0.58 is far too deep to be the first exit).
+DANGER_R = 0.97            # below this: switch to tight loop polling
+DANGER_POLL_S = 45         # tight-loop cadence
+DANGER_MAX_ITER = 30       # ~22 min max per invocation, then hand back
+DOWN_ABORT_R = 0.90        # hard exit on price ratio — cut before X-conversion deepens
 
 
 def log(ev):
@@ -216,46 +222,67 @@ def do_exit(st, why, gross_hint=None):
     return True
 
 
+def check_open(st, now):
+    """One monitoring pass over the open position.
+    Returns ('exited', r) if an exit fired, ('open', r) otherwise."""
+    o = st['open']
+    ps = position_status(o['pool'])
+    price = current_price(o)
+    r = (price / o['entry_price']) if (price and o['entry_price']) else o.get('last_r', 1.0)
+    o['last_r'] = r
+    il = il_ssy(r)
+    fee_y_sol = (int(ps['feeY_lamports']) / 1e9) if ps else o.get('fee_sol_last', 0.0)
+    # X-side (token) fees, valued at current pool price — baton-type pools
+    # accrue mostly in X when price rides the top of the band
+    fee_x_sol = 0.0
+    if ps and int(ps.get('feeX_lamports') or 0) > 0 and o.get('x_decimals') and price:
+        fee_x_sol = int(ps['feeX_lamports']) / (10 ** o['x_decimals']) * price
+    fee_sol = fee_y_sol + fee_x_sol
+    if ps: o['fee_sol_last'] = fee_sol
+    fee_pct = fee_sol / o['deposit'] if o['deposit'] else 0
+    age_min = (now - o['entry_ts']) / 60
+    in_range = ps.get('inRange') if ps else None
+    # above-range abort: r>1.10 for 3 consecutive polls means the position
+    # is pure SOL earning ~nothing (cycles 1-2 evidence: fees stall ~+0.3%).
+    # Exit early, free the bankroll for a working pool. No cooldown — the
+    # pool didn't fail, price just ran through the top of the band.
+    o['above_streak'] = (o.get('above_streak', 0) + 1) if r > 1.10 else 0
+    save_state(st)
+    print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} fees={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
+          f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} "
+          f"above_streak={o['above_streak']} bankroll={st['bankroll']:.4f}")
+    if fee_pct >= HARVEST_PCT:
+        do_exit(st, 'harvest'); return 'exited', r
+    if il <= TRIPWIRE_PCT:
+        do_exit(st, 'tripwire'); return 'exited', r
+    if r <= DOWN_ABORT_R:
+        # hard price stop: get out before X-conversion + exit slippage deepens
+        do_exit(st, 'down_abort'); return 'exited', r
+    if o['above_streak'] >= 3 and age_min >= 10:
+        do_exit(st, 'above_range_abort'); return 'exited', r
+    if age_min >= TIME_STOP_MIN:
+        do_exit(st, 'timestop'); return 'exited', r
+    return 'open', r
+
+
 def main():
     st = load_state()
     now = time.time()
 
     # --- manage open position ---
     if st.get('open'):
-        o = st['open']
-        ps = position_status(o['pool'])
-        price = current_price(o)
-        r = (price / o['entry_price']) if (price and o['entry_price']) else o.get('last_r', 1.0)
-        o['last_r'] = r
-        il = il_ssy(r)
-        fee_y_sol = (int(ps['feeY_lamports']) / 1e9) if ps else o.get('fee_sol_last', 0.0)
-        # X-side (token) fees, valued at current pool price — baton-type pools
-        # accrue mostly in X when price rides the top of the band
-        fee_x_sol = 0.0
-        if ps and int(ps.get('feeX_lamports') or 0) > 0 and o.get('x_decimals') and price:
-            fee_x_sol = int(ps['feeX_lamports']) / (10 ** o['x_decimals']) * price
-        fee_sol = fee_y_sol + fee_x_sol
-        if ps: o['fee_sol_last'] = fee_sol
-        fee_pct = fee_sol / o['deposit'] if o['deposit'] else 0
-        age_min = (now - o['entry_ts']) / 60
-        in_range = ps.get('inRange') if ps else None
-        # above-range abort: r>1.10 for 3 consecutive polls means the position
-        # is pure SOL earning ~nothing (cycles 1-2 evidence: fees stall ~+0.3%).
-        # Exit early, free the bankroll for a working pool. No cooldown — the
-        # pool didn't fail, price just ran through the top of the band.
-        o['above_streak'] = (o.get('above_streak', 0) + 1) if r > 1.10 else 0
-        save_state(st)
-        print(f"[open] {o['pair']} {age_min:.0f}min r={r:.3f} fees={fee_sol:.5f}SOL ({fee_pct*100:+.2f}%) "
-              f"[Y={fee_y_sol:.5f} X={fee_x_sol:.5f}] il={il*100:+.2f}% inRange={in_range} "
-              f"above_streak={o['above_streak']} bankroll={st['bankroll']:.4f}")
-        if fee_pct >= HARVEST_PCT:
-            do_exit(st, 'harvest')
-        elif il <= TRIPWIRE_PCT:
-            do_exit(st, 'tripwire')
-        elif o['above_streak'] >= 3 and age_min >= 10:
-            do_exit(st, 'above_range_abort')
-        elif age_min >= TIME_STOP_MIN:
-            do_exit(st, 'timestop')
+        status, r = check_open(st, now)
+        # danger zone: price below entry — poll tightly until it recovers,
+        # an exit fires, or we hit the per-invocation cap
+        it = 0
+        while status == 'open' and r < DANGER_R and it < DANGER_MAX_ITER:
+            it += 1
+            time.sleep(DANGER_POLL_S)
+            st = load_state()
+            if not st.get('open'): break  # guardian may have exited it
+            status, r = check_open(st, time.time())
+        if it:
+            print(f'[danger-loop] {it} tight polls, final r={r:.3f} status={status}')
         return
 
     # --- flat: consider a new entry ---

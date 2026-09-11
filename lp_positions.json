@@ -461,10 +461,17 @@
    "entry_active_bin": -306,
    "minBinId": -362,
    "maxBinId": -306,
-   "status": "open",
+   "status": "exited",
    "add_sig": "2NCNrj4bfRdKtCquQYNXgipqVbb22Xjfy6FPAmfzAxA7aH9Z8XV7PLx3FSWxqApYUW2GkZZB4zMmwhvg816ZrBiN",
    "width_pct": 0.56,
-   "strategy_tag": "lp_surf"
+   "strategy_tag": "lp_surf",
+   "base_tvl": 186495.4891387399,
+   "base_vol24": 2916052.023267994,
+   "was_in_range": true,
+   "exit_sigs": [
+    "2HCXR9AnBmZDV8697KSerkf2Y1pMn3JgtkvKJbFNANroJQYCLxkx3Csqo5W7otTDQ6PDzi98yHeknwncnibU1Nnv"
+   ],
+   "exit_ts": 1789134880.435
   }
  ]
 }
