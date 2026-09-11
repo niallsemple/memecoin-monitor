@@ -66,7 +66,8 @@ def snap_pool(pool):
                 "bin_step": d["binStep"], "liq_active": liq_active,
                 "liq_pm10": liq_pm10, "bins": d["bins"],
                 "vol_accum": int(d.get("volAccum", 0)), "vol_ref": int(d.get("volRef", 0)),
-                "var_fee_ctl": int(d.get("varFeeCtl", 0)), "base_factor": int(d.get("baseFactor", 0))}
+                "var_fee_ctl": int(d.get("varFeeCtl", 0)), "base_factor": int(d.get("baseFactor", 0)),
+                "prot_fee_y": int(d.get("protFeeY", 0)), "prot_fee_x": int(d.get("protFeeX", 0))}
     except Exception as e:
         print(f"  snap fail {pool[-6:]}: {str(e)[:60]}")
         return None

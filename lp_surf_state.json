@@ -1,6 +1,15 @@
 {
  "bankroll": 0.8801271683705953,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
+  "pair": "FLAME-SOL",
+  "entry_ts": 1789168336.006104,
+  "entry_price": 8.86960867043e-06,
+  "deposit": 0.8801271683705953,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 1.6780900459728632
+ },
  "cycles": 49,
  "cooldowns": {
   "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom": 1789174784.9640179,
