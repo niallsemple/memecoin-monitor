@@ -23123,3 +23123,11 @@
 {"action": "h16e2_open", "mint": "2fzaLEDdmtT2Qvts2ybzsVtYZHw83rbzRB42n4kapump", "t": 1789255793.07164, "scored_at": 1789255806.7246249, "entry_mcap": 32.8588, "mom": 1.003, "dd": 0.997, "bf": 0.5, "seed": 2.473325351}
 {"action": "h16e2_reject", "mint": "4a2gm58HPkQMebSpky8idsz1QNxmkxeg2NPVxgispump", "t": 1789255836.756027, "mom": 1.329, "dd": 0.397, "bf": 0.593, "seed": 2.5}
 {"action": "h16e2_close", "mint": "2fzaLEDdmtT2Qvts2ybzsVtYZHw83rbzRB42n4kapump", "t": 1789256041.368125, "outcome": "loss", "mult": 0.92, "mins": 4.1, "mom": 1.003, "dd": 0.997, "bf": 0.5, "seed": 2.473325351}
+{"action": "h16e2_drop", "mint": "2XXPeNksNgAvZ8D3HJ2zHLKEHzSMrpyukLp9d2WPpump", "reason": "no ticks", "t": 1789256393.039807}
+{"action": "h16e2_drop", "mint": "By2SAQ67ftaynB7yZwGWvfs6fYv3B4oMcbLZXdtPpump", "reason": "no ticks", "t": 1789256393.039807}
+{"action": "h16e2_reject", "mint": "Dy51FSNKbRJiyX9p6foq512fweRJz9RfFv66mbZspump", "t": 1789256453.075936, "mom": 9.984, "dd": 0.094, "bf": 0.654, "seed": 2.317751277}
+{"action": "h16e2_reject", "mint": "37RNB47yqBhfFrEsoKWzunyHGDvnrzjZMPPmSrwYpump", "t": 1789256453.075936, "mom": 0.931, "dd": 0.874, "bf": 0.615, "seed": 2.967496174}
+{"action": "h16e2_stale", "mint": "EwRFjX3XuoPFuW3it3AzwXn1BSCMAzMuNTyEJoD8pump", "t": 1789256468.0829608, "last_tick_age": 12.7, "seed": 3}
+{"action": "h16e2_open", "mint": "EbbsxCPY2T4syFCQJ8d1MciEauZE6vEBT2KN6K4jpump", "t": 1789256463.032128, "scored_at": 1789256483.098273, "entry_mcap": 36.1358, "mom": 1.043, "dd": 0.959, "bf": 0.769, "seed": 3.372593451}
+{"action": "h16e2_stale", "mint": "3JHHvM8bH1m1QUGaN9Mx75vn4aCDu8ufVX5eq43rpump", "t": 1789256483.098273, "last_tick_age": 11.1, "seed": 3.116303658}
+{"action": "h16e2_reject", "mint": "CKYgukxSUYWYi6maXt4A2PBdovu1sdbSz8zLDL6Tpump", "t": 1789256528.14325, "mom": 0.636, "dd": 0.141, "bf": 0.471, "seed": 3.899795962}

@@ -6,3 +6,4 @@ HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x0256bfa40506d
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x25b8c50e3319b4e3277c37a8033a5ce8c90ee34749a5de71a193d6589ec837ef/ohlcv/hour?aggregate=1&limit=48&currency=usd
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xd3b7208066c21be4406aa72985a0ea85eb465eb17a97e19b7673e799f671e00d
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xd789851cc8968381ec0776438c91e1efd1877db7
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x1b9c28a90d4f7c90b43decf65e6869a8617cafdd041ccc49550ef28466481c9e
