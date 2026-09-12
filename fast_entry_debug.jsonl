@@ -9895,3 +9895,13 @@
 {"t": 1789189721.333556, "phase": "lt_loaded", "mint": "rtArmPPBatUXFkJfjJXZ7FkH2G3XbAL42MMqPExpump"}
 {"t": 1789189721.3343859, "phase": "seed_blocked", "mint": "rtArmPPBatUXFkJfjJXZ7FkH2G3XbAL42MMqPExpump", "seed": 85.005359057}
 {"t": 1789189721.338264, "phase": "thread_done", "mint": "rtArmPPBatUXFkJfjJXZ7FkH2G3XbAL42MMqPExpump", "result": "skip: oversized unfunded create seed 85.01"}
+{"t": 1789190422.492979, "phase": "spawned", "mint": "DT7cAYcLzXo4Tjiur87JR68Kp1y8TmELrPHVGv6Vpump", "creator": "HqU4q1C3TogkQFdJ3mNvU8eWNDG1JaMzbwLeFPVNsyR7"}
+{"t": 1789190422.493898, "phase": "thread_start", "mint": "DT7cAYcLzXo4Tjiur87JR68Kp1y8TmELrPHVGv6Vpump"}
+{"t": 1789190422.500093, "phase": "lt_loaded", "mint": "DT7cAYcLzXo4Tjiur87JR68Kp1y8TmELrPHVGv6Vpump"}
+{"t": 1789190422.501036, "phase": "seed_blocked", "mint": "DT7cAYcLzXo4Tjiur87JR68Kp1y8TmELrPHVGv6Vpump", "seed": 85.005359057}
+{"t": 1789190422.503338, "phase": "thread_done", "mint": "DT7cAYcLzXo4Tjiur87JR68Kp1y8TmELrPHVGv6Vpump", "result": "skip: oversized unfunded create seed 85.01"}
+{"t": 1789190531.914196, "phase": "spawned", "mint": "NxHejo3BaKdcNkCh7X8Fw5K6eaVjMkVJVtBnKZCpump", "creator": "GGAdCtRTKdWjtuX7GVRzh3SZgUbo1xzATHHxU1eY7CKm"}
+{"t": 1789190531.9147909, "phase": "thread_start", "mint": "NxHejo3BaKdcNkCh7X8Fw5K6eaVjMkVJVtBnKZCpump"}
+{"t": 1789190531.9190521, "phase": "lt_loaded", "mint": "NxHejo3BaKdcNkCh7X8Fw5K6eaVjMkVJVtBnKZCpump"}
+{"t": 1789190531.9194949, "phase": "seed_blocked", "mint": "NxHejo3BaKdcNkCh7X8Fw5K6eaVjMkVJVtBnKZCpump", "seed": 85.005359057}
+{"t": 1789190531.921673, "phase": "thread_done", "mint": "NxHejo3BaKdcNkCh7X8Fw5K6eaVjMkVJVtBnKZCpump", "result": "skip: oversized unfunded create seed 85.01"}
