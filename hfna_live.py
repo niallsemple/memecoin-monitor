@@ -147,12 +147,18 @@ def main():
                 log_event(kind="dryrun_exit", pool=p, reason=exit_reason, fees_est=pos["fees_est"])
             # armed: judge by real wallet delta; dry-run: model estimate
             won = (real_pnl > 0) if real_pnl is not None else (pos["fees_est"] > 0.001)
-            st["consec_loss"] = 0 if won else st["consec_loss"] + 1
+            # noise-filtered breaker (owner directive 09-12, sample #2):
+            # scratches (cost-only losses <= 0.002) are the strategy's cost of
+            # doing business, not thesis failures — they don't count as strikes.
+            strike = (real_pnl < -0.002) if real_pnl is not None else (pos["fees_est"] < -0.002)
+            st["consec_loss"] = 0 if won else (st["consec_loss"] + 1 if strike else st["consec_loss"])
             st.setdefault("last_won", {})[p] = won
+            if armed:
+                st["sample_n"] = st.get("sample_n", 0) + 1
             st["pos"] = None
             if st["consec_loss"] >= MAX_CONSEC_LOSS:
                 st["halted"] = True
-                log_event(kind="HALT", reason="3 consecutive losses")
+                log_event(kind="HALT", reason="3 consecutive real losses (>0.002)")
         else:
             print(f"[open] {p[:8]} fees_est={pos['fees_est']:.5f} t+{time.time()-pos['t_entry']:.0f}s")
         json.dump(st, open(STATE, "w"), indent=1)
