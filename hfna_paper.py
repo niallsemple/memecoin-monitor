@@ -112,8 +112,9 @@ def main():
             if dpf > 0 and pos["low"] <= ab <= pos["high"]:
                 lp_fees = dpf / 1e9 * lp_mult(p)
                 share = SIZE / (r["liq_active"] / 1e9 + SIZE) if r["liq_active"] > 0 else 0
-                # liq_active is raw lamports-ish; normalize via pool scale factor
-                pos["fees"] += lp_fees * share
+                # cap per-interval credit: kills prot_fee counter-jump artifacts
+                # (e.g. 9yXn printed 0.303 in one trade = 3x SIZE, impossible)
+                pos["fees"] += min(lp_fees * share, 0.05 * SIZE)
             # tripwire: price fell below range
             if ab < pos["low"] - 1:
                 bs = r.get("bin_step", 100)

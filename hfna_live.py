@@ -165,7 +165,7 @@ def main():
             pos["last_t"], pos["last_pf"] = r["t"], r["prot_fee_y"]
             ab = r["active_bin"]
             if dpf > 0 and pos["low"] <= ab <= pos["high"]:
-                pos["fees_est"] += dpf / 1e9 * lp_mult(p) * (SIZE / (r["liq_active"] / 1e9 + SIZE) if r["liq_active"] > 0 else 0)
+                pos["fees_est"] += min(dpf / 1e9 * lp_mult(p) * (SIZE / (r["liq_active"] / 1e9 + SIZE) if r["liq_active"] > 0 else 0), 0.05 * SIZE)
             if ab < pos["low"] - 1:
                 exit_reason = f"tripwire ab={ab}<{pos['low']-1}"; break
             if r["liq_active"] > pos["trough"] * 1.5:
