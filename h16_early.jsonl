@@ -21182,3 +21182,7 @@
 {"action": "h16e_reject", "mint": "Eu2sEi2sBqPidDyT4qDfKJ3bYo5grBLaCBwAcx9mpump", "t": 1789194529.382231, "mom": 0.816, "dd": 0.566, "bf": 0.6, "seed": 2}
 {"action": "h16e_reject", "mint": "2y2pBUxdo2DWoTkNdX5UnJSh24McDSSNc8J3XohGpump", "t": 1789194529.382231, "mom": 0.703, "dd": 0.632, "bf": 0.516, "seed": 2.962962961}
 {"action": "h16e_close", "mint": "EevcaUeeBFEFDSPYD1Moo3qNsQRkr2UuqrLMn83Wpump", "t": 1789194459.763493, "outcome": "win", "mult": 1.2, "mins": 0.1, "mom": 1.173, "dd": 0.657, "bf": 0.704, "seed": 3}
+{"action": "h16e_reject", "mint": "9GtX4daeyaEwF3d3myoXJ77ibxoSSCfLB7bhiWrHpump", "t": 1789194624.74387, "mom": 1.0, "dd": 0.995, "bf": 0.5, "seed": 3.772839505}
+{"action": "h16e_reject", "mint": "FMVKYn2wi5nuh7tNGbJyA8prS9rzzXnkLDATL4TZpump", "t": 1789194624.74387, "mom": 0.784, "dd": 0.77, "bf": 0.444, "seed": 4.938271603}
+{"action": "h16e_thin", "mint": "FxL2RHzapS66tydpFEW1w4zpJ11vdNq8ZCsYvknjpump", "t": 1789194719.31885, "nticks": 1, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "6ZARaoTtzY2M4hpDw436QHUetk7KZDSkGDmzFmRfpump", "t": 1789194719.31885, "mom": 1.013, "dd": 0.974, "bf": 0.5, "seed": 4.938271603}
