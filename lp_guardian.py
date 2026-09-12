@@ -118,6 +118,13 @@ def main():
                 p["status"] = "exited"; p["exit_reason"] = danger
                 json.dump(st, open(STATE_F, "w"), indent=1)
                 log(f"{name}: exited ok")
+                # SOL-only rule: an emergency exit can leave token-X in the wallet
+                # (position was all-token below range) — sweep automatically.
+                rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                     capture_output=True, text=True, timeout=280)
+                action("post_exit_sweep", name=name, rc=rc5.returncode,
+                       out=(rc5.stdout or "")[-400:])
+                log(f"{name}: post-exit sweep rc={rc5.returncode}")
             else:
                 log(f"{name}: EXIT FAILED rc={rc2}: {out2[:300]}")
             continue
