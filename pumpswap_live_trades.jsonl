@@ -11,3 +11,5 @@
 {"action": "entry_signal", "mint": "2bKkRqBhfNTZ8xvEoZJ6mh5LGaUizKSeFFTUaTL4fQgZ", "name": "CATAI-SOL", "age_h": 0.341, "liq": 50188.59, "entry_px": 0.0002181, "buy_result": "submitted", "mode": "live"}
 {"action": "exit_signal", "mint": "2bKkRqBhfNTZ8xvEoZJ6mh5LGaUizKSeFFTUaTL4fQgZ", "name": "CATAI-SOL", "reason": "target", "ret": 1.257, "held_min": 0.3, "sell_result": "submitted", "close_result": "nothing to close"}
 {"action": "entry_signal", "mint": "F1VhbDisP91xbfK7D2x8mj9F3brtKTJUFi5BDdBJMbuC", "name": "NIKE-SOL", "age_h": 0.361, "liq": 311600.77, "entry_px": 0.0002568, "buy_result": "submitted", "mode": "live"}
+{"action": "exit_signal", "mint": "F1VhbDisP91xbfK7D2x8mj9F3brtKTJUFi5BDdBJMbuC", "name": "NIKE-SOL", "reason": "stop", "ret": 0.225, "held_min": 11.9, "sell_result": "submit failed: no signature (RPC)", "result": "sell failed; position retained, retry next pass"}
+{"action": "exit_signal", "mint": "F1VhbDisP91xbfK7D2x8mj9F3brtKTJUFi5BDdBJMbuC", "name": "NIKE-SOL", "reason": "stop", "ret": 0.257, "held_min": 12.3, "sell_result": "submit failed: no signature (RPC)", "result": "sell failed; position retained, retry next pass"}
