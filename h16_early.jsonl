@@ -20652,3 +20652,5 @@
 {"action": "h16e_reject", "mint": "LV8MrTpZ6PuCBBJ3mtq2b7eJY9TnD8kQB5d44H5pump", "t": 1789178880.0712051, "mom": 0.709, "dd": 0.574, "bf": 0.556, "seed": 2}
 {"action": "h16e_reject", "mint": "55a9RB16VgypZWaAptTGtrJuQfqbMwiXRGSjQYK8pump", "t": 1789178880.0712051, "mom": 0.632, "dd": 0.621, "bf": 0.222, "seed": 5.003}
 {"action": "h16e_reject", "mint": "GSJZYymzwSG4JnV37sKmqvs9BqJw2xibxrrJASQFpump", "t": 1789178880.0712051, "mom": 1.096, "dd": 0.912, "bf": 0.857, "seed": 2.710547888}
+{"action": "h16e_reject", "mint": "C2WNJQ6Xmb2Anm1HEKv8pcz9X4oVaQPscFU7ohXDpump", "t": 1789179069.829569, "mom": 0.818, "dd": 0.677, "bf": 0.316, "seed": 2.135046606}
+{"action": "h16e_close", "mint": "31gJ75BwFqHzn53eHx4dmpR7h6ZUS7Z6j3o3Ah4Spump", "t": 1789179165.134034, "outcome": "timeout", "mult": 1.0, "mins": 60.2, "mom": 1.242, "dd": 0.709, "bf": 0.815, "seed": 3}

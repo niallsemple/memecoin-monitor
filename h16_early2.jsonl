@@ -20523,3 +20523,4 @@
 {"action": "h16e2_stale", "mint": "55a9RB16VgypZWaAptTGtrJuQfqbMwiXRGSjQYK8pump", "t": 1789178878.105812, "last_tick_age": 8.8, "seed": 5.003}
 {"action": "h16e2_open", "mint": "GSJZYymzwSG4JnV37sKmqvs9BqJw2xibxrrJASQFpump", "t": 1789178869.192236, "scored_at": 1789178878.105812, "entry_mcap": 36.4435, "mom": 1.096, "dd": 0.912, "bf": 0.857, "seed": 2.710547888}
 {"action": "h16e2_close", "mint": "GSJZYymzwSG4JnV37sKmqvs9BqJw2xibxrrJASQFpump", "t": 1789178988.3659241, "outcome": "loss", "mult": 0.92, "mins": 2.0, "mom": 1.096, "dd": 0.912, "bf": 0.857, "seed": 2.710547888}
+{"action": "h16e2_reject", "mint": "C2WNJQ6Xmb2Anm1HEKv8pcz9X4oVaQPscFU7ohXDpump", "t": 1789179028.246027, "mom": 0.818, "dd": 0.677, "bf": 0.316, "seed": 2.135046606}
