@@ -974,3 +974,5 @@
 [collector] 200 events logged
 2026-09-12 19:28:28Z hb: age=1s pass_up=False keep_up=True
 [collector] 400 events logged
+[collector] error: Connection to remote host was lost.
+[collector] closed after 454 events
