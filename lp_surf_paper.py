@@ -196,12 +196,12 @@ def current_fee_day(cand):
             p = d['data'][0]
             return (p['day']['volumeFee'] or 0) / (p['tvl'] or 1)
         except Exception:
-            return cand['fee_day']
+            return cand.get('fee_day', 0)
     d = get(f'{MET_API}/pools/{cand["pool"]}')
     try:
         return ((d.get('fees') or {}).get('24h') or 0) / (d.get('tvl') or 1)
     except Exception:
-        return cand['fee_day']
+        return cand.get('fee_day', 0)
 
 
 # ---------- main cycle ----------
