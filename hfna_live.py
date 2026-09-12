@@ -184,6 +184,27 @@ def main():
                 rc = run_bundle("exit", p, timeout=90)
                 log_event(kind="live_exit", pool=p, reason=exit_reason, rc=rc.returncode,
                           out=(rc.stdout or rc.stderr or "")[-300:])
+                if rc.returncode != 0:
+                    # failed exit (09-12 GBR: tx expired, engine read wallet
+                    # mid-flight and booked a false -0.142). Retry once, then
+                    # verify on-chain. If the position still exists, keep it
+                    # open in state — the next cycle's fast loop re-enters
+                    # this path / reconciles. NEVER account on a failed exit.
+                    time.sleep(8)
+                    rc2 = run_bundle("exit", p, timeout=90)
+                    log_event(kind="live_exit_retry", pool=p, rc=rc2.returncode,
+                              out=(rc2.stdout or rc2.stderr or "")[-300:])
+                    gone = False
+                    try:
+                        rcs = run_bundle("statusjson", timeout=60)
+                        line = [l for l in (rcs.stdout or "").splitlines() if l.strip().startswith("[")][-1]
+                        gone = not [x for x in json.loads(line) if x.get("pool") == p and not x.get("error")]
+                    except Exception:
+                        gone = rc2.returncode == 0
+                    if not gone:
+                        json.dump(st, open(STATE, "w"), indent=1)
+                        print(f"[exit-fail] {p[:8]} position still on-chain — keeping open, retry next cycle")
+                        return
                 time.sleep(12)  # RPC finality: exit-state visible before sweep
                 for _try in range(2):
                     rcs = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
@@ -191,7 +212,15 @@ def main():
                     if rcs.returncode == 0:
                         break
                     time.sleep(5)
+                # stable wallet read (09-12): sweep proceeds land late; two
+                # reads 15s apart, take the settled one, else a third read.
                 wa = wallet_sol()
+                for _stab in range(3):
+                    time.sleep(15)
+                    wa2 = wallet_sol()
+                    if wa is not None and wa2 is not None and abs(wa2 - wa) < 0.0005:
+                        wa = wa2; break
+                    wa = wa2 if wa2 is not None else wa
                 if wa is not None and pos.get("wallet_before") is not None:
                     real_pnl = wa - pos["wallet_before"]
                     st["last_bank"] = wa

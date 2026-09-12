@@ -1156,3 +1156,23 @@
 17:20:16 no open positions
 17:22:46 no open positions
 17:26:10 no open positions
+17:30:36 no open positions
+17:32:53 no open positions
+17:34:36 no open positions
+17:34:46 no open positions
+17:36:30 no open positions
+17:38:32 no open positions
+17:40:36 no open positions
+17:42:36 no open positions
+17:44:39 no open positions
+17:46:52 no open positions
+17:48:32 no open positions
+17:50:14 no open positions
+17:52:23 GbrDAq3R: active=-172 range=[-174,-172] tvl=$1,159,385 vol24=$14,822,416 feeY=0.000000SOL feeX=34749
+17:52:23 guardian pass complete
+17:56:08 GbrDAq3R: active=-184 range=[-174,-172] tvl=$1,146,409 vol24=$14,874,178 feeY=0.000011SOL feeX=4671845
+17:56:08 GbrDAq3R: EMERGENCY EXIT — price fell through range (active -184 < -174) — position is all token-X
+17:56:10 GbrDAq3R: exited ok
+17:56:44 GbrDAq3R: post-exit sweep rc=1
+17:56:44 guardian pass complete
+17:56:48 no open positions
