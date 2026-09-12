@@ -19,3 +19,4 @@
 {"t": 1789205696.0133739, "kind": "dryrun_enter", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "bins": [-137, -135], "elev": 17.0}
 {"t": 1789206220.617921, "kind": "dryrun_exit", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "reason": "liquidity refilled", "fees_est": 0.0007314805187981156}
 {"t": 1789206220.618102, "kind": "HALT", "reason": "3 consecutive losses"}
+{"t": 1789208213.87012, "kind": "live_enter", "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i", "bins": [-454, -452], "elev": 1.7792410192472532, "rc": 0, "out": "7QGUNNBc7aimH8YzpUyirPa1\nbigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)\n(node:57770) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n", "wallet_before": 7.367323607}

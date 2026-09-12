@@ -92,6 +92,11 @@ def main():
     for r in rows:
         if r["t"] > now - 300:
             latest[r["pool"]] = r
+    # universe widening (09-12, post-liveval): the validation winner came from
+    # the collector's rotating hot set, not the static watchlist. Scan every
+    # pool with fresh snapshots; the gates (vacuum/settle/elev/flow/edge-
+    # density) are the filter, not the list. Static watchlist still included.
+    watch = list(dict.fromkeys(watch + list(latest.keys())))
 
     # ---- manage open position ----
     if st["pos"]:
