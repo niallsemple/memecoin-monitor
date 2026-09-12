@@ -144,7 +144,7 @@ def main():
             except Exception:
                 pass
         if pos_pools:
-            fast_tail(pos_pools)
+            fast_tail(pos_pools, max_rounds=10, gap=15)  # ~150s post-entry coverage
         else:
             print("fast: no open positions")
         return
