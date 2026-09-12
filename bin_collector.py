@@ -131,6 +131,23 @@ def fast_tail(open_pos_pools, max_rounds=3, gap=15):
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "fast":
+        # post-entry mode: snapshot only pools with open paper positions,
+        # 3 rounds x 15s. Run AFTER the engines in a poll cycle so newly
+        # opened positions get 15s coverage during the danger window.
+        pos_pools = []
+        for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json"):
+            try:
+                hp = json.load(open(os.path.join(MON, sf))).get("pos")
+                if hp and hp.get("pool") and hp["pool"] not in pos_pools:
+                    pos_pools.append(hp["pool"])
+            except Exception:
+                pass
+        if pos_pools:
+            fast_tail(pos_pools)
+        else:
+            print("fast: no open positions")
+        return
     rounds = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     gap = int(sys.argv[2]) if len(sys.argv) > 2 else 60
     open_pos = []
