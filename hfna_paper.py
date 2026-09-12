@@ -192,6 +192,22 @@ def main():
             pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
             if len(pf_recent) >= 2 and (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) < 500_000:
                 continue
+            # edge-density gate (KNOTS/GBR recon, 2026-09-12): expected 30-min
+            # capture must clear 2x round-trip costs, else the trade is
+            # structurally sub-cost no matter the timing.
+            #   capture_30 = dProtY_rate * lpMult * share * 1800
+            #   share = per-bin dep / (per-bin dep + liq_active)
+            if len(pf_recent) >= 2:
+                dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
+                if dt > 0:
+                    flow = (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) / 1e9 / dt
+                    dep_bin = SIZE / 3.0
+                    share = dep_bin / (dep_bin + r["liq_active"] / 1e9)
+                    capture30 = flow * lp_mult(p) * share * 1800
+                    # 4x FIXED_COST ~= real all-in round trip (~0.004 SOL:
+                    # entry + exit + claims + priority), per recon cost audit
+                    if capture30 < 4 * FIXED_COST:
+                        continue
             # cooldown: one trade per pool per hour
             last_done = st["seen"].get(p, 0)
             if time.time() - last_done < 3600:

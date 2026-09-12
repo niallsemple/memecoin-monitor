@@ -1,22 +1,9 @@
 {
- "watermark": 1789201789.857,
- "pos": {
-  "pool": "GuPbekwP9MqB23CghhiMQZTaigPdUJooovo1neCErhM8",
-  "t_entry": 1789201295.06,
-  "low": -898,
-  "high": -896,
-  "fees": 0.0012859370540691693,
-  "markout": 0.0,
-  "elev": 5001.0,
-  "last_t": 1789201789.492,
-  "last_pf": 114864975,
-  "trough": 28541972107.342316,
-  "fees_at_progress": 0.0012859370540691693,
-  "stall_s": 0
- },
- "bankroll": 1.0485243078919084,
- "trades": 44,
- "wins": 13,
+ "watermark": 1789204107.148,
+ "pos": null,
+ "bankroll": 1.0506025924322562,
+ "trades": 45,
+ "wins": 14,
  "seen": {
   "EEkVx3wibBK6m5Fc9VaUTfr32Xwwopv9n7PrvS4Qp9eb": 1789168974.708501,
   "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ": 1789195852.15814,
