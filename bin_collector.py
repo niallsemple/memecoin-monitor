@@ -82,13 +82,17 @@ def round_once(now):
                 pools.append(p["pool"])
     except Exception:
         pass
-    # always track pool with an open HFNA paper position
-    try:
-        hp = json.load(open(os.path.join(MON, "hfna_paper_state.json"))).get("pos")
-        if hp and hp.get("pool") and hp["pool"] not in pools:
-            pools.append(hp["pool"])
-    except Exception:
-        pass
+    # always track pool with an open HFNA paper position (3-bin and w7)
+    open_pos_pools = []
+    for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json"):
+        try:
+            hp = json.load(open(os.path.join(MON, sf))).get("pos")
+            if hp and hp.get("pool"):
+                open_pos_pools.append(hp["pool"])
+                if hp["pool"] not in pools:
+                    pools.append(hp["pool"])
+        except Exception:
+            pass
     # always track HFNA live-pilot watchlist pools — the pilot cannot evaluate
     # entries without fresh snapshots even when we hold no position
     try:
@@ -105,15 +109,36 @@ def round_once(now):
                 f.write(json.dumps(s) + "\n")
                 n += 1
     print(f"bin snapshot: {n}/{len(pools)} pools")
+    return open_pos_pools
+
+
+def fast_tail(open_pos_pools, max_rounds=3, gap=15):
+    """While paper positions are open, snapshot just those pools at ~15s so
+    the w7 boundary early exit is measured at realistic cadence (the 64s
+    default lets price gap straight past the exit zone — GBR 23:10 strike)."""
+    if not open_pos_pools:
+        return
+    for i in range(max_rounds):
+        time.sleep(gap)
+        n = 0
+        with open(OUT, "a") as f:
+            for p in open_pos_pools:
+                s = snap_pool(p)
+                if s:
+                    f.write(json.dumps(s) + "\n")
+                    n += 1
+        print(f"fast tail {i+1}/{max_rounds}: {n}/{len(open_pos_pools)} pos pools")
 
 
 def main():
     rounds = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     gap = int(sys.argv[2]) if len(sys.argv) > 2 else 60
+    open_pos = []
     for i in range(rounds):
-        round_once(time.time())
+        open_pos = round_once(time.time()) or open_pos
         if i < rounds - 1:
             time.sleep(gap)
+    fast_tail(open_pos)
 
 
 if __name__ == "__main__":
