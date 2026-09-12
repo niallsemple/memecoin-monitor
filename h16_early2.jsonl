@@ -21418,3 +21418,13 @@
 {"action": "h16e2_stale", "mint": "FfiRUpp55w8QVzQS6PP6SCoYt9xm4kG41aR87rUypump", "t": 1789212238.331591, "last_tick_age": 10.1, "seed": 4}
 {"action": "h16e2_thin", "mint": "2v8wgDszedw2Vf9re7dCcphmhMHPAkVMQKhKEjWrpump", "t": 1789212268.36048, "nticks": 1, "seed": 2.967496174}
 {"action": "h16e2_reject", "mint": "5yqoYbmNHyprtzsexJ363xw2rEELgaM7FT3Dx9mfpump", "t": 1789212268.36048, "mom": 0.66, "dd": 0.437, "bf": 0.494, "seed": 2.78}
+{"action": "h16e2_drop", "mint": "Fc1koPCH6zNfMHi8EbHibVURFJJdUbZWQEZsT2Lupump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_drop", "mint": "2LthgxEYYhBadwGkQyDKDWTK6EWSRPSPzzDu7Vxdpump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_drop", "mint": "ASA7gTjL2xrZi75crCryFEzSitzHig7Rk3atEsPQpump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_drop", "mint": "G1aTKrHZ8LA1YnzPqLEabQSS7qAyPB3FwKPzhkJWpump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_drop", "mint": "8ixytBffofQRkzRDQ1PtgeHwywcvUnT2BfkuDcaupump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_drop", "mint": "45wUzmzG8NLeiKbdnQYymJwyHmPcgyoRdrfi1xoRpump", "reason": "no ticks", "t": 1789212840.529376}
+{"action": "h16e2_stale", "mint": "C17jDhDTU8Yw6q3Dk4LnTmA5KXWPAoe9NuzRfaQ7pump", "t": 1789213005.6563442, "last_tick_age": 2.6, "seed": 3}
+{"action": "h16e2_stale", "mint": "4PX2fZs8p3mjDCWgdacdUxobqgU24MoU3qi5WCVZpump", "t": 1789213065.7045171, "last_tick_age": 15.7, "seed": 4.938271603}
+{"action": "h16e2_reject", "mint": "p5LW6ojZRsPebmy9wiuknxcfAFfsT9wEqDsjANmpump", "t": 1789213065.7045171, "mom": 0.828, "dd": 0.775, "bf": 0.263, "seed": 2}
+{"action": "h16e2_thin", "mint": "8JNH91piF6SaW881hpo1Pi4ERU83B6LUBb6woSERpump", "t": 1789213080.7209148, "nticks": 1, "seed": 4.938271603}

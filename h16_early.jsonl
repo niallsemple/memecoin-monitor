@@ -21561,3 +21561,14 @@
 {"action": "h16e_reject", "mint": "FfiRUpp55w8QVzQS6PP6SCoYt9xm4kG41aR87rUypump", "t": 1789212260.332222, "mom": 0.982, "dd": 0.982, "bf": 0.25, "seed": 4}
 {"action": "h16e_close", "mint": "GZFbZZ3tnkGbtyZXu8MNf1MMHGk1wGsNtAymVNRapump", "t": 1789212252.9576, "outcome": "loss", "mult": 0.92, "mins": 1.5, "mom": 1.181, "dd": 0.847, "bf": 1.0, "seed": 2.967496174}
 {"action": "h16e_thin", "mint": "2v8wgDszedw2Vf9re7dCcphmhMHPAkVMQKhKEjWrpump", "t": 1789212263.0801249, "nticks": 1, "seed": 2.967496174}
+{"action": "h16e_reject", "mint": "5yqoYbmNHyprtzsexJ363xw2rEELgaM7FT3Dx9mfpump", "t": 1789212355.442961, "mom": 0.66, "dd": 0.437, "bf": 0.494, "seed": 2.78}
+{"action": "h16e_drop", "mint": "Fc1koPCH6zNfMHi8EbHibVURFJJdUbZWQEZsT2Lupump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_drop", "mint": "2LthgxEYYhBadwGkQyDKDWTK6EWSRPSPzzDu7Vxdpump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_drop", "mint": "ASA7gTjL2xrZi75crCryFEzSitzHig7Rk3atEsPQpump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_drop", "mint": "G1aTKrHZ8LA1YnzPqLEabQSS7qAyPB3FwKPzhkJWpump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_drop", "mint": "8ixytBffofQRkzRDQ1PtgeHwywcvUnT2BfkuDcaupump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_drop", "mint": "45wUzmzG8NLeiKbdnQYymJwyHmPcgyoRdrfi1xoRpump", "reason": "no ticks", "t": 1789212918.1087072}
+{"action": "h16e_reject", "mint": "C17jDhDTU8Yw6q3Dk4LnTmA5KXWPAoe9NuzRfaQ7pump", "t": 1789213012.085749, "mom": 0.71, "dd": 0.71, "bf": 0.111, "seed": 3}
+{"action": "h16e_reject", "mint": "4PX2fZs8p3mjDCWgdacdUxobqgU24MoU3qi5WCVZpump", "t": 1789213106.792243, "mom": 0.741, "dd": 0.731, "bf": 0.333, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "p5LW6ojZRsPebmy9wiuknxcfAFfsT9wEqDsjANmpump", "t": 1789213106.792243, "mom": 0.828, "dd": 0.775, "bf": 0.263, "seed": 2}
+{"action": "h16e_thin", "mint": "8JNH91piF6SaW881hpo1Pi4ERU83B6LUBb6woSERpump", "t": 1789213106.792243, "nticks": 1, "seed": 4.938271603}

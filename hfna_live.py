@@ -148,6 +148,7 @@ def main():
             # armed: judge by real wallet delta; dry-run: model estimate
             won = (real_pnl > 0) if real_pnl is not None else (pos["fees_est"] > 0.001)
             st["consec_loss"] = 0 if won else st["consec_loss"] + 1
+            st.setdefault("last_won", {})[p] = won
             st["pos"] = None
             if st["consec_loss"] >= MAX_CONSEC_LOSS:
                 st["halted"] = True
@@ -217,7 +218,11 @@ def main():
                 capture30 = flow * lp_mult(p) * share * 1800
                 if capture30 < 4 * 0.001 + tax_drag:
                     continue
-        if time.time() - st["seen"].get(p, 0) < COOLDOWN:
+        # win-aware cooldown (09-12): pools that paid us get a short leash
+        # (15min) — JBG re-burst an hour after paying +0.0025 and the paper
+        # bot ate it while live sat in cooldown. Losers keep the full hour.
+        cd = 900 if st.get("last_won", {}).get(p) else COOLDOWN
+        if time.time() - st["seen"].get(p, 0) < cd:
             continue
         ab = r["active_bin"]
         pos = {"pool": p, "t_entry": time.time(), "low": ab - BINS_BELOW, "high": ab,
