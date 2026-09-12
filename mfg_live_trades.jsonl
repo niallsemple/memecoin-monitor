@@ -4863,3 +4863,5 @@
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789232357.772744}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789232357.9175522}
 {"action": "curve_buy", "mint": "7vnYY5R8R3tji8sgB2iUeC5d6XyWbiZsRPPfqyMvpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789232485.1629481}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789233214.350805}
+{"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": ["39yK6ifKUKSSZXN3w3NAgpNw8A2mNXdc4FJjhhQL3G8uxbpPfj1jBugwkazwmfDBfdCcCUzsXtm5qTJUMuFwruz5"], "result": "closed 1/1", "ts": 1789233214.642605}

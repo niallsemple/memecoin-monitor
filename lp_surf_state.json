@@ -1,23 +1,6 @@
 {
- "bankroll": 0.7267718062972632,
- "open": {
-  "provider": "raydium",
-  "pool": "4GtZWZ1pCpUU6fWdEhKNpXmcjibMr2dQEQR2dfvTwFD6",
-  "pair": "ORE/MINER",
-  "entry_ts": 1789177075.616852,
-  "entry_price": 826661.3029448687,
-  "deposit": 0.7267718062972632,
-  "fees_est": 0.0,
-  "fee_day_at_entry": 0.2547535693654601
- },
- "cycles": 53,
- "cooldowns": {
-  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789185337.583859,
-  "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789187440.866828,
-  "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ": 1789188322.471638,
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789189500.387541,
-  "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789190189.541153,
-  "4iVHkn5WhmGwrKb2fYFNPnTkqhwYTEEezvsju9YEBY76": 1789190909.550694,
-  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": 1789192821.450939
- }
+ "bankroll": 0.7247718062972632,
+ "open": null,
+ "cycles": 54,
+ "cooldowns": {}
 }

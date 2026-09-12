@@ -31,9 +31,11 @@ FLAT_TH = 5
 ELEV_MIN = 1.5
 # DEPTH GATE (09-12, 16 live trades): pools with <1000 SOL Y-reserve bled
 # -0.0123 over 7 trades; >=1000 SOL pools net +0.0064 and every win came
-# from 7k-deep GBR. Depth is what lets 0.1 SOL exit before the burst
-# reverses. Sample #3 runs with this gate live.
-MIN_SOL_RESERVE = 1000.0
+# from 7k-deep GBR. Raised to 1500 after FpP5 (884 SOL) crossed 1005
+# mid-burst and slipped through: marginal pools oscillate around any line
+# they hover near. Fail-CLOSED on unknown depth — depth is the primary
+# safety filter, a missed trade is cheaper than a shallow pool.
+MIN_SOL_RESERVE = 1500.0
 COOLDOWN = 3600
 TIMEOUT = 1800
 STALL = 300
@@ -302,9 +304,9 @@ def main():
                 dc[p] = ent
                 json.dump(dc, open(DEPTH_F, "w"), indent=1)
             except Exception:
-                ent = None  # unknown depth -> allow this cycle, recheck next
-        if ent is not None and ent["sol"] < MIN_SOL_RESERVE:
-            continue
+                ent = None
+        if ent is None or ent["sol"] < MIN_SOL_RESERVE:
+            continue  # fail closed: unknown or shallow depth = no trade
         # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
         # (~0.004 SOL all-in) plus worst-case tax drag. Without this the pilot
         # enters structurally sub-cost trades — the pre-gate loss streak.
