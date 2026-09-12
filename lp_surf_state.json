@@ -1,16 +1,7 @@
 {
- "bankroll": 0.7714004348260298,
- "open": {
-  "provider": "meteora",
-  "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
-  "pair": "ALL-SOL",
-  "entry_ts": 1789169508.618227,
-  "entry_price": 3.2943428296762e-05,
-  "deposit": 0.7714004348260298,
-  "fees_est": 0.010130006450274946,
-  "fee_day_at_entry": 0.7062388267828968
- },
- "cycles": 51,
+ "bankroll": 0.7287718062972632,
+ "open": null,
+ "cycles": 52,
  "cooldowns": {
   "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom": 1789174784.9640179,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789181817.195461,
@@ -19,6 +10,7 @@
   "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ": 1789188322.471638,
   "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789189500.387541,
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789190189.541153,
-  "4iVHkn5WhmGwrKb2fYFNPnTkqhwYTEEezvsju9YEBY76": 1789190909.550694
+  "4iVHkn5WhmGwrKb2fYFNPnTkqhwYTEEezvsju9YEBY76": 1789190909.550694,
+  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": 1789192821.450939
  }
 }
