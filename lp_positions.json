@@ -1004,6 +1004,35 @@
    ],
    "was_in_range": true,
    "exit_reason": "price fell through range (active -455 < -453) \u2014 position is all token-X"
+  },
+  {
+   "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+   "position": "ExhgvT9yt4VQhswwT81JbiLzDgYbTU7QqbUwmmpnQAZh",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789210580.311,
+   "entry_active_bin": -184,
+   "minBinId": -186,
+   "maxBinId": -184,
+   "status": "open",
+   "add_sig": "2ZTwcm1EWZ5y2cfmDCe9S1rusHFs1J6kD5BBaz291dbukia5GR8JF1DPpiHWjUtJ1Qsxp97RgfoTRkWZdXYEVLhw",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 1041351.4598912348,
+   "base_vol24": 34927864.51918521,
+   "feeY_hist": [
+    {
+     "t": 1789210581.523613,
+     "feeY": 0,
+     "active": -184
+    },
+    {
+     "t": 1789210960.0401988,
+     "feeY": 298773,
+     "active": -183
+    }
+   ],
+   "was_in_range": false
   }
  ]
 }

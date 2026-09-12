@@ -181,20 +181,13 @@ def main():
         pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
         if len(pf_recent) >= 2 and (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) < 500_000:
             continue
-        # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
-        # (~0.004 SOL all-in). Without this the pilot enters structurally
-        # sub-cost trades — the pre-gate dry-run loss streak that halted it.
-        if len(pf_recent) >= 2:
-            dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
-            if dt > 0:
-                flow = (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) / 1e9 / dt
-                dep_bin = SIZE / (BINS_BELOW + 1)
-                share = dep_bin / (dep_bin + r["liq_active"] / 1e9)
-                capture30 = flow * lp_mult(p) * share * 1800
-                if capture30 < 4 * 0.001:
-                    continue
-        # tax-token gate (armed trade #1, 09-12): Token-2022 transferFeeConfig
-        # burns ~3% every transfer in/out — kills the margin. Skip tax pools.
+        # tax lookup first (verified vs on-chain 09-12: bundle taxcheck reads
+        # the real tokenX mint; KNOTS genuinely carries 300bps). Entry is
+        # Y-only wSOL (untaxed); the tax burns ~rate x (X-value at exit) when
+        # we withdraw/sell the X side. So don't blanket-skip tax pools —
+        # raise the cost bar by the worst-case drag (rate x SIZE) and let
+        # burst-class pools (KNOTS elev=1053x) clear it. Hard-skip >10% tax:
+        # execution accounting gets unreliable there.
         taxc = json.load(open(TAX_F)) if os.path.exists(TAX_F) else {}
         if p not in taxc:
             rc = run_bundle("taxcheck", p)
@@ -204,9 +197,22 @@ def main():
             except Exception:
                 taxc[p] = -1   # unknown -> treat as pass but recheck next time
             json.dump(taxc, open(TAX_F, "w"), indent=1)
-        if taxc.get(p, 0) and taxc[p] > 50:
-            st["seen"][p] = time.time()   # don't rescan constantly
+        tax_bps = taxc.get(p, 0)
+        if tax_bps > 1000:
             continue
+        tax_drag = max(tax_bps, 0) / 10000.0 * SIZE
+        # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
+        # (~0.004 SOL all-in) plus worst-case tax drag. Without this the pilot
+        # enters structurally sub-cost trades — the pre-gate loss streak.
+        if len(pf_recent) >= 2:
+            dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
+            if dt > 0:
+                flow = (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) / 1e9 / dt
+                dep_bin = SIZE / (BINS_BELOW + 1)
+                share = dep_bin / (dep_bin + r["liq_active"] / 1e9)
+                capture30 = flow * lp_mult(p) * share * 1800
+                if capture30 < 4 * 0.001 + tax_drag:
+                    continue
         if time.time() - st["seen"].get(p, 0) < COOLDOWN:
             continue
         ab = r["active_bin"]

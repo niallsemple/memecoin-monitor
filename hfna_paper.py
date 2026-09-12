@@ -24,6 +24,7 @@ Logs: hfna_paper.jsonl ; state: hfna_paper_state.json
 import json, os, statistics, time
 
 MON = os.path.dirname(os.path.abspath(__file__))
+TAX_F = os.path.join(MON, "pool_tax_cache.json")
 SNAP = os.path.join(MON, "bin_snapshots.jsonl")
 STATE = os.path.join(MON, "hfna_paper_state.json")
 LOG = os.path.join(MON, "hfna_paper.jsonl")
@@ -197,6 +198,17 @@ def main():
             # structurally sub-cost no matter the timing.
             #   capture_30 = dProtY_rate * lpMult * share * 1800
             #   share = per-bin dep / (per-bin dep + liq_active)
+            # tax-aware cost bar (parity with hfna_live 09-12): Token-2022
+            # transferFeeConfig burns rate x X-value at exit; add worst-case
+            # drag (rate x SIZE) to the bar. Hard-skip >1000bps.
+            taxc = json.load(open(TAX_F)) if os.path.exists(TAX_F) else {}
+            if p in taxc:
+                tax_bps = taxc[p]
+            else:
+                tax_bps = 0   # paper: don't spend bundle calls; live verifies
+            if tax_bps > 1000:
+                continue
+            tax_drag = max(tax_bps, 0) / 10000.0 * SIZE
             if len(pf_recent) >= 2:
                 dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
                 if dt > 0:
@@ -206,7 +218,7 @@ def main():
                     capture30 = flow * lp_mult(p) * share * 1800
                     # 4x FIXED_COST ~= real all-in round trip (~0.004 SOL:
                     # entry + exit + claims + priority), per recon cost audit
-                    if capture30 < 4 * FIXED_COST:
+                    if capture30 < 4 * FIXED_COST + tax_drag:
                         continue
             # cooldown: one trade per pool per hour
             last_done = st["seen"].get(p, 0)
