@@ -2132,6 +2132,8 @@
 {"mint": "k17TAiFLup6FTJBno4XHeqysxtBhxufXqu1R5rhpump", "status": "closed", "eval_ts": 1789230315.975295, "entry_t": 1789230358.0500941, "peak": 1.161, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.1156}
 {"mint": "oPDSvxYjeGQovMgHx6rnu8wc364AEBWfS9etgCDpump", "status": "closed", "eval_ts": 1789230395.4914932, "entry_t": 1789230471.319696, "peak": 1.016, "freerolled": false, "exit_reason": "abort15", "ret": -0.0236}
 {"mint": "k3LYVHs2AKgssGGoeAFREaBEWVLYWUhXcqy1rk5pump", "status": "closed", "eval_ts": 1789230660.8039382, "entry_t": 1789230769.2428532, "peak": 1.009, "freerolled": false, "exit_reason": "abort15", "ret": -0.0307}
-{"mint": "XbKS3zWJW2qd9WbMKmSFEjP4sLf2TD15BnFTDCypump", "status": "closed", "eval_ts": 1789231450.186969, "entry_t": 1789231492.539915, "peak": 1.014, "freerolled": false, "exit_reason": "abort15", "ret": -0.0254}
-{"mint": "zj8PQxCfkWE7qhASv3y3AnwEcco4SeMJMjNA5Z3pump", "status": "open", "eval_ts": 1789231961.882999, "entry_t": 1789232004.2662349, "peak": 1.087, "freerolled": false, "mark": 0.0443, "ret": null}
-{"mint": "9NdLFUWEoGVxtZEUgZEk9BfG6xCHh3vzBNgnf9axpump", "status": "open", "eval_ts": 1789232212.911836, "entry_t": 1789232317.962052, "peak": 1.0, "freerolled": false, "mark": -0.0392, "ret": null}
+{"mint": "XbKS3zWJW2qd9WbMKmSFEjP4sLf2TD15BnFTDCypump", "status": "closed", "eval_ts": 1789231450.186969, "entry_t": 1789231492.539915, "peak": 1.02, "freerolled": false, "exit_reason": "abort15", "ret": -0.0254}
+{"mint": "zj8PQxCfkWE7qhASv3y3AnwEcco4SeMJMjNA5Z3pump", "status": "closed", "eval_ts": 1789231961.882999, "entry_t": 1789232004.2662349, "peak": 1.231, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.0443}
+{"mint": "9NdLFUWEoGVxtZEUgZEk9BfG6xCHh3vzBNgnf9axpump", "status": "closed", "eval_ts": 1789232212.911836, "entry_t": 1789232317.962052, "peak": 1.318, "freerolled": false, "exit_reason": "birth_cap", "ret": 0.2628}
+{"mint": "12NvSK9hEZsaFzjyNGCAK3mk1UywrL7ENTKJmYKDpump", "status": "open", "eval_ts": 1789234387.931424, "entry_t": 1789234427.141957, "peak": 1.162, "freerolled": false, "mark": 0.1161, "ret": null}
+{"mint": "Bz8tWfibPuYXcR9VEpyjax1LW5ha6Tb9TRCzVJHppump", "status": "open", "eval_ts": 1789234657.583018, "entry_t": 1789234670.135762, "peak": 1.03, "freerolled": false, "mark": -0.0104, "ret": null}
