@@ -1134,3 +1134,10 @@
 16:10:37 guardian pass complete
 16:15:50 no open positions
 16:28:38 no open positions
+16:46:06 GbrDAq3R: active=-197 range=[-199,-197] tvl=$998,430 vol24=$14,540,291 feeY=0.000000SOL feeX=0
+16:46:06 guardian pass complete
+16:50:42 GbrDAq3R: active=-196 range=[-199,-197] tvl=$1,000,954 vol24=$14,514,310 feeY=0.001106SOL feeX=2645499
+16:50:42 GbrDAq3R: drifted out of range — fee accrual paused
+16:50:42 GbrDAq3R: idle above range (pure SOL, no fees) — watching
+16:50:42 guardian pass complete
+16:51:22 no open positions
