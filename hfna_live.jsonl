@@ -16,3 +16,4 @@
 {"t": 1789197653.028259, "kind": "dryrun_exit", "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY", "reason": "tripwire ab=-246<-241", "fees_est": 0.0}
 {"t": 1789200881.8363829, "kind": "dryrun_enter", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "bins": [-127, -125], "elev": 10001.0}
 {"t": 1789201296.1936269, "kind": "dryrun_exit", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "reason": "liquidity refilled", "fees_est": 0.0}
+{"t": 1789205696.0133739, "kind": "dryrun_enter", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "bins": [-137, -135], "elev": 17.0}

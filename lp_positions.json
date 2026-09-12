@@ -929,6 +929,30 @@
     }
    ],
    "exit_reason": "price fell through range (active -154 < -152) \u2014 position is all token-X"
+  },
+  {
+   "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
+   "position": "2BUSFSjyXBtdbqSi2Fk5s5gBBYrMAqutS3C6ztKmCL1Q",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789205990.046,
+   "entry_active_bin": -516,
+   "minBinId": -519,
+   "maxBinId": -516,
+   "status": "open",
+   "add_sig": "5MZRAZGyqtzg36Sha3x68zY21saSBnXyWzfYbPNEycy4VH8GTJW3tgsMhbmxUHpRLsoZTpHpzChqQgaKFqHMjsPs",
+   "width_pct": null,
+   "strategy_tag": "liveval",
+   "base_tvl": 46255.56939968981,
+   "base_vol24": 2160702.3506000163,
+   "feeY_hist": [
+    {
+     "t": 1789206023.084214,
+     "feeY": 0,
+     "active": -516
+    }
+   ],
+   "was_in_range": true
   }
  ]
 }
