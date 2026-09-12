@@ -20372,3 +20372,13 @@
 {"action": "h16_reject", "mint": "ArLtRvmsVaD8ZTk3KZbSAC6t31a3meArYFb5XrfFoRAM", "t": 1789180200.223927, "mom": 1.462, "dd": 0.371, "bf": 0.594, "seed": 4.5}
 {"action": "h16_reject", "mint": "HVTDMeFpgCKjXyLdAQMT2NcuYDBHnD6DQyY58VBxpump", "t": 1789180200.223927, "mom": 0.845, "dd": 0.747, "bf": 0.625, "seed": 2.394242744}
 {"action": "h16_reject", "mint": "DS2qma1h1jZpgP5J9HBeEM643F8vMr25EPneyBV3pump", "t": 1789180200.223927, "mom": 0.537, "dd": 0.461, "bf": 0.443, "seed": 3.160493825}
+{"action": "h16_drop", "mint": "ABZEQik82Q1cQt2PVXMqp3ZGFUMuN23uFYGSpt7Ypump", "reason": "no ticks", "t": 1789180294.7879071}
+{"action": "h16_drop", "mint": "C68DRxkTxcajYWVYzUoXyHWArJQf6oNQYvoTYwYZpump", "reason": "no ticks", "t": 1789180294.7879071}
+{"action": "h16_drop", "mint": "GSpNLTgCFNe6zXrABKxymsekVaXWWfRzo2cfxe98pump", "reason": "no ticks", "t": 1789180294.7879071}
+{"action": "h16_drop", "mint": "HpzMMzezD31pXvx2M1CBiohcczYUaz1WRhDwfQ7Mpump", "reason": "no ticks", "t": 1789180294.7879071}
+{"action": "h16_reject", "mint": "2yhV2J35k14fm1fUEbhWToAAATG2EWdShBHkbACPpump", "t": 1789180294.7879071, "mom": 0.586, "dd": 0.578, "bf": 0.25, "seed": 5}
+{"action": "h16_reject", "mint": "DFsJqhTNdDzPVo3Ae4jFc6Lbkr47zNduWRrd3qqvpump", "t": 1789180294.7879071, "mom": 0.606, "dd": 0.587, "bf": 0.444, "seed": 2.975327455}
+{"action": "h16_open", "mint": "A7w2495VztTrenJPRHWL52xBkZBFe6WxNbygjK2dpump", "t": 1789180248.924802, "scored_at": 1789180389.9042299, "entry_mcap": 31.2552, "mom": 1.118, "dd": 0.895, "bf": 0.8, "seed": 4.938271603}
+{"action": "h16_reject", "mint": "GSEPnKmRyMfrTAUbEsBgwgjyKiYz9q3fXL34EisDpump", "t": 1789180389.9042299, "mom": 0.57, "dd": 0.355, "bf": 0.488, "seed": 2.271604937}
+{"action": "h16_reject", "mint": "LYmXLbxp2jno77zmLVotwy8MpjAEDdtLybJthcfpump", "t": 1789180389.9042299, "mom": 0.801, "dd": 0.539, "bf": 0.545, "seed": 3.196529289}
+{"action": "h16_reject", "mint": "DGo3STbzghkmjrrZ5u3uZw2Nr889v53vViffRy9ipump", "t": 1789180389.9042299, "mom": 0.858, "dd": 0.836, "bf": 0.6, "seed": 2.31515592}
