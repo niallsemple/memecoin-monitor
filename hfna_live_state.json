@@ -4,11 +4,13 @@
   "t_entry": 1789188577.220221,
   "low": -261,
   "high": -259,
-  "fees_est": 0.0,
+  "fees_est": 0.0784004787278635,
   "elev": 10000.0,
-  "last_t": 1789188574.592,
-  "last_pf": 2442410711,
-  "trough": 238393321.8052991
+  "last_t": 1789189212.427,
+  "last_pf": 22865,
+  "trough": 238393321.8052991,
+  "stall": 0,
+  "fees_mark": 0.0784004787278635
  },
  "seen": {
   "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": 1789187361.1956291,
