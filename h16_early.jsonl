@@ -21094,3 +21094,12 @@
 {"action": "h16e_reject", "mint": "6Q9oySwRLxa6Q52YrJqNGEAM1MidzwfJxbzTaDbFpump", "t": 1789190752.7861278, "mom": 0.893, "dd": 0.866, "bf": 0.167, "seed": 2}
 {"action": "h16e_reject", "mint": "EJwH1RYpkN74Dtdvyfh7UQmUAtuVQgoRQ31wAyvVpump", "t": 1789190847.9415739, "mom": 0.775, "dd": 0.775, "bf": 0.0, "seed": 3}
 {"action": "h16e_reject", "mint": "2vvbn8MLZZbpSumi9Hc4Zzxz1phKuKmP2UzkWbd5pump", "t": 1789190847.9415739, "mom": 0.743, "dd": 0.734, "bf": 0.429, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "8tgwvBAyAeWo2MqGPWydDXcmC2rZ3AXubfVGBt8Spump", "t": 1789190942.611129, "mom": 0.856, "dd": 0.738, "bf": 0.5, "seed": 2.962962961}
+{"action": "h16e_reject", "mint": "J8X5ygWHY5uHFch7m3MisSC7eDAWpAkgi1pyqfT5pump", "t": 1789190942.611129, "mom": 0.88, "dd": 0.515, "bf": 0.503, "seed": 3.083247688}
+{"action": "h16e_reject", "mint": "9eviTVPXJtb6WuJDZPW4J7nrLRmoVkySaKw8htoLpump", "t": 1789190942.611129, "mom": 0.818, "dd": 0.818, "bf": 0.091, "seed": 3}
+{"action": "h16e_reject", "mint": "EiYBNhLSnYKooAdJLtWuuBqykgbcctwJXwrk8h56pump", "t": 1789190942.611129, "mom": 0.697, "dd": 0.567, "bf": 0.458, "seed": 3.950617282}
+{"action": "h16e_reject", "mint": "FCSTK8G7W7PhEfGCBxKnhQPCAQz3mnSxgzDhZ6jQpump", "t": 1789191036.9161541, "mom": 1.039, "dd": 0.788, "bf": 0.667, "seed": 2.8}
+{"action": "h16e_open", "mint": "DZttiqfQR76TQPJJi1rD8VMWtb7Aa5VhaELCrMWMpump", "t": 1789191067.842388, "scored_at": 1789191130.603869, "entry_mcap": 0.0061, "mom": 1.109, "dd": 0.902, "bf": 0.7, "seed": 2.096382789}
+{"action": "h16e_reject", "mint": "VhQEQ8Z9zkvEmFDUMUE457i2zYkxNY3qVQXoB37pump", "t": 1789191130.603869, "mom": 0.634, "dd": 0.489, "bf": 0.507, "seed": 3.950617282}
+{"action": "h16e_thin", "mint": "Dya9ZaRGF3eYwshXMh7tRnxPkVj3DXQnfaABm9PNpump", "t": 1789191130.603869, "nticks": 1, "seed": 4.938271603}
+{"action": "h16e_close", "mint": "DZttiqfQR76TQPJJi1rD8VMWtb7Aa5VhaELCrMWMpump", "t": 1789191113.1623948, "outcome": "loss", "mult": 0.92, "mins": 0.8, "mom": 1.109, "dd": 0.902, "bf": 0.7, "seed": 2.096382789}
