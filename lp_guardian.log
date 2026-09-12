@@ -1072,3 +1072,19 @@
 13:51:49 no open positions
 13:54:22 no open positions
 13:54:56 no open positions
+14:02:41 no open positions
+14:05:10 no open positions
+14:07:57 FpP5SnzB: active=-357 range=[-359,-357] tvl=$108,228 vol24=$1,616,235 feeY=0.000000SOL feeX=0
+14:07:57 guardian pass complete
+14:12:11 no open positions
+14:16:24 no open positions
+14:16:57 GbrDAq3R: active=-214 range=[-216,-214] tvl=$973,055 vol24=$16,664,017 feeY=0.000000SOL feeX=0
+14:16:57 guardian pass complete
+14:23:41 GbrDAq3R: active=-209 range=[-216,-214] tvl=$952,408 vol24=$16,606,074 feeY=0.003106SOL feeX=14631512
+14:23:41 GbrDAq3R: drifted out of range — fee accrual paused
+14:23:41 GbrDAq3R: idle above range (pure SOL, no fees) — watching
+14:23:41 GbrDAq3R: claiming fees (0.003106 SOL side, stale-hysteresis)
+14:23:42 GbrDAq3R: claim rc=0
+14:24:07 GbrDAq3R: post-claim sweep rc=1
+14:24:07 guardian pass complete
+14:30:33 no open positions

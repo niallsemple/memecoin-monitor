@@ -111,7 +111,7 @@ def main():
         # statusjson gives activeBin + unclaimed feeY for OUR position.
         if armed:
             t0 = time.time()
-            while time.time() - t0 < 240:
+            while time.time() - t0 < 195:
                 try:
                     rc = run_bundle("statusjson", timeout=60)
                     line = [l for l in (rc.stdout or "").splitlines() if l.strip().startswith("[")][-1]

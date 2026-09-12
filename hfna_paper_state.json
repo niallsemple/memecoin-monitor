@@ -1,8 +1,19 @@
 {
- "watermark": 1789217696.426,
- "pos": null,
- "bankroll": 1.0466190289784207,
- "trades": 60,
+ "watermark": 1789219248.57,
+ "pos": {
+  "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+  "t_entry": 1789219248.252,
+  "low": 416,
+  "high": 418,
+  "fees": 0.0,
+  "markout": 0.0,
+  "elev": 10000.0,
+  "last_t": 1789219248.252,
+  "last_pf": 857404915,
+  "trough": 351940601.4844681
+ },
+ "bankroll": 1.0456190289784209,
+ "trades": 61,
  "wins": 17,
  "seen": {
   "EEkVx3wibBK6m5Fc9VaUTfr32Xwwopv9n7PrvS4Qp9eb": 1789168974.708501,
@@ -21,7 +32,9 @@
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789216829.37451,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789212192.4782012,
   "HdyjL5pE2zJqCLXFPuBthft1mGnRAPER2AjzC8Tufgom": 1789210578.780483,
-  "5Vo1BAJ888m3Mn5dVxLNXtCkdmxVN6RDNDocMHM75yG": 1789215678.26776
+  "5Vo1BAJ888m3Mn5dVxLNXtCkdmxVN6RDNDocMHM75yG": 1789215678.26776,
+  "8TNPC3TCLaKQsEkSWk2MzHLpD57rVc2uUMgVKJrytgbk": 1789218695.27432,
+  "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x": 1789219248.726136
  },
  "restatement_note": "2026-09-11: bankroll/wins restated from PROTO_MULT=20 to true lpMult=9.0 (protocolShare=1000 measured on-chain). Old log entries carry no 'mult' field (=20); new entries record per-pool mult."
 }
