@@ -21232,3 +21232,6 @@
 {"action": "h16e_reject", "mint": "7uYibcq1nQ7pyd3W6sJMuoxSEq1HXnEzX2CmKnj2pump", "t": 1789196227.287199, "mom": 1.92, "dd": 0.396, "bf": 0.678, "seed": 3.083247688}
 {"action": "h16e_open", "mint": "9KZt1zwtugFhNq8TNv1CAy3VzQzcJ7j1HQtZKEXFpump", "t": 1789196201.1646988, "scored_at": 1789196227.287199, "entry_mcap": 94.5481, "mom": 1.494, "dd": 0.61, "bf": 0.579, "seed": 4.938271603}
 {"action": "h16e_close", "mint": "9KZt1zwtugFhNq8TNv1CAy3VzQzcJ7j1HQtZKEXFpump", "t": 1789196207.0104692, "outcome": "loss", "mult": 0.92, "mins": 0.1, "mom": 1.494, "dd": 0.61, "bf": 0.579, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "GiJ7SHb2ZTri8zrCDeMHgL2TEqKE5UB15hbtHxfppump", "t": 1789196322.6319711, "mom": 1.012, "dd": 0.988, "bf": 1.0, "seed": 2.962962961}
+{"action": "h16e_drop", "mint": "A8hp5fuZvG8D5SytXjABUJdRD3nysjL39Qf55JShpump", "reason": "no ticks", "t": 1789196417.948429}
+{"action": "h16e_reject", "mint": "CzhkacyetLSaTrW4hA1suc3vBEDK5ekpZwdLaQ8upump", "t": 1789196417.948429, "mom": 0.722, "dd": 0.432, "bf": 0.481, "seed": 2.4}
