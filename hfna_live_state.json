@@ -10,7 +10,7 @@
   "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6": 1789235328.854624,
   "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x": 1789222864.572564,
   "EyQTPRzUY2VcuiVhJNc8NaYoww2uxTeT4jfb6DqxLxwA": 1789224902.657133,
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789234949.27118
+  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789238614.28097
  },
  "consec_loss": 0,
  "start_bank": null,
@@ -22,10 +22,10 @@
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": false,
   "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x": false,
   "EyQTPRzUY2VcuiVhJNc8NaYoww2uxTeT4jfb6DqxLxwA": false,
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": false
+  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": true
  },
- "sample_n": 8,
+ "sample_n": 9,
  "sample2_start": 7.354912803,
  "sample3_start": 7.347707709,
- "last_bank": 7.324073682
+ "last_bank": 7.325580416
 }

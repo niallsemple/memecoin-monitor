@@ -1716,6 +1716,39 @@
     "66MWoJDEXwd8c62ALdMdiz8AEe8ub9bnA9CxMAoznjs8NnF5UBV6wYarn8dv5DR696QnARnXvBrkabhPfUhiicLT"
    ],
    "exit_ts": 1789237313.388
+  },
+  {
+   "pool": "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf",
+   "position": "G2gtbeE62Zq8rV79e4M2hnzfhH1JKytqMUwvW8iVobB2",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789238613.696,
+   "entry_active_bin": -262,
+   "minBinId": -264,
+   "maxBinId": -262,
+   "status": "exited",
+   "add_sig": "2R9Zf7QzuQCjYk5jwrnNL37d3bP6LvKSsmMcLDqziVuZn4wt7Mxvm3PEgAGRm5Bjg8BD3DiuXGa5GivkWL82Lddj",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 347742.24243641814,
+   "base_vol24": 2150089.004273401,
+   "feeY_hist": [
+    {
+     "t": 1789238615.0879738,
+     "feeY": 0,
+     "active": -262
+    },
+    {
+     "t": 1789238793.139626,
+     "feeY": 357168,
+     "active": -258
+    }
+   ],
+   "was_in_range": false,
+   "exit_sigs": [
+    "oMZTykYe8yEox6jx7R4ynPZgBpx8Q1LopLPcgKELMwLNZYne6r9PdT5NNJLzmSSLHcNT55QWzdV7WMzQmDDX5Jh"
+   ],
+   "exit_ts": 1789238912.166
   }
  ]
 }
