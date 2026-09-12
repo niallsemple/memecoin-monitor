@@ -33,7 +33,7 @@
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -227 < -223) — position is all token-X"
+   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -68,7 +68,7 @@
    "base_tvl": 156386.26847949892,
    "base_vol24": 2602653.2416695743,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -2053 < -2052) — position is all token-X"
+   "exit_reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X"
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -103,7 +103,7 @@
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
+   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
   },
   {
    "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
@@ -721,7 +721,7 @@
    "base_tvl": 280894.5671214633,
    "base_vol24": 1775456.5106263277,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active 396 < 407) — position is all token-X"
+   "exit_reason": "price fell through range (active 396 < 407) \u2014 position is all token-X"
   },
   {
    "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
@@ -928,7 +928,7 @@
      "active": -154
     }
    ],
-   "exit_reason": "price fell through range (active -154 < -152) — position is all token-X"
+   "exit_reason": "price fell through range (active -154 < -152) \u2014 position is all token-X"
   },
   {
    "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
@@ -968,7 +968,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -521 < -519) — position is all token-X"
+   "exit_reason": "price fell through range (active -521 < -519) \u2014 position is all token-X"
   },
   {
    "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i",
@@ -1003,7 +1003,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -455 < -453) — position is all token-X"
+   "exit_reason": "price fell through range (active -455 < -453) \u2014 position is all token-X"
   },
   {
    "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
@@ -1093,7 +1093,7 @@
      "active": -549
     }
    ],
-   "exit_reason": "price fell through range (active -549 < -548) — position is all token-X"
+   "exit_reason": "price fell through range (active -549 < -548) \u2014 position is all token-X"
   },
   {
    "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
@@ -1324,7 +1324,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -369 < -368) — position is all token-X"
+   "exit_reason": "price fell through range (active -369 < -368) \u2014 position is all token-X"
   },
   {
    "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
@@ -1570,7 +1570,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -184 < -174) — position is all token-X"
+   "exit_reason": "price fell through range (active -184 < -174) \u2014 position is all token-X"
   },
   {
    "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
@@ -1763,6 +1763,30 @@
    "add_sig": "JN8vStov6FgL72mSkM65xowUQJDA3RXzmJUehSf7jsidc3xaHmHfEDjboQSRpCrfrxwhi46nu8FV4HaSQC9XWaq",
    "width_pct": null,
    "strategy_tag": "hfna_live_v1"
+  },
+  {
+   "pool": "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6",
+   "position": "wsi1KbMeN6hVsBmwwWuZ55xFkSzHNiNxNT5DxCrb1mp",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789240520.105,
+   "entry_active_bin": -208,
+   "minBinId": -210,
+   "maxBinId": -208,
+   "status": "open",
+   "add_sig": "4RgBocM3xYxN8iTh7PVQYGaqyyeQndAxtGMHX24PHujkGaN5RsHU48cCGRZwxhFrSfLWGRCzjiKxEiMYJKAsRNt6",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 522446.8858345575,
+   "base_vol24": 2493516.9766413,
+   "feeY_hist": [
+    {
+     "t": 1789240521.8081129,
+     "feeY": 0,
+     "active": -208
+    }
+   ],
+   "was_in_range": true
   }
  ]
 }
