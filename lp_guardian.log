@@ -1088,3 +1088,10 @@
 14:24:07 GbrDAq3R: post-claim sweep rc=1
 14:24:07 guardian pass complete
 14:30:33 no open positions
+14:34:45 FpP5SnzB: active=-366 range=[-368,-366] tvl=$110,765 vol24=$1,660,089 feeY=0.000000SOL feeX=0
+14:34:45 guardian pass complete
+14:38:26 FpP5SnzB: active=-369 range=[-368,-366] tvl=$110,881 vol24=$1,661,391 feeY=0.000000SOL feeX=115251625
+14:38:26 FpP5SnzB: EMERGENCY EXIT — price fell through range (active -369 < -368) — position is all token-X
+14:38:28 FpP5SnzB: exited ok
+14:38:55 FpP5SnzB: post-exit sweep rc=1
+14:38:55 guardian pass complete

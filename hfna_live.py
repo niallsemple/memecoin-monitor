@@ -111,12 +111,24 @@ def main():
         # statusjson gives activeBin + unclaimed feeY for OUR position.
         if armed:
             t0 = time.time()
-            while time.time() - t0 < 195:
+            missing = 0
+            while time.time() - t0 < 150:
                 try:
                     rc = run_bundle("statusjson", timeout=60)
                     line = [l for l in (rc.stdout or "").splitlines() if l.strip().startswith("[")][-1]
-                    mine = [x for x in json.loads(line) if x.get("pool") == p]
-                    if mine and mine[0].get("activeBin") is not None:
+                    mine = [x for x in json.loads(line) if x.get("pool") == p and not x.get("error")]
+                    if not mine:
+                        # crash-safe reconcile (09-12): a timeout kill once left
+                        # us out on-chain but "open" in state. Two consecutive
+                        # misses = the position is gone; reconcile via wallet.
+                        missing += 1
+                        if missing >= 2:
+                            exit_reason = "position gone (reconcile)"
+                            break
+                        time.sleep(5)
+                        continue
+                    missing = 0
+                    if mine[0].get("activeBin") is not None:
                         ab = mine[0]["activeBin"]
                         pos["feeY_onchain"] = int(mine[0].get("feeY_lamports") or 0) / 1e9
                         if ab < pos["low"] - 1:
@@ -149,13 +161,13 @@ def main():
             print(f"[exit] {p[:8]} {exit_reason} fees_est={pos['fees_est']:.5f}")
             real_pnl = None
             if armed:
-                rc = run_bundle("exit", p)
+                rc = run_bundle("exit", p, timeout=90)
                 log_event(kind="live_exit", pool=p, reason=exit_reason, rc=rc.returncode,
                           out=(rc.stdout or rc.stderr or "")[-300:])
                 time.sleep(12)  # RPC finality: exit-state visible before sweep
-                for _try in range(3):
+                for _try in range(2):
                     rcs = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
-                                         capture_output=True, text=True, timeout=280)
+                                         capture_output=True, text=True, timeout=90)
                     if rcs.returncode == 0:
                         break
                     time.sleep(5)
