@@ -20219,3 +20219,5 @@
 {"action": "h16_reject", "mint": "J7at7qS2YAediMP3i8zwGbK1CqTMWwq52S17mNoEpump", "t": 1789176422.382619, "mom": 0.114, "dd": 0.113, "bf": 0.5, "seed": 7.901234566}
 {"action": "h16_reject", "mint": "3AVsaXV19q7EXvA1y6Hs7fjDKF8YR9U2jGcK6SdQpump", "t": 1789176422.382619, "mom": 0.488, "dd": 0.473, "bf": 0.304, "seed": 5}
 {"action": "h16_reject", "mint": "83MsJUuA5RtYrTYt1wif9A4BsAvnRD4CDSpUaNtTpump", "t": 1789176422.382619, "mom": 1.484, "dd": 0.376, "bf": 0.75, "seed": 7.901234566}
+{"action": "h16_drop", "mint": "7N74zwkSWbQtUV7gctyaej95s2NWYGDdTmBcGeefpump", "reason": "no ticks", "t": 1789176517.692418}
+{"action": "h16_reject", "mint": "DKTtGkTb6s6Rr1Av6Q4CnKfiSQx8s8VfpdT4bpikpump", "t": 1789176517.692418, "mom": 0.576, "dd": 0.308, "bf": 0.63, "seed": 7.901234566}
