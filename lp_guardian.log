@@ -713,3 +713,10 @@
 01:41:42 guardian pass complete
 01:45:06 nBXytBBf: active=-124 range=[-152,-96] tvl=$484,239 vol24=$3,667,583 feeY=0.002639SOL feeX=0
 01:45:06 guardian pass complete
+01:48:34 nBXytBBf: active=-126 range=[-152,-96] tvl=$488,712 vol24=$3,649,889 feeY=0.003284SOL feeX=0
+01:48:34 nBXytBBf: claiming fees (0.003284 SOL side, stale-hysteresis)
+01:48:36 nBXytBBf: claim rc=0
+01:48:36 nBXytBBf: post-claim sweep rc=1
+01:48:36 guardian pass complete
+01:48:37 nBXytBBf: active=-126 range=[-152,-96] tvl=$486,700 vol24=$3,654,786 feeY=0.000001SOL feeX=0
+01:48:37 guardian pass complete
