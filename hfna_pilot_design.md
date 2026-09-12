@@ -7,7 +7,8 @@ All profit came from 3 pools: nBXytBBf, GbrDAq3R, 5Z6frpb4.
 ## Pilot rules (hard constraints)
 
 1. **Watchlist-only entry.** A pool qualifies after ≥1 documented positive
-   HFNA exit (net > 0 with fees captured). Current watchlist:
+   HFNA exit with **net ≥ +5%** (a scratch like +0.2% does NOT qualify —
+   the edge is bursts, not dust). Current watchlist:
    - `nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad` (KNOTS-SOL) — 4/4, +0.1424 SOL total
    - `GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY` — 4/4, +0.0583 SOL total
    - `5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB` — 1/1, +0.0084 SOL total
