@@ -1,8 +1,19 @@
 {
- "watermark": 1789235116.841,
- "pos": null,
- "bankroll": 1.3107880696499208,
- "trades": 79,
+ "watermark": 1789235463.703,
+ "pos": {
+  "pool": "E76H8HxZMAYES72vm957cwNTqw7rT3Akjp5iXrtUZ675",
+  "t_entry": 1789235460.51,
+  "low": -400,
+  "high": -398,
+  "fees": 0.0,
+  "markout": 0.0,
+  "elev": 150000.0,
+  "last_t": 1789235460.51,
+  "last_pf": 7571693183,
+  "trough": 967821482.5982585
+ },
+ "bankroll": 1.309788069649921,
+ "trades": 80,
  "wins": 22,
  "seen": {
   "EEkVx3wibBK6m5Fc9VaUTfr32Xwwopv9n7PrvS4Qp9eb": 1789168974.708501,
@@ -13,7 +24,7 @@
   "5e1UHN6pZdaWyEMyacjKp6VyF6bbPK3EFsebKE5sSvfS": 1789170397.999927,
   "DCh6beahzr11ggjtLzhXyDamPGQguoBSVaAoMA9NEaLk": 1789171407.128046,
   "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB": 1789211124.1714702,
-  "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6": 1789228567.749658,
+  "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6": 1789235326.2705479,
   "6e4ewHhGZrBMiSkKat7QCx28dytJdnYrobNXWrPL5WFN": 1789189790.9191198,
   "BcAaxXZZ16t4emqCqsN81QvkvWNwSMhQUYcs5JoU5uRa": 1789197652.954612,
   "5h1GmqcCgYf3oPgEd5bNoddszg64su99q7CgWHTyKp5u": 1789184350.685915,
@@ -26,7 +37,8 @@
   "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x": 1789222862.783317,
   "42JnUXw5N9ftMkbM1tMzJw2tnzqs1U9RxWBk5LzNv4gD": 1789231479.0383701,
   "9yXn4EW9EJWC3iuNN9Cbss1KxpfHE1sVDzprTcCxzmYJ": 1789234697.426668,
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789234946.6840599
+  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789234946.6840599,
+  "E76H8HxZMAYES72vm957cwNTqw7rT3Akjp5iXrtUZ675": 1789235463.9145029
  },
  "restatement_note": "2026-09-11: bankroll/wins restated from PROTO_MULT=20 to true lpMult=9.0 (protocolShare=1000 measured on-chain). Old log entries carry no 'mult' field (=20); new entries record per-pool mult."
 }
