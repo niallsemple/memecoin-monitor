@@ -223,6 +223,22 @@ async function cmdBinsJson(conn, poolAddr) {
   }));
 }
 
+async function cmdTaxCheck(conn, poolAddr) {
+  // Detect Token-2022 transfer-fee (tax) tokens: a >~1% transfer tax destroys
+  // the LP fee-capture margin (armed trade 6gQTdHry 09-12: 300bps tax).
+  const pool = await DLMM.create(conn, new PublicKey(poolAddr));
+  const mintX = pool.lbPair.tokenXMint;
+  const info = await conn.getParsedAccountInfo(mintX);
+  const parsed = info.value?.data?.parsed?.info || {};
+  const exts = parsed.extensions || [];
+  const tfc = exts.find(e => e.extension === 'transferFeeConfig');
+  const bps = tfc ? (tfc.state?.newerTransferFee?.transferFeeBasisPoints ?? 0) : 0;
+  console.log(JSON.stringify({
+    pool: poolAddr, mintX: mintX.toBase58(), tokenProgram: info.value?.owner?.toBase58?.() || String(info.value?.owner),
+    taxBps: bps, hasTransferFee: !!tfc, decimals: parsed.decimals ?? null,
+  }));
+}
+
 async function main() {
   const [cmd, poolAddr, solAmt, widthPct, tag] = process.argv.slice(2);
   const wallet = loadWallet();
@@ -235,6 +251,7 @@ async function main() {
     else if (cmd === 'exit') await cmdExit(conn, wallet, poolAddr);
     else if (cmd === 'claim') await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === 'binsjson') await cmdBinsJson(conn, poolAddr);
+    else if (cmd === 'taxcheck') await cmdTaxCheck(conn, poolAddr);
     else if (cmd === 'balance') {
       const lam = await conn.getBalance(wallet.publicKey);
       console.log(JSON.stringify({ wallet: wallet.publicKey.toBase58(), lamports: lam, sol: lam / 1e9 }));

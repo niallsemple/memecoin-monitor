@@ -979,7 +979,7 @@
    "entry_active_bin": -451,
    "minBinId": -453,
    "maxBinId": -451,
-   "status": "open",
+   "status": "exited",
    "add_sig": "3NqKG7yCvUoh4XAXnJqFFddMnQMi7y7np88bdCMZa5FkDRYbkL7oF9435YS1cMmJ7QGUNNBc7aimH8YzpUyirPa1",
    "width_pct": null,
    "strategy_tag": "hfna_live_v1",
@@ -990,9 +990,20 @@
      "t": 1789208278.8961449,
      "feeY": 0,
      "active": -451
+    },
+    {
+     "t": 1789208421.839469,
+     "feeY": 461,
+     "active": -451
+    },
+    {
+     "t": 1789208437.127216,
+     "feeY": 461,
+     "active": -455
     }
    ],
-   "was_in_range": true
+   "was_in_range": true,
+   "exit_reason": "price fell through range (active -455 < -453) \u2014 position is all token-X"
   }
  ]
 }

@@ -21,6 +21,7 @@ LOG = os.path.join(MON, "hfna_live.jsonl")
 WATCH_F = os.path.join(MON, "hfna_watchlist.json")
 ARMED = os.path.join(MON, "HFNA_LIVE_ARMED")
 KILL = os.path.join(MON, "STOP_LIVE_TRADING")
+TAX_F = os.path.join(MON, "pool_tax_cache.json")
 
 SIZE = 0.1
 BINS_BELOW = 2
@@ -192,6 +193,20 @@ def main():
                 capture30 = flow * lp_mult(p) * share * 1800
                 if capture30 < 4 * 0.001:
                     continue
+        # tax-token gate (armed trade #1, 09-12): Token-2022 transferFeeConfig
+        # burns ~3% every transfer in/out — kills the margin. Skip tax pools.
+        taxc = json.load(open(TAX_F)) if os.path.exists(TAX_F) else {}
+        if p not in taxc:
+            rc = run_bundle("taxcheck", p)
+            try:
+                line = [l for l in (rc.stdout or "").splitlines() if l.strip().startswith('{"pool"')][-1]
+                taxc[p] = json.loads(line).get("taxBps", 0)
+            except Exception:
+                taxc[p] = -1   # unknown -> treat as pass but recheck next time
+            json.dump(taxc, open(TAX_F, "w"), indent=1)
+        if taxc.get(p, 0) and taxc[p] > 50:
+            st["seen"][p] = time.time()   # don't rescan constantly
+            continue
         if time.time() - st["seen"].get(p, 0) < COOLDOWN:
             continue
         ab = r["active_bin"]

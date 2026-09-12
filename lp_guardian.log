@@ -1002,3 +1002,12 @@
 11:13:23 no open positions
 11:17:58 6gQTdHry: active=-451 range=[-453,-451] tvl=$49,109 vol24=$2,048,938 feeY=0.000000SOL feeX=0
 11:17:58 guardian pass complete
+11:20:21 6gQTdHry: active=-451 range=[-453,-451] tvl=$49,693 vol24=$2,038,588 feeY=0.000000SOL feeX=21848960
+11:20:21 guardian pass complete
+11:20:37 6gQTdHry: active=-455 range=[-453,-451] tvl=$49,479 vol24=$2,038,736 feeY=0.000000SOL feeX=168631919
+11:20:37 6gQTdHry: EMERGENCY EXIT — price fell through range (active -455 < -453) — position is all token-X
+11:20:38 6gQTdHry: exited ok
+11:21:05 6gQTdHry: post-exit sweep rc=1
+11:21:05 guardian pass complete
+11:23:18 no open positions
+11:42:38 no open positions
