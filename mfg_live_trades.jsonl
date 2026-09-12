@@ -4103,3 +4103,13 @@
 {"action": "fast_entry_eval", "mint": "vcVHzTeXwdXqUms18EujoKkvuEVvHrehQAA4iRypump", "t": 1789206794.5295548, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789206794.531459}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789206802.7176058}
 {"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789206802.85098}
+{"action": "fast_entry_eval", "mint": "BUqSPDadkC6FSSnj4kT7YFFwUKPpo8Kv2DFowxZpump", "t": 1789207106.0870311, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789207106.0899498}
+{"action": "pool_sell", "mint": "9oXA1VWKNiYDYa6VKHBFFBBvZdvuhw1b2eD5Aka7YrVt", "tokens_raw": 6284269667, "reason": "lp_sweep", "mode": "live", "gate": "live", "quote_out_sol": 0.092018193, "quote_price_impact": "0", "sig": "2unWDQ62wW1j57g3ey5ZonStc1zRTq5gxWv9WrcsPuZrRVyStPtBrduy4S1hHTEJtoN1hvzGPwoPNNx2ZswaoW2z", "result": "submitted", "ts": 1789207317.512449}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207319.3158212}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207319.492003}
+{"action": "curve_buy", "mint": "oebropTmp6xrgMhAeQgWHCK1DMJCKFDutza86Z8pump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789207366.497962}
+{"action": "close_token_accounts", "targets": 1, "reason": "lp_sweep_dust", "mode": "live", "gate": "live", "sigs": ["3MN75LeHUVFPNViWdmNnt4p9JYcj1UzuSSSHM9woV25NAjz9Hg6fgEs9YrfCf7YEdUeM1Cwj6icc23H36SW6d72e"], "result": "closed 1/1", "ts": 1789207369.304485}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207369.895288}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207370.065471}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207396.634411}
+{"action": "close_token_accounts", "targets": 0, "reason": "lp_sweep", "mode": "live", "gate": "live", "sigs": [], "result": "nothing to close", "ts": 1789207396.8207061}

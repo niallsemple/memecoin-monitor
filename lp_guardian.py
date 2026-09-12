@@ -120,6 +120,9 @@ def main():
                 log(f"{name}: exited ok")
                 # SOL-only rule: an emergency exit can leave token-X in the wallet
                 # (position was all-token below range) — sweep automatically.
+                # Wait for RPC read-after-write finality first: sweeping 1s after
+                # the exit gave a false "0 token accounts" clean (liveval 09-12).
+                time.sleep(12)
                 for _try in range(3):
                     rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
                                          capture_output=True, text=True, timeout=280)
