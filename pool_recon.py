@@ -87,7 +87,8 @@ def main():
     # ---- phase 1: signatures (cached)
     sigf = os.path.join(MON, f"{tag}_sigs.jsonl")
     if os.path.exists(sigf):
-        sigs = [json.loads(l) for l in open(sigf)]
+        sigs = [{"signature": r["sig"], "slot": r["slot"], "blockTime": r["blockTime"]}
+                for r in (json.loads(l) for l in open(sigf))]
         print(f"cached sigs: {len(sigs)}")
     else:
         sigs, before = [], None
