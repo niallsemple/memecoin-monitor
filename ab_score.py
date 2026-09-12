@@ -46,8 +46,11 @@ def summarize(name, rows):
 
 a = load('hfna_paper.jsonl', fix=FIX)
 b = load('hfna_paper_w7.jsonl')
+c = load('hfna_paper_repo.jsonl')
 na = summarize('3-bin (post-fix)', a)
 nb = summarize('w7 boundary    ', b)
-if a and b:
-    print(f"\nw7 minus 3-bin expectancy: {(nb/len(b)) - (na/len(a)):+.5f}/trade "
-          f"(n={len(a)} vs {len(b)} — need ~15+ each for a real read)")
+nc = summarize('repo follow    ', c)
+arms = [(len(a), na), (len(b), nb), (len(c), nc)]
+if all(n > 0 for n, _ in arms):
+    best = max(range(3), key=lambda i: arms[i][1]/arms[i][0])
+    print(f"\nbest arm: {['3-bin','w7','repo'][best]} (need ~15 trades/arm for a real read)")
