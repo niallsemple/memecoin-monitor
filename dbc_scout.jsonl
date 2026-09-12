@@ -3010,3 +3010,15 @@
 {"t": 1789193302.416749, "mint": "92ihkciAQL6piSK9rJ5RVdsmLw9iG228kAfF9UQCeSTe", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
 {"t": 1789193302.416749, "mint": "92ihkciAQL6piSK9rJ5RVdsmLw9iG228kAfF9UQCeSTe", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
 {"t": 1789193302.416749, "mint": "92ihkciAQL6piSK9rJ5RVdsmLw9iG228kAfF9UQCeSTe", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 0.9998, "amm": "Meteora DAMM v2"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 60, "indexed": true, "price_sol": 35.94028205861479, "mult": 1.0, "impact": 0.00079, "amm": "Flux,Whirlpool"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 120, "indexed": true, "price_sol": 35.94028205861479, "mult": 1.0, "impact": 0.00079, "amm": "Flux,Whirlpool"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 180, "indexed": true, "price_sol": 35.939284890891024, "mult": 1.0, "impact": 0.00077, "amm": "BisonFi,Whirlpool"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 35.939284890891024, "mult": 1.0, "impact": 0.00077, "amm": "BisonFi,Whirlpool"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 35.939284890891024, "mult": 1.0, "impact": 0.00077, "amm": "BisonFi,Whirlpool"}
+{"t": 1789193586.919502, "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 35.940571402612065, "mult": 1.0, "impact": 0.0008, "amm": "TesseraV,Whirlpool"}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 60, "indexed": false}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 120, "indexed": false}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 180, "indexed": false}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 300, "indexed": false}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 600, "indexed": false}
+{"t": 1789193680.996514, "mint": "GyxdixsSCdW3eRSMaLn9T6MiF7qt8CRz91kxbfzMEgan", "venue": "meteora_dbc", "age": 1800, "indexed": false}

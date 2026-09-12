@@ -89,6 +89,14 @@ def round_once(now):
             pools.append(hp["pool"])
     except Exception:
         pass
+    # always track HFNA live-pilot watchlist pools — the pilot cannot evaluate
+    # entries without fresh snapshots even when we hold no position
+    try:
+        for wp in json.load(open(os.path.join(MON, "hfna_watchlist.json")))["pools"]:
+            if wp not in pools:
+                pools.append(wp)
+    except Exception:
+        pass
     n = 0
     with open(OUT, "a") as f:
         for p in pools:
