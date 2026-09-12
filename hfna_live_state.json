@@ -1,22 +1,10 @@
 {
- "pos": {
-  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
-  "t_entry": 1789196236.970005,
-  "low": -240,
-  "high": -238,
-  "fees_est": 0.0,
-  "elev": 150000.0,
-  "last_t": 1789196619.317,
-  "last_pf": 1126213,
-  "trough": 15937789804.204723,
-  "stall": 1,
-  "fees_mark": 0.0
- },
+ "pos": null,
  "seen": {
   "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": 1789194761.4248478,
   "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789196236.970811
  },
- "consec_loss": 0,
+ "consec_loss": 1,
  "start_bank": null,
  "halted": false
 }
