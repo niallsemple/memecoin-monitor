@@ -26,3 +26,11 @@ Levers that attack placement:
 
 Note: w7 log row GbrDAq3R life=81808s is a state artifact from the variant's
 first run (stale entry_t from copied state file); excluded from stats here.
+
+## Addendum: burst clustering (2026-09-13 00:55 UTC)
+
+8,080 snapshot intervals: P(burst | burst within prior 5min) = 70.3% vs
+P(burst | none) = 34.7% — 2.0x lift. Bursts cluster; the post-vacuum entry
+premise is NOT falsified. Misses come from bursts landing at price bins our
+fixed ranges don't cover (placement), not from burst flow stopping.
+Supports the repo (follow-the-price) arm as the theoretically correct fix.
