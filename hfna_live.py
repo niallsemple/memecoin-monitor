@@ -103,8 +103,29 @@ def main():
     if st["pos"]:
         pos = st["pos"]
         p = pos["pool"]
-        cur = [r for r in hist.get(p, []) if r["t"] > pos["last_t"]]
         exit_reason = None
+        # --- fast on-chain tripwire loop (09-12): the -5.6% JBG loss came
+        # from snapshot-cadence detection — price fell 7+ bins between poll
+        # turns. While armed with an open position, poll the chain directly
+        # every ~15s for up to 4 min and fire the tripwire immediately.
+        # statusjson gives activeBin + unclaimed feeY for OUR position.
+        if armed:
+            t0 = time.time()
+            while time.time() - t0 < 240:
+                try:
+                    rc = run_bundle("statusjson", timeout=60)
+                    line = [l for l in (rc.stdout or "").splitlines() if l.strip().startswith("[")][-1]
+                    mine = [x for x in json.loads(line) if x.get("pool") == p]
+                    if mine and mine[0].get("activeBin") is not None:
+                        ab = mine[0]["activeBin"]
+                        pos["feeY_onchain"] = int(mine[0].get("feeY_lamports") or 0) / 1e9
+                        if ab < pos["low"] - 1:
+                            exit_reason = f"fast tripwire ab={ab}<{pos['low']-1}"
+                            break
+                except Exception:
+                    pass
+                time.sleep(15)
+        cur = [r for r in hist.get(p, []) if r["t"] > pos["last_t"]]
         for r in cur:
             dpf = r["prot_fee_y"] - pos["last_pf"]
             pos["last_t"], pos["last_pf"] = r["t"], r["prot_fee_y"]
