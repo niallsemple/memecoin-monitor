@@ -125,8 +125,13 @@ def main():
                 rc = run_bundle("exit", p)
                 log_event(kind="live_exit", pool=p, reason=exit_reason, rc=rc.returncode,
                           out=(rc.stdout or rc.stderr or "")[-300:])
-                subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
-                               capture_output=True, text=True, timeout=280)
+                time.sleep(12)  # RPC finality: exit-state visible before sweep
+                for _try in range(3):
+                    rcs = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                         capture_output=True, text=True, timeout=280)
+                    if rcs.returncode == 0:
+                        break
+                    time.sleep(5)
                 wa = wallet_sol()
                 if wa is not None and pos.get("wallet_before") is not None:
                     real_pnl = wa - pos["wallet_before"]
@@ -170,6 +175,18 @@ def main():
         pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
         if len(pf_recent) >= 2 and (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) < 500_000:
             continue
+        # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
+        # (~0.004 SOL all-in). Without this the pilot enters structurally
+        # sub-cost trades — the pre-gate dry-run loss streak that halted it.
+        if len(pf_recent) >= 2:
+            dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
+            if dt > 0:
+                flow = (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) / 1e9 / dt
+                dep_bin = SIZE / (BINS_BELOW + 1)
+                share = dep_bin / (dep_bin + r["liq_active"] / 1e9)
+                capture30 = flow * lp_mult(p) * share * 1800
+                if capture30 < 4 * 0.001:
+                    continue
         if time.time() - st["seen"].get(p, 0) < COOLDOWN:
             continue
         ab = r["active_bin"]
