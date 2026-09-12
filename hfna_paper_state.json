@@ -1,6 +1,17 @@
 {
- "watermark": 1789250292.239,
- "pos": null,
+ "watermark": 1789250532.575,
+ "pos": {
+  "pool": "Ekm4LYkihEdQgZx2UReDMJ3eCDDjExPQLG94WfWmfyWr",
+  "t_entry": 1789250466.633,
+  "low": -253,
+  "high": -251,
+  "fees": 0.0,
+  "markout": 0.0,
+  "elev": 10000.0,
+  "last_t": 1789250466.633,
+  "last_pf": 424270074,
+  "trough": 6905548787.78674
+ },
  "bankroll": 1.2664261323259591,
  "trades": 97,
  "wins": 26,
@@ -31,7 +42,8 @@
   "3sUFCbrDyT8SxQJ6zoh2qyHtZo7Q26tYjrxKjzR6tLJv": 1789242795.950123,
   "GFVjXduZNKKKqPV8nq8gefSFfCKYqu8av7PnNWKYGz9B": 1789244455.292882,
   "4tfspyu5QTSjXPcAU6heU7ThrWFqsqadadCN7AcEwtNb": 1789249134.7518861,
-  "6DkVy4DPa3xPfksEnRHCtVoyvtRFNDYjerDSWnMKrhhR": 1789248637.9735081
+  "6DkVy4DPa3xPfksEnRHCtVoyvtRFNDYjerDSWnMKrhhR": 1789248637.9735081,
+  "Ekm4LYkihEdQgZx2UReDMJ3eCDDjExPQLG94WfWmfyWr": 1789250532.837585
  },
  "restatement_note": "2026-09-11: bankroll/wins restated from PROTO_MULT=20 to true lpMult=9.0 (protocolShare=1000 measured on-chain). Old log entries carry no 'mult' field (=20); new entries record per-pool mult."
 }
