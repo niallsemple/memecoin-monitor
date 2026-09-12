@@ -939,7 +939,7 @@
    "entry_active_bin": -516,
    "minBinId": -519,
    "maxBinId": -516,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5MZRAZGyqtzg36Sha3x68zY21saSBnXyWzfYbPNEycy4VH8GTJW3tgsMhbmxUHpRLsoZTpHpzChqQgaKFqHMjsPs",
    "width_pct": null,
    "strategy_tag": "liveval",
@@ -950,9 +950,25 @@
      "t": 1789206023.084214,
      "feeY": 0,
      "active": -516
+    },
+    {
+     "t": 1789206221.291757,
+     "feeY": 2920834,
+     "active": -517
+    },
+    {
+     "t": 1789206372.935613,
+     "feeY": 4287371,
+     "active": -518
+    },
+    {
+     "t": 1789206800.8604102,
+     "feeY": 715603,
+     "active": -521
     }
    ],
-   "was_in_range": true
+   "was_in_range": true,
+   "exit_reason": "price fell through range (active -521 < -519) \u2014 position is all token-X"
   }
  ]
 }

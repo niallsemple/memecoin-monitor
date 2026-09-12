@@ -985,3 +985,15 @@
 10:36:30 no open positions
 10:40:23 JBGqmRZB: active=-516 range=[-519,-516] tvl=$46,256 vol24=$2,160,702 feeY=0.000000SOL feeX=0
 10:40:23 guardian pass complete
+10:43:41 JBGqmRZB: active=-517 range=[-519,-516] tvl=$48,402 vol24=$2,163,509 feeY=0.002921SOL feeX=253269905
+10:43:41 guardian pass complete
+10:46:12 JBGqmRZB: active=-518 range=[-519,-516] tvl=$48,022 vol24=$2,165,426 feeY=0.004287SOL feeX=376849576
+10:46:12 JBGqmRZB: claiming fees (0.004287 SOL side, stale-hysteresis)
+10:46:14 JBGqmRZB: claim rc=0
+10:46:16 JBGqmRZB: post-claim sweep rc=1
+10:46:16 guardian pass complete
+10:53:20 JBGqmRZB: active=-521 range=[-519,-516] tvl=$49,701 vol24=$2,173,691 feeY=0.000716SOL feeX=111412417
+10:53:20 JBGqmRZB: EMERGENCY EXIT — price fell through range (active -521 < -519) — position is all token-X
+10:53:22 JBGqmRZB: exited ok
+10:53:23 JBGqmRZB: post-exit sweep rc=0
+10:53:23 guardian pass complete

@@ -120,8 +120,12 @@ def main():
                 log(f"{name}: exited ok")
                 # SOL-only rule: an emergency exit can leave token-X in the wallet
                 # (position was all-token below range) — sweep automatically.
-                rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
-                                     capture_output=True, text=True, timeout=280)
+                for _try in range(3):
+                    rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                         capture_output=True, text=True, timeout=280)
+                    if rc5.returncode == 0:
+                        break
+                    time.sleep(5)
                 action("post_exit_sweep", name=name, rc=rc5.returncode,
                        out=(rc5.stdout or "")[-400:])
                 log(f"{name}: post-exit sweep rc={rc5.returncode}")
@@ -160,8 +164,12 @@ def main():
                     if "EXITED" in out2:
                         p["status"] = "exited"; p["exit_reason"] = "recenter_above_range"
                         json.dump(st, open(STATE_F, "w"), indent=1)
-                        rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
-                                             capture_output=True, text=True, timeout=280)
+                        for _try in range(3):
+                            rc5 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                                 capture_output=True, text=True, timeout=280)
+                            if rc5.returncode == 0:
+                                break
+                            time.sleep(5)
                         action("recenter_sweep", name=name, rc=rc5.returncode)
                         rc6 = subprocess.run([sys.executable, os.path.join(MON, "lp_deploy_watchlist.py"), name],
                                              capture_output=True, text=True, timeout=280)
@@ -192,8 +200,13 @@ def main():
                 gst.setdefault(name, {})["last_claim"] = time.time()
                 json.dump(gst, open(GSTATE_F, "w"), indent=1)
                 # SOL-only rule: convert any token-side fees the claim dropped in wallet
-                rc4 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
-                                     capture_output=True, text=True, timeout=280)
+                # sweep needs up to 3 passes: sell -> burn dust -> verify (liveval 09-12)
+                for _try in range(3):
+                    rc4 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
+                                         capture_output=True, text=True, timeout=280)
+                    if rc4.returncode == 0:
+                        break
+                    time.sleep(5)
                 action("post_claim_sweep", name=name, rc=rc4.returncode,
                        out=(rc4.stdout or "")[-400:])
                 log(f"{name}: post-claim sweep rc={rc4.returncode}")
