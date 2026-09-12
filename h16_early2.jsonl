@@ -20240,3 +20240,13 @@
 {"action": "h16e2_thin", "mint": "5wc8AW3i7aXQJWBhEiRK2Gh4n5oHaaypbdLYKKyqpump", "t": 1789172431.2609322, "nticks": 2, "seed": 4.938271603}
 {"action": "h16e2_thin", "mint": "A2fCn8iPhFDwjyxp5UdPu8g93SmCRi1AxJ86JYbgpump", "t": 1789172446.275518, "nticks": 2, "seed": 4.938271603}
 {"action": "h16e2_reject", "mint": "4oq73W76jCopE2qBuGLW8R5sF3UB7jixTMdcyjeSpump", "t": 1789172446.275518, "mom": 0.345, "dd": 0.157, "bf": 0.586, "seed": 3.083247687}
+{"action": "h16e2_reject", "mint": "8rhkNcuCbyXHi8XjRa8SeMc1tzUqRdKLL99u1m53pump", "t": 1789172461.2801359, "mom": 1.18, "dd": 0.514, "bf": 0.485, "seed": 5}
+{"action": "h16e2_stale", "mint": "9QSP1jnc3Bp5J6U8rGJhUvypZ7Qf46ecxBuV249Mpump", "t": 1789172491.3054368, "last_tick_age": 13.5, "seed": 4.938271603}
+{"action": "h16e2_thin", "mint": "GeqeFXLRf4AkcLMfJWmbr8qnz8aJdvptcXhko1qnpump", "t": 1789172491.3054368, "nticks": 1, "seed": 2}
+{"action": "h16e2_stale", "mint": "HjSYb2QeLjaCeA7mAwfHFDTDxTouDNNMMR2U3Rgwpump", "t": 1789172491.3054368, "last_tick_age": 5.4, "seed": 2}
+{"action": "h16e2_stale", "mint": "D4jjBLP9TJxN63yFtRRHdqzJASaxMrhtWKC9aRTcpump", "t": 1789172506.3190532, "last_tick_age": 13.5, "seed": 4.938271603}
+{"action": "h16e2_open", "mint": "3STXHnLJDXkMdj7fNP278gHVg3XXTDo3zJ2zZA3rpump", "t": 1789172491.873565, "scored_at": 1789172506.3190532, "entry_mcap": 33.6718, "mom": 1.032, "dd": 0.969, "bf": 0.889, "seed": 2.384357122}
+{"action": "h16e2_reject", "mint": "GgUiVaDTf8rzJ715bppUwcvBqq4StpxA2WnbE14Cpump", "t": 1789172521.333632, "mom": 0.544, "dd": 0.501, "bf": 0.49, "seed": 3.160493825}
+{"action": "h16e2_reject", "mint": "2Xdy8j4g129bu7mDV4LfFFAx44ZzfN3tA8fitKdEpump", "t": 1789172521.333632, "mom": 0.714, "dd": 0.596, "bf": 0.39, "seed": 3.950617282}
+{"action": "h16e2_stale", "mint": "CCv81yzSouwn1DaNV6Y3ynMzNzQsVHCHwb5zgFCE5Jgr", "t": 1789172551.3679738, "last_tick_age": 6.3, "seed": 7.5}
+{"action": "h16e2_reject", "mint": "5rABKpe2iAP91hn3GziaCg52qaPqFQdsiyAzKPTjpump", "t": 1789172551.3679738, "mom": 0.585, "dd": 0.376, "bf": 0.504, "seed": 2.8}

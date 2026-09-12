@@ -82,6 +82,13 @@ def round_once(now):
                 pools.append(p["pool"])
     except Exception:
         pass
+    # always track pool with an open HFNA paper position
+    try:
+        hp = json.load(open(os.path.join(MON, "hfna_paper_state.json"))).get("pos")
+        if hp and hp.get("pool") and hp["pool"] not in pools:
+            pools.append(hp["pool"])
+    except Exception:
+        pass
     n = 0
     with open(OUT, "a") as f:
         for p in pools:
