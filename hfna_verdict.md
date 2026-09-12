@@ -30,6 +30,8 @@
 
 ## Verdict
 
+> **CAVEAT (2026-09-11 calibration):** paper PnL uses the liq_active share model, which real-money measurement shows overstates capture by up to ~6000x during bursts (liq_active swings 600x minute-to-minute). Treat absolute SOL figures as loose upper bounds. Entry/exit TIMING signals remain valid; only real-wallet trades calibrate true PnL.
+
 **GO** — expectancy +2.10% > 2% gate. Live micro-pilot design authorized for review (0.1 SOL real, guardian-wrapped).
 
 Repeat-visit filter SUPPORTED: repeat +5.22% vs first -2.08%.

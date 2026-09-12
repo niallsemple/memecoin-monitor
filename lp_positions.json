@@ -795,7 +795,14 @@
    "strategy_tag": "wide_arm_v3",
    "base_tvl": 467251.4711034764,
    "base_vol24": 3539746.7647868767,
-   "was_in_range": true
+   "was_in_range": true,
+   "feeY_hist": [
+    {
+     "t": 1789187895.9509,
+     "feeY": 19595674,
+     "active": -126
+    }
+   ]
   }
  ]
 }

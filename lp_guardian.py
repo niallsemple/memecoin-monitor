@@ -97,6 +97,11 @@ def main():
         active, lo, hi = c["activeBin"], c["lowerBinId"], c["upperBinId"]
         log(f"{name}: active={active} range=[{lo},{hi}] tvl=${tvl:,.0f} vol24=${vol24:,.0f} "
             f"feeY={fee_y/1e9:.6f}SOL feeX={fee_x}")
+        # capture-rate calibration: track pending feeY over time (bounded)
+        fh = p.setdefault("feeY_hist", [])
+        fh.append({"t": time.time(), "feeY": fee_y, "active": active})
+        del fh[:-300]
+        json.dump(st, open(STATE_F, "w"), indent=1)
 
         danger = None
         if active < lo:

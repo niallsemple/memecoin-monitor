@@ -74438,8 +74438,11 @@ async function main() {
     else if (cmd === "exit") await cmdExit(conn, wallet, poolAddr);
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === "binsjson") await cmdBinsJson(conn, poolAddr);
-    else {
-      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | addbins <pool> <sol> <binsBelow> [tag] | exit <pool> | claim <pool> | binsjson <pool>");
+    else if (cmd === "balance") {
+      const lam = await conn.getBalance(wallet.publicKey);
+      console.log(JSON.stringify({ wallet: wallet.publicKey.toBase58(), lamports: lam, sol: lam / 1e9 }));
+    } else {
+      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | addbins <pool> <sol> <binsBelow> [tag] | exit <pool> | claim <pool> | binsjson <pool> | balance");
       process.exit(1);
     }
   } catch (e) {

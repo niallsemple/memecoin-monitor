@@ -50,6 +50,16 @@ def lp_mult(pool):
     except Exception:
         return 9.0
 
+def wallet_sol():
+    """Real wallet SOL balance — the ONLY trustworthy PnL yardstick.
+    fees_est is a model upper bound (real capture measured ~6000x lower
+    than the liq_active share model during the 2026-09-11 calibration)."""
+    try:
+        rc = run_bundle("balance", timeout=60)
+        return json.loads(rc.stdout.strip().splitlines()[-1])["sol"]
+    except Exception:
+        return None
+
 def load_hist():
     hist = {}
     rows = []
@@ -110,15 +120,22 @@ def main():
             exit_reason = "timeout"
         if exit_reason:
             print(f"[exit] {p[:8]} {exit_reason} fees_est={pos['fees_est']:.5f}")
+            real_pnl = None
             if armed:
                 rc = run_bundle("exit", p)
                 log_event(kind="live_exit", pool=p, reason=exit_reason, rc=rc.returncode,
                           out=(rc.stdout or rc.stderr or "")[-300:])
                 subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
                                capture_output=True, text=True, timeout=280)
+                wa = wallet_sol()
+                if wa is not None and pos.get("wallet_before") is not None:
+                    real_pnl = wa - pos["wallet_before"]
+                    log_event(kind="real_pnl", pool=p, real_pnl=real_pnl,
+                              wallet_before=pos["wallet_before"], wallet_after=wa)
             else:
                 log_event(kind="dryrun_exit", pool=p, reason=exit_reason, fees_est=pos["fees_est"])
-            won = pos["fees_est"] > 0.001
+            # armed: judge by real wallet delta; dry-run: model estimate
+            won = (real_pnl > 0) if real_pnl is not None else (pos["fees_est"] > 0.001)
             st["consec_loss"] = 0 if won else st["consec_loss"] + 1
             st["pos"] = None
             if st["consec_loss"] >= MAX_CONSEC_LOSS:
@@ -161,10 +178,11 @@ def main():
                "trough": r["liq_active"]}
         print(f"[{'ENTER' if armed else 'DRYRUN-enter'}] {p[:8]} Y-only {SIZE} SOL bins [{ab-BINS_BELOW},{ab}] elev={ratio:.1f}x")
         if armed:
+            pos["wallet_before"] = wallet_sol()
             rc = run_bundle("addbins", p, str(SIZE), str(BINS_BELOW), "hfna_live_v1")
             out = (rc.stdout or "") + (rc.stderr or "")
             log_event(kind="live_enter", pool=p, bins=[ab - BINS_BELOW, ab], elev=ratio,
-                      rc=rc.returncode, out=out[-300:])
+                      rc=rc.returncode, out=out[-300:], wallet_before=pos["wallet_before"])
             if rc.returncode != 0:
                 st["seen"][p] = time.time()
                 continue

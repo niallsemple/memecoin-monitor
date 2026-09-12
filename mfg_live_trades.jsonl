@@ -3979,3 +3979,4 @@
 {"action": "fast_entry_eval", "mint": "M3EapothF4thaTcJCvmpBRUhVBnSdP1pT6V43Pppump", "t": 1789186930.870974, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789186930.873763}
 {"action": "fast_entry_eval", "mint": "zWppSdWMV6QdchjwqNR7LSYhLtHM56Rw6vfAXbYpump", "t": 1789187002.656693, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789187002.6613388}
 {"action": "fast_entry_eval", "mint": "HnT7wUWnFG1CFtpBg3tkYQQoPmvXXAwBsYoZudnpump", "t": 1789187152.536979, "create_seed_sol": 85.005359057, "result": "skip: oversized unfunded create seed 85.01", "ts": 1789187152.539849}
+{"action": "curve_buy", "mint": "2sXC2vD82ibq86wfLiUN5xxYfiZzZgQ9egcWGxxKpump", "reason": "s60nm5fr signal (hook)", "mode": "dry-run", "gate": "system retired: negative live expectancy (\u00a7459)", "result": "refused: farm denylist (\u00a7389)", "ts": 1789187550.306415}
