@@ -21,7 +21,7 @@ Net = fees - 0.001 fixed cost - markout.
 
 Logs: hfna_paper.jsonl ; state: hfna_paper_state.json
 """
-import json, os, statistics, time
+import collections, json, os, statistics, time
 
 MON = os.path.dirname(os.path.abspath(__file__))
 TAX_F = os.path.join(MON, "pool_tax_cache.json")
@@ -174,12 +174,15 @@ def main():
     except Exception:
         pass
     if not st["pos"]:
+        gate_stats = collections.Counter()
         for r in rows:
             p = r["pool"]
             if p in deny:
+                gate_stats["deny"] += 1
                 continue
             pts = [x for x in hist[p] if x["t"] <= r["t"]]
             if len(pts) < 5:
+                gate_stats["short_hist"] += 1
                 continue
             iv = [pts[i+1]["t"] - pts[i]["t"] for i in range(len(pts)-1)]
             win = max(180.0, 3 * statistics.median(iv))
@@ -187,22 +190,27 @@ def main():
             prev = next((pts[j] for j in range(len(pts)-1, -1, -1)
                          if r["t"] - pts[j]["t"] >= 300), None)
             if not prev or prev["liq_active"] <= 0:
+                gate_stats["no_prev"] += 1
                 continue
             if r["liq_active"] / prev["liq_active"] > VAC_DROP:
+                gate_stats["no_vacuum"] += 1
                 continue
             # settle check: drift over last `win`
             recent = [x["active_bin"] for x in pts if x["t"] >= r["t"] - win]
             if len(recent) < 2 or max(recent) - min(recent) > FLAT_TH:
+                gate_stats["no_settle"] += 1
                 continue
             # elevation check
             ratio = r["vol_accum"] / max(r["vol_ref"], 1)
             if ratio < ELEV_MIN:
+                gate_stats["low_elev"] += 1
                 continue
             # actual-flow check: fee RATE is not fee FLOW — require real recent
             # protocol-fee delta (>= 0.0005 SOL over ~10min) so dead pools with
             # capped-but-idle fees (vol_ref=0 artifacts) can't enter
             pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
             if len(pf_recent) >= 2 and (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) < 500_000:
+                gate_stats["no_flow"] += 1
                 continue
             # edge-density gate (KNOTS/GBR recon, 2026-09-12): expected 30-min
             # capture must clear 2x round-trip costs, else the trade is
@@ -214,6 +222,7 @@ def main():
             taxc = json.load(open(TAX_F)) if os.path.exists(TAX_F) else {}
             tax_bps = taxc.get(p, 0)
             if tax_bps > 50:
+                gate_stats["tax"] += 1
                 continue
             tax_drag = 0.0
             # NOTE (09-12): paper deliberately does NOT apply the live depth
@@ -229,10 +238,12 @@ def main():
                     # 4x FIXED_COST ~= real all-in round trip (~0.004 SOL:
                     # entry + exit + claims + priority), per recon cost audit
                     if capture30 < 4 * FIXED_COST + tax_drag:
+                        gate_stats["low_capture30"] += 1
                         continue
             # cooldown: one trade per pool per hour
             last_done = st["seen"].get(p, 0)
             if time.time() - last_done < 3600:
+                gate_stats["cooldown"] += 1
                 continue
             ab = r["active_bin"]
             st["pos"] = {
@@ -245,6 +256,15 @@ def main():
             print(f"[enter] {p[:8]} HFNA paper Y-only {SIZE} SOL bins [{ab-2},{ab}] elev={ratio:.1f}x")
             break
 
+    if not st["pos"] and gate_stats:
+        gs_path = os.path.join(MON, "gate_stats.json")
+        try:
+            cum = json.load(open(gs_path))
+        except Exception:
+            cum = {}
+        for k, v in gate_stats.items():
+            cum[k] = cum.get(k, 0) + v
+        json.dump(cum, open(gs_path, "w"), indent=1)
     json.dump(st, open(STATE, "w"), indent=1)
 
 if __name__ == "__main__":
