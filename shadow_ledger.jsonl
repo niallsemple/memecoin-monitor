@@ -1926,9 +1926,12 @@
 {"mint": "TE43NFwUN4NgbqsccLXHEGkwrz3ycCsMjUTowyRpump", "status": "closed", "eval_ts": 1789173475.753626, "entry_t": 1789173475.764965, "peak": 1.024, "freerolled": false, "exit_reason": "abort15", "ret": -0.0188}
 {"mint": "XgsvsVfuLoh4MuWVG7aCnzeVQejTpqyi6VgWkdKpump", "status": "closed", "eval_ts": 1789173837.2642481, "entry_t": 1789173910.8004138, "peak": 1.028, "freerolled": false, "exit_reason": "abort15", "ret": -0.0124}
 {"mint": "CWpb9qJpEJw5pUTxeSyYbJMshi7NWg7WwSasnmepump", "status": "closed", "eval_ts": 1789173948.723244, "entry_t": 1789174025.285747, "peak": 1.198, "freerolled": false, "exit_reason": "panic", "ret": -1.0}
-{"mint": "7Qnc2huyB8oYKE9SRnfQpw5N76s1zCQDG6aCbUvpump", "status": "closed", "eval_ts": 1789174722.489537, "entry_t": 1789174735.358538, "peak": 1.032, "freerolled": false, "exit_reason": "abort15", "ret": -0.0082}
-{"mint": "apAzQXGcS1PyfvRK4H7FHLQPxETG5mcXabuCMinpump", "status": "open", "eval_ts": 1789174803.5693078, "entry_t": 1789174906.966948, "peak": 1.023, "freerolled": false, "mark": -0.0176, "ret": null}
-{"mint": "kcs8F83UFk6cr4uHpgEiDM4TTGHRdm4EjfPDxBWpump", "status": "open", "eval_ts": 1789174815.5815418, "entry_t": 1789174892.116, "peak": 1.028, "freerolled": false, "mark": -0.0128, "ret": null}
-{"mint": "bmxeup5keTbkEe3uVAfXjBQWnk2J4pxiD4oKny3pump", "status": "open", "eval_ts": 1789175099.381769, "entry_t": 1789175206.369907, "peak": 1.028, "freerolled": false, "mark": -0.0144, "ret": null}
-{"mint": "KrbaZEyvvXL9Z1E5EZg5VjX3wKVFwcZ734Wj8DEpump", "status": "open", "eval_ts": 1789175261.2659168, "entry_t": 1789175336.0731058, "peak": 1.014, "freerolled": false, "mark": -0.0253, "ret": null}
-{"mint": "v7sAia65gSpFkox6tq1LqMfJVdWs52NQfvfnEZ9pump", "status": "no_data", "ret": null}
+{"mint": "7Qnc2huyB8oYKE9SRnfQpw5N76s1zCQDG6aCbUvpump", "status": "closed", "eval_ts": 1789174722.489537, "entry_t": 1789174735.358538, "peak": 1.038, "freerolled": false, "exit_reason": "abort15", "ret": -0.0082}
+{"mint": "apAzQXGcS1PyfvRK4H7FHLQPxETG5mcXabuCMinpump", "status": "closed", "eval_ts": 1789174803.5693078, "entry_t": 1789174906.966948, "peak": 1.026, "freerolled": false, "exit_reason": "abort15", "ret": -0.0176}
+{"mint": "kcs8F83UFk6cr4uHpgEiDM4TTGHRdm4EjfPDxBWpump", "status": "closed", "eval_ts": 1789174815.5815418, "entry_t": 1789174892.116, "peak": 1.039, "freerolled": false, "exit_reason": "abort15", "ret": -0.0128}
+{"mint": "bmxeup5keTbkEe3uVAfXjBQWnk2J4pxiD4oKny3pump", "status": "closed", "eval_ts": 1789175099.381769, "entry_t": 1789175206.369907, "peak": 1.029, "freerolled": false, "exit_reason": "abort15", "ret": -0.0137}
+{"mint": "KrbaZEyvvXL9Z1E5EZg5VjX3wKVFwcZ734Wj8DEpump", "status": "closed", "eval_ts": 1789175261.2659168, "entry_t": 1789175336.0731058, "peak": 1.114, "freerolled": false, "exit_reason": "panic", "ret": -1.0}
+{"mint": "v7sAia65gSpFkox6tq1LqMfJVdWs52NQfvfnEZ9pump", "status": "closed", "eval_ts": 1789175508.239688, "entry_t": 1789175858.145752, "peak": 1.0, "freerolled": false, "exit_reason": "abort15", "ret": -0.0403}
+{"mint": "5xi3dAohR84qvD4z1swqpP2qjEAsD74jg6tNqGbkpump", "status": "open", "eval_ts": 1789176019.9428852, "entry_t": 1789176029.992949, "peak": 1.165, "freerolled": false, "mark": 0.1197, "ret": null}
+{"mint": "14Eb3YXUsKSxdN9aYhv6kjTq22kFbDXQ5xoyjqzNpump", "status": "open", "eval_ts": 1789176039.631505, "entry_t": 1789176143.808393, "peak": 1.048, "freerolled": false, "mark": 0.0071, "ret": null}
+{"mint": "JyysBkmvpSX5NYH3KtdHgh1zQ6ivjYhp4xYf7vbpump", "status": "open", "eval_ts": 1789176421.748457, "entry_t": 1789176529.174, "peak": 1.025, "freerolled": false, "mark": -0.0176, "ret": null}
