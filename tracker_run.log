@@ -1,2 +1,4 @@
 tracking 394 hits
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xb0952f3f17b44388ff8b9c57d83cfa98e43b2816
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/3YmWUj3ALVe55v5bXJp67q8CFzae1FT5LppFYxLMaqb3
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xafb70824a4f2066849fa465cb96437d19dd2b947/ohlcv/hour?aggregate=1&limit=48&currency=usd

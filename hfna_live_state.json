@@ -1,7 +1,19 @@
 {
- "pos": null,
+ "pos": {
+  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+  "t_entry": 1789247909.0841112,
+  "low": -211,
+  "high": -209,
+  "fees_est": 0.0,
+  "elev": 13.0,
+  "last_t": 1789247908.052,
+  "last_pf": 144954094,
+  "trough": 1107421315.5440702,
+  "wallet_before": 7.320217432,
+  "entry_out": "W\n(node:89135) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n"
+ },
  "seen": {
-  "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789243654.007753,
+  "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789247910.856906,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789208213.87038,
   "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": 1789210225.058636,
   "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB": 1789211462.4574,

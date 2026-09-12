@@ -1,6 +1,15 @@
 {
  "bankroll": 0.7247718062972632,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ",
+  "pair": "ALLINU-SOL",
+  "entry_ts": 1789247699.4591959,
+  "entry_price": 7.405642194262e-06,
+  "deposit": 0.7247718062972632,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 3.2080711048619137
+ },
  "cycles": 54,
  "cooldowns": {}
 }
