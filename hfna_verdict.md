@@ -1,21 +1,21 @@
-# HFNA go/no-go verdict — 19 paper trades
+# HFNA go/no-go verdict — 20 paper trades
 
-- record: 8W/11L, bankroll 1.1796
-- **expectancy: +9.45%/window** (gate: >+2%)
-- median: -0.82%/window
-- ex-burst expectancy: -0.96%/window (n=15)
-- bursts (>+10%): 4/19, Wilson 95% CI [9%, 43%]
+- record: 9W/11L, bankroll 1.1806
+- **expectancy: +9.03%/window** (gate: >+2%)
+- median: -0.77%/window
+- ex-burst expectancy: -0.84%/window (n=16)
+- bursts (>+10%): 4/20, Wilson 95% CI [8%, 42%]
 
 ## Visit split
 
 | cohort | n | avg net/window | wins |
 |---|---|---|---|
 | first visit | 11 | -0.33% | 2 |
-| repeat (prior entry) | 8 | +22.91% | 6 |
+| repeat (prior entry) | 9 | +20.48% | 7 |
 
 ## Per-pool
 
-- nBXytBBf: 3 trades, +47.1%/win, total +0.1413 SOL
+- nBXytBBf: 4 trades, +35.6%/win, total +0.1424 SOL
 - GbrDAq3R: 4 trades, +14.6%/win, total +0.0583 SOL
 - 5Z6frpb4: 1 trades, +8.4%/win, total +0.0084 SOL
 - FpP5SnzB: 2 trades, -0.3%/win, total -0.0006 SOL
@@ -29,6 +29,6 @@
 
 ## Verdict
 
-**GO** — expectancy +9.45% > 2% gate. Live micro-pilot design authorized for review (0.1 SOL real, guardian-wrapped).
+**GO** — expectancy +9.03% > 2% gate. Live micro-pilot design authorized for review (0.1 SOL real, guardian-wrapped).
 
-Repeat-visit filter SUPPORTED: repeat +22.91% vs first -0.33%.
+Repeat-visit filter SUPPORTED: repeat +20.48% vs first -0.33%.
