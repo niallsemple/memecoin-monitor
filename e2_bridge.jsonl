@@ -288,3 +288,4 @@
 {"t": 1789178878.109636, "mint": "GSJZYymzwSG4JnV37sKmqvs9BqJw2xibxrrJASQFpump", "mom": 1.096, "dd": 0.912, "bf": 0.857, "entry_mcap": 36.4435, "seed": 2.710547888, "open_age_s": 8.9, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1789178998.223506, "mint": "GSJZYymzwSG4JnV37sKmqvs9BqJw2xibxrrJASQFpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
 {"t": 1789179268.432276, "mint": "v4C2QCCRYVfKNpTQWqnVjSPg5v9W2tiWihmXAfqpump", "action": "bridge_note_close", "outcome": "win", "mult": 1.2}
+{"t": 1789183973.3339798, "mint": "2y2XhQsdxhmEWnsTBr6svFmtCMZS6vU6wNyo6Z8dpump", "mom": 1.039, "dd": 0.961, "bf": 0.947, "entry_mcap": 34.199, "seed": 2.469135801, "open_age_s": 5.1, "action": "bridge_blocked", "reason": "seed_floor"}
