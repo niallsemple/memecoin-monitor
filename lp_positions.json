@@ -789,7 +789,7 @@
    "entry_active_bin": -96,
    "minBinId": -152,
    "maxBinId": -96,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5k1p6ogTHBCz1KNH5EX9je7iWtXGhjpSYtSWQYVcAcN3y7WjMv2hkAk53Tfs62RJC9QinrGJyBemChc12fUjsFjz",
    "width_pct": 0.56,
    "strategy_tag": "wide_arm_v3",
@@ -921,8 +921,14 @@
      "t": 1789192738.349668,
      "feeY": 8120083,
      "active": -149
+    },
+    {
+     "t": 1789192919.020871,
+     "feeY": 9165692,
+     "active": -154
     }
-   ]
+   ],
+   "exit_reason": "price fell through range (active -154 < -152) \u2014 position is all token-X"
   }
  ]
 }

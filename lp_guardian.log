@@ -943,3 +943,7 @@
 06:56:36 guardian pass complete
 06:58:58 nBXytBBf: active=-149 range=[-152,-96] tvl=$397,153 vol24=$2,584,145 feeY=0.008120SOL feeX=0
 06:58:58 guardian pass complete
+07:01:59 nBXytBBf: active=-154 range=[-152,-96] tvl=$392,330 vol24=$2,594,863 feeY=0.009166SOL feeX=0
+07:01:59 nBXytBBf: EMERGENCY EXIT — price fell through range (active -154 < -152) — position is all token-X
+07:02:00 nBXytBBf: exited ok
+07:02:00 guardian pass complete
