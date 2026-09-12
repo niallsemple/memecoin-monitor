@@ -1,32 +1,23 @@
 {
- "ts": 1789211162.497188,
+ "ts": 1789211748.0453382,
  "rows": [
   {
-   "pubkey": "9QxNArvpFSHyEzpvbFCwBqimaRQ3G2AXEQJhMYFdqoJT",
-   "owner": "3iE14BgCkPma3tr8eKDvkKGrjF8vjTxwEEPJLSux5ApP",
-   "adj_debt": 123.65325256994743,
-   "unhealthy": 179.72333892281486,
-   "margin": 56.070086352867435,
-   "slot_age": 110,
+   "pubkey": "BYojGuT56e2TUb8PQwRyT1wL5X5Ekv4kZH1HUQgBu6Zg",
+   "owner": "5HU4jpN65F7AGXYa6otSQ5yEYiroxcCk9DimpTroGvbF",
+   "adj_debt": 4162.150383265859,
+   "unhealthy": 12110.377134938606,
+   "margin": 7948.226751672747,
+   "slot_age": 77,
    "stable_pair": true
   },
   {
-   "pubkey": "6EE6vuLJrS72wvVpKsZ8MRhd4e2WJqju1yFD5FxVgJ3t",
-   "owner": "BWvxbHvoqEaRW15QXWFu3c7Pnn9zJGW7nhTWuPDnJ9xM",
-   "adj_debt": 128.60121685121425,
-   "unhealthy": 2574.907393067975,
-   "margin": 2446.306176216761,
-   "slot_age": 159,
+   "pubkey": "BM7gQt6Zoh5DEDZ2EDg35DBHnct2KzspPKrPX6dhowMW",
+   "owner": "4XvHhosuVKrufgY3edMppi1xdimuocn3UqUWvtMu15Wp",
+   "adj_debt": 180294.58237666817,
+   "unhealthy": 214664.6175,
+   "margin": 34370.03512333182,
+   "slot_age": 123,
    "stable_pair": false
-  },
-  {
-   "pubkey": "2754tvijLsVjLwRuT2N27Fga3EpaBA5FVZSWt3XnAEpE",
-   "owner": "DiP6zXbotZjDyb2yEoZwUkcPmNk9wcDh46Wo8pNjMqwa",
-   "adj_debt": 1461795.2760098071,
-   "unhealthy": 1493626.9241637476,
-   "margin": 31831.64815394045,
-   "slot_age": 21,
-   "stable_pair": true
   }
  ]
 }

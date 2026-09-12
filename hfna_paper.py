@@ -198,17 +198,13 @@ def main():
             # structurally sub-cost no matter the timing.
             #   capture_30 = dProtY_rate * lpMult * share * 1800
             #   share = per-bin dep / (per-bin dep + liq_active)
-            # tax-aware cost bar (parity with hfna_live 09-12): Token-2022
-            # transferFeeConfig burns rate x X-value at exit; add worst-case
-            # drag (rate x SIZE) to the bar. Hard-skip >1000bps.
+            # hard-skip tax pools (parity with live 09-12): per-attempt tax
+            # toll can't be recovered by window selection at this size (0/2).
             taxc = json.load(open(TAX_F)) if os.path.exists(TAX_F) else {}
-            if p in taxc:
-                tax_bps = taxc[p]
-            else:
-                tax_bps = 0   # paper: don't spend bundle calls; live verifies
-            if tax_bps > 1000:
+            tax_bps = taxc.get(p, 0)
+            if tax_bps > 50:
                 continue
-            tax_drag = max(tax_bps, 0) / 10000.0 * SIZE
+            tax_drag = 0.0
             if len(pf_recent) >= 2:
                 dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
                 if dt > 0:

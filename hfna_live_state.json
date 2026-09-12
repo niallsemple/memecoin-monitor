@@ -1,11 +1,25 @@
 {
- "pos": null,
+ "pos": {
+  "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
+  "t_entry": 1789211890.897739,
+  "low": -544,
+  "high": -542,
+  "fees_est": 0.0,
+  "elev": 87.31082654249127,
+  "last_t": 1789211687.042,
+  "last_pf": 1773365152,
+  "trough": 386971783.8600447,
+  "wallet_before": 7.354071538,
+  "entry_out": "T\n(node:59314) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n"
+ },
  "seen": {
   "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789210580.842052,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789208213.87038,
-  "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": 1789210225.058636
+  "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": 1789210225.058636,
+  "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB": 1789211462.4574,
+  "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": 1789211892.645762
  },
- "consec_loss": 0,
+ "consec_loss": 1,
  "start_bank": null,
  "halted": false
 }

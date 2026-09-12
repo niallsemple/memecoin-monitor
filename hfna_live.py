@@ -198,9 +198,13 @@ def main():
                 taxc[p] = -1   # unknown -> treat as pass but recheck next time
             json.dump(taxc, open(TAX_F, "w"), indent=1)
         tax_bps = taxc.get(p, 0)
-        if tax_bps > 1000:
+        # HARD SKIP tax pools (09-12, empirical): the tax-aware bar experiment
+        # ran twice — both losses (-0.0094, -0.0052). The transfer tax is a
+        # per-ATTEMPT toll paid even on a 4-min zero-fee exit, so window
+        # selection can't save it at 0.1 SOL size. Non-tax gated trades: 2/2.
+        if tax_bps > 50:
             continue
-        tax_drag = max(tax_bps, 0) / 10000.0 * SIZE
+        tax_drag = 0.0
         # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
         # (~0.004 SOL all-in) plus worst-case tax drag. Without this the pilot
         # enters structurally sub-cost trades — the pre-gate loss streak.
