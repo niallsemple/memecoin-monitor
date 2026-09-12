@@ -74308,6 +74308,43 @@ async function cmdAdd(conn, wallet, poolAddr, solAmt, widthPct, tag2) {
   saveState(st);
   console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
 }
+async function cmdAddBins(conn, wallet, poolAddr, solAmt, binsBelow, tag2) {
+  const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
+  await pool.refetchStates();
+  const ab = await pool.getActiveBin();
+  const n = Math.min(Math.max(Math.round(binsBelow), 1), MAX_BINS_PER_TX);
+  const minBinId = ab.binId - n;
+  const maxBinId = ab.binId;
+  const lamports = Math.round(solAmt * import_web321.LAMPORTS_PER_SOL);
+  const posKp = import_web321.Keypair.generate();
+  console.log(`pool ${poolAddr} active=${ab.binId} range=[${minBinId},${maxBinId}] deposit=${solAmt} SOL (single-sided Y, exact-bins)`);
+  const tx = await pool.initializePositionAndAddLiquidityByStrategy({
+    positionPubKey: posKp.publicKey,
+    totalXAmount: new import_bn15.default(0),
+    totalYAmount: new import_bn15.default(lamports),
+    strategy: { minBinId, maxBinId, strategyType: StrategyType.Spot },
+    user: wallet.publicKey,
+    slippage: 2
+  });
+  const sig = await sendTx(conn, tx, [posKp], wallet);
+  const st = loadState();
+  st.positions.push({
+    pool: poolAddr,
+    position: posKp.publicKey.toBase58(),
+    name: null,
+    sol_in: solAmt,
+    ts: Date.now() / 1e3,
+    entry_active_bin: ab.binId,
+    minBinId,
+    maxBinId,
+    status: "open",
+    add_sig: sig,
+    width_pct: null,
+    strategy_tag: tag2 || "hfna_live_v1"
+  });
+  saveState(st);
+  console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
+}
 async function cmdExit(conn, wallet, poolAddr) {
   const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
   const { userPositions } = await pool.getPositionsByUserAndLbPair(wallet.publicKey);
@@ -74396,11 +74433,12 @@ async function main() {
     if (cmd === "status") await cmdStatus(conn, wallet);
     else if (cmd === "statusjson") await cmdStatusJson(conn, wallet);
     else if (cmd === "add") await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
+    else if (cmd === "addbins") await cmdAddBins(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
     else if (cmd === "exit") await cmdExit(conn, wallet, poolAddr);
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === "binsjson") await cmdBinsJson(conn, poolAddr);
     else {
-      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | exit <pool> | claim <pool> | binsjson <pool>");
+      console.log("usage: status | add <pool> <sol> [widthPct] [tag] | addbins <pool> <sol> <binsBelow> [tag] | exit <pool> | claim <pool> | binsjson <pool>");
       process.exit(1);
     }
   } catch (e) {
