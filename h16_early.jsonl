@@ -20918,3 +20918,7 @@
 {"action": "h16e_reject", "mint": "647MAuERXx4w2e9EhfUiNUTc9A4CFCBBD71bVDQspump", "t": 1789185654.784275, "mom": 1.015, "dd": 0.983, "bf": 0.7, "seed": 2.572172685}
 {"action": "h16e_reject", "mint": "DjoCBpbnW3jUDSCpkXQgatyDbd51jryNQaBQP9C7pump", "t": 1789185654.784275, "mom": 0.356, "dd": 0.239, "bf": 0.379, "seed": 3}
 {"action": "h16e_thin", "mint": "6rUgNeXa1woKzMGUreXBGdBpREx1wmpSLwy63TvDpump", "t": 1789185654.784275, "nticks": 2, "seed": 5}
+{"action": "h16e_drop", "mint": "5RwoD2hu7yechYZKz7zA5Kr8F9KKHtFbmdep2dRfpump", "reason": "no ticks", "t": 1789185749.9100668}
+{"action": "h16e_reject", "mint": "A3bs6AbDrM99mhBBbxFHcwTNmjrVRaURZLRFaSgEpump", "t": 1789185749.9100668, "mom": 0.675, "dd": 0.169, "bf": 0.494, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "8FJJ7ib24tPrtTW2juPD3TyT3AZfWkXA134mqLX1pump", "t": 1789185749.9100668, "mom": 0.747, "dd": 0.737, "bf": 0.25, "seed": 4.938271603}
+{"action": "h16e_reject", "mint": "6kvhMp4Bo9d1B49UGjkFxi4m5F1ECxoVPNNuRD5Mpump", "t": 1789185749.9100668, "mom": 0.747, "dd": 0.737, "bf": 0.2, "seed": 4.938271603}
