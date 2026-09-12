@@ -30,3 +30,11 @@ Built from 31 wins / 29 strikes / 63 scratches (live + paper, 09-11 → 09-12).
   wins >0.01 as suspect.
 - Live real_pnl is wallet-truth; inter-trade rent recovery (+0.0011 x2) lands one
   cycle late and is real money.
+
+## Update 22:35 — regime score backtest (regime.py)
+Trailing 60-min prot-fee flow across all snapshotted pools does NOT cleanly
+separate wins from strikes at n~100: 9Ndi win at score 0.18, GBR strike at
+score 47.2. Fee flow is bursty at 30-min granularity. regime.py now LOGS the
+score every poll (regime_log.jsonl) so a larger sample can be tested, but it
+is NOT wired as an arming gate — data does not support it yet.
+Only the depth gate (>=1500 SOL) has survived validation.
