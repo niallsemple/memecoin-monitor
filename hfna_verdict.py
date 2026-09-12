@@ -29,6 +29,12 @@ def main():
     n = len(tr)
     if n < 5:
         print("too few trades"); return
+    # Normalize to the true on-chain LP multiplier (9.0 at protocolShare=1000,
+    # measured 2026-09-11). Legacy entries have no "mult" field (=20 assumed).
+    TRUE_MULT = 9.0
+    for t in tr:
+        m = t.get("mult", 20.0)
+        t["net"] = t["fees"] * TRUE_MULT / m - FIXED - t.get("markout", 0)
     nets = [t["net"] for t in tr]
     # chronological visit counting
     seen = {}
@@ -46,7 +52,7 @@ def main():
     w = sum(1 for x in nets if x > 0)
 
     lines = [f"# HFNA go/no-go verdict — {n} paper trades\n"]
-    lines.append(f"- record: {w}W/{n-w}L, bankroll {tr[-1]['bankroll']:.4f}")
+    lines.append(f"- record: {w}W/{n-w}L, bankroll {1.0 + sum(nets):.4f} (restated to lpMult=9.0; pre-calibration figure was inflated by PROTO_MULT=20)")
     lines.append(f"- **expectancy: {exp*100:+.2f}%/window** (gate: >+{GATE*100:.0f}%)")
     lines.append(f"- median: {med*100:+.2f}%/window")
     lines.append(f"- ex-burst expectancy: {exp_xb*100:+.2f}%/window (n={len(ex_burst)})")

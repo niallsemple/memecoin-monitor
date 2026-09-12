@@ -1,34 +1,35 @@
-# HFNA go/no-go verdict — 20 paper trades
+# HFNA go/no-go verdict — 28 paper trades
 
-- record: 9W/11L, bankroll 1.1806
-- **expectancy: +9.03%/window** (gate: >+2%)
-- median: -0.77%/window
-- ex-burst expectancy: -0.84%/window (n=16)
-- bursts (>+10%): 4/20, Wilson 95% CI [8%, 42%]
+- record: 9W/19L, bankroll 1.0587 (restated to lpMult=9.0; pre-calibration figure was inflated by PROTO_MULT=20)
+- **expectancy: +2.10%/window** (gate: >+2%)
+- median: -0.85%/window
+- ex-burst expectancy: -0.77%/window (n=26)
+- bursts (>+10%): 2/28, Wilson 95% CI [2%, 23%]
 
 ## Visit split
 
 | cohort | n | avg net/window | wins |
 |---|---|---|---|
-| first visit | 11 | -0.33% | 2 |
-| repeat (prior entry) | 9 | +20.48% | 7 |
+| first visit | 12 | -2.08% | 3 |
+| repeat (prior entry) | 16 | +5.22% | 6 |
 
 ## Per-pool
 
-- nBXytBBf: 4 trades, +35.6%/win, total +0.1424 SOL
-- GbrDAq3R: 4 trades, +14.6%/win, total +0.0583 SOL
-- 5Z6frpb4: 1 trades, +8.4%/win, total +0.0084 SOL
-- FpP5SnzB: 2 trades, -0.3%/win, total -0.0006 SOL
-- BcAaxXZZ: 1 trades, -0.7%/win, total -0.0007 SOL
+- nBXytBBf: 5 trades, +15.5%/win, total +0.0777 SOL
+- GbrDAq3R: 5 trades, +3.6%/win, total +0.0182 SOL
+- 5Z6frpb4: 1 trades, +3.2%/win, total +0.0032 SOL
+- 5h1GmqcC: 1 trades, +0.9%/win, total +0.0009 SOL
 - EEkVx3wi: 1 trades, -1.0%/win, total -0.0010 SOL
 - 5e1UHN6p: 1 trades, -1.0%/win, total -0.0010 SOL
-- 9NdiyGft: 1 trades, -1.0%/win, total -0.0010 SOL
-- 6e4ewHhG: 1 trades, -1.0%/win, total -0.0010 SOL
-- DCh6beah: 1 trades, -2.1%/win, total -0.0021 SOL
-- 7VKhbFtk: 3 trades, -7.0%/win, total -0.0210 SOL
+- 9NdiyGft: 2 trades, -0.6%/win, total -0.0013 SOL
+- BcAaxXZZ: 2 trades, -0.7%/win, total -0.0013 SOL
+- 6e4ewHhG: 2 trades, -1.0%/win, total -0.0020 SOL
+- DCh6beah: 1 trades, -3.2%/win, total -0.0032 SOL
+- FpP5SnzB: 3 trades, -2.5%/win, total -0.0076 SOL
+- 7VKhbFtk: 4 trades, -6.0%/win, total -0.0240 SOL
 
 ## Verdict
 
-**GO** — expectancy +9.03% > 2% gate. Live micro-pilot design authorized for review (0.1 SOL real, guardian-wrapped).
+**GO** — expectancy +2.10% > 2% gate. Live micro-pilot design authorized for review (0.1 SOL real, guardian-wrapped).
 
-Repeat-visit filter SUPPORTED: repeat +20.48% vs first -0.33%.
+Repeat-visit filter SUPPORTED: repeat +5.22% vs first -2.08%.

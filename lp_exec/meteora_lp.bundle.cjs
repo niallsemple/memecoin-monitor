@@ -74421,6 +74421,7 @@ async function cmdBinsJson(conn, poolAddr) {
     baseFactor: (pr.baseFactor || pr.base_factor || "0").toString(),
     baseFeeBps: (pool.lbPair.baseFeeRateFactor || "").toString(),
     collectFeeMode: (pool.lbPair.collectFeeMode ?? pool.lbPair.collect_fee_mode ?? -1).toString(),
+    protocolShare: (pr.protocolShare ?? pr.protocol_share ?? "0").toString(),
     protFeeX: (pool.lbPair.protocolFee?.amountX || pool.lbPair.protocolFee?.x || "0").toString(),
     protFeeY: (pool.lbPair.protocolFee?.amountY || pool.lbPair.protocolFee?.y || "0").toString()
   }));

@@ -41,6 +41,15 @@ def log_event(**kw):
         f.write(json.dumps({"t": time.time(), **kw}) + "\n")
     print(" ", " ".join(f"{k}={v}" for k, v in kw.items() if k != "t"))
 
+def lp_mult(pool):
+    """(10000-protocolShare)/protocolShare, per-pool from watchlist.
+    Measured on-chain 2026-09-11: all watchlist pools = 1000 (10%) -> 9.0."""
+    try:
+        pp = json.load(open(WATCH_F)).get("pool_params", {})
+        return float(pp.get(pool, {}).get("lpMult", 9.0))
+    except Exception:
+        return 9.0
+
 def load_hist():
     hist = {}
     rows = []
@@ -85,7 +94,7 @@ def main():
             pos["last_t"], pos["last_pf"] = r["t"], r["prot_fee_y"]
             ab = r["active_bin"]
             if dpf > 0 and pos["low"] <= ab <= pos["high"]:
-                pos["fees_est"] += dpf / 1e9 * 20 * (SIZE / (r["liq_active"] / 1e9 + SIZE) if r["liq_active"] > 0 else 0)
+                pos["fees_est"] += dpf / 1e9 * lp_mult(p) * (SIZE / (r["liq_active"] / 1e9 + SIZE) if r["liq_active"] > 0 else 0)
             if ab < pos["low"] - 1:
                 exit_reason = f"tripwire ab={ab}<{pos['low']-1}"; break
             if r["liq_active"] > pos["trough"] * 1.5:

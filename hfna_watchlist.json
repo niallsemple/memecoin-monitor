@@ -1,5 +1,13 @@
-{"pools": [
+{
+ "pools": [
   "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
   "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
   "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB"
-]}
+ ],
+ "pool_params": {
+  "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad": {"protocolShare": 1000, "lpMult": 9.0},
+  "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": {"protocolShare": 1000, "lpMult": 9.0},
+  "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB": {"protocolShare": 1000, "lpMult": 9.0}
+ },
+ "notes": "protocolShare read on-chain 2026-09-11 via binsjson (lbPair.parameters.protocolShare). All three watchlist pools are 1000 (10% protocol / 90% LP) -> lpMult 9.0, NOT the 20 previously assumed (5%). Default lpMult for unknown pools: 9.0 (conservative vs old 20)."
+}
