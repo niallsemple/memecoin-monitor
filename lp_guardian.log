@@ -1026,3 +1026,9 @@
 12:11:03 5Z6frpb4: active=-382 range=[-384,-382] tvl=$16,415 vol24=$306,964 feeY=0.000000SOL feeX=0
 12:11:03 guardian pass complete
 12:15:33 no open positions
+12:20:01 JBGqmRZB: active=-549 range=[-548,-546] tvl=$58,635 vol24=$2,251,899 feeY=0.002385SOL feeX=390414728
+12:20:01 JBGqmRZB: EMERGENCY EXIT — price fell through range (active -549 < -548) — position is all token-X
+12:20:03 JBGqmRZB: exited ok
+12:21:02 JBGqmRZB: post-exit sweep rc=1
+12:21:02 guardian pass complete
+12:24:10 no open positions
