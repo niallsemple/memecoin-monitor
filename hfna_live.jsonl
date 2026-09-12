@@ -7,3 +7,4 @@
 {"t": 1789188577.220453, "kind": "dryrun_enter", "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY", "bins": [-261, -259], "elev": 10000.0}
 {"t": 1789189790.982398, "kind": "dryrun_exit", "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY", "reason": "tripwire ab=-275<-262", "fees_est": 0.0784004787278635}
 {"t": 1789191146.84565, "kind": "dryrun_enter", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "bins": [-137, -135], "elev": 2001.0}
+{"t": 1789191330.4079008, "kind": "dryrun_exit", "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad", "reason": "liquidity refilled", "fees_est": 0.0023222056205999602}
