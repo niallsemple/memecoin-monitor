@@ -182,9 +182,16 @@ def main():
             print(f"[open] {p[:8]} fees={pos['fees']:.5f} t+{time.time()-pos['t_entry']:.0f}s")
 
     # ---- look for entry if flat ----
+    deny = set()
+    try:
+        deny = set(json.load(open(os.path.join(MON, "paper_denylist.json")))["pools"])
+    except Exception:
+        pass
     if not st["pos"]:
         for r in rows:
             p = r["pool"]
+            if p in deny:
+                continue
             pts = [x for x in hist[p] if x["t"] <= r["t"]]
             if len(pts) < 5:
                 continue
