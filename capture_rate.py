@@ -82,7 +82,7 @@ def main():
         if las:
             la = statistics.median(las)
             model = 0.1 / (la + 0.1)
-            per_sol_real = (tot_r / tot_p) / max(pos.get("sol", 0.77), 0.01)
+            per_sol_real = (tot_r / tot_p) / max(pos.get("sol_in") or 0.77, 0.01)
             print(f"  liq_active median {la:.4f} SOL -> paper model share {model:.2%} per 0.1 SOL")
             print(f"  real {per_sol_real:.4%}/SOL vs model {model/0.1:.2%}/SOL "
                   f"-> model error {model/0.1/per_sol_real if per_sol_real>0 else float('inf'):.0f}x")
