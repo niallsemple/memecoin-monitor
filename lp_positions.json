@@ -33,7 +33,7 @@
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -227 < -223) — position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -68,7 +68,7 @@
    "base_tvl": 156386.26847949892,
    "base_vol24": 2602653.2416695743,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -2053 < -2052) — position is all token-X"
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -103,7 +103,7 @@
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
   },
   {
    "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
@@ -721,7 +721,7 @@
    "base_tvl": 280894.5671214633,
    "base_vol24": 1775456.5106263277,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active 396 < 407) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active 396 < 407) — position is all token-X"
   },
   {
    "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
@@ -928,7 +928,7 @@
      "active": -154
     }
    ],
-   "exit_reason": "price fell through range (active -154 < -152) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -154 < -152) — position is all token-X"
   },
   {
    "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
@@ -968,7 +968,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -521 < -519) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -521 < -519) — position is all token-X"
   },
   {
    "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i",
@@ -1003,7 +1003,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -455 < -453) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -455 < -453) — position is all token-X"
   },
   {
    "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
@@ -1093,7 +1093,7 @@
      "active": -549
     }
    ],
-   "exit_reason": "price fell through range (active -549 < -548) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -549 < -548) — position is all token-X"
   },
   {
    "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
@@ -1324,7 +1324,101 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -369 < -368) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -369 < -368) — position is all token-X"
+  },
+  {
+   "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+   "position": "2YpU1UKjr7A4C8KkwkArTZhTyWim1fdYzBsECPyAVvjN",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789221298.248,
+   "entry_active_bin": -210,
+   "minBinId": -212,
+   "maxBinId": -210,
+   "status": "exited",
+   "add_sig": "4cpmUpXdvuSZweeseai4dfMbNmuTHgWBKyTANQAZKqa1YBimCLpRKZ9mLxitVtoqam4EXsEfNSeedrkJzz8vMTfx",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 1078111.8553483165,
+   "base_vol24": 15993580.815828886,
+   "feeY_hist": [
+    {
+     "t": 1789221299.463409,
+     "feeY": 0,
+     "active": -210
+    },
+    {
+     "t": 1789221629.02832,
+     "feeY": 149765,
+     "active": -209
+    }
+   ],
+   "was_in_range": false,
+   "exit_sigs": [
+    "44vB3XKkTMDU2rFJJ5A7VjTai4kaSaWHypzYwpMdQmxjAJcfyW5R92myELpVyGWvRPKmrSLnVpjVJS9d5ekDeMxZ"
+   ],
+   "exit_ts": 1789221678.685
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "66KseE7WMHJomGSzJug3y6kQSUtJV5LX2UNuaZRzQ4nZ",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789222863.746,
+   "entry_active_bin": 424,
+   "minBinId": 422,
+   "maxBinId": 424,
+   "status": "exited",
+   "add_sig": "28CHZvkbUfGiVc6rQ2RzzTjJpXadYdL4QJPfi4Pa88NidQfkWUD84PZ5wh6biejkNukpNumFf4N7tZGunsPcz3bt",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 1052585.022712458,
+   "base_vol24": 8767096.998254875,
+   "feeY_hist": [
+    {
+     "t": 1789222865.2723289,
+     "feeY": 0,
+     "active": 424
+    },
+    {
+     "t": 1789222953.23145,
+     "feeY": 3460,
+     "active": 423
+    }
+   ],
+   "was_in_range": true,
+   "exit_sigs": [
+    "9NoqynzjALFFCYjmhqPWTq23qheKVAfN4CWDPGrY3L3SDtrkBc4648KT7fuB4ALatGQ24swdoo91STGsx5B9kg4"
+   ],
+   "exit_ts": 1789223245.661
+  },
+  {
+   "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
+   "position": "5ARUBXyQucagsjp5PhFsKQaGmkua6AuonmF6kmpu2yg1",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789223804.047,
+   "entry_active_bin": -373,
+   "minBinId": -375,
+   "maxBinId": -373,
+   "status": "exited",
+   "add_sig": "3gZJoHvLf7e5inzUVcwv5etToke3SoieCgZzpFdkSboTd749BfR9McJis6FTEuBjdQFUrc6Fgd976TM8VWXeXgj7",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 111525.24225922344,
+   "base_vol24": 1690863.4253430052,
+   "feeY_hist": [
+    {
+     "t": 1789223805.8099809,
+     "feeY": 0,
+     "active": -373
+    }
+   ],
+   "was_in_range": true,
+   "exit_sigs": [
+    "6qQ8cp6EoUdPegu2p12Zh1x6JAv3osu4MGA26DVnFTn17G8SYXGqfVta4JLMx2e9xA7kjEhEp8hhaBzpyjpdwve"
+   ],
+   "exit_ts": 1789224229.541
   }
  ]
 }

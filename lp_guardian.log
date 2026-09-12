@@ -1095,3 +1095,26 @@
 14:38:28 FpP5SnzB: exited ok
 14:38:55 FpP5SnzB: post-exit sweep rc=1
 14:38:55 guardian pass complete
+14:54:59 GbrDAq3R: active=-210 range=[-212,-210] tvl=$1,078,112 vol24=$15,993,581 feeY=0.000000SOL feeX=0
+14:54:59 guardian pass complete
+15:00:29 GbrDAq3R: active=-209 range=[-212,-210] tvl=$1,076,588 vol24=$15,720,567 feeY=0.000150SOL feeX=77479
+15:00:29 GbrDAq3R: drifted out of range — fee accrual paused
+15:00:29 GbrDAq3R: idle above range (pure SOL, no fees) — watching
+15:00:29 guardian pass complete
+15:01:44 no open positions
+15:04:48 no open positions
+15:07:46 no open positions
+15:10:27 no open positions
+15:13:17 no open positions
+15:18:05 no open positions
+15:21:05 AsSyvUnb: active=424 range=[422,424] tvl=$1,052,585 vol24=$8,767,097 feeY=0.000000SOL feeX=0
+15:21:05 guardian pass complete
+15:22:33 AsSyvUnb: active=423 range=[422,424] tvl=$1,052,700 vol24=$8,767,440 feeY=0.000003SOL feeX=3762
+15:22:33 guardian pass complete
+15:27:54 no open positions
+15:31:03 no open positions
+15:33:51 no open positions
+15:36:45 FpP5SnzB: active=-373 range=[-375,-373] tvl=$111,525 vol24=$1,690,863 feeY=0.000000SOL feeX=0
+15:36:45 guardian pass complete
+15:44:20 no open positions
+15:44:34 no open positions
