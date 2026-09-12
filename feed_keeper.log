@@ -894,3 +894,4 @@
 2026-09-12 02:27:34Z hb: age=5s pass_up=False keep_up=False
 2026-09-12 02:45:35Z SLIP: feed stale 317s, no pass — spawning collector for 20 min
 [collector] subscribed: newToken + migration
+[collector] 200 events logged
