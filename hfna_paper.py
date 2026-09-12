@@ -25,6 +25,9 @@ import json, os, statistics, time
 
 MON = os.path.dirname(os.path.abspath(__file__))
 TAX_F = os.path.join(MON, "pool_tax_cache.json")
+DEPTH_F = os.path.join(MON, "pool_depth_cache.json")
+# depth gate parity with live (09-12): cache-read only; live populates it.
+MIN_SOL_RESERVE = 1000.0
 SNAP = os.path.join(MON, "bin_snapshots.jsonl")
 STATE = os.path.join(MON, "hfna_paper_state.json")
 LOG = os.path.join(MON, "hfna_paper.jsonl")
@@ -205,6 +208,9 @@ def main():
             if tax_bps > 50:
                 continue
             tax_drag = 0.0
+            # NOTE (09-12): paper deliberately does NOT apply the live depth
+            # gate — its job is to keep trading shallow pools risk-free so we
+            # learn whether anything besides depth predicts the bleed.
             if len(pf_recent) >= 2:
                 dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
                 if dt > 0:

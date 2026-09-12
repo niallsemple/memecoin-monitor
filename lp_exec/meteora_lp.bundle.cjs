@@ -74213,6 +74213,17 @@ async function cmdTaxCheck(conn, poolAddr) {
     decimals: parsed.decimals ?? null
   }));
 }
+async function cmdDepthJson(conn, poolAddr) {
+  const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
+  const rY = await conn.getTokenAccountBalance(pool.lbPair.reserveY);
+  const rX = await conn.getTokenAccountBalance(pool.lbPair.reserveX);
+  console.log(JSON.stringify({
+    pool: poolAddr,
+    solReserveY: Number(rY.value.amount) / 1e9,
+    reserveXraw: rX.value.amount,
+    activeBin: pool.lbPair.activeId
+  }));
+}
 async function main() {
   const [cmd, poolAddr, solAmt, widthPct, tag2] = process.argv.slice(2);
   const wallet = loadWallet();
@@ -74226,6 +74237,7 @@ async function main() {
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === "binsjson") await cmdBinsJson(conn, poolAddr);
     else if (cmd === "taxcheck") await cmdTaxCheck(conn, poolAddr);
+    else if (cmd === "depthjson") await cmdDepthJson(conn, poolAddr);
     else if (cmd === "balance") {
       const lam = await conn.getBalance(wallet.publicKey);
       console.log(JSON.stringify({ wallet: wallet.publicKey.toBase58(), lamports: lam, sol: lam / 1e9 }));

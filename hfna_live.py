@@ -22,12 +22,18 @@ WATCH_F = os.path.join(MON, "hfna_watchlist.json")
 ARMED = os.path.join(MON, "HFNA_LIVE_ARMED")
 KILL = os.path.join(MON, "STOP_LIVE_TRADING")
 TAX_F = os.path.join(MON, "pool_tax_cache.json")
+DEPTH_F = os.path.join(MON, "pool_depth_cache.json")
 
 SIZE = 0.1
 BINS_BELOW = 2
 VAC_DROP = 0.60
 FLAT_TH = 5
 ELEV_MIN = 1.5
+# DEPTH GATE (09-12, 16 live trades): pools with <1000 SOL Y-reserve bled
+# -0.0123 over 7 trades; >=1000 SOL pools net +0.0064 and every win came
+# from 7k-deep GBR. Depth is what lets 0.1 SOL exit before the burst
+# reverses. Sample #3 runs with this gate live.
+MIN_SOL_RESERVE = 1000.0
 COOLDOWN = 3600
 TIMEOUT = 1800
 STALL = 300
@@ -84,6 +90,20 @@ def main():
         "pos": None, "seen": {}, "consec_loss": 0, "start_bank": None, "halted": False}
     if st.get("halted"):
         print("pilot HALTED (circuit breaker) — needs manual review"); return
+    # owner directive 09-12 16:36: depth-gated pools only, 0.1 SOL, stop at
+    # +1.0 SOL over sample3_start (7.347707709) or after 24h (deadline
+    # 2026-09-13 16:36 local = 1789301796 epoch).
+    now0 = time.time()
+    if now0 > 1789301796:
+        st["halted"] = True
+        json.dump(st, open(STATE, "w"), indent=1)
+        print("pilot STOPPED: 24h window elapsed"); return
+    tgt = st.get("sample3_start", 7.347707709) + 1.0
+    last_bank = st.get("last_bank", st.get("sample3_start", 7.347707709))
+    if last_bank >= tgt:
+        st["halted"] = True
+        json.dump(st, open(STATE, "w"), indent=1)
+        print(f"pilot STOPPED: profit target reached bank={last_bank:.4f}"); return
 
     hist, rows = load_hist()
     if not rows:
@@ -174,6 +194,7 @@ def main():
                 wa = wallet_sol()
                 if wa is not None and pos.get("wallet_before") is not None:
                     real_pnl = wa - pos["wallet_before"]
+                    st["last_bank"] = wa
                     log_event(kind="real_pnl", pool=p, real_pnl=real_pnl,
                               wallet_before=pos["wallet_before"], wallet_after=wa)
             else:
@@ -238,13 +259,23 @@ def main():
                 taxc[p] = -1   # unknown -> treat as pass but recheck next time
             json.dump(taxc, open(TAX_F, "w"), indent=1)
         tax_bps = taxc.get(p, 0)
-        # HARD SKIP tax pools (09-12, empirical): the tax-aware bar experiment
-        # ran twice — both losses (-0.0094, -0.0052). The transfer tax is a
-        # per-ATTEMPT toll paid even on a 4-min zero-fee exit, so window
-        # selection can't save it at 0.1 SOL size. Non-tax gated trades: 2/2.
         if tax_bps > 50:
             continue
         tax_drag = 0.0
+        # depth gate: cached 1h, fetched on-chain via bundle depthjson.
+        dc = json.load(open(DEPTH_F)) if os.path.exists(DEPTH_F) else {}
+        ent = dc.get(p)
+        if not ent or time.time() - ent.get("t", 0) > 3600:
+            rc = run_bundle("depthjson", p)
+            try:
+                line = [l for l in (rc.stdout or "").splitlines() if l.strip().startswith('{"pool"')][-1]
+                ent = {"t": time.time(), "sol": json.loads(line).get("solReserveY", 0)}
+                dc[p] = ent
+                json.dump(dc, open(DEPTH_F, "w"), indent=1)
+            except Exception:
+                ent = None  # unknown depth -> allow this cycle, recheck next
+        if ent is not None and ent["sol"] < MIN_SOL_RESERVE:
+            continue
         # edge-density gate (recon 09-12): est. 30-min capture >= 4x real costs
         # (~0.004 SOL all-in) plus worst-case tax drag. Without this the pilot
         # enters structurally sub-cost trades — the pre-gate loss streak.
