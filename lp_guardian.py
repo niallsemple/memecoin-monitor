@@ -24,8 +24,11 @@ STATE_F = os.path.join(MON, "lp_positions.json")
 LOG_F = os.path.join(MON, "lp_guardian.log")
 ACT_F = os.path.join(MON, "lp_guardian_actions.jsonl")
 API = "https://dlmm.datapi.meteora.ag"
-CLAIM_MIN_SOL = 0.003
+CLAIM_MIN_SOL = 0.02          # memo #35: batch compounding, not every-pass skimming
+CLAIM_HYSTERESIS_SOL = 0.003  # allow early claim only if stale this long
+CLAIM_MAX_AGE = 6 * 3600
 TVL_COLLAPSE = 0.55
+GSTATE_F = os.path.join(os.path.dirname(os.path.abspath(__file__)), "lp_guardian_state.json")
 
 
 def log(msg):
@@ -163,12 +166,19 @@ def main():
                 p["above_range_passes"] = 0
                 json.dump(st, open(STATE_F, "w"), indent=1)
 
-        if fee_y >= CLAIM_MIN_SOL * 1e9:
-            log(f"{name}: claiming fees ({fee_y/1e9:.6f} SOL side)")
+        gst = json.load(open(GSTATE_F)) if os.path.exists(GSTATE_F) else {}
+        last_claim = gst.get(name, {}).get("last_claim", 0)
+        stale = (time.time() - last_claim) >= CLAIM_MAX_AGE
+        should_claim = fee_y >= CLAIM_MIN_SOL * 1e9 or (fee_y >= CLAIM_HYSTERESIS_SOL * 1e9 and stale)
+        if should_claim:
+            log(f"{name}: claiming fees ({fee_y/1e9:.6f} SOL side, "
+                f"{'threshold' if fee_y >= CLAIM_MIN_SOL * 1e9 else 'stale-hysteresis'})")
             rc3, out3 = run_lp("claim", p["pool"])
             action("claim", name=name, feeY=fee_y, feeX=fee_x, out=out3[:300])
             log(f"{name}: claim rc={rc3}")
             if rc3 == 0:
+                gst.setdefault(name, {})["last_claim"] = time.time()
+                json.dump(gst, open(GSTATE_F, "w"), indent=1)
                 # SOL-only rule: convert any token-side fees the claim dropped in wallet
                 rc4 = subprocess.run([sys.executable, os.path.join(MON, "sweep_to_sol.py")],
                                      capture_output=True, text=True, timeout=280)
