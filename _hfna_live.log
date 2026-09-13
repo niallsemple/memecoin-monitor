@@ -1,0 +1,9 @@
+[exit] 9NdiyGft liquidity refilled fees_est=0.00000
+  kind=live_exit pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 reason=liquidity refilled rc=0 out=EXITED C61WTruAM55a9Q1TskxAjxCuN6ee8QsCQNwMHuwWERPv sigs=5dR9ySexjgF6w1pGQCWepief6YicxzQi9xruX1LYz1BH9yzxABNzLTah3gtzSMxnFdVeKEE4K38UCnsi4HFMSqT2
+
+  kind=real_pnl pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 real_pnl=-0.0015288489999996102 wallet_before=7.307660532 wallet_after=7.306131683 shadow_fees=0.0 feeY_onchain=8.3e-08 capture_ratio=None hold_s=1006.8 exit_reason=liquidity refilled
+  kind=fee_curve pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 curve=[[811.5, -209, 0.0], [827.2, -209, 0.0], [842.8, -209, 0.0], [858.5, -209, 0.0], [874.1, -209, 0.0], [889.8, -209, 0.0], [905.4, -209, 0.0], [921.2, -209, 0.0], [936.9, -209, 0.0], [952.6, -209, 0.0]]
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
