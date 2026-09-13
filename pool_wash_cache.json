@@ -177,5 +177,11 @@
   "n": 15,
   "swaps_5m_at_scan": 596,
   "note": "dust churn AND real bursts: thin dead fill 06:33 (fees=0), then +0.008 fees to 5 arms 06:37 same hour. mixed=tradeable paper, never live probe"
+ },
+ "55EvHE1dURgFbQcQaedL6FJhx2vj6Biu4ajVZC8MbAB2": {
+  "verdict": "organic",
+  "t": 1789280008.029,
+  "n": 15,
+  "swaps_5m_at_scan": 984
  }
 }
