@@ -2316,10 +2316,24 @@
    "entry_active_bin": 419,
    "minBinId": 418,
    "maxBinId": 419,
-   "status": "open",
+   "status": "exited",
    "add_sig": "2YgYoNGVX7NVvY6Um2zuKUiuJW3VdzDYfHgU23JvGrviZDQZiTX8U4EJmpwpV7WxbbXhtVPBPr79sr41db17zJHz",
    "width_pct": null,
-   "strategy_tag": "surf_probe"
+   "strategy_tag": "surf_probe",
+   "base_tvl": 997905.9770566722,
+   "base_vol24": 6178449.48077368,
+   "feeY_hist": [
+    {
+     "t": 1789328572.259239,
+     "feeY": 0,
+     "active": 419
+    }
+   ],
+   "was_in_range": true,
+   "exit_sigs": [
+    "qc3SvEY6zZorKG5uzEa5PuN8kRmLCpfsuQzstwaNkKrh8xNgFV5poF916PAsyQvZG5qEoCVTkD7EekvCFqfoX1y"
+   ],
+   "exit_ts": 1789328634.509
   }
  ]
 }

@@ -25198,3 +25198,8 @@
 {"action": "h16e2_reject", "mint": "8oPCMP8vC5DyzviQVdmKzpKVWDXnLQGF7MRncR94pump", "t": 1789328362.026124, "mom": 1.878, "dd": 0.503, "bf": 0.644, "seed": 3.160493825}
 {"action": "h16e2_reject", "mint": "KL4yfistffegMj1btTqB6kL2aJBfAgb95UDg9Jmpump", "t": 1789328482.096104, "mom": 1.187, "dd": 0.582, "bf": 0.59, "seed": 2.5}
 {"action": "h16e2_close", "mint": "8Wos5TqGFjLozrQaEcX8jnd6AM6qR5ckTrTDGsSjpump", "t": 1789328478.5192928, "outcome": "loss", "mult": 0.92, "mins": 9.8, "mom": 1.001, "dd": 0.999, "bf": 0.6, "seed": 2.967496174}
+{"action": "h16e2_stale", "mint": "5ZkncyaPfkHeoyi8f4qgP2qXfcfQvMpB9vjcXkVdpump", "t": 1789328572.175086, "last_tick_age": 40.4, "seed": 2.443669868}
+{"action": "h16e2_stale", "mint": "HPz6G9W5Dg4JvP79iFTPXtJC1TR9fKEHEEvfAwtZpump", "t": 1789328602.204967, "last_tick_age": 41.1, "seed": 5}
+{"action": "h16e2_stale", "mint": "CozAUxRgAKNsxt8JvKv7SkGSBYJeUj6fJa1NVT2Zpump", "t": 1789328602.204967, "last_tick_age": 34.1, "seed": 2.31515592}
+{"action": "h16e2_stale", "mint": "8NDhtyTQRM5ed3KJARS3hzY8vkeGALZeVCuECzCFpump", "t": 1789328662.250093, "last_tick_age": 17.3, "seed": 2}
+{"action": "h16e2_reject", "mint": "7VcAdDTNoqUk58jJChA4CiaZBpSrE8wCK5WN7oVApump", "t": 1789328662.250093, "mom": 0.646, "dd": 0.463, "bf": 0.568, "seed": 5}
