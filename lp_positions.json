@@ -2033,8 +2033,26 @@
    "entry_active_bin": -2994,
    "minBinId": -2995,
    "maxBinId": -2994,
-   "status": "open",
+   "status": "exited",
    "add_sig": "5jYhQXomBYM4DBCPVvXpifAyhQXwXAGptHv3V1oWFjpqw2SsB2wjeCzRR5McmzSR4eyFoWwdc51TGUJct1H4Ym6t",
+   "width_pct": null,
+   "strategy_tag": "surf_probe",
+   "exit_sigs": [
+    "27BTYsVmJgYuie3UK2YPbU1JFaqVj9EeHxVNHisgp9Yv4isKEKipSgJKYXBym6ALtaF6tiiMoyLLyJYZYBE22J6g"
+   ],
+   "exit_ts": 1789318511.655
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "4vZ8sTERBeRy19jWWYXcQxMAyV6iNu3UBFab72TDeMQu",
+   "name": null,
+   "sol_in": 0.05,
+   "ts": 1789318896.49,
+   "entry_active_bin": 419,
+   "minBinId": 418,
+   "maxBinId": 419,
+   "status": "open",
+   "add_sig": "39L2idB22Zu4P2Ehf7uLBL1APqXKw8epHkrDi8Mu13Jmhxg41mhVoX5V7doUP1iBctD9Dfh5GSyt5XkGHsZ5BXLr",
    "width_pct": null,
    "strategy_tag": "surf_probe"
   }

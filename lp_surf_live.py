@@ -79,9 +79,19 @@ def open_position():
             return p
     return None
 
+# probe #2+: only pools with positive trailing sim P&L, strongest first.
+# STONK probe #1 measured -9.2% round trip at 0.02 SOL — never re-probe
+# a pool the router's own sim shows negative.
+POOL_PRIORITY = ["EMBER-SOL", "MET-SOL", "ZEC-SOL", "ANSEM-SOL", "STONK-SOL"]
+
 def main():
-    metas = {p["addr"]: p for p in json.load(open(POOLS))["pools"]
-             if p.get("y_sym") == "SOL"}
+    all_metas = {p["addr"]: p for p in json.load(open(POOLS))["pools"]
+                 if p.get("y_sym") == "SOL"}
+    metas = {}
+    for name in POOL_PRIORITY:          # preserve priority order
+        for a, m in all_metas.items():
+            if m["name"] == name:
+                metas[a] = m
     log({"kind": "start", "size": SIZE, "dry": DRY,
          "pools": [m["name"] for m in metas.values()]})
     last_exit = 0
@@ -129,8 +139,17 @@ def main():
         if time.time() - last_exit < COOLDOWN_S:
             time.sleep(POLL_S)
             continue
-        # scan for gated entry
+        # scan for gated entry (priority order, router sim-P&L must be >= 0)
+        router = {}
+        try:
+            router = {d["name"]: d for d in json.load(
+                open(os.path.join(BASE, "router_state.json")))["pools"]}
+        except Exception:
+            pass
         for addr, meta in metas.items():
+            rd = router.get(meta["name"])
+            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < 0:
+                continue              # router says this pool is a bleeder
             rows = recent(addr)
             if len(rows) < 5:
                 continue
