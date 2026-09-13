@@ -5,3 +5,6 @@
 [exit] CnK1jPqS tripwire ab=-442<-441 fees=0.00621 markout=0.00197 net=+0.00224 bank=0.9870
 [enter] 9NdiyGft HFNA thin Y-only 0.1 SOL bins [-229,-227] elev=7.9x tx5=132 thin=False
 [exit] 9NdiyGft liquidity refilled fees=0.00168 markout=0.00000 net=+0.00068 bank=0.9877
+[enter] 6WwtGMXu HFNA thin Y-only 0.1 SOL bins [-466,-464] elev=1.5x tx5=89 thin=True
+[exit] 6WwtGMXu fee decayed (1.00x) fees=0.00482 markout=0.00000 net=+0.00382 bank=0.9915
+[enter] 6DkVy4DP HFNA thin Y-only 0.1 SOL bins [-474,-472] elev=377.7x tx5=287 thin=True
