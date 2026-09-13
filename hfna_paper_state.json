@@ -1,8 +1,8 @@
 {
- "watermark": 1789331192.98,
+ "watermark": 1789331632.199,
  "pos": null,
- "bankroll": 1.2037202773642646,
- "trades": 170,
+ "bankroll": 1.2027202773642647,
+ "trades": 171,
  "wins": 43,
  "seen": {
   "EEkVx3wibBK6m5Fc9VaUTfr32Xwwopv9n7PrvS4Qp9eb": 1789168974.708501,
@@ -46,7 +46,7 @@
   "CnK1jPqSuhbz1ZEHHhVmud3bkUQyHWsqvRuvW1wQGF9f": 1789305278.836201,
   "4YAs6WdHjCLxrnvfFaSXMj12KwLF1ioyXmLZ1ENbBDEB": 1789312453.459977,
   "FyEWqfL5RMAVdyozW1ZkukgzAgWk6rhkBUhKYCTabmiW": 1789312720.1617842,
-  "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN": 1789327773.9247098
+  "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN": 1789331385.898879
  },
  "restatement_note": "2026-09-11: bankroll/wins restated from PROTO_MULT=20 to true lpMult=9.0 (protocolShare=1000 measured on-chain). Old log entries carry no 'mult' field (=20); new entries record per-pool mult."
 }
