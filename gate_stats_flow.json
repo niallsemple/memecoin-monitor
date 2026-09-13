@@ -1,11 +1,11 @@
 {
  "no_flow": 13,
- "no_vacuum": 170,
- "no_settle": 21,
- "cooldown": 40,
+ "no_vacuum": 196,
+ "no_settle": 24,
+ "cooldown": 42,
  "short_hist": 6,
- "low_txflow": 190,
- "low_elev": 6,
+ "low_txflow": 198,
+ "low_elev": 7,
  "tax": 2,
- "no_tape": 21
+ "no_tape": 42
 }
