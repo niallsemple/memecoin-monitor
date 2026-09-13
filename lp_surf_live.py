@@ -35,6 +35,8 @@ DRY = os.environ.get("DRY") == "1"
 EXIT_SOL_H = 0.02
 STRONG_FLOW_SOL_H = float(os.environ.get("SURF_STRONG_FLOW", "0.15"))
 MIN_DRIFT_PCT = float(os.environ.get("SURF_MIN_DRIFT", "0.1"))
+# block only clear sim-bleeders; marginal pools are worth cheap live probes
+ROUTER_BLOCK_NET = float(os.environ.get("SURF_ROUTER_BLOCK", "-0.005"))
 STALL_S = 120
 MAX_HOLD_S = 1800
 COOLDOWN_S = 600
@@ -243,7 +245,7 @@ def main():
         for addr, meta in metas.items():
             rd = router.get(meta["name"])
             rows = recent(addr)
-            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < 0:
+            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < ROUTER_BLOCK_NET:
                 # router says bleeder — but log if flow gate WOULD have fired,
                 # so we can measure what the gate is costing us
                 if len(rows) >= 5:
