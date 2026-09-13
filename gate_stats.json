@@ -1,12 +1,12 @@
 {
  "tax": 142,
- "no_vacuum": 4549,
- "no_settle": 408,
- "deny": 3017,
+ "no_vacuum": 4623,
+ "no_settle": 410,
+ "deny": 3079,
  "cooldown": 526,
- "no_flow": 149,
- "short_hist": 113,
- "low_elev": 349,
+ "no_flow": 155,
+ "short_hist": 116,
+ "low_elev": 369,
  "low_capture30": 66,
  "no_prev": 35
 }

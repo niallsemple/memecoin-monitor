@@ -194,6 +194,17 @@ def main():
                         log({"kind": "sweep", "pool": pos["pool"],
                              "out": (sw.stdout + sw.stderr)[-400:]})
                         time.sleep(10)
+                        # probe #5/#8 lesson: verdict must be post-SOL-only.
+                        # If sweep left residual/ATA open, retry once.
+                        if "SOL-only: YES" not in (sw.stdout + sw.stderr):
+                            time.sleep(5)
+                            sw2 = subprocess.run(
+                                [sys.executable, "sweep_to_sol.py"],
+                                capture_output=True, text=True,
+                                cwd=BASE, timeout=300)
+                            log({"kind": "sweep_retry", "pool": pos["pool"],
+                                 "out": (sw2.stdout + sw2.stderr)[-400:]})
+                            time.sleep(10)
                         try:
                             post_bal = wallet_sol()
                             pre = None
