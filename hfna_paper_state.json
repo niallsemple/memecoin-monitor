@@ -1,19 +1,8 @@
 {
- "watermark": 1789259975.531,
- "pos": {
-  "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
-  "t_entry": 1789259974.571,
-  "low": -174,
-  "high": -172,
-  "fees": 0.0,
-  "markout": 0.0,
-  "elev": 334.3333333333333,
-  "last_t": 1789259974.571,
-  "last_pf": 2191004409,
-  "trough": 677921274.3120495
- },
- "bankroll": 1.2600798471553585,
- "trades": 110,
+ "watermark": 1789260297.068,
+ "pos": null,
+ "bankroll": 1.2598864816538065,
+ "trades": 111,
  "wins": 30,
  "seen": {
   "EEkVx3wibBK6m5Fc9VaUTfr32Xwwopv9n7PrvS4Qp9eb": 1789168974.708501,
