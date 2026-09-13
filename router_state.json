@@ -1,5 +1,5 @@
 {
- "t": 1789329352.3935208,
+ "t": 1789329740.421555,
  "trail_min": 60,
  "size": 0.3,
  "pools": [
@@ -7,65 +7,65 @@
    "name": "SOL-USDC",
    "addr": "5rCf1DM8",
    "trades": 7,
-   "net": -0.008221,
+   "net": -0.008128,
    "decision": "reject",
-   "reason": "net -0.00822 over 7 trades"
+   "reason": "net -0.00813 over 7 trades"
   },
   {
    "name": "SOL-USDC tight",
    "addr": "HTvjzsfX",
    "trades": 8,
-   "net": -0.01095,
+   "net": -0.011017,
    "decision": "reject",
-   "reason": "net -0.01095 over 8 trades"
+   "reason": "net -0.01102 over 8 trades"
   },
   {
    "name": "EMBER-USDC",
    "addr": "6e4ewHhG",
    "trades": 9,
-   "net": -0.002657,
-   "decision": "select",
-   "reason": "ok"
+   "net": -0.00891,
+   "decision": "reject",
+   "reason": "net -0.00891 over 9 trades"
   },
   {
    "name": "EMBER-SOL",
    "addr": "GbrDAq3R",
-   "trades": 8,
-   "net": 0.003045,
-   "decision": "select",
-   "reason": "ok"
+   "trades": 7,
+   "net": -0.008725,
+   "decision": "reject",
+   "reason": "net -0.00873 over 7 trades"
   },
   {
    "name": "STONK-SOL",
    "addr": "zxTpi4Bt",
-   "trades": 12,
-   "net": -0.020015,
+   "trades": 11,
+   "net": -0.024194,
    "decision": "reject",
-   "reason": "net -0.02002 over 12 trades"
+   "reason": "net -0.02419 over 11 trades"
   },
   {
    "name": "MET-SOL",
    "addr": "AsSyvUnb",
-   "trades": 8,
-   "net": -0.000124,
-   "decision": "select",
-   "reason": "ok"
+   "trades": 7,
+   "net": -0.004014,
+   "decision": "reject",
+   "reason": "net -0.00401 over 7 trades"
   },
   {
    "name": "ZEC-SOL",
    "addr": "8eybKAvj",
-   "trades": 10,
-   "net": -0.009744,
+   "trades": 11,
+   "net": -0.007763,
    "decision": "reject",
-   "reason": "net -0.00974 over 10 trades"
+   "reason": "net -0.00776 over 11 trades"
   },
   {
    "name": "ANSEM-SOL",
    "addr": "6e7V9eeg",
    "trades": 11,
-   "net": -0.009082,
+   "net": -0.018707,
    "decision": "reject",
-   "reason": "net -0.00908 over 11 trades"
+   "reason": "net -0.01871 over 11 trades"
   }
  ]
 }
