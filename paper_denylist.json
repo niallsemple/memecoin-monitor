@@ -18,9 +18,11 @@
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
   "5Z6frpb4WyqNZqUxj8VN6gnwUZ6gVmpgzaseK2z3sDcB",
   "55EvHE1dURgFbQcQaedL6FJhx2vj6Biu4ajVZC8MbAB2",
-  "ACLU1TVSpcpUzUEjT8PCw1ztsFyNUcresF9UFSb3mZe3"
+  "ACLU1TVSpcpUzUEjT8PCw1ztsFyNUcresF9UFSb3mZe3",
+  "qhJ7kLjrE68sbDF11CpwMt3P9rqiwZtretM5ZzeAX6o"
  ],
  "notes": {
-  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": "3 consecutive zero-fee fills (2026-09-12): elevation signal real but fee flow never reaches outside LP bins; structurally untradeable for us"
+  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": "3 consecutive zero-fee fills (2026-09-12): elevation signal real but fee flow never reaches outside LP bins; structurally untradeable for us",
+  "qhJ7kLjrE68sbDF11CpwMt3P9rqiwZtretM5ZzeAX6o": "wash-concentrated (4 payers, median 12 microSOL dust cycling) \u2014 forensicked 09-13 WHILE LIVE HELD IT; engine gap: entered unclassified pool"
  }
 }

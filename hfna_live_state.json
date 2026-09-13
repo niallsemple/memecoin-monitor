@@ -1,17 +1,5 @@
 {
- "pos": {
-  "pool": "qhJ7kLjrE68sbDF11CpwMt3P9rqiwZtretM5ZzeAX6o",
-  "t_entry": 1789299848.3624399,
-  "low": -123,
-  "high": -121,
-  "fees_est": 0.0,
-  "elev": 257.4102564102564,
-  "last_t": 1789299796.189,
-  "last_pf": 975128983,
-  "trough": 21144210.752981834,
-  "wallet_before": 7.308916273,
-  "entry_out": "s\n(node:41821) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n"
- },
+ "pos": null,
  "seen": {
   "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY": 1789247910.856906,
   "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i": 1789208213.87038,
@@ -35,11 +23,12 @@
   "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD": false,
   "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x": false,
   "EyQTPRzUY2VcuiVhJNc8NaYoww2uxTeT4jfb6DqxLxwA": false,
-  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": false
+  "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": false,
+  "qhJ7kLjrE68sbDF11CpwMt3P9rqiwZtretM5ZzeAX6o": false
  },
- "sample_n": 17,
+ "sample_n": 18,
  "sample2_start": 7.354912803,
  "sample3_start": 7.347707709,
- "last_bank": 7.308662833,
+ "last_bank": 7.308685532,
  "rebuild": "reflow gates ported 09-13: tx5>=75 fresh, denylist, capped follow x2"
 }

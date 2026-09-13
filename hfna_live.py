@@ -25,6 +25,8 @@ TAX_F = os.path.join(MON, "pool_tax_cache.json")
 DEPTH_F = os.path.join(MON, "pool_depth_cache.json")
 TXFLOW = os.path.join(MON, "txflow.jsonl")
 DENY_F = os.path.join(MON, "paper_denylist.json")
+WASH_F = os.path.join(MON, "pool_wash_cache.json")
+WASH_MAX_AGE = 86400.0  # organic verdicts stale after 24h
 # reflow rebuild (09-13, owner directive "rebuild engine then go live"):
 # port the three gates that made hfna_paper_reflow the only positive paper arm
 # (19 trades, +0.0048 net, ZERO strikes as of 09-13 morning):
@@ -309,6 +311,15 @@ def main():
         deny = set(json.load(open(DENY_F))["pools"])
     except Exception:
         pass
+    # forensics gate (09-13, qhJ7 incident): denylist-only is REACTIVE — qhJ7
+    # entered live unclassified and forensicked wash WHILE WE HELD IT
+    # (-0.00023 scratch). Live now requires a POSITIVE organic verdict,
+    # fresh <24h. Fail-closed on unknown — same philosophy as the depth gate.
+    washc = {}
+    try:
+        washc = json.load(open(WASH_F))
+    except Exception:
+        pass
     sw5 = latest_swaps5()
     for p in watch:
         r = latest.get(p)
@@ -316,6 +327,9 @@ def main():
             continue
         # reflow gate 2: wash denylist — never enter denied pools
         if p in deny or p in LIVE_NEVER:
+            continue
+        wv = washc.get(p)
+        if not wv or wv.get("verdict") != "organic" or time.time() - wv.get("t", 0) > WASH_MAX_AGE:
             continue
         # reflow gate 1: confirmed hot tape, fresh (<150s), >=75 swaps/5min.
         # Stale or missing tape = no entry (fail closed, same as depth).
