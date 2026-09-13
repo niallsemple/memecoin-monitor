@@ -1,23 +1,59 @@
 {
- "ts": 1789284826.8186188,
+ "ts": 1789285072.5930188,
  "rows": [
   {
    "pubkey": "76VWY5FL2DukxnmS5XaJqap51BMWBkXYfmxEGKWr9RHZ",
    "owner": "ADjkTxH5qtGHkU6L4yYgyZmaWkpyAeTavqWEwrMxDSD4",
-   "adj_debt": 4.18262101822029,
-   "unhealthy": 5.572268397863284,
-   "margin": 1.3896473796429936,
-   "slot_age": 224,
+   "adj_debt": 4.182519395223051,
+   "unhealthy": 5.572130411243906,
+   "margin": 1.3896110160208552,
+   "slot_age": 39,
    "stable_pair": false
+  },
+  {
+   "pubkey": "6EE6vuLJrS72wvVpKsZ8MRhd4e2WJqju1yFD5FxVgJ3t",
+   "owner": "BWvxbHvoqEaRW15QXWFu3c7Pnn9zJGW7nhTWuPDnJ9xM",
+   "adj_debt": 277.53288890426893,
+   "unhealthy": 2559.0585715544225,
+   "margin": 2281.5256826501536,
+   "slot_age": 154,
+   "stable_pair": false
+  },
+  {
+   "pubkey": "BYojGuT56e2TUb8PQwRyT1wL5X5Ekv4kZH1HUQgBu6Zg",
+   "owner": "5HU4jpN65F7AGXYa6otSQ5yEYiroxcCk9DimpTroGvbF",
+   "adj_debt": 20628.14983096401,
+   "unhealthy": 29516.072074253058,
+   "margin": 8887.92224328905,
+   "slot_age": 570,
+   "stable_pair": true
   },
   {
    "pubkey": "EeGRivDc4LSzuTvzgFmHGsatgp8o5RPtC9tv52QvKguS",
    "owner": "4gkajEwHYCxeZi5pdNr3QHS67PW6bBRmvYt63CJfapkb",
-   "adj_debt": 53456.792425947206,
-   "unhealthy": 63688.04888011585,
-   "margin": 10231.256454168644,
-   "slot_age": 495,
+   "adj_debt": 53706.77725533232,
+   "unhealthy": 63686.15413206501,
+   "margin": 9979.376876732684,
+   "slot_age": 565,
    "stable_pair": false
+  },
+  {
+   "pubkey": "6zn3UhC8X1LGgH76TA9qnfuC2wv83jwCvwLJ5Mr8vSWN",
+   "owner": "J7VP3NfH9hrVzC6s9fZLpjtCfDpiaDVHYEUkhh3VyMxf",
+   "adj_debt": 47849.87655108139,
+   "unhealthy": 89262.10552744375,
+   "margin": 41412.22897636236,
+   "slot_age": 58,
+   "stable_pair": false
+  },
+  {
+   "pubkey": "EvcV225YPSS3LCcPSbPRpZYWdkirQN7dCxYQH6bbUhUG",
+   "owner": "BFW7pj6HA4KDNjs8WaG7LiQ6FgoybZtoqTKhHyJh1vAt",
+   "adj_debt": 1279321.6739835837,
+   "unhealthy": 1818081.3576812986,
+   "margin": 538759.6836977149,
+   "slot_age": 17,
+   "stable_pair": true
   }
  ]
 }
