@@ -26,6 +26,7 @@ EXIT_SOL_H = 0.02
 STALL_S = 120
 MAX_HOLD_S = 1800
 EXEC_COST_SOL = 0.0001   # verified lifecycle cost ceiling (entry+exit txs)
+EXIT_SLIP_PCT = float(os.environ.get("EXIT_SLIP_PCT", "0.005"))  # flat fill-exit slippage
 
 def load(prefix, lookback_s):
     pools = {p["addr"]: p for p in json.load(open(POOLS))["pools"]}
@@ -148,7 +149,12 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     else:                                 # unfilled Y (or still in-bin mix)
         pos_val = size
     hold_s = exit_row["t"] - entry["t"]
-    pnl = fees_earned + (pos_val - size) - 2 * EXEC_COST_SOL
+    # exit slippage: on fill_stop we hold X and must swap X->Y on a thin token;
+    # haircut scales with our share of the bin we just got filled in
+    slip = 0.0
+    if why == "fill_stop":
+        slip = size * EXIT_SLIP_PCT   # flat assumption; live probes must measure truth
+    pnl = fees_earned + (pos_val - size) - 2 * EXEC_COST_SOL - slip
     exit_idx = next((k for k, r in enumerate(rows) if r is exit_row), len(rows) - 1)
     return ({"pool": meta["name"], "entry_t": entry["t"], "hold_s": hold_s,
             "why": why, "size": size, "fees": fees_earned,

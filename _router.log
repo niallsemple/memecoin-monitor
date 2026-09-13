@@ -24,3 +24,5 @@ Traceback (most recent call last):
     if d is None or d < MOM_GATE_PCT:
                         ^^^^^^^^^^^^
 NameError: name 'MOM_GATE_PCT' is not defined
+router: select=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'EMBER-SOL', 'STONK-SOL', 'MET-SOL', 'ZEC-SOL', 'ANSEM-SOL'] reject=[]
+router: select=['EMBER-USDC', 'MET-SOL', 'ANSEM-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-SOL', 'STONK-SOL', 'ZEC-SOL']
