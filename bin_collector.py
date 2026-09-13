@@ -113,6 +113,14 @@ def round_once(now):
                 pools.append(b["pool"])
     except Exception:
         pass
+    # deep-pool capacity branch (09-13 mandate v4): always snapshot SOL/USDC
+    # etc. for the size-at-depth model. Paper research only, never live.
+    try:
+        for cp in json.load(open(os.path.join(MON, "capacity_pools.json")))["pools"]:
+            if cp["addr"] not in pools:
+                pools.append(cp["addr"])
+    except Exception:
+        pass
     # always track HFNA live-pilot watchlist pools — the pilot cannot evaluate
     # entries without fresh snapshots even when we hold no position
     try:

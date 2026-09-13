@@ -1,0 +1,7 @@
+{
+  "note": "deep-pool capacity branch (mandate v4): always snapshot these for the size-response-at-depth model. NOT live-engine targets.",
+  "pools": [
+    {"addr": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6", "name": "SOL-USDC", "tvl_usd": 5130000, "bin_step": 4, "fee_pct": 0.04},
+    {"addr": "HTvjzsfX3yU6BUodCjZ5vZkUrAxMDTrBs3CJaq43ashR", "name": "SOL-USDC tight", "tvl_usd": 360000, "bin_step": 1, "fee_pct": 0.01}
+  ]
+}

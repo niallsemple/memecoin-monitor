@@ -183,6 +183,15 @@ def main():
             else:
                 pos["fees_at_progress"] = pos["fees"]
                 pos["stall_s"] = 0
+            # marginal-exit rule (09-13 mandate v4, continuation-decision
+            # framing): instead of predicting windows, ask every poll "is
+            # the next interval worth it?" Probe#4's curve showed ~70% of
+            # fees front-loaded then multi-minute dead stretches. If fee
+            # accrual stalls 120s, expected next-interval fees < drag —
+            # return capital. Fires before the legacy 300s stall exit.
+            if pos.get("stall_s", 0) >= 120:
+                pos["exit_reason"] = "marginal stop 120s"
+                break
             if pos.get("stall_s", 0) >= 300:
                 pos["exit_reason"] = "flow stalled 300s"
                 break
