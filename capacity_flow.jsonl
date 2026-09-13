@@ -301,3 +301,11 @@
 {"t": 1789321277.087952, "pool": "AsSyvUnb", "name": "MET-SOL", "lp_fee_sol_per_h": 0.0, "liq_active_sol": 3.6, "spike": false}
 {"t": 1789321277.087952, "pool": "8eybKAvj", "name": "ZEC-SOL", "lp_fee_sol_per_h": 2.40249499, "liq_active_sol": 74.8, "spike": true}
 {"t": 1789321277.087952, "pool": "6e7V9eeg", "name": "ANSEM-SOL", "lp_fee_sol_per_h": 2.25096607, "liq_active_sol": 4.1, "spike": true}
+{"t": 1789321469.194756, "pool": "5rCf1DM8", "name": "SOL-USDC", "lp_fee_sol_per_h": 0.0, "liq_active_sol": 18167.3, "spike": false}
+{"t": 1789321469.194756, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 0.01762702, "liq_active_sol": 278.0, "spike": false}
+{"t": 1789321469.194756, "pool": "6e4ewHhG", "name": "EMBER-USDC", "lp_fee_sol_per_h": 0.00045078, "liq_active_sol": 6.1, "spike": false}
+{"t": 1789321469.194756, "pool": "GbrDAq3R", "name": "EMBER-SOL", "lp_fee_sol_per_h": 0.0, "liq_active_sol": 1.6, "spike": false}
+{"t": 1789321469.194756, "pool": "zxTpi4Bt", "name": "STONK-SOL", "lp_fee_sol_per_h": 0.47980391, "liq_active_sol": 49.4, "spike": true}
+{"t": 1789321469.194756, "pool": "AsSyvUnb", "name": "MET-SOL", "lp_fee_sol_per_h": 0.43913091, "liq_active_sol": 1.6, "spike": true}
+{"t": 1789321469.194756, "pool": "8eybKAvj", "name": "ZEC-SOL", "lp_fee_sol_per_h": 0.63706071, "liq_active_sol": 57.4, "spike": true}
+{"t": 1789321469.194756, "pool": "6e7V9eeg", "name": "ANSEM-SOL", "lp_fee_sol_per_h": 0.02357743, "liq_active_sol": 11.0, "spike": true}
