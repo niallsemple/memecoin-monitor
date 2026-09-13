@@ -21,7 +21,10 @@ PROGRAMS = {
     "t2022": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
 }
 PROG_BYTES = {"spl": lt.TOKENKEG, "t2022": lt.TOKEN2022}
-MIN_SELL_SOL = 0.0005   # below this a sale costs more in fees than it returns
+MIN_SELL_SOL = 0.003   # 09-13: raised from 0.0005 — below ~0.003 SOL a
+                       # Jupiter sell's priority fee + slippage eats the
+                       # proceeds (observed: 0.0002 SOL fee on 0.0015 SOL
+                       # dust sells). Dust now goes straight to burn+close.
 
 
 def scan(addr, prog):

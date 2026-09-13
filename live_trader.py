@@ -351,14 +351,26 @@ def jupiter_quote_sell(mint, token_amount_raw, slippage_bps=None):
 
 
 def _jupiter_submit(q):
-    """Sign a Jupiter quote locally and submit. Returns tx signature."""
+    """Sign a Jupiter quote locally and submit. Returns tx signature.
+
+    §cost-compression 09-13: was a FLAT 0.0002 SOL priority fee on every
+    swap — on a 0.0015 SOL dust sweep that is a 13% tax, and cost_decomp
+    showed sweep paths burning 0.0008+ SOL/trade in pure priority fees.
+    Now value-scaled: 0.5% of expected outAmount, floored at 5k lamports
+    (one base fee), capped at 100k (0.0001 SOL) for big real exits.
+    """
     key, address = _load_key()
+    try:
+        out_amt = int(q.get("outAmount", 0))
+    except Exception:
+        out_amt = 0
+    pfee = max(5_000, min(100_000, int(out_amt * 0.005)))
     req = urllib.request.Request(
         JUP_S,
         data=json.dumps({
             "quoteResponse": q, "userPublicKey": address,
             "wrapAndUnwrapSol": True,
-            "prioritizationFeeLamports": PRIOR_FEE_MICROLAMPORTS,
+            "prioritizationFeeLamports": pfee,
         }).encode(),
         headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=25) as r:
