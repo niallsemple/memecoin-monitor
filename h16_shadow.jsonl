@@ -23079,3 +23079,11 @@
 {"action": "h16_reject", "mint": "BeQsu9TvpeydzUq5sSzUYryN9YoUCLsDZ3mrQrfvpump", "t": 1789265978.6905868, "mom": 1.435, "dd": 0.616, "bf": 0.556, "seed": 3.366324381}
 {"action": "h16_reject", "mint": "9PF31E541uPB5z6RkUt919JXXxpHpLeadHooQeTDpump", "t": 1789265978.6905868, "mom": 0.964, "dd": 0.283, "bf": 0.566, "seed": 3}
 {"action": "h16_reject", "mint": "G5FPSTewChM8uAvUEfHehkzP6ros7QpKCW6zoz3Tpump", "t": 1789265978.6905868, "mom": 0.633, "dd": 0.633, "bf": 0.105, "seed": 3}
+{"action": "h16_reject", "mint": "7U5Ke4bg1a5WaTGUTGusknxrWc3jwj3JQ3r7EkRcpump", "t": 1789266073.099243, "mom": 0.758, "dd": 0.407, "bf": 0.56, "seed": 4.938271603}
+{"action": "h16_open", "mint": "AAXhoRTTpZFTCKqVZaqfHrvfkpSjxkkjXkD6XiRtpump", "t": 1789266044.79102, "scored_at": 1789266073.099243, "entry_mcap": 40.2031, "mom": 1.189, "dd": 0.815, "bf": 0.763, "seed": 2.334928021}
+{"action": "h16_open", "mint": "7vBnQemdQmzm685ZNZ3vcvYX7ZPh6HqnxMCyjbmTpump", "t": 1789266124.666819, "scored_at": 1789266167.286112, "entry_mcap": 43.404, "mom": 1.103, "dd": 0.883, "bf": 0.811, "seed": 4.938271603}
+{"action": "h16_reject", "mint": "CpGbnQMM11HcdYEzUMDeS5UJFNJ4e5WC7mdEHRVspump", "t": 1789266167.286112, "mom": 0.761, "dd": 0.575, "bf": 0.421, "seed": 2}
+{"action": "h16_reject", "mint": "574jcQrNtZF4zSqmD4CEGA4u2wuLjCiZ8DHj5fvbpump", "t": 1789266260.6959949, "mom": 3.415, "dd": 0.226, "bf": 0.584, "seed": 2.5}
+{"action": "h16_close", "mint": "97y9UDoaAK8XwPfZkwNzvd23QTrTaPuUq4QEsf5929HZ", "t": 1789266209.674689, "outcome": "loss", "mult": 0.92, "mins": 7.5, "mom": 1.265, "dd": 0.789, "bf": 0.875, "seed": 4.197530862}
+{"action": "h16_close", "mint": "AAXhoRTTpZFTCKqVZaqfHrvfkpSjxkkjXkD6XiRtpump", "t": 1789266195.686715, "outcome": "loss", "mult": 0.92, "mins": 2.5, "mom": 1.189, "dd": 0.815, "bf": 0.763, "seed": 2.334928021}
+{"action": "h16_close", "mint": "7vBnQemdQmzm685ZNZ3vcvYX7ZPh6HqnxMCyjbmTpump", "t": 1789266204.8555021, "outcome": "loss", "mult": 0.92, "mins": 1.3, "mom": 1.103, "dd": 0.883, "bf": 0.811, "seed": 4.938271603}
