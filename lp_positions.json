@@ -1941,10 +1941,24 @@
    "entry_active_bin": -216,
    "minBinId": -218,
    "maxBinId": -216,
-   "status": "open",
+   "status": "exited",
    "add_sig": "dV5Wapq37MyZAHGebsH2WcH6BdiwWPEcTEJWzzc9o2sv7yLtucWBMFKAF6NKCcvA5yJpmsZSvsBX3sEeHQW6Ft6",
    "width_pct": null,
-   "strategy_tag": "hfna_live_v1"
+   "strategy_tag": "hfna_live_v1",
+   "base_tvl": 487287.791751177,
+   "base_vol24": 2759719.4171534786,
+   "feeY_hist": [
+    {
+     "t": 1789291601.437688,
+     "feeY": 419194,
+     "active": -216
+    }
+   ],
+   "was_in_range": true,
+   "exit_sigs": [
+    "2HCpfMTbtMa3YWQvm4vwbJW9XV4wC9S1Du2r2iyZydZbyPfUVBqxaURkSaQeMtKRDBkuxv3JLvSKbN343YVLsLmb"
+   ],
+   "exit_ts": 1789291744.668
   }
  ]
 }
