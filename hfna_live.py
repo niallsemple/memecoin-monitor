@@ -50,7 +50,13 @@ LIVE_NEVER = {
     "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc",
 }
 
-SIZE = 0.1
+SIZE = 0.02  # 09-13 15:11: cost-truth probes (mandate v3). Objective of next
+             # 3 lifecycles is verifying the post-patch ~0.00003 SOL all-in
+             # execution cost — NOT size. Smallest size exercising the
+             # identical lifecycle (entry/LP/claim/remove/sweep/ATA cleanup).
+             # Ratify only after 3 clean lifecycles; then test 0.02-0.05
+             # plateau out-of-sample. Revert to size research only after
+             # cost truth is wallet-verified.
 BINS_BELOW = 2
 VAC_DROP = 0.60
 FLAT_TH = 5
