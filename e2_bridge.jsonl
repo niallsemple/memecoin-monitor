@@ -471,3 +471,10 @@
 {"t": 1789331126.185251, "mint": "HW7mXd7BpK64yH8rX6hgEuF8FjCW7YsMxPK7fShZpump", "mom": 1.018, "dd": 0.982, "bf": 0.714, "entry_mcap": 34.5166, "seed": 2.446111524, "open_age_s": 9.2, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1789331877.926042, "mint": "E1fhWgY6nM47yFUxua83VaxysbvoGnfjqpmCGfV9pump", "mom": 1.0, "dd": 1.0, "bf": 0.667, "entry_mcap": 34.2759, "seed": 2.967496174, "open_age_s": 6.9, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1789331982.984816, "mint": "E1fhWgY6nM47yFUxua83VaxysbvoGnfjqpmCGfV9pump", "action": "bridge_note_close", "outcome": "win", "mult": 1.2}
+{"t": 1789334297.98014, "mint": "CrPXZnUhV4hMNKNPsqnKqQqK6zNXaKv1r9NgMJmopump", "mom": 1.0, "dd": 1.0, "bf": 0.667, "entry_mcap": 34.6388, "seed": 2.967496174, "open_age_s": 321.0, "action": "bridge_skip_stale"}
+{"t": 1789334718.28025, "mint": "HW7mXd7BpK64yH8rX6hgEuF8FjCW7YsMxPK7fShZpump", "action": "bridge_note_close", "outcome": "timeout", "mult": 0.9612}
+{"t": 1789334973.512716, "mint": "GPRSwKcU2FAo3VrNuBLk7P12hhhnAyheVr7n6hNypump", "mom": 1.05, "dd": 0.952, "bf": 0.9, "entry_mcap": 35.0302, "seed": 2.295383555, "open_age_s": 7.3, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1789335078.584832, "mint": "GPRSwKcU2FAo3VrNuBLk7P12hhhnAyheVr7n6hNypump", "action": "bridge_note_close", "outcome": "win", "mult": 1.2}
+{"t": 1789335964.87236, "mint": "DHeZj34QhFxg6akRskmT14jCwtRG15YXQrdFoktDpump", "mom": 1.021, "dd": 0.979, "bf": 0.75, "entry_mcap": 34.0435, "seed": 2.325042004, "open_age_s": 3.1, "action": "bridge_blocked", "reason": "seed_floor"}
+{"t": 1789336190.017199, "mint": "DHeZj34QhFxg6akRskmT14jCwtRG15YXQrdFoktDpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1789337587.43209, "mint": "CrPXZnUhV4hMNKNPsqnKqQqK6zNXaKv1r9NgMJmopump", "action": "bridge_note_close", "outcome": "timeout", "mult": 1.0}

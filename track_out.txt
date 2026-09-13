@@ -1,3 +1,8 @@
 tracking 456 hits
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/BLSbhF99cqNMdPnXdCZiVGZzXuu54rvMkUKNnMwXQS1E
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x07262b0b55820a8d46129dd998b8ee8f90419c19
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x4f364c29e735b19652b37bfac71a1ed85a43476ed286ef940f3f2cc2a5313879
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x5ab9f121151d3ba486782bceacf713178e0e7383/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x361a47ce3ff1d6e8dcc759460ef09bbff24ca33e
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x0a4d8e4ab0f3f72ab5f30f50d3fecca755a75847
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x4641bb0b9f6fefc0c359ae812c2cc0eeb5193764

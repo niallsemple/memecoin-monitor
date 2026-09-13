@@ -82,3 +82,11 @@ cell dry watcher + reserve drain tripwire (rug-honest exits, n->30 in ~7.5d),
 regime-edge tripwire (excursion-strict), dual-book LP paper ledger,
 router walk-forward, birth feed (1,233 births/24h tracked).
 Wallet SOL-only ~7.30 SOL. Live arms self-gated off by their own records.
+
+## 2026-09-13 23:20 — CAMPAIGN SHUT DOWN by owner
+All SOL withdrawn (7.201505 SOL -> owner address, confirmed). STOP_LIVE_TRADING
+set. All processes killed; 12 campaign Automations disabled (curve collector,
+paper loops, wallet watchdog, LP guardian, audit monitor, xchain scan, Raydium
+scan, go-live alerter, Meteora scanner, forward-test review, MFG check, EVM flow
+watcher); night-shift launchd data plane (6 jobs) booted out. Repo public with
+README. Research record complete. Rebuild path: this file + REPORT.md.
