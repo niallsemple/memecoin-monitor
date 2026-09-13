@@ -20,3 +20,5 @@ HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/CE4odpErKFPq
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x5ab9f121151d3ba486782bceacf713178e0e7383/ohlcv/hour?aggregate=1&limit=48&currency=usd
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x6a6ca6ccb84daaa3c749e90efa56792ec758a00ca881907d4cb7461d4020754b/ohlcv/hour?aggregate=1&limit=48&currency=usd
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/Fpo5zY3hAZy6s7y6z8fziGZ5VabuExrMaGTKRQxGbGsx
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xb41989243ec9a7bebe861efefa3e3df3f5014e0640481a2427eb3bcc8b61fec4/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x240d00f6f41c912d4f9f2663489ebc4d9dc7f204

@@ -23122,3 +23122,12 @@
 {"action": "h16_close", "mint": "GNwRCdoet5xbj5sDeud7mkqvVULUpeiJoKnsrzJ8pump", "t": 1789267483.233186, "outcome": "loss", "mult": 0.92, "mins": 1.5, "mom": 1.109, "dd": 0.902, "bf": 0.946, "seed": 2.962962961}
 {"action": "h16_reject", "mint": "99wshrstuoFXg1fPCm4FvURYgiJRcwv8ACcq7kk1UbGY", "t": 1789267586.9742239, "mom": 0.697, "dd": 0.697, "bf": 0.25, "seed": 4.938271603}
 {"action": "h16_reject", "mint": "2k11LGpKPVRB8CwVHnxv8pPKFPUHKsN6ARztsCwSpump", "t": 1789267586.9742239, "mom": 0.763, "dd": 0.693, "bf": 0.419, "seed": 2}
+{"action": "h16_drop", "mint": "E6PkuEea5sTwPGYauRNy83pyZyLeW2EHTm9GNk5tpump", "reason": "no ticks", "t": 1789267681.9856389}
+{"action": "h16_reject", "mint": "HdhLuGuGSjao26NejdPuoAoy12sbr3y2kact799994WS", "t": 1789267681.9856389, "mom": 0.778, "dd": 0.736, "bf": 0.429, "seed": 4.938271603}
+{"action": "h16_reject", "mint": "7ThodKJRSFcG5H8hF5yS9G3cwy2xvxJMgfskn1Xpump", "t": 1789267681.9856389, "mom": 1.0, "dd": 0.977, "bf": 0.5, "seed": 2.473325351}
+{"action": "h16_reject", "mint": "3TFvq6TMXjYwpn9xSkp9Hje27wqtuo3DjmuW5JrRpump", "t": 1789267681.9856389, "mom": 0.738, "dd": 0.737, "bf": 0.333, "seed": 4.938271603}
+{"action": "h16_reject", "mint": "EXqW9BuPx6vpyxxfGUggQj68786dLXpiurVim7xppump", "t": 1789267684.526656, "mom": 0.91, "dd": 0.582, "bf": 0.516, "seed": 2.930439071}
+{"action": "h16_reject", "mint": "A94CyC6AQP4jH1nypUwZvyYLkaqURGoY3PPXvdX8pump", "t": 1789267776.920925, "mom": 0.827, "dd": 0.824, "bf": 0.4, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "CEVNN6FKyRbsEzwYwcm7ZXKMStTZL2v81SUV9Dfipump", "t": 1789267776.920925, "mom": 0.874, "dd": 0.215, "bf": 0.558, "seed": 2}
+{"action": "h16_open", "mint": "23zqvqqnAFM1ACYtAUr3ni7UrDiA4eBbtLzDoLenpump", "t": 1789267741.2579598, "scored_at": 1789267870.329895, "entry_mcap": 39.9326, "mom": 1.176, "dd": 0.851, "bf": 0.944, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "6G3bwTJ1GCihoCdPNfZRaZ37Vn4LWNezyaCBKXXjpump", "t": 1789267870.329895, "mom": 0.811, "dd": 0.719, "bf": 0.5, "seed": 2.967496174}
