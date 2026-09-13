@@ -44,7 +44,24 @@ def log(rec):
         f.write(json.dumps(rec) + "\n")
     print(json.dumps(rec)[:300], flush=True)
 
-def recent(pool_addr, n=8):
+def fresh_snap(pool_addr):
+    """Take a live snapshot via the bundle — controller owns its data freshness
+    (poll-loop gaps of ~190s made file-only reads stale mid-burst)."""
+    try:
+        r = subprocess.run(["node", BUNDLE, "binsjson", pool_addr],
+                           capture_output=True, text=True, timeout=60, cwd=BASE)
+        line = next((l for l in r.stdout.splitlines()
+                     if l.strip().startswith('{"pool"')), None)
+        if not line:
+            return None
+        d = json.loads(line)
+        return {"t": d["t"], "pool": d["pool"], "active_bin": d["activeBin"],
+                "bin_step": d["binStep"], "prot_fee_y": int(d["protFeeY"]),
+                "prot_fee_x": int(d["protFeeX"]), "bins": d["bins"]}
+    except Exception:
+        return None
+
+def recent(pool_addr, n=8, fresh=True):
     rows = []
     with open(SNAPS) as f:
         for l in f.readlines()[-4000:]:
@@ -54,7 +71,12 @@ def recent(pool_addr, n=8):
                 continue
             if d.get("pool") == pool_addr:
                 rows.append(d)
-    return sorted(rows, key=lambda d: d["t"])[-n:]
+    rows = sorted(rows, key=lambda d: d["t"])[-n:]
+    if fresh:
+        fs = fresh_snap(pool_addr)
+        if fs and (not rows or fs["t"] - rows[-1]["t"] > 5):
+            rows.append(fs)
+    return rows
 
 def flow_now(rows, meta, sol_usdc):
     if len(rows) < 2:
