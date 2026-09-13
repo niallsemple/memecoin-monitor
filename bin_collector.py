@@ -84,7 +84,7 @@ def round_once(now):
         pass
     # always track pool with an open HFNA paper position (3-bin and w7)
     open_pos_pools = []
-    for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json", "hfna_paper_repo_state.json"):
+    for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json", "hfna_paper_repo_state.json", "hfna_paper_flow_state.json"):
         try:
             hp = json.load(open(os.path.join(MON, sf))).get("pos")
             if hp and hp.get("pool"):
@@ -136,7 +136,7 @@ def main():
         # 3 rounds x 15s. Run AFTER the engines in a poll cycle so newly
         # opened positions get 15s coverage during the danger window.
         pos_pools = []
-        for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json", "hfna_paper_repo_state.json"):
+        for sf in ("hfna_paper_state.json", "hfna_paper_w7_state.json", "hfna_paper_repo_state.json", "hfna_paper_flow_state.json"):
             try:
                 hp = json.load(open(os.path.join(MON, sf))).get("pos")
                 if hp and hp.get("pool") and hp["pool"] not in pos_pools:
