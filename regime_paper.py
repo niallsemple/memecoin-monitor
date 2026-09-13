@@ -28,7 +28,7 @@ STATE = os.path.join(BASE, "regime_paper_state.json")
 TRADES = os.path.join(BASE, "regime_paper.jsonl")
 
 EDGE_MIN = 1.5
-SIZE = 0.05
+SIZES = (0.05, 0.5, 1.0)   # parallel virtual sizes — learn scaling before risking
 FIXED = 0.0002
 LP_MULT = 9.0
 MAX_AGE_S = 900
@@ -74,8 +74,10 @@ def main():
     try:
         state = json.load(open(STATE))
     except Exception:
-        state = {"open": {}, "closed": 0, "net": 0.0, "last_t": {}}
+        state = {"open": {}, "closed": 0, "last_t": {}}
     state.setdefault("last_t", {})
+    if not isinstance(state.get("net"), dict):
+        state["net"] = {str(s): 0.0 for s in SIZES}   # v3: per-size ledgers
 
     cutoff = time.time() - HIST_LOAD_S
     series = {a: [] for a in pools}
@@ -122,31 +124,35 @@ def main():
                     except (KeyError, TypeError):
                         fs = 0.0
                     liq_act = float(b.get("liq_active") or 0)
-                    if meta["y_sym"] == "SOL":
-                        our_raw = SIZE * 1e9
-                    else:
-                        our_raw = SIZE * sol_usdc * 10 ** meta["y_dec"]
-                    share = (min(our_raw / liq_act, SHARE_CAP)
-                             if liq_act > 0 else 0)
-                    fees = fs * share
                     p_in, p_out = price_of(a), price_of(b)
-                    il = (abs(p_out - p_in) / p_in / 2 * SIZE
-                          if p_in and p_out else 0)
-                    net = fees - il - FIXED
+                    drift = (abs(p_out - p_in) / p_in
+                             if p_in and p_out else 0)
+                    nets = {}
+                    for size in SIZES:
+                        if meta["y_sym"] == "SOL":
+                            our_raw = size * 1e9
+                        else:
+                            our_raw = size * sol_usdc * 10 ** meta["y_dec"]
+                        share = (min(our_raw / liq_act, SHARE_CAP)
+                                 if liq_act > 0 else 0)
+                        fees = fs * share
+                        il = drift / 2 * size
+                        nets[str(size)] = round(fees - il - FIXED, 6)
+                    net = nets[str(SIZES[0])]
                     rec = {"t": b["t"], "pool": meta["name"],
                            "addr": addr[:8], "age_s": round(age),
                            "ratio_in": round(pos["ratio_in"], 1),
-                           "fees": round(fees, 6), "il": round(il, 6),
-                           "net": round(net, 6),
+                           "nets": nets,
                            "exit": "ratio_break" if broken else "max_age"}
                     with open(TRADES, "a") as f:
                         f.write(json.dumps(rec) + "\n")
                     state["closed"] += 1
-                    state["net"] = round(state["net"] + net, 6)
+                    for k, v in nets.items():
+                        state["net"][k] = round(state["net"][k] + v, 6)
                     pos = None
                     del state["open"][addr]
                     print(f"paper CLOSE {meta['name']} age {age:.0f}s "
-                          f"net {net:+.5f} | cum {state['net']:+.5f} "
+                          f"nets {nets} | cum {state['net']} "
                           f"over {state['closed']}")
         state["last_t"][addr] = rows[-1]["t"]
 
