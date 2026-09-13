@@ -37,6 +37,7 @@ while true; do
   python3 pool_router.py       >> _router.log 2>&1
   python3 regime.py            >> _regime.log 2>&1
   python3 regime_edge.py       >> _regime_edge.log 2>&1
+  python3 regime_paper.py      >> _regime_paper.log 2>&1
   date +%s > _loop_heartbeat   # dead-man: any turn can check freshness
   sleep 20
 done
