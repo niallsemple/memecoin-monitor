@@ -7,3 +7,6 @@
 {"kind": "start", "size": 0.05, "dry": false, "pools": ["EMBER-SOL", "MET-SOL", "ZEC-SOL", "ANSEM-SOL", "STONK-SOL"], "t": 1789318895.621727}
 {"kind": "entry_trigger", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "name": "MET-SOL", "flow_h": 1.464, "drift_pct": 0.0, "active_bin": 419, "t": 1789318895.770039}
 {"kind": "entry_done", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "out": "9] deposit=0.05 SOL (single-sided Y, exact-bins)\nADDED position 4vZ8sTERBeRy19jWWYXcQxMAyV6iNu3UBFab72TDeMQu sig=39L2idB22Zu4P2Ehf7uLBL1APqXKw8epHkrDi8Mu13Jmhxg41mhVoX5V7doUP1iBctD9Dfh5GSyt5XkGHsZ5BXLr\n(node:615
+{"kind": "exit_trigger", "why": "flow_dead", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "age_s": 212.85988211631775, "t": 1789319109.349905}
+{"kind": "exit_done", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "out": "EXITED 4vZ8sTERBeRy19jWWYXcQxMAyV6iNu3UBFab72TDeMQu sigs=2iRabLc6EMqjZiVtRGoq9X24fT5pDP6J8a9a7UXHo78cs6gyZrDYsj7eFQGVq6qC51Uay3jdHZ9WRaKYnuCJAByJ\n(node:61779) [DEP0040] DeprecationWarning: The `punycode` module is
+{"kind": "decomp", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "out": "02354  resid=-0.0\n9NdiyGft  hold=352s  pnl=-0.002064  txs=5(0miss) fees=0.000230  native=-0.002064  resid=-0.0\nqhJ7kLjr  hold=307s  pnl=-0.000231  txs=4(0miss) fees=0.000225  native=-0.000231  resid=-0.0\n9NdiyGft  

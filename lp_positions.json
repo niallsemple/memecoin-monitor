@@ -2051,10 +2051,14 @@
    "entry_active_bin": 419,
    "minBinId": 418,
    "maxBinId": 419,
-   "status": "open",
+   "status": "exited",
    "add_sig": "39L2idB22Zu4P2Ehf7uLBL1APqXKw8epHkrDi8Mu13Jmhxg41mhVoX5V7doUP1iBctD9Dfh5GSyt5XkGHsZ5BXLr",
    "width_pct": null,
-   "strategy_tag": "surf_probe"
+   "strategy_tag": "surf_probe",
+   "exit_sigs": [
+    "2iRabLc6EMqjZiVtRGoq9X24fT5pDP6J8a9a7UXHo78cs6gyZrDYsj7eFQGVq6qC51Uay3jdHZ9WRaKYnuCJAByJ"
+   ],
+   "exit_ts": 1789319110.379
   }
  ]
 }
