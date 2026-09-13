@@ -1,71 +1,71 @@
 {
- "t": 1789331552.8814101,
+ "t": 1789333046.927238,
  "trail_min": 60,
  "size": 0.3,
  "pools": [
   {
    "name": "SOL-USDC",
    "addr": "5rCf1DM8",
-   "trades": 9,
-   "net": -0.003325,
+   "trades": 11,
+   "net": -0.003627,
    "decision": "reject",
-   "reason": "net -0.00332 over 9 trades"
+   "reason": "net -0.00363 over 11 trades"
   },
   {
    "name": "SOL-USDC tight",
    "addr": "HTvjzsfX",
-   "trades": 9,
-   "net": -0.010914,
+   "trades": 10,
+   "net": -0.011203,
    "decision": "reject",
-   "reason": "net -0.01091 over 9 trades"
+   "reason": "net -0.01120 over 10 trades"
   },
   {
    "name": "EMBER-USDC",
    "addr": "6e4ewHhG",
-   "trades": 8,
-   "net": -0.010207,
+   "trades": 9,
+   "net": -0.003201,
    "decision": "reject",
-   "reason": "net -0.01021 over 8 trades"
+   "reason": "net -0.00320 over 9 trades"
   },
   {
    "name": "EMBER-SOL",
    "addr": "GbrDAq3R",
-   "trades": 7,
-   "net": -0.005438,
-   "decision": "reject",
-   "reason": "net -0.00544 over 7 trades"
+   "trades": 8,
+   "net": 0.092103,
+   "decision": "select",
+   "reason": "ok"
   },
   {
    "name": "STONK-SOL",
    "addr": "zxTpi4Bt",
-   "trades": 8,
-   "net": -0.017142,
+   "trades": 9,
+   "net": -0.017801,
    "decision": "reject",
-   "reason": "net -0.01714 over 8 trades"
+   "reason": "net -0.01780 over 9 trades"
   },
   {
    "name": "MET-SOL",
    "addr": "AsSyvUnb",
-   "trades": 5,
-   "net": -0.006235,
+   "trades": 6,
+   "net": -0.005763,
    "decision": "reject",
-   "reason": "net -0.00624 over 5 trades"
+   "reason": "net -0.00576 over 6 trades"
   },
   {
    "name": "ZEC-SOL",
    "addr": "8eybKAvj",
-   "trades": 9,
-   "net": -0.004348,
-   "decision": "reject",
-   "reason": "net -0.00435 over 9 trades"
+   "trades": 11,
+   "net": 0.002168,
+   "decision": "select",
+   "reason": "ok"
   },
   {
    "name": "ANSEM-SOL",
    "addr": "6e7V9eeg",
-   "trades": 13,
-   "net": -0.015301,
+   "trades": 15,
+   "net": -0.012354,
    "decision": "reject",
-   "reason": "net -0.01530 over 13 trades"
+   "reason": "net -0.01235 over 15 trades"
   }
  ]
 }

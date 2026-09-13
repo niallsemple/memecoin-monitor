@@ -77,7 +77,10 @@ def main():
                 ratios.append((b["t"], None, i))
                 continue
             fee_rate = fs * LP_MULT / dt_h / tvl_sol
-            il_rate = abs(p_out - p_in) / p_in / dt_h / 2
+            # excursion guard: round-trip chop counts as IL even if net ~0
+            exc = max((abs(price_of(r) - p_in) / p_in
+                       for r in rows[j:i + 1] if price_of(r)), default=0.0)
+            il_rate = max(abs(p_out - p_in) / p_in, exc) / dt_h / 2
             ratio = fee_rate / il_rate if il_rate > 1e-9 else (
                 999.0 if fee_rate > 0 else 0.0)
             ratios.append((b["t"], ratio, i))

@@ -76,7 +76,11 @@ def main():
         if not p_in or not p_out:
             continue
         drift_h = abs(p_out - p_in) / p_in / dt_h           # per hour
-        il_rate = drift_h / 2
+        # excursion guard: net drift hides round-trip chop. Use the max
+        # deviation from window start seen anywhere in the window.
+        exc = max((abs(price_of(r) - p_in) / p_in
+                   for r in rows if price_of(r)), default=0.0)
+        il_rate = max(drift_h, exc / dt_h) / 2
         ratio = (fee_rate / il_rate) if il_rate > 1e-9 else (
             999.0 if fee_rate > 0 else 0.0)
         name = meta["name"]

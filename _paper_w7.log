@@ -33,3 +33,5 @@
 [exit] 6e7V9eeg liquidity refilled fees=0.00003 markout=0.00000 net=-0.00097 bank=0.9021
 [enter] 9NdiyGft HFNA paper Y-only 0.1 SOL bins [-270,-264] elev=19.3x
 [exit] 9NdiyGft boundary early-exit ab=-269 low=-270 fees=0.00530 markout=0.00014 net=+0.00416 bank=0.9062
+[enter] 6e7V9eeg HFNA paper Y-only 0.1 SOL bins [178,184] elev=3.0x
+[exit] 6e7V9eeg fee decayed (1.00x) fees=0.00000 markout=0.00000 net=-0.00100 bank=0.9052

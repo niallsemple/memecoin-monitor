@@ -30,3 +30,16 @@ on marginal entries); SUSTAIN 2-3 sweet spot. Paper ledger currently enters on
 first detection (SUSTAIN=1-equivalent) — expect more trades, lower per-trade
 yield than backtest headline.
 Caveat: all combos share one 49h regime sample; forward validation decides.
+
+## 2026-09-13 FLAT-HARVEST FALSIFIED by excursion guard
+Original ratio used NET price drift over 1h for il_rate. Adding excursion
+guard (il_rate uses max deviation from window start, not net drift):
+favorable windows collapse 36 -> 0 across all pools over 49h. Every "paying"
+window was round-trip chop: price oscillated, net drift ~0, ratio read 999,
+but a real position would have eaten IL. The +0.032/49h backtest edge was an
+artifact of the flatness definition, now removed from regime_edge.py,
+regime_paper.py and regime_edge_backtest.py (all three consistent).
+Paper ledger reset; continues under strict rule. LP_MULT=9 confirmed
+structural (Meteora 10% protocol fee), not the weak link.
+Status: ALL LP-skim branches falsified in this regime. Detector stays live —
+if a window ever qualifies under excursion-strict rules it is genuinely flat.

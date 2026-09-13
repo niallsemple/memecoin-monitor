@@ -63,7 +63,11 @@ def ratio_at(rows, i, meta, tvl_sol, sol_usdc):
     if fs is None or not p_in or not p_out:
         return None
     fee_rate = fs * LP_MULT / dt_h / tvl_sol
-    il_rate = abs(p_out - p_in) / p_in / dt_h / 2
+    # excursion guard: net drift hides round-trip chop — use max deviation
+    # from window-start price seen anywhere inside the window
+    exc = max((abs(price_of(r) - p_in) / p_in
+               for r in rows[j:i + 1] if price_of(r)), default=0.0)
+    il_rate = max(abs(p_out - p_in) / p_in, exc) / dt_h / 2
     return fee_rate / il_rate if il_rate > 1e-9 else (999.0 if fee_rate > 0
                                                       else 0.0)
 
