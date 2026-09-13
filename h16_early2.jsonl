@@ -24306,3 +24306,6 @@
 {"action": "h16e2_reject", "mint": "3hxPP3Lm3jB2Md1CLKA8zQJoBiQ8kQCxuWnuWm3vpump", "t": 1789304811.797784, "mom": 0.565, "dd": 0.412, "bf": 0.537, "seed": 7.902478319}
 {"action": "h16e2_thin", "mint": "7jgciQ7qqTjEeKT2Ab1DCsEbfW32MKLU8QEXgqWxpump", "t": 1789304886.847195, "nticks": 2, "seed": 2.967496174}
 {"action": "h16e2_stale", "mint": "25yDeHa8iWGj83dG3QHQohc9E77DWzV1kqpVXAPfpump", "t": 1789304886.847195, "last_tick_age": 35.9, "seed": 3.95}
+{"action": "h16e2_reject", "mint": "CTPTTLPd287PE1Gz96ZHzLssxKwqfcbgNkEsGooCpump", "t": 1789305232.915482, "mom": 1.231, "dd": 0.734, "bf": 0.741, "seed": 2.45}
+{"action": "h16e2_stale", "mint": "4VAeGZJ5PhitAgv5Xpx2zN7LbamRds4Yt3VjhCXtpump", "t": 1789305232.915482, "last_tick_age": 44.9, "seed": 2.027562674}
+{"action": "h16e2_drop", "mint": "AQzgnpkr3fmPUikTtiayg5ayofqCfrAnaNrBPKmipump", "reason": "no ticks", "t": 1789305277.93899}
