@@ -1,7 +1,67 @@
 {
   "note": "deep-pool capacity branch (mandate v4): always snapshot these for the size-response-at-depth model. NOT live-engine targets.",
   "pools": [
-    {"addr": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6", "name": "SOL-USDC", "tvl_usd": 5130000, "bin_step": 4, "fee_pct": 0.04},
-    {"addr": "HTvjzsfX3yU6BUodCjZ5vZkUrAxMDTrBs3CJaq43ashR", "name": "SOL-USDC tight", "tvl_usd": 360000, "bin_step": 1, "fee_pct": 0.01}
+    {
+      "addr": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
+      "name": "SOL-USDC",
+      "tvl_usd": 5130000,
+      "bin_step": 4,
+      "fee_pct": 0.04
+    },
+    {
+      "addr": "HTvjzsfX3yU6BUodCjZ5vZkUrAxMDTrBs3CJaq43ashR",
+      "name": "SOL-USDC tight",
+      "tvl_usd": 360000,
+      "bin_step": 1,
+      "fee_pct": 0.01
+    },
+    {
+      "addr": "6e4ewHhGZrBMiSkKat7QCx28dytJdnYrobNXWrPL5WFN",
+      "name": "EMBER-USDC",
+      "tvl_usd": 1058282,
+      "bin_step": 50,
+      "fee_pct": 0.7492,
+      "tag": "discovered"
+    },
+    {
+      "addr": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
+      "name": "EMBER-SOL",
+      "tvl_usd": 1094536,
+      "bin_step": 80,
+      "fee_pct": 1.215,
+      "tag": "discovered"
+    },
+    {
+      "addr": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX",
+      "name": "STONK-SOL",
+      "tvl_usd": 2271308,
+      "bin_step": 20,
+      "fee_pct": 0.2047,
+      "tag": "discovered"
+    },
+    {
+      "addr": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+      "name": "MET-SOL",
+      "tvl_usd": 1006197,
+      "bin_step": 20,
+      "fee_pct": 0.1898,
+      "tag": "discovered"
+    },
+    {
+      "addr": "8eybKAvjKJryVweQLg8SRgwUfdP7wHYJ5yyqgfE82DQA",
+      "name": "ZEC-SOL",
+      "tvl_usd": 1163339,
+      "bin_step": 20,
+      "fee_pct": 0.1808,
+      "tag": "discovered"
+    },
+    {
+      "addr": "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN",
+      "name": "ANSEM-SOL",
+      "tvl_usd": 1106156,
+      "bin_step": 20,
+      "fee_pct": 0.2279,
+      "tag": "discovered"
+    }
   ]
 }

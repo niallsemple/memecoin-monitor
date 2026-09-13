@@ -42,8 +42,8 @@ def main():
         # X fee in SOL terms: USDC fee / SOL price; approximate via bin price
         price = next((bn["price"] for bn in b.get("bins", [])
                       if bn["binId"] == b["active_bin"]), None)
-        dpx_sol = (dpx / 1e6) / price if price else 0  # price = USDC per SOL? no: SOL priced in X... use liq ratio fallback
-        flow_h = max(0.0, (dpy + 0) * LP_MULT / dt_h)  # Y-only until priced
+        dpx_sol = (dpx / 1e6) / price if price else 0  # X=USDC (6dp), price=USDC/SOL -> SOL terms
+        flow_h = max(0.0, (dpy + dpx_sol) * LP_MULT / dt_h)  # both sides, LP share
         rec = {"t": now, "pool": addr[:8], "name": name,
                "lp_fee_sol_per_h": round(flow_h, 8),
                "liq_active_sol": round(b["liq_active"] / 1e9, 1),

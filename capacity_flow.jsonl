@@ -20,3 +20,9 @@
 {"t": 1789313973.813838, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 0.00305315, "liq_active_sol": 58.6, "spike": false}
 {"t": 1789314161.172446, "pool": "5rCf1DM8", "name": "SOL-USDC", "lp_fee_sol_per_h": 0.0002553, "liq_active_sol": 18.4, "spike": false}
 {"t": 1789314161.172446, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 0.01287936, "liq_active_sol": 1110.6, "spike": false}
+{"t": 1789314380.084523, "pool": "5rCf1DM8", "name": "SOL-USDC", "lp_fee_sol_per_h": 0.0, "liq_active_sol": 16469.2, "spike": false}
+{"t": 1789314380.084523, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 0.07652583, "liq_active_sol": 57.6, "spike": true}
+{"t": 1789314553.1740758, "pool": "5rCf1DM8", "name": "SOL-USDC", "lp_fee_sol_per_h": 0.36431026, "liq_active_sol": 10408.7, "spike": true}
+{"t": 1789314553.1740758, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 0.56247101, "liq_active_sol": 571.5, "spike": true}
+{"t": 1789314726.538346, "pool": "5rCf1DM8", "name": "SOL-USDC", "lp_fee_sol_per_h": 0.0, "liq_active_sol": 25.5, "spike": false}
+{"t": 1789314726.538346, "pool": "HTvjzsfX", "name": "SOL-USDC tight", "lp_fee_sol_per_h": 2.20954477, "liq_active_sol": 1106.3, "spike": true}
