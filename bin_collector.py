@@ -93,6 +93,26 @@ def round_once(now):
                     pools.append(hp["pool"])
         except Exception:
             pass
+    # fresh-birth injection (09-13 breadth census): hot_pools() bootstraps
+    # from its own snapshot history — a closed loop that never admits new
+    # pools. HFNA windows concentrate in a pool's first minutes; inject the
+    # newest DLMM births (by TVL when known) each round.
+    try:
+        births = []
+        with open(os.path.join(MON, "dlmm_births.jsonl")) as bf:
+            for l in bf.readlines()[-4000:]:
+                try:
+                    b = json.loads(l)
+                except Exception:
+                    continue
+                if b.get("t", 0) > now - 1800 and b.get("pool"):
+                    births.append(b)
+        births.sort(key=lambda b: -(b.get("tvl") or 0))
+        for b in births[:12]:
+            if b["pool"] not in pools:
+                pools.append(b["pool"])
+    except Exception:
+        pass
     # always track HFNA live-pilot watchlist pools — the pilot cannot evaluate
     # entries without fresh snapshots even when we hold no position
     try:

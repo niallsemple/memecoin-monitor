@@ -10,6 +10,12 @@ M="$(cd "$(dirname "$0")" && pwd)"
 cd "$M" || exit 1
 while true; do
   [ -f STOP_LIVE_TRADING ] && { echo "$(date +%s) kill switch present — loop exiting"; exit 0; }
+  # DLMM birth listener every 2nd cycle (~6-8min cadence): catches pools at
+  # age 0-8min instead of 1-6h. Feeds the collector's fresh-birth injection.
+  CYCLE=$(( ${CYCLE:-0} + 1 ))
+  if [ $(( CYCLE % 2 )) -eq 0 ]; then
+    python3 dlmm_birth_listener.py >> _births.log 2>&1
+  fi
   python3 bin_collector.py   >> _bin_collector.log 2>&1
   python3 pool_txflow.py     >> _pool_txflow.log 2>&1
   python3 hfna_live.py       >> _hfna_live.log 2>&1
