@@ -143,6 +143,8 @@ def main():
     log({"kind": "start", "size": SIZE, "dry": DRY,
          "pools": [m["name"] for m in metas.values()]})
     last_exit = 0
+    entry_flow = {}      # pool -> flow at entry (in-memory; fallback EXIT_SOL_H)
+    below_ct = {}        # pool -> consecutive polls below exit threshold
     while True:
         if os.path.exists(STOP):
             log({"kind": "halt", "why": "STOP_LIVE_TRADING"})
@@ -166,8 +168,18 @@ def main():
                     why = "max_hold"
                 elif fs is not None and fs <= 0:
                     why = None  # stall handled by time check below
-                if why is None and flow_now(rows, metas.get(pos["pool"], {}), sol_usdc) < EXIT_SOL_H and age > 60:
-                    why = "flow_dead"
+                if why is None and age > 60:
+                    # burst-over exit: flow collapsed below 15% of entry flow
+                    # (or absolute floor) for 2 consecutive polls. Median MET
+                    # burst lasts ~66s; trailing the 0.02 floor held us 140-280s.
+                    thr = max(EXIT_SOL_H, 0.15 * entry_flow.get(pos["pool"], 0))
+                    fh_now = flow_now(rows, metas.get(pos["pool"], {}), sol_usdc)
+                    if fh_now < thr:
+                        below_ct[pos["pool"]] = below_ct.get(pos["pool"], 0) + 1
+                    else:
+                        below_ct[pos["pool"]] = 0
+                    if below_ct[pos["pool"]] >= 2:
+                        why = "flow_dead"
                 if why:
                     log({"kind": "exit_trigger", "why": why,
                          "pool": pos["pool"], "age_s": age})
@@ -251,6 +263,8 @@ def main():
             log({"kind": "entry_trigger", "pool": addr, "name": meta["name"],
                  "flow_h": round(fh, 4), "drift_pct": round(d, 3),
                  "active_bin": rows[-1]["active_bin"], "wallet_pre": pre_bal})
+            entry_flow[addr] = fh
+            below_ct[addr] = 0
             if not DRY:
                 if meta["y_sym"] == "SOL":
                     out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
