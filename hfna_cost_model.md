@@ -52,3 +52,12 @@ round. bin_collector upgrade: record pool total fees (protocol + lp) per snapsho
 Pilot is CHEAP to paper: all inputs observable from bin_snapshots + one extra
 cum-fees field. Build paper HFNA trader first; live only if paper shows >2% net
 per window across >= 20 windows.
+
+## 2026-09-13 zxTp universe audit (no bug — gates working)
+zxTp pays 1-2 protSOL/hr in regime but is never entered by ANY arm. Audited all
+reflow gates on live data: fails (a) vacuum gate — needs liq_active <= 60% of the
+5-min-ago level (post-vacuum entry design), zxTp sat at 0.92; (b) edge-density —
+capture30 = 0.00219 SOL < 0.004 floor because active liquidity 57.8 SOL makes a
+0.1 SOL position only 0.06% share. Aggregate payers with deep active liquidity are
+structurally uncapturable at 0.1 SOL. Universe selection (fee-velocity top-N) is
+fine; zxTp IS in bin_snapshots.jsonl. No fix needed; re-check only if SIZE rises.
