@@ -23,6 +23,30 @@ ARMED = os.path.join(MON, "HFNA_LIVE_ARMED")
 KILL = os.path.join(MON, "STOP_LIVE_TRADING")
 TAX_F = os.path.join(MON, "pool_tax_cache.json")
 DEPTH_F = os.path.join(MON, "pool_depth_cache.json")
+TXFLOW = os.path.join(MON, "txflow.jsonl")
+DENY_F = os.path.join(MON, "paper_denylist.json")
+# reflow rebuild (09-13, owner directive "rebuild engine then go live"):
+# port the three gates that made hfna_paper_reflow the only positive paper arm
+# (19 trades, +0.0048 net, ZERO strikes as of 09-13 morning):
+#   1. tx5 tape gate — entry only on confirmed hot tape (>=75 swaps/5min,
+#      fresh <150s). Tape strength predicts payoff WITHIN a pool (BN7C
+#      tx5=952 paid 3x; every sub-75 window was sub-cost).
+#   2. wash denylist — never enter wash-scan-denied pools.
+#   3. capped follow — MAX_REPOS immediate re-entries after a tripwire
+#      (paper reflow re-centers in-place; live pays real tx cost per re-add,
+#      so we exit + re-enter only if ALL gates still pass, max 2 follows).
+MIN_SWAPS_5M = 75
+TXFLOW_MAX_AGE = 150.0
+MAX_REPOS = 2
+# LIVE-ONLY blocklist (09-13): "mixed" forensics verdict — dust churn and real
+# bursts coexist, so wash_scan does NOT denylist them and paper arms keep
+# trading them to learn. Paper-tradeable, NEVER live: capture there is
+# dominated by the wash component and unverifiable. (zxTp: 57.8 SOL active
+# depth yet capture30 0.0022 < 0.004 floor — uncapturable at 0.1 SOL.)
+LIVE_NEVER = {
+    "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX",
+    "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc",
+}
 
 SIZE = 0.1
 BINS_BELOW = 2
@@ -82,6 +106,21 @@ def load_hist():
         hist.setdefault(r["pool"], []).append(r)
         rows.append(r)
     return hist, rows
+
+def latest_swaps5():
+    """pool -> (t, swaps_5m) from the newest txflow row (verbatim from reflow)."""
+    out = {}
+    try:
+        with open(TXFLOW) as f:
+            for line in f:
+                try:
+                    r = json.loads(line)
+                except Exception:
+                    continue
+                out[r["pool"]] = (r["t"], r.get("swaps_5m", 0))
+    except Exception:
+        pass
+    return out
 
 def main():
     if os.path.exists(KILL):
@@ -238,6 +277,21 @@ def main():
             strike = (real_pnl < -0.002) if real_pnl is not None else (pos["fees_est"] < -0.002)
             st["consec_loss"] = 0 if won else (st["consec_loss"] + 1 if strike else st["consec_loss"])
             st.setdefault("last_won", {})[p] = won
+            # reflow gate 3: capped follow. A tripwire means price drifted out
+            # of range — reflow re-centers in place (paper, free); live pays a
+            # real tx cost per re-add, so we EXIT (already done above) then
+            # clear the cooldown for an immediate re-entry ONLY if every gate
+            # still passes on the next scan, max MAX_REPOS follows per window.
+            # Uncapped follow is what churned 55Ev for -0.005 on 09-13.
+            if "tripwire" in exit_reason:
+                fl = st.setdefault("follow", {})
+                rec = fl.get(p) or {"n": 0, "t": 0}
+                rec["n"] = rec["n"] + 1 if time.time() - rec["t"] < 1200 else 1
+                rec["t"] = time.time()
+                fl[p] = rec
+                if rec["n"] <= MAX_REPOS:
+                    st["seen"][p] = 0
+                    log_event(kind="follow_arm", pool=p, follow_n=rec["n"])
             if armed:
                 st["sample_n"] = st.get("sample_n", 0) + 1
             st["pos"] = None
@@ -250,9 +304,23 @@ def main():
         return
 
     # ---- entry scan: watchlist only ----
+    deny = set()
+    try:
+        deny = set(json.load(open(DENY_F))["pools"])
+    except Exception:
+        pass
+    sw5 = latest_swaps5()
     for p in watch:
         r = latest.get(p)
         if not r:
+            continue
+        # reflow gate 2: wash denylist — never enter denied pools
+        if p in deny or p in LIVE_NEVER:
+            continue
+        # reflow gate 1: confirmed hot tape, fresh (<150s), >=75 swaps/5min.
+        # Stale or missing tape = no entry (fail closed, same as depth).
+        tf = sw5.get(p)
+        if not tf or time.time() - tf[0] > TXFLOW_MAX_AGE or tf[1] < MIN_SWAPS_5M:
             continue
         pts = [x for x in hist[p] if x["t"] <= r["t"]]
         if len(pts) < 5:
