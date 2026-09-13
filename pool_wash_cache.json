@@ -172,10 +172,10 @@
   "swaps_5m_at_scan": 754
  },
  "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc": {
-  "verdict": "wash",
+  "verdict": "mixed",
   "t": 1789276042.29032,
   "n": 15,
   "swaps_5m_at_scan": 596,
-  "note": "mixed->wash: thin arm dead fill 2026-09-13 (fees=0.00000 over 6m on tx5=654 tape); 25tx dust scan median 7e-6"
+  "note": "dust churn AND real bursts: thin dead fill 06:33 (fees=0), then +0.008 fees to 5 arms 06:37 same hour. mixed=tradeable paper, never live probe"
  }
 }
