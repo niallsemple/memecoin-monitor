@@ -25148,3 +25148,13 @@
 {"action": "h16e2_open", "mint": "44hFThthSNWBBSmpN88UQnAysHujRrN2zfppfBptpump", "t": 1789326586.248176, "scored_at": 1789326604.4414878, "entry_mcap": 55.7923, "mom": 1.01, "dd": 0.99, "bf": 0.571, "seed": 4.5}
 {"action": "h16e2_stale", "mint": "GKgUDCvB6uVgLbaLtihqQL9MaAmDrgHRT5u69VZMpump", "t": 1789326619.4535658, "last_tick_age": 38.0, "seed": 3}
 {"action": "h16e2_reject", "mint": "puss998234svDH26dih8ehkg4onkZtP9nCWC5kqTzMi", "t": 1789326634.471101, "mom": 0.834, "dd": 0.465, "bf": 0.652, "seed": 7.022671291}
+{"action": "h16e2_reject", "mint": "Ha5szzN8yeTVG8CpZNZS3P3P1UgVV9o3ErKYx9oRpump", "t": 1789326649.481059, "mom": 0.703, "dd": 0.354, "bf": 0.542, "seed": 3}
+{"action": "h16e2_stale", "mint": "AVeQyA5do2J1GiD1jtg7bfu521KXPY8QRFiKCqSTpump", "t": 1789326664.4858959, "last_tick_age": 20.4, "seed": 5}
+{"action": "h16e2_close", "mint": "Cg1NdG65jdifKjhtVa7AGMYG4r6RmNVXLndLTiUnpump", "t": 1789326664.4858959, "outcome": "timeout", "mult": 1.0, "mins": 60.0, "mom": 1.0, "dd": 1.0, "bf": 0.5, "seed": 2.967496174}
+{"action": "h16e2_reject", "mint": "9B1ffvVFmMx1yDUMtdRonE1DUWiyP5YcPaXjfUSqpump", "t": 1789326679.496484, "mom": 1.002, "dd": 0.982, "bf": 0.333, "seed": 2.443669868}
+{"action": "h16e2_reject", "mint": "EXxtQ4wYDuuZB3cXGXA357oTQnPGpGz5zrBJz137pump", "t": 1789326679.496484, "mom": 0.586, "dd": 0.387, "bf": 0.481, "seed": 8.911693996}
+{"action": "h16e2_stale", "mint": "d8GcX9VoVUbjitbvJKDtTPaNgrLN3w8Cgmajc9epump", "t": 1789326679.496484, "last_tick_age": 17.4, "seed": 2.962962961}
+{"action": "h16e2_thin", "mint": "43y8qQimGG47MADWtvfbAKXwZ3hEQ1xDCcHiRNNnAQGt", "t": 1789326709.52388, "nticks": 1, "seed": 7}
+{"action": "h16e2_reject", "mint": "2kbvPT7fCBiiUnTQcSnvDppWRopgZDqMAU16Graopump", "t": 1789326724.538517, "mom": 0.842, "dd": 0.335, "bf": 0.508, "seed": 2}
+{"action": "h16e2_reject", "mint": "4zdmA7y5AxKTZ7rqREW8i5JMj76MadNyJd62YYQgpump", "t": 1789326799.6046028, "mom": 0.741, "dd": 0.627, "bf": 0.41, "seed": 3.456790121}
+{"action": "h16e2_stale", "mint": "J8Xan6RbbC5CUwnyQx6uKJ6FAy8e6XygDx9iurgKaoau", "t": 1789326799.6046028, "last_tick_age": 17.6, "seed": 7}

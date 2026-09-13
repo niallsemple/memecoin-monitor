@@ -130,6 +130,45 @@ def open_position():
 
 # probe #2+: only pools with positive trailing sim P&L, strongest first.
 # STONK probe #1 measured -9.2% round trip at 0.02 SOL — never re-probe
+
+def live_record():
+    """Per-pool live probe net from this log. Corrected/manual verdicts
+    supersede auto verdicts from the same probe (same pool, <=600s apart).
+    Keys normalized to pool address. 2+ probes with net<0 -> block."""
+    try:
+        metas = {p["addr"]: p for p in json.load(open(POOLS))["pools"]}
+        name2addr = {m["name"]: a for a, m in metas.items()}
+    except Exception:
+        name2addr = {}
+    autos, corr = [], []
+    try:
+        for l in open(LOG):
+            r = json.loads(l)
+            k = r.get("kind")
+            if k not in ("probe_verdict", "probe_verdict_auto",
+                         "probe_verdict_corrected"):
+                continue
+            pool = r.get("pool")
+            if not pool or r.get("net_sol") is None:
+                continue
+            addr = pool if pool in (name2addr.values() if name2addr else []) \
+                else name2addr.get(pool, pool)
+            (corr if k != "probe_verdict_auto" else autos).append(
+                (addr, r["t"], r["net_sol"]))
+    except Exception:
+        pass
+    rec = {}
+    for addr, t, net in corr:
+        d = rec.setdefault(addr, {"n": 0, "net": 0.0})
+        d["n"] += 1
+        d["net"] += net
+    for addr, t, net in autos:
+        if any(a == addr and 0 <= tc - t <= 600 for a, tc, _ in corr):
+            continue  # superseded by corrected verdict
+        d = rec.setdefault(addr, {"n": 0, "net": 0.0})
+        d["n"] += 1
+        d["net"] += net
+    return rec
 # a pool the router's own sim shows negative.
 POOL_PRIORITY = ["EMBER-USDC", "EMBER-SOL", "MET-SOL", "ZEC-SOL",
                  "ANSEM-SOL", "STONK-SOL"]
@@ -242,9 +281,13 @@ def main():
                 open(os.path.join(BASE, "router_state.json")))["pools"]}
         except Exception:
             pass
+        live = live_record()
         for addr, meta in metas.items():
             rd = router.get(meta["name"])
             rows = recent(addr)
+            lr = live.get(addr)
+            if lr and lr["n"] >= 2 and lr["net"] < 0:
+                continue              # live probes say bleeder — sim can't override
             if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < ROUTER_BLOCK_NET:
                 # router says bleeder — but log if flow gate WOULD have fired,
                 # so we can measure what the gate is costing us
