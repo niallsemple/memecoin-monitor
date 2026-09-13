@@ -18,8 +18,8 @@ import json, os, sys, time
 BASE = os.path.dirname(os.path.abspath(__file__))
 SNAPS = os.path.join(BASE, "bin_snapshots.jsonl")
 POOLS = os.path.join(BASE, "capacity_pools.json")
-EDGE_MIN = 1.5
-SUSTAIN = 3
+EDGE_MIN = float(os.environ.get("BT_EDGE_MIN", "1.5"))
+SUSTAIN = int(os.environ.get("BT_SUSTAIN", "3"))
 FIXED = 0.0002
 LP_MULT = 9.0
 LOOKBACK_S = 3600
