@@ -33,7 +33,7 @@
    "base_tvl": 42552.590639014714,
    "base_vol24": 345240.43055072665,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -227 < -223) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -227 < -223) — position is all token-X"
   },
   {
    "pool": "nBXytBBfKLhj6teXarAv8rk6WNgUFBMyybUFRkuK7ad",
@@ -68,7 +68,7 @@
    "base_tvl": 156386.26847949892,
    "base_vol24": 2602653.2416695743,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -2053 < -2052) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -2053 < -2052) — position is all token-X"
   },
   {
    "pool": "EqsbD725iSoa23kWnQBjiYT9bcWSH8YJ6WCPYwXYoVNR",
@@ -103,7 +103,7 @@
    "base_tvl": 28939.31362658084,
    "base_vol24": 305299.5687824667,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -239 < -235) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -239 < -235) — position is all token-X"
   },
   {
    "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
@@ -721,7 +721,7 @@
    "base_tvl": 280894.5671214633,
    "base_vol24": 1775456.5106263277,
    "was_in_range": true,
-   "exit_reason": "price fell through range (active 396 < 407) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active 396 < 407) — position is all token-X"
   },
   {
    "pool": "GvuTLn57oao3xe4PRxGZAmhtBtFXQQqgfmnQJ3zUBdcy",
@@ -928,7 +928,7 @@
      "active": -154
     }
    ],
-   "exit_reason": "price fell through range (active -154 < -152) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -154 < -152) — position is all token-X"
   },
   {
    "pool": "JBGqmRZB4csWcQnTMaJGsKBoo4zC1dAoMs7LYGMKqEjD",
@@ -968,7 +968,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -521 < -519) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -521 < -519) — position is all token-X"
   },
   {
    "pool": "6gQTdHry76sCzBAeCR8f2EkNYpgWrJjwb9352mF9ts5i",
@@ -1003,7 +1003,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -455 < -453) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -455 < -453) — position is all token-X"
   },
   {
    "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
@@ -1093,7 +1093,7 @@
      "active": -549
     }
    ],
-   "exit_reason": "price fell through range (active -549 < -548) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -549 < -548) — position is all token-X"
   },
   {
    "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
@@ -1324,7 +1324,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -369 < -368) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -369 < -368) — position is all token-X"
   },
   {
    "pool": "GbrDAq3RjcVWeroLDUwmnuQ8N5xaaKj2Rk2dJDg64CLY",
@@ -1570,7 +1570,7 @@
     }
    ],
    "was_in_range": true,
-   "exit_reason": "price fell through range (active -184 < -174) \u2014 position is all token-X"
+   "exit_reason": "price fell through range (active -184 < -174) — position is all token-X"
   },
   {
    "pool": "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
@@ -2079,6 +2079,24 @@
     "2ZC1PL2C8o5uw9aFrcrgwkr8akJyxnXsoXv1sKzgfmpofPmWYiKzJmzfKMXiDbeeaUtKtarU4xrghTVjTMZsDRao"
    ],
    "exit_ts": 1789319662.532
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "c7M5gTRRu9j8JRZ8oi3edQwjYXSSdcuQPbu9KyaMbXK",
+   "name": null,
+   "sol_in": 0.05,
+   "ts": 1789320412.8,
+   "entry_active_bin": 418,
+   "minBinId": 417,
+   "maxBinId": 418,
+   "status": "exited",
+   "add_sig": "25oPTonSMB4AqJtv2x3XSWvTqKi7NAbSgkM4PtfWAnAYYfp5GS5oTSt8w9gPUqbgJz5BcVcynqvUtxYhtA1R5cri",
+   "width_pct": null,
+   "strategy_tag": "surf_probe",
+   "exit_sigs": [
+    "5HvZqKbMd54YmFQ4i5eC1ZAhFexTWBKWF1T9fbWmhERP27AHSKuiDniXUJiippTRdWyBeZE3Tjdo6VgmRfBc62n2"
+   ],
+   "exit_ts": 1789320476.444
   }
  ]
 }

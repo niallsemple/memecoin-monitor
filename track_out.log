@@ -1,43 +1,43 @@
-tracking 422 hits
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/ADXZa1HXv6TFfPJFft5rg5RxxKerAHreu6jqqMBJ1JSt/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/BrS5DHAeobuBQGsu6YiSDvsLt2MNAinvcPgZyz2k921y/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x45ab87b295fd4adb725b14ccf825d5cb3ca3643972385c5255340aa53970172e
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x7deb248259a2774757a6d8cb93db3310161b1f46499413e529daf0657ba94fb7
+tracking 429 hits
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/3MtCPoCFT2cVUtmNYiQLcuveGn1mbr7Bss1mPm2Nasdi
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x64ffb202e76667b5714db00a9561f0c41e04cb8a/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xea5b782a1944616b73d1576bc04b77590dbfb40699fc37042d6a7afa5e76576d/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe065512fc59014c1278336d7850d55b110f2dad68efc327f6215803772c965ac
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x599259850daf016b043bf7e28b4587ed9156f770/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xfbde667bb1148bb7c88c434f43239b21e6a2197c4c7bcf4eb327b9837cbba95b/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xc1ff9acc0a29d2eee84a2f1fd0bd21e4985b26f0bc193327b3751de0106593f9/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/F8dgETuQb7ALho8jbz8rYHQ2LR2B6thBtYVrb8NJmcQb/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/FfxsYhne5kfhTdE2Bddg5jtLaFf8C4Wfhr6Lvo9Xc9ys/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x022ee383bc3f65de792bc6b36cbf7e894b10e253
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x63518f85d41d223e0358acd3fd2b9f8b61bb68bf
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x72e23fba2d13bec15be0d185423ac432c8190975/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/5TMSGTMKFUKuTn88E1ZWhQ3Z1YgcSKWMopCXybQBoxxa
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x7a885de53b0a54b698e6263da5c973796e05162b
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe6f7c389550ad4907be85c4f0848e22a3841fe7bd5f7072ae8c6dea1d25796b9
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe8cd11419e849493cbb71540783a14f5d3906f68
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x1173b30330bcc53d9f22d84f3dc451e3ea310f24/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x164b0c768cf288f0726caf52d6c0c2ea8879e22d3b775fc7117eef3f98debb74/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x8d94f55fa52e7ba2dc5fb898c8d341a76cc79cf63645516cde876ed202283f95/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x24558e823256eb06c07cb44dba4f240cc915f7a7/ohlcv/hour?aggregate=1&limit=48&currency=usd
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe1cd0944cbb3d1422d803467407b660a9a4d4cede19442cb5cf09d61601de7a9/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xc0b36fab8896859bc3a069dc627b5fc19c5e737b
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x34d4f3de46898b42cb8e89bd58c4014f410882d3
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xbc893ae6f440ccea165ae957b62e318283ed812d
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xd5b600678a3cb8d737902cd06e8886234cf0d924/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x280f04bf8e66c35cd2f00711255c6e2c3e0369f4
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x072c0d9211054758043b0e35f5fd164f0ed93844915f6a803d337726d850f925/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xf9db6c3bad22be1ee75f830207bd3ccbe98e0a77b5deeab146749edea113e56e
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xdea7271b23482f2a422b3a7a483202845cf01ac172794a041e307140d698c3ec
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xba5af983a55d2b0aa18cd8a426bd9d0f6b73158ca62bcaed17e859af90ca42fb
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/6SDKKp3YGjvex9bz32kHifY7r6Z6T5ampvwZbraNH9Js
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/GspF4uc6w6waGVD3CsUDZTXsgFkGQGqJsC916VrerC21
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/8EjzoqSvXtGU6g95oG6TBrnTiy6CJ1KT3M2M8aUvnNQv
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xf2b145d1de801f278f7f581d5812781a5e94906a/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x565221945ffbbb86d30752de4602ef5822d0b400/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x82de0532fe4a6a71b7f34bdce43033374cb6bd5b26880220d899be53ce102ac4/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xc77671df1778b984e0d9235026c837ff173acd5f96371532b1c5fd3cbf2f4f0f/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/Aj8yGWXDbNuDxhfru4mupZ151BrunmFDRnaAdkKszpRJ/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xa86350372e43449677a33f1df81f679bbd44c2bc
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/GWXRXvm2NWpU8ehgxVUZx3T8AWQKgphopqCntruzKXot/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/HSdohfpSo7ee1DsVyYbLdWE1LfGHkH9W86oZ4Ji6KHPU/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xc4d7c942be600395c9046f521c77490f724740f3
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x5ffceec70fccddc309fa2642f483ce5616935ef67a63207139231a9b6988ee12/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xba5af983a55d2b0aa18cd8a426bd9d0f6b73158ca62bcaed17e859af90ca42fb/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x3810d8cadda05f6ad44b212a6492fab673890d4a909d7cf9fa72bad77fefbc68
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xa4e382b624ab7ef20d2c19d2e487bc18c9d3270b219b10aeecbc283ce3e31b1b
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/H8BVJCUzkDwtbTVtTFaAwdpVcD45djwxBd8itDXR3V5V
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xa0b55d8fc2ca790309d5c258d8426f1a07b6cc5a
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xa7010fe80f7cb8cb00229934d21dfaa8c9320d1ee5be3914153eb91cf75b3234/ohlcv/hour?aggregate=1&limit=48&currency=usd
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xa6a52080f5ffcf076af5f4432fef4da0c6f7e305/ohlcv/hour?aggregate=1&limit=48&currency=usd
 HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/k47fT6CvHs4mkZUyj3GY4XqMkZx8VnmZJcqLpgNR9zh
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xe03f280c8b35f4323d23fa6b6e9f982913f7c0eae6a7e2e63f26589a6dc5c1dc/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0xc25b681c65024182ba58c3e86159f38e9a5c5680
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xcd7e24350602af6503a5600031e636b5481625e69a2ec6bb4407a0ce76cabbc6/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xc37ec165b37ed0200a43e474e74094c0dfa923fb
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x2cd36b331acea03bb4a99af357793699bc0f5d8f5aa2a307babebfeba5d614e6
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/6EWYyAesFtmEWcexAR3415mq68qwGShaqrsT15nGuTbh/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x77978967b434deb35a8a9414b06bfac2af992896
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x11d0ba3d550477d1baa87c6ea6d707a744f4943567b8cd6c6f1349a03ec54f86
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/BLSbhF99cqNMdPnXdCZiVGZzXuu54rvMkUKNnMwXQS1E
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x37d75be80dd0c583d2ce41919bf6060986e6973c3c7c6e8421d58ef77d2d2a77
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x58a2e1397a5069cc5b5d48979d4cf60401981120
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0xd6e573afad258e267604f63ef4c9b2fa22328948
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x07ae53fbb9c8be7fb5b98693a4ff84033dbdf870/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xbd54a8011078cfdb43fc7881de7a54212e9ca3a0
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0x5ab9f121151d3ba486782bceacf713178e0e7383
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x8a4223ebc989dc0e22636203ac4e15d2acf975ed
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x6a6ca6ccb84daaa3c749e90efa56792ec758a00ca881907d4cb7461d4020754b/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/solana/pools/GxU2T5hc7yfrpVe6kaAYCxvSUWx4G4CDdnEacwqPPAEE/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x8f13838d3850cece38d0702cdb525ba5dceb40f0d3f9e121de109bee049cb4f0/ohlcv/hour?aggregate=1&limit=48&currency=usd
-HTTP 429 https://api.geckoterminal.com/api/v2/networks/base/pools/0x47fecaeb0a23373fd782c3e043081f4e91e918ed032380a56b1a1528e25c1c70
+HTTP 429 https://api.geckoterminal.com/api/v2/networks/eth/pools/0xbd54a8011078cfdb43fc7881de7a54212e9ca3a0/ohlcv/hour?aggregate=1&limit=48&currency=usd
 
 name                   chain    status  exit      FR  peak   now        ret
 JEW / SOL              solana   closed  timestop  F     1.0x   1.0x     -0%
@@ -753,7 +753,7 @@ HYDREX / WETH          base     closed  trail     F     1.0x   0.0x    -99%
 GOL / WBNB             bsc      closed  timestop  F     1.0x   1.0x     +0%
 牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
 PurpDrop / WETH        eth      closed  trail     F     1.0x   0.0x   -100%
-4STOCK / WBNB          bsc      closed  timestop  F   1857474900.1x 1857474900.1x     +0%
+4STOCK / WBNB          bsc      closed  timestop  F   1857474900.1x   2.3x     +0%
 FDX / WETH             eth      closed  timestop  F     1.0x   0.0x     +0%
 9CAT / WBNB            bsc      closed  trail     F     1.3x   0.0x    -47%
 WOTF / SOL             solana   closed  trail     T     2.6x   0.0x    +13%
@@ -806,7 +806,7 @@ LIQUIDBGT / WETH       base     closed  timestop  F     1.0x   1.0x     +0%
 Mistral AI / SOL       solana   open    None      T     2.2x   1.7x    +55%
 BULL / WBNB            bsc      closed  timestop  F     1.0x   0.7x    -32%
 IHH / WETH             eth      closed  timestop  F     1.0x   1.0x     +0%
-SPIRAL / ETH           eth      closed  trail     T    23.5x  10.1x   +283%
+SPIRAL / ETH           eth      closed  trail     T    23.5x   6.8x   +283%
 CHIN / WBNB            bsc      closed  trail     F     1.0x   0.0x   -100%
 Nvidia / SOL           solana   closed  timestop  F     1.0x   1.0x     -0%
 Nvidia / SOL           solana   closed  timestop  F     1.0x   1.0x     +5%
@@ -817,7 +817,7 @@ WOFI / SOL             solana   closed  trail     T     2.0x   0.0x    +13%
 ZODL / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
 COINCAT / WETH         base     closed  timestop  F     1.0x   0.0x     +0%
 EEE / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
-FUSE / ETH 1.1%        eth      closed  timestop  F    16.4x  16.4x    -33%
+FUSE / ETH 1.1%        eth      closed  timestop  F    14.5x  14.5x    -33%
 DIVVY / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
 coinbasewallet / WET   base     closed  timestop  F     1.0x   0.0x     +0%
 GLAZE / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
@@ -886,7 +886,7 @@ AVE / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
 BREW / WBNB            bsc      closed  trail     F     1.0x   0.0x   -100%
 EFT / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
 EGGFUTURES / ETH 0.0   base     closed  timestop  F     1.0x   1.0x     +0%
-蝴蝶股票 / WBNB            bsc      open    None      T     3.7x   2.2x    +67%
+蝴蝶股票 / WBNB            bsc      open    None      T     3.7x   2.6x    +78%
 词元 / WBNB 0.01%        bsc      closed  timestop  F     1.0x   1.0x     -0%
 🦆MET / WBNB            bsc      closed  timestop  F     1.1x   1.1x     +9%
 牛来 / USDT              bsc      closed  timestop  F     1.0x   1.0x     +0%
@@ -929,18 +929,26 @@ openhuman / WETH       base     closed  timestop  F     1.0x   1.0x     +0%
 模因币 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
 ORBI / ETH             eth      closed  timestop  F     1.0x   1.0x     +0%
 Floor / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+BEAST / SOL            solana   closed  trail     T     2.5x   0.2x    +16%
 AGEX / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
 妖大王 / USDT             bsc      closed  timestop  F     1.0x   1.0x     +0%
 FLYPAY / ETH 0.3%      base     closed  timestop  F     1.0x   1.0x     +1%
 BACK / ETH 0.3%        base     closed  timestop  F     1.0x   1.0x     +0%
+TRUMPY / ETH 0.3%      base     closed  timestop  F     1.0x   1.0x     +0%
 🐶QUEE / WBNB           bsc      closed  timestop  F     6.2x   6.2x   +517%
-SNKGOB / SOL           solana   open    None      F     1.0x   1.0x     +0%
+ELIXR / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +1%
+SNKGOB / SOL           solana   closed  timestop  F     1.0x   1.0x     +0%
 RSG / WETH             eth      closed  trail     F     1.0x   0.0x   -100%
-GPE / WETH             eth      open    None      F     1.0x   1.0x     +0%
-SHIFT / ETH 0.3%       base     open    None      F     1.0x   1.0x     +0%
-💵MP / WBNB             bsc      open    None      F     1.0x   1.0x     -1%
+GPE / WETH             eth      closed  timestop  F     1.0x   1.0x     +0%
+SHIFT / ETH 0.3%       base     closed  timestop  F     1.0x   1.0x     +0%
+💵MP / WBNB             bsc      closed  timestop  F     1.0x   1.0x     -1%
 BERRY / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
-BEAST / SOL            solana   open    None      F     1.0x   1.0x     +0%
-TRUMPY / ETH 0.3%      base     open    None      F     1.0x   1.0x     +0%
+$SP5000 / WBNB         bsc      closed  trail     F     1.0x   0.3x    -73%
+凤凰 / WBNB              bsc      closed  trail     F     1.0x   0.0x   -100%
+MSFT / SOL             solana   closed  trail     F     1.0x   0.0x   -100%
+CTO / SOL              solana   open    None      F     1.0x   1.0x     +0%
+TWICE / SOL            solana   open    None      F     1.0x   1.0x     +1%
+GTA 6 Coin / SOL       solana   open    None      F     1.0x   1.0x     +0%
+TWINE / WETH           eth      closed  trail     F     1.0x   0.0x   -100%
 
-closed: +32%/trade, win 139/852
+closed: +31%/trade, win 141/863
