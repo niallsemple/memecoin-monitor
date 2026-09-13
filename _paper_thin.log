@@ -3,3 +3,5 @@
 [open] CnK1jPqS fees=0.00133 t+230s
 [open] CnK1jPqS fees=0.00301 t+310s
 [exit] CnK1jPqS tripwire ab=-442<-441 fees=0.00621 markout=0.00197 net=+0.00224 bank=0.9870
+[enter] 9NdiyGft HFNA thin Y-only 0.1 SOL bins [-229,-227] elev=7.9x tx5=132 thin=False
+[exit] 9NdiyGft liquidity refilled fees=0.00168 markout=0.00000 net=+0.00068 bank=0.9877

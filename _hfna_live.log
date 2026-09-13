@@ -69,3 +69,39 @@
 [flat] watchlist=12 armed=True
 [flat] watchlist=12 armed=True
 [flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[ENTER] 9NdiyGft Y-only 0.1 SOL bins [-229,-227] elev=7.9x
+  kind=live_enter pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 bins=[-229, -227] elev=7.9174232598357115 rc=0 out=dRke7ddW sig=4PEbDFgLV13rKrYzrENed31AZrXc9WNdf9EkYo68Z6t4tUF9dgVLEucdDMZjkpXyPX785uUrirJC4onooLT9QU68
+(node:48212) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ wallet_before=7.307640523
+[exit] 9NdiyGft liquidity refilled fees_est=0.00168
+  kind=live_exit pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 reason=liquidity refilled rc=0 out=EXITED G9ZVVq1VGbizVRz3javFqD6oom9mqPdenLvLdRke7ddW sigs=3eWy7kAHwRaqAFd33cABfXfbME5oYzFxgo2vZ3oW74D48pW2wz5dnhA1MM1BPhY8ihnX1ky8Laoau14sqSReGBD2
+
+  kind=real_pnl pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 real_pnl=-0.00015789099999974354 wallet_before=7.307640523 wallet_after=7.307482632 shadow_fees=0.001677 feeY_onchain=0.000668584 capture_ratio=0.3986178042608646 hold_s=443.9 exit_reason=liquidity refilled
+  kind=fee_curve pool=9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6 curve=[[237.2, -227, 0.000165], [252.9, -227, 0.000473], [268.5, -227, 0.000543], [284.3, -227, 0.000543], [300.0, -227, 0.000546], [315.7, -227, 0.000581], [331.5, -227, 0.000631], [347.2, -226, 0.000669], [363.0, -226, 0.000669], [378.7, -226, 0.000669]]
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
+[flat] watchlist=12 armed=True
