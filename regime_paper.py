@@ -2,21 +2,20 @@
 """regime_paper.py — forward paper-trading of the flat-harvest rule.
 
 Backtest (FINDINGS.md 2026-09-13) says the paying condition is fee bursts
-while price is FLAT (regime_edge ratio >= 1.5, esp. ratio~999). This validates
-that forward on live data, no real SOL.
+while price is FLAT (regime_edge ratio >= EDGE_MIN). Grid test: positive for
+all 15 EDGE_MIN x SUSTAIN combos; SUSTAIN 2-3 beats first-detection entry.
+This validates forward on live data, no real SOL, and runs TWO books in
+parallel to settle entry timing empirically:
 
-IMPORTANT: evaluates EVERY bin snapshot (~30s cadence), not just poll-cycle
-instants — paying windows last 1-5 min and a 4-min sampling cadence would
-structurally miss them (that would make a negative result uninterpretable).
+  book s1: open on FIRST favorable snapshot      (max trade count)
+  book s2: open on 2nd consecutive favorable     (grid sweet spot)
 
-  OPEN  : trailing-1h ratio >= EDGE_MIN at a snapshot, no open paper position
-  CLOSE : ratio < EDGE_MIN at a later snapshot, or MAX_AGE_S exceeded
-  P&L   : fees = protocol fee delta (entry->exit snapshot) * LP_MULT * share
-          share = size in Y raw / liq_active, capped at 5% (artifact guard)
-          IL    = |price drift|/2 * size ;  minus FIXED probe overhead
+  CLOSE (both): ratio < EDGE_MIN at a later snapshot, or MAX_AGE_S
+  P&L  : fees = protocol fee delta * LP_MULT * share (share capped 5%)
+         IL = |drift|/2 * size ; minus FIXED. Per-size nets 0.05/0.5/1.0.
 
-Runs one-shot per poll cycle (after regime_edge.py in _poll_loop.sh),
-processing all snapshots since the previous run.
+Evaluates EVERY bin snapshot (~30s cadence) — paying windows last 1-5 min.
+Runs one-shot per poll cycle after regime_edge.py.
 State: regime_paper_state.json ; closed trades: regime_paper.jsonl
 """
 import json, os, sys, time
@@ -28,13 +27,14 @@ STATE = os.path.join(BASE, "regime_paper_state.json")
 TRADES = os.path.join(BASE, "regime_paper.jsonl")
 
 EDGE_MIN = 1.5
-SIZES = (0.05, 0.5, 1.0)   # parallel virtual sizes — learn scaling before risking
+BOOKS = {"s1": 1, "s2": 2}        # book -> streak required to enter
+SIZES = (0.05, 0.5, 1.0)
 FIXED = 0.0002
 LP_MULT = 9.0
 MAX_AGE_S = 900
 SHARE_CAP = 0.05
 LOOKBACK_S = 3600
-HIST_LOAD_S = 3 * 3600   # trailing data needed for ratios + backlog
+HIST_LOAD_S = 3 * 3600
 
 sys.path.insert(0, BASE)
 from capacity_watch import fees_sol, sol_price_ref, STABLES  # noqa: E402
@@ -46,7 +46,6 @@ def price_of(d):
 
 
 def ratio_at(rows, i, meta, tvl_sol, sol_usdc):
-    """regime_edge ratio at rows[i] using trailing 1h window."""
     b = rows[i]
     lo = b["t"] - LOOKBACK_S
     j = i
@@ -69,15 +68,42 @@ def ratio_at(rows, i, meta, tvl_sol, sol_usdc):
                                                       else 0.0)
 
 
+def close_rec(book, addr, meta, pos, snap, r, sol_usdc):
+    a, b = pos["snap"], snap
+    age = b["t"] - pos["t"]
+    try:
+        fs = (fees_sol(a, b, meta, sol_usdc) or 0) * LP_MULT
+    except (KeyError, TypeError):
+        fs = 0.0
+    liq_act = float(b.get("liq_active") or 0)
+    p_in, p_out = price_of(a), price_of(b)
+    drift = abs(p_out - p_in) / p_in if p_in and p_out else 0
+    nets = {}
+    for size in SIZES:
+        our_raw = (size * 1e9 if meta["y_sym"] == "SOL"
+                   else size * sol_usdc * 10 ** meta["y_dec"])
+        share = min(our_raw / liq_act, SHARE_CAP) if liq_act > 0 else 0
+        nets[str(size)] = round(fs * share - drift / 2 * size - FIXED, 6)
+    return {"t": b["t"], "book": book, "pool": meta["name"],
+            "addr": addr[:8], "age_s": round(age),
+            "ratio_in": round(pos["ratio_in"], 1), "nets": nets,
+            "exit": "ratio_break" if (r is not None and r < EDGE_MIN)
+                    else "max_age"}
+
+
 def main():
     pools = {p["addr"]: p for p in json.load(open(POOLS))["pools"]}
     try:
         state = json.load(open(STATE))
     except Exception:
-        state = {"open": {}, "closed": 0, "last_t": {}}
+        state = {}
     state.setdefault("last_t", {})
-    if not isinstance(state.get("net"), dict):
-        state["net"] = {str(s): 0.0 for s in SIZES}   # v3: per-size ledgers
+    state.setdefault("streak", {})
+    for bk in BOOKS:
+        b = state.setdefault(bk, {})
+        b.setdefault("open", {})
+        b.setdefault("closed", 0)
+        b.setdefault("net", {str(s): 0.0 for s in SIZES})
 
     cutoff = time.time() - HIST_LOAD_S
     series = {a: [] for a in pools}
@@ -97,63 +123,41 @@ def main():
             continue
         tvl_sol = (meta.get("tvl_usd") or 1) / sol_usdc
         if addr not in state["last_t"]:
-            # first sight of this pool: start from NOW — no backlog replay,
-            # ledger must be purely forward-looking
-            state["last_t"][addr] = rows[-1]["t"]
+            state["last_t"][addr] = rows[-1]["t"]   # forward-only: no replay
         last_t = state["last_t"][addr]
-        pos = state["open"].get(addr)
+        streak = state["streak"].get(addr, 0)
 
         for i, snap in enumerate(rows):
             if snap["t"] <= last_t:
                 continue
             r = ratio_at(rows, i, meta, tvl_sol, sol_usdc)
-            if pos is None:
-                if r is not None and r >= EDGE_MIN:
-                    pos = {"t": snap["t"], "snap": snap, "ratio_in": r}
-                    state["open"][addr] = pos
-                    print(f"paper OPEN {meta['name']} "
-                          f"{time.strftime('%H:%M:%S', time.localtime(snap['t']))}"
-                          f" ratio {r:.1f}")
-            else:
-                age = snap["t"] - pos["t"]
-                broken = r is not None and r < EDGE_MIN
-                if broken or age > MAX_AGE_S:
-                    a, b = pos["snap"], snap
-                    try:
-                        fs = (fees_sol(a, b, meta, sol_usdc) or 0) * LP_MULT
-                    except (KeyError, TypeError):
-                        fs = 0.0
-                    liq_act = float(b.get("liq_active") or 0)
-                    p_in, p_out = price_of(a), price_of(b)
-                    drift = (abs(p_out - p_in) / p_in
-                             if p_in and p_out else 0)
-                    nets = {}
-                    for size in SIZES:
-                        if meta["y_sym"] == "SOL":
-                            our_raw = size * 1e9
-                        else:
-                            our_raw = size * sol_usdc * 10 ** meta["y_dec"]
-                        share = (min(our_raw / liq_act, SHARE_CAP)
-                                 if liq_act > 0 else 0)
-                        fees = fs * share
-                        il = drift / 2 * size
-                        nets[str(size)] = round(fees - il - FIXED, 6)
-                    net = nets[str(SIZES[0])]
-                    rec = {"t": b["t"], "pool": meta["name"],
-                           "addr": addr[:8], "age_s": round(age),
-                           "ratio_in": round(pos["ratio_in"], 1),
-                           "nets": nets,
-                           "exit": "ratio_break" if broken else "max_age"}
-                    with open(TRADES, "a") as f:
-                        f.write(json.dumps(rec) + "\n")
-                    state["closed"] += 1
-                    for k, v in nets.items():
-                        state["net"][k] = round(state["net"][k] + v, 6)
-                    pos = None
-                    del state["open"][addr]
-                    print(f"paper CLOSE {meta['name']} age {age:.0f}s "
-                          f"nets {nets} | cum {state['net']} "
-                          f"over {state['closed']}")
+            if r is None:
+                continue
+            streak = streak + 1 if r >= EDGE_MIN else 0
+            for bk, need in BOOKS.items():
+                book = state[bk]
+                pos = book["open"].get(addr)
+                if pos is None:
+                    if streak >= need:
+                        book["open"][addr] = {"t": snap["t"], "snap": snap,
+                                              "ratio_in": r}
+                        print(f"paper OPEN[{bk}] {meta['name']} "
+                              f"{time.strftime('%H:%M:%S', time.localtime(snap['t']))}"
+                              f" ratio {r:.1f} streak {streak}")
+                else:
+                    age = snap["t"] - pos["t"]
+                    if r < EDGE_MIN or age > MAX_AGE_S:
+                        rec = close_rec(bk, addr, meta, pos, snap, r, sol_usdc)
+                        with open(TRADES, "a") as f:
+                            f.write(json.dumps(rec) + "\n")
+                        book["closed"] += 1
+                        for k, v in rec["nets"].items():
+                            book["net"][k] = round(book["net"][k] + v, 6)
+                        del book["open"][addr]
+                        print(f"paper CLOSE[{bk}] {meta['name']} "
+                              f"age {rec['age_s']}s nets {rec['nets']} "
+                              f"| cum {book['net']} over {book['closed']}")
+        state["streak"][addr] = streak
         state["last_t"][addr] = rows[-1]["t"]
 
     json.dump(state, open(STATE, "w"))
