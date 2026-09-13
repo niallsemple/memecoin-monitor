@@ -1,0 +1,9 @@
+{
+ "no_flow": 11,
+ "no_vacuum": 8,
+ "no_settle": 2,
+ "cooldown": 1,
+ "short_hist": 4,
+ "low_txflow": 6,
+ "low_elev": 3
+}
