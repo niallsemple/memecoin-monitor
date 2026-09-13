@@ -39,6 +39,7 @@ TXFLOW_MAX_AGE = 150.0   # s — stale tape = no gate pass
 SIZE = 0.1            # SOL deployed
 DRIFT = 2             # re-center when |ab - anchor| exceeds this
 REPO_COST = 0.0005    # tx cost per reposition (charged to trade)
+MAX_REPOS = 2         # churn cap: WRq trade #1 paid 0.002 following a stall
 FIXED_COST = 0.001    # tx fees round trip
 # LP fee multiplier = (10000 - protocolShare) / protocolShare, per-pool.
 # Measured on-chain 2026-09-11: all watchlist pools have protocolShare=1000
@@ -151,8 +152,8 @@ def main():
                 # cap per-interval credit: kills prot_fee counter-jump artifacts
                 # (e.g. 9yXn printed 0.303 in one trade = 3x SIZE, impossible)
                 pos["fees"] += min(lp_fees * share, 0.05 * SIZE)
-            # reposition: follow price when it drifts (placement fix)
-            if abs(ab - pos["anchor"]) > DRIFT:
+            # reposition: follow price when it drifts (placement fix), capped
+            if abs(ab - pos["anchor"]) > DRIFT and pos.get("repos", 0) < MAX_REPOS:
                 pos["anchor"] = ab
                 pos["low"], pos["high"] = ab - 2, ab
                 pos["repos"] = pos.get("repos", 0) + 1
