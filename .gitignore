@@ -32,3 +32,11 @@ damm_v2_births.jsonl
 pumpswap_pairs.json
 knots_txs.jsonl
 gbr_*.jsonl
+
+# large rotating data logs — keep local, don't push
+bsc_flow.jsonl
+base_flow.jsonl
+bin_snapshots.jsonl
+damm_v2_fee_snapshots.jsonl
+knots_txs_pre.jsonl
+node_modules/
