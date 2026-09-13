@@ -43,3 +43,14 @@ Paper ledger reset; continues under strict rule. LP_MULT=9 confirmed
 structural (Meteora 10% protocol fee), not the weak link.
 Status: ALL LP-skim branches falsified in this regime. Detector stays live —
 if a window ever qualifies under excursion-strict rules it is genuinely flat.
+
+## 2026-09-13 momentum-cell qualification rate + replay
+Entry gates (age<=0.5h, liq>=$25k, vol_5m>=1x liq, buys>sells) qualify 0.17
+mints/h over 131h of snapshots -> n>=30 dry entries needs ~7.5 days.
+Replaying exit rules on the 22 historical qualifiers: 73% win, +8.9%/trade.
+CAVEATS: assumes clean fills at rule prices; 30s-5min snapshot cadence cannot
+see atomic rugs (live cell record: n=2, -42%/trade, one atomic drain blew
+through the -40% stop). Replay vs live gap matches the E25 pattern
+(paper +3.3% -> live -5.3%). Verdict: replay justifies continued DRY
+evidence-gathering only; no live re-arm without n>=30 dry + slippage proof.
+Cell loop running (feed + dry watcher, 60s).
