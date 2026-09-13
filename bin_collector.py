@@ -143,19 +143,34 @@ def round_once(now):
 def fast_tail(open_pos_pools, max_rounds=3, gap=15):
     """While paper positions are open, snapshot just those pools at ~15s so
     the w7 boundary early exit is measured at realistic cadence (the 64s
-    default lets price gap straight past the exit zone — GBR 23:10 strike)."""
-    if not open_pos_pools:
+    default lets price gap straight past the exit zone — GBR 23:10 strike).
+    09-13: also fast-tail capacity pools while capacity_watch flags a spike
+    (SOL-USDC vol bursts lasted ~2min — 90s cadence misses them)."""
+    spike_pools = []
+    try:
+        cf = os.path.join(MON, "capacity_flow.jsonl")
+        now = time.time()
+        for l in open(cf).readlines()[-10:]:
+            r = json.loads(l)
+            if r.get("spike") and now - r["t"] < 600:
+                for cp in json.load(open(os.path.join(MON, "capacity_pools.json")))["pools"]:
+                    if cp["addr"].startswith(r["pool"]):
+                        spike_pools.append(cp["addr"])
+    except Exception:
+        pass
+    pools = list(dict.fromkeys(list(open_pos_pools) + spike_pools))
+    if not pools:
         return
     for i in range(max_rounds):
         time.sleep(gap)
         n = 0
         with open(OUT, "a") as f:
-            for p in open_pos_pools:
+            for p in pools:
                 s = snap_pool(p)
                 if s:
                     f.write(json.dumps(s) + "\n")
                     n += 1
-        print(f"fast tail {i+1}/{max_rounds}: {n}/{len(open_pos_pools)} pos pools")
+        print(f"fast tail {i+1}/{max_rounds}: {n}/{len(pools)} pools")
 
 
 def main():
@@ -174,7 +189,8 @@ def main():
         if pos_pools:
             fast_tail(pos_pools, max_rounds=10, gap=15)  # ~150s post-entry coverage
         else:
-            print("fast: no open positions")
+            # capacity-spike tail still runs with no paper positions
+            fast_tail([], max_rounds=6, gap=15) or print("fast: no open positions")
         return
     rounds = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     gap = int(sys.argv[2]) if len(sys.argv) > 2 else 60
