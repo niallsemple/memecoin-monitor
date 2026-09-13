@@ -48,11 +48,13 @@ a = load('hfna_paper.jsonl', fix=FIX)
 b = load('hfna_paper_w7.jsonl')
 c = load('hfna_paper_repo.jsonl')
 d = load('hfna_paper_flow.jsonl')
+e = load('hfna_paper_reflow.jsonl')
 na = summarize('3-bin (post-fix)', a)
 nb = summarize('w7 boundary    ', b)
 nc = summarize('repo follow    ', c)
 nd = summarize('flow-gated 3bin', d)
-arms = [(len(a), na), (len(b), nb), (len(c), nc), (len(d), nd)]
+ne = summarize('reflow combined', e)
+arms = [(len(a), na), (len(b), nb), (len(c), nc), (len(d), nd), (len(e), ne)]
 if all(n > 0 for n, _ in arms):
-    best = max(range(4), key=lambda i: arms[i][1]/arms[i][0])
-    print(f"\nbest arm: {['3-bin','w7','repo','flow'][best]} (need ~15 trades/arm for a real read)")
+    best = max(range(5), key=lambda i: arms[i][1]/arms[i][0])
+    print(f"\nbest arm: {['3-bin','w7','repo','flow','reflow'][best]} (need ~15 trades/arm for a real read)")
