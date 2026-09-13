@@ -29,8 +29,13 @@ function rpc() {
 function loadState() { try { return JSON.parse(fs.readFileSync(STATE_F)); } catch { return { positions: [] }; } }
 function saveState(s) { fs.writeFileSync(STATE_F, JSON.stringify(s, null, 1)); }
 
+const PRIORITY_UPL = parseInt(process.env.PRIORITY_UPL || '100000', 10); // ~0.00004 SOL at 400k CU
 async function sendTx(conn, tx, extraSigners, wallet) {
   tx.feePayer = wallet.publicKey;
+  tx.instructions.unshift(
+    ComputeBudgetProgram.setComputeUnitLimit({ units: 400000 }),
+    ComputeBudgetProgram.setComputeUnitPrice({ microLamports: PRIORITY_UPL }),
+  );
   const { blockhash, lastValidBlockHeight } = await conn.getLatestBlockhash('confirmed');
   tx.recentBlockhash = blockhash;
   tx.sign(...extraSigners, wallet);
