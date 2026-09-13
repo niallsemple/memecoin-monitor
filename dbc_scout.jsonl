@@ -3640,3 +3640,9 @@
 {"t": 1789288899.7156491, "mint": "5BGLGKP8objVTVBjiTtFvUFcQKhj6cQxXJYv2vfBuwif", "venue": "meteora_dbc", "age": 300, "indexed": true, "price_sol": 4.224681097948626e-05, "mult": 1.0, "impact": 0.03219, "amm": "Whirlpool,Dynamic Bonding Curve"}
 {"t": 1789288899.7156491, "mint": "5BGLGKP8objVTVBjiTtFvUFcQKhj6cQxXJYv2vfBuwif", "venue": "meteora_dbc", "age": 600, "indexed": true, "price_sol": 4.224681097948626e-05, "mult": 1.0, "impact": 0.03219, "amm": "Whirlpool,Dynamic Bonding Curve"}
 {"t": 1789288899.7156491, "mint": "5BGLGKP8objVTVBjiTtFvUFcQKhj6cQxXJYv2vfBuwif", "venue": "meteora_dbc", "age": 1800, "indexed": true, "price_sol": 4.224681097948626e-05, "mult": 1.0, "impact": 0.03219, "amm": "Whirlpool,Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 60, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 120, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 180, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 300, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 600, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
+{"t": 1789290795.183011, "mint": "7NAimfko5zPA74W8SV8z6bwFLJySJVQJpQopBE8hBAGS", "venue": "meteora_dbc", "age": 1800, "indexed": true, "dust": true, "impact": 1.0, "amm": "Dynamic Bonding Curve"}
