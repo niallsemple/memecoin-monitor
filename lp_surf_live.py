@@ -100,6 +100,19 @@ def swap_sol_to_usdc(sol_amt):
     time.sleep(6)
     return sig, int(q.get("outAmount", 0)) / 1e6
 
+def wallet_sol():
+    import urllib.request
+    key = open(os.path.join(BASE, "helius_key.txt")).read().strip()
+    addr = json.load(open(os.path.join(BASE, "live_wallet.json")))["address"]
+    req = urllib.request.Request(
+        f"https://mainnet.helius-rpc.com/?api-key={key}",
+        data=json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getBalance",
+                         "params": [addr]}).encode(),
+        headers={"Content-Type": "application/json",
+                 "User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)["result"]["value"] / 1e9
+
 def open_position():
     st_path = os.path.join(BASE, "lp_positions.json")
     try:
@@ -167,6 +180,23 @@ def main():
                         log({"kind": "sweep", "pool": pos["pool"],
                              "out": (sw.stdout + sw.stderr)[-400:]})
                         time.sleep(10)
+                        try:
+                            post_bal = wallet_sol()
+                            pre = None
+                            for l in open(LOG).readlines()[::-1]:
+                                r2 = json.loads(l)
+                                if r2.get("kind") == "entry_trigger" and r2.get("wallet_pre"):
+                                    pre = r2["wallet_pre"]
+                                    break
+                            if pre:
+                                log({"kind": "probe_verdict_auto",
+                                     "pool": pos["pool"],
+                                     "wallet_before": pre,
+                                     "wallet_after": post_bal,
+                                     "net_sol": round(post_bal - pre, 6),
+                                     "net_pct": round((post_bal - pre) / SIZE * 100, 2)})
+                        except Exception as e:
+                            log({"kind": "verdict_error", "err": str(e)})
                         dc = subprocess.run([sys.executable, "cost_decomp.py"],
                                             capture_output=True, text=True,
                                             cwd=BASE, timeout=180)
@@ -198,9 +228,14 @@ def main():
             d = drift_pct(rows, len(rows) - 1)
             if d is None or d < MOM_GATE_PCT:
                 continue
+            pre_bal = None
+            try:
+                pre_bal = wallet_sol()
+            except Exception:
+                pass
             log({"kind": "entry_trigger", "pool": addr, "name": meta["name"],
                  "flow_h": round(fh, 4), "drift_pct": round(d, 3),
-                 "active_bin": rows[-1]["active_bin"]})
+                 "active_bin": rows[-1]["active_bin"], "wallet_pre": pre_bal})
             if not DRY:
                 if meta["y_sym"] == "SOL":
                     out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
