@@ -185,6 +185,7 @@ def main():
          "pools": [m["name"] for m in metas.values()]})
     last_exit = 0
     entry_flow = {}      # pool -> flow at entry (in-memory; fallback EXIT_SOL_H)
+    entry_pre = {}       # pool -> wallet SOL at entry trigger (verdict truth)
     below_ct = {}        # pool -> consecutive polls below exit threshold
     while True:
         if os.path.exists(STOP):
@@ -248,12 +249,13 @@ def main():
                             time.sleep(10)
                         try:
                             post_bal = wallet_sol()
-                            pre = None
-                            for l in open(LOG).readlines()[::-1]:
-                                r2 = json.loads(l)
-                                if r2.get("kind") == "entry_trigger" and r2.get("wallet_pre"):
-                                    pre = r2["wallet_pre"]
-                                    break
+                            pre = entry_pre.pop(pos["pool"], None)
+                            if pre is None:
+                                for l in open(LOG).readlines()[::-1]:
+                                    r2 = json.loads(l)
+                                    if r2.get("kind") == "entry_trigger" and r2.get("wallet_pre"):
+                                        pre = r2["wallet_pre"]
+                                        break
                             if pre:
                                 log({"kind": "probe_verdict_auto",
                                      "pool": pos["pool"],
@@ -321,6 +323,8 @@ def main():
                  "active_bin": rows[-1]["active_bin"], "wallet_pre": pre_bal})
             entry_flow[addr] = fh
             below_ct[addr] = 0
+            if pre_bal is not None:
+                entry_pre[addr] = pre_bal
             if not DRY:
                 if meta["y_sym"] == "SOL":
                     out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
@@ -330,6 +334,18 @@ def main():
                     out = bundle("addusdc", addr, str(round(usdc, 2)), "0",
                                  "surf_probe")
                 log({"kind": "entry_done", "pool": addr, "out": out[-400:]})
+                if "ADDED position" not in out:
+                    # probe #15: failed add left swapped USDC idle and the
+                    # loop re-entered, double-swapping. Detect + clean up.
+                    log({"kind": "entry_failed", "pool": addr})
+                    swf = subprocess.run([sys.executable, "sweep_to_sol.py"],
+                                         capture_output=True, text=True,
+                                         cwd=BASE, timeout=300)
+                    log({"kind": "sweep_after_failed_entry", "pool": addr,
+                         "out": (swf.stdout + swf.stderr)[-300:]})
+                    entry_flow.pop(addr, None)
+                    entry_pre.pop(addr, None)
+                    last_exit = time.time()  # cooldown after failed entry
             break  # one position at a time
         time.sleep(POLL_S)
 
