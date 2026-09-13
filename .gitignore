@@ -43,3 +43,6 @@ node_modules/
 
 # nested node_modules
 **/node_modules/
+regime_edge.jsonl
+_regime_edge.log
+regime_edge_state.json
