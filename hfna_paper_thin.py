@@ -245,20 +245,20 @@ def main():
                     continue
                 if r["liq_active"] / prev["liq_active"] > VAC_DROP:
                     continue
-            # settle check: drift over last `win`
+            # settle check: drift over last `win` — thin fountains trend while
+            # paying; the follow mechanism handles drift, so allow 2x slack
             recent = [x["active_bin"] for x in pts if x["t"] >= r["t"] - win]
-            if len(recent) < 2 or max(recent) - min(recent) > FLAT_TH:
+            if len(recent) < 2 or max(recent) - min(recent) > FLAT_TH * 2:
                 continue
             # elevation check
             ratio = r["vol_accum"] / max(r["vol_ref"], 1)
             if ratio < ELEV_MIN:
                 continue
-            # actual-flow check: fee RATE is not fee FLOW — require real recent
-            # protocol-fee delta (>= 0.0005 SOL over ~10min) so dead pools with
-            # capped-but-idle fees (vol_ref=0 artifacts) can't enter
-            pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
-            if len(pf_recent) >= 2 and (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) < 500_000:
-                continue
+            # thin arm REPLACES the prot_fee flow check with the tx5 tape gate
+            # (already enforced above): on the busiest pools prot_fee counters
+            # go NEGATIVE from claim resets (8GhQ: -2.95 SOL/10min on-chain
+            # counter while paying 3+ protSOL/hr) — the counter gate locks out
+            # exactly the pools we most want. Tape is claim-immune.
             # edge-density gate (KNOTS/GBR recon, 2026-09-12): expected 30-min
             # capture must clear 2x round-trip costs, else the trade is
             # structurally sub-cost no matter the timing.
@@ -271,10 +271,11 @@ def main():
             if tax_bps > 50:
                 continue
             tax_drag = 0.0
-            # NOTE (09-12): paper deliberately does NOT apply the live depth
-            # gate — its job is to keep trading shallow pools risk-free so we
-            # learn whether anything besides depth predicts the bleed.
-            if len(pf_recent) >= 2:
+            # capture30 uses prot_fee deltas — claim-reset on busy pools (see
+            # above). For thin entries (share ~1.0, tape-confirmed flow) the
+            # model doesn't apply; skip it. Deep pools keep the gate.
+            pf_recent = [x for x in pts if x["t"] >= r["t"] - 600]
+            if not thin and len(pf_recent) >= 2:
                 dt = pf_recent[-1]["t"] - pf_recent[0]["t"]
                 if dt > 0:
                     flow = (pf_recent[-1]["prot_fee_y"] - pf_recent[0]["prot_fee_y"]) / 1e9 / dt
