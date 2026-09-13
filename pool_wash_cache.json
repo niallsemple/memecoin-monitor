@@ -172,10 +172,10 @@
   "swaps_5m_at_scan": 754
  },
  "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc": {
-  "verdict": "mixed",
+  "verdict": "wash",
   "t": 1789276042.29032,
   "n": 15,
   "swaps_5m_at_scan": 596,
-  "note": "25tx scan dust (med 7e-6, max 0.0016); 15tx scan organic; treat as mixed, no live probe"
+  "note": "mixed->wash: thin arm dead fill 2026-09-13 (fees=0.00000 over 6m on tx5=654 tape); 25tx dust scan median 7e-6"
  }
 }
