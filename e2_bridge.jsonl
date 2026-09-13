@@ -458,3 +458,4 @@
 {"t": 1789327911.6322188, "mint": "8Wos5TqGFjLozrQaEcX8jnd6AM6qR5ckTrTDGsSjpump", "mom": 1.001, "dd": 0.999, "bf": 0.6, "entry_mcap": 33.8039, "seed": 2.967496174, "open_age_s": 19.2, "action": "bridge_blocked", "reason": "seed_floor"}
 {"t": 1789328211.920432, "mint": "44hFThthSNWBBSmpN88UQnAysHujRrN2zfppfBptpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
 {"t": 1789328482.097815, "mint": "8Wos5TqGFjLozrQaEcX8jnd6AM6qR5ckTrTDGsSjpump", "action": "bridge_note_close", "outcome": "loss", "mult": 0.92}
+{"t": 1789329248.967457, "mint": "5gSXdziSzsnr2pW6RaW4bDyicfKAoVpaZDdJTuwZpump", "mom": 1.034, "dd": 0.967, "bf": 0.667, "entry_mcap": 33.5582, "seed": 2.325042004, "open_age_s": 20.1, "action": "bridge_blocked", "reason": "seed_floor"}

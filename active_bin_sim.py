@@ -65,6 +65,7 @@ def drift_pct(rows, i, back=4):
 
 MOM_GATE_PCT = -0.10    # only enter if trailing ~60s drift >= this (flat-to-up)
 MAX_SHARE = 0.25   # JIT/bot competition cap: we never get more than ~25% of a bin
+WIDE_BINS = int(os.environ.get("WIDTH_BINS", "0"))  # 0=single active bin; N=range [active-N, active]
 
 def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     """Run one entry from index `start`; return (result, exit_index) or (None, None)."""
@@ -97,6 +98,15 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     if not ebin:
         return None, None
     p0 = ebin["price"]                    # SOL per X at entry bin
+    lo_bin = ebin_id - WIDE_BINS          # wide range: [active-W, active]
+    y_per_bin = y_amt / (WIDE_BINS + 1)
+    # per-bin fill prices (Y per X), from entry snapshot where available
+    bin_px = {}
+    for bn in entry.get("bins", []):
+        if lo_bin <= bn["binId"] <= ebin_id:
+            bin_px[bn["binId"]] = bn["price"]
+    if not bin_px:
+        bin_px = {ebin_id: p0}
     fees_earned = 0.0
     last_fee_t = entry["t"]
     exit_row, why = None, "timeout"
@@ -110,12 +120,12 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
         if b["t"] - entry["t"] > MAX_HOLD_S:
             exit_row, why = b, "max_hold"
             break
-        # our share of OUR bin while it is the active bin
-        if b["active_bin"] == ebin_id:
-            cur = bin_of(b, ebin_id)
+        # our share of the active bin while it sits inside our range
+        if lo_bin <= b["active_bin"] <= ebin_id:
+            cur = bin_of(b, b["active_bin"])
             if cur:
                 bin_y = cur["liqY"] / ydiv
-                share = y_amt / (bin_y + y_amt) if bin_y + y_amt > 0 else 0
+                share = y_per_bin / (bin_y + y_per_bin) if bin_y + y_per_bin > 0 else 0
                 share = min(share, MAX_SHARE)
                 fees_earned += lp_fees * share
                 if lp_fees > 0:
@@ -126,9 +136,8 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
         fs_t = fees_sol(trail[0], trail[-1], meta, sol_usdc)
         span_h = (trail[-1]["t"] - trail[0]["t"]) / 3600
         flow_h = (fs_t * LP_MULT / span_h) if (fs_t is not None and span_h > 0) else 0
-        # fill-stop: price dropped below our bin -> we just got filled into X;
-        # bail immediately, capping IL at ~1 bin of adverse move
-        if b["active_bin"] < ebin_id:
+        # fill-stop: price dropped below our whole range -> fully filled into X
+        if b["active_bin"] < lo_bin:
             exit_row, why = b, "fill_stop"
             break
         if flow_h < EXIT_SOL_H and b["t"] - entry["t"] > 60:
@@ -140,20 +149,22 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     if exit_row is None:
         exit_row, why = rows[-1], "window_end"
     p1 = active_price(exit_row) or p0
-    # Y-only deposit at active bin: if price FALLS through our bin we get
-    # filled into X at ~p0 (we bought the dip) -> worth size*p1/p0.
-    # If price RISES, our Y sits below market unfilled -> still size.
-    moved_bins = exit_row["active_bin"] - ebin_id
-    if moved_bins < 0:                    # filled into X, now underwater
-        pos_val = size / p0 * p1
-    else:                                 # unfilled Y (or still in-bin mix)
-        pos_val = size
+    ab_exit = exit_row["active_bin"]
+    moved_bins = ab_exit - ebin_id
+    # Y-only range [lo_bin, ebin_id]: each bin below which price falls fills
+    # that slice of Y into X at that bin's price. Value at exit:
+    x_amt, y_left = 0.0, 0.0
+    for bid, px in bin_px.items():
+        if ab_exit < bid:      # price fell through this bin -> slice filled to X
+            x_amt += (y_per_bin / px) if px else 0
+        else:                  # still Y
+            y_left += y_per_bin
+    pos_val_y = x_amt * p1 + y_left          # in Y units (USDC or SOL)
+    pos_val = pos_val_y / sol_usdc if y_stable else pos_val_y
+    filled_frac = (x_amt * p1 / (sol_usdc if y_stable else 1)) / size if size > 0 else 0
     hold_s = exit_row["t"] - entry["t"]
-    # exit slippage: on fill_stop we hold X and must swap X->Y on a thin token;
-    # haircut scales with our share of the bin we just got filled in
-    slip = 0.0
-    if why == "fill_stop":
-        slip = size * EXIT_SLIP_PCT   # flat assumption; live probes must measure truth
+    # exit slippage: only the filled X portion needs swapping back on a thin token
+    slip = size * filled_frac * EXIT_SLIP_PCT if filled_frac > 0.01 else 0.0
     pnl = fees_earned + (pos_val - size) - 2 * EXEC_COST_SOL - slip
     exit_idx = next((k for k, r in enumerate(rows) if r is exit_row), len(rows) - 1)
     return ({"pool": meta["name"], "entry_t": entry["t"], "hold_s": hold_s,
