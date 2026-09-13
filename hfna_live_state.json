@@ -30,5 +30,6 @@
  "sample2_start": 7.354912803,
  "sample3_start": 7.347707709,
  "last_bank": 7.308685532,
- "rebuild": "reflow gates ported 09-13: tx5>=75 fresh, denylist, capped follow x2"
+ "rebuild": "reflow gates ported 09-13: tx5>=75 fresh, denylist, capped follow x2",
+ "mandate": "revised 09-13: paired capture + cost decomposition + hold-time curves; 30-50 clean windows"
 }

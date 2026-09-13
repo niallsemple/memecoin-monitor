@@ -37,3 +37,4 @@
 {"name": "4STOCK / WBNB", "pair": "0x63c0e6e92126b83d2673c99d9ea79c4c79cbb75f", "entry_t": 1788960880.390029, "exit_t": 1788963272.996944, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3439.0, "hold_min": 39.9}
 {"name": "MOONCOIN / WBNB", "pair": "0x3765e887c473c9801139833b99725ad27d88cf5d", "entry_t": 1789048537.6014662, "exit_t": 1789052047.65815, "ret": 0.0, "exit": "abort", "entry_flow_usd": 4299.0, "hold_min": 58.5}
 {"name": "CatGPT / WBNB", "pair": "0xd6e573afad258e267604f63ef4c9b2fa22328948", "entry_t": 1789201122.614151, "exit_t": 1789203465.9619808, "ret": 0.0, "exit": "abort", "entry_flow_usd": 3500.0, "hold_min": 39.1}
+{"name": "$SP5000 / WBNB", "pair": "0x725b83eb1155beac8dad7b507af8ac26a5434f27", "entry_t": 1789289978.190218, "exit_t": 1789290016.697149, "ret": 0.0, "exit": "rug", "entry_flow_usd": 3123.0, "hold_min": 0.6}

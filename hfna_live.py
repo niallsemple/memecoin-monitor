@@ -133,11 +133,12 @@ def main():
         "pos": None, "seen": {}, "consec_loss": 0, "start_bank": None, "halted": False}
     if st.get("halted"):
         print("pilot HALTED (circuit breaker) — needs manual review"); return
-    # owner directive 09-12 16:36: depth-gated pools only, 0.1 SOL, stop at
-    # +1.0 SOL over sample3_start (7.347707709) or after 24h (deadline
-    # 2026-09-13 16:36 local = 1789301796 epoch).
+    # revised mandate 09-13 13:39 (owner + external review): extend 24h at
+    # 0.1 SOL. Objective changed: not "+1 SOL" but PAIRED live/shadow capture
+    # data, cost decomposition, hold-time curves. Profit guard kept as a
+    # backstop; real success = 30-50 clean paired windows.
     now0 = time.time()
-    if now0 > 1789301796:
+    if now0 > 1789387890:
         st["halted"] = True
         json.dump(st, open(STATE, "w"), indent=1)
         print("pilot STOPPED: 24h window elapsed"); return
@@ -194,6 +195,10 @@ def main():
                     if mine[0].get("activeBin") is not None:
                         ab = mine[0]["activeBin"]
                         pos["feeY_onchain"] = int(mine[0].get("feeY_lamports") or 0) / 1e9
+                        # hold-time curve data (revised mandate 09-13): 15s
+                        # accrual series lets us reconstruct NetEdge(t) offline
+                        pos.setdefault("curve", []).append(
+                            [round(time.time() - pos["t_entry"], 1), ab, round(pos["feeY_onchain"], 6)])
                         if ab < pos["low"] - 1:
                             exit_reason = f"fast tripwire ab={ab}<{pos['low']-1}"
                             break
@@ -267,8 +272,19 @@ def main():
                 if wa is not None and pos.get("wallet_before") is not None:
                     real_pnl = wa - pos["wallet_before"]
                     st["last_bank"] = wa
+                    # paired live/shadow capture (revised mandate 09-13):
+                    # fees_est is the reflow-model shadow on identical bins/
+                    # window. capture_ratio = on-chain claimed feeY vs shadow.
+                    fee_real = pos.get("feeY_onchain")
+                    ratio = (fee_real / pos["fees_est"]) if fee_real is not None and pos["fees_est"] > 0 else None
                     log_event(kind="real_pnl", pool=p, real_pnl=real_pnl,
-                              wallet_before=pos["wallet_before"], wallet_after=wa)
+                              wallet_before=pos["wallet_before"], wallet_after=wa,
+                              shadow_fees=round(pos["fees_est"], 6),
+                              feeY_onchain=fee_real, capture_ratio=ratio,
+                              hold_s=round(time.time() - pos["t_entry"], 1),
+                              exit_reason=exit_reason)
+                    if pos.get("curve"):
+                        log_event(kind="fee_curve", pool=p, curve=pos["curve"][-40:])
             else:
                 log_event(kind="dryrun_exit", pool=p, reason=exit_reason, fees_est=pos["fees_est"])
             # armed: judge by real wallet delta; dry-run: model estimate
