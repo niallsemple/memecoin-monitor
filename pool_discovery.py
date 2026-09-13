@@ -58,10 +58,13 @@ def main():
         if a in have:
             status = "tracked"
         elif len(cfg["pools"]) < MAX_TRACKED:
+            tx, ty = p.get("token_x") or {}, p.get("token_y") or {}
             cfg["pools"].append({
                 "addr": a, "name": p["name"], "tvl_usd": round(tvl),
                 "bin_step": bin_step(p),
                 "fee_pct": round(f24 / (p["volume"]["24h"] or 1) * 100, 4),
+                "x_sym": tx.get("symbol"), "y_sym": ty.get("symbol"),
+                "x_dec": tx.get("decimals", 9), "y_dec": ty.get("decimals", 9),
                 "tag": "discovered"})
             have.add(a)
             added += 1

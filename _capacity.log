@@ -24,3 +24,23 @@ SOL-USDC         LPfees 0.364310 SOL/h  active 10409 SOL <<< SPIKE
 SOL-USDC tight   LPfees 0.562471 SOL/h  active 572 SOL <<< SPIKE
 SOL-USDC         LPfees 0.000000 SOL/h  active 26 SOL
 SOL-USDC tight   LPfees 2.209545 SOL/h  active 1106 SOL <<< SPIKE
+SOL-USDC         LPfees 0.000065 SOL/h  active 19 SOL
+SOL-USDC tight   LPfees 1.440253 SOL/h  active 256 SOL <<< SPIKE
+EMBER-USDC       LPfees 1245036.538762 SOL/h  active 6 SOL <<< SPIKE
+EMBER-SOL        LPfees 33011966.419745 SOL/h  active 17 SOL <<< SPIKE
+STONK-SOL        LPfees 4468406306.469854 SOL/h  active 35 SOL <<< SPIKE
+Traceback (most recent call last):
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/capacity_watch.py", line 87, in <module>
+    main()
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/capacity_watch.py", line 84, in main
+    print(f"{name:<16} LPfees {flow_h:.6f} SOL/h  active {rec['liq_active_sol']:.0f} SOL{flag}")
+             ^^^^
+NameError: name 'name' is not defined
+SOL-USDC         LPfees 0.001378 SOL/h  active 102 SOL
+SOL-USDC tight   LPfees 2.086660 SOL/h  active 1090 SOL <<< SPIKE
+EMBER-USDC       LPfees 53.847250 SOL/h  active 6 SOL <<< SPIKE
+EMBER-SOL        LPfees 0.000000 SOL/h  active 2 SOL
+STONK-SOL        LPfees 198.866884 SOL/h  active 36 SOL <<< SPIKE
+MET-SOL          LPfees 11.562557 SOL/h  active 0 SOL <<< SPIKE
+ZEC-SOL          LPfees 20.927990 SOL/h  active 13 SOL <<< SPIKE
+ANSEM-SOL        LPfees 1.372954 SOL/h  active 10 SOL <<< SPIKE

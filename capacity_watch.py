@@ -17,8 +17,39 @@ POOLS = os.path.join(BASE, "capacity_pools.json")
 SPIKE_SOL_H = 0.02   # ~10x quiet-baseline 0.002 SOL/h observed 09-13
 LP_MULT = 9.0        # 10% protocol share -> LP gets 9x protocol fees
 
+def sol_price_ref(rows_by_pool):
+    """SOL/USDC price from the main SOL-USDC pool's latest active-bin price."""
+    for addr, rows in rows_by_pool.items():
+        if not rows:
+            continue
+        b = rows[-1]
+        p = next((bn["price"] for bn in b.get("bins", [])
+                  if bn["binId"] == b["active_bin"]), None)
+        if p and 20 < p < 1000:  # USDC per SOL sanity range
+            return p
+    return None
+
+STABLES = {"USDC", "USDT", "USDH"}
+
+def fees_sol(a, b, meta, sol_usdc):
+    """Both-side protocol-fee delta between snapshots a->b, in SOL.
+    DLMM bin price = Y per X. fee_x(in X units) * price = Y units;
+    Y units -> SOL via y_sym (SOL direct, stable via sol_usdc)."""
+    p = next((bn["price"] for bn in b.get("bins", [])
+              if bn["binId"] == b["active_bin"]), None)
+    if not p:
+        return None
+    y_units = max(0, b["prot_fee_x"] - a["prot_fee_x"]) / 10 ** meta["x_dec"] * p \
+            + max(0, b["prot_fee_y"] - a["prot_fee_y"]) / 10 ** meta["y_dec"]
+    # note: negative side delta = protocol fee claim reset; clamped to 0
+    if meta["y_sym"] == "SOL":
+        return y_units
+    if meta["y_sym"] in STABLES and sol_usdc:
+        return y_units / sol_usdc
+    return None
+
 def main():
-    addrs = {p["addr"]: p["name"] for p in json.load(open(POOLS))["pools"]}
+    pools = {p["addr"]: p for p in json.load(open(POOLS))["pools"]}
     last2 = {}
     with open(SNAPS) as f:
         for l in f.readlines()[-3000:]:
@@ -26,10 +57,11 @@ def main():
                 d = json.loads(l)
             except Exception:
                 continue
-            if d.get("pool") in addrs:
+            if d.get("pool") in pools:
                 last2.setdefault(d["pool"], []).append(d)
+    sol_usdc = sol_price_ref(last2)
     now = time.time()
-    for addr, name in addrs.items():
+    for addr, meta in pools.items():
         rows = sorted(last2.get(addr, []), key=lambda d: d["t"])[-2:]
         if len(rows) < 2:
             continue
@@ -37,21 +69,20 @@ def main():
         dt_h = (b["t"] - a["t"]) / 3600
         if dt_h <= 0:
             continue
-        dpy = (b["prot_fee_y"] - a["prot_fee_y"]) / 1e9   # SOL-side (Y=wSOL)
-        dpx = (b["prot_fee_x"] - a["prot_fee_x"])          # X-side raw units (USDC 6dp -> /1e6)
-        # X fee in SOL terms: USDC fee / SOL price; approximate via bin price
-        price = next((bn["price"] for bn in b.get("bins", [])
-                      if bn["binId"] == b["active_bin"]), None)
-        dpx_sol = (dpx / 1e6) / price if price else 0  # X=USDC (6dp), price=USDC/SOL -> SOL terms
-        flow_h = max(0.0, (dpy + dpx_sol) * LP_MULT / dt_h)  # both sides, LP share
-        rec = {"t": now, "pool": addr[:8], "name": name,
+        fs = fees_sol(a, b, meta, sol_usdc)
+        if fs is None:
+            continue
+        flow_h = max(0.0, fs * LP_MULT / dt_h)
+        if flow_h > 500:   # bogus pair (e.g. counter reset) — discard
+            continue
+        rec = {"t": now, "pool": addr[:8], "name": meta["name"],
                "lp_fee_sol_per_h": round(flow_h, 8),
                "liq_active_sol": round(b["liq_active"] / 1e9, 1),
                "spike": flow_h >= SPIKE_SOL_H}
         with open(OUT, "a") as f:
             f.write(json.dumps(rec) + "\n")
         flag = " <<< SPIKE" if rec["spike"] else ""
-        print(f"{name:<16} LPfees {flow_h:.6f} SOL/h  active {rec['liq_active_sol']:.0f} SOL{flag}")
+        print(f"{meta['name']:<16} LPfees {flow_h:.6f} SOL/h  active {rec['liq_active_sol']:.0f} SOL{flag}")
 
 if __name__ == "__main__":
     main()
