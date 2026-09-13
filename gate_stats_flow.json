@@ -1,13 +1,13 @@
 {
  "no_flow": 31,
- "no_vacuum": 654,
- "no_settle": 88,
- "cooldown": 159,
+ "no_vacuum": 780,
+ "no_settle": 99,
+ "cooldown": 196,
  "short_hist": 16,
- "low_txflow": 687,
- "low_elev": 32,
+ "low_txflow": 774,
+ "low_elev": 34,
  "tax": 9,
- "no_tape": 218,
- "deny": 585,
+ "no_tape": 219,
+ "deny": 691,
  "low_capture30": 6
 }
