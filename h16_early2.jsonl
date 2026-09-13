@@ -25071,3 +25071,15 @@
 {"action": "h16e2_thin", "mint": "8MHMsraM5xvq3jxJe9zBf6H3W9TzfFG1PniNyDozpump", "t": 1789324245.591064, "nticks": 2, "seed": 2.473325351}
 {"action": "h16e2_stale", "mint": "GdZVtu36TZHcCo37wW4AshkC7r2oweH9h9JZw7P5pump", "t": 1789324275.609889, "last_tick_age": 35.0, "seed": 4}
 {"action": "h16e2_drop", "mint": "vk1XHfc2PfsGC4FZKwhVhSWAYU6MUsJJatWw3Tdpump", "reason": "no ticks", "t": 1789324290.62254}
+{"action": "h16e2_reject", "mint": "AHLCPJeADrTKEF9SV16DJexjd73V5B7NFmEPZSaqpump", "t": 1789324410.7107022, "mom": 1.708, "dd": 0.584, "bf": 0.688, "seed": 3.160493826}
+{"action": "h16e2_reject", "mint": "5bGyjQd9Bx4xLq4qyuXARSEG3adtF1MsHPs2SfeGpump", "t": 1789324410.7107022, "mom": 1.512, "dd": 0.547, "bf": 0.611, "seed": 3.999999999}
+{"action": "h16e2_stale", "mint": "56CbrjuiwfPTWg1K1QdKJE7Vk8KHkFZZjCvZsSPLpump", "t": 1789324425.723289, "last_tick_age": 16.8, "seed": 4}
+{"action": "h16e2_thin", "mint": "ChhSybg2ijKAoiEvos6RzDGXnsmb8TceEQgJY2nNpump", "t": 1789324455.741722, "nticks": 0, "seed": 2.967496174}
+{"action": "h16e2_reject", "mint": "5FJBs4vjdMbp2D3aNwRQAXrbBCu6x7Pvhmh5A77Upump", "t": 1789324500.774781, "mom": 0.868, "dd": 0.41, "bf": 0.5, "seed": 2}
+{"action": "h16e2_reject", "mint": "D3aefRYFQD79TDwQpfbJJecsMp5AaXDhS2xZy1iyTp2a", "t": 1789324500.774781, "mom": 1.316, "dd": 0.487, "bf": 0.551, "seed": 4.111298072}
+{"action": "h16e2_reject", "mint": "GgQcKqpxdKSuWPzknc3UfLHLiF4SKEKDgdmHq6ppump", "t": 1789324560.81309, "mom": 3.029, "dd": 0.273, "bf": 0.626, "seed": 2.070773062}
+{"action": "h16e2_close", "mint": "8Ug3JwopRMwkBEw44st5wUbC5h59LSsu2zugcJsEpump", "t": 1789324613.694633, "outcome": "loss", "mult": 0.92, "mins": 9.5, "mom": 1.021, "dd": 0.979, "bf": 0.889, "seed": 9.868646486}
+{"action": "h16e2_thin", "mint": "EgYLLgUg6y2xwar4a9DBkN7VTHmo5YncDamFefDFpump", "t": 1789324635.851372, "nticks": 1, "seed": 2}
+{"action": "h16e2_reject", "mint": "98rF7iVEVWxCwT48otSLzPG8DQzRZL8XYm6q81Xbpump", "t": 1789324665.880548, "mom": 1.443, "dd": 0.482, "bf": 0.586, "seed": 3.999999999}
+{"action": "h16e2_thin", "mint": "3kCkyKuypAi2EkkuZSZwx9qh7XrLtkDoxDkqMrb2pump", "t": 1789324665.880548, "nticks": 2, "seed": 2.967496174}
+{"action": "h16e2_thin", "mint": "D4Ec73EhuXnxbJLTxb2g41eYPMK3FUjsCHdDXpAJpump", "t": 1789324680.888355, "nticks": 2, "seed": 2.325042004}

@@ -58,3 +58,6 @@ router: select=['MET-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', '
 router: select=['MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'EMBER-SOL', 'STONK-SOL', 'ANSEM-SOL']
 router: select=['MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'EMBER-SOL', 'STONK-SOL', 'ANSEM-SOL']
 router: select=['MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'EMBER-SOL', 'STONK-SOL', 'ANSEM-SOL']
+router: select=['EMBER-SOL', 'MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'STONK-SOL', 'ANSEM-SOL']
+router: select=['EMBER-SOL', 'MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'STONK-SOL', 'ANSEM-SOL']
+router: select=['EMBER-SOL', 'MET-SOL', 'ZEC-SOL'] reject=['SOL-USDC', 'SOL-USDC tight', 'EMBER-USDC', 'STONK-SOL', 'ANSEM-SOL']
