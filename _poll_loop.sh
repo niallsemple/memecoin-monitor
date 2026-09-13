@@ -33,6 +33,7 @@ while true; do
   python3 hfna_paper_reflow.py >> _paper_reflow.log 2>&1
   python3 hfna_paper_thin.py   >> _paper_thin.log 2>&1
   python3 bin_collector.py fast >> _bin_collector.log 2>&1
+  python3 capacity_watch.py    >> _capacity.log 2>&1
   python3 regime.py            >> _regime.log 2>&1
   date +%s > _loop_heartbeat   # dead-man: any turn can check freshness
   sleep 20
