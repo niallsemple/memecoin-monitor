@@ -54,3 +54,31 @@ through the -40% stop). Replay vs live gap matches the E25 pattern
 (paper +3.3% -> live -5.3%). Verdict: replay justifies continued DRY
 evidence-gathering only; no live re-arm without n>=30 dry + slippage proof.
 Cell loop running (feed + dry watcher, 60s).
+
+## 2026-09-13 CAMPAIGN SCOREBOARD — 3 weeks, all arms, final accounting
+
+LIVE MONEY (wallet funded 2026-09-01, all systems):
+| Arm | Live record | Verdict |
+|---|---|---|
+| fast_birth | 53 buys, -0.412 SOL (-10.3%/unit) | RETIRED §459 |
+| s60nm5fr momentum (E25) | 65 buys, -0.405 SOL (-5.3%/unit) | RETIRED §459 — paper +3.3% did NOT survive fills |
+| e2 bridge | 17 buys, ~-0.20 SOL, 17/17 panic exits | RETIRED §459 |
+| pumpswap_momentum_cell | 2 buys, -0.084 SOL (1 atomic rug) | ONLY armed system; evidence-first; dry sample rebuilding |
+| LP-skim 0.05 probes | 17 probes, ~-0.0034 SOL, expectancy ~-0.0002 | FALSIFIED |
+| LP wide ranges | 0/3 | FALSIFIED |
+| LP deep-pool scaling | IL >> fees at 0.1-500 SOL | FALSIFIED (capacity_pnl, live data) |
+| LP flat-harvest timing | 36 backtest windows -> 0 under excursion guard | FALSIFIED (net-drift artifact) |
+
+PAPER-ONLY lanes: v2-v6 books all negative (best v5 -3.9%); arb exotic
+frontier THIN (§486); liquidation arm negative cycle cost (§489).
+
+STRUCTURAL LESSON: every paper edge (E25 +3.3%, cell replay +8.9%, LP
+backtests) evaporates on live contact. The gap is fills: entry slippage on
+thin pairs, atomic rugs between snapshots, IL during any price drift.
+Detection quality is not the bottleneck — execution economics are.
+
+CURRENT ZERO-COST WATCHERS (all verified writing 2026-09-13 22:16):
+cell dry watcher + reserve drain tripwire (rug-honest exits, n->30 in ~7.5d),
+regime-edge tripwire (excursion-strict), dual-book LP paper ledger,
+router walk-forward, birth feed (1,233 births/24h tracked).
+Wallet SOL-only ~7.30 SOL. Live arms self-gated off by their own records.
