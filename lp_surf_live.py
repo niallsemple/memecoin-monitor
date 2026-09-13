@@ -31,6 +31,9 @@ ARM = os.path.join(BASE, "HFNA_LIVE_ARMED")
 STOP = os.path.join(BASE, "STOP_LIVE_TRADING")
 
 SIZE = float(os.environ.get("SURF_SIZE", "0.02"))
+WIDTH_BINS = int(os.environ.get("SURF_WIDTH_BINS", "0"))  # 0=single-bin; N=wide range
+IGNORE_LIVE_GATE = os.environ.get("SURF_IGNORE_LIVE_GATE", "") == "1"
+IGNORE_ALL_GATES = os.environ.get("SURF_IGNORE_GATES", "") == "1"  # validation probes only
 DRY = os.environ.get("DRY") == "1"
 EXIT_SOL_H = 0.02
 STRONG_FLOW_SOL_H = float(os.environ.get("SURF_STRONG_FLOW", "0.15"))
@@ -288,9 +291,9 @@ def main():
             rd = router.get(meta["name"])
             rows = recent(addr)
             lr = live.get(addr)
-            if lr and lr["n"] >= 2 and lr["net"] < 0:
+            if not IGNORE_ALL_GATES and not IGNORE_LIVE_GATE and lr and lr["n"] >= 2 and lr["net"] < 0:
                 continue              # live probes say bleeder — sim can't override
-            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < ROUTER_BLOCK_NET:
+            if not IGNORE_ALL_GATES and rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < ROUTER_BLOCK_NET:
                 # router says bleeder — but log if flow gate WOULD have fired,
                 # so we can measure what the gate is costing us
                 if len(rows) >= 5:
@@ -327,7 +330,7 @@ def main():
                 entry_pre[addr] = pre_bal
             if not DRY:
                 if meta["y_sym"] == "SOL":
-                    out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
+                    out = bundle("addbins", addr, str(SIZE), str(WIDTH_BINS), "surf_probe")
                 else:  # USDC-Y: swap first, deposit USDC
                     sig, usdc = swap_sol_to_usdc(SIZE)
                     log({"kind": "usdc_swap", "sig": sig, "usdc": usdc})
