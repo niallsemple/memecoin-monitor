@@ -40,7 +40,7 @@ for name, fn in [("3-bin", "hfna_paper.jsonl"), ("w7", "hfna_paper_w7.jsonl"),
         continue
     # use same post-fix window as scorecard for 3-bin
     if name == "3-bin":
-        rows = [r for r in rows if r['t'] > 1789231000]
+        rows = [r for r in rows if r['t'] > 1789239783]
     n = len(rows)
     mf = sum(r['fees'] for r in rows) / n
     mm = sum(r.get('markout', 0) for r in rows) / n
