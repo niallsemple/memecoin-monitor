@@ -2143,10 +2143,24 @@
    "entry_active_bin": 419,
    "minBinId": 418,
    "maxBinId": 419,
-   "status": "open",
+   "status": "exited",
    "add_sig": "2JHyEwodP5XHTxVgW43PTNYfn67LnQB3ME2RRapxTXxzTfeFANYnZnUpraHnBNxhv6KcJTerh11SEUgB1tLBjBkN",
    "width_pct": null,
-   "strategy_tag": "surf_probe"
+   "strategy_tag": "surf_probe",
+   "base_tvl": 995062.0852849518,
+   "base_vol24": 6437478.37320516,
+   "feeY_hist": [
+    {
+     "t": 1789321960.102435,
+     "feeY": 12603,
+     "active": 420
+    }
+   ],
+   "was_in_range": false,
+   "exit_sigs": [
+    "8n6MYvc4ra3S6HxsaNyWaiWTapAjAgbyj5EHec2VUDcjJZfYrbrrTVJoLEqJzDYNTCKZGSCjTysxbJsdLCTsHHS"
+   ],
+   "exit_ts": 1789321999.038
   }
  ]
 }
