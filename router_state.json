@@ -1,5 +1,5 @@
 {
- "t": 1789316952.674983,
+ "t": 1789317035.88877,
  "trail_min": 60,
  "size": 0.3,
  "pools": [
@@ -14,8 +14,8 @@
   {
    "name": "SOL-USDC tight",
    "addr": "HTvjzsfX",
-   "trades": 10,
-   "net": -0.00261,
+   "trades": 9,
+   "net": -0.002289,
    "decision": "select",
    "reason": "ok"
   },
@@ -63,7 +63,7 @@
    "name": "ANSEM-SOL",
    "addr": "6e7V9eeg",
    "trades": 4,
-   "net": 0.001289,
+   "net": 0.000712,
    "decision": "select",
    "reason": "ok"
   }

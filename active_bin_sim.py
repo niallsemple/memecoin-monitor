@@ -63,6 +63,7 @@ def drift_pct(rows, i, back=4):
     return None
 
 MOM_GATE_PCT = -0.10    # only enter if trailing ~60s drift >= this (flat-to-up)
+MAX_SHARE = 0.25   # JIT/bot competition cap: we never get more than ~25% of a bin
 
 def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     """Run one entry from index `start`; return (result, exit_index) or (None, None)."""
@@ -114,6 +115,7 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
             if cur:
                 bin_y = cur["liqY"] / ydiv
                 share = y_amt / (bin_y + y_amt) if bin_y + y_amt > 0 else 0
+                share = min(share, MAX_SHARE)
                 fees_earned += lp_fees * share
                 if lp_fees > 0:
                     last_fee_t = b["t"]

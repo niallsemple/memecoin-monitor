@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/pool_router.py", line 59, in <module>
+    main()
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/pool_router.py", line 36, in main
+    out = simulate_all(m, rows, SIZE, sol_usdc) if rows else []
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/active_bin_sim.py", line 163, in simulate_all
+    r, nxt = simulate(meta, rows, size, sol_usdc, momentum=momentum,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/active_bin_sim.py", line 86, in simulate
+    if d is None or d < MOM_GATE_PCT:
+                        ^^^^^^^^^^^^
+NameError: name 'MOM_GATE_PCT' is not defined
+Traceback (most recent call last):
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/pool_router.py", line 59, in <module>
+    main()
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/pool_router.py", line 36, in main
+    out = simulate_all(m, rows, SIZE, sol_usdc) if rows else []
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/active_bin_sim.py", line 163, in simulate_all
+    r, nxt = simulate(meta, rows, size, sol_usdc, momentum=momentum,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/active_bin_sim.py", line 86, in simulate
+    if d is None or d < MOM_GATE_PCT:
+                        ^^^^^^^^^^^^
+NameError: name 'MOM_GATE_PCT' is not defined
