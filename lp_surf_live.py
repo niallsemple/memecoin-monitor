@@ -334,18 +334,27 @@ def main():
                 else:  # USDC-Y: swap first, deposit USDC
                     sig, usdc = swap_sol_to_usdc(SIZE)
                     log({"kind": "usdc_swap", "sig": sig, "usdc": usdc})
-                    out = bundle("addusdc", addr, str(round(usdc, 2)), "0",
+                    # floor to 2dp minus a cent — round() can exceed the real
+                    # swapped balance -> token program error 0x1 (probes #15, W3)
+                    dep = max(0.01, int(usdc * 100) / 100 - 0.01)
+                    out = bundle("addusdc", addr, str(dep), "0",
                                  "surf_probe")
                 log({"kind": "entry_done", "pool": addr, "out": out[-400:]})
                 if "ADDED position" not in out:
                     # probe #15: failed add left swapped USDC idle and the
                     # loop re-entered, double-swapping. Detect + clean up.
                     log({"kind": "entry_failed", "pool": addr})
-                    swf = subprocess.run([sys.executable, "sweep_to_sol.py"],
-                                         capture_output=True, text=True,
-                                         cwd=BASE, timeout=300)
-                    log({"kind": "sweep_after_failed_entry", "pool": addr,
-                         "out": (swf.stdout + swf.stderr)[-300:]})
+                    time.sleep(12)   # let the swap settle before sweeping
+                    for _try in range(3):
+                        swf = subprocess.run([sys.executable, "sweep_to_sol.py"],
+                                             capture_output=True, text=True,
+                                             cwd=BASE, timeout=300)
+                        log({"kind": "sweep_after_failed_entry", "pool": addr,
+                             "try": _try,
+                             "out": (swf.stdout + swf.stderr)[-300:]})
+                        if "SOL-only: YES" in (swf.stdout + swf.stderr):
+                            break
+                        time.sleep(8)
                     entry_flow.pop(addr, None)
                     entry_pre.pop(addr, None)
                     last_exit = time.time()  # cooldown after failed entry
