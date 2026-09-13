@@ -68,6 +68,16 @@ def bundle(*args, timeout=120):
                        text=True, timeout=timeout, cwd=BASE)
     return r.stdout + r.stderr
 
+USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+
+def swap_sol_to_usdc(sol_amt):
+    """Swap SOL->USDC via Jupiter primitives; returns (sig, usdc_out)."""
+    import live_trader as lt
+    q = lt.jupiter_quote(USDC_MINT, sol_amt)
+    sig = lt._jupiter_submit(q)
+    time.sleep(6)
+    return sig, int(q.get("outAmount", 0)) / 1e6
+
 def open_position():
     st_path = os.path.join(BASE, "lp_positions.json")
     try:
@@ -82,11 +92,12 @@ def open_position():
 # probe #2+: only pools with positive trailing sim P&L, strongest first.
 # STONK probe #1 measured -9.2% round trip at 0.02 SOL — never re-probe
 # a pool the router's own sim shows negative.
-POOL_PRIORITY = ["EMBER-SOL", "MET-SOL", "ZEC-SOL", "ANSEM-SOL", "STONK-SOL"]
+POOL_PRIORITY = ["EMBER-USDC", "EMBER-SOL", "MET-SOL", "ZEC-SOL",
+                 "ANSEM-SOL", "STONK-SOL"]
 
 def main():
     all_metas = {p["addr"]: p for p in json.load(open(POOLS))["pools"]
-                 if p.get("y_sym") == "SOL"}
+                 if p.get("y_sym") in ("SOL", "USDC", "USDT", "USDH")}
     metas = {}
     for name in POOL_PRIORITY:          # preserve priority order
         for a, m in all_metas.items():
@@ -127,7 +138,13 @@ def main():
                         out = bundle("exit", pos["pool"])
                         log({"kind": "exit_done", "pool": pos["pool"],
                              "out": out[-400:]})
-                        time.sleep(20)
+                        time.sleep(10)
+                        sw = subprocess.run([sys.executable, "sweep_to_sol.py"],
+                                            capture_output=True, text=True,
+                                            cwd=BASE, timeout=300)
+                        log({"kind": "sweep", "pool": pos["pool"],
+                             "out": (sw.stdout + sw.stderr)[-400:]})
+                        time.sleep(10)
                         dc = subprocess.run([sys.executable, "cost_decomp.py"],
                                             capture_output=True, text=True,
                                             cwd=BASE, timeout=180)
@@ -163,7 +180,13 @@ def main():
                  "flow_h": round(fh, 4), "drift_pct": round(d, 3),
                  "active_bin": rows[-1]["active_bin"]})
             if not DRY:
-                out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
+                if meta["y_sym"] == "SOL":
+                    out = bundle("addbins", addr, str(SIZE), "0", "surf_probe")
+                else:  # USDC-Y: swap first, deposit USDC
+                    sig, usdc = swap_sol_to_usdc(SIZE)
+                    log({"kind": "usdc_swap", "sig": sig, "usdc": usdc})
+                    out = bundle("addusdc", addr, str(round(usdc, 2)), "0",
+                                 "surf_probe")
                 log({"kind": "entry_done", "pool": addr, "out": out[-400:]})
             break  # one position at a time
         time.sleep(POLL_S)

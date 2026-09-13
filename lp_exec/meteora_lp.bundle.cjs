@@ -74078,6 +74078,44 @@ async function cmdAdd(conn, wallet, poolAddr, solAmt, widthPct, tag2) {
   saveState(st);
   console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
 }
+async function cmdAddUSDC(conn, wallet, poolAddr, usdcAmt, binsBelow, tag2) {
+  const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
+  await pool.refetchStates();
+  const ab = await pool.getActiveBin();
+  const n = Math.min(Math.max(Math.round(binsBelow), 1), MAX_BINS_PER_TX);
+  const minBinId = ab.binId - n;
+  const maxBinId = ab.binId;
+  const raw = Math.round(usdcAmt * 1e6);
+  const posKp = import_web321.Keypair.generate();
+  console.log(`pool ${poolAddr} active=${ab.binId} range=[${minBinId},${maxBinId}] deposit=${usdcAmt} USDC (single-sided Y)`);
+  const tx = await pool.initializePositionAndAddLiquidityByStrategy({
+    positionPubKey: posKp.publicKey,
+    totalXAmount: new import_bn15.default(0),
+    totalYAmount: new import_bn15.default(raw),
+    strategy: { minBinId, maxBinId, strategyType: StrategyType.Spot },
+    user: wallet.publicKey,
+    slippage: 2
+  });
+  const sig = await sendTx(conn, tx, [posKp], wallet);
+  const st = loadState();
+  st.positions.push({
+    pool: poolAddr,
+    position: posKp.publicKey.toBase58(),
+    name: null,
+    sol_in: null,
+    usdc_in: usdcAmt,
+    ts: Date.now() / 1e3,
+    entry_active_bin: ab.binId,
+    minBinId,
+    maxBinId,
+    status: "open",
+    add_sig: sig,
+    width_pct: null,
+    strategy_tag: tag2 || "surf_probe_usdc"
+  });
+  saveState(st);
+  console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
+}
 async function cmdAddBins(conn, wallet, poolAddr, solAmt, binsBelow, tag2) {
   const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
   await pool.refetchStates();
@@ -74213,17 +74251,6 @@ async function cmdTaxCheck(conn, poolAddr) {
     decimals: parsed.decimals ?? null
   }));
 }
-async function cmdDepthJson(conn, poolAddr) {
-  const pool = await DLMM.create(conn, new import_web321.PublicKey(poolAddr));
-  const rY = await conn.getTokenAccountBalance(pool.lbPair.reserveY);
-  const rX = await conn.getTokenAccountBalance(pool.lbPair.reserveX);
-  console.log(JSON.stringify({
-    pool: poolAddr,
-    solReserveY: Number(rY.value.amount) / 1e9,
-    reserveXraw: rX.value.amount,
-    activeBin: pool.lbPair.activeId
-  }));
-}
 async function main() {
   const [cmd, poolAddr, solAmt, widthPct, tag2] = process.argv.slice(2);
   const wallet = loadWallet();
@@ -74233,11 +74260,11 @@ async function main() {
     else if (cmd === "statusjson") await cmdStatusJson(conn, wallet);
     else if (cmd === "add") await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
     else if (cmd === "addbins") await cmdAddBins(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
+    else if (cmd === "addusdc") await cmdAddUSDC(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag2);
     else if (cmd === "exit") await cmdExit(conn, wallet, poolAddr);
     else if (cmd === "claim") await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === "binsjson") await cmdBinsJson(conn, poolAddr);
     else if (cmd === "taxcheck") await cmdTaxCheck(conn, poolAddr);
-    else if (cmd === "depthjson") await cmdDepthJson(conn, poolAddr);
     else if (cmd === "balance") {
       const lam = await conn.getBalance(wallet.publicKey);
       console.log(JSON.stringify({ wallet: wallet.publicKey.toBase58(), lamports: lam, sol: lam / 1e9 }));

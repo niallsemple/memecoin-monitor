@@ -114,6 +114,36 @@ async function cmdAdd(conn, wallet, poolAddr, solAmt, widthPct, tag) {
 }
 
 // exact bin-count entry for HFNA pilot: Y-only at [ab - binsBelow, ab], no width floor
+async function cmdAddUSDC(conn, wallet, poolAddr, usdcAmt, binsBelow, tag) {
+  const pool = await DLMM.create(conn, new PublicKey(poolAddr));
+  await pool.refetchStates();
+  const ab = await pool.getActiveBin();
+  const n = Math.min(Math.max(Math.round(binsBelow), 1), MAX_BINS_PER_TX);
+  const minBinId = ab.binId - n;
+  const maxBinId = ab.binId;
+  const raw = Math.round(usdcAmt * 1e6);   // USDC 6dp, Y-side, wallet must hold USDC
+  const posKp = Keypair.generate();
+  console.log(`pool ${poolAddr} active=${ab.binId} range=[${minBinId},${maxBinId}] deposit=${usdcAmt} USDC (single-sided Y)`);
+  const tx = await pool.initializePositionAndAddLiquidityByStrategy({
+    positionPubKey: posKp.publicKey,
+    totalXAmount: new BN(0),
+    totalYAmount: new BN(raw),
+    strategy: { minBinId, maxBinId, strategyType: StrategyType.Spot },
+    user: wallet.publicKey,
+    slippage: 2,
+  });
+  const sig = await sendTx(conn, tx, [posKp], wallet);
+  const st = loadState();
+  st.positions.push({
+    pool: poolAddr, position: posKp.publicKey.toBase58(),
+    name: null, sol_in: null, usdc_in: usdcAmt, ts: Date.now() / 1000,
+    entry_active_bin: ab.binId, minBinId, maxBinId, status: 'open', add_sig: sig,
+    width_pct: null, strategy_tag: tag || 'surf_probe_usdc',
+  });
+  saveState(st);
+  console.log(`ADDED position ${posKp.publicKey.toBase58()} sig=${sig}`);
+}
+
 async function cmdAddBins(conn, wallet, poolAddr, solAmt, binsBelow, tag) {
   const pool = await DLMM.create(conn, new PublicKey(poolAddr));
   await pool.refetchStates();
@@ -248,6 +278,7 @@ async function main() {
     else if (cmd === 'statusjson') await cmdStatusJson(conn, wallet);
     else if (cmd === 'add') await cmdAdd(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag);
     else if (cmd === 'addbins') await cmdAddBins(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag);
+    else if (cmd === 'addusdc') await cmdAddUSDC(conn, wallet, poolAddr, parseFloat(solAmt), parseFloat(widthPct), tag);
     else if (cmd === 'exit') await cmdExit(conn, wallet, poolAddr);
     else if (cmd === 'claim') await cmdClaim(conn, wallet, poolAddr);
     else if (cmd === 'binsjson') await cmdBinsJson(conn, poolAddr);
