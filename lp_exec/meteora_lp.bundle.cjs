@@ -73984,10 +73984,13 @@ function saveState(s) {
 var PRIORITY_UPL = parseInt(process.env.PRIORITY_UPL || "100000", 10);
 async function sendTx(conn, tx, extraSigners, wallet) {
   tx.feePayer = wallet.publicKey;
-  tx.instructions.unshift(
-    import_web321.ComputeBudgetProgram.setComputeUnitLimit({ units: 4e5 }),
-    import_web321.ComputeBudgetProgram.setComputeUnitPrice({ microLamports: PRIORITY_UPL })
-  );
+  const hasCB = tx.instructions.some((ix) => ix.programId.equals(import_web321.ComputeBudgetProgram.programId));
+  if (!hasCB) {
+    tx.instructions.unshift(
+      import_web321.ComputeBudgetProgram.setComputeUnitLimit({ units: 4e5 }),
+      import_web321.ComputeBudgetProgram.setComputeUnitPrice({ microLamports: PRIORITY_UPL })
+    );
+  }
   const { blockhash, lastValidBlockHeight } = await conn.getLatestBlockhash("confirmed");
   tx.recentBlockhash = blockhash;
   tx.sign(...extraSigners, wallet);
