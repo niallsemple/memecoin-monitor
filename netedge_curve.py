@@ -81,13 +81,17 @@ def main():
     print(f"fee_curve trades found: {sum(len(v) for v in curves.values())}\n")
     for pool, clist in curves.items():
         for c in clist:
-            ent = next((e for e in enters.get(pool, []) if e["t"] <= c["t"]), None)
+            cands = [e for e in enters.get(pool, []) if e["t"] <= c["t"]]
+            ent = max(cands, key=lambda e: e["t"]) if cands else None  # latest entry
             pnl = next((p for p in pnls.get(pool, []) if abs(p["t"] - c["t"]) < 120), None)
             if not ent:
                 continue
             n += 1
             curve = c["curve"]
             ts = [pt[0] for pt in curve]
+            horizons = [h for h in HORIZONS if ts and h <= ts[-1]]
+            if ts and ts[-1] > HORIZONS[-1]:
+                horizons += [ts[-1]]  # always report the tail point
             low, high = ent.get("bins", [None, None])
             prices = load_prices(pool, ent["t"], ent["t"] + (ts[-1] if ts else 0))
             p_entry = prices[0][1] if prices else None
@@ -95,7 +99,7 @@ def main():
                   f"curve pts {len(curve)}  pnl {pnl['real_pnl']:+.6f}" if pnl else "")
             print(f"  {'t':>5} {'feeY':>10} {'rate/s':>10} {'inRng':>6} {'ILproxy':>9} {'NetEdge':>10}")
             prev_fee = prev_t = 0.0
-            for h in HORIZONS:
+            for h in horizons:
                 i = bisect.bisect_right(ts, h) - 1
                 if i < 0:
                     continue
