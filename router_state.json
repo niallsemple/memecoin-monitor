@@ -1,69 +1,69 @@
 {
- "t": 1789317807.940439,
+ "t": 1789318378.256493,
  "trail_min": 60,
  "size": 0.3,
  "pools": [
   {
    "name": "SOL-USDC",
    "addr": "5rCf1DM8",
-   "trades": 9,
-   "net": -0.006713,
+   "trades": 10,
+   "net": -0.005293,
    "decision": "reject",
-   "reason": "net -0.00671 over 9 trades"
+   "reason": "net -0.00529 over 10 trades"
   },
   {
    "name": "SOL-USDC tight",
    "addr": "HTvjzsfX",
-   "trades": 9,
-   "net": -0.01552,
+   "trades": 8,
+   "net": -0.01373,
    "decision": "reject",
-   "reason": "net -0.01552 over 9 trades"
+   "reason": "net -0.01373 over 8 trades"
   },
   {
    "name": "EMBER-USDC",
    "addr": "6e4ewHhG",
-   "trades": 12,
-   "net": -0.002274,
-   "decision": "select",
-   "reason": "ok"
+   "trades": 13,
+   "net": -0.015005,
+   "decision": "reject",
+   "reason": "net -0.01500 over 13 trades"
   },
   {
    "name": "EMBER-SOL",
    "addr": "GbrDAq3R",
-   "trades": 8,
-   "net": -0.007743,
+   "trades": 10,
+   "net": -0.019383,
    "decision": "reject",
-   "reason": "net -0.00774 over 8 trades"
+   "reason": "net -0.01938 over 10 trades"
   },
   {
    "name": "STONK-SOL",
    "addr": "zxTpi4Bt",
    "trades": 9,
-   "net": -0.004417,
-   "decision": "reject",
-   "reason": "net -0.00442 over 9 trades"
+   "net": -0.000387,
+   "decision": "select",
+   "reason": "ok"
   },
   {
    "name": "MET-SOL",
    "addr": "AsSyvUnb",
-   "trades": 9,
-   "net": -0.00032,
+   "trades": 10,
+   "net": 0.021188,
    "decision": "select",
    "reason": "ok"
   },
   {
    "name": "ZEC-SOL",
    "addr": "8eybKAvj",
-   "trades": 8,
-   "net": -0.00459,
+   "trades": 9,
+   "net": -0.003856,
    "decision": "reject",
-   "reason": "net -0.00459 over 8 trades"
+   "reason": "net -0.00386 over 9 trades"
   },
   {
    "name": "ANSEM-SOL",
    "addr": "6e7V9eeg",
-   "trades": 6,
-   "net": -0.002029,
+   "trades": 8,
+   "net": -0.000477,
    "decision": "select",
    "reason": "ok"
   }

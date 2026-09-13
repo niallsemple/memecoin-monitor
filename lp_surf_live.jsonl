@@ -1,0 +1,11 @@
+{"kind": "start", "size": 0.02, "dry": true, "pools": ["EMBER-SOL", "STONK-SOL", "MET-SOL", "ZEC-SOL", "ANSEM-SOL"], "t": 1789318261.592811}
+{"kind": "entry_trigger", "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX", "name": "STONK-SOL", "flow_h": 4.7861, "drift_pct": 0.2, "active_bin": -2995, "t": 1789318261.795817}
+{"kind": "entry_trigger", "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX", "name": "STONK-SOL", "flow_h": 8.8534, "drift_pct": 0.4, "active_bin": -2994, "t": 1789318276.984947}
+{"kind": "entry_trigger", "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX", "name": "STONK-SOL", "flow_h": 8.8534, "drift_pct": 0.4, "active_bin": -2994, "t": 1789318292.1879811}
+{"kind": "entry_trigger", "pool": "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN", "name": "ANSEM-SOL", "flow_h": 0.7309, "drift_pct": 0.0, "active_bin": 204, "t": 1789318307.553173}
+{"kind": "entry_trigger", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "name": "MET-SOL", "flow_h": 1.1023, "drift_pct": 0.0, "active_bin": 420, "t": 1789318322.8145092}
+{"kind": "entry_trigger", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "name": "MET-SOL", "flow_h": 2.8959, "drift_pct": 0.0, "active_bin": 420, "t": 1789318338.088154}
+{"kind": "entry_trigger", "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x", "name": "MET-SOL", "flow_h": 14.5942, "drift_pct": 0.0, "active_bin": 420, "t": 1789318353.350861}
+{"kind": "start", "size": 0.02, "dry": false, "pools": ["EMBER-SOL", "STONK-SOL", "MET-SOL", "ZEC-SOL", "ANSEM-SOL"], "t": 1789318433.358908}
+{"kind": "entry_trigger", "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX", "name": "STONK-SOL", "flow_h": 0.7494, "drift_pct": 0.2, "active_bin": -2995, "t": 1789318433.582564}
+{"kind": "entry_done", "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX", "out": "4] deposit=0.02 SOL (single-sided Y, exact-bins)\nADDED position 2Jb89zq7futguuwKd89Aj2Ctbvx8KoWTygVFm7D2ax4q sig=5jYhQXomBYM4DBCPVvXpifAyhQXwXAGptHv3V1oWFjpqw2SsB2wjeCzRR5McmzSR4eyFoWwdc51TGUJct1H4Ym6t\n(node:61170) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n", "t": 1789318435.196908}

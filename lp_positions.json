@@ -2023,6 +2023,20 @@
     "3eWy7kAHwRaqAFd33cABfXfbME5oYzFxgo2vZ3oW74D48pW2wz5dnhA1MM1BPhY8ihnX1ky8Laoau14sqSReGBD2"
    ],
    "exit_ts": 1789307923.669
+  },
+  {
+   "pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX",
+   "position": "2Jb89zq7futguuwKd89Aj2Ctbvx8KoWTygVFm7D2ax4q",
+   "name": null,
+   "sol_in": 0.02,
+   "ts": 1789318434.39,
+   "entry_active_bin": -2994,
+   "minBinId": -2995,
+   "maxBinId": -2994,
+   "status": "open",
+   "add_sig": "5jYhQXomBYM4DBCPVvXpifAyhQXwXAGptHv3V1oWFjpqw2SsB2wjeCzRR5McmzSR4eyFoWwdc51TGUJct1H4Ym6t",
+   "width_pct": null,
+   "strategy_tag": "surf_probe"
   }
  ]
 }
