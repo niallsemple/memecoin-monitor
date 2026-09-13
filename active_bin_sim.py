@@ -52,19 +52,35 @@ def active_price(d):
     b = bin_of(d, d["active_bin"])
     return b["price"] if b else None
 
-def simulate(meta, rows, size, sol_usdc):
+def drift_pct(rows, i, back=4):
+    """Trailing price drift over ~`back` snapshots ending at index i."""
+    if i < back:
+        return None
+    p_now = active_price(rows[i])
+    p_then = active_price(rows[i - back])
+    if p_now and p_then:
+        return (p_now - p_then) / p_then * 100
+    return None
+
+MOM_GATE_PCT = -0.10    # only enter if trailing ~60s drift >= this (flat-to-up)
+
+def simulate(meta, rows, size, sol_usdc, momentum=True):
     """Run one entry at first spike; return dict of results or None."""
     if len(rows) < 4:
         return None
     if meta.get("y_sym") != "SOL":
         return {"pool": meta["name"], "skip": "Y is USDC — SOL-Y pools only for now"}
     ydiv = 10 ** meta.get("y_dec", 9)
-    # find entry: first interval with flow >= spike
+    # find entry: first interval with flow >= spike (momentum-gated)
     ei = None
     for i in range(len(rows) - 1):
         fs = fees_sol(rows[i], rows[i + 1], meta, sol_usdc)
         dt_h = (rows[i + 1]["t"] - rows[i]["t"]) / 3600
         if fs is not None and dt_h > 0 and fs * LP_MULT / dt_h >= SPIKE_SOL_H:
+            if momentum:
+                d = drift_pct(rows, i + 1)
+                if d is None or d < MOM_GATE_PCT:
+                    continue          # skip: no history, or price falling into burst
             ei = i + 1
             break
     if ei is None:
@@ -103,6 +119,11 @@ def simulate(meta, rows, size, sol_usdc):
         fs_t = fees_sol(trail[0], trail[-1], meta, sol_usdc)
         span_h = (trail[-1]["t"] - trail[0]["t"]) / 3600
         flow_h = (fs_t * LP_MULT / span_h) if (fs_t is not None and span_h > 0) else 0
+        # fill-stop: price dropped below our bin -> we just got filled into X;
+        # bail immediately, capping IL at ~1 bin of adverse move
+        if b["active_bin"] < ebin_id:
+            exit_row, why = b, "fill_stop"
+            break
         if flow_h < EXIT_SOL_H and b["t"] - entry["t"] > 60:
             exit_row, why = b, "flow_dead"
             break
@@ -133,22 +154,20 @@ def main():
     size = float(sys.argv[3]) if len(sys.argv) > 3 else 0.1
     addr, meta, rows = load(prefix, lookback * 60)
     sol_usdc = sol_price_ref({addr: rows}) or 100
-    r = simulate(meta, rows, size, sol_usdc)
-    if not r:
-        print(f"{meta['name']}: no spike entry in last {lookback:.0f}m "
-              f"({len(rows)} snaps)")
-        return
-    if r.get("skip"):
-        print(f"{meta['name']}: skipped — {r['skip']}")
-        return
     import time as _t
-    print(f"== active-bin sim: {r['pool']} size={size} SOL ==")
-    print(f"entered {_t.strftime('%H:%M:%S', _t.localtime(r['entry_t']))} | "
-          f"held {r['hold_s']:.0f}s | exit: {r['why']}")
-    print(f"fees {r['fees']:+.5f} SOL | price {r['price_move_pct']:+.2f}% "
-          f"({r['moved_bins']:+d} bins) | pos value {r['pos_val']:.5f}")
-    print(f"net P&L {r['pnl']:+.5f} SOL  ({r['pnl_pct']:+.2f}%) "
-          f"incl 2x{EXEC_COST_SOL} exec cost")
+    for mom in (False, True):
+        r = simulate(meta, rows, size, sol_usdc, momentum=mom)
+        tag = "MOMENTUM-GATED" if mom else "ungated       "
+        if not r:
+            print(f"[{tag}] {meta['name']}: no entry in {lookback:.0f}m")
+            continue
+        if r.get("skip"):
+            print(f"[{tag}] {meta['name']}: skipped — {r['skip']}")
+            break
+        print(f"[{tag}] {meta['name']:<12} hold {r['hold_s']:>4.0f}s "
+              f"exit {r['why']:<10} fees {r['fees']:+.5f} "
+              f"move {r['price_move_pct']:+6.2f}% "
+              f"net {r['pnl']:+.5f} SOL ({r['pnl_pct']:+.2f}%)")
 
 if __name__ == "__main__":
     main()

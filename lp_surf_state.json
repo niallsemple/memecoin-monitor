@@ -1,8 +1,15 @@
 {
  "bankroll": 0.743564233414914,
- "open": null,
+ "open": {
+  "provider": "meteora",
+  "pool": "E76H8HxZMAYES72vm957cwNTqw7rT3Akjp5iXrtUZ675",
+  "pair": "TACZ-SOL",
+  "entry_ts": 1789316103.719331,
+  "entry_price": 1.8498184772444e-05,
+  "deposit": 0.743564233414914,
+  "fees_est": 0.0,
+  "fee_day_at_entry": 1.0785200328358635
+ },
  "cycles": 55,
- "cooldowns": {
-  "7VKhbFtkc7APwuPYTL38c3XtktPJxphY4ECLR4ozXNbQ": 1789305336.0628119
- }
+ "cooldowns": {}
 }
