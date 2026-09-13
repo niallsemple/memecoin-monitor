@@ -40,3 +40,6 @@ bin_snapshots.jsonl
 damm_v2_fee_snapshots.jsonl
 knots_txs_pre.jsonl
 node_modules/
+
+# nested node_modules
+**/node_modules/
