@@ -1,2 +1,11 @@
-{"pools": ["FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ"],
- "notes": {"FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": "3 consecutive zero-fee fills (2026-09-12): elevation signal real but fee flow never reaches outside LP bins; structurally untradeable for us"}}
+{
+ "pools": [
+  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ",
+  "8GhQMC8oWe2HAqW19cLgmgneb8JUh8DpR5yYXWRv2eXB",
+  "WRq4e6x2hzEX5hgdyq8KybpLCuxh3YDh2ApGdjERUhZ",
+  "6e4ewHhGZrBMiSkKat7QCx28dytJdnYrobNXWrPL5WFN"
+ ],
+ "notes": {
+  "FpP5SnzBnHJ5M9wS7fCuYiiSuXUPLNQKpk7qndeZxKZZ": "3 consecutive zero-fee fills (2026-09-12): elevation signal real but fee flow never reaches outside LP bins; structurally untradeable for us"
+ }
+}
