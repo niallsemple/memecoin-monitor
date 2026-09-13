@@ -23132,3 +23132,13 @@
 {"action": "h16_open", "mint": "23zqvqqnAFM1ACYtAUr3ni7UrDiA4eBbtLzDoLenpump", "t": 1789267741.2579598, "scored_at": 1789267870.329895, "entry_mcap": 39.9326, "mom": 1.176, "dd": 0.851, "bf": 0.944, "seed": 2.962962961}
 {"action": "h16_reject", "mint": "6G3bwTJ1GCihoCdPNfZRaZ37Vn4LWNezyaCBKXXjpump", "t": 1789267870.329895, "mom": 0.811, "dd": 0.719, "bf": 0.5, "seed": 2.967496174}
 {"action": "h16_reject", "mint": "CVBYyCgjNxrJCeoCvGT6BEW9iR2qb1JG7hwxYipnpump", "t": 1789268097.783792, "mom": 1.608, "dd": 0.5, "bf": 0.617, "seed": 2.780868894}
+{"action": "h16_reject", "mint": "AdJJVVSfY9pBL2y4w1AN2SjwKUpGNWA7dh3XnRnjpump", "t": 1789268435.030817, "mom": 0.72, "dd": 0.605, "bf": 0.4, "seed": 3.160493825}
+{"action": "h16_drop", "mint": "BgBqrMDhc6PKQhKyjeHWH4q7LAFTLTAgMViJqiKHpump", "reason": "no ticks", "t": 1789268529.638052}
+{"action": "h16_drop", "mint": "JByVEauuvMTE8Wb6qFoCDAVVz7sAFGcGymKrCebRpump", "reason": "no ticks", "t": 1789268529.638052}
+{"action": "h16_reject", "mint": "5mFGHZRoRbqe73cyNLDLcm5NMo1u38sqZzrEnMxdpump", "t": 1789268529.638052, "mom": 0.681, "dd": 0.477, "bf": 0.45, "seed": 2}
+{"action": "h16_close", "mint": "23zqvqqnAFM1ACYtAUr3ni7UrDiA4eBbtLzDoLenpump", "t": 1789268448.775004, "outcome": "loss", "mult": 0.92, "mins": 11.8, "mom": 1.176, "dd": 0.851, "bf": 0.944, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "6uFa3bvahHqiSYXCe9pNu5zE4mmQXRGVdYkmG6oEpump", "t": 1789268625.1281002, "mom": 0.707, "dd": 0.682, "bf": 0.375, "seed": 2.311249752}
+{"action": "h16_reject", "mint": "29UdoRNHYgC91axUbRGXEk5B1mupB9hmXrqUTVNkpump", "t": 1789268628.155756, "mom": 3.152, "dd": 0.277, "bf": 0.541, "seed": 2.5}
+{"action": "h16_reject", "mint": "HCynfNNDvJZ7syNZr5aJJSFjnLx9pzH55P1a9Q42pump", "t": 1789268720.228317, "mom": 1.004, "dd": 0.996, "bf": 0.8, "seed": 2.962962961}
+{"action": "h16_reject", "mint": "jnj1iBacW7PmQWL8FS2ahBHQsvyQfp38j1Sxzm2pump", "t": 1789268720.228317, "mom": 1.041, "dd": 0.753, "bf": 0.513, "seed": 2}
+{"action": "h16_reject", "mint": "3VpfPA4UCcemSwus6J4RXnEHUisVuE47S522r1w7pump", "t": 1789268720.228317, "mom": 0.737, "dd": 0.736, "bf": 0.429, "seed": 4.942534711}

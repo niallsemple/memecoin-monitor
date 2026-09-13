@@ -50,12 +50,14 @@ c = load('hfna_paper_repo.jsonl')
 d = load('hfna_paper_flow.jsonl')
 d = [r for r in d if r['t'] - r.get('entry_t', r['t']) < 3600]  # drop replay-tainted trade #1 (25.7h hold)
 e = load('hfna_paper_reflow.jsonl')
+f6 = load('hfna_paper_thin.jsonl')
 na = summarize('3-bin (post-fix)', a)
 nb = summarize('w7 boundary    ', b)
 nc = summarize('repo follow    ', c)
 nd = summarize('flow-gated 3bin', d)
 ne = summarize('reflow combined', e)
-arms = [(len(a), na), (len(b), nb), (len(c), nc), (len(d), nd), (len(e), ne)]
+nf = summarize('thin fountains  ', f6)
+arms = [(len(a), na), (len(b), nb), (len(c), nc), (len(d), nd), (len(e), ne), (len(f6), nf)]
 if all(n > 0 for n, _ in arms):
-    best = max(range(5), key=lambda i: arms[i][1]/arms[i][0])
-    print(f"\nbest arm: {['3-bin','w7','repo','flow','reflow'][best]} (need ~15 trades/arm for a real read)")
+    best = max(range(6), key=lambda i: arms[i][1]/arms[i][0])
+    print(f"\nbest arm: {['3-bin','w7','repo','flow','reflow','thin'][best]} (need ~15 trades/arm for a real read)")
