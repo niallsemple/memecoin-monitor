@@ -33,6 +33,8 @@ STOP = os.path.join(BASE, "STOP_LIVE_TRADING")
 SIZE = float(os.environ.get("SURF_SIZE", "0.02"))
 DRY = os.environ.get("DRY") == "1"
 EXIT_SOL_H = 0.02
+STRONG_FLOW_SOL_H = float(os.environ.get("SURF_STRONG_FLOW", "0.15"))
+MIN_DRIFT_PCT = float(os.environ.get("SURF_MIN_DRIFT", "0.1"))
 STALL_S = 120
 MAX_HOLD_S = 1800
 COOLDOWN_S = 600
@@ -227,6 +229,10 @@ def main():
                 continue
             d = drift_pct(rows, len(rows) - 1)
             if d is None or d < MOM_GATE_PCT:
+                continue
+            # probe #5 lesson: weak flow + zero drift = paying to learn nothing.
+            # require either a strong burst (>=0.15 SOL/h) or real upward drift.
+            if fh < STRONG_FLOW_SOL_H and d < MIN_DRIFT_PCT:
                 continue
             pre_bal = None
             try:
