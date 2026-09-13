@@ -1977,6 +1977,20 @@
     "4dxSrQqV2ULdFECx775fy9zZzQRRCd6w8Czvi3UxsD84PdBk8X8JvPozZVzpBmkonMVRpP7MYFGct6RDhu5TpUfh"
    ],
    "exit_ts": 1789300017.547
+  },
+  {
+   "pool": "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6",
+   "position": "C61WTruAM55a9Q1TskxAjxCuN6ee8QsCQNwMHuwWERPv",
+   "name": null,
+   "sol_in": 0.1,
+   "ts": 1789303832.969,
+   "entry_active_bin": -211,
+   "minBinId": -213,
+   "maxBinId": -211,
+   "status": "open",
+   "add_sig": "4XAu686R2ZnjbUZKEdTJp1wFmVugJN4UBygGurgqQnqkCa9CZF8AJJtXBeUnrAobGpAqKPpdoyLgw2PjQn6NB2vZ",
+   "width_pct": null,
+   "strategy_tag": "hfna_live_v1"
   }
  ]
 }
