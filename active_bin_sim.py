@@ -64,16 +64,16 @@ def drift_pct(rows, i, back=4):
 
 MOM_GATE_PCT = -0.10    # only enter if trailing ~60s drift >= this (flat-to-up)
 
-def simulate(meta, rows, size, sol_usdc, momentum=True):
-    """Run one entry at first spike; return dict of results or None."""
+def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
+    """Run one entry from index `start`; return (result, exit_index) or (None, None)."""
     if len(rows) < 4:
-        return None
+        return None, None
     if meta.get("y_sym") != "SOL":
-        return {"pool": meta["name"], "skip": "Y is USDC — SOL-Y pools only for now"}
+        return {"pool": meta["name"], "skip": "Y is USDC — SOL-Y pools only for now"}, None
     ydiv = 10 ** meta.get("y_dec", 9)
     # find entry: first interval with flow >= spike (momentum-gated)
     ei = None
-    for i in range(len(rows) - 1):
+    for i in range(start, len(rows) - 1):
         fs = fees_sol(rows[i], rows[i + 1], meta, sol_usdc)
         dt_h = (rows[i + 1]["t"] - rows[i]["t"]) / 3600
         if fs is not None and dt_h > 0 and fs * LP_MULT / dt_h >= SPIKE_SOL_H:
@@ -84,12 +84,12 @@ def simulate(meta, rows, size, sol_usdc, momentum=True):
             ei = i + 1
             break
     if ei is None:
-        return None
+        return None, None
     entry = rows[ei]
     ebin_id = entry["active_bin"]
     ebin = bin_of(entry, ebin_id)
     if not ebin:
-        return None
+        return None, None
     p0 = ebin["price"]                    # SOL per X at entry bin
     fees_earned = 0.0
     last_fee_t = entry["t"]
@@ -143,10 +143,33 @@ def simulate(meta, rows, size, sol_usdc, momentum=True):
         pos_val = size
     hold_s = exit_row["t"] - entry["t"]
     pnl = fees_earned + (pos_val - size) - 2 * EXEC_COST_SOL
-    return {"pool": meta["name"], "entry_t": entry["t"], "hold_s": hold_s,
+    exit_idx = next((k for k, r in enumerate(rows) if r is exit_row), len(rows) - 1)
+    return ({"pool": meta["name"], "entry_t": entry["t"], "hold_s": hold_s,
             "why": why, "size": size, "fees": fees_earned,
             "price_move_pct": (p1 - p0) / p0 * 100, "moved_bins": moved_bins,
-            "pos_val": pos_val, "pnl": pnl, "pnl_pct": pnl / size * 100}
+            "pos_val": pos_val, "pnl": pnl, "pnl_pct": pnl / size * 100},
+            exit_idx + 1)
+
+COOLDOWN_S = 300   # after a fill_stop, wait before re-entering same pool
+
+def simulate_all(meta, rows, size, sol_usdc, momentum=True):
+    """Chain entries across the whole window: every gated spike, sequentially."""
+    trades, start, cooldown_until = [], 0, 0
+    while True:
+        r, nxt = simulate(meta, rows, size, sol_usdc, momentum=momentum,
+                          start=start)
+        if r is None:
+            break
+        if r.get("skip"):
+            return r
+        if r["entry_t"] < cooldown_until:
+            start = max(nxt or len(rows), start + 1)
+            continue
+        trades.append(r)
+        if r["why"] == "fill_stop" and r["fees"] < 2 * EXEC_COST_SOL:
+            cooldown_until = r["entry_t"] + r["hold_s"] + COOLDOWN_S
+        start = max(nxt or len(rows), start + 1)
+    return trades
 
 def main():
     prefix = sys.argv[1]
@@ -156,18 +179,23 @@ def main():
     sol_usdc = sol_price_ref({addr: rows}) or 100
     import time as _t
     for mom in (False, True):
-        r = simulate(meta, rows, size, sol_usdc, momentum=mom)
+        out = simulate_all(meta, rows, size, sol_usdc, momentum=mom)
         tag = "MOMENTUM-GATED" if mom else "ungated       "
-        if not r:
-            print(f"[{tag}] {meta['name']}: no entry in {lookback:.0f}m")
+        if not out:
+            print(f"[{tag}] {meta['name']}: no entries in {lookback:.0f}m")
             continue
-        if r.get("skip"):
-            print(f"[{tag}] {meta['name']}: skipped — {r['skip']}")
+        if isinstance(out, dict) and out.get("skip"):
+            print(f"[{tag}] {meta['name']}: skipped — {out['skip']}")
             break
-        print(f"[{tag}] {meta['name']:<12} hold {r['hold_s']:>4.0f}s "
-              f"exit {r['why']:<10} fees {r['fees']:+.5f} "
-              f"move {r['price_move_pct']:+6.2f}% "
-              f"net {r['pnl']:+.5f} SOL ({r['pnl_pct']:+.2f}%)")
+        tot = sum(t["pnl"] for t in out)
+        wins = sum(1 for t in out if t["pnl"] > 0)
+        print(f"[{tag}] {meta['name']:<12} {len(out)} trades "
+              f"({wins}W/{len(out)-wins}L) net {tot:+.5f} SOL")
+        for t in out:
+            print(f"    {_t.strftime('%H:%M:%S', _t.localtime(t['entry_t']))} "
+                  f"hold {t['hold_s']:>4.0f}s {t['why']:<10} "
+                  f"fees {t['fees']:+.5f} move {t['price_move_pct']:+6.2f}% "
+                  f"net {t['pnl']:+.5f} ({t['pnl_pct']:+.2f}%)")
 
 if __name__ == "__main__":
     main()
