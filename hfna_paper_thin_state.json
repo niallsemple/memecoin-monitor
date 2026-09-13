@@ -1,25 +1,25 @@
 {
- "watermark": 1789280980.936,
+ "watermark": 1789281369.275,
  "pos": {
-  "pool": "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc",
-  "t_entry": 1789280929.229,
-  "low": -342,
-  "high": -340,
+  "pool": "55EvHE1dURgFbQcQaedL6FJhx2vj6Biu4ajVZC8MbAB2",
+  "t_entry": 1789281319.823,
+  "low": -429,
+  "high": -427,
   "fees": 0.0,
   "markout": 0.0,
   "elev": 150000.0,
-  "anchor": -340,
+  "anchor": -427,
   "repo_cost": 0.0,
   "repos": 0,
-  "last_t": 1789280929.229,
-  "last_pf": 746207785,
-  "trough": 178213944.7673043,
-  "entry_swaps5": 294,
-  "thin": true
+  "last_t": 1789281319.823,
+  "last_pf": 945994351,
+  "trough": 1061851515.4374413,
+  "entry_swaps5": 987,
+  "thin": false
  },
- "bankroll": 0.9962691054879756,
- "trades": 9,
- "wins": 2,
+ "bankroll": 0.9983366566383988,
+ "trades": 10,
+ "wins": 3,
  "seen": {
   "WRq4e6x2hzEX5hgdyq8KybpLCuxh3YDh2ApGdjERUhZ": 1789269190.912363,
   "8GhQMC8oWe2HAqW19cLgmgneb8JUh8DpR5yYXWRv2eXB": 1789269896.347102,
@@ -27,6 +27,7 @@
   "9NdiyGfthT9Co6cCMZG5t4YZXpf6hiJFAEvWRPSUz7s6": 1789274926.3951511,
   "BN7CfsGm6Vq9w8NibLZXRGW2tp5y2axwXuLAs85NGakf": 1789280129.268041,
   "8eybKAvjKJryVweQLg8SRgwUfdP7wHYJ5yyqgfE82DQA": 1789273408.3748171,
-  "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc": 1789280984.423647
+  "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc": 1789280984.423647,
+  "55EvHE1dURgFbQcQaedL6FJhx2vj6Biu4ajVZC8MbAB2": 1789281372.821364
  }
 }
