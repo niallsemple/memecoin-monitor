@@ -72,8 +72,14 @@ def main():
     # verdict
     if payers:
         top_share = payers.most_common(1)[0][1] / sum(payers.values())
-        if len(payers) <= 3 or top_share > 0.5:
-            print("\nVERDICT: WASH-CONCENTRATED — tape is one/few wallets cycling")
+        dust = False
+        if deltas:
+            ad = [abs(d) for d in deltas]
+            dust = statistics.median(ad) < 0.0001 and max(ad) < 0.01
+        if len(payers) <= 3 or top_share > 0.5 or dust:
+            why = "one/few wallets cycling" if (len(payers) <= 3 or top_share > 0.5) \
+                  else "dust-cycling: diverse payers but no real size"
+            print(f"\nVERDICT: WASH-CONCENTRATED — {why}")
         else:
             print("\nVERDICT: ORGANIC-DIVERSE — many wallets; flow is real, "
                   "paper zeros are claim-reset artifact -> fountains are live targets")

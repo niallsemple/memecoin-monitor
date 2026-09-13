@@ -170,5 +170,12 @@
   "t": 1789271768.2009401,
   "n": 15,
   "swaps_5m_at_scan": 754
+ },
+ "6WwtGMXueNTv5YrD3nbfXxxS3ANiDEGyXJkTBcnmXLvc": {
+  "verdict": "mixed",
+  "t": 1789276042.29032,
+  "n": 15,
+  "swaps_5m_at_scan": 596,
+  "note": "25tx scan dust (med 7e-6, max 0.0016); 15tx scan organic; treat as mixed, no live probe"
  }
 }

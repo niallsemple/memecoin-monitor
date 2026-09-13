@@ -1,0 +1,14 @@
+paper: 39 entered total, 0 open, 1442 rows consumed
+paper: 0 entered total, 0 open, 475 rows consumed
+paper: 34 entered total, 0 open, 1442 rows consumed
+paper: 34 entered total, 0 open, 1442 rows consumed
+Traceback (most recent call last):
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/bsc_paper.py", line 407, in <module>
+    main()
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/bsc_paper.py", line 286, in main
+    gp = goplus_cached(pair, r['t'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/bsc_paper.py", line 164, in goplus_cached
+    if row_t is not None and (time.time() - row_t) > 6 * 3600:
+                              ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'?

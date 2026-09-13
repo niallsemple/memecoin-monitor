@@ -28,6 +28,7 @@ def forensic(pool, n=15):
     sigs = rpc("getSignaturesForAddress", [pool, {"limit": 100}]) or []
     ok = [s["signature"] for s in sigs if s.get("err") is None][:n]
     payers = collections.Counter()
+    deltas = []
     for sig in ok:
         try:
             tx = rpc("getTransaction", [sig, {"encoding": "json",
@@ -40,12 +41,23 @@ def forensic(pool, n=15):
         if isinstance(payer, dict):
             payer = payer.get("pubkey", str(payer))
         payers[payer] += 1
+        meta = tx.get("meta") or {}
+        pre, post = meta.get("preBalances", []), meta.get("postBalances", [])
+        if pre and post:
+            deltas.append(abs(post[0] - pre[0]) / 1e9)
     total = sum(payers.values())
     if total < 5:
         return "unknown", total
     top = payers.most_common(1)[0][1] / total
     if len(payers) <= 3 or top > 0.5:
         return "wash", total
+    # dust-cycling check: diverse payer COUNT but no real size on the tape.
+    # Calibrated 2026-09-13: 9Ndi (confirmed organic payer) median 5.8e-4,
+    # max 7.1 SOL; confirmed wash pools median ~6e-6, max <0.01.
+    if deltas:
+        import statistics
+        if statistics.median(deltas) < 0.0001 and max(deltas) < 0.01:
+            return "wash", total
     return "organic", total
 
 def main():
