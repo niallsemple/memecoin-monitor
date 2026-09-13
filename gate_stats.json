@@ -1,9 +1,9 @@
 {
  "tax": 6,
- "no_vacuum": 141,
- "no_settle": 10,
+ "no_vacuum": 163,
+ "no_settle": 12,
  "deny": 4,
  "cooldown": 35,
- "no_flow": 3,
+ "no_flow": 5,
  "short_hist": 2
 }
