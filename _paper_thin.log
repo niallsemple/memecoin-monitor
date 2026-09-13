@@ -16,3 +16,5 @@
 [exit] 4YAs6WdH fee decayed (1.00x) fees=0.00033 markout=0.00000 net=-0.00167 bank=0.9893
 [enter] 9NdiyGft HFNA thin Y-only 0.1 SOL bins [-258,-256] elev=86.5x tx5=710 thin=True
 [exit] 9NdiyGft liquidity refilled fees=0.00500 markout=0.00000 net=+0.00400 bank=0.9933
+[enter] 9NdiyGft HFNA thin Y-only 0.1 SOL bins [-267,-265] elev=14.7x tx5=80 thin=False
+[exit] 9NdiyGft liquidity refilled fees=0.00000 markout=0.00000 net=-0.00100 bank=0.9923

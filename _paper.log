@@ -34,3 +34,6 @@
 [enter] 6e7V9eeg HFNA paper Y-only 0.1 SOL bins [172,174] elev=5.4x
 [exit] 6e7V9eeg fee decayed (1.00x) fees=0.00013 markout=0.00000 net=-0.00087 bank=1.2057
 [enter] 8eybKAvj HFNA paper Y-only 0.1 SOL bins [2343,2345] elev=10000.0x
+[exit] 8eybKAvj fee decayed (1.00x) fees=0.00000 markout=0.00000 net=-0.00100 bank=1.2047
+[enter] 9NdiyGft HFNA paper Y-only 0.1 SOL bins [-267,-265] elev=14.7x
+[exit] 9NdiyGft liquidity refilled fees=0.00000 markout=0.00000 net=-0.00100 bank=1.2037
