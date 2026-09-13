@@ -182,6 +182,7 @@
   "verdict": "organic",
   "t": 1789280008.029,
   "n": 15,
-  "swaps_5m_at_scan": 984
+  "swaps_5m_at_scan": 984,
+  "note": "organic payers but uncapturable at 0.1 SOL: 6 arms traded 09-13, total fees 0.0023, net ~-0.008; hot-tape-cold-fees"
  }
 }

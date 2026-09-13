@@ -23872,3 +23872,16 @@
 {"action": "h16e_reject", "mint": "Bc5wWSZ2jCCbd3HSq4NgqKeXmkr7sAAD61dq5zqMpump", "t": 1789282005.0215979, "mom": 2.481, "dd": 0.37, "bf": 0.501, "seed": 3.456790121}
 {"action": "h16e_reject", "mint": "8NanoFEQA6ctbbaMVCUF6XYt7MGAQ5MgcbpJWHfZpump", "t": 1789282099.337722, "mom": 0.684, "dd": 0.489, "bf": 0.484, "seed": 2}
 {"action": "h16e_reject", "mint": "2jCTc2TUzXxjqqVJBVvU95VKyA2YdetPoX5PhuKYpump", "t": 1789282099.337722, "mom": 1.503, "dd": 0.407, "bf": 0.572, "seed": 3.2}
+{"action": "h16e_drop", "mint": "CyLJ6BrumpRbkeV6DhSUCa2k8A3SmYBTAbjc8zPbpump", "reason": "no ticks", "t": 1789282194.214835}
+{"action": "h16e_drop", "mint": "6zyktZ4e47dwbLgeh9ejbus8T6bab6byBZswx2XVpump", "reason": "no ticks", "t": 1789282194.214835}
+{"action": "h16e_drop", "mint": "Ba2iHH5zcj65WEpeatzjNfhJhVMkYa6F1NaFWHq2pump", "reason": "no ticks", "t": 1789282194.214835}
+{"action": "h16e_drop", "mint": "AAMJqu6Tg9UG3X5rq82hZhxMzf5cAivz2giKLi7tpump", "reason": "no ticks", "t": 1789282194.214835}
+{"action": "h16e_open", "mint": "pdNLEm4F6H8g9kADUGyXPgkaYviiSm5KZfABMSrpump", "t": 1789282116.494976, "scored_at": 1789282194.214835, "entry_mcap": 60.9061, "mom": 1.368, "dd": 0.598, "bf": 0.615, "seed": 3.950617282}
+{"action": "h16e_close", "mint": "pdNLEm4F6H8g9kADUGyXPgkaYviiSm5KZfABMSrpump", "t": 1789282144.501633, "outcome": "loss", "mult": 0.92, "mins": 0.5, "mom": 1.368, "dd": 0.598, "bf": 0.615, "seed": 3.950617282}
+{"action": "h16e_drop", "mint": "QBNLm7KCfdPxgQccdGjnMUs3DPGBUHfdCpEhP5wpump", "reason": "no ticks", "t": 1789282288.4649868}
+{"action": "h16e_drop", "mint": "FYg1VSQwxdeeCC7qkY8shNGHjaX9ojVpxpM3hQsK4Bzb", "reason": "no ticks", "t": 1789282288.4649868}
+{"action": "h16e_drop", "mint": "BCAWAWuUvPnuiVXZnwtAEneRbX9d3a5JucSizGgFpump", "reason": "no ticks", "t": 1789282288.4649868}
+{"action": "h16e_drop", "mint": "GmVZjLSfTcCpmEHPUcfsbp3m6htUA4McGrjPrREpump", "reason": "no ticks", "t": 1789282288.4649868}
+{"action": "h16e_drop", "mint": "5aot33GYCS2Bypdbc523jFNz1qZnA9zwYjUgPegypump", "reason": "no ticks", "t": 1789282382.955585}
+{"action": "h16e_drop", "mint": "9uQAYcur52e3R23j42jHgWRgRtzcTMKg1m6hnVV1pump", "reason": "no ticks", "t": 1789282382.955585}
+{"action": "h16e_drop", "mint": "8dWWCP7snTmboxhyN2gSgo3XP5udpsEYjGJMm3uSpump", "reason": "no ticks", "t": 1789282382.955585}
