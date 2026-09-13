@@ -2133,6 +2133,20 @@
     "3bNRL1rDVi3z2LwEzrk7PGYaVAPeJQ6MMJ51F3m2uSCezoR8GurENnDwCTJWfRQ44Hup8FUSgx45xYLG6LiGpHae"
    ],
    "exit_ts": 1789321529.248
+  },
+  {
+   "pool": "AsSyvUnbfaZJPRrNh3kUuvZTeHKoMVWEoHz86f4Q5D9x",
+   "position": "5JWBqg2X8RntkuxQJZPe3NJq6w37knqT9azXSsJRbwho",
+   "name": null,
+   "sol_in": 0.05,
+   "ts": 1789321857.865,
+   "entry_active_bin": 419,
+   "minBinId": 418,
+   "maxBinId": 419,
+   "status": "open",
+   "add_sig": "2JHyEwodP5XHTxVgW43PTNYfn67LnQB3ME2RRapxTXxzTfeFANYnZnUpraHnBNxhv6KcJTerh11SEUgB1tLBjBkN",
+   "width_pct": null,
+   "strategy_tag": "surf_probe"
   }
  ]
 }

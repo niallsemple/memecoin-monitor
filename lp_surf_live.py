@@ -219,9 +219,18 @@ def main():
             pass
         for addr, meta in metas.items():
             rd = router.get(meta["name"])
-            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < 0:
-                continue              # router says this pool is a bleeder
             rows = recent(addr)
+            if rd and rd.get("trades", 0) >= 3 and rd.get("net", 0) < 0:
+                # router says bleeder — but log if flow gate WOULD have fired,
+                # so we can measure what the gate is costing us
+                if len(rows) >= 5:
+                    fh_b = flow_now(rows, meta, sol_usdc)
+                    if fh_b >= STRONG_FLOW_SOL_H:
+                        log({"kind": "router_block", "pool": addr,
+                             "name": meta["name"], "flow_h": round(fh_b, 4),
+                             "router_net": rd.get("net"),
+                             "router_trades": rd.get("trades")})
+                continue
             if len(rows) < 5:
                 continue
             fh = flow_now(rows, meta, sol_usdc)
