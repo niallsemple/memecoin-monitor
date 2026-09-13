@@ -120,7 +120,29 @@ def main():
                 il = il_ratio(p0, prices[j][1]) * s if j >= 0 else 0.0
                 v = feeY + il - EXEC_COST
                 if v > best[0]: best = (v, s, h)
-        print(f"best cell: size={best[1]} hold={best[2]:.0f}s net={best[0]:+.6f}")
+        print(f"best cell (bin-price IL proxy): size={best[1]} hold={best[2]:.0f}s net={best[0]:+.6f}")
+        # anchored matrix: use the REALIZED wallet markout instead of the
+        # bin-price IL proxy (probe#4: proxy said ~0, realized was -0.0008 —
+        # exit-path conversion drag is invisible to bin prices). Markout
+        # scales ~linearly with size and ~linearly with hold time (simple,
+        # conservative; sqrt-time noted as alternative).
+        if pnl and pnl.get("feeY_onchain") is not None:
+            hold_actual = pnl.get("hold_s") or (ts[-1] if ts else 1)
+            mk = pnl["real_pnl"] - pnl["feeY_onchain"] + EXEC_COST  # <=0 typically
+            print(f"realized markout at actual size/hold: {mk:+.6f}  (anchored rows below)")
+            print("anchored " + " ".join(f"{h:>8.0f}" for h in holds))
+            for s in SIZES:
+                ref_share = actual / (liq0 + actual); our_share = s / (liq0 + s)
+                fscale = our_share / ref_share if ref_share > 0 else 1
+                row = []
+                for h in holds:
+                    i = bisect.bisect_right(ts, h) - 1
+                    if i < 0:
+                        row.append(float("nan")); continue
+                    feeY = c[i][2] * fscale
+                    mk_sh = mk * (s / actual) * min(1.0, h / max(hold_actual, 1))
+                    row.append(feeY + mk_sh - EXEC_COST)
+                print(f"{s:>9.3f} " + " ".join(f"{v:>+8.5f}" for v in row))
 
 if __name__ == "__main__":
     main()
