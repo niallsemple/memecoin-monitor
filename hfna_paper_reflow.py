@@ -90,6 +90,21 @@ def latest_swaps5():
 
 def main():
     st = load_state()
+    # first-run guard: start at the live edge, never replay history — a fresh
+    # arm replaying old snapshots back-dates entries and fabricates trades
+    # (reflow trade #1 "entered" 26h before its exit this way).
+    if st["watermark"] == 0 and st["pos"] is None and st["trades"] == 0:
+        latest = 0
+        with open(SNAP) as f:
+            for line in f:
+                try:
+                    latest = max(latest, json.loads(line).get("t", 0))
+                except Exception:
+                    continue
+        st["watermark"] = latest
+        json.dump(st, open(STATE, "w"), indent=1)
+        print(f"reflow init: watermark set to live edge ({latest:.0f})")
+        return
     rows = []
     with open(SNAP) as f:
         for line in f:
