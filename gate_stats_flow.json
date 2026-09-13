@@ -1,9 +1,10 @@
 {
  "no_flow": 11,
- "no_vacuum": 8,
- "no_settle": 2,
- "cooldown": 1,
+ "no_vacuum": 27,
+ "no_settle": 3,
+ "cooldown": 4,
  "short_hist": 4,
- "low_txflow": 6,
- "low_elev": 3
+ "low_txflow": 45,
+ "low_elev": 4,
+ "tax": 1
 }
