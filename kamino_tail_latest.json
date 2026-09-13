@@ -1,4 +1,14 @@
 {
- "ts": 1789306201.491742,
- "rows": []
+ "ts": 1789307030.997531,
+ "rows": [
+  {
+   "pubkey": "BYojGuT56e2TUb8PQwRyT1wL5X5Ekv4kZH1HUQgBu6Zg",
+   "owner": "5HU4jpN65F7AGXYa6otSQ5yEYiroxcCk9DimpTroGvbF",
+   "adj_debt": 79437.04843555299,
+   "unhealthy": 95299.00006648472,
+   "margin": 15861.951630931726,
+   "slot_age": 31,
+   "stable_pair": true
+  }
+ ]
 }

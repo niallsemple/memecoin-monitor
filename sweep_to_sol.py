@@ -97,6 +97,18 @@ def main():
         except Exception as e:
             print(f"[sweep:{tag}] close empty FAILED: {e}")
 
+    # 09-13: late-arriving credits (wSOL unwraps, fee transfers) can create a
+    # fresh ATA AFTER the first close pass — observed: 0.00151 SOL orphaned
+    # Token-2022 ATA rent post-probe#3. Second close pass after finality.
+    time.sleep(20)
+    for tag in PROGRAMS:
+        try:
+            r = lt.close_token_accounts(sweep_empty=True, reason="lp_sweep_pass2",
+                                        prog=PROG_BYTES[tag])
+            print(f"[sweep:{tag}] pass2 close empty: {r.get('result')}")
+        except Exception as e:
+            print(f"[sweep:{tag}] pass2 close FAILED: {e}")
+
     # final verification across both programs
     nonzero = 0
     total_accs = 0
