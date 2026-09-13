@@ -1006,3 +1006,4 @@
 2026-09-13 00:01:41Z SLIP: feed stale 331s, no pass — spawning collector for 20 min
 [collector] subscribed: newToken + migration
 [collector] 200 events logged
+[collector] closed after 333 events
