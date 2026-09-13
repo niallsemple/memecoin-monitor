@@ -68,9 +68,13 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
     """Run one entry from index `start`; return (result, exit_index) or (None, None)."""
     if len(rows) < 4:
         return None, None
-    if meta.get("y_sym") != "SOL":
-        return {"pool": meta["name"], "skip": "Y is USDC — SOL-Y pools only for now"}, None
+    if meta.get("y_sym") != "SOL" and meta.get("y_sym") not in ("USDC", "USDT", "USDH"):
+        return {"pool": meta["name"], "skip": f"Y={meta.get('y_sym')} unsupported"}, None
+    y_stable = meta.get("y_sym") in ("USDC", "USDT", "USDH")
+    if y_stable and not sol_usdc:
+        return {"pool": meta["name"], "skip": "no SOL/USDC reference price"}, None
     ydiv = 10 ** meta.get("y_dec", 9)
+    y_amt = size * sol_usdc if y_stable else size   # our deposit in Y units
     # find entry: first interval with flow >= spike (momentum-gated)
     ei = None
     for i in range(start, len(rows) - 1):
@@ -109,7 +113,7 @@ def simulate(meta, rows, size, sol_usdc, momentum=True, start=0):
             cur = bin_of(b, ebin_id)
             if cur:
                 bin_y = cur["liqY"] / ydiv
-                share = size / (bin_y + size) if bin_y + size > 0 else 0
+                share = y_amt / (bin_y + y_amt) if bin_y + y_amt > 0 else 0
                 fees_earned += lp_fees * share
                 if lp_fees > 0:
                     last_fee_t = b["t"]
@@ -171,12 +175,29 @@ def simulate_all(meta, rows, size, sol_usdc, momentum=True):
         start = max(nxt or len(rows), start + 1)
     return trades
 
+SOL_USDC_POOL = "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6"
+
+def sol_usdc_ref():
+    """Latest SOL/USDC price from the main pool's snapshots."""
+    last = None
+    with open(SNAPS) as f:
+        for l in f.readlines()[-5000:]:
+            try:
+                d = json.loads(l)
+            except Exception:
+                continue
+            if d.get("pool") == SOL_USDC_POOL:
+                last = d
+    if last:
+        return active_price(last)
+    return None
+
 def main():
     prefix = sys.argv[1]
     lookback = float(sys.argv[2]) if len(sys.argv) > 2 else 60
     size = float(sys.argv[3]) if len(sys.argv) > 3 else 0.1
     addr, meta, rows = load(prefix, lookback * 60)
-    sol_usdc = sol_price_ref({addr: rows}) or 100
+    sol_usdc = sol_usdc_ref() or 100
     import time as _t
     for mom in (False, True):
         out = simulate_all(meta, rows, size, sol_usdc, momentum=mom)
