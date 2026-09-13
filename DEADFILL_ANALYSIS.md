@@ -34,3 +34,14 @@ P(burst | none) = 34.7% — 2.0x lift. Bursts cluster; the post-vacuum entry
 premise is NOT falsified. Misses come from bursts landing at price bins our
 fixed ranges don't cover (placement), not from burst flow stopping.
 Supports the repo (follow-the-price) arm as the theoretically correct fix.
+
+## Addendum 2: fee-counter fidelity (2026-09-13 01:10 UTC)
+
+prot_fee_y/prot_fee_x counters are NON-monotonic: protocol/host fee claims
+reset them mid-window (24h deltas negative on GBR/zxTp/GuPb/9Ndi...). Interval
+fee-flow gates and paper capture treat claim-reset intervals as zero-fee ->
+systematic undercounting of burst activity. Some "dead fills" are likely
+claim-reset artifacts, not dead windows.
+Better signal: swap/tx counts per pool per minute via Helius enhanced API
+(10M calls/mo available). Candidate next build if paper/live calibration
+confirms undercounting.
