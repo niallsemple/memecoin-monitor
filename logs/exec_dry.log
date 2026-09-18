@@ -1,0 +1,972 @@
+pass ok universe_pumpswap_snaps=1 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=4 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=3 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=3 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=1 open=0
+pass ok universe_pumpswap_snaps=3 open=0
+pass ok universe_pumpswap_snaps=5 open=0
+pass ok universe_pumpswap_snaps=3 open=0
+pass ok universe_pumpswap_snaps=1 open=0
+pass ok universe_pumpswap_snaps=0 open=0
+pass ok universe_pumpswap_snaps=3 open=0
+pass ok universe_pumpswap_snaps=2 open=0
+pass ok universe_pumpswap_snaps=4 open=0
+pass ok universe_pumpswap_snaps=6 open=0
+pass ok universe_pumpswap_snaps=7 open=0
+pass ok universe_pumpswap_snaps=1 open=0
+pass ok universe_pumpswap_snaps=1 open=0
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=8 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=7 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=0 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=7 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=0 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=7 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=5 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=7 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=0 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=5 open=0
+  ENTRY failed_tx SEND / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=8 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=6 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=3 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=0 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=1 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=0 open=0
+  ENTRY failed_tx BEAST / SOL (modeled)
+pass ok universe_pumpswap_snaps=2 open=0
+  ENTRY filled GOOGL / SOL liq=$235,839 age=0.078h out=6546525869 impact=0.9532336766185766800641599172
+pass ok universe_pumpswap_snaps=4 open=1
+  ENTRY skip (live liq $1,806 < min) BEAST / SOL
+pass ok universe_pumpswap_snaps=8 open=1
+  ENTRY skip (live liq $1,806 < min) BEAST / SOL
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY skip (live liq $1,806 < min) BEAST / SOL
+pass ok universe_pumpswap_snaps=4 open=0
+  ENTRY skip (live liq $1,806 < min) BEAST / SOL
+pass ok universe_pumpswap_snaps=2 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+  ENTRY skip (impact 78.6% > 5%) MEMFIGHTER / SOL
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T14:20:14Z items=27 snaps+=17
+pass ok universe_pumpswap_snaps=17 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T15:47:58Z items=28 snaps+=19
+pass ok universe_pumpswap_snaps=19 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+  ENTRY filled SUUB liq=$64,386 age=0.244h out=17400056392 impact=0
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=1
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+  EXIT SUUB stop mid_ret=0.553 quote_ret=0.450 pnl=-0.0550 SOL
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T16:47:06Z items=45 snaps+=29
+pass ok universe_pumpswap_snaps=29 open=0
+  universe slice1 updated_at=2026-09-17T17:41:09Z items=75 snaps+=50
+pass ok universe_pumpswap_snaps=50 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T17:41:32Z items=75 snaps+=51
+pass ok universe_pumpswap_snaps=51 open=0
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+  ENTRY skip (impact 5.9% > 5%) Arclana
+pass ok universe_pumpswap_snaps=59 open=0
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+  ENTRY filled Arclana liq=$31,647 age=0.308h out=67309821083 impact=0.0209037897532919101302434821
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T18:07:02Z items=88 snaps+=59
+pass ok universe_pumpswap_snaps=59 open=1
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+  EXIT Arclana stop mid_ret=0.015 quote_ret=0.012 pnl=-0.0988 SOL
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
+  universe slice1 updated_at=2026-09-17T21:52:04Z items=175 snaps+=124
+pass ok universe_pumpswap_snaps=124 open=0
