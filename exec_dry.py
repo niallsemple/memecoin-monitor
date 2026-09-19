@@ -35,6 +35,8 @@ RESERVE = MON / "pool_reserve_snapshots.jsonl"
 POS_F = MON / "exec_dry_positions.json"
 BOOK = MON / "exec_dry_trades.jsonl"
 STATE = MON / "exec_dry_state.json"
+EDGE_CAND = MON / "edge_candidates.jsonl"
+CAND_FRESH_S = 2 * 3600  # convergence candidates stay priority for 2h
 UNIVERSE_LATEST = MON / "data" / "universe_latest.json"
 # Optional override (box feed synced onto Mac)
 UNIVERSE_ENV = os.environ.get("MEMECOINS_UNIVERSE")
@@ -50,6 +52,9 @@ MAX_HOLD_S = 30 * 60
 MAX_OPEN = 3
 FAIL_TX_RATE = 0.08
 MAX_IMPACT = 0.05  # reject quotes with >5% price impact
+# Kimi edge_screen: hard-block AVOID only. Age<40m is WATCH there, so early
+# PumpSwap lane (age<=30m) can still fill. PASS/WATCH proceed to Jupiter.
+EDGE_SCREEN = os.environ.get("EDGE_SCREEN", "1") != "0"
 PRIORITY_FEE_SOL = 0.0002
 RUG_RECOVERY = 0.10
 SLIPPAGE_BPS = 200
@@ -336,6 +341,39 @@ def simulate_fail() -> bool:
     return random.random() < FAIL_TX_RATE
 
 
+
+def _edge_candidates() -> set:
+    """Mints with fresh convergence alerts — preferred over liquidity rank."""
+    out = set()
+    if not EDGE_CAND.exists():
+        return out
+    cut = time.time() - CAND_FRESH_S
+    try:
+        with EDGE_CAND.open() as f:
+            for line in f:
+                try:
+                    r = json.loads(line)
+                except Exception:
+                    continue
+                if r.get("t", 0) >= cut and r.get("mint"):
+                    out.add(r["mint"])
+    except Exception:
+        pass
+    return out
+
+
+def edge_screen_verdict(mint: str, age_min: float | None = None) -> dict:
+    """Run Kimi edge_screen. Returns {verdict, checks, error?}. Never raises."""
+    try:
+        from edge_screen import screen
+        # exec_dry's lane IS the sub-30m PumpSwap lane — use the named
+        # profile so the age floor is waived instead of always WATCH.
+        return screen(mint, deployer=None, mcap_sol=None, age_min=age_min,
+                      profile="early_pumpswap")
+    except Exception as e:
+        return {"verdict": "WATCH", "checks": [], "error": str(e)[:120],
+                "elapsed_s": None}
+
 def scan_entries(now: float, positions: dict, closed: set, latest: dict):
     if len(positions) >= MAX_OPEN:
         return
@@ -363,8 +401,13 @@ def scan_entries(now: float, positions: dict, closed: set, latest: dict):
         cands.append((liq, mint, p, s, age_h))
     if not cands:
         return
-    cands.sort(key=lambda x: -x[0])
+    # convergence candidates outrank raw liquidity; rest sort by liq
+    priority = _edge_candidates()
+    cands.sort(key=lambda x: (x[1] not in priority, -x[0]))
     liq, mint, p, s, age_h = cands[0]
+    if mint in priority:
+        print(f"  ENTRY prefer convergence candidate {p.get('name')} "
+              f"({mint[:10]}…)")
     mid = s.get("price") or 0
     best, _ = dex_token(mint)
     if best and best.get("priceUsd"):
@@ -374,6 +417,42 @@ def scan_entries(now: float, positions: dict, closed: set, latest: dict):
     if liq < MIN_LIQ:
         print(f"  ENTRY skip (live liq ${liq:,.0f} < min) {p.get('name')}")
         return
+
+    # Kimi EDGE CAPTURE gate — AVOID blocks dry entry; PASS/WATCH continue.
+    if EDGE_SCREEN:
+        age_min = round(age_h * 60, 1)
+        scr = edge_screen_verdict(mint, age_min=age_min)
+        verdict = scr.get("verdict") or "WATCH"
+        row_scr = {
+            "action": "entry_eval",
+            "mint": mint,
+            "name": p.get("name"),
+            "age_h": round(age_h, 3),
+            "liq": liq,
+            "mid_px": mid,
+            "result": f"edge_{verdict.lower()}",
+            "edge_verdict": verdict,
+            "edge_checks": [
+                {"check": c.get("check"), "verdict": c.get("verdict"),
+                 "value": c.get("value")}
+                for c in (scr.get("checks") or [])
+            ],
+            "edge_elapsed_s": scr.get("elapsed_s"),
+            "edge_error": scr.get("error"),
+        }
+        if verdict == "AVOID":
+            _log(row_scr)
+            reasons = [
+                f"{c.get('check')}={c.get('value')}"
+                for c in (scr.get("checks") or [])
+                if c.get("verdict") == "AVOID"
+            ]
+            print(f"  ENTRY skip (edge AVOID) {p.get('name')} "
+                  f"{', '.join(reasons) or scr.get('error') or ''}")
+            return
+        # PASS / WATCH: keep going; attach verdict onto the eventual fill row
+        p["_edge_verdict"] = verdict
+        p["_edge_checks"] = row_scr["edge_checks"]
 
     q = jupiter_buy_quote(mint, SIZE_SOL)
     row = {
@@ -427,6 +506,8 @@ def scan_entries(now: float, positions: dict, closed: set, latest: dict):
         "quote_impact": q.get("priceImpactPct"),
         "priority_fee_sol": PRIORITY_FEE_SOL,
         "mode": "dry-exec",
+        "edge_verdict": p.get("_edge_verdict"),
+        "edge_checks": p.get("_edge_checks"),
     })
     _log(row)
     print(
