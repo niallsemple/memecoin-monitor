@@ -1,5 +1,71 @@
 {
   "mints": {
+    "12LDZegVdB8v2JcxWKqtxwvh2UMcDB8gcUUhVmJWpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.0614,
+        "bonding_remaining_sol": 84.947799,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 0.3179,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.052201,
+        "symbol": "BEASTS",
+        "t": 1790342971.079299,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 30.052201
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "12rgUrX6g3nd2G6oXMz657mys5DFfyoLWm8YTL57pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 21014.11,
+      "entry_price_usd": 6.4175285e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 9.507,
+        "buys_5m": 193,
+        "dex_id": "pumpswap",
+        "liq_usd": 21014.11,
+        "pair_address": "4JfV6QHCFTWUdQJ6MFj72r1JmJybJowHNYWDs6MUovsX",
+        "price_usd": 6.4175285e-05,
+        "sells_5m": 152,
+        "symbol": "ZPAD",
+        "t": 1790349666.930284,
+        "t_iso": "2026-09-25T15:21:06Z",
+        "vol_5m": 11160.95
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "13n8p7LcgLFY93t9GRo3QNWXCsyxjRJx6fqjNgeVEASY": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "148fJTrVybPyQqzTxNzfLQq5sxVkMfmV2cLpAyVnNCX3": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "14W1A52U12WLvAGSKdx71xxMLdTLWK22a6T9VH5EUaJ2": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "1zTt5jreZwURstGbHPGEk43orhPp6E7YQpSZorepump": {
       "emitted": [
         "first_pumpswap",
@@ -40,6 +106,25 @@
         "t": 1790180191.791245,
         "t_iso": "2026-09-23T16:16:31Z",
         "virtual_sol": 1059.464407
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "224BEkRpspSM12ThvG7J1qGuhLrvAyGCCMnnRT4upump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 39.901,
+        "bonding_remaining_sol": 51.084163,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 97.1288,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 33.915837,
+        "symbol": "Jacob",
+        "t": 1790346360.599036,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 63.915837
       },
       "first_pumpswap": null,
       "near_grad": null,
@@ -218,6 +303,39 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "26J9PXbd8qYMizyEPGCiYzYkciE5UXfWT5D98oGDpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "26JCsJvgj7Yp59cgLzP5p4194S18JgfYN6k5KYTypump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 24089.15,
+      "entry_price_usd": 9.870715e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 13.519,
+        "buys_5m": 290,
+        "dex_id": "pumpswap",
+        "liq_usd": 24089.15,
+        "pair_address": "9zaSYCU817bHttLuojexoeYfVfsgrayA2zcsgvHtzFpS",
+        "price_usd": 9.870715e-05,
+        "sells_5m": 87,
+        "symbol": "Agents",
+        "t": 1790373552.307607,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 10185.6
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "27MR5EYbig1ihc4BoYURSRqEbWdfP9oyA3V7F5LmdUwu": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -284,6 +402,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "2Hs8q193CSrugMY8iC892g449yyVhfwTe1grpSYzgGBD": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "2JLmJgWVr1qwwEiDRLtDFSJGTKZrMrvHD4rHFhAJpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -298,6 +423,25 @@
         "t": 1789900722.1381109,
         "t_iso": "2026-09-20T10:38:42Z",
         "virtual_sol": 66.975524
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2Ki3av2JP5F4ajZkhjPVxSyhZP79HFE3hFMqLhrJ2o6Y": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 41.1878,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1276.335576,
+        "symbol": "Tortellini",
+        "t": 1790338822.985892,
+        "t_iso": "2026-09-25T12:20:22Z",
+        "virtual_sol": 5672.185666
       },
       "first_pumpswap": null,
       "near_grad": null,
@@ -399,6 +543,32 @@
         "virtual_sol": 1001.633161
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2PqiuSJhTCZb8w4HATqcnpWig2PddPnhge6qxnaopump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 10890.65,
+      "entry_price_usd": 3.0339723e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 21.604,
+        "buys_5m": 226,
+        "dex_id": "pumpswap",
+        "liq_usd": 10890.65,
+        "pair_address": "HUDnGMqspQvnHbAKRhQ1GEapamsARNfVwXCBq9cNG4iy",
+        "price_usd": 3.0339723e-05,
+        "sells_5m": 148,
+        "symbol": "Kitty",
+        "t": 1790365638.625751,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 17564.27
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -506,6 +676,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "2VeuwcJYtu9P1g27a1UahFsJmVZRBWfBvLJcuzvApump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2502.15,
+      "entry_price_usd": 2.4114936e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 79.14,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2502.15,
+        "pair_address": "7ExZPpQWWXBuf92bVGGser6S1ANE28po75rwwZ1TnG4g",
+        "price_usd": 2.4114936e-06,
+        "sells_5m": 0,
+        "symbol": "GOCAT",
+        "t": 1790346360.9365702,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "2WpCX3m6xM31N2Uu37aLuspVafE1NryeRDiVo23pD8ya": {
       "emitted": [
         "first_pumpswap",
@@ -529,6 +725,13 @@
         "t_iso": "2026-09-17T18:17:00Z",
         "vol_5m": 7.2
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2Y5yqeadyaupzhKyn6WbBGZ99UWAZHaHmCYi9EuZDRTM": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -702,6 +905,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "2eqkAV8T6x1FuJey1bcvWPybS28TVDEJtrezaBrqpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.0877,
+        "bonding_remaining_sol": 84.92546,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 0.4537,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.07454,
+        "symbol": "Forward",
+        "t": 1790336977.665059,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 30.07454
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "2f3kk3qhVtknTa6F2EPtiZ7dZYSkGZXjrNmcBuUNpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -743,6 +965,32 @@
         "t": 1789685971.238017,
         "t_iso": "2026-09-17T22:59:31Z",
         "vol_5m": 84.17
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2gewoLMdSaSL1kDKBbRU2PvXfqetd7XYy6J5CZdgpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 4214.66,
+      "entry_price_usd": 4.111518e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 39.885,
+        "buys_5m": 2,
+        "dex_id": "pumpswap",
+        "liq_usd": 4214.66,
+        "pair_address": "GyCsDE9Cy6t4LLUpLeTujJrQF46tD4zvPHNMiPwdv9jC",
+        "price_usd": 4.111518e-06,
+        "sells_5m": 5,
+        "symbol": "muses",
+        "t": 1790373552.47964,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 113.72
       },
       "near_grad": null,
       "pump_complete": null
@@ -943,6 +1191,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "2pawBaYZZkirQMSFRUDR5xkovFJVUfuM31Jort35pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2451.59,
+      "entry_price_usd": 2.4534145e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 26.557,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2451.59,
+        "pair_address": "5NdWUf177soALxYwEEYRPP8YVWjHzf6Xw8XFJePN8b1J",
+        "price_usd": 2.4534145e-06,
+        "sells_5m": 2,
+        "symbol": "APE",
+        "t": 1790346361.0167239,
+        "t_iso": "2026-09-25T14:26:01Z",
+        "vol_5m": 0.77
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "2pdonu3j82NYFFAmDDCZdowM3UKCskBTgvBr5cHfRGJi": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -962,10 +1236,62 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "2pn4Up7bm7FeR3J7NkfEXpYVyLXcyLbSYXowo9wWpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 29323.85,
+      "entry_price_usd": 7.901125e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 6.402,
+        "buys_5m": 372,
+        "dex_id": "pumpswap",
+        "liq_usd": 29323.85,
+        "pair_address": "7FrSoSv1MxDmaUE8waNn2VENyJx8JdDYLMRonRZTmVkK",
+        "price_usd": 7.901125e-05,
+        "sells_5m": 323,
+        "symbol": "CHUD",
+        "t": 1790373552.225436,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 65641.83
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "2roJPefsSF4zucVFUmD5XcpSHhXuQHN7ySC8CcqeFKD2": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2t5mvibJVt86VE3q1km3u3oP4RVbyguvy69e8M9gpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": null,
+      "entry_price_usd": 0.00012885356,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 13.599,
+        "buys_5m": 550,
+        "dex_id": "pumpswap",
+        "liq_usd": null,
+        "pair_address": "5veoxnNMJqi3EVq1Qz4CHqjzWDg6Fz9viYCNKNmVTw9B",
+        "price_usd": 0.00012885356,
+        "sells_5m": 358,
+        "symbol": "BRICK",
+        "t": 1790336977.583068,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -1004,6 +1330,32 @@
         "virtual_sol": 87.09488
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "2yyQGySj9G17M8G8maRTmahcnf6MxkdJYe5SdyRapump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 28166.58,
+      "entry_price_usd": 6.924272e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 103.955,
+        "buys_5m": 34,
+        "dex_id": "pumpswap",
+        "liq_usd": 28166.58,
+        "pair_address": "8uPCocPSLejVtwaesEWq3TzQRtsL4kwp3RhtxsEmfcn2",
+        "price_usd": 6.924272e-05,
+        "sells_5m": 15,
+        "symbol": "GROKBOOK",
+        "t": 1790358660.7641652,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 3449.64
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -1078,6 +1430,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "33owuxq97P85XaV2oXvBFmMoykb3ZjLH5wdAV4uDpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3506.31,
+      "entry_price_usd": 2.9636342e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 519.582,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3506.31,
+        "pair_address": "RU8besjVdGtjw6WpYSgUABcbs7NSf4MUAKbkT56uEKx",
+        "price_usd": 2.9636342e-06,
+        "sells_5m": 0,
+        "symbol": "IMU",
+        "t": 1790336977.918806,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "34izpwCZcRwaMULTjBNdheEKm7qV4kAhUc5Q18Jyby5M": {
       "emitted": [
         "first_pumpswap",
@@ -1122,6 +1500,32 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3C4izUmGYWv8fqDxz35T3oVHbAxwdsfsv92cbXCJpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 40865.88,
+      "entry_price_usd": 0.00010741642,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 28.578,
+        "buys_5m": 215,
+        "dex_id": "pumpswap",
+        "liq_usd": 40865.88,
+        "pair_address": "CecgLHxFvHxYE7QbxJjPKCXXv5mFwH5jgJMUY6nKEj7Z",
+        "price_usd": 0.00010741642,
+        "sells_5m": 166,
+        "symbol": "WAO",
+        "t": 1790342970.7322,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "vol_5m": 29162.15
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -1186,6 +1590,25 @@
         "t_iso": "2026-09-17T22:59:31Z",
         "vol_5m": 211.23
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3GQ58s4YE4F9eg3Lqhk1QHRyAFTmCbFqZvbJh6jKpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 39.6149,
+        "bonding_remaining_sol": 51.327321,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 96.8007,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 33.672679,
+        "symbol": "wuf",
+        "t": 1790336977.433365,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 63.672679
+      },
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -1326,6 +1749,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "3P8XJom5pTEXfgokNCHadSMvioY7ZrGbRZ5geYx8pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "3PYDvpz2dCXPjyecXW6wWpyv5zsbgPadbDJERki9pump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -1449,6 +1879,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "3bRs4AUiefJ15CKcLfVeN6pLN5LYU5knhDh9CTZZpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 6.8716,
+        "bonding_remaining_sol": 79.159107,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 29.8301,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 5.840893,
+        "symbol": "cutpad",
+        "t": 1790346360.936566,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 35.840893
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "3cFqm75R9izaaaDHL3qARSTW9E3b2xYniQ1AZ2ampump": {
       "emitted": [
         "first_pumpswap",
@@ -1491,6 +1940,32 @@
         "virtual_sol": 31.965077
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3f9gHGMaVy2EXFwv4sDixWZHFohUswLpFFwFS3PQpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 39525.24,
+      "entry_price_usd": 0.00020587356,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 16.607,
+        "buys_5m": 990,
+        "dex_id": "pumpswap",
+        "liq_usd": 39525.24,
+        "pair_address": "GGSAFebYtsohGywLh6sjePYMmyHSvmN4Yi1jcWJX52UV",
+        "price_usd": 0.00020587356,
+        "sells_5m": 372,
+        "symbol": "AMD",
+        "t": 1790349666.773053,
+        "t_iso": "2026-09-25T15:21:06Z",
+        "vol_5m": 99966.78
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -1541,6 +2016,25 @@
         "t": 1789907648.840138,
         "t_iso": "2026-09-20T12:34:08Z",
         "virtual_sol": 0.015757
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3i1Z8oVxn717r78HvgWpHNN3Q4LiPa3nn4vmksxGWEMb": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.935,
+        "bonding_remaining_sol": 84.205231,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 4.7241,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.794769,
+        "symbol": "LOCKIN",
+        "t": 1790346360.9365308,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 30.794769
       },
       "first_pumpswap": null,
       "near_grad": null,
@@ -1640,6 +2134,13 @@
         "t_iso": "2026-09-23T21:08:23Z",
         "vol_5m": 0.0
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3oGc9vUpuxV45dBM4x9qX9LdspZJ31NaZ7keCq4cvHF7": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -1794,6 +2295,32 @@
         "vol_5m": 749.58
       }
     },
+    "3v8xYtpM26ZgXfvAKQ6q6qU2mGbciEZ5pqJS3rHqpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3803.18,
+      "entry_price_usd": 4.1477983e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 105.087,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3803.18,
+        "pair_address": "8E3SNyk1UeC41rBFzamh5EcuB5aCJRkb9pLs9YP6NW1J",
+        "price_usd": 4.1477983e-06,
+        "sells_5m": 2,
+        "symbol": "FOMIE",
+        "t": 1790365638.846855,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 15.59
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "3vEDs7eMDaMu2YjkXbpDHihWCbSgp4vEHuJ95FLMpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -1891,6 +2418,39 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "3xfsfopm2xR89PFbsGGBhT1BfJqrbcoN8Mpxcp1jpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 38074.6,
+      "entry_price_usd": 0.00018785609,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 19.272,
+        "buys_5m": 897,
+        "dex_id": "pumpswap",
+        "liq_usd": 38074.6,
+        "pair_address": "8Eq2jxtFcVxE5TRhWi8koKUV7AjAKud1pcBUywsJy9M2",
+        "price_usd": 0.00018785609,
+        "sells_5m": 380,
+        "symbol": "OnlyPump",
+        "t": 1790358660.101239,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 53190.78
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "3yKznjnf2rxb3QyBfCdCY1DCz75Th1PY6o6tdxbKpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "41RgtUg6VDvAm37UeHEhopzuJYJFJmf4BCtHsf5ppump": {
       "emitted": [
         "first_pumpswap",
@@ -1921,6 +2481,32 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "45La5kB3J5gT64hwAKoP9qjYx4N3ihouWSfbBfdTBSm8": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 9530.95,
+      "entry_price_usd": 1.4778504e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 27.611,
+        "buys_5m": 56,
+        "dex_id": "pumpswap",
+        "liq_usd": 9530.95,
+        "pair_address": "DPzJDMstYJX6BWigVd8MkYMJ3Fg3FEP62przQKHNmdY4",
+        "price_usd": 1.4778504e-05,
+        "sells_5m": 46,
+        "symbol": "MPAD",
+        "t": 1790342971.079058,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "vol_5m": 2485.7
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -2063,6 +2649,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "4D3HChvc4WNbw5Z6HSQaWKsisqFTk4GSiMepEs3Lpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 8643.85,
+      "entry_price_usd": 1.2018774e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 27.021,
+        "buys_5m": 20,
+        "dex_id": "pumpswap",
+        "liq_usd": 8643.85,
+        "pair_address": "FxsDxa23gjMaFnF6kny2Hqf9vD7TmMHn91juCGKM9AjG",
+        "price_usd": 1.2018774e-05,
+        "sells_5m": 9,
+        "symbol": "PILLS",
+        "t": 1790365638.625472,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 925.22
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "4DDeFFaWZWv6nFaxoukNiF9LVNjFz9A9ZYkDcKnA41Ua": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -2127,6 +2739,58 @@
         "t_iso": "2026-09-18T08:08:53Z",
         "vol_5m": 0.0
       },
+      "pump_complete": null
+    },
+    "4Fbtc9dXTaAtzLiFCx5txvhgGCM5XAGzSnMKsK7PuK2U": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.9149,
+        "bonding_remaining_sol": 84.222366,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 4.6248,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.777634,
+        "symbol": "Equilibrium",
+        "t": 1790336977.5830631,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 30.777634
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "4FyiNCQt8MqXCYhAe2HQJWzGCU6B5k7xThmDb7rwxkTG": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3487.59,
+      "entry_price_usd": 4.314232e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 18.439,
+        "buys_5m": 2,
+        "dex_id": "pumpswap",
+        "liq_usd": 3487.59,
+        "pair_address": "9hYAwpDkaZYKoQvP5QMDEjpCuGFegfvKMB9hSo99t8kM",
+        "price_usd": 4.314232e-06,
+        "sells_5m": 20,
+        "symbol": "ORGFUND",
+        "t": 1790338822.985908,
+        "t_iso": "2026-09-25T12:20:22Z",
+        "vol_5m": 203.15
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "4G5YDqDvwgwSS3nLPDGDpGuetbG7rZYzNSBb1U4Tqbzi": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
       "pump_complete": null
     },
     "4H3MyqbmMdLfs5pzg1dsbRJki7jQXYEWVPMnSyPZ1JSt": {
@@ -2272,6 +2936,13 @@
       "pump_complete": null
     },
     "4KxtNWc5XTL3cuyc8PJMchqB6RYggvEFeMub727GBAGS": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "4LEcSPuPH9uUaxu5WUSGxoyetbEsenvYqmaqkUJNSTNK": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -2472,6 +3143,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "4SHQzeRRqKbYHkLLr6GMgFB4HQAzCMh1cveLSX8tpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 11086.07,
+      "entry_price_usd": 1.121e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 236223.335,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 11086.07,
+        "pair_address": "G1zguaMcZB6DYUB2TcVNAzJSbQP1MxrAtfg9Jdi3mgBu",
+        "price_usd": 1.121e-05,
+        "sells_5m": 0,
+        "symbol": "WORLD",
+        "t": 1790373552.823422,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "4TMjhvPhYEveScyUSQJcwnuh5gN1BzLwrmsV4bVBpump": {
       "emitted": [
         "first_pumpswap",
@@ -2621,6 +3318,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "4czfkUQACnr6ow1ZndoynX8QvoEwSMD2ggDVXgCtfmGG": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "4d7eU8nsEQnCsGkNWWqQTXoqS47szf47TB2AbFicZh4C": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -2693,6 +3397,13 @@
         "t_iso": "2026-09-23T10:09:58Z",
         "virtual_sol": 30.694015
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "4ec7Lf7JuCYQVQnUJCzpW5YvaPMNEAeqDRwGcU5n9GGJ": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -2858,6 +3569,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "4qTMFNnxjxECZxDCmzksc9eAMBVGRu3WJzjPer2AvaMM": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "4qyxvY9zD2AeveZGGVLhmA9KPe4AGx6fii7kWSz5wKtq": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -2936,6 +3654,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "4wWaPhXATPhZAirjpJUqXszwUJPhbYuECiG37H9hpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2775.03,
+      "entry_price_usd": 2.788232e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 37.637,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2775.03,
+        "pair_address": "Ht2pbL3h76Jjm6BoqaTPsFf1C36ebnVjyu6ncJyRDc3K",
+        "price_usd": 2.788232e-06,
+        "sells_5m": 0,
+        "symbol": "SWARM",
+        "t": 1790365638.751096,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "4wzLxapFN8VCKVDXENHU9y9rMwNRjTtuqKXb5TZod7uF": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -2959,6 +3703,32 @@
         "virtual_sol": 48.443795
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "4z74i8Jo5zTWkFyyrx5zuusLasgKu6JtREVKgKVSpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 30362.06,
+      "entry_price_usd": 7.6870114e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 16.635,
+        "buys_5m": 339,
+        "dex_id": "pumpswap",
+        "liq_usd": 30362.06,
+        "pair_address": "44obhZbyu91musQgph9NkxrugqBcULP3rWK2SD4uXgGz",
+        "price_usd": 7.6870114e-05,
+        "sells_5m": 170,
+        "symbol": "JEANTRUMP",
+        "t": 1790373552.479702,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 17516.19
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -3321,6 +4091,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "5AxA9kCyLs8ebspaYTNBzpYQGr2an79qbjsSdzwmpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 4.6272,
+        "bonding_remaining_sol": 81.066859,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 21.2163,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 3.933141,
+        "symbol": "UPTOBER",
+        "t": 1790336977.6652281,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 33.933141
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "5BvkT6m32j8CQiZLxN2jG13cUEmGMwPXLaLC81U4pump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -3449,6 +4238,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "5NhN6zzDkzwXFGPFqtpTopV4ttBeZ6CWy1oRL9Rkpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 22318.97,
+      "entry_price_usd": 5.327797e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 9.424,
+        "buys_5m": 1123,
+        "dex_id": "pumpswap",
+        "liq_usd": 22318.97,
+        "pair_address": "3yXXas5wQqC6LzV9x22GEqVr9Dgg1VC6yynkVGhRWJWM",
+        "price_usd": 5.327797e-05,
+        "sells_5m": 861,
+        "symbol": "Bagwork",
+        "t": 1790346360.599044,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 85345.69
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "5P8Pwh3CPs9yR1cpS9NfakXd4iAnGkDFf8zGxmC1uTHu": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -3463,6 +4278,25 @@
         "t": 1789669021.195898,
         "t_iso": "2026-09-17T18:17:01Z",
         "virtual_sol": 0.031296
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "5PJPNwiYASGnwgBGo8UXUuGGEBafdNBLg3w9isCfpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 9.8949,
+        "bonding_remaining_sol": 76.58934,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 40.0804,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 8.41066,
+        "symbol": "DON",
+        "t": 1790336977.665231,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 38.41066
       },
       "first_pumpswap": null,
       "near_grad": null,
@@ -3509,6 +4343,13 @@
         "t_iso": "2026-09-20T08:34:08Z",
         "virtual_sol": 33.264256
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "5WMfroTRKL9af4Wtxdo5BG4wPZvgYm9WADH3z5ZHZ6pE": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -3792,6 +4633,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "5g9PWcRUHpmqm5uKycpShKXJB18sGLeCEzgB3qrRpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 44682.29,
+      "entry_price_usd": 0.00016153394,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 180.482,
+        "buys_5m": 141,
+        "dex_id": "pumpswap",
+        "liq_usd": 44682.29,
+        "pair_address": "Ftjga524YrS7RPzGCcezMuQnFDYa8PcvWDY5mFmZk5dy",
+        "price_usd": 0.00016153394,
+        "sells_5m": 102,
+        "symbol": "SWARM",
+        "t": 1790336977.665237,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 11948.68
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "5gDnzAC4EEFmTjFzFjHUXS7wx5Cdvi2NTKGZT61meta": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -3886,6 +4753,32 @@
         "vol_5m": 4182.12
       }
     },
+    "5hnUsEmCXNycRztDGkbDdeveyCaWJoG3rYUW3wtzpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 45960.53,
+      "entry_price_usd": 0.00030036643,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 42.278,
+        "buys_5m": 876,
+        "dex_id": "pumpswap",
+        "liq_usd": 45960.53,
+        "pair_address": "5XAgLH3upo8CxLvSoLpXkBXHMExGtHFahBvHzbqKCsrD",
+        "price_usd": 0.00030036643,
+        "sells_5m": 109,
+        "symbol": "JEANCAT",
+        "t": 1790342970.991578,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "vol_5m": 55684.69
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "5jdECNibrzw8ydAsWhjewZDAptyzKoF8PPq2pAKupump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -3927,6 +4820,32 @@
         "t": 1790241877.910731,
         "t_iso": "2026-09-24T09:24:37Z",
         "vol_5m": 451061.5
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "5mXiJ166yyCZvaBABnP3gLksmecGtWk2gW9S7StUpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3237.69,
+      "entry_price_usd": 3.3861768e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 209.232,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3237.69,
+        "pair_address": "Hvnnk2QjdbtYDEoZszBaGFHnFgQQLeceM97BccQkDaYw",
+        "price_usd": 3.3861768e-06,
+        "sells_5m": 0,
+        "symbol": "MATERIA",
+        "t": 1790336977.749439,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
       },
       "near_grad": null,
       "pump_complete": null
@@ -4028,6 +4947,41 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "5qmxGpnjRuvSi5sGqMSMKey6TWkzNnYFaLTyCfmapump": {
+      "emitted": [
+        "pump_complete_first"
+      ],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 100.0,
+        "dex_id": "pumpfun",
+        "pump_complete": true,
+        "real_sol": 85.005359,
+        "symbol": "NEETBULL",
+        "t": 1790336977.6651149,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 115.005359
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": {
+        "age_min": 71.116,
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "dex_id": "pumpfun",
+        "graduated": true,
+        "liq_usd": null,
+        "price_usd": 3.0757938e-06,
+        "pump_complete": true,
+        "real_sol": 85.005359,
+        "symbol": "NEETBULL",
+        "t": 1790336977.665122,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
+      }
+    },
     "5wLLHLKsCXzePN7rLfx88PEmBUwAecZox3hrLACQpump": {
       "emitted": [
         "pump_complete_first",
@@ -4108,6 +5062,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "5zrSXW67qKhtjAmvWjucD6AgfcYW99yfUVkYYCDcpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "628Vj7gQ55yDMUCpWihL5EyAXP2Mdhyj8JuFkz4gpump": {
       "emitted": [
         "first_pumpswap",
@@ -4160,6 +5121,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "62ueziC1jHHM3svMMt9uazjdf4XvXx5iQmciwpC6pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "64MWN63e19qaw2HEecX6btUJSSbWwZgrw74bjFVVpump": {
       "emitted": [
         "first_pumpswap",
@@ -4186,6 +5154,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "64S9QFTFhrcLWsXWjTBkaWPS4asdcrQGwvVQWxUjpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3284.61,
+      "entry_price_usd": 3.5060045e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 73.732,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3284.61,
+        "pair_address": "7CHKmWPXYVpEPae72WWuttJn5SbK1iNjy9UUDYTxXoCw",
+        "price_usd": 3.5060045e-06,
+        "sells_5m": 0,
+        "symbol": "BMC",
+        "t": 1790336977.6651819,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "658fSzqp5bCh1Xjdnciey9j5ezhigrvvHtgnV3wULcJ1": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -4196,6 +5190,25 @@
     "671HGnyBtSdL9D6W4684nuARBWCZDN9gK7HidDsKGgwP": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "676KEpjqJEP6ZZUa14votryi8YUCy6upCPVFkHoApump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.218,
+        "bonding_remaining_sol": 84.814678,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 100.0,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.185322,
+        "symbol": "JIGGLE",
+        "t": 1790342970.6012301,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "virtual_sol": 0.331894
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -4313,6 +5326,13 @@
         "t_iso": "2026-09-17T18:17:00Z",
         "vol_5m": 6853.85
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "6BZY2BgeqVKEYCTgU9Q9oUwx6bDqv32djy6WGaXTci1i": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -4460,6 +5480,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "6MfUDuM8zNj63ymn8DdC2ojYCjvZNNatRKVys6gZpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 8.3151,
+        "bonding_remaining_sol": 77.932177,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 34.9014,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 7.067823,
+        "symbol": "Grebe",
+        "t": 1790336977.665032,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 37.067823
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "6MyeJ5CFpiWaJuhPmXRJRLprxuw4zU3bxmEkKLmpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -4505,6 +5544,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "6NicJWQAAze98FTD164LejhVSZFS4S8ERt5FbfV1pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 68.1897,
+        "bonding_remaining_sol": 27.038735,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 9.1794,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 57.961265,
+        "symbol": "RETIRE",
+        "t": 1790346360.695076,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 1155.788019
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "6Saa3yt4FSQeKsXb3Ed6TYrzdPnT5bmBGmmN1PtG1ive": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -4546,6 +5604,25 @@
     "6UTbkm2gv6sG6doQKERtgpnUupwhKN3DyVHyYzWfSTNK": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "6W4HGNfRYG2prV4ZhuwPiXcSy6mQUVdP9vxbxWycWGPU": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 1.818,
+        "bonding_remaining_sol": 83.454661,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 8.9669,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1.545339,
+        "symbol": "GPAIR",
+        "t": 1790349667.0904,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 31.545339
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -4643,6 +5720,13 @@
       "pump_complete": null
     },
     "6dAo1eJMfaktGsi4s3wte8SJAYGLm2rRfJLntyLTSRNN": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "6eLWCTf9vd2FbdrTiAb9npTMd7VEtsjtTsmVJdPuKCot": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -4776,8 +5860,15 @@
     },
     "6tXfZXND9VtrbPUqCrqNM5aUxnofebm3Mp2fhG4ctJXu": {
       "emitted": [
-        "pump_complete_first"
+        "pump_complete_first",
+        "first_pumpswap",
+        "complete_to_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
       ],
+      "entry_liq_usd": 3125.72,
+      "entry_price_usd": 3.251428e-06,
       "first_pumpfun_bonding": {
         "bonding_progress_pct": 65.324,
         "bonding_remaining_sol": 29.474592,
@@ -4791,7 +5882,19 @@
         "t_iso": "2026-09-23T16:16:32Z",
         "virtual_sol": 85.525408
       },
-      "first_pumpswap": null,
+      "first_pumpswap": {
+        "age_min": 1286.899,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3125.72,
+        "pair_address": "5mmSjJY22QWHXe5ZnrjjbPht4uNw64cj9kvW7msCSSci",
+        "price_usd": 3.251428e-06,
+        "sells_5m": 0,
+        "symbol": "FOMOCAT",
+        "t": 1790336977.919368,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
+      },
       "near_grad": null,
       "pump_complete": {
         "age_min": 1284.949,
@@ -4808,6 +5911,25 @@
         "t_iso": "2026-09-24T15:04:03Z",
         "vol_5m": 1085.13
       }
+    },
+    "6ujVammx5ysY4rFrXzvSMZTLJgrt8W93aDrRjSxtcUfr": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 100.0,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 761.951927,
+        "symbol": "FAX",
+        "t": 1790336977.918741,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 1218.645922
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
     },
     "6vn3Jpg4f2oY21ZmKYnYFfvZh1mTKuyhQBNTbfw8pump": {
       "emitted": [
@@ -5026,6 +6148,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "77atHPq1eUUb7XDM58gLT3mmhHgCqDCn16K9kr4tpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 79.3693,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 3365.310966,
+        "symbol": "Tortellini",
+        "t": 1790346360.9364722,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 7761.161055
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "77xuWiXF7PKZRW2jDD4Tkyw3M3qQkZADYNnG7h3xrndj": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -5078,6 +6219,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "79xB7iLghccAWuoab7qXkaDpQggmu6D2zrpKtfXipump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 92301.91,
+      "entry_price_usd": 0.00086752954,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 37.175,
+        "buys_5m": 27,
+        "dex_id": "pumpswap",
+        "liq_usd": 92301.91,
+        "pair_address": "9qqraQhckPw2ZCwxyD2GjVmbG2pwJBFZGyN31pJwCjEn",
+        "price_usd": 0.00086752954,
+        "sells_5m": 33,
+        "symbol": "Apu",
+        "t": 1790369334.881196,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 10700.37
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "7CK4UZ1DJJT6qj5dj8ASSHBSyTpkrncKc9QKnTZrhviM": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -5119,6 +6286,25 @@
         "t_iso": "2026-09-21T07:05:15Z",
         "vol_5m": 0.0
       }
+    },
+    "7EGHri5UtQjRyoTEyCEKKV9VepJVPv4LP5XG47iD6BTF": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 1.3761,
+        "bonding_remaining_sol": 83.830342,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 6.8688,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1.169658,
+        "symbol": "\ud835\udd4f",
+        "t": 1790342971.079288,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 31.169658
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
     },
     "7GPGqsfVK1gG88GuVEetrsVyDiikABTsj9B9aHEHpump": {
       "emitted": [
@@ -5353,6 +6539,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "7RYhLdGC5covHWMAzx3m9nDiWq1pcgLoQS6S7Sarpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 10.0485,
+        "bonding_remaining_sol": 76.458799,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 40.5646,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 8.541201,
+        "symbol": "Cookie",
+        "t": 1790349667.090393,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 38.541201
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "7SHoRc75DavAB1YRG3cvicjS1bBhdvLA6DTqht3TtoCJ": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -5496,6 +6701,13 @@
         "t_iso": "2026-09-17T18:17:01Z",
         "virtual_sol": 1004.127432
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "7axMAWfn8PsXXC7cD9eY1ssEiifD1MDT4DnhfPKZpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -5827,6 +7039,32 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "7tPks6AbTE2Kz4KkxxVYN9sBETMtzSL5Kqj2jbrXpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 37080.58,
+      "entry_price_usd": 0.00019215632,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 40.405,
+        "buys_5m": 1041,
+        "dex_id": "pumpswap",
+        "liq_usd": 37080.58,
+        "pair_address": "CWsbPMbpURCwcHsexnhF65m38mkmWksmpMsrXoe9TCEe",
+        "price_usd": 0.00019215632,
+        "sells_5m": 424,
+        "symbol": "OnlyJeans",
+        "t": 1790358660.180662,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 29484.68
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -6239,6 +7477,44 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "8EMPJob9jVpxBf3VSsApPciKU7CJ5fWoLYN8NtNapump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 35.2182,
+        "bonding_remaining_sol": 55.064549,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 91.4231,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 29.935451,
+        "symbol": "PROBB",
+        "t": 1790349667.0902882,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 59.935451
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "8EdXbMBrsukT7DyU6bKnx23FiU1tkXCEz8TH1aQFpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 22.2268,
+        "bonding_remaining_sol": 66.107208,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 70.7303,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 18.892792,
+        "symbol": "0xquit",
+        "t": 1790336977.5830321,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 48.892792
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "8Ey4hV3bYanAUcF5pzovFFGvAoPtiAFnUS5vUfHWpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -6255,6 +7531,39 @@
         "virtual_sol": 31.088852
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "8FMbrNAfcUC7WZVJ7AVdtTayP5NvCDXJbKDTZfL1nHjE": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "8GTbcDBUb2q8BGvWcCd4bfkKVEUDDcLLQM8txYCQu8tG": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 26180.79,
+      "entry_price_usd": 9.883633e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 23.39,
+        "buys_5m": 132,
+        "dex_id": "pumpswap",
+        "liq_usd": 26180.79,
+        "pair_address": "CxakjwVvLftY4i6nYhdkdF23cWok88C89x7kGSPrmwKD",
+        "price_usd": 9.883633e-05,
+        "sells_5m": 125,
+        "symbol": "FUNDED",
+        "t": 1790349667.009141,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "vol_5m": 11478.46
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -6318,6 +7627,13 @@
         "t_iso": "2026-09-23T17:05:31Z",
         "vol_5m": 2921.89
       }
+    },
+    "8MVc9q4AeSg5B25yW1X98kfEHCeeWJ5my317Vurbjhm3": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
     },
     "8MYx2Umiu8vBgkvLCGP5RpqmsHp4kNFXmJE3YpFDpump": {
       "emitted": [
@@ -6419,6 +7735,32 @@
         "t": 1789850161.777249,
         "t_iso": "2026-09-19T20:36:01Z",
         "vol_5m": 92032.52
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "8SerkEicthsnmh5hVubrH5GxSCwJD2FYK5MgnA96pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2871.06,
+      "entry_price_usd": 2.722487e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 103.055,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2871.06,
+        "pair_address": "BwJNkQYywn3MgoMQ1zSSR9GM6Tz9DPPpmVayTJvy4UYU",
+        "price_usd": 2.722487e-06,
+        "sells_5m": 0,
+        "symbol": "PUMPGO",
+        "t": 1790358660.848387,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 0.0
       },
       "near_grad": null,
       "pump_complete": null
@@ -6582,6 +7924,32 @@
         "t_iso": "2026-09-22T07:22:27Z",
         "vol_5m": 6316.87
       }
+    },
+    "8d6FRAKPvbr8inGe1C4NaEqd2GiBZXN2RE5ak7Qapump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 55886.44,
+      "entry_price_usd": 0.00022662962,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 32.807,
+        "buys_5m": 785,
+        "dex_id": "pumpswap",
+        "liq_usd": 55886.44,
+        "pair_address": "89qWBnRRHpgjewjFYaZDErAfPVTJ5Ruwv4ypBL6biGtK",
+        "price_usd": 0.00022662962,
+        "sells_5m": 237,
+        "symbol": "Mooncake",
+        "t": 1790349667.090407,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "vol_5m": 56164.21
+      },
+      "near_grad": null,
+      "pump_complete": null
     },
     "8dZtFj1dd9zYZVvFi7rBuLebMKFqiuu2EmeeLhwopump": {
       "emitted": [],
@@ -6940,6 +8308,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "98CVfKawsiAbnTFLNbLkkeasBvmWfVMobcjCMED1pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3019.78,
+      "entry_price_usd": 6.318131e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 9.435,
+        "buys_5m": 65,
+        "dex_id": "pumpswap",
+        "liq_usd": 3019.78,
+        "pair_address": "5RmScKWCkaXr4pmMSfagJobw7qVoyFDWsM6WrbSWM2eX",
+        "price_usd": 6.318131e-05,
+        "sells_5m": 277,
+        "symbol": "ASTR",
+        "t": 1790373552.3075159,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 12937.27
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "98K6agk5ZG1z5ffqt4zR7d3syo1eP29hgcZk9dkfpump": {
       "emitted": [
         "first_pumpswap",
@@ -7096,6 +8490,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "9C8qYhtDxNXMs6UJJesnXYZLBhX6geMGTxE1nkRypump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.0203,
+        "bonding_remaining_sol": 84.982767,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 0.1051,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.017233,
+        "symbol": "DCA",
+        "t": 1790336977.665177,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 30.017233
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "9CHnozHgtQVCYu6Z7SzWkxdNJEdMy8Tt3bh7B2wQpump": {
       "emitted": [
         "first_pumpswap",
@@ -7126,6 +8539,32 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "9EwEYhqzRHmE87ypWKUU1zZKP8uMeGdunmJ4etTmpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 47276.65,
+      "entry_price_usd": 0.00026302392,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 71.188,
+        "buys_5m": 245,
+        "dex_id": "pumpswap",
+        "liq_usd": 47276.65,
+        "pair_address": "6BP57xemygynet3rh9zJLQ6Fig7hRMtNBGkUJDdPsCKx",
+        "price_usd": 0.00026302392,
+        "sells_5m": 98,
+        "symbol": "JEANWORK",
+        "t": 1790358660.5111911,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 64658.05
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -7169,6 +8608,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "9JtsorjnocdHJcxovUBVZPaGmDW91KhiNewoKTaUpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 11271.42,
+      "entry_price_usd": 4.950573e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 6.932,
+        "buys_5m": 693,
+        "dex_id": "pumpswap",
+        "liq_usd": 11271.42,
+        "pair_address": "BH3vvZYGoZ42R1xvB5yL87eFuXnZLX91wvBmwVXvt7Y4",
+        "price_usd": 4.950573e-05,
+        "sells_5m": 594,
+        "symbol": "\u3082\u3082",
+        "t": 1790336977.4333792,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 42065.04
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "9LbuFqocMpFiSGiKkFmsMPhmeQAAz96jgb3wiKy9pump": {
       "emitted": [
         "first_pumpswap",
@@ -7191,6 +8656,32 @@
         "t": 1789832590.3491578,
         "t_iso": "2026-09-19T15:43:10Z",
         "vol_5m": 19215.23
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "9NPmnDgL39NmoivaE1XfiFWm7o61repcfkVyvyv9pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 52992.64,
+      "entry_price_usd": 0.00018441648,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 18.892,
+        "buys_5m": 1107,
+        "dex_id": "pumpswap",
+        "liq_usd": 52992.64,
+        "pair_address": "2RyKJCowXHSxxuSjAwVtKHgABaSDM5shyBgjKPnZU2YB",
+        "price_usd": 0.00018441648,
+        "sells_5m": 979,
+        "symbol": "merci",
+        "t": 1790369334.795975,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 154072.66
       },
       "near_grad": null,
       "pump_complete": null
@@ -7330,6 +8821,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "9Uqpbbpq7EzAtotoQJhRhD9DUnWAQKB2Bzc2ym7J4yzD": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "9V2rU978cfrWo3igcmq7EpAH9NmZG1GVwNeNKbjgjupx": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -7356,6 +8854,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "9VimnnZS529nsBVjCpk4TLRncaTGVAzGbrijJCBDkeu4": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "9WVntVmdUcHCadcyEmxgvSb1ucQTHHCA4Fy56zQkpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -7371,6 +8876,13 @@
         "t_iso": "2026-09-20T08:34:08Z",
         "virtual_sol": 32.132029
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "9XfSJK2VPRmYuBCPbcpJiw7svNPEFrzGAeHDbUz7pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -7498,6 +9010,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "9mQGNgd9YK4sUMjQ3v9S8KvJPbsXpkqoPrU5nGX2qTLD": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "9mmF8BJ5saTbq5gnW21koJGWJbWX1nk842ivCYSapump": {
       "emitted": [
         "first_pumpswap",
@@ -7591,6 +9110,13 @@
         "t_iso": "2026-09-18T07:17:54Z",
         "virtual_sol": 210.76428
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "9qL2MJx1Ksv9VoUG6Nv11qPNtd2EwC5CoqdsLUAez9Ld": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -7848,6 +9374,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "A9FBHUz352WGYC3GUpPdQe1bKUCLojvLMsa5uxatuYwn": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "AB2CteAaLCjGW8ka5wLYLhcZjkFiW7EkeV9DFebpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -7945,6 +9478,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "ALqy1h4kYr5Z44sQ2BXQVJcGQxb72GPp58JK3bBQpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 14545.18,
+      "entry_price_usd": 4.395817e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 13.025,
+        "buys_5m": 9,
+        "dex_id": "pumpswap",
+        "liq_usd": 14545.18,
+        "pair_address": "utVdiiBJyogmQR5PLnNG2ujzniiUb1dDjkrH15SLb9R",
+        "price_usd": 4.395817e-05,
+        "sells_5m": 16,
+        "symbol": "Vox",
+        "t": 1790369334.559901,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 1547.11
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "APrLQfWx16M9h3qPVTnWkNPESYBoc7du3KFWCE6Npump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -7960,6 +9519,13 @@
         "t_iso": "2026-09-20T08:34:08Z",
         "virtual_sol": 34.626733
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "AQVcP67EpMyu4cBZZjqMu91cVsWy1aX98JmcZm1FyY9": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -7994,6 +9560,32 @@
         "t_iso": "2026-09-23T16:16:31Z",
         "vol_5m": 16847.07
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "ASMa86LuBoVKui7BNAR7VSNoszfANTu1hLp3kubmsdK3": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 8.6544,
+        "bonding_remaining_sol": 77.643799,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 36.045,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 7.356201,
+        "symbol": "Slava",
+        "t": 1790349667.090318,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 37.356201
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "ATqKVVa4h5WqjAMqJdG3mjtWXsW5SshyyUY7dXdvSvRs": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -8174,6 +9766,32 @@
         "vol_5m": 7421.06
       }
     },
+    "Adgt7dseCq71eN6GDuoUgpsNQp81ZNhq24nrF7pxpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 38003.65,
+      "entry_price_usd": 0.00010374199,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 18761.171,
+        "buys_5m": 2,
+        "dex_id": "pumpswap",
+        "liq_usd": 38003.65,
+        "pair_address": "8zVwLfWw8KpbKoTGdufn6BwTg6Z12SFREHBuZM6UUrVs",
+        "price_usd": 0.00010374199,
+        "sells_5m": 0,
+        "symbol": "Noiz ",
+        "t": 1790365638.751195,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 8.82
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "Ag8CCEzjyDYYEKdhnVLBtbHj5vj9Mjci4MqwBnrVhyA6": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -8214,6 +9832,32 @@
         "symbol": "LeoGuigna",
         "t": 1790158198.5891142,
         "t_iso": "2026-09-23T10:09:58Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "AimyEfWfyj4nsCHqakyNzgk2Zv7S6aUtMNtWvRxjpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 9181.41,
+      "entry_price_usd": 1.483e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 45191.349,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 9181.41,
+        "pair_address": "7eUdR5rZPVZgqnwAmqgNecMgpLm2ogKzoMALvteMjPhz",
+        "price_usd": 1.483e-05,
+        "sells_5m": 0,
+        "symbol": "SANIC",
+        "t": 1790336977.834002,
+        "t_iso": "2026-09-25T11:49:37Z",
         "vol_5m": 0.0
       },
       "near_grad": null,
@@ -8285,6 +9929,25 @@
         "t": 1789715874.045575,
         "t_iso": "2026-09-18T07:17:54Z",
         "virtual_sol": 31.182277
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "At2T8MhYDivFiYc8GNhiaKexQdRFUjdW5FvFrsvkpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 1.4652,
+        "bonding_remaining_sol": 83.754617,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 7.2958,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1.245383,
+        "symbol": "GMPAD",
+        "t": 1790342971.165343,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 31.245383
       },
       "first_pumpswap": null,
       "near_grad": null,
@@ -8389,6 +10052,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "AxxhuNMxgCXZj1g8hjuKUeqmRJQWoSdRL4afvzFSpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 1.4721,
+        "bonding_remaining_sol": 83.748732,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 7.3289,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1.251268,
+        "symbol": "Started",
+        "t": 1790336977.583137,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 31.251268
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "AyfpCThXCGm6im5C8CnborAJSpboxHj6BYqxWzS6pump": {
       "emitted": [
         "first_pumpswap",
@@ -8411,6 +10093,39 @@
         "t": 1789911583.407496,
         "t_iso": "2026-09-20T13:39:43Z",
         "vol_5m": 7880.56
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "AyrwVqp7F44MQdqJHbjkuELfVPXpqW3xWzk7CGTKdyqG": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "AzwaixEgjszRfsM8mdjbvR6mAh9kJHrAYRkSJNfmpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 25243.96,
+      "entry_price_usd": 0.0001631129,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 12.272,
+        "buys_5m": 1055,
+        "dex_id": "pumpswap",
+        "liq_usd": 25243.96,
+        "pair_address": "J94vh4ynv3FP6dfUQSFxXuhmPGHKk2jiSou7XFgTwCKC",
+        "price_usd": 0.0001631129,
+        "sells_5m": 453,
+        "symbol": "PUMPCAT",
+        "t": 1790358660.005507,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 92218.94
       },
       "near_grad": null,
       "pump_complete": null
@@ -8573,6 +10288,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "BA8XQzWvLkvLXAYAKysK7VTinjKD1EQse5ZFcTBehook": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BD3hwWCWEWMeGtGXgMHg37dLEcfyC6dFDbQVkdEDNUni": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -8722,6 +10444,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "BMw7izE3y9JpnFFYFmbH1zaXDSZUEgBRr5v8AN6hpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BP4Wic5LNKsqpmiREW6uNVEC16juvFCSd4WzVBatpump": {
       "emitted": [
         "first_pumpswap",
@@ -8762,10 +10491,69 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "BVdbH7PLTSQxBssqvWTxVDoA8qfsztdVtMsZQSS9CScZ": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BWTZ5QSqaoDBTTF6ntjn3euinB54ZBga9qmDfgQtpxTV": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "BYXvbpgEP4rk98kiZ4t3WJrmwCnbT6e8bGrjyiBzFMA2": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 8734.6,
+      "entry_price_usd": 1.2087804e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 36.657,
+        "buys_5m": 24,
+        "dex_id": "pumpswap",
+        "liq_usd": 8734.6,
+        "pair_address": "ZZBzWzWJQxkKHv6o4j4dGe1i1fXC7AR8WTzp2aVqhCN",
+        "price_usd": 1.2087804e-05,
+        "sells_5m": 13,
+        "symbol": "Pizzly",
+        "t": 1790346360.9365351,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 1266.08
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "BZFYNPeQAEW3HWQ4DNsTVahC1n4ZjTgn6jB2nnBbB96W": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 58022.3,
+      "entry_price_usd": 0.00018792869,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 13.235,
+        "buys_5m": 508,
+        "dex_id": "pumpswap",
+        "liq_usd": 58022.3,
+        "pair_address": "6ejg4aYJM3Mk1t2zBKjbJ43df3s7rBMpC9mgo526K51G",
+        "price_usd": 0.00018792869,
+        "sells_5m": 460,
+        "symbol": "SAPLING",
+        "t": 1790373552.9087412,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 86938.58
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -8911,6 +10699,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "Bhzrw7s6sRqLQj1D82vYWjv9qSyPDHiyXsTJohwLpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BifUDWQFpbTrSxYXBnqCpAVYgcyQGzHzJk2MDmeM2Gyv": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -8937,6 +10732,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "BjTykKGejK3y5ixdCkZYLE8yKmwPmYLvB3PkpRL3pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 43481.73,
+      "entry_price_usd": 0.00022369581,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 52.828,
+        "buys_5m": 1018,
+        "dex_id": "pumpswap",
+        "liq_usd": 43481.73,
+        "pair_address": "4rK1ng2gRaC7TUKhqXnUr52RSozDarqX7seG9HzTFXue",
+        "price_usd": 0.00022369581,
+        "sells_5m": 134,
+        "symbol": "BROKE",
+        "t": 1790342970.896608,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "vol_5m": 54779.98
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BjYbfnfQy6U11xtE2SRqnrXEdJCo4TvY3sBqMDP9gZfv": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -8945,6 +10766,13 @@
       "pump_complete": null
     },
     "BjthYsyHKCMkEhFoNcANF4VVU4UPTLQjLxiH7jXjQdjS": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Bk8kLmroqQhjwAwGJL6DBksA9CcQTJMWVVEZHRibpump": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -9180,6 +11008,25 @@
         "vol_5m": 465.21
       }
     },
+    "BwGU1xFkXuKTXeuAFP8CF5v15cHKiJiGCCQUH8cXpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 8.5518,
+        "bonding_remaining_sol": 77.730991,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 35.7011,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 7.269009,
+        "symbol": "PUMPAGENT",
+        "t": 1790336977.833686,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 37.269009
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "BxftAowY2dVa2h9KMqDTPk4oMxzU9k6uVbZuoorXpump": {
       "emitted": [
         "first_pumpswap",
@@ -9306,6 +11153,25 @@
     "C4proDKqPKSdvTjhi8AGEWtLuea1kKT4k8RCvM9riYPw": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "C5PvD4TJhkwCoi91L47BAi3tStSKDzH7ryyto2H4hxyN": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.0143,
+        "bonding_remaining_sol": 84.987873,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 0.074,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.012127,
+        "symbol": "X",
+        "t": 1790342971.1652942,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 30.012127
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -9538,6 +11404,13 @@
         "t_iso": "2026-09-19T15:43:10Z",
         "virtual_sol": 22.937162
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "CJVD16cThA5Fhnh4mJGuKLYhzf3yMNFyCzVhgzhsBpW5": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -9779,6 +11652,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "CbcyNo7m1amFWqEQm2m4PLv1UNvpcL3C1Ujm6AkzpKoU": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 67196.98,
+      "entry_price_usd": 0.00030773546,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 37.202,
+        "buys_5m": 659,
+        "dex_id": "pumpswap",
+        "liq_usd": 67196.98,
+        "pair_address": "4JAnKFddd5fFTk5PxDj3PpTWJuTEfSWQEjZJcgKQ9KwW",
+        "price_usd": 0.00030773546,
+        "sells_5m": 532,
+        "symbol": "e/acc",
+        "t": 1790373552.3911428,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 91026.9
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "CbouD8khLcz1Y1QngvRtQufUimSRKpHkvGn6y1n8pump": {
       "emitted": [
         "first_pumpswap",
@@ -9939,6 +11838,13 @@
         "vol_5m": 1412.99
       }
     },
+    "CgY8hApdKb6YwLcn9N7VSAtCBLY9EGq8DZT7TfhzSd8B": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "CiBJeFSKSmgujQqJ4JoZdcDnW3Mfg7J2GrD2w5dKugT9": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -10010,7 +11916,21 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "CmTFnmtW19nCEz5QGmV7ojqhVKaXJVsPwR6t4QvCGiBd": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "Cnfyns5wz7PJpnSr6x3Znmvpq7c9T5N9i5RshzppW3zT": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "CoqvUVKhkyLTJE871KzM8beCt7Dc1pTrK6aaetiDpump": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -10020,6 +11940,25 @@
     "Cq5NZrjSYrk2P9NqkjS1YffkHyx8XaUqYX1Ho7PGjesS": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "CrpPVTtLDpT3CjjS5Kq51prQsrdxGuCauip526aApump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.3889,
+        "bonding_remaining_sol": 84.669444,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 68.1593,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.330556,
+        "symbol": "S&P",
+        "t": 1790336977.583056,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 0.887714
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -10047,6 +11986,13 @@
         "t_iso": "2026-09-17T18:17:00Z",
         "vol_5m": 68555.9
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "CsMWsYUniqFbzCA4aUc12iEMii8KBaeesFJXTvUtpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -10123,6 +12069,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "CvGrKzmaonHfXNTtjRx17Wq94LHhJJVdNKAAbbnNpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 13159.08,
+      "entry_price_usd": 2.3755334e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 12.374,
+        "buys_5m": 330,
+        "dex_id": "pumpswap",
+        "liq_usd": 13159.08,
+        "pair_address": "EPdZgxb81JYiB5ronJTtzKWnUCi5makQZs2gQj98W6n8",
+        "price_usd": 2.3755334e-05,
+        "sells_5m": 236,
+        "symbol": "STONKERZ",
+        "t": 1790349666.6758149,
+        "t_iso": "2026-09-25T15:21:06Z",
+        "vol_5m": 23347.71
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "CwXryfXXXrSyDs6wnuV3X7wG8bojGpHWBMiUZCxepump": {
       "emitted": [
         "first_pumpswap",
@@ -10144,6 +12116,32 @@
         "symbol": "FOMOPAID",
         "t": 1789669021.195481,
         "t_iso": "2026-09-17T18:17:01Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Cx3onEtJqfzfqbVG1mnveskpvA7uMWpq31hhZx2jpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 40670.72,
+      "entry_price_usd": 0.0001904,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 119107.832,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 40670.72,
+        "pair_address": "ADH9AwGoU1n2yZZNpdrDr7sYyQHr1T24AZPXHFx37jWb",
+        "price_usd": 0.0001904,
+        "sells_5m": 0,
+        "symbol": "Butny",
+        "t": 1790336977.749716,
+        "t_iso": "2026-09-25T11:49:37Z",
         "vol_5m": 0.0
       },
       "near_grad": null,
@@ -10171,6 +12169,32 @@
         "t": 1789832590.8920572,
         "t_iso": "2026-09-19T15:43:10Z",
         "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "CyKDftwgNsifHhno7o2Ypz35238LYK4wrJruWq3Npump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 39252.68,
+      "entry_price_usd": 0.00018507232,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 61.888,
+        "buys_5m": 49,
+        "dex_id": "pumpswap",
+        "liq_usd": 39252.68,
+        "pair_address": "6EL3NruPyUSMqFBSFdqLQ1rDTHok4FKaSt1PX39Vuyef",
+        "price_usd": 0.00018507232,
+        "sells_5m": 13,
+        "symbol": "DOGRILLA",
+        "t": 1790358660.677409,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 2463.57
       },
       "near_grad": null,
       "pump_complete": null
@@ -10243,6 +12267,51 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "D3EZngMsHrHY6aUZyoRW7feeAFHKhLHc5SVYq47hQbga": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 72.1285,
+        "bonding_remaining_sol": 23.690769,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 100.0,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 61.309231,
+        "symbol": "OHMINU",
+        "t": 1790336977.7493918,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 91.309231
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "D3NEdubh9ma4qXyhrA8LenGjNVnFkkeBEopr1Vunpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 11907.21,
+      "entry_price_usd": 1.8039189e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 141.942,
+        "buys_5m": 11,
+        "dex_id": "pumpswap",
+        "liq_usd": 11907.21,
+        "pair_address": "CJaAtUiLMYgm79N9wtqGG4JNvEaByckgG4AErZdMNuUy",
+        "price_usd": 1.8039189e-05,
+        "sells_5m": 12,
+        "symbol": "GUYLI",
+        "t": 1790369334.713865,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 684.05
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -10407,6 +12476,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "DCeo8ok6omG6CqCB9mDqqCDjkpvrVk7kHdSpp8vHpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": null,
+      "entry_price_usd": 5.8738988e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 7.507,
+        "buys_5m": 37,
+        "dex_id": "pumpswap",
+        "liq_usd": null,
+        "pair_address": "HJ29GyP1DVjCPhaueoqKbqLS8ksruo11ryPXRNwQkkjN",
+        "price_usd": 5.8738988e-06,
+        "sells_5m": 106,
+        "symbol": "gary",
+        "t": 1790349667.009075,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "DCixmHczeozajxxk4CitwnQftrTK6ryPNJ9ATD5cFoCQ": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -10544,6 +12639,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "DFx7Rww2Njg4P4Bv3SUHaN5pkFbB4zR23nGthjSBpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 23749.39,
+      "entry_price_usd": 5.080065e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 55.302,
+        "buys_5m": 176,
+        "dex_id": "pumpswap",
+        "liq_usd": 23749.39,
+        "pair_address": "475tov4a5SxcmU97GX9ZKmHoXKKfLxk4tPd1zkcHN1R1",
+        "price_usd": 5.080065e-05,
+        "sells_5m": 123,
+        "symbol": "PAPOI",
+        "t": 1790373552.133086,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 14765.78
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "DGEhE7kAvaFkacmtsKpHkvcY1aijX1TzGFYWWvo4pump": {
       "emitted": [
         "first_pumpswap",
@@ -10592,6 +12713,32 @@
         "t": 1789669021.10304,
         "t_iso": "2026-09-17T18:17:01Z",
         "vol_5m": 0.0
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DKwLwRg4z1XKdZcJxi2Ws1e7PPjQqzViPeELaBBCpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 7347.61,
+      "entry_price_usd": 1.1845045e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 39.235,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 7347.61,
+        "pair_address": "Hfgz2dQrcLJDD6AWawiWPNstJ2wqPVFTSjzkmSZ85FSD",
+        "price_usd": 1.1845045e-05,
+        "sells_5m": 2,
+        "symbol": "WIKI",
+        "t": 1790373552.479577,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 34.53
       },
       "near_grad": null,
       "pump_complete": null
@@ -10695,6 +12842,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "DQGcxnYnMLnaCeMmJU6Sq4AmsVCjcunyZaA6PzMDfomo": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2920.62,
+      "entry_price_usd": 3.180793e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 45.102,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2920.62,
+        "pair_address": "CzxK9JSBj5yDC4P3xxfvWoceURJAuYQnSvjcxkihtefE",
+        "price_usd": 3.180793e-06,
+        "sells_5m": 4,
+        "symbol": ".FOMO",
+        "t": 1790373552.653648,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 62.2
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "DSgjVUFC6NA59YuxiEDSxgs6zP4jjwSuoYJ3uS7WboeH": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -10790,6 +12963,32 @@
         "t": 1789685970.8097868,
         "t_iso": "2026-09-17T22:59:30Z",
         "vol_5m": 1522.47
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DYM6DRb9W7dQa58Jn717dDSVKP5KwDSevdptfwwcpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 53277.02,
+      "entry_price_usd": 0.00022560092,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 26.874,
+        "buys_5m": 901,
+        "dex_id": "pumpswap",
+        "liq_usd": 53277.02,
+        "pair_address": "EnzLEU9coGXhz5ggtVQ6y5vRJbaZ43vpriWqZcszxPfP",
+        "price_usd": 0.00022560092,
+        "sells_5m": 373,
+        "symbol": "BackInu",
+        "t": 1790346360.856276,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 103191.31
       },
       "near_grad": null,
       "pump_complete": null
@@ -11060,6 +13259,41 @@
         "vol_5m": 5889.28
       }
     },
+    "DjUwjdo4eujo8wq9hjdiz8o54hxgGaQ6U61JHixqpump": {
+      "emitted": [
+        "pump_complete_first"
+      ],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 100.0,
+        "dex_id": "pumpfun",
+        "pump_complete": true,
+        "real_sol": 85.005359,
+        "symbol": "MEOWLIN ",
+        "t": 1790346360.936403,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 115.005359
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": {
+        "age_min": 34.44,
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "dex_id": "pumpfun",
+        "graduated": true,
+        "liq_usd": null,
+        "price_usd": 0.00010869729,
+        "pump_complete": true,
+        "real_sol": 85.005359,
+        "symbol": "MEOWLIN ",
+        "t": 1790346360.9364212,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 0.0
+      }
+    },
     "DkPQvrx7CDYrL4HfHijz6GqZLYm7Pd4rm1kTiumLFwhS": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -11071,6 +13305,32 @@
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DmQDfFpbKHna4MgtsZgBQYmyMSNJjvLAj6XjduqRpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 56427.74,
+      "entry_price_usd": 0.0003269735,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 51.335,
+        "buys_5m": 1140,
+        "dex_id": "pumpswap",
+        "liq_usd": 56427.74,
+        "pair_address": "3jHUJmG2HfFfqrj5fezKBVNErnBs1Uq2rgz9g5qFCvCB",
+        "price_usd": 0.0003269735,
+        "sells_5m": 431,
+        "symbol": "TRUMP",
+        "t": 1790373552.566205,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 157451.67
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -11107,6 +13367,44 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "DouW7C3Re6yHMwXUArbuxfyJC5bF1SQvfXhLuxFMpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 69.7287,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 2705.009379,
+        "symbol": "BPCAT",
+        "t": 1790338822.985902,
+        "t_iso": "2026-09-25T12:20:22Z",
+        "virtual_sol": 7100.859468
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DrMc7tqDMsnQT5dDCqDJRKST4U7eU6FDaZGH3LvXArcd": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 10.9932,
+        "bonding_remaining_sol": 75.655762,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 43.4727,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 9.344238,
+        "symbol": "Arcade",
+        "t": 1790346360.936481,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 39.344238
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "DsqWokHaPHi6p9TtkEFryf6qBQFxYkUiGss2sFnBpump": {
       "emitted": [
         "first_pumpswap",
@@ -11130,6 +13428,13 @@
         "t_iso": "2026-09-17T22:59:30Z",
         "vol_5m": 365.91
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DtdaEPfBRzqmsByGVAXVWNLEj48WWrj1fr4hGRJnAw8T": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -11162,6 +13467,32 @@
         "t": 1789685969.891917,
         "t_iso": "2026-09-17T22:59:29Z",
         "vol_5m": 5125.27
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "DvchhPfxne9ph26iyx3CW9L7jrNefv2eFzbNtraEpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 22889.45,
+      "entry_price_usd": 4.427282e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 18.588,
+        "buys_5m": 39,
+        "dex_id": "pumpswap",
+        "liq_usd": 22889.45,
+        "pair_address": "C4wjgQfV3yD4FeKi6g9ikCYdHKghvE185ezEwDJ8CpJN",
+        "price_usd": 4.427282e-05,
+        "sells_5m": 20,
+        "symbol": "THICC",
+        "t": 1790358660.3394282,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 3658.62
       },
       "near_grad": null,
       "pump_complete": null
@@ -11459,6 +13790,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "E7yMNqkz5iEP3Zzivtt1RXesxRLZtzf7LCKGvrLs1M3C": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 5.8227,
+        "bonding_remaining_sol": 80.05073,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 25.9213,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 4.94927,
+        "symbol": "Bullrun",
+        "t": 1790342971.079251,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 34.94927
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "E9Wv9YdiU637PZcZxYQPgZAnWM4QUDcabKqwnBY3qCdX": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -11556,6 +13906,39 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "EGRv76STtVdNNwKdyMkQLQquYggcMuToXy92qS9pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 35686.64,
+      "entry_price_usd": 0.00026339028,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 64.419,
+        "buys_5m": 2688,
+        "dex_id": "pumpswap",
+        "liq_usd": 35686.64,
+        "pair_address": "EcPhfKmJkQ7GTbtvcrnbuEwN331f9aAhoxyts6HhUCgt",
+        "price_usd": 0.00026339028,
+        "sells_5m": 1774,
+        "symbol": "GHOSTGUY",
+        "t": 1790373552.653805,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 61853.2
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "EHQeg6foBFzAi7o5suLQHevpf4uyWzR8Ppi3hfeqxGwQ": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "ELAs4v1Tt9eZmjNLKyWFKMEYdkHSVyPSc4TSYWxjpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -11576,6 +13959,13 @@
       "pump_complete": null
     },
     "ELtpMQefAHa2FZdsJuyigswhhqL5YKSHKsYHiFBXQKeS": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "EMyqg7sfvJZtriXVJFGwj97D7bvnCmJT8NPEUdCiTNMy": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -11663,6 +14053,32 @@
         "t": 1789816046.699405,
         "t_iso": "2026-09-19T11:07:26Z",
         "vol_5m": 236.9
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "EXXR9Wt3mjxbjmzhPVj7EcA3zfxZd9uk1WhMioeipump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 257281.43,
+      "entry_price_usd": 5.9328645e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 564.132,
+        "buys_5m": 51,
+        "dex_id": "pumpswap",
+        "liq_usd": 257281.43,
+        "pair_address": "CDZMG8hza43irMPes1mXnKdCByt13hdcHZMbztXaRP9j",
+        "price_usd": 5.9328645e-06,
+        "sells_5m": 2,
+        "symbol": "Shurikane",
+        "t": 1790336977.8341691,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 10.6
       },
       "near_grad": null,
       "pump_complete": null
@@ -11787,6 +14203,32 @@
         "virtual_sol": 39.606582
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "EfBRerdWRTVaXQHFejysTFjqU4EX2qDZuV9dj61tpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2654.23,
+      "entry_price_usd": 2.8439313e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 57.54,
+        "buys_5m": 172,
+        "dex_id": "pumpswap",
+        "liq_usd": 2654.23,
+        "pair_address": "ESndsnGDPXA3ieXTcdmv98ZwZAXVte5bui9mHKXoeaN6",
+        "price_usd": 2.8439313e-06,
+        "sells_5m": 1298,
+        "symbol": "LFG",
+        "t": 1790349667.090326,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "vol_5m": 452.7
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -12147,6 +14589,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "EtynTCfCambRrUZodfCjF6Xifp9acESEv69W1vwVpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 12546.07,
+      "entry_price_usd": 1.6241554e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 11.661,
+        "buys_5m": 249,
+        "dex_id": "pumpswap",
+        "liq_usd": 12546.07,
+        "pair_address": "GqwKoKMKJi9wuAgLLHHNu4G2kyt4uBnh56stJPjtD78z",
+        "price_usd": 1.6241554e-05,
+        "sells_5m": 190,
+        "symbol": "MIC",
+        "t": 1790342970.8142688,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "vol_5m": 14437.62
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "EvbLYiDaC7k5eAFVSShMh6NmoVuictoedDrk4VgtCGzE": {
       "emitted": [
         "first_pumpswap",
@@ -12246,6 +14714,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "F4g5HVgZCvCZVp2h8ncXfVkUjrrgatHt7RXPLtztpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "F6pMTzKKnV7howYKWUFyRPBkBEhx9kE4x8vT8aq2pump": {
       "emitted": [
         "first_pumpswap",
@@ -12280,6 +14755,13 @@
       "pump_complete": null
     },
     "F9JPcq4UvdUqwBfmfxyP1LDR5SG1GyhhbR8k5XFnA886": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "F9PvspnWkP3hSLaYxQb2LvFRBgyrLVhdUJ5q39tZZPbC": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -12383,6 +14865,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FD2u3bJnNbsaYn4S88EdtgiVrw7JGwQgoJjG52i4KUvE": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 25.9603,
+        "bonding_remaining_sol": 62.933739,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 77.5758,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 22.066261,
+        "symbol": "HCAT",
+        "t": 1790336977.433374,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 52.066261
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FDcPsQERvuSYTiNV4XVjg6kt64qPn8kz7N48CNNHZm4W": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -12447,6 +14948,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FF6t1UqgUXufL7FRgsnRk21fxQcRgVsUx7axMHXvDXLz": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FFDCa6WS6VMFa81HSD7cVmLo1hziwZKffPRDBjuapump": {
       "emitted": [
         "first_pumpswap",
@@ -12470,6 +14978,13 @@
         "t_iso": "2026-09-24T12:39:00Z",
         "vol_5m": 6243.27
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "FFiUdK1S5W3ADCbnazNABTS7m5i37YHhGF1yaaZGrRV4": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -12603,6 +15118,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FRTWE2Px9v15fH7P941Ey3Ey16Y9uFHMC3njRVFRpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 32805.96,
+      "entry_price_usd": 9.541342e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 16.592,
+        "buys_5m": 527,
+        "dex_id": "pumpswap",
+        "liq_usd": 32805.96,
+        "pair_address": "8Hp9uyHvGx8t8BamL6aFDieHMmqVULEBbiemC76regkV",
+        "price_usd": 9.541342e-05,
+        "sells_5m": 96,
+        "symbol": "GOCAT",
+        "t": 1790369334.46387,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 16287.61
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FRVhmJiotogSJgSBQ9Z36kkbyYJUNKca9Hc72UhPnrip": {
       "emitted": [
         "first_pumpswap",
@@ -12686,6 +15227,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FYZcYCHSp8FzNba1UtDZydKKGosmxVNpFBiVuia38AhT": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 40894.12,
+      "entry_price_usd": 0.00019548721,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 17233.455,
+        "buys_5m": 3,
+        "dex_id": "pumpswap",
+        "liq_usd": 40894.12,
+        "pair_address": "GhCGq9qTCBWZvpBY4fzfvxvENWe1syryLuGACgj3Lhvg",
+        "price_usd": 0.00019548721,
+        "sells_5m": 0,
+        "symbol": "MONARK",
+        "t": 1790358660.593861,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 460.55
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FatoMrm2ChLmPR3f7PGYRKv1p6HQU7pwyct3tz4vpump": {
       "emitted": [
         "first_pumpswap",
@@ -12734,6 +15301,32 @@
         "t": 1789900722.137441,
         "t_iso": "2026-09-20T10:38:42Z",
         "vol_5m": 0.43
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "FbvPc772EQ8j2rxNTW4jxC9NSsZDYjTtcVRMqFPqpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2788.82,
+      "entry_price_usd": 2.9812325e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 31.125,
+        "buys_5m": 1,
+        "dex_id": "pumpswap",
+        "liq_usd": 2788.82,
+        "pair_address": "EznYhmU9tmrkc89x9vXAYWpntn5Y7NdP85cRa989LTsz",
+        "price_usd": 2.9812325e-06,
+        "sells_5m": 5,
+        "symbol": "MILK",
+        "t": 1790369334.8808162,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 42.67
       },
       "near_grad": null,
       "pump_complete": null
@@ -12939,6 +15532,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "Fh9wRZe64RfyriT9ooqhniV88dFFo4khwGFAqKmoXEDL": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FhFvXUevhR7qohajBW43oaDVqN4KmAcxgMBqtPZJUZDx": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -12991,6 +15591,39 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FmXj6NU98jz4pVmfGZyN9DaXWCvM7DqPoQpXbn8LxCs1": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Fn9RhHqCxrG9hP67LPX8dyBb12Vy1MYL8Y7eYa4Cpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 2661.07,
+      "entry_price_usd": 2.706842e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 40.766,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 2661.07,
+        "pair_address": "CFRGzHzPJpHj15GB815ak2nPa51b2EDHDnsy5hD4ng8R",
+        "price_usd": 2.706842e-06,
+        "sells_5m": 3,
+        "symbol": "CTNT",
+        "t": 1790336977.665066,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 19.12
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "Fn9cGz6iLubpjZSJF6wiBD2zbdqANubuQ64UKSDXpump": {
       "emitted": [
         "first_pumpswap",
@@ -13026,6 +15659,13 @@
         "t_iso": "2026-09-24T09:24:38Z",
         "vol_5m": 431.27
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "FoKTsgSSykZgNbB7eDKBLsffotCcmJiUMXQoQW88pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -13105,10 +15745,55 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "FtajzEHJ12GnJGisfQx6KpzbQUXis281hceg1mvDpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 4.2775,
+        "bonding_remaining_sol": 81.364141,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 19.786,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 3.635859,
+        "symbol": "PAYDAY",
+        "t": 1790336977.665235,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 33.635859
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "FvhorDts9M8uJekzs3pBcYUPUjWtCTrGLhdv3ADHyeRY": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Fvto3QgSLbcWdq331BoR66RDkT7dZYgTS9JzbntMf7rD": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 15874.99,
+      "entry_price_usd": 6.894389e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 67.795,
+        "buys_5m": 116,
+        "dex_id": "pumpswap",
+        "liq_usd": 15874.99,
+        "pair_address": "65m5eb4WW7w18HJQ9CbzHR1gqUMor8RrmH1dKP2S8wLn",
+        "price_usd": 6.894389e-05,
+        "sells_5m": 103,
+        "symbol": "OPENGAP",
+        "t": 1790342970.6012402,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "vol_5m": 14263.55
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -13161,6 +15846,32 @@
         "virtual_sol": 31.430722
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "FzVLxoL3T2GQELH4fGDfgpvJw3ouyk8NUoPnvk81pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 6746.25,
+      "entry_price_usd": 1.1501007e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 34.392,
+        "buys_5m": 45,
+        "dex_id": "pumpswap",
+        "liq_usd": 6746.25,
+        "pair_address": "CZ9J4qx349F7ocu6NgAwTakkz21tuh2g3oBAT31wJxA2",
+        "price_usd": 1.1501007e-05,
+        "sells_5m": 32,
+        "symbol": "rocky",
+        "t": 1790369334.881067,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 1197.91
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -13358,6 +16069,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "G7VJcbDeUu77LvCrZoiyXMhz8S1gJNZZpWEtV3XekU6j": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "G8vXA8zj9kd99ZLjSqyFLKzB3MLxUp5GNR7nMMMuzpad": {
       "emitted": [
         "first_pumpswap",
@@ -13381,6 +16099,25 @@
         "t_iso": "2026-09-23T18:57:44Z",
         "vol_5m": 26300.34
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "G9Y7TNWgiL83bWS1EF56uNJXAHeoZER4XHa6EKimpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 4.7751,
+        "bonding_remaining_sol": 80.941131,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 21.8137,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 4.058869,
+        "symbol": "MOONCOINS",
+        "t": 1790349667.169199,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 34.058869
+      },
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -13471,6 +16208,25 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "GJKnxjqbnyzQfEFB8LrnT3rJmSH3sctQtY7cSSd4pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 0.0081,
+        "bonding_remaining_sol": 84.993094,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 33.1389,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 0.006906,
+        "symbol": "BTS",
+        "t": 1790349667.0903811,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 0.038145
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "GMsatc3SK9Y1GWeS9Brt1PutMYkbwb1fSc4V7NMoaRt": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -13493,6 +16249,13 @@
         "t_iso": "2026-09-23T21:08:23Z",
         "virtual_sol": 30.876016
       },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GN7VutGR9eAbpjrfsFgF4358wHWbtARxMnyiphaaM1ew": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -13665,6 +16428,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "GZHVA9LL2WUbWnnT88KGCqtEpYeTTLzX59WvLtGpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3382.98,
+      "entry_price_usd": 3.2491264e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 58.221,
+        "buys_5m": 4,
+        "dex_id": "pumpswap",
+        "liq_usd": 3382.98,
+        "pair_address": "6FBLNQTYv3eEXB2BQrqJcAR3wQi2p3RsRCCHBxTnY39E",
+        "price_usd": 3.2491264e-06,
+        "sells_5m": 1,
+        "symbol": "GGS",
+        "t": 1790365638.8452961,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 128.92
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "Gc6NFJWw5aVDstFngJ7JKnwVQZqBgsXvDaezokJvpump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -13681,6 +16470,72 @@
         "virtual_sol": 30.316066
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Gd8nptwdqDfJ9hebVyu55bnnpUH1H6m9Dq8aKUX9pump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GeYNw7gWwdQh1DtCDwuQJC53aDaHxYr8ax6H2ZRPpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GgsSaetRZNCuP9HEWjbojtVWByRWFxpr93S1wtGFpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 56291.88,
+      "entry_price_usd": 0.0005278994,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 34.005,
+        "buys_5m": 1124,
+        "dex_id": "pumpswap",
+        "liq_usd": 56291.88,
+        "pair_address": "9Zach1KuwrxLELAXTciZPuA4hozmzwNYpZr2XyS2LVKj",
+        "price_usd": 0.0005278994,
+        "sells_5m": 790,
+        "symbol": "BLUEPRINT",
+        "t": 1790358660.258612,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 138754.79
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Gh6k5FNVRFk1eNUNhwLHbwf7854ioY16yZs9izUppump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 11406.68,
+      "entry_price_usd": 1.49289135e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 14.592,
+        "buys_5m": 98,
+        "dex_id": "pumpswap",
+        "liq_usd": 11406.68,
+        "pair_address": "HarXwdY6AFpaAvfYsAk7zs9SYu4G9YkXYgFBJPYkYK4Z",
+        "price_usd": 1.49289135e-05,
+        "sells_5m": 65,
+        "symbol": "COLONY",
+        "t": 1790369334.6364338,
+        "t_iso": "2026-09-25T20:48:54Z",
+        "vol_5m": 4659.19
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -13726,6 +16581,13 @@
         "t_iso": "2026-09-21T07:05:15Z",
         "vol_5m": 155.87
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GivoPBF7FobXfini3pgPgFiEQ9DVL7mFTYdRbQgxpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -13775,6 +16637,13 @@
       "pump_complete": null
     },
     "GqQ3yuHi3EmhJL5RrsJdx2WNVSqrMRck1SiEj5MSBQ9": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GqUi4QApDfK8LvVAHvUwKpRQ5CMZqFuE7mht9cGLnviK": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -13910,6 +16779,51 @@
     "Gx5B5XYscRpLo1dL8ukawRGGnAGSujN9mdLU6LNTp89x": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GxFAHAHbbA1QivGWtHwU8f5fpF9QSaHiaPUmHTXopump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3300.81,
+      "entry_price_usd": 3.6539577e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 28.019,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3300.81,
+        "pair_address": "7MeHjuY7ghFmjbr9AMjX2sfTduJRbZqdqXmyRjbcMA57",
+        "price_usd": 3.6539577e-06,
+        "sells_5m": 7,
+        "symbol": "Staffed",
+        "t": 1790373552.4794948,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 15.78
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "GyNw3jPPkGSC2Mr69ii8pNNRhwqgK1AirGBoLhZepump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 100.0,
+        "bonding_remaining_sol": 0.0,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 17.5901,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 467.341829,
+        "symbol": "Armani",
+        "t": 1790336977.665223,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "virtual_sol": 4863.191918
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -14084,6 +16998,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "H6XgEH1wxmE9urKgCFCm4W6ssY99moATFtsbpUmoh9MD": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "H9JwarQSuFk4q6ekuMpig4CkJyv7NtSRQ8BbCsmapump": {
       "emitted": [
         "first_pumpswap",
@@ -14132,6 +17053,13 @@
       "pump_complete": null
     },
     "HHjfJhXdnUsxoXbJcWEQibCaEaJN3F7hhcLwkSKTcone": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "HKVW4sLBBBkmJ3abAgPGJ2WCm28yGzUMUqn2j3jGjBCj": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -14383,6 +17311,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "HR8QwCZ7UqeWWunNh7eSrhx2cRf7AXgTYAftu8K1DQJf": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3320.32,
+      "entry_price_usd": 3.2965086e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 27.137,
+        "buys_5m": 1,
+        "dex_id": "pumpswap",
+        "liq_usd": 3320.32,
+        "pair_address": "5DsAxDNhpYxX1J8cMvYnsb6z5sBNqAF1sTZGh6vkoyPj",
+        "price_usd": 3.2965086e-06,
+        "sells_5m": 6,
+        "symbol": "muse",
+        "t": 1790365638.6257029,
+        "t_iso": "2026-09-25T19:47:18Z",
+        "vol_5m": 150.32
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "HTqzwV4FZKfrJEnNK5CXRPJaxp3tfw6VVFqN1USipump": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -14402,9 +17356,42 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "HUv6tJ6MpNfCJUdRW47M5ZQfG8e3MsayLDZAXYZA2sxG": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "HVVAKKU6QBq5WjaDhwXmxdBshH7w9d5nXcsuzV1KC6x7": {
       "emitted": [],
       "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "HWyMjL72dikK2bSU2JqS2FjyBG2GLo8mq3Q5EBzTVeN8": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "HZTwVWv7VktQFHY5s9rVTVi3eLMqKWgeBbVrarzdpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 7.7225,
+        "bonding_remaining_sol": 78.435843,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 32.8607,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 6.564157,
+        "symbol": "Stockdrip",
+        "t": 1790342970.991522,
+        "t_iso": "2026-09-25T13:29:30Z",
+        "virtual_sol": 36.564157
+      },
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
@@ -14501,6 +17488,51 @@
         "vol_5m": 2482.63
       }
     },
+    "Hd8kQmxJzuJRd8yau6BbPyfs7DG1a79iWubSDKnCpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 25.8514,
+        "bonding_remaining_sol": 63.026306,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 77.388,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 21.973694,
+        "symbol": "Sizzle",
+        "t": 1790349667.0903108,
+        "t_iso": "2026-09-25T15:21:07Z",
+        "virtual_sol": 51.973694
+      },
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "HdFjuK2KPLDXHEvD46FU9GEbujiYJJG3SGKDJttCpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 19396.94,
+      "entry_price_usd": 6.0899212e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 19.357,
+        "buys_5m": 171,
+        "dex_id": "pumpswap",
+        "liq_usd": 19396.94,
+        "pair_address": "G3ES4o6JmGUuRqjkjK56fWiGLCwLY3DyoGoG9k87wWHb",
+        "price_usd": 6.0899212e-05,
+        "sells_5m": 94,
+        "symbol": "NUVEX",
+        "t": 1790346360.695102,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 10233.16
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "Heik5FodUg5dXm5hmpspPzpSNKV69WQJbagisnwVpump": {
       "emitted": [
         "first_pumpswap",
@@ -14594,6 +17626,32 @@
         "t": 1789893248.625421,
         "t_iso": "2026-09-20T08:34:08Z",
         "vol_5m": 5881.99
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "HgAEQbgPU8o8g8oAsNgu2hgQ87eQEBNfVourwznepump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 25582.45,
+      "entry_price_usd": 6.93e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 282087.319,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 25582.45,
+        "pair_address": "2zYu5jZRaUayoU3qTEfnS2iWN4BHKgznUYkeopRgCEAP",
+        "price_usd": 6.93e-05,
+        "sells_5m": 1,
+        "symbol": "King",
+        "t": 1790373552.738351,
+        "t_iso": "2026-09-25T21:59:12Z",
+        "vol_5m": 59.04
       },
       "near_grad": null,
       "pump_complete": null
@@ -14860,6 +17918,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "HuDwEgKxqBLNKHBSFiVh8o5tdfzSBmhKochDqRFYCzVf": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "HunmXDXMNQYVoDnUL6PNnSYEtFaTZA2WzGh1HJTW7aoV": {
       "emitted": [],
       "first_pumpfun_bonding": null,
@@ -14964,6 +18029,32 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "J141JCiXKGcrhDCgWUTCL9qz7h943iCibNiLNfqZpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 43123.69,
+      "entry_price_usd": 0.00027908906,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 62.349,
+        "buys_5m": 515,
+        "dex_id": "pumpswap",
+        "liq_usd": 43123.69,
+        "pair_address": "8R4DDi9X3RBLr876hhRJCv4Gvsy8d9SkABgb8YiHapo9",
+        "price_usd": 0.00027908906,
+        "sells_5m": 381,
+        "symbol": "0xquit",
+        "t": 1790336977.583145,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 44830.45
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "J3798uy2xE7Ni4sUkjvzJEDRkkNfY9LHDmpTUhgVpump": {
       "emitted": [
         "first_pumpswap",
@@ -14991,6 +18082,13 @@
       "pump_complete": null
     },
     "J5A1hGm6qG1vUqws9ekMvxuxoXNLEpdtPXXteoGZGxEj": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "J7duGTXo2woN1N5KQ3zzDKxGpzrrrgD9quZpyWDNyRsQ": {
       "emitted": [],
       "first_pumpfun_bonding": null,
       "first_pumpswap": null,
@@ -15046,6 +18144,25 @@
         "t_iso": "2026-09-19T20:36:01Z",
         "vol_5m": 0.07
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "JAtj3BpQedw7sS2fAavHh6chXc5KWzwxHJid4XzvUBAG": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 2.1124,
+        "bonding_remaining_sol": 83.204426,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 10.3369,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 1.795574,
+        "symbol": "BAG",
+        "t": 1790342971.079275,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "virtual_sol": 31.795574
+      },
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -15106,6 +18223,13 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "JCJQNonQoiWj53qMwdJAM43U5CHtYjoxUTx9gNRFpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
     "JDrZWGBZUJENV8W552V2Ty3aZxi2FCmhZK3AYkd8agYz": {
       "emitted": [],
       "first_pumpfun_bonding": {
@@ -15155,6 +18279,25 @@
         "t_iso": "2026-09-22T11:14:34Z",
         "vol_5m": 75715.13
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "Nr1N44rLbra3koeS3p5MXAAJLvMLT9Axp2J9R5Byjak": {
+      "emitted": [],
+      "first_pumpfun_bonding": {
+        "bonding_progress_pct": 19.0567,
+        "bonding_remaining_sol": 68.801779,
+        "bonding_source": "pump_frontend_api_v3",
+        "bonding_token_progress_pct": 64.1794,
+        "dex_id": "pumpfun",
+        "pump_complete": false,
+        "real_sol": 16.198221,
+        "symbol": "JAK",
+        "t": 1790346360.936524,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "virtual_sol": 46.198221
+      },
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -15365,6 +18508,13 @@
         "t_iso": "2026-09-24T12:39:00Z",
         "vol_5m": 900.21
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "ZEtX7MPVZSKjBq6pD72tjb89KGJxSZNWjRqZEdASrXE": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -15631,6 +18781,58 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "jLz71QZfjnZZMLjUaCBw7KmUyftkkNq8NkWi2u9dyap": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 13056.61,
+      "entry_price_usd": 2.1365584e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 13.107,
+        "buys_5m": 33,
+        "dex_id": "pumpswap",
+        "liq_usd": 13056.61,
+        "pair_address": "Ax9GpoBxTKb19NMj4eJhNsy163xuUGmFKrLpELeQK7LX",
+        "price_usd": 2.1365584e-05,
+        "sells_5m": 23,
+        "symbol": "YAP",
+        "t": 1790346360.776266,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 2366.46
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "jU7hpVbGfLPFzfHB1iy74hPA379iubPqVQwLGBepump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 59064.44,
+      "entry_price_usd": 0.00024600254,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 38.288,
+        "buys_5m": 676,
+        "dex_id": "pumpswap",
+        "liq_usd": 59064.44,
+        "pair_address": "Dy8JKx7xTX6KnK2rN3zjeTkJYBEAUHo3B9PCANjHcFrv",
+        "price_usd": 0.00024600254,
+        "sells_5m": 626,
+        "symbol": "PEEP",
+        "t": 1790358660.423208,
+        "t_iso": "2026-09-25T17:51:00Z",
+        "vol_5m": 307335.12
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "jZdDmFE61E1gHNcS1nJivzMbzaoThyGLpo76Gd2bgyD": {
       "emitted": [
         "first_pumpswap",
@@ -15653,6 +18855,32 @@
         "t": 1789669021.102784,
         "t_iso": "2026-09-17T18:17:01Z",
         "vol_5m": 0.19
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "k1jnShqQ15xBupKaQGKz6CHkcWc8zCi3g9ReBeWpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 13872.33,
+      "entry_price_usd": 5.0566276e-05,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 3.628,
+        "buys_5m": 343,
+        "dex_id": "pumpswap",
+        "liq_usd": 13872.33,
+        "pair_address": "FXmnXunTmFRLBkKCnGomwybPm8gvAmE5yZYnJhMfDAsk",
+        "price_usd": 5.0566276e-05,
+        "sells_5m": 314,
+        "symbol": "SCAN",
+        "t": 1790342971.079316,
+        "t_iso": "2026-09-25T13:29:31Z",
+        "vol_5m": 24706.51
       },
       "near_grad": null,
       "pump_complete": null
@@ -15785,6 +19013,39 @@
       "near_grad": null,
       "pump_complete": null
     },
+    "n43FmmmVzJfL6MgDPTZkNVw6kw86RppHTY7Ugo6STNK": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "n5Vu8DPpmJLthvkRH33N5uLHz9ZxkdErE8MfTFBpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 48748.82,
+      "entry_price_usd": 0.00031653699,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 27.074,
+        "buys_5m": 799,
+        "dex_id": "pumpswap",
+        "liq_usd": 48748.82,
+        "pair_address": "EF44a8bR16zbmkNvkBR4PgyAwcvdLVVXKZoxMkpgPGuU",
+        "price_usd": 0.00031653699,
+        "sells_5m": 137,
+        "symbol": "BACKPACA",
+        "t": 1790349666.851478,
+        "t_iso": "2026-09-25T15:21:06Z",
+        "vol_5m": 64176.4
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
     "nDNn22SD3Abe3UxbytH32fPErZw6MEJE8Ticm9kVi78": {
       "emitted": [
         "first_pumpswap",
@@ -15808,6 +19069,13 @@
         "t_iso": "2026-09-19T11:07:26Z",
         "vol_5m": 953.18
       },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "oERywtisWXRgZyN11xQjNoZgu1dCxKiVL2Sg8FaqnmU": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
     },
@@ -15853,6 +19121,39 @@
         "virtual_sol": 31.177165
       },
       "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "qGrmyWcuwQySfAtvomLcQEz1QWVyTUETPpwTBJZpump": {
+      "emitted": [],
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": null,
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "s8pc6Thv8U4g9yPwmkGj5TTGLuHGvDRr6wPcF91pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3108.5,
+      "entry_price_usd": 4.8907827e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 33.874,
+        "buys_5m": 3,
+        "dex_id": "pumpswap",
+        "liq_usd": 3108.5,
+        "pair_address": "3XLHXdzPrSJn5MebQfKEeqb1vtMbpv1qEAXRnwLoZddM",
+        "price_usd": 4.8907827e-06,
+        "sells_5m": 7,
+        "symbol": "Pizzly",
+        "t": 1790346360.936485,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 491.55
+      },
       "near_grad": null,
       "pump_complete": null
     },
@@ -15904,6 +19205,32 @@
         "t": 1789923712.702029,
         "t_iso": "2026-09-20T17:01:52Z",
         "vol_5m": 36100.76
+      },
+      "near_grad": null,
+      "pump_complete": null
+    },
+    "tjvVbqnFaU1RjPtcMnbe6fFX98UsX668tKb7Jskpump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 3301.07,
+      "entry_price_usd": 3.4389138e-06,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 334.982,
+        "buys_5m": 0,
+        "dex_id": "pumpswap",
+        "liq_usd": 3301.07,
+        "pair_address": "3gMmxS2vE6RwT5syfULkw4c57aUDtnFtb5iapGcMDJ6x",
+        "price_usd": 3.4389138e-06,
+        "sells_5m": 0,
+        "symbol": "OPAQUE",
+        "t": 1790336977.8337522,
+        "t_iso": "2026-09-25T11:49:37Z",
+        "vol_5m": 0.0
       },
       "near_grad": null,
       "pump_complete": null
@@ -16056,8 +19383,34 @@
       "first_pumpswap": null,
       "near_grad": null,
       "pump_complete": null
+    },
+    "zYiF3rA8aWYUuDek3Z3po9NF4V5UDky5nji7Wr6pump": {
+      "emitted": [
+        "first_pumpswap",
+        "markout_5m",
+        "markout_15m",
+        "markout_30m"
+      ],
+      "entry_liq_usd": 29206.8,
+      "entry_price_usd": 0.000106928426,
+      "first_pumpfun_bonding": null,
+      "first_pumpswap": {
+        "age_min": 3781.69,
+        "buys_5m": 19,
+        "dex_id": "pumpswap",
+        "liq_usd": 29206.8,
+        "pair_address": "6PcxDv7eMhKehgvWPii8vRS1VTE9bJaBrgBYsc2c4baM",
+        "price_usd": 0.000106928426,
+        "sells_5m": 34,
+        "symbol": "BillSmith",
+        "t": 1790346360.93664,
+        "t_iso": "2026-09-25T14:26:00Z",
+        "vol_5m": 854.72
+      },
+      "near_grad": null,
+      "pump_complete": null
     }
   },
   "schema": "pattern_state.v1",
-  "updated_at": "2026-09-25T02:47:30Z"
+  "updated_at": "2026-09-26T02:47:06Z"
 }

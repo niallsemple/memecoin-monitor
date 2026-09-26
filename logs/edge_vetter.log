@@ -5,3 +5,10 @@ verdicts: {'WATCH': 11, 'REJECT': 20}
 rejects pre-gate: {'few_trips': 186072, 'sniper': 7, 'win>80': 13}
 
 wrote /Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/smart_wallets.json
+  …2M lines, 181925 wallets, 4s
+
+vetted 31 wallets from 186103 (2.1M lines in 4s)
+verdicts: {'WATCH': 11, 'REJECT': 20}
+rejects pre-gate: {'few_trips': 186072, 'sniper': 7, 'win>80': 13}
+
+wrote /Users/niallsemple/Documents/kimi/workspace/darwin-labs-ai/memecoin-monitor/smart_wallets.json
